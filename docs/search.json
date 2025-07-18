@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fondecyt Paper 2",
+    "section": "",
+    "text": "Presentación\nEste libro corresponde al repositorio de procesamiento y análisis de la base de datos de la Encuesta CONCLAT aplicada en Chile, para realizar la construcción de clases de Erik Olin Wright.\nLa Encuesta Conclat se aplica en el marco del Proyecto CONCLAT, que busca estudiar cómo se percibe el conflicto laboral y político en Argentina y Chile. Particularmente, analiza cómo las personas de distintas clases y con distinto estatus sindical (por ejemplo, afiliados/as y no afiliados/as a sindicatos) perciben el conflicto dentro y fuera del lugar de trabajo.\nCONCLAT es el Proyecto FONDECYT Regular (No 1230056) “Clases sociales, movimientos sindicales y conflicto en tiempos de crisis: un estudio comparativo de Argentina y Chile”. Patrocinado por la Universidad de Chile y el Centro de Estudios de Conflicto y Cohesión Social (COES). Tiene como propósito contribuir a la investigación internacional sobre clases, trabajo y conflicto produciendo datos cuantitativos originales y un instrumento de investigación comparable a nivel internacional."
+  },
+  {
+    "objectID": "01-proce-data-conclat.html",
+    "href": "01-proce-data-conclat.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. «Literate Programming». Comput. J. 27 (2): 97-111. https://doi.org/10.1093/comjnl/27.2.97."
+  }
+]

@@ -1,0 +1,69 @@
+"0","# Situación empleo"
+"0","data <- data %>%"
+"0","  mutate("
+"0","    a07 = factor("
+"0","      as.numeric(a07),"
+"0","      levels = 1:9,"
+"0","      labels = c("
+"0","        ""1. Patrón(a) o empleador(a)"","
+"0","        ""2. Trabajador(a) por cuenta propia"","
+"0","        ""3. Empleado(a) u obrero(a) del sector público (Gobierno Central o Municipal)"","
+"0","        ""4. Empleado(a) u obrero(a) de empresas públicas"","
+"0","        ""5. Empleado(a) u obrero(a) del sector privado"","
+"0","        ""6. Servicio doméstico puertas adentro"","
+"0","        ""7. Servicio doméstico puertas afuera"","
+"0","        ""8. FF.AA. y del Orden"","
+"0","        ""9. Familiar no remunerado"""
+"0","      )"
+"0","    )"
+"0","  ) %>%"
+"0","  set_variable_labels(a07 = ""Employment situation"")"
+"0",""
+"0","frq(data$a07)"
+"1","[31mEmployment situation (x)[39m[34m <categorical>[39m 
+[34m# total N=3048 valid N=3048 mean=3.79 sd=1.67[39m
+
+Value                                                                        |    N | Raw % | Valid % | Cum. %
+--------------------------------------------------------------------------------------------------------------
+1. Patrón(a) o empleador(a)                                                  |  345 | 11.32 |   11.32 |  11.32
+2. Trabajador(a) por cuenta propia                                           |  598 | 19.62 |   19.62 |  30.94
+3. Empleado(a) u obrero(a) del sector público (Gobierno Central o Municipal) |  251 |  8.23 |    8.23 |  39.17
+4. Empleado(a) u obrero(a) de empresas públicas                              |  337 | 11.06 |   11.06 |  50.23
+5. Empleado(a) u obrero(a) del sector privado                                | 1370 | 44.95 |   44.95 |  95.18
+6. Servicio doméstico puertas adentro                                        |   21 |  0.69 |    0.69 |  95.87
+7. Servicio doméstico puertas afuera                                         |  101 |  3.31 |    3.31 |  99.18
+8. FF.AA. y del Orden                                                        |   13 |  0.43 |    0.43 |  99.61
+9. Familiar no remunerado                                                    |   12 |  0.39 |    0.39 | 100.00
+<NA>                                                                         |    0 |  0.00 |    <NA> |   <NA>
+"
+"0","data <- data %>%"
+"0","  mutate("
+"0","    relation_mop = case_when("
+"0","      as_numeric(a07) == 1 ~ 1,"
+"0","      as_numeric(a07) == 2 ~ 2,"
+"0","      as_numeric(a07) >= 3 ~ 3,"
+"0","      TRUE ~ NA_real_"
+"0","      ),"
+"0","    relation_mop = factor("
+"0","      relation_mop,"
+"0","      levels = 1:3,"
+"0","      labels = c("
+"0","        ""1. Employers"","
+"0","        ""2. Self-Employed"","
+"0","        ""3. Salaried"""
+"0","      )"
+"0","    )"
+"0","  ) %>%"
+"0","  set_variable_labels(relation_mop = ""Relation with Means of Production"")"
+"0",""
+"0","frq(data$relation_mop)"
+"1","[31mRelation with Means of Production (x)[39m[34m <categorical>[39m 
+[34m# total N=3048 valid N=3048 mean=2.58 sd=0.69[39m
+
+Value            |    N | Raw % | Valid % | Cum. %
+--------------------------------------------------
+1. Employers     |  345 | 11.32 |   11.32 |  11.32
+2. Self-Employed |  598 | 19.62 |   19.62 |  30.94
+3. Salaried      | 2105 | 69.06 |   69.06 | 100.00
+<NA>             |    0 |  0.00 |    <NA> |   <NA>
+"

@@ -1,0 +1,222 @@
+# Procesamiento Data Conclat
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+rm(list=ls())
+options(scipen = 999)
+
+library(pacman)
+p_load(bookdown,
+       car,
+       ggalluvial,
+       ggplot2,
+       ggrepel,
+       gridExtra,
+       kableExtra,
+       knitr,
+       labelled,
+       lubridate,
+       psych,
+       readr,
+       readxl,
+       shadowtext,
+       sjmisc,
+       sjPlot,
+       sjlabelled,
+       statar,
+       stringr,
+       survey,
+       tidyverse,
+       tinytex,
+       viridis,
+       httr
+       )
+```
+
+## Cargar datos
+
+```{r datos,message=FALSE,warning=FALSE}
+load("input/data/datos-conclat.Rdata")
+```
+
+## Variables
+
+```{r data,message=FALSE,warning=FALSE}
+data <- data %>% 
+  select(id,
+         rake_wb2,
+         # Relación con los medios de producción
+         a07,
+         a26,
+         a27,
+         # Skills
+         ciuo08,
+         e05,
+         # Autoridad / orgnización
+         a15,
+         a16,
+         a17_01,a17_02,a17_03,a17_04,a17_05,a17_06)# %>% 
+  #sjlabelled::set_na(.,na=c(-999,-888,-777))
+```
+
+## Procesamiento
+
+### relation_mop
+
+```{r}
+# Situación empleo
+data <- data %>%
+  mutate(
+    a07 = factor(
+      as.numeric(a07),
+      levels = 1:9,
+      labels = c(
+        "1. Patrón(a) o empleador(a)",
+        "2. Trabajador(a) por cuenta propia",
+        "3. Empleado(a) u obrero(a) del sector público (Gobierno Central o Municipal)",
+        "4. Empleado(a) u obrero(a) de empresas públicas",
+        "5. Empleado(a) u obrero(a) del sector privado",
+        "6. Servicio doméstico puertas adentro",
+        "7. Servicio doméstico puertas afuera",
+        "8. FF.AA. y del Orden",
+        "9. Familiar no remunerado"
+      )
+    )
+  ) %>%
+  set_variable_labels(a07 = "Employment situation")
+
+frq(data$a07)
+
+data <- data %>%
+  mutate(
+    relation_mop = case_when(
+      as_numeric(a07) == 1 ~ 1,
+      as_numeric(a07) == 2 ~ 2,
+      as_numeric(a07) >= 3 ~ 3,
+      TRUE ~ NA_real_
+      ),
+    relation_mop = factor(
+      relation_mop,
+      levels = 1:3,
+      labels = c(
+        "1. Employers",
+        "2. Self-Employed",
+        "3. Salaried"
+      )
+    )
+  ) %>%
+  set_variable_labels(relation_mop = "Relation with Means of Production")
+
+frq(data$relation_mop)
+```
+
+### company_size
+
+```{r}
+frq(data$a26)
+
+data <- data %>%
+  mutate(
+    company_size = case_when(
+      a26 %in% c(1) ~ 1,
+      a26 %in% c(2, 3) ~ 2,
+      a26 %in% c(4, 5) ~ 3,
+      a26 %in% c(6, 7) ~ 4,
+      a26 %in% c(8, 9) ~ 5,
+      TRUE ~ NA_real_
+    ),
+    company_size = factor(
+      company_size, 
+      levels = 1:5, 
+      labels = c(
+        "Solo",
+        "2-9",
+        "10-49",
+        "50-199",
+        "200 or more"),
+      ordered = TRUE
+    )
+  ) %>%
+  set_variable_labels(company_size = "Company Size")
+
+frq(data$company_size)
+```
+
+### workplace_size
+
+```{r}
+frq(data$a27)
+
+data <- data %>%
+  mutate(
+    workplace_size = case_when(
+      a27 %in% c(1) ~ 1,
+      a27 %in% c(2, 3) ~ 2,
+      a27 %in% c(4, 5) ~ 3,
+      a27 %in% c(6, 7) ~ 4,
+      a27 %in% c(8, 9) ~ 5,
+      TRUE ~ NA_real_
+    ),
+    workplace_size = factor(
+      workplace_size, 
+      levels = 1:5, 
+      labels = c(
+        "Solo",
+        "2-9",
+        "10-49",
+        "50-199",
+        "200 or more"),
+      ordered = TRUE
+    )
+  ) %>%
+  set_variable_labels(workplace_size = "Workplace Size")
+
+frq(data$workplace_size)
+```
+
+### owners
+
+```{r}
+table(data$relation_mop,data$company_size)
+table(data$relation_mop,data$workplace_size)
+
+data <- data %>%
+  mutate(
+    owners = case_when(
+      as.numeric(relation_mop) %in% 1:2 &
+        (as.numeric(company_size) == 1 | 
+         (is.na(company_size) & as.numeric(workplace_size) == 1)) ~ 1,
+      as.numeric(relation_mop) %in% 1:2 &
+        (as.numeric(company_size) == 2 | 
+         (is.na(company_size) & as.numeric(workplace_size) == 2)) ~ 2,
+      as.numeric(relation_mop) %in% 1:2 &
+        (as.numeric(company_size) >= 3 |
+         (is.na(company_size) & as.numeric(workplace_size) >= 3)) ~ 3,
+      TRUE ~ NA_real_
+    ),
+    owners = factor(
+      owners,
+      levels = 1:3,
+      labels = c(
+        "1. Solo Self-Employed",
+        "2. Small employers",
+        "3. Employers"
+      )
+    )
+  ) %>%
+  set_variable_labels(owners = "Owners")
+
+
+frq(data$owners)
+```
+
+### skills
+
+```{r}
+
+```
+
+### formal_position_auth
+
+### supervisor
+
+### decisionmaking_influence
