@@ -1,0 +1,23 @@
+project:
+  type: book
+
+book:
+  title: "fondecyt-paper2"
+  author: "Norah Jones"
+  date: "18-07-2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
