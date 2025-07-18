@@ -17,10 +17,10 @@
 "0","      )"
 "0","    )"
 "0","  ) %>%"
-"0","  set_variable_labels(a07 = ""Employment situation"")"
+"0","  set_variable_labels(a07 = ""Employment situation (a07)"")"
 "0",""
 "0","frq(data$a07)"
-"1","[31mEmployment situation (x)[39m[34m <categorical>[39m 
+"1","[31mEmployment situation (a07) (x)[39m[34m <categorical>[39m 
 [34m# total N=3048 valid N=3048 mean=3.79 sd=1.67[39m
 
 Value                                                                        |    N | Raw % | Valid % | Cum. %

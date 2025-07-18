@@ -88,7 +88,6 @@
 "0","  ) %>%"
 "0","  set_variable_labels(owners = ""Owners"")"
 "0",""
-"0",""
 "0","frq(data$owners)"
 "1","[31mOwners (x)[39m[34m <categorical>[39m 
 [34m# total N=3048 valid N=935 mean=1.53 sd=0.69[39m
