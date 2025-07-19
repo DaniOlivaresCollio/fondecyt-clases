@@ -243,11 +243,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">a07 =</span> <span class="st">"Employment situation"</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">a07 =</span> <span class="st">"Employment situation (a07)"</span>)</span>
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a07)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Employment situation (x) &lt;categorical&gt; 
+<pre><code>Employment situation (a07) (x) &lt;categorical&gt; 
 # total N=3048 valid N=3048 mean=3.79 sd=1.67
 
 Value                                                                        |    N | Raw % | Valid % | Cum. %
@@ -919,32 +919,84 @@ Value |   N | Raw % | Valid % | Cum. %
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">skills =</span> <span class="fu">case_when</span>(</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> educ <span class="sc">&gt;=</span> <span class="dv">9</span> <span class="sc">~</span> <span class="st">"Experts"</span>,</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> educ <span class="sc">&lt;</span> <span class="dv">9</span> <span class="sc">~</span> <span class="st">"Skilled"</span>,</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">35</span>,<span class="dv">41</span><span class="sc">:</span><span class="dv">44</span>,<span class="dv">53</span>) <span class="sc">~</span> <span class="st">"Skilled"</span>,</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>,<span class="dv">54</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>,<span class="dv">81</span>) <span class="sc">&amp;</span> educ <span class="sc">&gt;</span> <span class="dv">5</span> <span class="sc">~</span> <span class="st">"Skilled"</span>,</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>,<span class="dv">54</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>,<span class="dv">81</span>) <span class="sc">&amp;</span> educ <span class="sc">&lt;=</span> <span class="dv">5</span> <span class="sc">~</span> <span class="st">"Unskilled"</span>,</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">52</span>,<span class="dv">63</span>,<span class="dv">82</span>,<span class="dv">83</span>,<span class="dv">91</span><span class="sc">:</span><span class="dv">99</span>) <span class="sc">~</span> <span class="st">"Unskilled"</span></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">skills =</span> <span class="st">"Skills"</span>)</span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>skills)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> educ <span class="sc">&gt;=</span> <span class="dv">9</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> educ <span class="sc">&lt;</span> <span class="dv">9</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">35</span>,<span class="dv">41</span><span class="sc">:</span><span class="dv">44</span>,<span class="dv">53</span>) <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>,<span class="dv">54</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>,<span class="dv">81</span>) <span class="sc">&amp;</span> educ <span class="sc">&gt;</span> <span class="dv">5</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>,<span class="dv">54</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>,<span class="dv">81</span>) <span class="sc">&amp;</span> educ <span class="sc">&lt;=</span> <span class="dv">5</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">52</span>,<span class="dv">63</span>,<span class="dv">82</span>,<span class="dv">83</span>,<span class="dv">91</span><span class="sc">:</span><span class="dv">99</span>) <span class="sc">~</span> <span class="dv">3</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">skills =</span> <span class="fu">factor</span>(</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>      skills, </span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Experts"</span>,</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Skilled"</span>,</span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Unskilled"</span></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">skills =</span> <span class="st">"Skills"</span>)</span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>skills)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Skills (x) &lt;character&gt; 
+<pre><code>Skills (x) &lt;categorical&gt; 
 # total N=3048 valid N=2974 mean=2.43 sd=0.75
 
-Value     |    N | Raw % | Valid % | Cum. %
--------------------------------------------
-Experts   |  466 | 15.29 |   15.67 |  15.67
-Skilled   |  753 | 24.70 |   25.32 |  40.99
-Unskilled | 1755 | 57.58 |   59.01 | 100.00
-&lt;NA&gt;      |   74 |  2.43 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value        |    N | Raw % | Valid % | Cum. %
+----------------------------------------------
+1. Experts   |  466 | 15.29 |   15.67 |  15.67
+2. Skilled   |  753 | 24.70 |   25.32 |  40.99
+3. Unskilled | 1755 | 57.58 |   59.01 | 100.00
+&lt;NA&gt;         |   74 |  2.43 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
 <section id="formal_position_auth" class="level3" data-number="1.3.8">
 <h3 data-number="1.3.8" class="anchored" data-anchor-id="formal_position_auth"><span class="header-section-number">1.3.8</span> formal_position_auth</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a15)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x &lt;numeric&gt; 
+# total N=3048 valid N=2107 mean=3.76 sd=0.63
+
+Value |    N | Raw % | Valid % | Cum. %
+---------------------------------------
+    1 |   41 |  1.35 |    1.95 |   1.95
+    2 |  102 |  3.35 |    4.84 |   6.79
+    3 |  188 |  6.17 |    8.92 |  15.71
+    4 | 1776 | 58.27 |   84.29 | 100.00
+ &lt;NA&gt; |  941 | 30.87 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">formal_position_auth =</span> <span class="fu">factor</span>(</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>      a15,</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Senior manager or executive"</span>,</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Middle manager (e.g., sector, office or branch head)"</span>,</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Supervisor or foreperson"</span>,</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Regular employee or worker (no supervisory role)"</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">formal_position_auth =</span> <span class="st">"Formal position of authority (a15)"</span>)</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>formal_position_auth)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Formal position of authority (a15) (x) &lt;categorical&gt; 
+# total N=3048 valid N=2107 mean=3.76 sd=0.63
+
+Value                                                   |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------------------------
+1. Senior manager or executive                          |   41 |  1.35 |    1.95 |   1.95
+2. Middle manager (e.g., sector, office or branch head) |  102 |  3.35 |    4.84 |   6.79
+3. Supervisor or foreperson                             |  188 |  6.17 |    8.92 |  15.71
+4. Regular employee or worker (no supervisory role)     | 1776 | 58.27 |   84.29 | 100.00
+&lt;NA&gt;                                                    |  941 | 30.87 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
+</div>
 </section>
 <section id="supervisor" class="level3" data-number="1.3.9">
 <h3 data-number="1.3.9" class="anchored" data-anchor-id="supervisor"><span class="header-section-number">1.3.9</span> supervisor</h3>

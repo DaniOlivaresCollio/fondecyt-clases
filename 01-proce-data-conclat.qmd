@@ -282,7 +282,24 @@ frq(data$skills)
 ### formal_position_auth
 
 ```{r}
+frq(data$a15)
 
+data <- data %>%
+  mutate(
+    formal_position_auth = factor(
+      a15,
+      levels = 1:4,
+      labels = c(
+        "1. Senior manager or executive",
+        "2. Middle manager (e.g., sector, office or branch head)",
+        "3. Supervisor or foreperson",
+        "4. Regular employee or worker (no supervisory role)"
+      )
+    )
+  ) %>%
+  set_variable_labels(formal_position_auth = "Formal position of authority (a15)")
+
+frq(data$formal_position_auth)
 ```
 
 ### supervisor

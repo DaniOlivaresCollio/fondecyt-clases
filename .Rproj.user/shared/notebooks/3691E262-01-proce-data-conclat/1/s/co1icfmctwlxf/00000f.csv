@@ -1,0 +1,39 @@
+"0","frq(data$a15)"
+"1","[31mx[39m[34m <numeric>[39m 
+[34m# total N=3048 valid N=2107 mean=3.76 sd=0.63[39m
+
+Value |    N | Raw % | Valid % | Cum. %
+---------------------------------------
+    1 |   41 |  1.35 |    1.95 |   1.95
+    2 |  102 |  3.35 |    4.84 |   6.79
+    3 |  188 |  6.17 |    8.92 |  15.71
+    4 | 1776 | 58.27 |   84.29 | 100.00
+ <NA> |  941 | 30.87 |    <NA> |   <NA>
+"
+"0","data <- data %>%"
+"0","  mutate("
+"0","    formal_position_auth = factor("
+"0","      a15,"
+"0","      levels = 1:4,"
+"0","      labels = c("
+"0","        ""1. Senior manager or executive"","
+"0","        ""2. Middle manager (e.g., sector, office or branch head)"","
+"0","        ""3. Supervisor or foreperson"","
+"0","        ""4. Regular employee or worker (no supervisory role)"""
+"0","      )"
+"0","    )"
+"0","  ) %>%"
+"0","  set_variable_labels(formal_position_auth = ""Formal position of authority (a15)"")"
+"0",""
+"0","frq(data$formal_position_auth)"
+"1","[31mFormal position of authority (a15) (x)[39m[34m <categorical>[39m 
+[34m# total N=3048 valid N=2107 mean=3.76 sd=0.63[39m
+
+Value                                                   |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------------------------
+1. Senior manager or executive                          |   41 |  1.35 |    1.95 |   1.95
+2. Middle manager (e.g., sector, office or branch head) |  102 |  3.35 |    4.84 |   6.79
+3. Supervisor or foreperson                             |  188 |  6.17 |    8.92 |  15.71
+4. Regular employee or worker (no supervisory role)     | 1776 | 58.27 |   84.29 | 100.00
+<NA>                                                    |  941 | 30.87 |    <NA> |   <NA>
+"
