@@ -226,7 +226,7 @@ frq(data$educ)
 ### isco08_2d
 
 ```{r}
-frq(data$ciuo08)
+# frq(data$ciuo08)
 
 data %>%
   filter(as.numeric(ciuo08) < 1100) %>%
@@ -286,8 +286,12 @@ frq(data$a15)
 
 data <- data %>%
   mutate(
+    formal_position_auth = case_when(
+      as.numeric(relation_mop) %in% c(1, 2) ~ NA_real_,
+      TRUE ~ as.numeric(a15)
+    ),
     formal_position_auth = factor(
-      a15,
+      formal_position_auth,
       levels = 1:4,
       labels = c(
         "1. Senior manager or executive",
@@ -302,15 +306,72 @@ data <- data %>%
 frq(data$formal_position_auth)
 ```
 
-### supervisor
+### supervision
 
 ```{r}
+frq(data$a16)
 
+data <- data %>%
+  mutate(
+    supervision = case_when(
+      a16 == 1 ~ 1,
+      a16 %in% c(2, -888, -999) ~ 0,
+      TRUE ~ NA_real_
+    )
+  ) %>%
+  set_variable_labels(supervision = "Supervises other workers (a16)")
+
+frq(data$supervision)
 ```
 
 ### decisionmaking_influence
 
 ```{r}
+frq(data$a17_01)
+frq(data$a17_02)
+frq(data$a17_03)
+frq(data$a17_04)
+frq(data$a17_05)
+frq(data$a17_06)
 
+data <- data %>%
+  mutate(
+    decisionmaking_influence = if_else(
+      is.na(a17_01),
+      NA_real_,
+      rowSums(across(a17_01:a17_06, ~ case_when(
+        .x == 1 ~ 3,
+        .x == 2 ~ 2,
+        .x == 3 ~ 1,
+        .x %in% c(-888, -999) ~ 1,  
+        TRUE ~ NA_real_
+      )), na.rm = TRUE)
+    ),
+    decisionmaking_influence_mean = if_else(
+      is.na(a17_01),
+      NA_real_,
+      rowMeans(across(a17_01:a17_06, ~ case_when(
+        .x == 1 ~ 3,
+        .x == 2 ~ 2,
+        .x == 3 ~ 1,
+        .x %in% c(-888, -999) ~ 1,
+        TRUE ~ NA_real_
+      )), na.rm = TRUE)
+    )
+  ) %>%
+  set_variable_labels(
+    decisionmaking_influence = "Decision-making influence (sum, inverted)",
+    decisionmaking_influence_mean = "Decision-making influence (mean, inverted)"
+  )
+
+frq(data$decisionmaking_influence)
+frq(data$decisionmaking_influence_mean)
+```
+
+## Descriptivos
+
+```{r}
+table(data$formal_position_auth, data$decisionmaking_influence)
+table(data$formal_position_auth, data$decisionmaking_influence_mean)
 ```
 

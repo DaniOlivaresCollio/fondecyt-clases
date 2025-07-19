@@ -1,0 +1,11 @@
+"0","frq(data$supervision)
+"
+"1","[31mSupervises other workers (a16) (x)[39m[34m <numeric>[39m 
+[34m# total N=3048 valid N=2105 mean=0.13 sd=0.34[39m
+
+Value |    N | Raw % | Valid % | Cum. %
+---------------------------------------
+    0 | 1825 | 59.88 |   86.70 |  86.70
+    1 |  280 |  9.19 |   13.30 | 100.00
+ <NA> |  943 | 30.94 |    <NA> |   <NA>
+"
