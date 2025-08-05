@@ -171,6 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#decisionmaking_typology" id="toc-decisionmaking_typology" class="nav-link" data-scroll-target="#decisionmaking_typology"><span class="header-section-number">1.3.11</span> decisionmaking_typology</a></li>
   <li><a href="#managerial_location_typology" id="toc-managerial_location_typology" class="nav-link" data-scroll-target="#managerial_location_typology"><span class="header-section-number">1.3.12</span> managerial_location_typology</a></li>
   <li><a href="#class" id="toc-class" class="nav-link" data-scroll-target="#class"><span class="header-section-number">1.3.13</span> class</a></li>
+  <li><a href="#informalidad" id="toc-informalidad" class="nav-link" data-scroll-target="#informalidad"><span class="header-section-number">1.3.14</span> informalidad</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1392,9 +1393,8 @@ Value                    |    N | Raw % | Valid % | Cum. %
 <section id="class" class="level3" data-number="1.3.13">
 <h3 data-number="1.3.13" class="anchored" data-anchor-id="class"><span class="header-section-number">1.3.13</span> class</h3>
 <p><img src="img/wright_classes.jpeg" class="img-fluid"></p>
-<ul>
-<li>primera propuesta –&gt; 1. capitalists: employers con 10 o más trabajadores</li>
-</ul>
+<section id="primera-propuesta-1.-capitalists-employers-con-10-o-más-trabajadores" class="level4" data-number="1.3.13.1">
+<h4 data-number="1.3.13.1" class="anchored" data-anchor-id="primera-propuesta-1.-capitalists-employers-con-10-o-más-trabajadores"><span class="header-section-number">1.3.13.1</span> primera propuesta –&gt; 1. capitalists: employers con 10 o más trabajadores</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1458,9 +1458,9 @@ Value                      |   N | Raw % | Valid % | Cum. %
 &lt;NA&gt;                       |  20 |  0.66 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
-<ul>
-<li>segunda propuesta –&gt; 1. employers: employers 10 o más trabajadores</li>
-</ul>
+</section>
+<section id="segunda-propuesta-1.-employers-employers-50-o-más-trabajadores" class="level4" data-number="1.3.13.2">
+<h4 data-number="1.3.13.2" class="anchored" data-anchor-id="segunda-propuesta-1.-employers-employers-50-o-más-trabajadores"><span class="header-section-number">1.3.13.2</span> segunda propuesta –&gt; 1. employers: employers 50 o más trabajadores</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1524,8 +1524,129 @@ Value                      |   N | Raw % | Valid % | Cum. %
 &lt;NA&gt;                       |  20 |  0.66 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
-<p>clases informales</p>
-<p>a06 boletas a10 incio actividades a18 contrato escrito</p>
+</section>
+</section>
+<section id="informalidad" class="level3" data-number="1.3.14">
+<h3 data-number="1.3.14" class="anchored" data-anchor-id="informalidad"><span class="header-section-number">1.3.14</span> informalidad</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a06)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x &lt;numeric&gt; 
+# total N=3048 valid N=3048 mean=-11.58 sd=113.10
+
+Value |    N | Raw % | Valid % | Cum. %
+---------------------------------------
+ -999 |   11 |  0.36 |    0.36 |   0.36
+ -888 |   36 |  1.18 |    1.18 |   1.54
+    1 |  478 | 15.68 |   15.68 |  17.22
+    2 |  398 | 13.06 |   13.06 |  30.28
+    3 | 2125 | 69.72 |   69.72 | 100.00
+ &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>a06, data<span class="sc">$</span>relation_mop)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      
+       1. Employers 2. Self-Employed 3. Salaried
+  -999            1                3           7
+  -888            4                2          30
+  1             131               85         262
+  2              78              122         198
+  3             131              386        1608</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>a06, data<span class="sc">$</span>owners)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      
+       1. Solo Self-Employed 2. Small employers 3. Employers
+  -999                     4                  0            0
+  -888                     0                  2            4
+  1                      107                 65           43
+  2                       89                 90           19
+  3                      351                119           42</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>a06, data<span class="sc">$</span>owners2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      
+       1. Solo Self-Employed 2. Small employers 3. Employers
+  -999                     4                  0            0
+  -888                     0                  2            4
+  1                      107                 99            9
+  2                       89                101            8
+  3                      351                146           15</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a10)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x &lt;numeric&gt; 
+# total N=3048 valid N=945 mean=3.14 sd=1.72
+
+Value |    N | Raw % | Valid % | Cum. %
+---------------------------------------
+    1 |  254 |  8.33 |   26.88 |  26.88
+    2 |  192 |  6.30 |   20.32 |  47.20
+    3 |   63 |  2.07 |    6.67 |  53.86
+    4 |   42 |  1.38 |    4.44 |  58.31
+    5 |  394 | 12.93 |   41.69 | 100.00
+ &lt;NA&gt; | 2103 | 69.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>a10, data<span class="sc">$</span>relation_mop)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   
+    1. Employers 2. Self-Employed 3. Salaried
+  1          143              111           0
+  2           63              129           0
+  3           40               23           0
+  4           19               23           0
+  5           80              312           2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>a10, data<span class="sc">$</span>owners)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   
+    1. Solo Self-Employed 2. Small employers 3. Employers
+  1                   131                 79           43
+  2                    90                 87           14
+  3                    16                 33           13
+  4                    16                 12           13
+  5                   298                 65           25</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>a10, data<span class="sc">$</span>owners2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   
+    1. Solo Self-Employed 2. Small employers 3. Employers
+  1                   131                111           11
+  2                    90                 95            6
+  3                    16                 42            4
+  4                    16                 20            5
+  5                   298                 80           10</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a18)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x &lt;numeric&gt; 
+# total N=3048 valid N=2105 mean=-13.86 sd=122.43
+
+Value |    N | Raw % | Valid % | Cum. %
+---------------------------------------
+ -999 |   32 |  1.05 |    1.52 |   1.52
+    1 | 1691 | 55.48 |   80.33 |  81.85
+    2 |   76 |  2.49 |    3.61 |  85.46
+    3 |  272 |  8.92 |   12.92 |  98.38
+    4 |   34 |  1.12 |    1.62 | 100.00
+ &lt;NA&gt; |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>a18, data<span class="sc">$</span>relation_mop)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      
+       1. Employers 2. Self-Employed 3. Salaried
+  -999            0                0          32
+  1               0                0        1691
+  2               0                0          76
+  3               0                0         272
+  4               0                0          34</code></pre>
+</div>
+</div>
+<p>a18 contrato escrito</p>
 
 
 </section>

@@ -63,7 +63,7 @@ data <- data_raw %>%
          a16,
          a17_01,a17_02,a17_03,a17_04,a17_05,a17_06,
          # formalidad
-         a06,
+         a06,                                        # boleta
          a10,
          a18
          )# %>% 
@@ -697,7 +697,7 @@ frq(data$organization_assets)
 
 ![](img/wright_classes.jpeg){}
 
-#### primera propuesta --> 1. capitalists: employers con 10 o más trabajadores
+#### primera propuesta --> 1. employers: employers con 10 o más trabajadores
 
 ```{r}
 data <- data %>%
@@ -743,7 +743,7 @@ data <- data %>%
 frq(data$wright_class)
 ```
 
-#### segunda propuesta --> 1. employers: employers 50 o más trabajadores
+#### segunda propuesta --> 1. capitalists: employers 50 o más trabajadores
 
 ```{r}
 data <- data %>%
@@ -789,13 +789,25 @@ data <- data %>%
 frq(data$wright_class2)
 ```
 
+### informalidad
 
+```{r}
+frq(data$a06)
+table(data$a06, data$relation_mop)
+table(data$a06, data$owners)
+table(data$a06, data$owners2)
+```
 
+```{r}
+frq(data$a10)
+table(data$a10, data$relation_mop)
+table(data$a10, data$owners)
+table(data$a10, data$owners2)
+```
 
-clases informales
-
-a06 boletas
-a10 incio actividades
-a18 contrato escrito
+```{r}
+frq(data$a18)
+table(data$a18, data$relation_mop)
+```
 
 
