@@ -163,13 +163,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#workplace_size" id="toc-workplace_size" class="nav-link" data-scroll-target="#workplace_size"><span class="header-section-number">1.3.3</span> workplace_size</a></li>
   <li><a href="#owners" id="toc-owners" class="nav-link" data-scroll-target="#owners"><span class="header-section-number">1.3.4</span> owners</a></li>
   <li><a href="#educ" id="toc-educ" class="nav-link" data-scroll-target="#educ"><span class="header-section-number">1.3.5</span> educ</a></li>
-  <li><a href="#isco08_2d" id="toc-isco08_2d" class="nav-link" data-scroll-target="#isco08_2d"><span class="header-section-number">1.3.6</span> isco08_2d</a></li>
+  <li><a href="#ciuo08_clio_2d" id="toc-ciuo08_clio_2d" class="nav-link" data-scroll-target="#ciuo08_clio_2d"><span class="header-section-number">1.3.6</span> ciuo08_clio_2d</a></li>
   <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills"><span class="header-section-number">1.3.7</span> skills</a></li>
   <li><a href="#formal_position_auth" id="toc-formal_position_auth" class="nav-link" data-scroll-target="#formal_position_auth"><span class="header-section-number">1.3.8</span> formal_position_auth</a></li>
   <li><a href="#supervision" id="toc-supervision" class="nav-link" data-scroll-target="#supervision"><span class="header-section-number">1.3.9</span> supervision</a></li>
-  <li><a href="#decisionmaking_influence" id="toc-decisionmaking_influence" class="nav-link" data-scroll-target="#decisionmaking_influence"><span class="header-section-number">1.3.10</span> decisionmaking_influence</a></li>
+  <li><a href="#decisionmaking_typology" id="toc-decisionmaking_typology" class="nav-link" data-scroll-target="#decisionmaking_typology"><span class="header-section-number">1.3.10</span> decisionmaking_typology</a></li>
+  <li><a href="#managerial_location_typology" id="toc-managerial_location_typology" class="nav-link" data-scroll-target="#managerial_location_typology"><span class="header-section-number">1.3.11</span> managerial_location_typology</a></li>
   </ul></li>
-  <li><a href="#descriptivos" id="toc-descriptivos" class="nav-link" data-scroll-target="#descriptivos"><span class="header-section-number">1.4</span> Descriptivos</a></li>
   </ul>
 </nav>
     </div>
@@ -203,21 +203,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="variables" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="variables"><span class="header-section-number">1.2</span> Variables</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data_raw <span class="sc">%&gt;%</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>         rake_wb2,</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>         <span class="co"># Relación con los medios de producción</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>         a07,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>         a26,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>         a27,</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>         <span class="co"># Skills</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>         a02,a02_rec,a03,a03_rec,ciuo08,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>         e05,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>         <span class="co"># Autoridad / orgnización</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>         a15,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>         a16,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>         a17_01,a17_02,a17_03,a17_04,a17_05,a17_06)<span class="co"># %&gt;% </span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#sjlabelled::set_na(.,na=c(-999,-888,-777))</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>         a25, a25_esp, a25_esp_rec,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>         a26,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>         a27,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>         <span class="co"># Skills</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>         a02,a02_rec,a03,a03_rec,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">ciuo08_clio =</span> ciuo08,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>         e05,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>         <span class="co"># Autoridad / orgnización</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>         a15,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>         a16,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>         a17_01,a17_02,a17_03,a17_04,a17_05,a17_06)<span class="co"># %&gt;% </span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">#sjlabelled::set_na(.,na=c(-999,-888,-777))</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="procesamiento" class="level2" data-number="1.3">
@@ -534,141 +536,443 @@ Value |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="isco08_2d" class="level3" data-number="1.3.6">
-<h3 data-number="1.3.6" class="anchored" data-anchor-id="isco08_2d"><span class="header-section-number">1.3.6</span> isco08_2d</h3>
+<section id="ciuo08_clio_2d" class="level3" data-number="1.3.6">
+<h3 data-number="1.3.6" class="anchored" data-anchor-id="ciuo08_clio_2d"><span class="header-section-number">1.3.6</span> ciuo08_clio_2d</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$ciuo08)</span></span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparar variables necesarias</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(ciuo08) <span class="sc">&lt;</span> <span class="dv">1100</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(ciuo08, a03)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 54 × 2
-   ciuo08 a03                
-   &lt;chr&gt;  &lt;chr&gt;              
- 1 -999   estudiar           
- 2 0110   FFAA               
- 3 0111   FFAA               
- 4 -999   trabajo            
- 5 -999   estudiar           
- 6 -999   estudiar y trabajar
- 7 -999   no sabe            
- 8 -999   no sabe            
- 9 -999   no sabe            
-10 0110   FFAA               
-# ℹ 44 more rows</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">isco08_2d =</span> <span class="fu">as.numeric</span>(<span class="fu">substr</span>(ciuo08, <span class="dv">1</span>, <span class="dv">2</span>)),</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">isco08_2d =</span> <span class="fu">ifelse</span>(isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">9</span>, <span class="dv">1</span>), <span class="cn">NA</span>, isco08_2d)</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">isco08_2d =</span> <span class="st">"ISCO-08: 2 digits"</span>)</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>isco08_2d)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Crear la glosa concatenada</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>glosa_ciuo08 <span class="ot">&lt;-</span> <span class="fu">paste</span>(data<span class="sc">$</span>a02, data<span class="sc">$</span>a03, <span class="at">sep =</span> <span class="st">" "</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Crear isco a 2 dígitos</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">ciuo08_clio_2d =</span> <span class="fu">as.numeric</span>(<span class="fu">substr</span>(ciuo08_clio, <span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">ciuo08_clio_2d =</span> <span class="st">"ISCO-08: 2 digits"</span>)</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>ciuo08_clio_2d)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>ISCO-08: 2 digits (x) &lt;numeric&gt; 
-# total N=3048 valid N=2994 mean=55.18 sd=25.24
+# total N=3048 valid N=3048 mean=54.09 sd=26.33
 
 Value |   N | Raw % | Valid % | Cum. %
 --------------------------------------
-   11 |  20 |  0.66 |    0.67 |   0.67
-   12 |  28 |  0.92 |    0.94 |   1.60
-   13 |  44 |  1.44 |    1.47 |   3.07
-   14 |  11 |  0.36 |    0.37 |   3.44
-   21 |  62 |  2.03 |    2.07 |   5.51
-   22 | 200 |  6.56 |    6.68 |  12.19
-   23 | 140 |  4.59 |    4.68 |  16.87
-   24 |  37 |  1.21 |    1.24 |  18.10
-   25 |  12 |  0.39 |    0.40 |  18.50
-   26 | 114 |  3.74 |    3.81 |  22.31
-   31 |  28 |  0.92 |    0.94 |  23.25
-   32 |  27 |  0.89 |    0.90 |  24.15
-   33 | 116 |  3.81 |    3.87 |  28.02
-   34 |  34 |  1.12 |    1.14 |  29.16
-   35 |   6 |  0.20 |    0.20 |  29.36
-   36 |  11 |  0.36 |    0.37 |  29.73
-   41 |   2 |  0.07 |    0.07 |  29.79
-   42 |  13 |  0.43 |    0.43 |  30.23
-   43 |  39 |  1.28 |    1.30 |  31.53
-   44 |   4 |  0.13 |    0.13 |  31.66
-   51 | 189 |  6.20 |    6.31 |  37.98
-   52 | 590 | 19.36 |   19.71 |  57.68
-   53 |  57 |  1.87 |    1.90 |  59.59
-   54 | 153 |  5.02 |    5.11 |  64.70
-   55 |   2 |  0.07 |    0.07 |  64.76
-   61 |  28 |  0.92 |    0.94 |  65.70
-   62 |   1 |  0.03 |    0.03 |  65.73
-   63 |   3 |  0.10 |    0.10 |  65.83
-   71 |  60 |  1.97 |    2.00 |  67.84
-   72 | 107 |  3.51 |    3.57 |  71.41
-   73 |  17 |  0.56 |    0.57 |  71.98
-   74 |  16 |  0.52 |    0.53 |  72.51
-   75 |  58 |  1.90 |    1.94 |  74.45
-   81 |  25 |  0.82 |    0.84 |  75.28
-   83 | 186 |  6.10 |    6.21 |  81.50
-   91 | 202 |  6.63 |    6.75 |  88.24
-   92 |  91 |  2.99 |    3.04 |  91.28
-   93 | 153 |  5.02 |    5.11 |  96.39
-   94 |  82 |  2.69 |    2.74 |  99.13
-   95 |   1 |  0.03 |    0.03 |  99.16
-   96 |  25 |  0.82 |    0.84 | 100.00
- &lt;NA&gt; |  54 |  1.77 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+   -9 |  42 |  1.38 |    1.38 |   1.38
+    1 |  12 |  0.39 |    0.39 |   1.77
+   11 |  20 |  0.66 |    0.66 |   2.43
+   12 |  28 |  0.92 |    0.92 |   3.35
+   13 |  44 |  1.44 |    1.44 |   4.79
+   14 |  11 |  0.36 |    0.36 |   5.15
+   21 |  62 |  2.03 |    2.03 |   7.19
+   22 | 200 |  6.56 |    6.56 |  13.75
+   23 | 140 |  4.59 |    4.59 |  18.34
+   24 |  37 |  1.21 |    1.21 |  19.55
+   25 |  12 |  0.39 |    0.39 |  19.95
+   26 | 114 |  3.74 |    3.74 |  23.69
+   31 |  28 |  0.92 |    0.92 |  24.61
+   32 |  27 |  0.89 |    0.89 |  25.49
+   33 | 116 |  3.81 |    3.81 |  29.30
+   34 |  34 |  1.12 |    1.12 |  30.41
+   35 |   6 |  0.20 |    0.20 |  30.61
+   36 |  11 |  0.36 |    0.36 |  30.97
+   41 |   2 |  0.07 |    0.07 |  31.04
+   42 |  13 |  0.43 |    0.43 |  31.46
+   43 |  39 |  1.28 |    1.28 |  32.74
+   44 |   4 |  0.13 |    0.13 |  32.87
+   51 | 189 |  6.20 |    6.20 |  39.07
+   52 | 590 | 19.36 |   19.36 |  58.43
+   53 |  57 |  1.87 |    1.87 |  60.30
+   54 | 153 |  5.02 |    5.02 |  65.32
+   55 |   2 |  0.07 |    0.07 |  65.39
+   61 |  28 |  0.92 |    0.92 |  66.31
+   62 |   1 |  0.03 |    0.03 |  66.34
+   63 |   3 |  0.10 |    0.10 |  66.44
+   71 |  60 |  1.97 |    1.97 |  68.41
+   72 | 107 |  3.51 |    3.51 |  71.92
+   73 |  17 |  0.56 |    0.56 |  72.47
+   74 |  16 |  0.52 |    0.52 |  73.00
+   75 |  58 |  1.90 |    1.90 |  74.90
+   81 |  25 |  0.82 |    0.82 |  75.72
+   83 | 186 |  6.10 |    6.10 |  81.82
+   91 | 202 |  6.63 |    6.63 |  88.45
+   92 |  91 |  2.99 |    2.99 |  91.44
+   93 | 153 |  5.02 |    5.02 |  96.46
+   94 |  82 |  2.69 |    2.69 |  99.15
+   95 |   1 |  0.03 |    0.03 |  99.18
+   96 |  25 |  0.82 |    0.82 | 100.00
+ &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Revisar los NA</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Armar tabla filtrando a los NA</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>tabla_ciuo08_999 <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(ciuo08_clio_2d) <span class="sc">&lt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(ciuo08_clio,</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>         ciuo08_clio_2d,</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>         glosa_ciuo08, </span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>         a03,</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">supervisa =</span> a16, </span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">educ =</span> e05, </span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">rama =</span> a25, </span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>         a25_esp, </span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">rama_esp =</span> a25_esp_rec)</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Pasar tabla a word</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>tabla_ft <span class="ot">&lt;-</span> <span class="fu">flextable</span>(tabla_ciuo08_999)</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="fu">read_docx</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">body_add_flextable</span>(<span class="at">value =</span> tabla_ft) <span class="sc">%&gt;%</span></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">target =</span> <span class="st">"output/tabla_ciuo08_999.docx"</span>)</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Revisar NA con API del INE</span></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a><span class="do">## Enviar la consulta al servidor</span></span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>request <span class="ot">&lt;-</span>  httr<span class="sc">::</span><span class="fu">POST</span>(<span class="st">"https://rapps.ine.cl:9292/predict"</span>, </span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>                       <span class="at">encode =</span> <span class="st">"json"</span>,</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>                       <span class="at">body =</span>  <span class="fu">list</span>(<span class="at">text =</span> tabla_ciuo08_999<span class="sc">$</span>glosa_ciuo08,</span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">classification =</span> <span class="st">"ciuo"</span>,</span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">digits =</span> <span class="dv">2</span>))</span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a><span class="do">## Extraer el contenido</span></span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a>ciuo08_ine_999 <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">content</span>(request)</span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Agregar como nueva columna a la base original</span></span>
+<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a>tabla_ciuo08_999<span class="sc">$</span>ciuo08_ine_999 <span class="ot">&lt;-</span> <span class="fu">unlist</span>(ciuo08_ine_999<span class="sc">$</span>cod_final)</span>
+<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a><span class="do">## Armar tabla filtrando a los NA con ciuo08 ine 999</span></span>
+<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a>tabla_ciuo08_999_ine <span class="ot">&lt;-</span> tabla_ciuo08_999 <span class="sc">%&gt;%</span></span>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(ciuo08_clio,</span>
+<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a>         ciuo08_clio_2d,</span>
+<span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a>         ciuo08_ine_999,</span>
+<span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a>         glosa_ciuo08, </span>
+<span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a>         a03,</span>
+<span id="cb27-43"><a href="#cb27-43" aria-hidden="true" tabindex="-1"></a>         supervisa, </span>
+<span id="cb27-44"><a href="#cb27-44" aria-hidden="true" tabindex="-1"></a>         educ, </span>
+<span id="cb27-45"><a href="#cb27-45" aria-hidden="true" tabindex="-1"></a>         rama, </span>
+<span id="cb27-46"><a href="#cb27-46" aria-hidden="true" tabindex="-1"></a>         rama_esp)</span>
+<span id="cb27-47"><a href="#cb27-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-48"><a href="#cb27-48" aria-hidden="true" tabindex="-1"></a><span class="do">## Pasar tabla a word</span></span>
+<span id="cb27-49"><a href="#cb27-49" aria-hidden="true" tabindex="-1"></a>tabla_ft <span class="ot">&lt;-</span> <span class="fu">flextable</span>(tabla_ciuo08_999_ine)</span>
+<span id="cb27-50"><a href="#cb27-50" aria-hidden="true" tabindex="-1"></a><span class="fu">read_docx</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb27-51"><a href="#cb27-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">body_add_flextable</span>(<span class="at">value =</span> tabla_ft) <span class="sc">%&gt;%</span></span>
+<span id="cb27-52"><a href="#cb27-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">target =</span> <span class="st">"output/tabla_ciuo08_999_ine.docx"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recuperar algunos NA</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Recodificar ciuo08 de NA recuperados</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">ciuo08_clio =</span> <span class="fu">case_when</span>(</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"tejer"</span> <span class="sc">~</span> <span class="st">"7318"</span>, <span class="co"># Artesanos de los tejidos, el cuero y materiales similares</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"mantención"</span> <span class="sc">~</span> <span class="st">"3121"</span>,</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"aseo limpieza"</span> <span class="sc">~</span> <span class="st">"9111"</span>,</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"casa"</span> <span class="sc">~</span> <span class="st">"9111"</span>,</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"supervisar trabajos"</span> <span class="sc">~</span> <span class="st">"3121"</span>,</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"maquina pesada"</span> <span class="sc">~</span> <span class="st">"8332"</span>,</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"no responde"</span> <span class="sc">~</span> <span class="st">"9111"</span>,</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"Independiente"</span> <span class="sc">~</span> <span class="st">"5212"</span>,</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"estaba en la casa por permiso administrativo"</span> <span class="sc">~</span> <span class="st">"9331"</span>,</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"no trabja por ahoravendedor"</span> <span class="sc">~</span> <span class="st">"5211"</span>,</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"organizar y ordenar ropa"</span> <span class="sc">~</span> <span class="st">"5242"</span>,</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"ordenar y organizar ropa"</span> <span class="sc">~</span> <span class="st">"5242"</span>,</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"-999"</span> <span class="sc">&amp;</span> a03 <span class="sc">==</span> <span class="st">"stripper"</span> <span class="sc">~</span> <span class="st">"5249"</span>,</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> ciuo08_clio</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Volver a crear ciuo08 con 2 dígitos y pasar -999 a NA</span></span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">ciuo08_clio_2d =</span> <span class="fu">as.numeric</span>(<span class="fu">substr</span>(ciuo08_clio, <span class="dv">1</span>, <span class="dv">2</span>)),</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">ciuo08_clio_2d =</span> <span class="fu">ifelse</span>(ciuo08_clio_2d<span class="sc">==-</span><span class="dv">9</span>, <span class="cn">NA</span>,ciuo08_clio_2d)</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">ciuo08_clio_2d =</span> <span class="st">"ISCO-08: 2 digits"</span>)</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>ciuo08_clio_2d)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ISCO-08: 2 digits (x) &lt;numeric&gt; 
+# total N=3048 valid N=3019 mean=55.01 sd=25.42
+
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+    1 |  12 |  0.39 |    0.40 |   0.40
+   11 |  20 |  0.66 |    0.66 |   1.06
+   12 |  28 |  0.92 |    0.93 |   1.99
+   13 |  44 |  1.44 |    1.46 |   3.44
+   14 |  11 |  0.36 |    0.36 |   3.81
+   21 |  62 |  2.03 |    2.05 |   5.86
+   22 | 200 |  6.56 |    6.62 |  12.49
+   23 | 140 |  4.59 |    4.64 |  17.12
+   24 |  37 |  1.21 |    1.23 |  18.35
+   25 |  12 |  0.39 |    0.40 |  18.75
+   26 | 114 |  3.74 |    3.78 |  22.52
+   31 |  30 |  0.98 |    0.99 |  23.52
+   32 |  27 |  0.89 |    0.89 |  24.41
+   33 | 116 |  3.81 |    3.84 |  28.25
+   34 |  34 |  1.12 |    1.13 |  29.38
+   35 |   6 |  0.20 |    0.20 |  29.58
+   36 |  11 |  0.36 |    0.36 |  29.94
+   41 |   2 |  0.07 |    0.07 |  30.01
+   42 |  13 |  0.43 |    0.43 |  30.44
+   43 |  39 |  1.28 |    1.29 |  31.73
+   44 |   4 |  0.13 |    0.13 |  31.86
+   51 | 189 |  6.20 |    6.26 |  38.13
+   52 | 595 | 19.52 |   19.71 |  57.83
+   53 |  57 |  1.87 |    1.89 |  59.72
+   54 | 153 |  5.02 |    5.07 |  64.79
+   55 |   2 |  0.07 |    0.07 |  64.86
+   61 |  28 |  0.92 |    0.93 |  65.78
+   62 |   1 |  0.03 |    0.03 |  65.82
+   63 |   3 |  0.10 |    0.10 |  65.92
+   71 |  60 |  1.97 |    1.99 |  67.90
+   72 | 107 |  3.51 |    3.54 |  71.45
+   73 |  18 |  0.59 |    0.60 |  72.04
+   74 |  16 |  0.52 |    0.53 |  72.57
+   75 |  58 |  1.90 |    1.92 |  74.49
+   81 |  25 |  0.82 |    0.83 |  75.32
+   83 | 187 |  6.14 |    6.19 |  81.52
+   91 | 205 |  6.73 |    6.79 |  88.31
+   92 |  91 |  2.99 |    3.01 |  91.32
+   93 | 154 |  5.05 |    5.10 |  96.42
+   94 |  82 |  2.69 |    2.72 |  99.14
+   95 |   1 |  0.03 |    0.03 |  99.17
+   96 |  25 |  0.82 |    0.83 | 100.00
+ &lt;NA&gt; |  29 |  0.95 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chequeo códigos no existentes ciuo clio = 36, 55</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Armar tabla</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>tabla_ciuo08_36_55 <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(ciuo08_clio_2d) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">36</span>, <span class="dv">55</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(ciuo08_clio,</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>         ciuo08_clio_2d,</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>         glosa_ciuo08,</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>         id,</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">supervisa =</span> a16, </span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">educ =</span> e05, </span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">rama =</span> a25, </span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>         <span class="at">rama_esp =</span> a25_esp_rec)</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Pasar tabla a word</span></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>tabla_ft <span class="ot">&lt;-</span> <span class="fu">flextable</span>(tabla_ciuo08_36_55)</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="fu">read_docx</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">body_add_flextable</span>(<span class="at">value =</span> tabla_ft) <span class="sc">%&gt;%</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">target =</span> <span class="st">"output/tabla_ciuo08_36_55.docx"</span>)</span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Revisar 36 y 55 con API del INE</span></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Enviar la consulta al servidor</span></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>request <span class="ot">&lt;-</span>  httr<span class="sc">::</span><span class="fu">POST</span>(<span class="st">"https://rapps.ine.cl:9292/predict"</span>, </span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>                       <span class="at">encode =</span> <span class="st">"json"</span>,</span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>                       <span class="at">body =</span>  <span class="fu">list</span>(<span class="at">text =</span> tabla_ciuo08_36_55<span class="sc">$</span>glosa_ciuo08,</span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">classification =</span> <span class="st">"ciuo"</span>,</span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">digits =</span> <span class="dv">2</span>))</span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a><span class="do">## Extraer el contenido</span></span>
+<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>ciuo08_ine_36_55 <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">content</span>(request)</span>
+<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a><span class="do">## Agregar como nueva columna a la base original</span></span>
+<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a>tabla_ciuo08_36_55<span class="sc">$</span>ciuo08_ine_36_55 <span class="ot">&lt;-</span> <span class="fu">unlist</span>(ciuo08_ine_36_55<span class="sc">$</span>cod_final)</span>
+<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-35"><a href="#cb30-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Armar tabla filtrando a los NA con ciuo08 ine 999</span></span>
+<span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a>tabla_ciuo08_36_55_ine <span class="ot">&lt;-</span> tabla_ciuo08_36_55 <span class="sc">%&gt;%</span></span>
+<span id="cb30-37"><a href="#cb30-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(ciuo08_clio,</span>
+<span id="cb30-38"><a href="#cb30-38" aria-hidden="true" tabindex="-1"></a>         ciuo08_clio_2d,</span>
+<span id="cb30-39"><a href="#cb30-39" aria-hidden="true" tabindex="-1"></a>         ciuo08_ine_36_55,</span>
+<span id="cb30-40"><a href="#cb30-40" aria-hidden="true" tabindex="-1"></a>         glosa_ciuo08, </span>
+<span id="cb30-41"><a href="#cb30-41" aria-hidden="true" tabindex="-1"></a>         id,</span>
+<span id="cb30-42"><a href="#cb30-42" aria-hidden="true" tabindex="-1"></a>         supervisa, </span>
+<span id="cb30-43"><a href="#cb30-43" aria-hidden="true" tabindex="-1"></a>         educ, </span>
+<span id="cb30-44"><a href="#cb30-44" aria-hidden="true" tabindex="-1"></a>         rama, </span>
+<span id="cb30-45"><a href="#cb30-45" aria-hidden="true" tabindex="-1"></a>         rama_esp)</span>
+<span id="cb30-46"><a href="#cb30-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-47"><a href="#cb30-47" aria-hidden="true" tabindex="-1"></a><span class="do">## Pasar tabla a word</span></span>
+<span id="cb30-48"><a href="#cb30-48" aria-hidden="true" tabindex="-1"></a>tabla_ft <span class="ot">&lt;-</span> <span class="fu">flextable</span>(tabla_ciuo08_36_55_ine)</span>
+<span id="cb30-49"><a href="#cb30-49" aria-hidden="true" tabindex="-1"></a><span class="fu">read_docx</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb30-50"><a href="#cb30-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">body_add_flextable</span>(<span class="at">value =</span> tabla_ft) <span class="sc">%&gt;%</span></span>
+<span id="cb30-51"><a href="#cb30-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">target =</span> <span class="st">"output/tabla_ciuo08_36_55_ine.docx"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recuperar algunos códigos no existentes</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Recodificar ciuo08 de 36 55 recuperados</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">ciuo08_clio =</span> <span class="fu">case_when</span>(</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"5522"</span> <span class="sc">&amp;</span> id <span class="sc">==</span> <span class="st">"var_223"</span> <span class="sc">~</span> <span class="st">"3343"</span>,</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>      ciuo08_clio <span class="sc">==</span> <span class="st">"5521"</span> <span class="sc">&amp;</span> id <span class="sc">==</span> <span class="st">"var_2536"</span> <span class="sc">~</span> <span class="st">"7322"</span>,</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> ciuo08_clio</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Volver a crear ciuo08 con 2 dígitos</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">ciuo08_clio_2d =</span> <span class="fu">as.numeric</span>(<span class="fu">substr</span>(ciuo08_clio, <span class="dv">1</span>, <span class="dv">2</span>)),</span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">ciuo08_clio_2d =</span> <span class="fu">ifelse</span>(ciuo08_clio_2d<span class="sc">==-</span><span class="dv">9</span>, <span class="cn">NA</span>,ciuo08_clio_2d)</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">ciuo08_clio_2d =</span> <span class="st">"ISCO-08: 2 digits"</span>)</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>ciuo08_clio_2d)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ISCO-08: 2 digits (x) &lt;numeric&gt; 
+# total N=3048 valid N=3019 mean=55.01 sd=25.42
+
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+    1 |  12 |  0.39 |    0.40 |   0.40
+   11 |  20 |  0.66 |    0.66 |   1.06
+   12 |  28 |  0.92 |    0.93 |   1.99
+   13 |  44 |  1.44 |    1.46 |   3.44
+   14 |  11 |  0.36 |    0.36 |   3.81
+   21 |  62 |  2.03 |    2.05 |   5.86
+   22 | 200 |  6.56 |    6.62 |  12.49
+   23 | 140 |  4.59 |    4.64 |  17.12
+   24 |  37 |  1.21 |    1.23 |  18.35
+   25 |  12 |  0.39 |    0.40 |  18.75
+   26 | 114 |  3.74 |    3.78 |  22.52
+   31 |  30 |  0.98 |    0.99 |  23.52
+   32 |  27 |  0.89 |    0.89 |  24.41
+   33 | 117 |  3.84 |    3.88 |  28.29
+   34 |  34 |  1.12 |    1.13 |  29.41
+   35 |   6 |  0.20 |    0.20 |  29.61
+   36 |  11 |  0.36 |    0.36 |  29.98
+   41 |   2 |  0.07 |    0.07 |  30.04
+   42 |  13 |  0.43 |    0.43 |  30.47
+   43 |  39 |  1.28 |    1.29 |  31.77
+   44 |   4 |  0.13 |    0.13 |  31.90
+   51 | 189 |  6.20 |    6.26 |  38.16
+   52 | 595 | 19.52 |   19.71 |  57.87
+   53 |  57 |  1.87 |    1.89 |  59.75
+   54 | 153 |  5.02 |    5.07 |  64.82
+   61 |  28 |  0.92 |    0.93 |  65.75
+   62 |   1 |  0.03 |    0.03 |  65.78
+   63 |   3 |  0.10 |    0.10 |  65.88
+   71 |  60 |  1.97 |    1.99 |  67.87
+   72 | 107 |  3.51 |    3.54 |  71.41
+   73 |  19 |  0.62 |    0.63 |  72.04
+   74 |  16 |  0.52 |    0.53 |  72.57
+   75 |  58 |  1.90 |    1.92 |  74.49
+   81 |  25 |  0.82 |    0.83 |  75.32
+   83 | 187 |  6.14 |    6.19 |  81.52
+   91 | 205 |  6.73 |    6.79 |  88.31
+   92 |  91 |  2.99 |    3.01 |  91.32
+   93 | 154 |  5.05 |    5.10 |  96.42
+   94 |  82 |  2.69 |    2.72 |  99.14
+   95 |   1 |  0.03 |    0.03 |  99.17
+   96 |  25 |  0.82 |    0.83 | 100.00
+ &lt;NA&gt; |  29 |  0.95 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chequeo COMPLETO de códigos ciuo08 con api INE</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Enviar la consulta al servidor</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>request <span class="ot">&lt;-</span>  httr<span class="sc">::</span><span class="fu">POST</span>(<span class="st">"https://rapps.ine.cl:9292/predict"</span>, </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">encode =</span> <span class="st">"json"</span>,</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">body =</span>  <span class="fu">list</span>(<span class="at">text =</span> data<span class="sc">$</span>glosa_ciuo08,</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">classification =</span> <span class="st">"ciuo"</span>,</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">digits =</span> <span class="dv">2</span>))</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Extraer el contenido</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>ciuo08_ine <span class="ot">&lt;-</span> httr<span class="sc">::</span><span class="fu">content</span>(request)</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Agregar como nueva columna a la base original</span></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>ciuo08_ine <span class="ot">&lt;-</span> <span class="fu">unlist</span>(ciuo08_ine<span class="sc">$</span>cod_final)</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Volver NA en ciuo08_ine los NA de ciuo08_clio_2d</span></span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">ciuo08_ine =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(ciuo08_clio_2d), <span class="cn">NA</span>, ciuo08_ine)</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Buscar los códigos diferentes</span></span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a>diferente_ciuo <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ciuo08_ine <span class="sc">!=</span> ciuo08_clio_2d <span class="sc">|</span> (<span class="fu">is.na</span>(ciuo08_ine) <span class="sc">!=</span> <span class="fu">is.na</span>(ciuo08_clio_2d))) <span class="sc">%&gt;%</span></span>
+<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(glosa_ciuo08, ciuo08_clio_2d, ciuo08_ine)</span>
+<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a>diferente_ciuo</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 845 × 3
+   glosa_ciuo08                                        ciuo08_clio_2d ciuo08_ine
+   &lt;chr&gt;                                                        &lt;dbl&gt; &lt;chr&gt;     
+ 1 isabel antonia castillo venegas vendedora de flores             75 52        
+ 2 trabajar manipular alimentos                                    94 51        
+ 3 Funcionario Público Remuneración                                43 33        
+ 4 adminustrativa de salud atender clientes                        33 22        
+ 5 dueña de casa aseo                                              51 91        
+ 6 empresa paisajismo areas verdes cuidamos el medio …             21 61        
+ 7 tens cuidados adulto mayores                                    22 32        
+ 8 minera cocina                                                   21 81        
+ 9 Atención público Cajera, atención. Trabajo con niñ…             52 42        
+10 repartidor de encomienda dejar encomiendas en resp…             96 83        
+# ℹ 835 more rows</code></pre>
 </div>
 </div>
 </section>
 <section id="skills" class="level3" data-number="1.3.7">
 <h3 data-number="1.3.7" class="anchored" data-anchor-id="skills"><span class="header-section-number">1.3.7</span> skills</h3>
 <ul>
-<li>Experts -&gt; ciuo08_2d == 11 a 34 con universitaria completa o más (educ &gt;= 9)</li>
-<li>Skilled -&gt; ciuo08_2d == 11 a 34 con universitaria incompleta o menos (educ &lt; 9), y</li>
-<li>Skilled -&gt; ciuo08_2d == 35,41,42,43,44,53, y</li>
-<li>Skilled -&gt; ciuo08_2d == 51,54,61,62,71,72,73,74,75,81 con media completa o más (educ &gt;= 5).</li>
-<li>Unskilled -&gt; ciuo08_2d == 51,54,61,62,71,72,73,74,75,81 con media incompleta o menos, y</li>
-<li>Unskilled -&gt; ciuo08_2d == 52,63,82,83,90+</li>
+<li><p>Experts -&gt; ciuo08_2d == 11 a 34 con universitaria completa o más (educ &gt;= 9) —&gt; experts</p></li>
+<li><p>Skilled -&gt; ciuo08_2d == 11 a 34 con universitaria incompleta o menos (educ &lt; 9), y</p></li>
+<li><p>Skilled -&gt; ciuo08_2d == 35,36,41:44,53, y</p></li>
+<li><p>Skilled -&gt; ciuo08_2d == 51,54,61,62,71:75,81 con media completa o más (educ &gt;= 5).</p></li>
+<li><p>Unskilled -&gt; ciuo08_2d == 51,54,61,62,71:75,81 con media incompleta o menos, y</p></li>
+<li><p>Unskilled -&gt; ciuo08_2d == 52,63,82,83,90+</p></li>
+<li><p>61 62 71:75 –&gt; skilled</p></li>
+<li><p>51,54,81 –&gt; unskilled</p></li>
 </ul>
-<p>Falta clasificar: 36, 52, 55 !!!!</p>
+<p>los que no tienen educación dejar solo como ciuo</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">skills =</span> <span class="fu">case_when</span>(</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> educ <span class="sc">&gt;=</span> <span class="dv">9</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> educ <span class="sc">&lt;</span> <span class="dv">9</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">35</span>,<span class="dv">41</span><span class="sc">:</span><span class="dv">44</span>,<span class="dv">53</span>) <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>,<span class="dv">54</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>,<span class="dv">81</span>) <span class="sc">&amp;</span> educ <span class="sc">&gt;</span> <span class="dv">5</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>,<span class="dv">54</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>,<span class="dv">81</span>) <span class="sc">&amp;</span> educ <span class="sc">&lt;=</span> <span class="dv">5</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>      isco08_2d <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">52</span>,<span class="dv">63</span>,<span class="dv">82</span>,<span class="dv">83</span>,<span class="dv">91</span><span class="sc">:</span><span class="dv">99</span>) <span class="sc">~</span> <span class="dv">3</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">skills =</span> <span class="fu">factor</span>(</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>      skills, </span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Experts"</span>,</span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Skilled"</span>,</span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Unskilled"</span></span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">skills =</span> <span class="st">"Skills"</span>)</span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>skills)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">skills =</span> <span class="fu">case_when</span>(</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> educ <span class="sc">&gt;=</span> <span class="dv">9</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> <span class="fu">is.na</span>(educ)<span class="sc">~</span> <span class="dv">1</span>,  </span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> educ <span class="sc">&lt;</span> <span class="dv">9</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">35</span>, <span class="dv">36</span>, <span class="dv">41</span><span class="sc">:</span><span class="dv">44</span>, <span class="dv">53</span>) <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>, <span class="dv">54</span>, <span class="dv">61</span>, <span class="dv">62</span>, <span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>, <span class="dv">81</span>) <span class="sc">&amp;</span> educ <span class="sc">&gt;=</span> <span class="dv">5</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">61</span>, <span class="dv">62</span>, <span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>) <span class="sc">&amp;</span> <span class="fu">is.na</span>(educ) <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>, <span class="dv">54</span>, <span class="dv">61</span>, <span class="dv">62</span>, <span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>, <span class="dv">81</span>) <span class="sc">&amp;</span> educ <span class="sc">&lt;=</span> <span class="dv">4</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">52</span>, <span class="dv">63</span>, <span class="dv">82</span>, <span class="dv">83</span>, <span class="dv">91</span><span class="sc">:</span><span class="dv">99</span>) <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>, <span class="dv">54</span>, <span class="dv">81</span>) <span class="sc">&amp;</span> <span class="fu">is.na</span>(educ) <span class="sc">~</span> <span class="dv">3</span>     </span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">skills =</span> <span class="fu">factor</span>(</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>      skills, </span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Experts"</span>,</span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Skilled"</span>,</span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Unskilled"</span></span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">skills =</span> <span class="st">"Skills"</span>)</span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>skills)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Skills (x) &lt;categorical&gt; 
-# total N=3048 valid N=2974 mean=2.43 sd=0.75
+# total N=3048 valid N=3019 mean=2.29 sd=0.72
 
 Value        |    N | Raw % | Valid % | Cum. %
 ----------------------------------------------
-1. Experts   |  466 | 15.29 |   15.67 |  15.67
-2. Skilled   |  753 | 24.70 |   25.32 |  40.99
-3. Unskilled | 1755 | 57.58 |   59.01 | 100.00
-&lt;NA&gt;         |   74 |  2.43 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+1. Experts   |  469 | 15.39 |   15.53 |  15.53
+2. Skilled   | 1198 | 39.30 |   39.68 |  55.22
+3. Unskilled | 1352 | 44.36 |   44.78 | 100.00
+&lt;NA&gt;         |   29 |  0.95 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
 <section id="formal_position_auth" class="level3" data-number="1.3.8">
 <h3 data-number="1.3.8" class="anchored" data-anchor-id="formal_position_auth"><span class="header-section-number">1.3.8</span> formal_position_auth</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a15)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a15)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;numeric&gt; 
 # total N=3048 valid N=2107 mean=3.76 sd=0.63
@@ -681,26 +985,26 @@ Value |    N | Raw % | Valid % | Cum. %
     4 | 1776 | 58.27 |   84.29 | 100.00
  &lt;NA&gt; |  941 | 30.87 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">formal_position_auth =</span> <span class="fu">case_when</span>(</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">~</span> <span class="cn">NA_real_</span>,</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="fu">as.numeric</span>(a15)</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">formal_position_auth =</span> <span class="fu">factor</span>(</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>      formal_position_auth,</span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Senior manager or executive"</span>,</span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Middle manager (e.g., sector, office or branch head)"</span>,</span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Supervisor or foreperson"</span>,</span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Regular employee or worker (no supervisory role)"</span></span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">formal_position_auth =</span> <span class="st">"Formal position of authority (a15)"</span>)</span>
-<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>formal_position_auth)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">formal_position_auth =</span> <span class="fu">case_when</span>(</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">~</span> <span class="cn">NA_real_</span>,</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="fu">as.numeric</span>(a15)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">formal_position_auth =</span> <span class="fu">factor</span>(</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>      formal_position_auth,</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Senior manager or executive"</span>,</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Middle manager (e.g., sector, office or branch head)"</span>,</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Supervisor or foreperson"</span>,</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Regular employee or worker (no supervisory role)"</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">formal_position_auth =</span> <span class="st">"Formal position of authority (a15)"</span>)</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>formal_position_auth)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Formal position of authority (a15) (x) &lt;categorical&gt; 
 # total N=3048 valid N=2105 mean=3.76 sd=0.63
@@ -718,7 +1022,7 @@ Value                                                   |    N | Raw % | Valid %
 <section id="supervision" class="level3" data-number="1.3.9">
 <h3 data-number="1.3.9" class="anchored" data-anchor-id="supervision"><span class="header-section-number">1.3.9</span> supervision</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a16)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a16)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;numeric&gt; 
 # total N=3048 valid N=2105 mean=-12.08 sd=112.46
@@ -731,17 +1035,17 @@ Value |    N | Raw % | Valid % | Cum. %
     2 | 1793 | 58.83 |   85.18 | 100.00
  &lt;NA&gt; |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">supervision =</span> <span class="fu">case_when</span>(</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>      a16 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>      a16 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">0</span>,</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">supervision =</span> <span class="st">"Supervises other workers (a16)"</span>)</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>supervision)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">supervision =</span> <span class="fu">case_when</span>(</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>      a16 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>      a16 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">supervision =</span> <span class="st">"Supervises other workers (a16)"</span>)</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>supervision)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Supervises other workers (a16) (x) &lt;numeric&gt; 
 # total N=3048 valid N=2105 mean=0.13 sd=0.34
@@ -754,10 +1058,10 @@ Value |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="decisionmaking_influence" class="level3" data-number="1.3.10">
-<h3 data-number="1.3.10" class="anchored" data-anchor-id="decisionmaking_influence"><span class="header-section-number">1.3.10</span> decisionmaking_influence</h3>
+<section id="decisionmaking_typology" class="level3" data-number="1.3.10">
+<h3 data-number="1.3.10" class="anchored" data-anchor-id="decisionmaking_typology"><span class="header-section-number">1.3.10</span> decisionmaking_typology</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_01)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_01)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;numeric&gt; 
 # total N=3048 valid N=2105 mean=-19.16 sd=140.62
@@ -771,7 +1075,7 @@ Value |    N | Raw % | Valid % | Cum. %
     3 | 1616 | 53.02 |   76.77 | 100.00
  &lt;NA&gt; |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_02)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;numeric&gt; 
 # total N=3048 valid N=2105 mean=-16.73 sd=132.62
@@ -785,7 +1089,7 @@ Value |    N | Raw % | Valid % | Cum. %
     3 | 1782 | 58.46 |   84.66 | 100.00
  &lt;NA&gt; |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_03)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_03)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;numeric&gt; 
 # total N=3048 valid N=2105 mean=-12.16 sd=117.04
@@ -799,7 +1103,7 @@ Value |    N | Raw % | Valid % | Cum. %
     3 | 1751 | 57.45 |   83.18 | 100.00
  &lt;NA&gt; |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_04)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_04)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;numeric&gt; 
 # total N=3048 valid N=2105 mean=-12.57 sd=118.59
@@ -813,7 +1117,7 @@ Value |    N | Raw % | Valid % | Cum. %
     3 | 1755 | 57.58 |   83.37 | 100.00
  &lt;NA&gt; |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_05)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_05)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;numeric&gt; 
 # total N=3048 valid N=2105 mean=-9.96 sd=107.12
@@ -827,7 +1131,7 @@ Value |    N | Raw % | Valid % | Cum. %
     3 | 1538 | 50.46 |   73.06 | 100.00
  &lt;NA&gt; |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_06)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_06)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;numeric&gt; 
 # total N=3048 valid N=2105 mean=-20.39 sd=143.27
@@ -841,39 +1145,39 @@ Value |    N | Raw % | Valid % | Cum. %
     3 | 1777 | 58.30 |   84.42 | 100.00
  &lt;NA&gt; |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">decisionmaking_influence =</span> <span class="fu">if_else</span>(</span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">is.na</span>(a17_01),</span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>      <span class="cn">NA_real_</span>,</span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rowSums</span>(<span class="fu">across</span>(a17_01<span class="sc">:</span>a17_06, <span class="sc">~</span> <span class="fu">case_when</span>(</span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">1</span>,  </span>
-<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
-<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>      )), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">decisionmaking_influence_mean =</span> <span class="fu">if_else</span>(</span>
-<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">is.na</span>(a17_01),</span>
-<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>      <span class="cn">NA_real_</span>,</span>
-<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rowMeans</span>(<span class="fu">across</span>(a17_01<span class="sc">:</span>a17_06, <span class="sc">~</span> <span class="fu">case_when</span>(</span>
-<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
-<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>      )), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(</span>
-<span id="cb51-27"><a href="#cb51-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">decisionmaking_influence =</span> <span class="st">"Decision-making influence (sum, inverted)"</span>,</span>
-<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">decisionmaking_influence_mean =</span> <span class="st">"Decision-making influence (mean, inverted)"</span></span>
-<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-31"><a href="#cb51-31" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>decisionmaking_influence)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">decisionmaking_typology =</span> <span class="fu">if_else</span>(</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">is.na</span>(a17_01),</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>      <span class="cn">NA_real_</span>,</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rowSums</span>(<span class="fu">across</span>(a17_01<span class="sc">:</span>a17_06, <span class="sc">~</span> <span class="fu">case_when</span>(</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">1</span>,  </span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>      )), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">decisionmaking_typology_mean =</span> <span class="fu">if_else</span>(</span>
+<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">is.na</span>(a17_01),</span>
+<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a>      <span class="cn">NA_real_</span>,</span>
+<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rowMeans</span>(<span class="fu">across</span>(a17_01<span class="sc">:</span>a17_06, <span class="sc">~</span> <span class="fu">case_when</span>(</span>
+<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb57-21"><a href="#cb57-21" aria-hidden="true" tabindex="-1"></a>        .x <span class="sc">%in%</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb57-22"><a href="#cb57-22" aria-hidden="true" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb57-23"><a href="#cb57-23" aria-hidden="true" tabindex="-1"></a>      )), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb57-24"><a href="#cb57-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb57-25"><a href="#cb57-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb57-26"><a href="#cb57-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(</span>
+<span id="cb57-27"><a href="#cb57-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">decisionmaking_typology =</span> <span class="st">"Decision-making typology (sum, inverted)"</span>,</span>
+<span id="cb57-28"><a href="#cb57-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">decisionmaking_typology_mean =</span> <span class="st">"Decision-making typology (mean, inverted)"</span></span>
+<span id="cb57-29"><a href="#cb57-29" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb57-30"><a href="#cb57-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-31"><a href="#cb57-31" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>decisionmaking_typology)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Decision-making influence (sum, inverted) (x) &lt;numeric&gt; 
+<pre><code>Decision-making typology (sum, inverted) (x) &lt;numeric&gt; 
 # total N=3048 valid N=2105 mean=7.25 sd=2.38
 
 Value |    N | Raw % | Valid % | Cum. %
@@ -893,9 +1197,9 @@ Value |    N | Raw % | Valid % | Cum. %
    18 |   27 |  0.89 |    1.28 | 100.00
  &lt;NA&gt; |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>decisionmaking_influence_mean)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>decisionmaking_typology_mean)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Decision-making influence (mean, inverted) (x) &lt;numeric&gt; 
+<pre><code>Decision-making typology (mean, inverted) (x) &lt;numeric&gt; 
 # total N=3048 valid N=2105 mean=1.21 sd=0.40
 
 Value |    N | Raw % | Valid % | Cum. %
@@ -915,93 +1219,135 @@ Value |    N | Raw % | Valid % | Cum. %
  3.00 |   27 |  0.89 |    1.28 | 100.00
  &lt;NA&gt; |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear variable con 3 categorías</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">decisionmaking_typology_cat =</span> <span class="fu">case_when</span>(</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>      decisionmaking_typology_mean <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>      decisionmaking_typology_mean <span class="sc">&gt;</span> <span class="dv">1</span> <span class="sc">&amp;</span> decisionmaking_typology_mean <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>      decisionmaking_typology_mean <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">3</span></span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">decisionmaking_typology_cat =</span> <span class="fu">factor</span>(</span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>      decisionmaking_typology_cat,</span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(</span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">decisionmaking_typology_cat =</span> <span class="st">"Decision-making typology (recoded 3 categories)"</span></span>
+<span id="cb61-16"><a href="#cb61-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb61-17"><a href="#cb61-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-18"><a href="#cb61-18" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>decisionmaking_typology_cat)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Decision-making typology (recoded 3 categories) (x) &lt;categorical&gt; 
+# total N=3048 valid N=2105 mean=1.37 sd=0.51
+
+Value |    N | Raw % | Valid % | Cum. %
+---------------------------------------
+    1 | 1363 | 44.72 |   64.75 |  64.75
+    2 |  715 | 23.46 |   33.97 |  98.72
+    3 |   27 |  0.89 |    1.28 | 100.00
+ &lt;NA&gt; |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
 </div>
 </section>
-</section>
-<section id="descriptivos" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="descriptivos"><span class="header-section-number">1.4</span> Descriptivos</h2>
+<section id="managerial_location_typology" class="level3" data-number="1.3.11">
+<h3 data-number="1.3.11" class="anchored" data-anchor-id="managerial_location_typology"><span class="header-section-number">1.3.11</span> managerial_location_typology</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>formal_position_auth, data<span class="sc">$</span>decisionmaking_influence)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">managerial_location_typology =</span> <span class="fu">case_when</span>(</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(decisionmaking_typology_cat) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> supervision <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(formal_position_auth) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(decisionmaking_typology_cat) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> supervision <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(formal_position_auth) <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(decisionmaking_typology_cat) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> supervision <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(formal_position_auth) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(decisionmaking_typology_cat) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> supervision <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(formal_position_auth) <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> <span class="dv">4</span>,</span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(decisionmaking_typology_cat) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> supervision <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(formal_position_auth) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span> <span class="sc">~</span> <span class="dv">5</span>,</span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(decisionmaking_typology_cat) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> supervision <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(formal_position_auth) <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> <span class="dv">6</span>,</span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(decisionmaking_typology_cat) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> supervision <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(formal_position_auth) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span> <span class="sc">~</span> <span class="dv">7</span>,</span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(decisionmaking_typology_cat) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> supervision <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(formal_position_auth) <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> <span class="dv">8</span>,</span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(decisionmaking_typology_cat) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> supervision <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(formal_position_auth) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span> <span class="sc">~</span> <span class="dv">9</span>,</span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(decisionmaking_typology_cat) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> supervision <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(formal_position_auth) <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> <span class="dv">10</span>,</span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(decisionmaking_typology_cat) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> supervision <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(formal_position_auth) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span> <span class="sc">~</span> <span class="dv">11</span>,</span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(decisionmaking_typology_cat) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> supervision <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(formal_position_auth) <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> <span class="dv">12</span></span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">managerial_location_typology =</span> <span class="fu">factor</span>(</span>
+<span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a>      managerial_location_typology,</span>
+<span id="cb63-20"><a href="#cb63-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>,</span>
+<span id="cb63-21"><a href="#cb63-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb63-22"><a href="#cb63-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Manager on all criteria"</span>,</span>
+<span id="cb63-23"><a href="#cb63-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Manager not in formal hierarchy"</span>,</span>
+<span id="cb63-24"><a href="#cb63-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Non-supervisory manager"</span>,</span>
+<span id="cb63-25"><a href="#cb63-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Non-supervisory decision-maker not in formal hierarchy"</span>,</span>
+<span id="cb63-26"><a href="#cb63-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"5. Advisor-manager on all criteria"</span>,</span>
+<span id="cb63-27"><a href="#cb63-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"6. Advisor not in hierarchy"</span>,</span>
+<span id="cb63-28"><a href="#cb63-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"7. Non-supervisory advisor"</span>,</span>
+<span id="cb63-29"><a href="#cb63-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"8. Non-supervisory advisor not in formal hierarchy"</span>,</span>
+<span id="cb63-30"><a href="#cb63-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"9. Sanctioning / task supervisor in hierarchy"</span>,</span>
+<span id="cb63-31"><a href="#cb63-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"10. Sanctioning / task supervisor not in hierarchy"</span>,</span>
+<span id="cb63-32"><a href="#cb63-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"11. Not subordinates but in hierarchy"</span>,</span>
+<span id="cb63-33"><a href="#cb63-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"12. Non-supervisor / non manager on all criteria"</span></span>
+<span id="cb63-34"><a href="#cb63-34" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb63-35"><a href="#cb63-35" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb63-36"><a href="#cb63-36" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb63-37"><a href="#cb63-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">organization_assets =</span> <span class="fu">case_when</span>(</span>
+<span id="cb63-38"><a href="#cb63-38" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(managerial_location_typology) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb63-39"><a href="#cb63-39" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(managerial_location_typology) <span class="sc">==</span> <span class="dv">9</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb63-40"><a href="#cb63-40" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(managerial_location_typology) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>) <span class="sc">~</span> <span class="dv">3</span></span>
+<span id="cb63-41"><a href="#cb63-41" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb63-42"><a href="#cb63-42" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb63-43"><a href="#cb63-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">organization_assets =</span> <span class="fu">factor</span>(</span>
+<span id="cb63-44"><a href="#cb63-44" aria-hidden="true" tabindex="-1"></a>      organization_assets,</span>
+<span id="cb63-45"><a href="#cb63-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
+<span id="cb63-46"><a href="#cb63-46" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb63-47"><a href="#cb63-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Manager"</span>,</span>
+<span id="cb63-48"><a href="#cb63-48" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Supervisor"</span>,</span>
+<span id="cb63-49"><a href="#cb63-49" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Non-managerial worker"</span></span>
+<span id="cb63-50"><a href="#cb63-50" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb63-51"><a href="#cb63-51" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb63-52"><a href="#cb63-52" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb63-53"><a href="#cb63-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(</span>
+<span id="cb63-54"><a href="#cb63-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">managerial_location_typology =</span> <span class="st">"Managerial Location Typology"</span>,</span>
+<span id="cb63-55"><a href="#cb63-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">organization_assets =</span> <span class="st">"Organizational Assets"</span></span>
+<span id="cb63-56"><a href="#cb63-56" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb63-57"><a href="#cb63-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-58"><a href="#cb63-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-59"><a href="#cb63-59" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>managerial_location_typology)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                                                         
-                                                             6    7    8    9
-  1. Senior manager or executive                             7    3    6    2
-  2. Middle manager (e.g., sector, office or branch head)   18    7   14    9
-  3. Supervisor or foreperson                               24   11   15   17
-  4. Regular employee or worker (no supervisory role)     1314  207  104   51
-                                                         
-                                                            10   11   12   13
-  1. Senior manager or executive                             3    3    2    2
-  2. Middle manager (e.g., sector, office or branch head)   12   16   10    5
-  3. Supervisor or foreperson                               23   23   33   15
-  4. Regular employee or worker (no supervisory role)       29   19   33    5
-                                                         
-                                                            14   15   16   17
-  1. Senior manager or executive                             1    1    2    1
-  2. Middle manager (e.g., sector, office or branch head)    2    1    3    1
-  3. Supervisor or foreperson                                5    5    5    2
-  4. Regular employee or worker (no supervisory role)        3    3    0    1
-                                                         
-                                                            18
-  1. Senior manager or executive                             8
-  2. Middle manager (e.g., sector, office or branch head)    4
-  3. Supervisor or foreperson                               10
-  4. Regular employee or worker (no supervisory role)        5</code></pre>
+<pre><code>Managerial Location Typology (x) &lt;categorical&gt; 
+# total N=3048 valid N=2105 mean=10.12 sd=2.66
+
+Value                                                     |    N | Raw % | Valid % | Cum. %
+-------------------------------------------------------------------------------------------
+1. Manager on all criteria                                |   18 |  0.59 |    0.86 |   0.86
+2. Manager not in formal hierarchy                        |    4 |  0.13 |    0.19 |   1.05
+3. Non-supervisory manager                                |    4 |  0.13 |    0.19 |   1.24
+4. Non-supervisory decision-maker not in formal hierarchy |    1 |  0.03 |    0.05 |   1.28
+5. Advisor-manager on all criteria                        |  174 |  5.71 |    8.27 |   9.55
+6. Advisor not in hierarchy                               |   67 |  2.20 |    3.18 |  12.73
+7. Non-supervisory advisor                                |   86 |  2.82 |    4.09 |  16.82
+8. Non-supervisory advisor not in formal hierarchy        |  388 | 12.73 |   18.43 |  35.25
+9. Sanctioning / task supervisor in hierarchy             |    7 |  0.23 |    0.33 |  35.58
+10. Sanctioning / task supervisor not in hierarchy        |   10 |  0.33 |    0.48 |  36.06
+11. Not subordinates but in hierarchy                     |   42 |  1.38 |    2.00 |  38.05
+12. Non-supervisor / non manager on all criteria          | 1304 | 42.78 |   61.95 | 100.00
+&lt;NA&gt;                                                      |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>formal_position_auth, data<span class="sc">$</span>decisionmaking_influence_mean)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>organization_assets)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                                                         
-                                                             1 1.16666666666667
-  1. Senior manager or executive                             7                3
-  2. Middle manager (e.g., sector, office or branch head)   18                7
-  3. Supervisor or foreperson                               24               11
-  4. Regular employee or worker (no supervisory role)     1314              207
-                                                         
-                                                          1.33333333333333  1.5
-  1. Senior manager or executive                                         6    2
-  2. Middle manager (e.g., sector, office or branch head)               14    9
-  3. Supervisor or foreperson                                           15   17
-  4. Regular employee or worker (no supervisory role)                  104   51
-                                                         
-                                                          1.66666666666667
-  1. Senior manager or executive                                         3
-  2. Middle manager (e.g., sector, office or branch head)               12
-  3. Supervisor or foreperson                                           23
-  4. Regular employee or worker (no supervisory role)                   29
-                                                         
-                                                          1.83333333333333    2
-  1. Senior manager or executive                                         3    2
-  2. Middle manager (e.g., sector, office or branch head)               16   10
-  3. Supervisor or foreperson                                           23   33
-  4. Regular employee or worker (no supervisory role)                   19   33
-                                                         
-                                                          2.16666666666667
-  1. Senior manager or executive                                         2
-  2. Middle manager (e.g., sector, office or branch head)                5
-  3. Supervisor or foreperson                                           15
-  4. Regular employee or worker (no supervisory role)                    5
-                                                         
-                                                          2.33333333333333  2.5
-  1. Senior manager or executive                                         1    1
-  2. Middle manager (e.g., sector, office or branch head)                2    1
-  3. Supervisor or foreperson                                            5    5
-  4. Regular employee or worker (no supervisory role)                    3    3
-                                                         
-                                                          2.66666666666667
-  1. Senior manager or executive                                         2
-  2. Middle manager (e.g., sector, office or branch head)                3
-  3. Supervisor or foreperson                                            5
-  4. Regular employee or worker (no supervisory role)                    0
-                                                         
-                                                          2.83333333333333    3
-  1. Senior manager or executive                                         1    8
-  2. Middle manager (e.g., sector, office or branch head)                1    4
-  3. Supervisor or foreperson                                            2   10
-  4. Regular employee or worker (no supervisory role)                    1    5</code></pre>
+<pre><code>Organizational Assets (x) &lt;categorical&gt; 
+# total N=3048 valid N=2105 mean=2.66 sd=0.75
+
+Value                    |    N | Raw % | Valid % | Cum. %
+----------------------------------------------------------
+1. Manager               |  353 | 11.58 |   16.77 |  16.77
+2. Supervisor            |    7 |  0.23 |    0.33 |  17.10
+3. Non-managerial worker | 1745 | 57.25 |   82.90 | 100.00
+&lt;NA&gt;                     |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

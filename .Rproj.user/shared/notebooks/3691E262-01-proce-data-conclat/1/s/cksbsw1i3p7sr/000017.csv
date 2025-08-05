@@ -1,0 +1,12 @@
+"0","frq(data$decisionmaking_typology_cat)
+"
+"1","[31mDecision-making typology (recoded 3 categories) (x)[39m[34m <categorical>[39m 
+[34m# total N=3048 valid N=2105 mean=1.37 sd=0.51[39m
+
+Value |    N | Raw % | Valid % | Cum. %
+---------------------------------------
+    1 | 1363 | 44.72 |   64.75 |  64.75
+    2 |  715 | 23.46 |   33.97 |  98.72
+    3 |   27 |  0.89 |    1.28 | 100.00
+ <NA> |  943 | 30.94 |    <NA> |   <NA>
+"
