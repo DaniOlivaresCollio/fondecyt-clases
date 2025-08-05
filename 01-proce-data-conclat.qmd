@@ -806,6 +806,24 @@ data <- data %>%
   set_variable_labels(wright_class2 = "Wright Class Typology (2)")
 
 frq(data$wright_class2)
+
+# base survey
+data_svy <- as_survey_design(data, weights = rake_wb2)
+
+# Tabla de frecuencias ponderadas
+wright_freq2 <- data_svy %>%
+  group_by(wright_class2) %>%
+  summarise(
+    freq = survey_mean(vartype = NULL, na.rm = TRUE),
+    n_unweighted = unweighted(n())
+  ) %>%
+  mutate(
+    freq_pct = freq * 100
+  )
+
+wright_freq2 %>%
+  arrange(desc(freq_pct)) %>%
+  print(n = Inf)
 ```
 
 ### informalidad
@@ -846,3 +864,4 @@ formales solo los que han firmado contrato de trabajo escrito
 
 
 con datos ponderados clases en adelante 
+
