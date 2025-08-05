@@ -28,7 +28,8 @@ p_load(bookdown,
        sjlabelled,
        statar,
        stringr,
-       survey,
+       survey,        # diseño survey
+       srvyr,         # diseño survey con tidy
        tidyverse,
        tinytex,
        viridis,
@@ -741,6 +742,24 @@ data <- data %>%
   set_variable_labels(wright_class = "Wright Class Typology")
 
 frq(data$wright_class)
+
+# base survey
+data_svy <- as_survey_design(data, weights = rake_wb2)
+
+# Tabla de frecuencias ponderadas
+wright_freq <- data_svy %>%
+  group_by(wright_class) %>%
+  summarise(
+    freq = survey_mean(vartype = NULL, na.rm = TRUE),
+    n_unweighted = unweighted(n())
+  ) %>%
+  mutate(
+    freq_pct = freq * 100
+  )
+
+wright_freq %>%
+  arrange(desc(freq_pct)) %>%
+  print(n = Inf)
 ```
 
 #### segunda propuesta --> 1. capitalists: employers 50 o más trabajadores
@@ -808,6 +827,22 @@ table(data$a10, data$owners2)
 ```{r}
 frq(data$a18)
 table(data$a18, data$relation_mop)
+tabla <- data %>% 
+  filter(as.numeric(owners)==1)
+
+table(tabla$a18, tabla$a06)
+table(data$a18, data$a06)
 ```
 
+```{r}
+table(data$owners, data$educ)
+```
 
+Informal self employed --> no dan ningun tipo de boleta
+Petty Bourgeoisie --> dan algun tipo de boleta
+
+Workers
+formales solo los que han firmado contrato de trabajo escrito
+
+
+con datos ponderados clases en adelante 

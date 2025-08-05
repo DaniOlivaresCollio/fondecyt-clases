@@ -1,14 +1,14 @@
 {
-    "id": "0D717320",
-    "path": "C:/Users/danie/Documents/fondecyt/fondecyt-paper2/index.qmd",
-    "project_path": "index.qmd",
+    "id": "6CC91766",
+    "path": "C:/Users/danie/Documents/fondecyt/fondecyt-paper2/01-proce-data-conclat.qmd",
+    "project_path": "01-proce-data-conclat.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "3019709124",
     "contents": "",
     "dirty": false,
-    "created": 1752873250084.0,
+    "created": 1752873625484.0,
     "source_on_save": false,
-    "relative_order": 2,
+    "relative_order": 3,
     "properties": {
         "rmdVisualMode": "false",
         "rmdVisualWrapConfigured": "true",
@@ -17,15 +17,16 @@
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "2:0",
-        "cursorPosition": "0,0",
-        "scrollLine": "0"
+        "cursorPosition": "762,0",
+        "scrollLine": "747",
+        "docOutlineSize": "169"
     },
     "folds": "",
-    "lastKnownWriteTime": 1752873617,
+    "lastKnownWriteTime": 1754427535,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1752873617755,
+    "last_content_update": 1754427535604,
     "read_only": false,
     "read_only_alternatives": []
 }
