@@ -61,7 +61,12 @@ data <- data_raw %>%
          # Autoridad / orgnización
          a15,
          a16,
-         a17_01,a17_02,a17_03,a17_04,a17_05,a17_06)# %>% 
+         a17_01,a17_02,a17_03,a17_04,a17_05,a17_06,
+         # formalidad
+         a06,
+         a10,
+         a18
+         )# %>% 
   #sjlabelled::set_na(.,na=c(-999,-888,-777))
 ```
 
@@ -692,7 +697,7 @@ frq(data$organization_assets)
 
 ![](img/wright_classes.jpeg){}
 
-- primera propuesta --> 1. capitalists: employers con 10 o más trabajadores
+#### primera propuesta --> 1. capitalists: employers con 10 o más trabajadores
 
 ```{r}
 data <- data %>%
@@ -738,7 +743,7 @@ data <- data %>%
 frq(data$wright_class)
 ```
 
-- segunda propuesta --> 1. employers: employers 10 o más trabajadores
+#### segunda propuesta --> 1. employers: employers 50 o más trabajadores
 
 ```{r}
 data <- data %>%
@@ -784,20 +789,11 @@ data <- data %>%
 frq(data$wright_class2)
 ```
 
+### informalidad
 
+```{r}
 
-
-2. small employers: employers 1-9 trabajadores
-3. petty bourgeoisie: solo self employed
-4. expert managers: expert y manager
-5. expert supervisor: expert y supervisor
-6. experts: experts sin autoridad
-7. skilled managers
-8. skilled supervisors
-9. skilled workers
-10. nonskilled managers
-11. nonskilled supervisors
-12. nonskilled workers
+```
 
 
 
