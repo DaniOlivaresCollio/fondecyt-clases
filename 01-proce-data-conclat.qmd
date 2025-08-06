@@ -735,7 +735,7 @@ table(data$owners, data$educ)
 
 ![](img/wright_classes.jpeg){}
 
-### wright_class
+### wrightclass1_original
 
 **employers: employers con 10 o más trabajadores**
 
@@ -802,7 +802,7 @@ wright_freq %>%
   print(n = Inf)
 ```
 
-### wright_class_2
+### wrightclass2_capitalists
 
 **capitalists: employers 50 o más trabajadores**
 
@@ -869,7 +869,7 @@ wright_freq_2 %>%
   print(n = Inf)
 ```
 
-### wright_class_3
+### wrightclass1_informal
 
 ```{r}
 data <- data %>%
@@ -940,5 +940,10 @@ wright_freq_3 %>%
 ```
 
 
+### wrightclass2_informal
+
+```{r}
+
+```
 
 
