@@ -1,5 +1,7 @@
 # Procesamiento Data Conclat
 
+## Preparación
+
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 rm(list=ls())
 options(scipen = 999)
@@ -8,6 +10,7 @@ library(pacman)
 p_load(bookdown,
        car,
        flextable,
+       forcats,
        ggalluvial,
        ggplot2,
        ggrepel,
@@ -37,14 +40,14 @@ p_load(bookdown,
        )
 ```
 
-## Cargar datos
+### Cargar datos
 
 ```{r datos,message=FALSE,warning=FALSE}
 load("input/data/datos-conclat.Rdata")
 data_raw <- data
 ```
 
-## Variables
+### Selección de Variables
 
 ```{r data,message=FALSE,warning=FALSE}
 data <- data_raw %>% 
@@ -694,11 +697,47 @@ frq(data$managerial_location_typology)
 frq(data$organization_assets)
 ```
 
-### class
+### boletas
+
+```{r}
+frq(data$a06)
+table(data$a06, data$relation_mop)
+table(data$a06, data$owners)
+table(data$a06, data$owners2)
+```
+
+### inicio_actividades
+
+```{r}
+frq(data$a10)
+table(data$a10, data$relation_mop)
+table(data$a10, data$owners)
+table(data$a10, data$owners2)
+```
+
+### contrato_escrito 
+
+```{r}
+frq(data$a18)
+table(data$a18, data$relation_mop)
+tabla <- data %>% 
+  filter(as.numeric(owners)==1)
+
+table(tabla$a18, tabla$a06)
+table(data$a18, data$a06)
+```
+
+```{r}
+table(data$owners, data$educ)
+```
+
+## Clases
 
 ![](img/wright_classes.jpeg){}
 
-#### primera propuesta --> 1. employers: employers con 10 o más trabajadores
+### wright_class
+
+**employers: employers con 10 o más trabajadores**
 
 ```{r}
 data <- data %>%
@@ -745,6 +784,8 @@ frq(data$wright_class)
 
 # base survey
 data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- data_svy %>%
+  mutate(wright_class = fct_drop(wright_class))  # elimina <NA> como nivel
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -758,16 +799,17 @@ wright_freq <- data_svy %>%
   )
 
 wright_freq %>%
-  arrange(desc(freq_pct)) %>%
   print(n = Inf)
 ```
 
-#### segunda propuesta --> 1. capitalists: employers 50 o más trabajadores
+### wright_class_2
+
+**capitalists: employers 50 o más trabajadores**
 
 ```{r}
 data <- data %>%
   mutate(
-    wright_class2 = case_when(
+    wright_class_2 = case_when(
       as.integer(owners2) == 3 ~ 1,  # Capitalists
       as.integer(owners2) == 2 ~ 2,  # Small employers
       as.integer(owners2) == 1 ~ 3,  # Petty bourgeoisie
@@ -784,8 +826,8 @@ data <- data %>%
       as.integer(organization_assets) == 2 & as.integer(skills) == 3 ~ 11, # Nonskilled supervisors
       as.integer(organization_assets) == 3 & as.integer(skills) == 3 ~ 12  # Nonskilled workers
     ),
-    wright_class2 = factor(
-      wright_class2,
+    wright_class_2 = factor(
+      wright_class_2,
       levels = 1:12,
       labels = c(
         "1. Capitalists",
@@ -803,16 +845,18 @@ data <- data %>%
       )
     )
   ) %>%
-  set_variable_labels(wright_class2 = "Wright Class Typology (2)")
+  set_variable_labels(wright_class_2 = "Wright Class Typology (2)")
 
-frq(data$wright_class2)
+frq(data$wright_class_2)
 
 # base survey
 data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- data_svy %>%
+  mutate(wright_class_2 = fct_drop(wright_class_2))  # elimina <NA> como nivel
 
 # Tabla de frecuencias ponderadas
-wright_freq2 <- data_svy %>%
-  group_by(wright_class2) %>%
+wright_freq_2 <- data_svy %>%
+  group_by(wright_class_2) %>%
   summarise(
     freq = survey_mean(vartype = NULL, na.rm = TRUE),
     n_unweighted = unweighted(n())
@@ -821,47 +865,86 @@ wright_freq2 <- data_svy %>%
     freq_pct = freq * 100
   )
 
-wright_freq2 %>%
-  arrange(desc(freq_pct)) %>%
+wright_freq_2 %>%
   print(n = Inf)
 ```
 
-### informalidad
+### wright_class_3
 
 ```{r}
-frq(data$a06)
-table(data$a06, data$relation_mop)
-table(data$a06, data$owners)
-table(data$a06, data$owners2)
+data <- data %>%
+  mutate(
+    wright_class_3 = case_when(
+      # Employers
+      as.integer(owners) == 3 ~ 1,  
+      
+      # Small employers
+      as.integer(owners) == 2 ~ 2,  
+      
+      # Petty bourgeoisie desagregado según a06
+      as.integer(owners) == 1 & a06 %in% c(1, 2) ~ 3,   # Petty bourgeoisie
+      as.integer(owners) == 1 & a06 %in% c(3, -888, -999) ~ 4,  # Informal self-employed
+      
+      # Expert managers/supervisors/experts
+      as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 5,
+      as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,
+      as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 7,
+      
+      # Skilled & nonskilled managers/supervisors
+      as.integer(organization_assets) == 1 & as.integer(skills) %in% c(2, 3) ~ 8,  # Other managers
+      as.integer(organization_assets) == 2 & as.integer(skills) %in% c(2, 3) ~ 9,  # Other supervisors
+      
+      # Workers (skilled + nonskilled) divididos por formalidad a18
+      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 == 1 ~ 10,             # Formal workers
+      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 %in% c(2, 3, 4, -999) ~ 11  # Informal unskilled workers
+    ),
+    
+    wright_class = factor(
+      wright_class,
+      levels = 1:11,
+      labels = c(
+        "1. Employers",
+        "2. Small employers",
+        "3. Petty bourgeoisie",
+        "4. Informal self-employed",
+        "5. Expert managers",
+        "6. Expert supervisors",
+        "7. Experts",
+        "8. Skilled managers",
+        "9. Skilled supervisors",
+        "10. Formal workers",
+        "11. Informal unskilled workers"
+      )
+    )
+  ) %>%
+  set_variable_labels(wright_class = "Wright Class Typology (3)")
+
+frq(data$wright_class_3)
+
+# base survey
+data_svy <- as_survey_design(data, weights = rake_wb2)
+# data_svy <- data_svy %>%
+#   mutate(wright_class_3 = fct_drop(wright_class_3))  # elimina <NA> como nivel
+
+# Tabla de frecuencias ponderadas
+wright_freq_3 <- data_svy %>%
+  group_by(wright_class_3) %>%
+  summarise(
+    freq = survey_mean(vartype = NULL, na.rm = TRUE),
+    n_unweighted = unweighted(n())
+  ) %>%
+  mutate(
+    freq_pct = freq * 100
+  )
+
+wright_freq_3 %>%
+  print(n = Inf)
 ```
 
-```{r}
-frq(data$a10)
-table(data$a10, data$relation_mop)
-table(data$a10, data$owners)
-table(data$a10, data$owners2)
-```
 
-```{r}
-frq(data$a18)
-table(data$a18, data$relation_mop)
-tabla <- data %>% 
-  filter(as.numeric(owners)==1)
-
-table(tabla$a18, tabla$a06)
-table(data$a18, data$a06)
-```
-
-```{r}
-table(data$owners, data$educ)
-```
 
 Informal self employed --> no dan ningun tipo de boleta
 Petty Bourgeoisie --> dan algun tipo de boleta
 
 Workers
 formales solo los que han firmado contrato de trabajo escrito
-
-
-con datos ponderados clases en adelante 
-

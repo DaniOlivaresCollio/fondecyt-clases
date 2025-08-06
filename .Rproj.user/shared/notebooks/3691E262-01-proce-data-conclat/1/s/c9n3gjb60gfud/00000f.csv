@@ -5,6 +5,7 @@
 "0","p_load(bookdown,"
 "0","       car,"
 "0","       flextable,"
+"0","       forcats,"
 "0","       ggalluvial,"
 "0","       ggplot2,"
 "0","       ggrepel,"
