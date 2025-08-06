@@ -875,33 +875,29 @@ wright_freq_2 %>%
 data <- data %>%
   mutate(
     wright_class_3 = case_when(
-      # Employers
-      as.integer(owners) == 3 ~ 1,  
+      as.integer(owners) == 3 ~ 1,  # 1. Employers
       
-      # Small employers
-      as.integer(owners) == 2 ~ 2,  
+      as.integer(owners) == 2 ~ 2,  # 2. Small employers
       
-      # Petty bourgeoisie desagregado según a06
-      as.integer(owners) == 1 & a06 %in% c(1, 2) ~ 3,   # Petty bourgeoisie
-      as.integer(owners) == 1 & a06 %in% c(3, -888, -999) ~ 4,  # Informal self-employed
+      as.integer(owners) == 1 & a06 %in% c(1, 2) ~ 3,   # 3. Petty bourgeoisie
+      as.integer(owners) == 1 & a06 %in% c(3, -888, -999) ~ 4,  # 4. Informal self-employed
       
-      # Expert managers/supervisors/experts
-      as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 5,
-      as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,
-      as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 7,
+      as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 5, # 5. Expert managers
+      as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,  # 6. Expert supervisors
+      as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 7,  # 7. Experts
       
-      # Skilled & nonskilled managers/supervisors
-      as.integer(organization_assets) == 1 & as.integer(skills) %in% c(2, 3) ~ 8,  # Other managers
-      as.integer(organization_assets) == 2 & as.integer(skills) %in% c(2, 3) ~ 9,  # Other supervisors
+      as.integer(organization_assets) == 1 & as.integer(skills) == 2 ~ 8,  # 8. Skilled managers
+      as.integer(organization_assets) == 2 & as.integer(skills) == 2 ~ 9,  # 9. skilled supervisors
       
-      # Workers (skilled + nonskilled) divididos por formalidad a18
-      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 == 1 ~ 10,             # Formal workers
-      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 %in% c(2, 3, 4, -999) ~ 11  # Informal unskilled workers
+      as.integer(organization_assets) == 1 & as.integer(skills) == 3 ~ 10, # 10. Nonskilled managers
+      as.integer(organization_assets) == 2 & as.integer(skills) == 3 ~ 11, # 11. Nonskilled supervisors
+      
+      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 == 1 ~ 12,             # 12. Formal workers
+      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 %in% c(2, 3, 4, -999) ~ 13  # 13. Informal workers
     ),
-    
-    wright_class = factor(
-      wright_class,
-      levels = 1:11,
+    wright_class_3 = factor(
+      wright_class_3,
+      levels = 1:13,
       labels = c(
         "1. Employers",
         "2. Small employers",
@@ -912,12 +908,14 @@ data <- data %>%
         "7. Experts",
         "8. Skilled managers",
         "9. Skilled supervisors",
-        "10. Formal workers",
-        "11. Informal unskilled workers"
+        "10. Nonskilled managers",
+        "11. Nonskilled supervisors",
+        "12. Formal workers",
+        "13. Informal workers"
       )
     )
   ) %>%
-  set_variable_labels(wright_class = "Wright Class Typology (3)")
+  set_variable_labels(wright_class_3 = "Wright Class Typology (3)")
 
 frq(data$wright_class_3)
 
@@ -943,8 +941,4 @@ wright_freq_3 %>%
 
 
 
-Informal self employed --> no dan ningun tipo de boleta
-Petty Bourgeoisie --> dan algun tipo de boleta
 
-Workers
-formales solo los que han firmado contrato de trabajo escrito
