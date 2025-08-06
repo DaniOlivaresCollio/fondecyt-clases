@@ -731,7 +731,7 @@ table(data$a18, data$a06)
 table(data$owners, data$educ)
 ```
 
-## Clases
+## Classes
 
 ![](img/wright_classes.jpeg){}
 
@@ -1105,16 +1105,14 @@ wright_freq_6 %>%
   print(n = Inf)
 ```
 
-
-
-- variables dependientes
+## Dependent variables
 
 c01 todas actitudes hacia los sindicatos, con 888 999 como NA
 c07_03 gobierno más poder a los sindicatos, 888 999 como NA
 c07_03_dummy 1== muy de acuerdo, de acuerdo , 0 = todo el resto incluyendo NA
 b29 1 == tal vez, prob si y definitivamente si, 0 == todo el resto
 
-- controles
+## Controls
 
 sexo 1== mujer
 edad en años
