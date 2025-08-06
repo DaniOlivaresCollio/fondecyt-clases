@@ -742,7 +742,7 @@ table(data$owners, data$educ)
 ```{r}
 data <- data %>%
   mutate(
-    wright_class = case_when(
+    wrightclass1_original = case_when(
       as.integer(owners) == 3 ~ 1,  # Employers
       as.integer(owners) == 2 ~ 2,  # Small employers
       as.integer(owners) == 1 ~ 3,  # Petty bourgeoisie
@@ -759,8 +759,8 @@ data <- data %>%
       as.integer(organization_assets) == 2 & as.integer(skills) == 3 ~ 11, # Nonskilled supervisors
       as.integer(organization_assets) == 3 & as.integer(skills) == 3 ~ 12  # Nonskilled workers
     ),
-    wright_class = factor(
-      wright_class,
+    wrightclass1_original = factor(
+      wrightclass1_original,
       levels = 1:12,
       labels = c(
         "1. Employers",
@@ -778,18 +778,18 @@ data <- data %>%
       )
     )
   ) %>%
-  set_variable_labels(wright_class = "Wright Class Typology")
+  set_variable_labels(wrightclass1_original = "Wright Class Typology")
 
-frq(data$wright_class)
+frq(data$wrightclass1_original)
 
 # base survey
 data_svy <- as_survey_design(data, weights = rake_wb2)
 data_svy <- data_svy %>%
-  mutate(wright_class = fct_drop(wright_class))  # elimina <NA> como nivel
+  mutate(wrightclass1_original = fct_drop(wrightclass1_original))  # elimina <NA> como nivel
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
-  group_by(wright_class) %>%
+  group_by(wrightclass1_original) %>%
   summarise(
     freq = survey_mean(vartype = NULL, na.rm = TRUE),
     n_unweighted = unweighted(n())
@@ -809,7 +809,7 @@ wright_freq %>%
 ```{r}
 data <- data %>%
   mutate(
-    wright_class_2 = case_when(
+    wrightclass2_capitalists = case_when(
       as.integer(owners2) == 3 ~ 1,  # Capitalists
       as.integer(owners2) == 2 ~ 2,  # Small employers
       as.integer(owners2) == 1 ~ 3,  # Petty bourgeoisie
@@ -826,8 +826,8 @@ data <- data %>%
       as.integer(organization_assets) == 2 & as.integer(skills) == 3 ~ 11, # Nonskilled supervisors
       as.integer(organization_assets) == 3 & as.integer(skills) == 3 ~ 12  # Nonskilled workers
     ),
-    wright_class_2 = factor(
-      wright_class_2,
+    wrightclass2_capitalists = factor(
+      wrightclass2_capitalists,
       levels = 1:12,
       labels = c(
         "1. Capitalists",
@@ -845,18 +845,18 @@ data <- data %>%
       )
     )
   ) %>%
-  set_variable_labels(wright_class_2 = "Wright Class Typology (2)")
+  set_variable_labels(wrightclass2_capitalists = "Wright Class Typology (2)")
 
-frq(data$wright_class_2)
+frq(data$wrightclass2_capitalists)
 
 # base survey
 data_svy <- as_survey_design(data, weights = rake_wb2)
 data_svy <- data_svy %>%
-  mutate(wright_class_2 = fct_drop(wright_class_2))  # elimina <NA> como nivel
+  mutate(wrightclass2_capitalists = fct_drop(wrightclass2_capitalists))  # elimina <NA> como nivel
 
 # Tabla de frecuencias ponderadas
 wright_freq_2 <- data_svy %>%
-  group_by(wright_class_2) %>%
+  group_by(wrightclass2_capitalists) %>%
   summarise(
     freq = survey_mean(vartype = NULL, na.rm = TRUE),
     n_unweighted = unweighted(n())
@@ -874,7 +874,7 @@ wright_freq_2 %>%
 ```{r}
 data <- data %>%
   mutate(
-    wright_class_3 = case_when(
+    wrightclass1_informal = case_when(
       as.integer(owners) == 3 ~ 1,  # 1. Employers
       
       as.integer(owners) == 2 ~ 2,  # 2. Small employers
@@ -895,8 +895,8 @@ data <- data %>%
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 == 1 ~ 12,             # 12. Formal workers
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 %in% c(2, 3, 4, -999) ~ 13  # 13. Informal workers
     ),
-    wright_class_3 = factor(
-      wright_class_3,
+    wrightclass1_informal = factor(
+      wrightclass1_informal,
       levels = 1:13,
       labels = c(
         "1. Employers",
@@ -915,18 +915,18 @@ data <- data %>%
       )
     )
   ) %>%
-  set_variable_labels(wright_class_3 = "Wright Class Typology (3)")
+  set_variable_labels(wrightclass1_informal = "Wright Class Typology (3)")
 
-frq(data$wright_class_3)
+frq(data$wrightclass1_informal)
 
 # base survey
 data_svy <- as_survey_design(data, weights = rake_wb2)
 # data_svy <- data_svy %>%
-#   mutate(wright_class_3 = fct_drop(wright_class_3))  # elimina <NA> como nivel
+#   mutate(wrightclass1_informal = fct_drop(wrightclass1_informal))  # elimina <NA> como nivel
 
 # Tabla de frecuencias ponderadas
 wright_freq_3 <- data_svy %>%
-  group_by(wright_class_3) %>%
+  group_by(wrightclass1_informal) %>%
   summarise(
     freq = survey_mean(vartype = NULL, na.rm = TRUE),
     n_unweighted = unweighted(n())
