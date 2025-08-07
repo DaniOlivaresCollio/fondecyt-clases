@@ -1,0 +1,33 @@
+"0","frq(data$sexo)"
+"1","[31mx[39m[34m <numeric>[39m 
+[34m# total N=3048 valid N=3048 mean=1.52 sd=0.50[39m
+
+Value |    N | Raw % | Valid % | Cum. %
+---------------------------------------
+    1 | 1465 | 48.06 |   48.06 |  48.06
+    2 | 1583 | 51.94 |   51.94 | 100.00
+ <NA> |    0 |  0.00 |    <NA> |   <NA>
+"
+"0","data <- data %>%"
+"0","  mutate("
+"0","    female = case_when("
+"0","      sexo == 1 ~ 0,"
+"0","      sexo == 2 ~ 1"
+"0","    )"
+"0","  ) %>% "
+"0","  set_variable_labels(female = ""Gender (1 = female)"") %>% "
+"0","  set_value_labels(female = c("
+"0","    ""Female"" = 1, "
+"0","    ""Male"" = 0"
+"0","  ))"
+"0",""
+"0","frq(data$female)"
+"1","[31mGender (1 = female) (x)[39m[34m <numeric>[39m 
+[34m# total N=3048 valid N=3048 mean=0.52 sd=0.50[39m
+
+Value |  Label |    N | Raw % | Valid % | Cum. %
+------------------------------------------------
+    0 |   Male | 1465 | 48.06 |   48.06 |  48.06
+    1 | Female | 1583 | 51.94 |   51.94 | 100.00
+ <NA> |   <NA> |    0 |  0.00 |    <NA> |   <NA>
+"

@@ -3,7 +3,7 @@
     "path": "C:/Users/danie/Documents/fondecyt/fondecyt-clases/01-proce-data-conclat.qmd",
     "project_path": "01-proce-data-conclat.qmd",
     "type": "quarto_markdown",
-    "hash": "4059587022",
+    "hash": "2726774407",
     "contents": "",
     "dirty": false,
     "created": 1752873625484.0,
@@ -17,16 +17,16 @@
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "2:0",
-        "cursorPosition": "1107,0",
-        "scrollLine": "1106",
-        "docOutlineSize": "169"
+        "cursorPosition": "1246,0",
+        "scrollLine": "1239",
+        "docOutlineSize": "182"
     },
     "folds": "",
-    "lastKnownWriteTime": 1754499030,
+    "lastKnownWriteTime": 1754526172,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1754499041053,
+    "last_content_update": 1754526172530,
     "read_only": false,
     "read_only_alternatives": []
 }

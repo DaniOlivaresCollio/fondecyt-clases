@@ -1,0 +1,38 @@
+"0","frq(data$b19)"
+"1","[31mx[39m[34m <numeric>[39m 
+[34m# total N=3048 valid N=2105 mean=-107.89 sd=295.65[39m
+
+Value |    N | Raw % | Valid % | Cum. %
+---------------------------------------
+ -999 |   35 |  1.15 |    1.66 |   1.66
+ -888 |  220 |  7.22 |   10.45 |  12.11
+    1 |  479 | 15.72 |   22.76 |  34.87
+    2 | 1371 | 44.98 |   65.13 | 100.00
+ <NA> |  943 | 30.94 |    <NA> |   <NA>
+"
+"0","# Sindicatos en empresas"
+"0","data <- data %>%"
+"0","  mutate("
+"0","    unions=case_when("
+"0","      as.numeric(relation_mop) %in% c(1, 2) ~ NA_real_,"
+"0","      as.numeric(relation_mop) == 3 & b19 == 1 ~ 1,"
+"0","      as.numeric(relation_mop) == 3 & b19 %in% c(2, -888, -999) ~ 0,"
+"0","      TRUE ~ NA_real_"
+"0","    )"
+"0","  ) %>% "
+"0","  set_variable_labels(unions = ""Union in company (1 = yes)"") %>%"
+"0","  set_value_labels(unions = c("
+"0","    ""Yes"" = 1,"
+"0","    ""No"" = 0"
+"0","  ))"
+"0",""
+"0","frq(data$unions)"
+"1","[31mUnion in company (1 = yes) (x)[39m[34m <numeric>[39m 
+[34m# total N=3048 valid N=2105 mean=0.23 sd=0.42[39m
+
+Value | Label |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------
+    0 |    No | 1626 | 53.35 |   77.24 |  77.24
+    1 |   Yes |  479 | 15.72 |   22.76 | 100.00
+ <NA> |  <NA> |  943 | 30.94 |    <NA> |   <NA>
+"

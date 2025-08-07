@@ -1,0 +1,40 @@
+"0","frq(data$b21)"
+"1","[31mx[39m[34m <numeric>[39m 
+[34m# total N=3048 valid N=479 mean=-20.82 sd=140.72[39m
+
+Value |    N | Raw % | Valid % | Cum. %
+---------------------------------------
+ -999 |    1 |  0.03 |    0.21 |   0.21
+ -888 |   11 |  0.36 |    2.30 |   2.51
+    1 |  270 |  8.86 |   56.37 |  58.87
+    2 |   69 |  2.26 |   14.41 |  73.28
+    3 |  128 |  4.20 |   26.72 | 100.00
+ <NA> | 2569 | 84.28 |    <NA> |   <NA>
+"
+"0","# Afiliación sindical"
+"0","data <- data %>%"
+"0","  mutate("
+"0","    union_member = case_when("
+"0","      as.numeric(relation_mop) %in% c(1, 2) ~ NA_real_,"
+"0","      as.numeric(relation_mop) == 3 & b21 %in% c(1, 2) ~ 1,"
+"0","      as.numeric(relation_mop) == 3 & b21 %in% c(3, -888, -999) ~ 0,"
+"0","      unions == 0 ~ 0,"
+"0","      TRUE ~ NA_real_"
+"0","    )"
+"0","  ) %>%"
+"0","  set_variable_labels(union_member = ""Union membership (1 = yes)"") %>%"
+"0","  set_value_labels(union_member = c("
+"0","    ""Yes"" = 1,"
+"0","    ""No"" = 0"
+"0","  ))"
+"0",""
+"0","frq(data$union_member)"
+"1","[31mUnion membership (1 = yes) (x)[39m[34m <numeric>[39m 
+[34m# total N=3048 valid N=2105 mean=0.16 sd=0.37[39m
+
+Value | Label |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------
+    0 |    No | 1766 | 57.94 |   83.90 |  83.90
+    1 |   Yes |  339 | 11.12 |   16.10 | 100.00
+ <NA> |  <NA> |  943 | 30.94 |    <NA> |   <NA>
+"
