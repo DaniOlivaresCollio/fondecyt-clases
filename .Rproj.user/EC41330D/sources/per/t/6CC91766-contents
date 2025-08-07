@@ -1172,7 +1172,7 @@ data <- data %>%
       TRUE ~ as.numeric(c01_02)
     )
   ) %>% 
-  set_variable_labels(c01_02 = "Importance of unions: in achieving reducing inequality (c01_02)")
+  set_variable_labels(c01_02 = "Importance of unions: in reducing inequality (c01_02)")
 
 frq(data$c01_02)
 ```
@@ -1223,7 +1223,7 @@ data <- data %>%
       TRUE ~ as.numeric(c01_05)
     )
   ) %>% 
-  set_variable_labels(c01_05 = "Importance of unions: in protecting women workers' rights (c01_05)")
+  set_variable_labels(c01_05 = "Importance of unions: in helping work-family balance (c01_05)")
 
 frq(data$c01_05)
 ```
@@ -1240,7 +1240,7 @@ data <- data %>%
       TRUE ~ as.numeric(c01_06)
     )
   ) %>% 
-  set_variable_labels(c01_06 = "Importance of unions: in helping family-work arrangements (c01_06)")
+  set_variable_labels(c01_06 = "Importance of unions: in helping the economy grow (c01_06)")
 
 frq(data$c01_06)
 ```
