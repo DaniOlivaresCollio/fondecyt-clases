@@ -1265,7 +1265,7 @@ data <- data %>%
 frq(data$c07_03_dummy)
 ```
 
-### b29
+### b29_dummy
 
 ```{r}
 frq(data$b29)
@@ -1283,6 +1283,24 @@ data <- data %>%
   ))
 
 frq(data$b29_dummy)
+```
+
+### b29_dummy2
+
+```{r}
+data <- data %>%
+  mutate(
+    b29_dummy2 = case_when(
+      b29 %in% c(4, 5) ~ 1,
+      b29 %in% c(1, 2, 3, -888, -999) ~ 0
+    ))%>% 
+  set_variable_labels(b29_dummy2 = "Possibility of joining a union (1 = yes) (2)") %>% 
+  set_value_labels(b29_dummy2 = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$b29_dummy2)
 ```
 
 ## Controls
