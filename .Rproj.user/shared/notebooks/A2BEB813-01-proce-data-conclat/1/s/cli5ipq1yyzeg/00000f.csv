@@ -21,14 +21,14 @@ Value                                                                        |  
 "0","      as.numeric(a07) %in% c(1, 2, 5, 6, 7, 9) ~ 1,"
 "0","      as.numeric(a07) %in% c(3, 4, 8) ~ 0"
 "0","    ))%>% "
-"0","  set_variable_labels(sector = ""Sector (1 = Private)"") %>% "
+"0","  set_variable_labels(sector = ""Sector (1 = private)"") %>% "
 "0","  set_value_labels(sector = c("
 "0","    ""Private"" = 1,"
 "0","    ""Public"" = 0"
 "0","  ))"
 "0",""
 "0","frq(data$sector)"
-"1","[31mSector (1 = Private) (x)[39m[34m <numeric>[39m 
+"1","[31mSector (1 = private) (x)[39m[34m <numeric>[39m 
 [34m# total N=3048 valid N=3048 mean=0.80 sd=0.40[39m
 
 Value |   Label |    N | Raw % | Valid % | Cum. %

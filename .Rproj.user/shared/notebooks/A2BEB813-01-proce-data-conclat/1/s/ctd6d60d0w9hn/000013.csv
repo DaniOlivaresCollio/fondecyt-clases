@@ -1,4 +1,4 @@
-"0","data <- data_raw %>% "
+"0","data_select <- data_raw %>% "
 "0","  select(id,"
 "0","         rake_wb2,"
 "0","         # Relación con los medios de producción"

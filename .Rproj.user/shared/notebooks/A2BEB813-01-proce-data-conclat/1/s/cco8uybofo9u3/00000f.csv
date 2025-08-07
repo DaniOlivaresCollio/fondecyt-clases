@@ -26,10 +26,10 @@ Value |   N | Raw % | Valid % | Cum. %
 "0","      TRUE ~ as.numeric(c01_03)"
 "0","    )"
 "0","  ) %>% "
-"0","  set_variable_labels(c01_03 = ""Importance of unions: in protecting women workers' rights"")"
+"0","  set_variable_labels(c01_03 = ""Importance of unions: in protecting women workers' rights (c01_03)"")"
 "0",""
 "0","frq(data$c01_03)"
-"1","[31mImportance of unions: in protecting women workers' rights (x)[39m[34m <numeric>[39m 
+"1","[31mImportance of unions: in protecting women workers' rights (c01_03) (x)[39m[34m <numeric>[39m 
 [34m# total N=3048 valid N=2917 mean=6.49 sd=2.66[39m
 
 Value |   N | Raw % | Valid % | Cum. %

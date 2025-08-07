@@ -20,14 +20,14 @@ Value |    N | Raw % | Valid % | Cum. %
 "0","      TRUE ~ NA_real_"
 "0","    )"
 "0","  ) %>% "
-"0","  set_variable_labels(unions = ""Union in company (1 = yes)"") %>%"
+"0","  set_variable_labels(unions = ""Unions in company (1 = yes)"") %>%"
 "0","  set_value_labels(unions = c("
 "0","    ""Yes"" = 1,"
 "0","    ""No"" = 0"
 "0","  ))"
 "0",""
 "0","frq(data$unions)"
-"1","[31mUnion in company (1 = yes) (x)[39m[34m <numeric>[39m 
+"1","[31mUnions in company (1 = yes) (x)[39m[34m <numeric>[39m 
 [34m# total N=3048 valid N=2105 mean=0.23 sd=0.42[39m
 
 Value | Label |    N | Raw % | Valid % | Cum. %

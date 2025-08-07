@@ -26,10 +26,10 @@ Value |   N | Raw % | Valid % | Cum. %
 "0","      TRUE ~ as.numeric(c01_01)"
 "0","    )"
 "0","  ) %>% "
-"0","  set_variable_labels(c01_01 = ""Wright Class Typology Reduced + Informal (6)"")"
+"0","  set_variable_labels(c01_01 = ""Importance of unions: in achieving better wages (c01_01)"")"
 "0",""
 "0","frq(data$c01_01)"
-"1","[31mWright Class Typology Reduced + Informal (6) (x)[39m[34m <numeric>[39m 
+"1","[31mImportance of unions: in achieving better wages (c01_01) (x)[39m[34m <numeric>[39m 
 [34m# total N=3048 valid N=2918 mean=6.14 sd=2.73[39m
 
 Value |   N | Raw % | Valid % | Cum. %
