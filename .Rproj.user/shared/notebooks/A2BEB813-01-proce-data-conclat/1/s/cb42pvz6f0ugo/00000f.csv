@@ -26,10 +26,10 @@ Value |   N | Raw % | Valid % | Cum. %
 "0","      TRUE ~ as.numeric(c01_02)"
 "0","    )"
 "0","  ) %>% "
-"0","  set_variable_labels(c01_02 = ""Importance of unions: in achieving reducing inequality (c01_02)"")"
+"0","  set_variable_labels(c01_02 = ""Importance of unions: in reducing inequality (c01_02)"")"
 "0",""
 "0","frq(data$c01_02)"
-"1","[31mImportance of unions: in achieving reducing inequality (c01_02) (x)[39m[34m <numeric>[39m 
+"1","[31mImportance of unions: in reducing inequality (c01_02) (x)[39m[34m <numeric>[39m 
 [34m# total N=3048 valid N=2912 mean=6.16 sd=2.65[39m
 
 Value |   N | Raw % | Valid % | Cum. %

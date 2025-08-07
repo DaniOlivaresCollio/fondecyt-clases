@@ -26,10 +26,10 @@ Value |   N | Raw % | Valid % | Cum. %
 "0","      TRUE ~ as.numeric(c01_06)"
 "0","    )"
 "0","  ) %>% "
-"0","  set_variable_labels(c01_06 = ""Importance of unions: in helping family-work arrangements (c01_06)"")"
+"0","  set_variable_labels(c01_06 = ""Importance of unions: in helping the economy grow (c01_06)"")"
 "0",""
 "0","frq(data$c01_06)"
-"1","[31mImportance of unions: in helping family-work arrangements (c01_06) (x)[39m[34m <numeric>[39m 
+"1","[31mImportance of unions: in helping the economy grow (c01_06) (x)[39m[34m <numeric>[39m 
 [34m# total N=3048 valid N=2867 mean=6.14 sd=2.72[39m
 
 Value |   N | Raw % | Valid % | Cum. %

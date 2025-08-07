@@ -1412,7 +1412,7 @@ frq(data$b21)
 data <- data %>%
   mutate(
     union_member = case_when(
-      as.numeric(relation_mop) %in% c(1, 2) ~ NA_real_,
+      as.numeric(relation_mop) %in% c(1, 2) ~ 0,
       as.numeric(relation_mop) == 3 & b21 %in% c(1, 2) ~ 1,
       as.numeric(relation_mop) == 3 & b21 %in% c(3, -888, -999) ~ 0,
       unions == 0 ~ 0,

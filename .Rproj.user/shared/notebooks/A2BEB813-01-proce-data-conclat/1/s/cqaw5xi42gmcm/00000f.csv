@@ -15,7 +15,7 @@ Value |    N | Raw % | Valid % | Cum. %
 "0","data <- data %>%"
 "0","  mutate("
 "0","    union_member = case_when("
-"0","      as.numeric(relation_mop) %in% c(1, 2) ~ NA_real_,"
+"0","      as.numeric(relation_mop) %in% c(1, 2) ~ 0,"
 "0","      as.numeric(relation_mop) == 3 & b21 %in% c(1, 2) ~ 1,"
 "0","      as.numeric(relation_mop) == 3 & b21 %in% c(3, -888, -999) ~ 0,"
 "0","      unions == 0 ~ 0,"
@@ -30,11 +30,11 @@ Value |    N | Raw % | Valid % | Cum. %
 "0",""
 "0","frq(data$union_member)"
 "1","[31mUnion membership (1 = yes) (x)[39m[34m <numeric>[39m 
-[34m# total N=3048 valid N=2105 mean=0.16 sd=0.37[39m
+[34m# total N=3048 valid N=3048 mean=0.11 sd=0.31[39m
 
 Value | Label |    N | Raw % | Valid % | Cum. %
 -----------------------------------------------
-    0 |    No | 1766 | 57.94 |   83.90 |  83.90
-    1 |   Yes |  339 | 11.12 |   16.10 | 100.00
- <NA> |  <NA> |  943 | 30.94 |    <NA> |   <NA>
+    0 |    No | 2709 | 88.88 |   88.88 |  88.88
+    1 |   Yes |  339 | 11.12 |   11.12 | 100.00
+ <NA> |  <NA> |    0 |  0.00 |    <NA> |   <NA>
 "

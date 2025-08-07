@@ -2927,7 +2927,7 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb169-2"><a href="#cb169-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb169-3"><a href="#cb169-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb169-4"><a href="#cb169-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">union_member =</span> <span class="fu">case_when</span>(</span>
-<span id="cb169-5"><a href="#cb169-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">~</span> <span class="cn">NA_real_</span>,</span>
+<span id="cb169-5"><a href="#cb169-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">~</span> <span class="dv">0</span>,</span>
 <span id="cb169-6"><a href="#cb169-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> b21 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
 <span id="cb169-7"><a href="#cb169-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> b21 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">0</span>,</span>
 <span id="cb169-8"><a href="#cb169-8" aria-hidden="true" tabindex="-1"></a>      unions <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
@@ -2943,13 +2943,13 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb169-18"><a href="#cb169-18" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>union_member)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Union membership (1 = yes) (x) &lt;numeric&gt; 
-# total N=3048 valid N=2105 mean=0.16 sd=0.37
+# total N=3048 valid N=3048 mean=0.11 sd=0.31
 
 Value | Label |    N | Raw % | Valid % | Cum. %
 -----------------------------------------------
-    0 |    No | 1766 | 57.94 |   83.90 |  83.90
-    1 |   Yes |  339 | 11.12 |   16.10 | 100.00
- &lt;NA&gt; |  &lt;NA&gt; |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+    0 |    No | 2709 | 88.88 |   88.88 |  88.88
+    1 |   Yes |  339 | 11.12 |   11.12 | 100.00
+ &lt;NA&gt; |  &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
