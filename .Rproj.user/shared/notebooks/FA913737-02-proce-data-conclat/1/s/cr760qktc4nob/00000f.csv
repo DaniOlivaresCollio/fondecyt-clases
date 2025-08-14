@@ -1,0 +1,13 @@
+"0","frq(data_arg$pol_id)
+"
+"1","[31mPolitical identification (x)[39m[34m <categorical>[39m 
+[34m# total N=1405 valid N=1405 mean=2.38 sd=1.05[39m
+
+Value          |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------
+Left           | 288 | 20.50 |   20.50 |  20.50
+Center         | 616 | 43.84 |   43.84 |  64.34
+Right          | 176 | 12.53 |   12.53 |  76.87
+Not identified | 325 | 23.13 |   23.13 | 100.00
+<NA>           |   0 |  0.00 |    <NA> |   <NA>
+"

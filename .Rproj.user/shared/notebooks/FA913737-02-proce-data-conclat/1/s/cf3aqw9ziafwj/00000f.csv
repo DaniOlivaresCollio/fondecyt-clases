@@ -1,0 +1,80 @@
+"0","frq(data_arg$a07)"
+"1","[31mx[39m[34m <numeric>[39m 
+[34m# total N=1405 valid N=1405 mean=3.18 sd=1.17[39m
+
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+    1 |  50 |  3.56 |    3.56 |   3.56
+    2 | 436 | 31.03 |   31.03 |  34.59
+    3 | 298 | 21.21 |   21.21 |  55.80
+    4 | 528 | 37.58 |   37.58 |  93.38
+    5 |  51 |  3.63 |    3.63 |  97.01
+    6 |  11 |  0.78 |    0.78 |  97.79
+    7 |  31 |  2.21 |    2.21 | 100.00
+ <NA> |   0 |  0.00 |    <NA> |   <NA>
+"
+"0","# Situación empleo"
+"0","data_arg <- data_arg %>%"
+"0","  mutate("
+"0","    a07 = factor("
+"0","      as.numeric(a07),"
+"0","      levels = 1:7,"
+"0","      labels = c("
+"0","        ""1. Patrón(a) o empleador(a)"","
+"0","        ""2. Trabajador(a) por cuenta propia"","
+"0","        ""3. Empleado(a) u obrero(a) del sector público"","
+"0","        ""4. Empleado(a) u obrero(a) del sector privado"","
+"0","        ""5. Servicio doméstico fijo o por horas"","
+"0","        ""6. FF.AA. y de seguridad"","
+"0","        ""7. Para el negocio, empresa, actividad de un familiar"""
+"0","      )"
+"0","    )"
+"0","  ) %>%"
+"0","  set_variable_labels(a07 = ""Employment situation (a07)"")"
+"0",""
+"0","frq(data_arg$a07)"
+"1","[31mEmployment situation (a07) (x)[39m[34m <categorical>[39m 
+[34m# total N=1405 valid N=1405 mean=3.18 sd=1.17[39m
+
+Value                                                 |   N | Raw % | Valid % | Cum. %
+--------------------------------------------------------------------------------------
+1. Patrón(a) o empleador(a)                           |  50 |  3.56 |    3.56 |   3.56
+2. Trabajador(a) por cuenta propia                    | 436 | 31.03 |   31.03 |  34.59
+3. Empleado(a) u obrero(a) del sector público         | 298 | 21.21 |   21.21 |  55.80
+4. Empleado(a) u obrero(a) del sector privado         | 528 | 37.58 |   37.58 |  93.38
+5. Servicio doméstico fijo o por horas                |  51 |  3.63 |    3.63 |  97.01
+6. FF.AA. y de seguridad                              |  11 |  0.78 |    0.78 |  97.79
+7. Para el negocio, empresa, actividad de un familiar |  31 |  2.21 |    2.21 | 100.00
+<NA>                                                  |   0 |  0.00 |    <NA> |   <NA>
+"
+"0","data_arg <- data_arg %>%"
+"0","  mutate("
+"0","    relation_mop = case_when("
+"0","      as_numeric(a07) == 1 ~ 1,"
+"0","      as_numeric(a07) == 2 ~ 2,"
+"0","      as_numeric(a07) >= 3 ~ 3,"
+"0","      TRUE ~ NA_real_"
+"0","      ),"
+"0","    relation_mop = factor("
+"0","      relation_mop,"
+"0","      levels = 1:3,"
+"0","      labels = c("
+"0","        ""1. Employers"","
+"0","        ""2. Self-Employed"","
+"0","        ""3. Salaried"""
+"0","      )"
+"0","    )"
+"0","  ) %>%"
+"0","  set_variable_labels(relation_mop = ""Relation with Means of Production"")"
+"0",""
+"0","frq(data_arg$relation_mop)"
+"1","[31mRelation with Means of Production (x)[39m[34m <categorical>[39m 
+[34m# total N=1405 valid N=1405 mean=2.62 sd=0.55[39m
+
+Value            |   N | Raw % | Valid % | Cum. %
+-------------------------------------------------
+1. Employers     |  50 |  3.56 |    3.56 |   3.56
+2. Self-Employed | 436 | 31.03 |   31.03 |  34.59
+3. Salaried      | 919 | 65.41 |   65.41 | 100.00
+<NA>             |   0 |  0.00 |    <NA> |   <NA>
+"

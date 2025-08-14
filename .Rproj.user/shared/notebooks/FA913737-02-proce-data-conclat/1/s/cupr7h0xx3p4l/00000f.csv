@@ -1,0 +1,38 @@
+"0","frq(data_arg$a18)"
+"1","[31mx[39m[34m <numeric>[39m 
+[34m# total N=1405 valid N=874 mean=1.60 sd=0.91[39m
+
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+    1 | 584 | 41.57 |   66.82 |  66.82
+    2 |  71 |  5.05 |    8.12 |  74.94
+    3 | 207 | 14.73 |   23.68 |  98.63
+    4 |   8 |  0.57 |    0.92 |  99.54
+    5 |   4 |  0.28 |    0.46 | 100.00
+ <NA> | 531 | 37.79 |    <NA> |   <NA>
+"
+"0","data_arg <- data_arg %>% "
+"0","  mutate("
+"0","    a18_contrato = case_when("
+"0","      a18 == 1 ~ 1, "
+"0","      a18 %in% c(2, 3, 4, 5) ~ 0"
+"0","      ,"
+"0","      as.numeric(a07) == 5 ~ 0"
+"0","    )"
+"0","  ) %>% "
+"0","  set_variable_labels(a18_contrato = ""Has a signed written employment contract (1 = yes)"") %>% "
+"0","  set_value_labels(a18_contrato = c("
+"0","    ""Yes"" = 1,"
+"0","    ""No"" = 0"
+"0","  ))"
+"0",""
+"0","frq(data_arg$a18_contrato)"
+"1","[31mHas a signed written employment contract (1 = yes) (x)[39m[34m <numeric>[39m 
+[34m# total N=1405 valid N=874 mean=0.67 sd=0.47[39m
+
+Value | Label |   N | Raw % | Valid % | Cum. %
+----------------------------------------------
+    0 |    No | 290 | 20.64 |   33.18 |  33.18
+    1 |   Yes | 584 | 41.57 |   66.82 | 100.00
+ <NA> |  <NA> | 531 | 37.79 |    <NA> |   <NA>
+"

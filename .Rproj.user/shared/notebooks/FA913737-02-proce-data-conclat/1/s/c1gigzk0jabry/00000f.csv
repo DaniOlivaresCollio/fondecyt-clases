@@ -1,0 +1,31 @@
+"0","frq(data_arg$a16)"
+"1","[31mx[39m[34m <numeric>[39m 
+[34m# total N=1405 valid N=904 mean=1.85 sd=0.36[39m
+
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+    1 | 138 |  9.82 |   15.27 |  15.27
+    2 | 766 | 54.52 |   84.73 | 100.00
+ <NA> | 501 | 35.66 |    <NA> |   <NA>
+"
+"0","data_arg <- data_arg %>%"
+"0","  mutate("
+"0","    supervision = case_when("
+"0","      as.numeric(relation_mop) %in% 1:2 ~ NA,"
+"0","      a16 == 1 ~ 1,"
+"0","      a16 %in% c(2, -888, -999) ~ 0,"
+"0","      TRUE ~ NA_real_"
+"0","    )"
+"0","  ) %>%"
+"0","  set_variable_labels(supervision = ""Supervises other workers (a16)"")"
+"0",""
+"0","frq(data_arg$supervision)"
+"1","[31mSupervises other workers (a16) (x)[39m[34m <numeric>[39m 
+[34m# total N=1405 valid N=904 mean=0.15 sd=0.36[39m
+
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+    0 | 766 | 54.52 |   84.73 |  84.73
+    1 | 138 |  9.82 |   15.27 | 100.00
+ <NA> | 501 | 35.66 |    <NA> |   <NA>
+"

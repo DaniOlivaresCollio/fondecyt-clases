@@ -1,0 +1,13 @@
+"0","frq(data_arg$formal_position_auth)
+"
+"1","[31mFormal position of authority (a15) (x)[39m[34m <categorical>[39m 
+[34m# total N=1405 valid N=904 mean=3.80 sd=0.59[39m
+
+Value                                                   |   N | Raw % | Valid % | Cum. %
+----------------------------------------------------------------------------------------
+1. Senior manager or executive                          |  15 |  1.07 |    1.66 |   1.66
+2. Middle manager (e.g., sector, office or branch head) |  41 |  2.92 |    4.54 |   6.19
+3. Supervisor or foreperson                             |  54 |  3.84 |    5.97 |  12.17
+4. Regular employee or worker (no supervisory role)     | 794 | 56.51 |   87.83 | 100.00
+<NA>                                                    | 501 | 35.66 |    <NA> |   <NA>
+"

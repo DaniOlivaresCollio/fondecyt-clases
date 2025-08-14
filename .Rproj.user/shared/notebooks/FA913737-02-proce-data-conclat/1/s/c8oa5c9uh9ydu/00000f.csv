@@ -1,0 +1,8 @@
+"0","data_arg <- read_dta(""input/data/Base edit 13.8 con a27.dta"")"
+"0","data_arg_raw <- data_arg"
+"0",""
+"0","data_arg <- data_arg %>%"
+"0","  rename("
+"0","    sexo = e01_sexo,"
+"0","    edad = e02_edad"
+"0","  )"

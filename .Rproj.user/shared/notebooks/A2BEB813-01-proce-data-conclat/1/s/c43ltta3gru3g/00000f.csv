@@ -1,24 +1,5 @@
-"0","# Recuperar algunos códigos no existentes"
-"0",""
-"0","## Recodificar ciuo08 de 36 55 recuperados"
-"0","data <- data %>%"
-"0","  mutate("
-"0","    ciuo08_clio = case_when("
-"0","      ciuo08_clio == ""5522"" & id == ""var_223"" ~ ""3343"","
-"0","      ciuo08_clio == ""5521"" & id == ""var_2536"" ~ ""7322"","
-"0","      TRUE ~ ciuo08_clio"
-"0","    )"
-"0","  )"
-"0",""
-"0","## Volver a crear ciuo08 con 2 dígitos"
-"0","data <- data %>%"
-"0","  mutate("
-"0","    ciuo08_clio_2d = as.numeric(substr(ciuo08_clio, 1, 2)),"
-"0","    ciuo08_clio_2d = ifelse(ciuo08_clio_2d==-9, NA,ciuo08_clio_2d)"
-"0","  ) %>%"
-"0","  set_variable_labels(ciuo08_clio_2d = ""ISCO-08: 2 digits"")"
-"0",""
-"0","frq(data$ciuo08_clio_2d)"
+"0","frq(data$ciuo08_clio_2d)
+"
 "1","[31mISCO-08: 2 digits (x)[39m[34m <numeric>[39m 
 [34m# total N=3048 valid N=3019 mean=55.01 sd=25.42[39m
 

@@ -1,0 +1,11 @@
+"0","frq(data_arg$c07_03_dummy)
+"
+"1","[31mLevel of agreement: Implement laws to give unions more bargaining power (1 = agree) (x)[39m[34m <numeric>[39m 
+[34m# total N=1405 valid N=1405 mean=0.37 sd=0.48[39m
+
+Value |    Label |   N | Raw % | Valid % | Cum. %
+-------------------------------------------------
+    0 | Disagree | 880 | 62.63 |   62.63 |  62.63
+    1 |    Agree | 525 | 37.37 |   37.37 | 100.00
+ <NA> |     <NA> |   0 |  0.00 |    <NA> |   <NA>
+"

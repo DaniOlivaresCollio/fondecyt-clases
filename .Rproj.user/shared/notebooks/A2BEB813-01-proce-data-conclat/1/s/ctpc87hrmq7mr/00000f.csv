@@ -1,0 +1,12 @@
+"0","frq(data$skills)
+"
+"1","[31mSkills (x)[39m[34m <categorical>[39m 
+[34m# total N=3048 valid N=3019 mean=2.29 sd=0.72[39m
+
+Value        |    N | Raw % | Valid % | Cum. %
+----------------------------------------------
+1. Experts   |  469 | 15.39 |   15.53 |  15.53
+2. Skilled   | 1198 | 39.30 |   39.68 |  55.22
+3. Unskilled | 1352 | 44.36 |   44.78 | 100.00
+<NA>         |   29 |  0.95 |    <NA> |   <NA>
+"

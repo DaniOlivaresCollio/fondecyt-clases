@@ -1,0 +1,80 @@
+"0","data_arg <- data_arg %>%"
+"0","  mutate("
+"0","    wrightclass1_informal = case_when("
+"0","      as.integer(owners) == 3 ~ 1,  # 1. Employers"
+"0","      as.integer(owners) == 2 ~ 2,  # 2. Small employers"
+"0","      "
+"0","      as.integer(owners) == 1 & educ >= 9 ~ 3,   # 3. Petty bourgeoisie"
+"0","      as.integer(owners) == 1 & educ <= 8 ~ 4,   # 4. Informal self-employed"
+"0","      "
+"0","      as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 5,  # 5. Expert managers"
+"0","      as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,  # 6. Expert supervisors"
+"0","      as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 7,  # 7. Experts"
+"0","      "
+"0","      as.integer(organization_assets) == 1 & as.integer(skills) == 2 ~ 8,  # 8. Skilled managers"
+"0","      as.integer(organization_assets) == 2 & as.integer(skills) == 2 ~ 9,  # 9. skilled supervisors"
+"0","      as.integer(organization_assets) == 1 & as.integer(skills) == 3 ~ 10, # 10. Nonskilled managers"
+"0","      as.integer(organization_assets) == 2 & as.integer(skills) == 3 ~ 11, # 11. Nonskilled supervisors"
+"0","      "
+"0","      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18_contrato == 1 ~ 12, # 12. Formal workers"
+"0","      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18_contrato == 0 ~ 13  # 13. Informal workers"
+"0","    ),"
+"0","    wrightclass1_informal = factor("
+"0","      wrightclass1_informal,"
+"0","      levels = 1:13,"
+"0","      labels = c("
+"0","        ""1. Employers"","
+"0","        ""2. Small employers"","
+"0","        ""3. Petty bourgeoisie"","
+"0","        ""4. Informal self-employed"","
+"0","        ""5. Expert managers"","
+"0","        ""6. Expert supervisors"","
+"0","        ""7. Experts"","
+"0","        ""8. Skilled managers"","
+"0","        ""9. Skilled supervisors"","
+"0","        ""10. Nonskilled managers"","
+"0","        ""11. Nonskilled supervisors"","
+"0","        ""12. Formal workers"","
+"0","        ""13. Informal workers"""
+"0","      )"
+"0","    )"
+"0","  ) %>%"
+"0","  set_variable_labels(wrightclass1_informal = ""Wright Class Typology + Informal (3)"")"
+"0",""
+"0","frq(data_arg$wrightclass1_informal)"
+"1","[31mWright Class Typology + Informal (3) (x)[39m[34m <categorical>[39m 
+[34m# total N=1405 valid N=1356 mean=8.02 sd=4.36[39m
+
+Value                      |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------
+1. Employers               |  46 |  3.27 |    3.39 |   3.39
+2. Small employers         | 166 | 11.81 |   12.24 |  15.63
+3. Petty bourgeoisie       |  53 |  3.77 |    3.91 |  19.54
+4. Informal self-employed  | 218 | 15.52 |   16.08 |  35.62
+5. Expert managers         |  41 |  2.92 |    3.02 |  38.64
+6. Expert supervisors      |  16 |  1.14 |    1.18 |  39.82
+7. Experts                 | 121 |  8.61 |    8.92 |  48.75
+8. Skilled managers        |  44 |  3.13 |    3.24 |  51.99
+9. Skilled supervisors     |  23 |  1.64 |    1.70 |  53.69
+10. Nonskilled managers    |   4 |  0.28 |    0.29 |  53.98
+11. Nonskilled supervisors |  15 |  1.07 |    1.11 |  55.09
+12. Formal workers         | 357 | 25.41 |   26.33 |  81.42
+13. Informal workers       | 252 | 17.94 |   18.58 | 100.00
+<NA>                       |  49 |  3.49 |    <NA> |   <NA>
+"
+"0","# # base survey"
+"0","# data_arg_svy <- as_survey_design(data_arg, weights = rake_wb2)"
+"0","# "
+"0","# # Tabla de frecuencias ponderadas"
+"0","# wright_freq_3 <- data_arg_svy %>%"
+"0","#   group_by(wrightclass1_informal) %>%"
+"0","#   summarise("
+"0","#     freq = survey_mean(vartype = NULL, na.rm = TRUE),"
+"0","#     n_unweighted = unweighted(n())"
+"0","#   ) %>%"
+"0","#   mutate("
+"0","#     freq_pct = freq * 100"
+"0","#   )"
+"0","# "
+"0","# wright_freq_3 %>%"
+"0","#   print(n = Inf)"

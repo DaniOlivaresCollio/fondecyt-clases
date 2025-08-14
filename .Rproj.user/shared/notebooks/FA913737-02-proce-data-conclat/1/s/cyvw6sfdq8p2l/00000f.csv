@@ -1,0 +1,11 @@
+"0","frq(data_arg$sector)
+"
+"1","[31mSector (1 = private) (x)[39m[34m <numeric>[39m 
+[34m# total N=1405 valid N=1405 mean=0.78 sd=0.41[39m
+
+Value |   Label |    N | Raw % | Valid % | Cum. %
+-------------------------------------------------
+    0 |  Public |  309 | 21.99 |   21.99 |  21.99
+    1 | Private | 1096 | 78.01 |   78.01 | 100.00
+ <NA> |    <NA> |    0 |  0.00 |    <NA> |   <NA>
+"

@@ -1,0 +1,64 @@
+"0","data_arg <- data_arg %>%"
+"0","  mutate("
+"0","    wrightclass1_reduced = case_when("
+"0","      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18_contrato == 1 ~ 1,  # 1. Formal workers"
+"0","      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18_contrato == 0 ~ 2,  # 2. Informal workers"
+"0","      as.integer(owners) == 1 & educ <= 8 ~ 3,                                                         # 3. Informal self-employed"
+"0","      as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 4,                              # 4. Experts"
+"0","      as.integer(organization_assets) == 2 & as.integer(skills) %in% c(1, 2, 3) ~ 5,                   # 5. Supervisors"
+"0","      as.integer(organization_assets) == 1 & as.integer(skills) %in% c(1, 2, 3) ~ 6,                   # 6. Managers"
+"0","      as.integer(owners) == 1 & educ >= 9 ~ 7,                                                         # 7. Petty bourgeoisie"
+"0","      as.integer(owners) == 2 ~ 8,                                                                     # 8. Small employers"
+"0","      as.integer(owners) == 3 ~ 9                                                                      # 9. Employers"
+"0","    ),"
+"0","    wrightclass1_reduced = factor("
+"0","      wrightclass1_reduced,"
+"0","      levels = 1:9,"
+"0","      labels = c("
+"0","        ""1. Formal workers"","
+"0","        ""2. Informal workers"","
+"0","        ""3. Informal self-employed"","
+"0","        ""4. Experts"",       "
+"0","        ""5. Supervisors"","
+"0","        ""6. Managers"","
+"0","        ""7. Petty bourgeoisie"","
+"0","        ""8. Small employers"","
+"0","        ""9. Employers"""
+"0","      )"
+"0","    )"
+"0","  ) %>%"
+"0","  set_variable_labels(wrightclass1_reduced = ""Wright Class Typology  Reduced (5)"")"
+"0",""
+"0","frq(data_arg$wrightclass1_reduced)"
+"1","[31mWright Class Typology Reduced (5) (x)[39m[34m <categorical>[39m 
+[34m# total N=1405 valid N=1356 mean=3.63 sd=2.57[39m
+
+Value                     |   N | Raw % | Valid % | Cum. %
+----------------------------------------------------------
+1. Formal workers         | 357 | 25.41 |   26.33 |  26.33
+2. Informal workers       | 252 | 17.94 |   18.58 |  44.91
+3. Informal self-employed | 218 | 15.52 |   16.08 |  60.99
+4. Experts                | 121 |  8.61 |    8.92 |  69.91
+5. Supervisors            |  54 |  3.84 |    3.98 |  73.89
+6. Managers               |  89 |  6.33 |    6.56 |  80.46
+7. Petty bourgeoisie      |  53 |  3.77 |    3.91 |  84.37
+8. Small employers        | 166 | 11.81 |   12.24 |  96.61
+9. Employers              |  46 |  3.27 |    3.39 | 100.00
+<NA>                      |  49 |  3.49 |    <NA> |   <NA>
+"
+"0","# # base survey"
+"0","# data_arg_svy <- as_survey_design(data_arg, weights = rake_wb2)"
+"0","# "
+"0","# # Tabla de frecuencias ponderadas"
+"0","# wright_freq_5 <- data_arg_svy %>%"
+"0","#   group_by(wrightclass1_reduced) %>%"
+"0","#   summarise("
+"0","#     freq = survey_mean(vartype = NULL, na.rm = TRUE),"
+"0","#     n_unweighted = unweighted(n())"
+"0","#   ) %>%"
+"0","#   mutate("
+"0","#     freq_pct = freq * 100"
+"0","#   )"
+"0","# "
+"0","# wright_freq_5 %>%"
+"0","#   print(n = Inf)"

@@ -1,0 +1,4 @@
+"0","# Preparar variables necesarias"
+"0",""
+"0","## Crear la glosa concatenada"
+"0","data_arg$glosa_ciuo08 <- paste(data_arg$a02, data_arg$a03, sep = "" "")"

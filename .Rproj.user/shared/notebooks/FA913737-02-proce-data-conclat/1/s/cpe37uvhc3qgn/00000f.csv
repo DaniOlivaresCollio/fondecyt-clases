@@ -1,0 +1,31 @@
+"0","data_arg <- data_arg %>%"
+"0","  mutate("
+"0","    owners2 = case_when("
+"0","      as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) == 1 | (is.na(company_size) & as.numeric(workplace_size) == 1)) ~ 1,"
+"0","      as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) %in% 2:3 | (is.na(company_size) & as.numeric(workplace_size) %in% 2:3)) ~ 2,"
+"0","      as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) >= 4 | (is.na(company_size) & as.numeric(workplace_size) >= 4)) ~ 3,"
+"0","      TRUE ~ NA_real_"
+"0","    ),"
+"0","    owners2 = factor("
+"0","      owners2,"
+"0","      levels = 1:3,"
+"0","      labels = c("
+"0","        ""1. Solo Self-Employed"","
+"0","        ""2. Small employers"","
+"0","        ""3. Capitalists"""
+"0","      )"
+"0","    )"
+"0","  ) %>%"
+"0","  set_variable_labels(owners2 = ""Owners 2"")"
+"0",""
+"0","frq(data_arg$owners2)"
+"1","[31mOwners 2 (x)[39m[34m <categorical>[39m 
+[34m# total N=1405 valid N=483 mean=1.49 sd=0.59[39m
+
+Value                 |   N | Raw % | Valid % | Cum. %
+------------------------------------------------------
+1. Solo Self-Employed | 271 | 19.29 |   56.11 |  56.11
+2. Small employers    | 189 | 13.45 |   39.13 |  95.24
+3. Capitalists        |  23 |  1.64 |    4.76 | 100.00
+<NA>                  | 922 | 65.62 |    <NA> |   <NA>
+"

@@ -1,0 +1,512 @@
+library(pacman)
+p_load(bookdown,
+car,
+flextable,
+forcats,
+ggalluvial,
+ggplot2,
+ggrepel,
+gridExtra,
+httr,
+kableExtra,
+knitr,
+labelled,
+lubridate,
+officer,
+psych,
+purrr,
+readr,
+readxl,
+shadowtext,
+sjmisc,
+sjPlot,
+sjlabelled,
+statar,
+stringr,
+survey,        # diseño survey
+srvyr,         # diseño survey con tidy
+tidyverse,
+tinytex,
+viridis,
+httr
+)
+load("input/data/datos-conclat.Rdata")
+data_raw <- data
+data <- data %>%
+rename(
+ciuo08_clio = ciuo08,
+sexo = e01,
+edad = e02
+)
+data_select <- data_raw %>%
+select(id,
+rake_wb2,
+# Relación con los medios de producción
+a07,
+a25, a25_esp, a25_esp_rec,
+a26,
+a27,
+# Skills
+a02,a02_rec,a03,a03_rec,
+ciuo08_clio = ciuo08,
+e05,
+# Autoridad / orgnización
+a15,
+a16,
+a17_01,a17_02,a17_03,a17_04,a17_05,a17_06,
+# formalidad
+a06,                                                  # boleta
+a10,                                                  # inicio de actividades
+a18,                                                  # contrato de trabajo escrito firmado
+# Dependent variables
+c01_01, c01_02, c01_03, c01_04, c01_05, c01_06,       # importancia de sindicatos
+c07_03,
+b29,
+# Controls
+sexo = e01,
+edad = e02,
+b19,                                                  # hay sindicato en empresa
+b21,                                                  # afiliacion sindical
+c08                                                   # political id
+)# %>%
+#sjlabelled::set_na(.,na=c(-999,-888,-777))
+# Situación empleo
+data <- data %>%
+mutate(
+a07 = factor(
+as.numeric(a07),
+levels = 1:9,
+labels = c(
+"1. Patrón(a) o empleador(a)",
+"2. Trabajador(a) por cuenta propia",
+"3. Empleado(a) u obrero(a) del sector público (Gobierno Central o Municipal)",
+"4. Empleado(a) u obrero(a) de empresas públicas",
+"5. Empleado(a) u obrero(a) del sector privado",
+"6. Servicio doméstico puertas adentro",
+"7. Servicio doméstico puertas afuera",
+"8. FF.AA. y del Orden",
+"9. Familiar no remunerado"
+)
+)
+) %>%
+set_variable_labels(a07 = "Employment situation (a07)")
+frq(data$a07)
+data <- data %>%
+mutate(
+relation_mop = case_when(
+as_numeric(a07) == 1 ~ 1,
+as_numeric(a07) == 2 ~ 2,
+as_numeric(a07) >= 3 ~ 3,
+TRUE ~ NA_real_
+),
+relation_mop = factor(
+relation_mop,
+levels = 1:3,
+labels = c(
+"1. Employers",
+"2. Self-Employed",
+"3. Salaried"
+)
+)
+) %>%
+set_variable_labels(relation_mop = "Relation with Means of Production")
+frq(data$relation_mop)
+frq(data$a26)
+data <- data %>%
+mutate(
+company_size = case_when(
+a26 %in% c(1) ~ 1,
+a26 %in% c(2, 3) ~ 2,
+a26 %in% c(4, 5) ~ 3,
+a26 %in% c(6, 7) ~ 4,
+a26 %in% c(8, 9) ~ 5,
+TRUE ~ NA_real_
+),
+company_size = factor(
+company_size,
+levels = 1:5,
+labels = c(
+"Solo",
+"2-9",
+"10-49",
+"50-199",
+"200 or more"),
+ordered = TRUE
+)
+) %>%
+set_variable_labels(company_size = "Company Size")
+frq(data$company_size)
+frq(data$a27)
+data <- data %>%
+mutate(
+workplace_size = case_when(
+a27 %in% c(1) ~ 1,
+a27 %in% c(2, 3) ~ 2,
+a27 %in% c(4, 5) ~ 3,
+a27 %in% c(6, 7) ~ 4,
+a27 %in% c(8, 9) ~ 5,
+TRUE ~ NA_real_
+),
+workplace_size = factor(
+workplace_size,
+levels = 1:5,
+labels = c(
+"Solo",
+"2-9",
+"10-49",
+"50-199",
+"200 or more"),
+ordered = TRUE
+)
+) %>%
+set_variable_labels(workplace_size = "Workplace Size")
+frq(data$workplace_size)
+table(data$relation_mop,data$company_size)
+table(data$relation_mop,data$workplace_size)
+data <- data %>%
+mutate(
+owners = case_when(
+as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) == 1 | (is.na(company_size) & as.numeric(workplace_size) == 1)) ~ 1,
+as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) == 2 | (is.na(company_size) & as.numeric(workplace_size) == 2)) ~ 2,
+as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) >= 3 | (is.na(company_size) & as.numeric(workplace_size) >= 3)) ~ 3,
+TRUE ~ NA_real_
+),
+owners = factor(
+owners,
+levels = 1:3,
+labels = c(
+"1. Solo Self-Employed",
+"2. Small employers",
+"3. Employers"
+)
+)
+) %>%
+set_variable_labels(owners = "Owners")
+frq(data$owners)
+data <- data %>%
+mutate(
+owners2 = case_when(
+as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) == 1 | (is.na(company_size) & as.numeric(workplace_size) == 1)) ~ 1,
+as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) %in% 2:3 | (is.na(company_size) & as.numeric(workplace_size) %in% 2:3)) ~ 2,
+as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) >= 4 | (is.na(company_size) & as.numeric(workplace_size) >= 4)) ~ 3,
+TRUE ~ NA_real_
+),
+owners2 = factor(
+owners2,
+levels = 1:3,
+labels = c(
+"1. Solo Self-Employed",
+"2. Small employers",
+"3. Capitalists"
+)
+)
+) %>%
+set_variable_labels(owners2 = "Owners 2")
+frq(data$owners2)
+frq(data$e05)
+data <- data %>%
+mutate(
+educ = ifelse(e05 %in% c(-999, -888), NA, e05)
+) %>%
+set_variable_labels(educ = "Educational level")
+frq(data$educ)
+# Preparar variables necesarias
+## Crear la glosa concatenada
+data$glosa_ciuo08 <- paste(data$a02, data$a03, sep = " ")
+## Crear isco a 2 dígitos
+data <- data %>%
+mutate(
+ciuo08_clio_2d = as.numeric(substr(ciuo08_clio, 1, 2))
+) %>%
+set_variable_labels(ciuo08_clio_2d = "ISCO-08: 2 digits")
+frq(data$ciuo08_clio_2d)
+# Revisar los NA
+## Armar tabla filtrando a los NA
+tabla_ciuo08_999 <- data %>%
+filter(as.numeric(ciuo08_clio_2d) < 1) %>%
+select(ciuo08_clio,
+ciuo08_clio_2d,
+glosa_ciuo08,
+a03,
+supervisa = a16,
+educ = e05,
+rama = a25,
+a25_esp,
+rama_esp = a25_esp_rec)
+## Pasar tabla a word
+tabla_ft <- flextable(tabla_ciuo08_999)
+read_docx() %>%
+body_add_flextable(value = tabla_ft) %>%
+print(target = "output/tabla_ciuo08_999.docx")
+## Revisar NA con API del INE
+## Enviar la consulta al servidor
+request <-  httr::POST("https://rapps.ine.cl:9292/predict",
+encode = "json",
+body =  list(text = tabla_ciuo08_999$glosa_ciuo08,
+classification = "ciuo",
+digits = 2))
+system('curl -Iv --http1.1 https://rapps.ine.cl/')
+system('curl -Iv --http1.1 --tlsv1.2 https://rapps.ine.cl/')
+library(curl)
+h <- curl::new_handle()
+curl::handle_setopt(h, verbose = TRUE, http_version = 2L,
+ssl_verifypeer = FALSE, ssl_verifyhost = FALSE)
+curl::curl_fetch_memory("https://rapps.ine.cl/", handle = h)
+curl::curl_version()$ssl_version
+sessionInfo()
+system('curl -Iv --http1.1 https://rapps.ine.cl/')
+rm(list=ls())
+options(scipen = 999)
+library(pacman)
+p_load(bookdown,
+car,
+flextable,
+forcats,
+ggalluvial,
+ggplot2,
+ggrepel,
+gridExtra,
+httr,
+kableExtra,
+knitr,
+labelled,
+lubridate,
+officer,
+psych,
+purrr,
+readr,
+readxl,
+shadowtext,
+sjmisc,
+sjPlot,
+sjlabelled,
+statar,
+stringr,
+survey,        # diseño survey
+srvyr,         # diseño survey con tidy
+tidyverse,
+tinytex,
+viridis,
+httr
+)
+load("input/data/datos-conclat.Rdata")
+data_raw <- data
+data <- data %>%
+rename(
+ciuo08_clio = ciuo08,
+sexo = e01,
+edad = e02
+)
+data_select <- data_raw %>%
+select(id,
+rake_wb2,
+# Relación con los medios de producción
+a07,
+a25, a25_esp, a25_esp_rec,
+a26,
+a27,
+# Skills
+a02,a02_rec,a03,a03_rec,
+ciuo08_clio = ciuo08,
+e05,
+# Autoridad / orgnización
+a15,
+a16,
+a17_01,a17_02,a17_03,a17_04,a17_05,a17_06,
+# formalidad
+a06,                                                  # boleta
+a10,                                                  # inicio de actividades
+a18,                                                  # contrato de trabajo escrito firmado
+# Dependent variables
+c01_01, c01_02, c01_03, c01_04, c01_05, c01_06,       # importancia de sindicatos
+c07_03,
+b29,
+# Controls
+sexo = e01,
+edad = e02,
+b19,                                                  # hay sindicato en empresa
+b21,                                                  # afiliacion sindical
+c08                                                   # political id
+)# %>%
+#sjlabelled::set_na(.,na=c(-999,-888,-777))
+# Situación empleo
+data <- data %>%
+mutate(
+a07 = factor(
+as.numeric(a07),
+levels = 1:9,
+labels = c(
+"1. Patrón(a) o empleador(a)",
+"2. Trabajador(a) por cuenta propia",
+"3. Empleado(a) u obrero(a) del sector público (Gobierno Central o Municipal)",
+"4. Empleado(a) u obrero(a) de empresas públicas",
+"5. Empleado(a) u obrero(a) del sector privado",
+"6. Servicio doméstico puertas adentro",
+"7. Servicio doméstico puertas afuera",
+"8. FF.AA. y del Orden",
+"9. Familiar no remunerado"
+)
+)
+) %>%
+set_variable_labels(a07 = "Employment situation (a07)")
+frq(data$a07)
+data <- data %>%
+mutate(
+relation_mop = case_when(
+as_numeric(a07) == 1 ~ 1,
+as_numeric(a07) == 2 ~ 2,
+as_numeric(a07) >= 3 ~ 3,
+TRUE ~ NA_real_
+),
+relation_mop = factor(
+relation_mop,
+levels = 1:3,
+labels = c(
+"1. Employers",
+"2. Self-Employed",
+"3. Salaried"
+)
+)
+) %>%
+set_variable_labels(relation_mop = "Relation with Means of Production")
+frq(data$relation_mop)
+frq(data$a26)
+data <- data %>%
+mutate(
+company_size = case_when(
+a26 %in% c(1) ~ 1,
+a26 %in% c(2, 3) ~ 2,
+a26 %in% c(4, 5) ~ 3,
+a26 %in% c(6, 7) ~ 4,
+a26 %in% c(8, 9) ~ 5,
+TRUE ~ NA_real_
+),
+company_size = factor(
+company_size,
+levels = 1:5,
+labels = c(
+"Solo",
+"2-9",
+"10-49",
+"50-199",
+"200 or more"),
+ordered = TRUE
+)
+) %>%
+set_variable_labels(company_size = "Company Size")
+frq(data$company_size)
+frq(data$a27)
+data <- data %>%
+mutate(
+workplace_size = case_when(
+a27 %in% c(1) ~ 1,
+a27 %in% c(2, 3) ~ 2,
+a27 %in% c(4, 5) ~ 3,
+a27 %in% c(6, 7) ~ 4,
+a27 %in% c(8, 9) ~ 5,
+TRUE ~ NA_real_
+),
+workplace_size = factor(
+workplace_size,
+levels = 1:5,
+labels = c(
+"Solo",
+"2-9",
+"10-49",
+"50-199",
+"200 or more"),
+ordered = TRUE
+)
+) %>%
+set_variable_labels(workplace_size = "Workplace Size")
+frq(data$workplace_size)
+table(data$relation_mop,data$company_size)
+table(data$relation_mop,data$workplace_size)
+data <- data %>%
+mutate(
+owners = case_when(
+as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) == 1 | (is.na(company_size) & as.numeric(workplace_size) == 1)) ~ 1,
+as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) == 2 | (is.na(company_size) & as.numeric(workplace_size) == 2)) ~ 2,
+as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) >= 3 | (is.na(company_size) & as.numeric(workplace_size) >= 3)) ~ 3,
+TRUE ~ NA_real_
+),
+owners = factor(
+owners,
+levels = 1:3,
+labels = c(
+"1. Solo Self-Employed",
+"2. Small employers",
+"3. Employers"
+)
+)
+) %>%
+set_variable_labels(owners = "Owners")
+frq(data$owners)
+data <- data %>%
+mutate(
+owners2 = case_when(
+as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) == 1 | (is.na(company_size) & as.numeric(workplace_size) == 1)) ~ 1,
+as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) %in% 2:3 | (is.na(company_size) & as.numeric(workplace_size) %in% 2:3)) ~ 2,
+as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) >= 4 | (is.na(company_size) & as.numeric(workplace_size) >= 4)) ~ 3,
+TRUE ~ NA_real_
+),
+owners2 = factor(
+owners2,
+levels = 1:3,
+labels = c(
+"1. Solo Self-Employed",
+"2. Small employers",
+"3. Capitalists"
+)
+)
+) %>%
+set_variable_labels(owners2 = "Owners 2")
+frq(data$owners2)
+frq(data$e05)
+data <- data %>%
+mutate(
+educ = ifelse(e05 %in% c(-999, -888), NA, e05)
+) %>%
+set_variable_labels(educ = "Educational level")
+frq(data$educ)
+# Preparar variables necesarias
+## Crear la glosa concatenada
+data$glosa_ciuo08 <- paste(data$a02, data$a03, sep = " ")
+## Crear isco a 2 dígitos
+data <- data %>%
+mutate(
+ciuo08_clio_2d = as.numeric(substr(ciuo08_clio, 1, 2))
+) %>%
+set_variable_labels(ciuo08_clio_2d = "ISCO-08: 2 digits")
+frq(data$ciuo08_clio_2d)
+# Revisar los NA
+## Armar tabla filtrando a los NA
+tabla_ciuo08_999 <- data %>%
+filter(as.numeric(ciuo08_clio_2d) < 1) %>%
+select(ciuo08_clio,
+ciuo08_clio_2d,
+glosa_ciuo08,
+a03,
+supervisa = a16,
+educ = e05,
+rama = a25,
+a25_esp,
+rama_esp = a25_esp_rec)
+## Pasar tabla a word
+tabla_ft <- flextable(tabla_ciuo08_999)
+read_docx() %>%
+body_add_flextable(value = tabla_ft) %>%
+print(target = "output/tabla_ciuo08_999.docx")
+## Revisar NA con API del INE
+## Enviar la consulta al servidor
+request <-  httr::POST("https://rapps.ine.cl:9292/predict",
+encode = "json",
+body =  list(text = tabla_ciuo08_999$glosa_ciuo08,
+classification = "ciuo",
+digits = 2))
+# en WSL o Git Bash
+curl -Iv --http1.1 --tlsv1.2 https://rapps.ine.cl/
+CURL_SSL_BACKEND=openssl
+install.packages("usethis")
+usethis::edit_r_environ()
+CURL_SSL_BACKEND=openssl

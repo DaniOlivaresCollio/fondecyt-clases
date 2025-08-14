@@ -1,0 +1,11 @@
+"0","frq(data_arg$b29_dummy2)
+"
+"1","[31mPossibility of joining a union (1 = yes) (2) (x)[39m[34m <numeric>[39m 
+[34m# total N=1405 valid N=1405 mean=0.34 sd=0.47[39m
+
+Value | Label |   N | Raw % | Valid % | Cum. %
+----------------------------------------------
+    0 |    No | 934 | 66.48 |   66.48 |  66.48
+    1 |   Yes | 471 | 33.52 |   33.52 | 100.00
+ <NA> |  <NA> |   0 |  0.00 |    <NA> |   <NA>
+"
