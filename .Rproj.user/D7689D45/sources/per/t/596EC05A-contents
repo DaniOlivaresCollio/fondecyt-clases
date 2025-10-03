@@ -32,14 +32,17 @@ p_load(
   ggplot2,           # visualización basado en gramática de gráficos
   ggrepel,           # etiquetas en gráficos sin superposición
   gridExtra,         # combinar gráficos en uno solo
+  scales,            # controla cómo se ven los ejes en gráficos
   sjPlot,            # visualizar resultados estadísticos
   
   # análisis
   psych,             # análisis general, psicométrico
   survey,            # diseño survey encuestas complejas
   srvyr,             # diseño survey con tidy
+  rlang,             # motor interno de tidyverse, para usar expresiones 
   tidyverse,
-  
+  statar,            # conectar con el lenguaje stata
+
   # conexion web
   curl,              # conexiones http de bajo nivel: para solucionar el problema de la api del ine
   httr               # cliente http para API

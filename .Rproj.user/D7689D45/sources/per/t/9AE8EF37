@@ -3,7 +3,7 @@
     "path": "C:/Users/danie/Documents/fondecyt/fondecyt-clases/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "3784455545",
+    "hash": "3085780522",
     "contents": "",
     "dirty": false,
     "created": 1755098853253.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "11,6",
+        "cursorPosition": "12,25",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1755098880,
+    "lastKnownWriteTime": 1759497286,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1755098880218,
+    "last_content_update": 1759497286116,
     "read_only": false,
     "read_only_alternatives": []
 }
