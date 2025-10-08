@@ -10,8 +10,7 @@ book:
     - index.qmd
     - 01-proce-data-conclat.qmd
     - 02-proce-data-conclat.qmd
-    - 03-descriptivos.qmd
-    # - summary.qmd
+    # - 03-descriptivos.qmd
     # - references.qmd
 
 bibliography: references.bib

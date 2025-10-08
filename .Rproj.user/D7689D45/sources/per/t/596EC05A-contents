@@ -1212,6 +1212,64 @@ wright_freq_7 %>%
   print(n = Inf)
 ```
 
+### wrightclass2_reduced3
+
+```{r}
+data <- data %>%
+  mutate(
+    wrightclass2_reduced3 = case_when(
+      as.integer(owners2) == 3 ~ 1,                                                                           # 1. Capitalists
+      as.integer(owners2) == 2 ~ 2,                                                                           # 2. Small employers   
+      as.integer(owners2) == 1 & a06_boleta == 1 ~ 3,                                                         # 3. Petty bourgeoisie  
+      
+      as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                                     # 4. Expert managers   
+      as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                                     # 5. Experts  
+      
+      as.integer(organization_assets) %in% c(1, 2) & as.integer(skills) %in% c(2, 3) ~ 6,                     # 6. Skilled y Unskilled Supervisors
+      as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,                                     # 6. Skilled y Unskilled Supervisors
+
+      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 == 1 ~ 7,                  # 7. Formal workers
+      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 %in% c(2, 3, 4, -999) ~ 8, # 8. Informal workers
+      as.integer(owners2) == 1 & a06_boleta == 0 ~ 9,                                                         # 9. Informal self-employed
+    ),
+    wrightclass2_reduced3 = factor(
+      wrightclass2_reduced3,
+      levels = 1:9,
+      labels = c(
+        "1. Capitalists",
+        "2. Small employers",
+        "3. Petty bourgeoisie",
+        "4. Expert managers",
+        "5. Experts",
+        "6. Skilled & Unskilled Supervisors",
+        "7. Formal workers",
+        "8. Informal workers",
+        "9. Informal self-employed"
+      )
+    )
+  ) %>%
+  set_variable_labels(wrightclass2_reduced3 = "Wright Class Typology Reduced + Informal (8)")
+
+frq(data$wrightclass2_reduced3)
+
+# base survey
+data_svy <- as_survey_design(data, weights = rake_wb2)
+
+# Tabla de frecuencias ponderadas
+wright_freq_8 <- data_svy %>%
+  group_by(wrightclass2_reduced3) %>%
+  summarise(
+    freq = survey_mean(vartype = NULL, na.rm = TRUE),
+    n_unweighted = unweighted(n())
+  ) %>%
+  mutate(
+    freq_pct = freq * 100
+  )
+
+wright_freq_8 %>%
+  print(n = Inf)
+```
+
 ## Dependent variables
 
 ### c01_01
@@ -1545,6 +1603,13 @@ data <- data %>%
   set_variable_labels(pol_id = "Political identification") 
 
 frq(data$pol_id)
+```
+
+### ingresos
+
+```{r}
+frq(data$a33)
+frq(data$a34)
 ```
 
 ## Guardar datos
