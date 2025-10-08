@@ -28,14 +28,14 @@ p_load(
   stringr,           # manipular texto
   sjmisc,            # limpieza y descripción de datos
   
-  # visualización
+  # visualizacion
   ggplot2,           # visualización basado en gramática de gráficos
   ggrepel,           # etiquetas en gráficos sin superposición
   gridExtra,         # combinar gráficos en uno solo
   scales,            # controla cómo se ven los ejes en gráficos
   sjPlot,            # visualizar resultados estadísticos
   
-  # análisis
+  # analisis
   psych,             # análisis general, psicométrico
   survey,            # diseño survey encuestas complejas
   srvyr,             # diseño survey con tidy

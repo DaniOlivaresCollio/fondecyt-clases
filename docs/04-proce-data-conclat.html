@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Procesamiento Data Conclat Chile – Esquema de clases Fondecyt</title>
+<title>3&nbsp; Procesamiento Data Conclat Chile – Esquema de clases Fondecyt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-proce-data-conclat.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./02-proce-data-conclat.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -118,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-proce-data-conclat.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Chile</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-proce-data-conclat.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Chile</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -153,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-proce-data-conclat.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01-proce-data-conclat.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Chile</span></span></a>
   </div>
 </li>
@@ -165,14 +164,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-descriptivos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descriptivos Ponderadores</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04-proce-data-conclat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Chile</span></span></a>
+  <a href="./04-proce-data-conclat.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Chile</span></span></a>
   </div>
 </li>
     </ul>
@@ -185,62 +178,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#preparación" id="toc-preparación" class="nav-link active" data-scroll-target="#preparación"><span class="header-section-number">1.1</span> Preparación</a>
+  <li><a href="#preparación" id="toc-preparación" class="nav-link active" data-scroll-target="#preparación"><span class="header-section-number">3.1</span> Preparación</a>
   <ul class="collapse">
-  <li><a href="#cargar-datos" id="toc-cargar-datos" class="nav-link" data-scroll-target="#cargar-datos"><span class="header-section-number">1.1.1</span> Cargar datos</a></li>
-  <li><a href="#selección-de-variables" id="toc-selección-de-variables" class="nav-link" data-scroll-target="#selección-de-variables"><span class="header-section-number">1.1.2</span> Selección de Variables</a></li>
+  <li><a href="#cargar-datos" id="toc-cargar-datos" class="nav-link" data-scroll-target="#cargar-datos"><span class="header-section-number">3.1.1</span> Cargar datos</a></li>
+  <li><a href="#selección-de-variables" id="toc-selección-de-variables" class="nav-link" data-scroll-target="#selección-de-variables"><span class="header-section-number">3.1.2</span> Selección de Variables</a></li>
   </ul></li>
-  <li><a href="#procesamiento" id="toc-procesamiento" class="nav-link" data-scroll-target="#procesamiento"><span class="header-section-number">1.2</span> Procesamiento</a>
+  <li><a href="#procesamiento" id="toc-procesamiento" class="nav-link" data-scroll-target="#procesamiento"><span class="header-section-number">3.2</span> Procesamiento</a>
   <ul class="collapse">
-  <li><a href="#relation_mop" id="toc-relation_mop" class="nav-link" data-scroll-target="#relation_mop"><span class="header-section-number">1.2.1</span> relation_mop</a></li>
-  <li><a href="#company_size" id="toc-company_size" class="nav-link" data-scroll-target="#company_size"><span class="header-section-number">1.2.2</span> company_size</a></li>
-  <li><a href="#workplace_size" id="toc-workplace_size" class="nav-link" data-scroll-target="#workplace_size"><span class="header-section-number">1.2.3</span> workplace_size</a></li>
-  <li><a href="#owners" id="toc-owners" class="nav-link" data-scroll-target="#owners"><span class="header-section-number">1.2.4</span> owners</a></li>
-  <li><a href="#owners2" id="toc-owners2" class="nav-link" data-scroll-target="#owners2"><span class="header-section-number">1.2.5</span> owners2</a></li>
-  <li><a href="#educ" id="toc-educ" class="nav-link" data-scroll-target="#educ"><span class="header-section-number">1.2.6</span> educ</a></li>
-  <li><a href="#ciuo08_clio_2d" id="toc-ciuo08_clio_2d" class="nav-link" data-scroll-target="#ciuo08_clio_2d"><span class="header-section-number">1.2.7</span> ciuo08_clio_2d</a></li>
-  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills"><span class="header-section-number">1.2.8</span> skills</a></li>
-  <li><a href="#formal_position_auth" id="toc-formal_position_auth" class="nav-link" data-scroll-target="#formal_position_auth"><span class="header-section-number">1.2.9</span> formal_position_auth</a></li>
-  <li><a href="#supervision" id="toc-supervision" class="nav-link" data-scroll-target="#supervision"><span class="header-section-number">1.2.10</span> supervision</a></li>
-  <li><a href="#decisionmaking_typology" id="toc-decisionmaking_typology" class="nav-link" data-scroll-target="#decisionmaking_typology"><span class="header-section-number">1.2.11</span> decisionmaking_typology</a></li>
-  <li><a href="#managerial_location_typology" id="toc-managerial_location_typology" class="nav-link" data-scroll-target="#managerial_location_typology"><span class="header-section-number">1.2.12</span> managerial_location_typology</a></li>
-  <li><a href="#a06_boleta" id="toc-a06_boleta" class="nav-link" data-scroll-target="#a06_boleta"><span class="header-section-number">1.2.13</span> a06_boleta</a></li>
-  <li><a href="#inicio_actividades" id="toc-inicio_actividades" class="nav-link" data-scroll-target="#inicio_actividades"><span class="header-section-number">1.2.14</span> inicio_actividades</a></li>
-  <li><a href="#a18_contrato" id="toc-a18_contrato" class="nav-link" data-scroll-target="#a18_contrato"><span class="header-section-number">1.2.15</span> a18_contrato</a></li>
+  <li><a href="#relation_mop" id="toc-relation_mop" class="nav-link" data-scroll-target="#relation_mop"><span class="header-section-number">3.2.1</span> relation_mop</a></li>
+  <li><a href="#company_size" id="toc-company_size" class="nav-link" data-scroll-target="#company_size"><span class="header-section-number">3.2.2</span> company_size</a></li>
+  <li><a href="#workplace_size" id="toc-workplace_size" class="nav-link" data-scroll-target="#workplace_size"><span class="header-section-number">3.2.3</span> workplace_size</a></li>
+  <li><a href="#owners" id="toc-owners" class="nav-link" data-scroll-target="#owners"><span class="header-section-number">3.2.4</span> owners</a></li>
+  <li><a href="#owners2" id="toc-owners2" class="nav-link" data-scroll-target="#owners2"><span class="header-section-number">3.2.5</span> owners2</a></li>
+  <li><a href="#educ" id="toc-educ" class="nav-link" data-scroll-target="#educ"><span class="header-section-number">3.2.6</span> educ</a></li>
+  <li><a href="#ciuo08_clio_2d" id="toc-ciuo08_clio_2d" class="nav-link" data-scroll-target="#ciuo08_clio_2d"><span class="header-section-number">3.2.7</span> ciuo08_clio_2d</a></li>
+  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills"><span class="header-section-number">3.2.8</span> skills</a></li>
+  <li><a href="#formal_position_auth" id="toc-formal_position_auth" class="nav-link" data-scroll-target="#formal_position_auth"><span class="header-section-number">3.2.9</span> formal_position_auth</a></li>
+  <li><a href="#supervision" id="toc-supervision" class="nav-link" data-scroll-target="#supervision"><span class="header-section-number">3.2.10</span> supervision</a></li>
+  <li><a href="#decisionmaking_typology" id="toc-decisionmaking_typology" class="nav-link" data-scroll-target="#decisionmaking_typology"><span class="header-section-number">3.2.11</span> decisionmaking_typology</a></li>
+  <li><a href="#managerial_location_typology" id="toc-managerial_location_typology" class="nav-link" data-scroll-target="#managerial_location_typology"><span class="header-section-number">3.2.12</span> managerial_location_typology</a></li>
+  <li><a href="#a06_boleta" id="toc-a06_boleta" class="nav-link" data-scroll-target="#a06_boleta"><span class="header-section-number">3.2.13</span> a06_boleta</a></li>
+  <li><a href="#inicio_actividades" id="toc-inicio_actividades" class="nav-link" data-scroll-target="#inicio_actividades"><span class="header-section-number">3.2.14</span> inicio_actividades</a></li>
+  <li><a href="#a18_contrato" id="toc-a18_contrato" class="nav-link" data-scroll-target="#a18_contrato"><span class="header-section-number">3.2.15</span> a18_contrato</a></li>
   </ul></li>
-  <li><a href="#classes" id="toc-classes" class="nav-link" data-scroll-target="#classes"><span class="header-section-number">1.3</span> Classes</a>
+  <li><a href="#classes" id="toc-classes" class="nav-link" data-scroll-target="#classes"><span class="header-section-number">3.3</span> Classes</a>
   <ul class="collapse">
-  <li><a href="#wrightclass1_original" id="toc-wrightclass1_original" class="nav-link" data-scroll-target="#wrightclass1_original"><span class="header-section-number">1.3.1</span> wrightclass1_original</a></li>
-  <li><a href="#wrightclass2_capitalists" id="toc-wrightclass2_capitalists" class="nav-link" data-scroll-target="#wrightclass2_capitalists"><span class="header-section-number">1.3.2</span> wrightclass2_capitalists</a></li>
-  <li><a href="#wrightclass1_informal" id="toc-wrightclass1_informal" class="nav-link" data-scroll-target="#wrightclass1_informal"><span class="header-section-number">1.3.3</span> wrightclass1_informal</a></li>
-  <li><a href="#wrightclass2_informal" id="toc-wrightclass2_informal" class="nav-link" data-scroll-target="#wrightclass2_informal"><span class="header-section-number">1.3.4</span> wrightclass2_informal</a></li>
-  <li><a href="#wrightclass1_reduced" id="toc-wrightclass1_reduced" class="nav-link" data-scroll-target="#wrightclass1_reduced"><span class="header-section-number">1.3.5</span> wrightclass1_reduced</a></li>
-  <li><a href="#wrightclass2_reduced" id="toc-wrightclass2_reduced" class="nav-link" data-scroll-target="#wrightclass2_reduced"><span class="header-section-number">1.3.6</span> wrightclass2_reduced</a></li>
-  <li><a href="#wrightclass1_reduced2" id="toc-wrightclass1_reduced2" class="nav-link" data-scroll-target="#wrightclass1_reduced2"><span class="header-section-number">1.3.7</span> wrightclass1_reduced2</a></li>
+  <li><a href="#wrightclass1_original" id="toc-wrightclass1_original" class="nav-link" data-scroll-target="#wrightclass1_original"><span class="header-section-number">3.3.1</span> wrightclass1_original</a></li>
+  <li><a href="#wrightclass2_capitalists" id="toc-wrightclass2_capitalists" class="nav-link" data-scroll-target="#wrightclass2_capitalists"><span class="header-section-number">3.3.2</span> wrightclass2_capitalists</a></li>
+  <li><a href="#wrightclass1_informal" id="toc-wrightclass1_informal" class="nav-link" data-scroll-target="#wrightclass1_informal"><span class="header-section-number">3.3.3</span> wrightclass1_informal</a></li>
+  <li><a href="#wrightclass2_informal" id="toc-wrightclass2_informal" class="nav-link" data-scroll-target="#wrightclass2_informal"><span class="header-section-number">3.3.4</span> wrightclass2_informal</a></li>
+  <li><a href="#wrightclass1_reduced" id="toc-wrightclass1_reduced" class="nav-link" data-scroll-target="#wrightclass1_reduced"><span class="header-section-number">3.3.5</span> wrightclass1_reduced</a></li>
+  <li><a href="#wrightclass2_reduced" id="toc-wrightclass2_reduced" class="nav-link" data-scroll-target="#wrightclass2_reduced"><span class="header-section-number">3.3.6</span> wrightclass2_reduced</a></li>
+  <li><a href="#wrightclass1_reduced2" id="toc-wrightclass1_reduced2" class="nav-link" data-scroll-target="#wrightclass1_reduced2"><span class="header-section-number">3.3.7</span> wrightclass1_reduced2</a></li>
   </ul></li>
-  <li><a href="#dependent-variables" id="toc-dependent-variables" class="nav-link" data-scroll-target="#dependent-variables"><span class="header-section-number">1.4</span> Dependent variables</a>
+  <li><a href="#dependent-variables" id="toc-dependent-variables" class="nav-link" data-scroll-target="#dependent-variables"><span class="header-section-number">3.4</span> Dependent variables</a>
   <ul class="collapse">
-  <li><a href="#c01_01" id="toc-c01_01" class="nav-link" data-scroll-target="#c01_01"><span class="header-section-number">1.4.1</span> c01_01</a></li>
-  <li><a href="#c01_02" id="toc-c01_02" class="nav-link" data-scroll-target="#c01_02"><span class="header-section-number">1.4.2</span> c01_02</a></li>
-  <li><a href="#c01_03" id="toc-c01_03" class="nav-link" data-scroll-target="#c01_03"><span class="header-section-number">1.4.3</span> c01_03</a></li>
-  <li><a href="#c01_04" id="toc-c01_04" class="nav-link" data-scroll-target="#c01_04"><span class="header-section-number">1.4.4</span> c01_04</a></li>
-  <li><a href="#c01_05" id="toc-c01_05" class="nav-link" data-scroll-target="#c01_05"><span class="header-section-number">1.4.5</span> c01_05</a></li>
-  <li><a href="#c01_06" id="toc-c01_06" class="nav-link" data-scroll-target="#c01_06"><span class="header-section-number">1.4.6</span> c01_06</a></li>
-  <li><a href="#c07_03_dummy" id="toc-c07_03_dummy" class="nav-link" data-scroll-target="#c07_03_dummy"><span class="header-section-number">1.4.7</span> c07_03_dummy</a></li>
-  <li><a href="#b29_dummy" id="toc-b29_dummy" class="nav-link" data-scroll-target="#b29_dummy"><span class="header-section-number">1.4.8</span> b29_dummy</a></li>
-  <li><a href="#b29_dummy2" id="toc-b29_dummy2" class="nav-link" data-scroll-target="#b29_dummy2"><span class="header-section-number">1.4.9</span> b29_dummy2</a></li>
+  <li><a href="#c01_01" id="toc-c01_01" class="nav-link" data-scroll-target="#c01_01"><span class="header-section-number">3.4.1</span> c01_01</a></li>
+  <li><a href="#c01_02" id="toc-c01_02" class="nav-link" data-scroll-target="#c01_02"><span class="header-section-number">3.4.2</span> c01_02</a></li>
+  <li><a href="#c01_03" id="toc-c01_03" class="nav-link" data-scroll-target="#c01_03"><span class="header-section-number">3.4.3</span> c01_03</a></li>
+  <li><a href="#c01_04" id="toc-c01_04" class="nav-link" data-scroll-target="#c01_04"><span class="header-section-number">3.4.4</span> c01_04</a></li>
+  <li><a href="#c01_05" id="toc-c01_05" class="nav-link" data-scroll-target="#c01_05"><span class="header-section-number">3.4.5</span> c01_05</a></li>
+  <li><a href="#c01_06" id="toc-c01_06" class="nav-link" data-scroll-target="#c01_06"><span class="header-section-number">3.4.6</span> c01_06</a></li>
+  <li><a href="#c07_03_dummy" id="toc-c07_03_dummy" class="nav-link" data-scroll-target="#c07_03_dummy"><span class="header-section-number">3.4.7</span> c07_03_dummy</a></li>
+  <li><a href="#b29_dummy" id="toc-b29_dummy" class="nav-link" data-scroll-target="#b29_dummy"><span class="header-section-number">3.4.8</span> b29_dummy</a></li>
+  <li><a href="#b29_dummy2" id="toc-b29_dummy2" class="nav-link" data-scroll-target="#b29_dummy2"><span class="header-section-number">3.4.9</span> b29_dummy2</a></li>
   </ul></li>
-  <li><a href="#controls" id="toc-controls" class="nav-link" data-scroll-target="#controls"><span class="header-section-number">1.5</span> Controls</a>
+  <li><a href="#controls" id="toc-controls" class="nav-link" data-scroll-target="#controls"><span class="header-section-number">3.5</span> Controls</a>
   <ul class="collapse">
-  <li><a href="#female" id="toc-female" class="nav-link" data-scroll-target="#female"><span class="header-section-number">1.5.1</span> female</a></li>
-  <li><a href="#age" id="toc-age" class="nav-link" data-scroll-target="#age"><span class="header-section-number">1.5.2</span> age</a></li>
-  <li><a href="#sector" id="toc-sector" class="nav-link" data-scroll-target="#sector"><span class="header-section-number">1.5.3</span> sector</a></li>
-  <li><a href="#rama" id="toc-rama" class="nav-link" data-scroll-target="#rama"><span class="header-section-number">1.5.4</span> rama</a></li>
-  <li><a href="#unions" id="toc-unions" class="nav-link" data-scroll-target="#unions"><span class="header-section-number">1.5.5</span> unions</a></li>
-  <li><a href="#union_member" id="toc-union_member" class="nav-link" data-scroll-target="#union_member"><span class="header-section-number">1.5.6</span> union_member</a></li>
-  <li><a href="#pol_id" id="toc-pol_id" class="nav-link" data-scroll-target="#pol_id"><span class="header-section-number">1.5.7</span> pol_id</a></li>
+  <li><a href="#female" id="toc-female" class="nav-link" data-scroll-target="#female"><span class="header-section-number">3.5.1</span> female</a></li>
+  <li><a href="#age" id="toc-age" class="nav-link" data-scroll-target="#age"><span class="header-section-number">3.5.2</span> age</a></li>
+  <li><a href="#sector" id="toc-sector" class="nav-link" data-scroll-target="#sector"><span class="header-section-number">3.5.3</span> sector</a></li>
+  <li><a href="#rama" id="toc-rama" class="nav-link" data-scroll-target="#rama"><span class="header-section-number">3.5.4</span> rama</a></li>
+  <li><a href="#unions" id="toc-unions" class="nav-link" data-scroll-target="#unions"><span class="header-section-number">3.5.5</span> unions</a></li>
+  <li><a href="#union_member" id="toc-union_member" class="nav-link" data-scroll-target="#union_member"><span class="header-section-number">3.5.6</span> union_member</a></li>
+  <li><a href="#pol_id" id="toc-pol_id" class="nav-link" data-scroll-target="#pol_id"><span class="header-section-number">3.5.7</span> pol_id</a></li>
   </ul></li>
-  <li><a href="#guardar-datos" id="toc-guardar-datos" class="nav-link" data-scroll-target="#guardar-datos"><span class="header-section-number">1.6</span> Guardar datos</a></li>
+  <li><a href="#guardar-datos" id="toc-guardar-datos" class="nav-link" data-scroll-target="#guardar-datos"><span class="header-section-number">3.6</span> Guardar datos</a></li>
   </ul>
 </nav>
     </div>
@@ -249,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Chile</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Chile</span></h1>
 </div>
 
 
@@ -266,10 +259,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="preparación" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="preparación"><span class="header-section-number">1.1</span> Preparación</h2>
-<section id="cargar-datos" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="cargar-datos"><span class="header-section-number">1.1.1</span> Cargar datos</h3>
+<section id="preparación" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="preparación"><span class="header-section-number">3.1</span> Preparación</h2>
+<section id="cargar-datos" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="cargar-datos"><span class="header-section-number">3.1.1</span> Cargar datos</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"input/data/datos-conclat.Rdata"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data_raw <span class="ot">&lt;-</span> data</span>
@@ -282,8 +275,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="selección-de-variables" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="selección-de-variables"><span class="header-section-number">1.1.2</span> Selección de Variables</h3>
+<section id="selección-de-variables" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="selección-de-variables"><span class="header-section-number">3.1.2</span> Selección de Variables</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_select <span class="ot">&lt;-</span> data_raw <span class="sc">%&gt;%</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id,</span>
@@ -320,10 +313,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="procesamiento" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="procesamiento"><span class="header-section-number">1.2</span> Procesamiento</h2>
-<section id="relation_mop" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="relation_mop"><span class="header-section-number">1.2.1</span> relation_mop</h3>
+<section id="procesamiento" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="procesamiento"><span class="header-section-number">3.2</span> Procesamiento</h2>
+<section id="relation_mop" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="relation_mop"><span class="header-section-number">3.2.1</span> relation_mop</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Situación empleo</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
@@ -411,8 +404,8 @@ Value            |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="company_size" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="company_size"><span class="header-section-number">1.2.2</span> company_size</h3>
+<section id="company_size" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="company_size"><span class="header-section-number">3.2.2</span> company_size</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a26)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -474,8 +467,8 @@ Solo        | 783 | 25.69 |   28.11 |  28.11
 </div>
 </div>
 </section>
-<section id="workplace_size" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="workplace_size"><span class="header-section-number">1.2.3</span> workplace_size</h3>
+<section id="workplace_size" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="workplace_size"><span class="header-section-number">3.2.3</span> workplace_size</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a27)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -537,8 +530,8 @@ Solo        | 851 | 27.92 |   28.52 |  28.52
 </div>
 </div>
 </section>
-<section id="owners" class="level3" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored" data-anchor-id="owners"><span class="header-section-number">1.2.4</span> owners</h3>
+<section id="owners" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="owners"><span class="header-section-number">3.2.4</span> owners</h3>
 <ul>
 <li>1 == employers o self employed sin empleados</li>
 <li>2 == employers o self employed con 2-9 empleados</li>
@@ -595,8 +588,8 @@ Value                 |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="owners2" class="level3" data-number="1.2.5">
-<h3 data-number="1.2.5" class="anchored" data-anchor-id="owners2"><span class="header-section-number">1.2.5</span> owners2</h3>
+<section id="owners2" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="owners2"><span class="header-section-number">3.2.5</span> owners2</h3>
 <ul>
 <li>1 == employers o self employed sin empleados</li>
 <li>2 == employers o self employed con 2-49 empleados</li>
@@ -637,8 +630,8 @@ Value                 |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="educ" class="level3" data-number="1.2.6">
-<h3 data-number="1.2.6" class="anchored" data-anchor-id="educ"><span class="header-section-number">1.2.6</span> educ</h3>
+<section id="educ" class="level3" data-number="3.2.6">
+<h3 data-number="3.2.6" class="anchored" data-anchor-id="educ"><span class="header-section-number">3.2.6</span> educ</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>e05)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -688,8 +681,8 @@ Value |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="ciuo08_clio_2d" class="level3" data-number="1.2.7">
-<h3 data-number="1.2.7" class="anchored" data-anchor-id="ciuo08_clio_2d"><span class="header-section-number">1.2.7</span> ciuo08_clio_2d</h3>
+<section id="ciuo08_clio_2d" class="level3" data-number="3.2.7">
+<h3 data-number="3.2.7" class="anchored" data-anchor-id="ciuo08_clio_2d"><span class="header-section-number">3.2.7</span> ciuo08_clio_2d</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparar variables necesarias</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1065,8 +1058,8 @@ Value |   N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="skills" class="level3" data-number="1.2.8">
-<h3 data-number="1.2.8" class="anchored" data-anchor-id="skills"><span class="header-section-number">1.2.8</span> skills</h3>
+<section id="skills" class="level3" data-number="3.2.8">
+<h3 data-number="3.2.8" class="anchored" data-anchor-id="skills"><span class="header-section-number">3.2.8</span> skills</h3>
 <ul>
 <li><p>Experts -&gt; ciuo08_2d == 11 a 34 con universitaria completa o más (educ &gt;= 9) —&gt; experts</p></li>
 <li><p>Skilled -&gt; ciuo08_2d == 11 a 34 con universitaria incompleta o menos (educ &lt; 9), y</p></li>
@@ -1120,8 +1113,8 @@ Value        |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="formal_position_auth" class="level3" data-number="1.2.9">
-<h3 data-number="1.2.9" class="anchored" data-anchor-id="formal_position_auth"><span class="header-section-number">1.2.9</span> formal_position_auth</h3>
+<section id="formal_position_auth" class="level3" data-number="3.2.9">
+<h3 data-number="3.2.9" class="anchored" data-anchor-id="formal_position_auth"><span class="header-section-number">3.2.9</span> formal_position_auth</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a15)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1178,8 +1171,8 @@ Value                                                   | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="supervision" class="level3" data-number="1.2.10">
-<h3 data-number="1.2.10" class="anchored" data-anchor-id="supervision"><span class="header-section-number">1.2.10</span> supervision</h3>
+<section id="supervision" class="level3" data-number="3.2.10">
+<h3 data-number="3.2.10" class="anchored" data-anchor-id="supervision"><span class="header-section-number">3.2.10</span> supervision</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a16)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1221,8 +1214,8 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="decisionmaking_typology" class="level3" data-number="1.2.11">
-<h3 data-number="1.2.11" class="anchored" data-anchor-id="decisionmaking_typology"><span class="header-section-number">1.2.11</span> decisionmaking_typology</h3>
+<section id="decisionmaking_typology" class="level3" data-number="3.2.11">
+<h3 data-number="3.2.11" class="anchored" data-anchor-id="decisionmaking_typology"><span class="header-section-number">3.2.11</span> decisionmaking_typology</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_01)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1413,8 +1406,8 @@ Value |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="managerial_location_typology" class="level3" data-number="1.2.12">
-<h3 data-number="1.2.12" class="anchored" data-anchor-id="managerial_location_typology"><span class="header-section-number">1.2.12</span> managerial_location_typology</h3>
+<section id="managerial_location_typology" class="level3" data-number="3.2.12">
+<h3 data-number="3.2.12" class="anchored" data-anchor-id="managerial_location_typology"><span class="header-section-number">3.2.12</span> managerial_location_typology</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1521,8 +1514,8 @@ Value                    |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="a06_boleta" class="level3" data-number="1.2.13">
-<h3 data-number="1.2.13" class="anchored" data-anchor-id="a06_boleta"><span class="header-section-number">1.2.13</span> a06_boleta</h3>
+<section id="a06_boleta" class="level3" data-number="3.2.13">
+<h3 data-number="3.2.13" class="anchored" data-anchor-id="a06_boleta"><span class="header-section-number">3.2.13</span> a06_boleta</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a06)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1563,8 +1556,8 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="inicio_actividades" class="level3" data-number="1.2.14">
-<h3 data-number="1.2.14" class="anchored" data-anchor-id="inicio_actividades"><span class="header-section-number">1.2.14</span> inicio_actividades</h3>
+<section id="inicio_actividades" class="level3" data-number="3.2.14">
+<h3 data-number="3.2.14" class="anchored" data-anchor-id="inicio_actividades"><span class="header-section-number">3.2.14</span> inicio_actividades</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a10)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1612,8 +1605,8 @@ Value |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="a18_contrato" class="level3" data-number="1.2.15">
-<h3 data-number="1.2.15" class="anchored" data-anchor-id="a18_contrato"><span class="header-section-number">1.2.15</span> a18_contrato</h3>
+<section id="a18_contrato" class="level3" data-number="3.2.15">
+<h3 data-number="3.2.15" class="anchored" data-anchor-id="a18_contrato"><span class="header-section-number">3.2.15</span> a18_contrato</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a18)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1666,11 +1659,11 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 </div>
 </section>
 </section>
-<section id="classes" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="classes"><span class="header-section-number">1.3</span> Classes</h2>
+<section id="classes" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="classes"><span class="header-section-number">3.3</span> Classes</h2>
 <p><img src="img/wright_classes.jpeg" class="img-fluid"></p>
-<section id="wrightclass1_original" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="wrightclass1_original"><span class="header-section-number">1.3.1</span> wrightclass1_original</h3>
+<section id="wrightclass1_original" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="wrightclass1_original"><span class="header-section-number">3.3.1</span> wrightclass1_original</h3>
 <p><strong>employers: employers con 10 o más trabajadores</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
@@ -1777,8 +1770,8 @@ This warning is displayed once per session.</code></pre>
 </div>
 </div>
 </section>
-<section id="wrightclass2_capitalists" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="wrightclass2_capitalists"><span class="header-section-number">1.3.2</span> wrightclass2_capitalists</h3>
+<section id="wrightclass2_capitalists" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="wrightclass2_capitalists"><span class="header-section-number">3.3.2</span> wrightclass2_capitalists</h3>
 <p><strong>capitalists: employers 50 o más trabajadores</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
@@ -1878,8 +1871,8 @@ Value                      |   N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="wrightclass1_informal" class="level3" data-number="1.3.3">
-<h3 data-number="1.3.3" class="anchored" data-anchor-id="wrightclass1_informal"><span class="header-section-number">1.3.3</span> wrightclass1_informal</h3>
+<section id="wrightclass1_informal" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="wrightclass1_informal"><span class="header-section-number">3.3.3</span> wrightclass1_informal</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1983,8 +1976,8 @@ Value                      |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="wrightclass2_informal" class="level3" data-number="1.3.4">
-<h3 data-number="1.3.4" class="anchored" data-anchor-id="wrightclass2_informal"><span class="header-section-number">1.3.4</span> wrightclass2_informal</h3>
+<section id="wrightclass2_informal" class="level3" data-number="3.3.4">
+<h3 data-number="3.3.4" class="anchored" data-anchor-id="wrightclass2_informal"><span class="header-section-number">3.3.4</span> wrightclass2_informal</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -2088,8 +2081,8 @@ Value                      |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="wrightclass1_reduced" class="level3" data-number="1.3.5">
-<h3 data-number="1.3.5" class="anchored" data-anchor-id="wrightclass1_reduced"><span class="header-section-number">1.3.5</span> wrightclass1_reduced</h3>
+<section id="wrightclass1_reduced" class="level3" data-number="3.3.5">
+<h3 data-number="3.3.5" class="anchored" data-anchor-id="wrightclass1_reduced"><span class="header-section-number">3.3.5</span> wrightclass1_reduced</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -2173,8 +2166,8 @@ Value                     |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="wrightclass2_reduced" class="level3" data-number="1.3.6">
-<h3 data-number="1.3.6" class="anchored" data-anchor-id="wrightclass2_reduced"><span class="header-section-number">1.3.6</span> wrightclass2_reduced</h3>
+<section id="wrightclass2_reduced" class="level3" data-number="3.3.6">
+<h3 data-number="3.3.6" class="anchored" data-anchor-id="wrightclass2_reduced"><span class="header-section-number">3.3.6</span> wrightclass2_reduced</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -2258,8 +2251,8 @@ Value                     |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="wrightclass1_reduced2" class="level3" data-number="1.3.7">
-<h3 data-number="1.3.7" class="anchored" data-anchor-id="wrightclass1_reduced2"><span class="header-section-number">1.3.7</span> wrightclass1_reduced2</h3>
+<section id="wrightclass1_reduced2" class="level3" data-number="3.3.7">
+<h3 data-number="3.3.7" class="anchored" data-anchor-id="wrightclass1_reduced2"><span class="header-section-number">3.3.7</span> wrightclass1_reduced2</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -2340,10 +2333,10 @@ Value                     |    N | Raw % | Valid % | Cum. %
 </div>
 </section>
 </section>
-<section id="dependent-variables" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="dependent-variables"><span class="header-section-number">1.4</span> Dependent variables</h2>
-<section id="c01_01" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="c01_01"><span class="header-section-number">1.4.1</span> c01_01</h3>
+<section id="dependent-variables" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="dependent-variables"><span class="header-section-number">3.4</span> Dependent variables</h2>
+<section id="c01_01" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="c01_01"><span class="header-section-number">3.4.1</span> c01_01</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c01_01)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2398,8 +2391,8 @@ Value |   N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="c01_02" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="c01_02"><span class="header-section-number">1.4.2</span> c01_02</h3>
+<section id="c01_02" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="c01_02"><span class="header-section-number">3.4.2</span> c01_02</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c01_02)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2454,8 +2447,8 @@ Value |   N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="c01_03" class="level3" data-number="1.4.3">
-<h3 data-number="1.4.3" class="anchored" data-anchor-id="c01_03"><span class="header-section-number">1.4.3</span> c01_03</h3>
+<section id="c01_03" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="c01_03"><span class="header-section-number">3.4.3</span> c01_03</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c01_03)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2510,8 +2503,8 @@ Value |   N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="c01_04" class="level3" data-number="1.4.4">
-<h3 data-number="1.4.4" class="anchored" data-anchor-id="c01_04"><span class="header-section-number">1.4.4</span> c01_04</h3>
+<section id="c01_04" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="c01_04"><span class="header-section-number">3.4.4</span> c01_04</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c01_04)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2566,8 +2559,8 @@ Value |   N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="c01_05" class="level3" data-number="1.4.5">
-<h3 data-number="1.4.5" class="anchored" data-anchor-id="c01_05"><span class="header-section-number">1.4.5</span> c01_05</h3>
+<section id="c01_05" class="level3" data-number="3.4.5">
+<h3 data-number="3.4.5" class="anchored" data-anchor-id="c01_05"><span class="header-section-number">3.4.5</span> c01_05</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c01_05)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2622,8 +2615,8 @@ Value |   N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="c01_06" class="level3" data-number="1.4.6">
-<h3 data-number="1.4.6" class="anchored" data-anchor-id="c01_06"><span class="header-section-number">1.4.6</span> c01_06</h3>
+<section id="c01_06" class="level3" data-number="3.4.6">
+<h3 data-number="3.4.6" class="anchored" data-anchor-id="c01_06"><span class="header-section-number">3.4.6</span> c01_06</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c01_06)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2678,8 +2671,8 @@ Value |   N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="c07_03_dummy" class="level3" data-number="1.4.7">
-<h3 data-number="1.4.7" class="anchored" data-anchor-id="c07_03_dummy"><span class="header-section-number">1.4.7</span> c07_03_dummy</h3>
+<section id="c07_03_dummy" class="level3" data-number="3.4.7">
+<h3 data-number="3.4.7" class="anchored" data-anchor-id="c07_03_dummy"><span class="header-section-number">3.4.7</span> c07_03_dummy</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c07_03)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2722,8 +2715,8 @@ Value |    Label |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="b29_dummy" class="level3" data-number="1.4.8">
-<h3 data-number="1.4.8" class="anchored" data-anchor-id="b29_dummy"><span class="header-section-number">1.4.8</span> b29_dummy</h3>
+<section id="b29_dummy" class="level3" data-number="3.4.8">
+<h3 data-number="3.4.8" class="anchored" data-anchor-id="b29_dummy"><span class="header-section-number">3.4.8</span> b29_dummy</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb145"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>b29)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2766,8 +2759,8 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="b29_dummy2" class="level3" data-number="1.4.9">
-<h3 data-number="1.4.9" class="anchored" data-anchor-id="b29_dummy2"><span class="header-section-number">1.4.9</span> b29_dummy2</h3>
+<section id="b29_dummy2" class="level3" data-number="3.4.9">
+<h3 data-number="3.4.9" class="anchored" data-anchor-id="b29_dummy2"><span class="header-section-number">3.4.9</span> b29_dummy2</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb149"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -2795,10 +2788,10 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 </div>
 </section>
 </section>
-<section id="controls" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="controls"><span class="header-section-number">1.5</span> Controls</h2>
-<section id="female" class="level3" data-number="1.5.1">
-<h3 data-number="1.5.1" class="anchored" data-anchor-id="female"><span class="header-section-number">1.5.1</span> female</h3>
+<section id="controls" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="controls"><span class="header-section-number">3.5</span> Controls</h2>
+<section id="female" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="female"><span class="header-section-number">3.5.1</span> female</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>sexo)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2837,8 +2830,8 @@ Value |  Label |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="age" class="level3" data-number="1.5.2">
-<h3 data-number="1.5.2" class="anchored" data-anchor-id="age"><span class="header-section-number">1.5.2</span> age</h3>
+<section id="age" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="age"><span class="header-section-number">3.5.2</span> age</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb155"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(data<span class="sc">$</span>edad)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2869,8 +2862,8 @@ Value |  Label |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="sector" class="level3" data-number="1.5.3">
-<h3 data-number="1.5.3" class="anchored" data-anchor-id="sector"><span class="header-section-number">1.5.3</span> sector</h3>
+<section id="sector" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="sector"><span class="header-section-number">3.5.3</span> sector</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb159"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a07)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2928,8 +2921,8 @@ Value |   Label |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="rama" class="level3" data-number="1.5.4">
-<h3 data-number="1.5.4" class="anchored" data-anchor-id="rama"><span class="header-section-number">1.5.4</span> rama</h3>
+<section id="rama" class="level3" data-number="3.5.4">
+<h3 data-number="3.5.4" class="anchored" data-anchor-id="rama"><span class="header-section-number">3.5.4</span> rama</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb163"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a25) <span class="co"># 19 + 46 NS/NR y 603 otro</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3066,8 +3059,8 @@ T     |  30 |  0.98 |    1.01 | 100.00
 </div>
 </div>
 </section>
-<section id="unions" class="level3" data-number="1.5.5">
-<h3 data-number="1.5.5" class="anchored" data-anchor-id="unions"><span class="header-section-number">1.5.5</span> unions</h3>
+<section id="unions" class="level3" data-number="3.5.5">
+<h3 data-number="3.5.5" class="anchored" data-anchor-id="unions"><span class="header-section-number">3.5.5</span> unions</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb171"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>b19)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3111,8 +3104,8 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="union_member" class="level3" data-number="1.5.6">
-<h3 data-number="1.5.6" class="anchored" data-anchor-id="union_member"><span class="header-section-number">1.5.6</span> union_member</h3>
+<section id="union_member" class="level3" data-number="3.5.6">
+<h3 data-number="3.5.6" class="anchored" data-anchor-id="union_member"><span class="header-section-number">3.5.6</span> union_member</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>b21)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3158,8 +3151,8 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="pol_id" class="level3" data-number="1.5.7">
-<h3 data-number="1.5.7" class="anchored" data-anchor-id="pol_id"><span class="header-section-number">1.5.7</span> pol_id</h3>
+<section id="pol_id" class="level3" data-number="3.5.7">
+<h3 data-number="3.5.7" class="anchored" data-anchor-id="pol_id"><span class="header-section-number">3.5.7</span> pol_id</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb179"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c08)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3223,8 +3216,8 @@ Not identified |  876 | 28.74 |   28.74 | 100.00
 </div>
 </section>
 </section>
-<section id="guardar-datos" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="guardar-datos"><span class="header-section-number">1.6</span> Guardar datos</h2>
+<section id="guardar-datos" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="guardar-datos"><span class="header-section-number">3.6</span> Guardar datos</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb183"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(data, <span class="at">file=</span><span class="st">"output/data/datos-clases.Rdata"</span>)</span>
 <span id="cb183-2"><a href="#cb183-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="at">file=</span><span class="st">"output/data/datos-clases.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3636,14 +3629,11 @@ Not identified |  876 | 28.74 |   28.74 | 100.00
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Presentación">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Presentación</span>
+      <a href="./02-proce-data-conclat.html" class="pagination-link" aria-label="Procesamiento Data Conclat Argentina">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Argentina</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-proce-data-conclat.html" class="pagination-link" aria-label="Procesamiento Data Conclat Argentina">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Argentina</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
