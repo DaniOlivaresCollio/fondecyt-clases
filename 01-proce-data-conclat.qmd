@@ -1341,7 +1341,7 @@ data <- data %>%
       TRUE ~ as.numeric(a33)
     )
   ) %>% 
-  set_variable_labels(age = "Income")
+  set_variable_labels(income = "Income")
 
 descr(data$income)
 ```
@@ -1358,7 +1358,7 @@ data <- data %>%
       TRUE ~ as.numeric(a34)
     )
   ) %>% 
-  set_variable_labels(age = "Income bracket")
+  set_variable_labels(income_br = "Income brackets")
 
 frq(data$income_br)
 ```
@@ -1366,22 +1366,54 @@ frq(data$income_br)
 ### income_rec
 
 ```{r}
-data$income_br_mean[data$income_br==1]  <- (           200000)             
-data$income_br_mean[data$income_br==2]  <- ( 200001 +  400000) / 2        
-data$income_br_mean[data$income_br==3]  <- ( 400001 +  600000) / 2      
-data$income_br_mean[data$income_br==4]  <- ( 600001 +  800000) / 2       
-data$income_br_mean[data$income_br==5]  <- ( 800001 + 1000000) / 2      
-data$income_br_mean[data$income_br==6]  <- (1000001 + 1200000) / 2      
-data$income_br_mean[data$income_br==7]  <- (1200001 + 1400000) / 2     
-data$income_br_mean[data$income_br==8]  <- (1400001 + 1600000) / 2    
-data$income_br_mean[data$income_br==9]  <- (1600001 + 1800000) / 2      
-data$income_br_mean[data$income_br==10] <- (1800001 + 2000000) / 2    
-data$income_br_mean[data$income_br==11] <- (2000001 + 2200000) / 2        
-data$income_br_mean[data$income_br==12] <- (2200001 + 2400000) / 2        
-data$income_br_mean[data$income_br==13] <- (2400001 + 2600000) / 2       
-data$income_br_mean[data$income_br==14] <- (2600001 + 2800000) / 2      
-data$income_br_mean[data$income_br==15] <- (2800001 + 3000000) / 2     
-data$income_br_mean[data$income_br==16] <- (3000001) 
+# armar variable auxiliar
+data <- data %>% 
+  mutate(
+    income_br_aux = case_when(
+      income_br == 1 ~ 200000,
+      income_br == 2 ~ (( 200001 +  400000) / 2),
+      income_br == 3 ~ (( 400001 +  600000) / 2), 
+      income_br == 4 ~ (( 600001 +  800000) / 2),
+      income_br == 5 ~ (( 800001 + 1000000) / 2),
+      income_br == 6 ~ ((1000001 + 1200000) / 2),
+      income_br == 7 ~ ((1200001 + 1400000) / 2),
+      income_br == 8 ~ ((1400001 + 1600000) / 2),
+      income_br == 9 ~ ((1600001 + 1800000) / 2),
+      income_br == 10 ~ ((1800001 + 2000000) / 2),
+      income_br == 11 ~ ((2000001 + 2200000) / 2),
+      income_br == 12 ~ ((2200001 + 2400000) / 2), 
+      income_br == 13 ~ ((2400001 + 2600000) / 2),
+      income_br == 14 ~ ((2600001 + 2800000) / 2),
+      income_br == 15 ~ ((2800001 + 3000000) / 2),
+      income_br == 16 ~ 3000001
+    )
+  )
+
+# armar income_rec
+data <- data %>% 
+  mutate(
+    income_rec = if_else(!is.na(income),income, income_br_aux)
+  ) %>% 
+  set_variable_labels(income_rec = "Income recoded") %>% 
+  select(-income_br_aux)
+  
+descr(data$income)
+descr(data$income_rec)
+```
+ 
+### income_br_rec
+
+```{r}
+prom_por_clase <- data %>%
+  group_by(wrightclass2_reduced3) %>%
+  summarise(
+    mean_income = mean(income_rec, na.rm = TRUE),
+    n           = n(),
+    n_missing   = sum(is.na(income_rec)),
+    .groups = "drop"
+  )
+
+prom_por_clase
 ```
 
 ## Guardar datos
