@@ -145,7 +145,7 @@ data_arg <- data_arg %>%
 frq(data_arg$company_size)
 ```
 
-### workplace_size 
+### workplace_size
 
 ```{r}
 frq(data_arg$a27)
@@ -262,7 +262,7 @@ frq(data_arg$educ)
 ## Crear la glosa concatenada
 data_arg$glosa_ciuo08 <- paste(data_arg$a02, data_arg$a03, sep = " ")
 ```
- 
+
 ### ciuo08_ine
 
 ```{r}
@@ -291,17 +291,23 @@ frq(data_arg$ciuo08_ine)
 
 ### skills
 
-- Experts: ciuo08 == 11 a 34 con universitaria completa o más (educ \>= 9) ---\> experts
-- Experts: ciuo08 == 11 a 34 sin información educ (educ == NA)
+-   Experts: ciuo08 == 11 a 34 con universitaria completa o más (educ \>= 9) ---\> experts
 
-- Skilled: ciuo08 == 11 a 34 con universitaria incompleta o menos (educ \< 9)
-- Skilled: ciuo08 == 35, 36, 41:44, 53
-- Skilled: ciuo08 == 51, 54, 61, 62, 71:75, 81 con media completa o más (educ \>= 5)
-- Skilled: ciuo08 == 61, 62, 71:75 sin información educ (educ == NA)
+-   Experts: ciuo08 == 11 a 34 sin información educ (educ == NA)
 
-- Unskilled: ciuo08 == 51, 54, 61, 62, 71:75, 81 con media incompleta o menos, y
-- Unskilled: ciuo08 == 52, 63, 82, 83, 90+
-- Unskilled: ciuo08 == 51, 54, 81 sin información educ (educ == NA)
+-   Skilled: ciuo08 == 11 a 34 con universitaria incompleta o menos (educ \< 9)
+
+-   Skilled: ciuo08 == 35, 36, 41:44, 53
+
+-   Skilled: ciuo08 == 51, 54, 61, 62, 71:75, 81 con media completa o más (educ \>= 5)
+
+-   Skilled: ciuo08 == 61, 62, 71:75 sin información educ (educ == NA)
+
+-   Unskilled: ciuo08 == 51, 54, 61, 62, 71:75, 81 con media incompleta o menos, y
+
+-   Unskilled: ciuo08 == 52, 63, 82, 83, 90+
+
+-   Unskilled: ciuo08 == 51, 54, 81 sin información educ (educ == NA)
 
 ```{r}
 data_arg <- data_arg %>% 

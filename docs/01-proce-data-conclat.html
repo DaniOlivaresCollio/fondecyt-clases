@@ -3141,65 +3141,49 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb180-7"><a href="#cb180-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
 <span id="cb180-8"><a href="#cb180-8" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb180-9"><a href="#cb180-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-10"><a href="#cb180-10" aria-hidden="true" tabindex="-1"></a>prom_por_clase <span class="sc">%&gt;%</span></span>
-<span id="cb180-11"><a href="#cb180-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_income_fmt =</span> <span class="fu">label_number</span>(<span class="at">prefix =</span> <span class="st">"$"</span>, <span class="at">big.mark =</span> <span class="st">"."</span>)(mean_income))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `mutate()`.
-ℹ In argument: `mean_income_fmt = label_number(prefix = "$", big.mark =
-  ".")(mean_income)`.
-Caused by warning in `prettyNum()`:
-! 'big.mark' and 'decimal.mark' are both '.', which could be confusing</code></pre>
-</div>
+<span id="cb180-10"><a href="#cb180-10" aria-hidden="true" tabindex="-1"></a>prom_por_clase </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 5
-   wrightclass2_reduced3             mean_income     n n_missing mean_income_fmt
-   &lt;fct&gt;                                   &lt;dbl&gt; &lt;int&gt;     &lt;int&gt; &lt;chr&gt;          
- 1 1. Capitalists                        829706.    36         2 $829.706       
- 2 2. Small employers                   1071300.   348        21 $1.071.300     
- 3 3. Petty bourgeoisie                  856934.   196        14 $856.934       
- 4 4. Expert managers                   1716000.    92         7 $1.716.000     
- 5 5. Experts                           1119121.   245         9 $1.119.121     
- 6 6. Skilled &amp; Unskilled Superviso…    1042803.   278         8 $1.042.803     
- 7 7. Formal workers                     670736.  1150        13 $670.736       
- 8 8. Informal workers                   535551.   340        17 $535.551       
- 9 9. Informal self-employed             600233.   355        11 $600.233       
-10 &lt;NA&gt;                                  758333.     8         2 $758.333       </code></pre>
+<pre><code># A tibble: 10 × 4
+   wrightclass2_reduced3              mean_income     n n_missing
+   &lt;fct&gt;                                    &lt;dbl&gt; &lt;int&gt;     &lt;int&gt;
+ 1 1. Capitalists                         829706.    36         2
+ 2 2. Small employers                    1071300.   348        21
+ 3 3. Petty bourgeoisie                   856934.   196        14
+ 4 4. Expert managers                    1716000.    92         7
+ 5 5. Experts                            1119121.   245         9
+ 6 6. Skilled &amp; Unskilled Supervisors    1042803.   278         8
+ 7 7. Formal workers                      670736.  1150        13
+ 8 8. Informal workers                    535551.   340        17
+ 9 9. Informal self-employed              600233.   355        11
+10 &lt;NA&gt;                                   758333.     8         2</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb183"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Ponderada (srvyr)</span></span>
-<span id="cb183-2"><a href="#cb183-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> rake_wb2)</span>
-<span id="cb183-3"><a href="#cb183-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb183-4"><a href="#cb183-4" aria-hidden="true" tabindex="-1"></a>prom_por_clase_w <span class="ot">&lt;-</span> data_svy <span class="sc">%&gt;%</span></span>
-<span id="cb183-5"><a href="#cb183-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass2_reduced3) <span class="sc">%&gt;%</span></span>
-<span id="cb183-6"><a href="#cb183-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb183-7"><a href="#cb183-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_income_w =</span> <span class="fu">survey_mean</span>(income_rec, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">vartype =</span> <span class="cn">NULL</span>),</span>
-<span id="cb183-8"><a href="#cb183-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_w           =</span> <span class="fu">survey_total</span>(<span class="sc">!</span><span class="fu">is.na</span>(income_rec), <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">vartype =</span> <span class="cn">NULL</span>),</span>
-<span id="cb183-9"><a href="#cb183-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">missing_w     =</span> <span class="fu">survey_total</span>(<span class="fu">is.na</span>(income_rec), <span class="at">vartype =</span> <span class="cn">NULL</span>),</span>
-<span id="cb183-10"><a href="#cb183-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb183-11"><a href="#cb183-11" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb183-12"><a href="#cb183-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb183-13"><a href="#cb183-13" aria-hidden="true" tabindex="-1"></a>prom_por_clase_w <span class="sc">%&gt;%</span></span>
-<span id="cb183-14"><a href="#cb183-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_income_w_fmt =</span> <span class="fu">label_number</span>(<span class="at">prefix =</span> <span class="st">"$"</span>, <span class="at">big.mark =</span> <span class="st">"."</span>)(mean_income_w))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `mutate()`.
-ℹ In argument: `mean_income_w_fmt = label_number(prefix = "$", big.mark =
-  ".")(mean_income_w)`.
-Caused by warning in `prettyNum()`:
-! 'big.mark' and 'decimal.mark' are both '.', which could be confusing</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb182"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Ponderada (srvyr)</span></span>
+<span id="cb182-2"><a href="#cb182-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> rake_wb2)</span>
+<span id="cb182-3"><a href="#cb182-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb182-4"><a href="#cb182-4" aria-hidden="true" tabindex="-1"></a>prom_por_clase_w <span class="ot">&lt;-</span> data_svy <span class="sc">%&gt;%</span></span>
+<span id="cb182-5"><a href="#cb182-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass2_reduced3) <span class="sc">%&gt;%</span></span>
+<span id="cb182-6"><a href="#cb182-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb182-7"><a href="#cb182-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_income_w =</span> <span class="fu">survey_mean</span>(income_rec, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">vartype =</span> <span class="cn">NULL</span>),</span>
+<span id="cb182-8"><a href="#cb182-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_w           =</span> <span class="fu">survey_total</span>(<span class="sc">!</span><span class="fu">is.na</span>(income_rec), <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">vartype =</span> <span class="cn">NULL</span>),</span>
+<span id="cb182-9"><a href="#cb182-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">missing_w     =</span> <span class="fu">survey_total</span>(<span class="fu">is.na</span>(income_rec), <span class="at">vartype =</span> <span class="cn">NULL</span>),</span>
+<span id="cb182-10"><a href="#cb182-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb182-11"><a href="#cb182-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb182-12"><a href="#cb182-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb182-13"><a href="#cb182-13" aria-hidden="true" tabindex="-1"></a>prom_por_clase_w</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 5
-   wrightclass2_reduced3       mean_income_w     n_w missing_w mean_income_w_fmt
-   &lt;fct&gt;                               &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;            
- 1 1. Capitalists                    630890. 2.37e10   3.11e 9 $630.890         
- 2 2. Small employers               1114234. 2.25e11   7.73e 8 $1.114.234       
- 3 3. Petty bourgeoisie              777198. 1.67e11   1.37e10 $777.198         
- 4 4. Expert managers               2224745. 1.30e11   1.41e 4 $2.224.745       
- 5 5. Experts                       1254671. 3.48e11   1.69e 4 $1.254.671       
- 6 6. Skilled &amp; Unskilled Sup…      1053047. 2.64e11   1.35e 9 $1.053.047       
- 7 7. Formal workers                 743466. 1.04e12   3.29e 4 $743.466         
- 8 8. Informal workers               510597. 3.26e11   5.88e 9 $510.597         
- 9 9. Informal self-employed         600425. 2.54e11   1.65e10 $600.425         
-10 &lt;NA&gt;                              630627. 1.02e 4   4.11e 9 $630.627         </code></pre>
+<pre><code># A tibble: 10 × 4
+   wrightclass2_reduced3              mean_income_w     n_w    missing_w
+   &lt;fct&gt;                                      &lt;dbl&gt;   &lt;dbl&gt;        &lt;dbl&gt;
+ 1 1. Capitalists                           630890. 2.37e10  3114136001.
+ 2 2. Small employers                      1114234. 2.25e11   772731718.
+ 3 3. Petty bourgeoisie                     777198. 1.67e11 13722681366.
+ 4 4. Expert managers                      2224745. 1.30e11       14148.
+ 5 5. Experts                              1254671. 3.48e11       16929.
+ 6 6. Skilled &amp; Unskilled Supervisors      1053047. 2.64e11  1352291292.
+ 7 7. Formal workers                        743466. 1.04e12       32950.
+ 8 8. Informal workers                      510597. 3.26e11  5882709261.
+ 9 9. Informal self-employed                600425. 2.54e11 16468165185.
+10 &lt;NA&gt;                                     630627. 1.02e 4  4112863459.</code></pre>
 </div>
 </div>
 </section>
@@ -3207,8 +3191,8 @@ Caused by warning in `prettyNum()`:
 <section id="guardar-datos" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="guardar-datos"><span class="header-section-number">1.6</span> Guardar datos</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb186"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb186-1"><a href="#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(data, <span class="at">file=</span><span class="st">"output/data/datos-clases.Rdata"</span>)</span>
-<span id="cb186-2"><a href="#cb186-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="at">file=</span><span class="st">"output/data/datos-clases.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb184"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb184-1"><a href="#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(data, <span class="at">file=</span><span class="st">"output/data/datos-clases.Rdata"</span>)</span>
+<span id="cb184-2"><a href="#cb184-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="at">file=</span><span class="st">"output/data/datos-clases.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 

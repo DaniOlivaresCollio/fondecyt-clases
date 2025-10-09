@@ -43,9 +43,9 @@ p_load(
   tidyverse,
   statar,            # conectar con el lenguaje stata
 
-  # conexion web
-  curl,              # conexiones http de bajo nivel: para solucionar el problema de la api del ine
-  httr               # cliente http para API
+  # # conexion web
+  # curl,              # conexiones http de bajo nivel: para solucionar el problema de la api del ine
+  # httr               # cliente http para API
   )
 ```
 
@@ -200,7 +200,6 @@ fmt_table(tbl_ciuo,     title = "ciuo08_ine: n sin ponderar y n ponderado (IC95%
 
 ```
 
-
 ```{r}
 install.packages("openxlsx")
 library(openxlsx)
@@ -293,4 +292,3 @@ check_ciuo <- tibble(
 print(check_relation)
 print(check_ciuo)
 ```
-

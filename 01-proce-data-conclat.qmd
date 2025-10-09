@@ -1413,8 +1413,7 @@ prom_por_clase <- data %>%
     .groups = "drop"
   )
 
-prom_por_clase %>%
-  mutate(mean_income_fmt = label_number(prefix = "$", big.mark = ".")(mean_income))
+prom_por_clase 
 
 
 # 2) Ponderada (srvyr)
@@ -1429,9 +1428,7 @@ prom_por_clase_w <- data_svy %>%
     .groups = "drop"
   )
 
-prom_por_clase_w %>%
-  mutate(mean_income_w_fmt = label_number(prefix = "$", big.mark = ".")(mean_income_w))
-
+prom_por_clase_w
 ```
 
 ## Guardar datos
