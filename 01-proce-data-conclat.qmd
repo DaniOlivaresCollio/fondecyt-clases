@@ -1401,7 +1401,7 @@ descr(data$income)
 descr(data$income_rec)
 ```
  
-### income_br_rec
+### tabla ingresos clase
 
 ```{r}
 prom_por_clase <- data %>%
@@ -1413,7 +1413,25 @@ prom_por_clase <- data %>%
     .groups = "drop"
   )
 
-prom_por_clase
+prom_por_clase %>%
+  mutate(mean_income_fmt = label_number(prefix = "$", big.mark = ".")(mean_income))
+
+
+# 2) Ponderada (srvyr)
+data_svy <- as_survey_design(data, weights = rake_wb2)
+
+prom_por_clase_w <- data_svy %>%
+  group_by(wrightclass2_reduced3) %>%
+  summarise(
+    mean_income_w = survey_mean(income_rec, na.rm = TRUE, vartype = NULL),
+    n_w           = survey_total(!is.na(income_rec), na.rm = TRUE, vartype = NULL),
+    missing_w     = survey_total(is.na(income_rec), vartype = NULL),
+    .groups = "drop"
+  )
+
+prom_por_clase_w %>%
+  mutate(mean_income_w_fmt = label_number(prefix = "$", big.mark = ".")(mean_income_w))
+
 ```
 
 ## Guardar datos
