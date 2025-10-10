@@ -1,4 +1,6 @@
-# Descriptivos Ponderadores
+# Descriptivos Rodolfo
+
+Descriptivos ocupación son y sin pondedrador para Rodolfo.
 
 ## Preparación
 
@@ -52,7 +54,7 @@ p_load(
 ### Cargar datos
 
 ```{r datos,message=FALSE,warning=FALSE}
-load("input/data/data-conclat.Rdata")
+data <- readRDS("input/data/data_lbl.rds")
 ```
 
 ## Crear variables

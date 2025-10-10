@@ -163,6 +163,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Argentina</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-descriptivos-rodolfo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descriptivos Rodolfo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-descriptivos-clases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptivos Clases - Chile</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -231,7 +243,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#income" id="toc-income" class="nav-link" data-scroll-target="#income"><span class="header-section-number">1.5.8</span> income</a></li>
   <li><a href="#income_br" id="toc-income_br" class="nav-link" data-scroll-target="#income_br"><span class="header-section-number">1.5.9</span> income_br</a></li>
   <li><a href="#income_rec" id="toc-income_rec" class="nav-link" data-scroll-target="#income_rec"><span class="header-section-number">1.5.10</span> income_rec</a></li>
-  <li><a href="#tabla-ingresos-clase" id="toc-tabla-ingresos-clase" class="nav-link" data-scroll-target="#tabla-ingresos-clase"><span class="header-section-number">1.5.11</span> tabla ingresos clase</a></li>
   </ul></li>
   <li><a href="#guardar-datos" id="toc-guardar-datos" class="nav-link" data-scroll-target="#guardar-datos"><span class="header-section-number">1.6</span> Guardar datos</a></li>
   </ul>
@@ -499,9 +510,9 @@ Solo        | 851 | 27.92 |   28.52 |  28.52
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">owners =</span> <span class="fu">case_when</span>(</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span> <span class="sc">&amp;</span> (<span class="fu">as.numeric</span>(company_size) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> (<span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="fu">as.numeric</span>(workplace_size) <span class="sc">==</span> <span class="dv">1</span>)) <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span> <span class="sc">&amp;</span> (<span class="fu">as.numeric</span>(company_size) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">|</span> (<span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="fu">as.numeric</span>(workplace_size) <span class="sc">==</span> <span class="dv">2</span>)) <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span> <span class="sc">&amp;</span> (<span class="fu">as.numeric</span>(company_size) <span class="sc">&gt;=</span> <span class="dv">3</span> <span class="sc">|</span> (<span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="fu">as.numeric</span>(workplace_size) <span class="sc">&gt;=</span> <span class="dv">3</span>)) <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">&amp;</span> (<span class="fu">as.numeric</span>(company_size) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> (<span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="fu">as.numeric</span>(workplace_size) <span class="sc">==</span> <span class="dv">1</span>)) <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">&amp;</span> (<span class="fu">as.numeric</span>(company_size) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">|</span> (<span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="fu">as.numeric</span>(workplace_size) <span class="sc">==</span> <span class="dv">2</span>)) <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">&amp;</span> (<span class="fu">as.numeric</span>(company_size) <span class="sc">&gt;=</span> <span class="dv">3</span> <span class="sc">|</span> (<span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="fu">as.numeric</span>(workplace_size) <span class="sc">&gt;=</span> <span class="dv">3</span>)) <span class="sc">~</span> <span class="dv">3</span>,</span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">owners =</span> <span class="fu">factor</span>(</span>
@@ -541,9 +552,9 @@ Value                 |    N | Raw % | Valid % | Cum. %
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">owners2 =</span> <span class="fu">case_when</span>(</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span> <span class="sc">&amp;</span> (<span class="fu">as.numeric</span>(company_size) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> (<span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="fu">as.numeric</span>(workplace_size) <span class="sc">==</span> <span class="dv">1</span>)) <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span> <span class="sc">&amp;</span> (<span class="fu">as.numeric</span>(company_size) <span class="sc">%in%</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span> <span class="sc">|</span> (<span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="fu">as.numeric</span>(workplace_size) <span class="sc">%in%</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>)) <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span> <span class="sc">&amp;</span> (<span class="fu">as.numeric</span>(company_size) <span class="sc">&gt;=</span> <span class="dv">4</span> <span class="sc">|</span> (<span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="fu">as.numeric</span>(workplace_size) <span class="sc">&gt;=</span> <span class="dv">4</span>)) <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">&amp;</span> (<span class="fu">as.numeric</span>(company_size) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> (<span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="fu">as.numeric</span>(workplace_size) <span class="sc">==</span> <span class="dv">1</span>)) <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">&amp;</span> (<span class="fu">as.numeric</span>(company_size) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">|</span> (<span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="fu">as.numeric</span>(workplace_size) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>))) <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">&amp;</span> (<span class="fu">as.numeric</span>(company_size) <span class="sc">&gt;=</span> <span class="dv">4</span> <span class="sc">|</span> (<span class="fu">is.na</span>(company_size) <span class="sc">&amp;</span> <span class="fu">as.numeric</span>(workplace_size) <span class="sc">&gt;=</span> <span class="dv">4</span>)) <span class="sc">~</span> <span class="dv">3</span>,</span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">owners2 =</span> <span class="fu">factor</span>(</span>
@@ -3129,70 +3140,12 @@ Value |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="tabla-ingresos-clase" class="level3" data-number="1.5.11">
-<h3 data-number="1.5.11" class="anchored" data-anchor-id="tabla-ingresos-clase"><span class="header-section-number">1.5.11</span> tabla ingresos clase</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb180"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a>prom_por_clase <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb180-2"><a href="#cb180-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass2_reduced3) <span class="sc">%&gt;%</span></span>
-<span id="cb180-3"><a href="#cb180-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb180-4"><a href="#cb180-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_income =</span> <span class="fu">mean</span>(income_rec, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb180-5"><a href="#cb180-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n           =</span> <span class="fu">n</span>(),</span>
-<span id="cb180-6"><a href="#cb180-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_missing   =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(income_rec)),</span>
-<span id="cb180-7"><a href="#cb180-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb180-8"><a href="#cb180-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb180-9"><a href="#cb180-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb180-10"><a href="#cb180-10" aria-hidden="true" tabindex="-1"></a>prom_por_clase </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 4
-   wrightclass2_reduced3              mean_income     n n_missing
-   &lt;fct&gt;                                    &lt;dbl&gt; &lt;int&gt;     &lt;int&gt;
- 1 1. Capitalists                         829706.    36         2
- 2 2. Small employers                    1071300.   348        21
- 3 3. Petty bourgeoisie                   856934.   196        14
- 4 4. Expert managers                    1716000.    92         7
- 5 5. Experts                            1119121.   245         9
- 6 6. Skilled &amp; Unskilled Supervisors    1042803.   278         8
- 7 7. Formal workers                      670736.  1150        13
- 8 8. Informal workers                    535551.   340        17
- 9 9. Informal self-employed              600233.   355        11
-10 &lt;NA&gt;                                   758333.     8         2</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb182"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Ponderada (srvyr)</span></span>
-<span id="cb182-2"><a href="#cb182-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> rake_wb2)</span>
-<span id="cb182-3"><a href="#cb182-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb182-4"><a href="#cb182-4" aria-hidden="true" tabindex="-1"></a>prom_por_clase_w <span class="ot">&lt;-</span> data_svy <span class="sc">%&gt;%</span></span>
-<span id="cb182-5"><a href="#cb182-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass2_reduced3) <span class="sc">%&gt;%</span></span>
-<span id="cb182-6"><a href="#cb182-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb182-7"><a href="#cb182-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_income_w =</span> <span class="fu">survey_mean</span>(income_rec, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">vartype =</span> <span class="cn">NULL</span>),</span>
-<span id="cb182-8"><a href="#cb182-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_w           =</span> <span class="fu">survey_total</span>(<span class="sc">!</span><span class="fu">is.na</span>(income_rec), <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">vartype =</span> <span class="cn">NULL</span>),</span>
-<span id="cb182-9"><a href="#cb182-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">missing_w     =</span> <span class="fu">survey_total</span>(<span class="fu">is.na</span>(income_rec), <span class="at">vartype =</span> <span class="cn">NULL</span>),</span>
-<span id="cb182-10"><a href="#cb182-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb182-11"><a href="#cb182-11" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb182-12"><a href="#cb182-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb182-13"><a href="#cb182-13" aria-hidden="true" tabindex="-1"></a>prom_por_clase_w</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 4
-   wrightclass2_reduced3              mean_income_w     n_w    missing_w
-   &lt;fct&gt;                                      &lt;dbl&gt;   &lt;dbl&gt;        &lt;dbl&gt;
- 1 1. Capitalists                           630890. 2.37e10  3114136001.
- 2 2. Small employers                      1114234. 2.25e11   772731718.
- 3 3. Petty bourgeoisie                     777198. 1.67e11 13722681366.
- 4 4. Expert managers                      2224745. 1.30e11       14148.
- 5 5. Experts                              1254671. 3.48e11       16929.
- 6 6. Skilled &amp; Unskilled Supervisors      1053047. 2.64e11  1352291292.
- 7 7. Formal workers                        743466. 1.04e12       32950.
- 8 8. Informal workers                      510597. 3.26e11  5882709261.
- 9 9. Informal self-employed                600425. 2.54e11 16468165185.
-10 &lt;NA&gt;                                     630627. 1.02e 4  4112863459.</code></pre>
-</div>
-</div>
-</section>
 </section>
 <section id="guardar-datos" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="guardar-datos"><span class="header-section-number">1.6</span> Guardar datos</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb184"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb184-1"><a href="#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(data, <span class="at">file=</span><span class="st">"output/data/datos-clases.Rdata"</span>)</span>
-<span id="cb184-2"><a href="#cb184-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="at">file=</span><span class="st">"output/data/datos-clases.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb180"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(data, <span class="at">file=</span><span class="st">"output/data/datos-clases.Rdata"</span>)</span>
+<span id="cb180-2"><a href="#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="at">file=</span><span class="st">"output/data/datos-clases.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 

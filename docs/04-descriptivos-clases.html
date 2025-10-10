@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Pablo Pérez-Ahumada, Daniela Olivares- Collío">
 
-<title>Esquema de clases Fondecyt</title>
+<title>4&nbsp; Descriptivos Clases - Chile – Esquema de clases Fondecyt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-proce-data-conclat.html" rel="next">
+<link href="./03-descriptivos-rodolfo.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -83,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Presentación</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-descriptivos-clases.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptivos Clases - Chile</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -112,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presentación</span></a>
   </div>
 </li>
@@ -136,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-descriptivos-clases.html" class="sidebar-item-text sidebar-link">
+  <a href="./04-descriptivos-clases.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptivos Clases - Chile</span></span></a>
   </div>
 </li>
@@ -150,7 +184,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#presentación" id="toc-presentación" class="nav-link active" data-scroll-target="#presentación">Presentación</a></li>
+  <li><a href="#preparación" id="toc-preparación" class="nav-link active" data-scroll-target="#preparación"><span class="header-section-number">4.1</span> Preparación</a>
+  <ul class="collapse">
+  <li><a href="#cargar-datos" id="toc-cargar-datos" class="nav-link" data-scroll-target="#cargar-datos"><span class="header-section-number">4.1.1</span> Cargar datos</a></li>
+  </ul></li>
+  <li><a href="#descriptivos" id="toc-descriptivos" class="nav-link" data-scroll-target="#descriptivos"><span class="header-section-number">4.2</span> Descriptivos</a>
+  <ul class="collapse">
+  <li><a href="#ingresos-x-clase-sin-ponderar" id="toc-ingresos-x-clase-sin-ponderar" class="nav-link" data-scroll-target="#ingresos-x-clase-sin-ponderar"><span class="header-section-number">4.2.1</span> Ingresos x Clase sin ponderar</a></li>
+  <li><a href="#ingresos-x-clase-ponderado" id="toc-ingresos-x-clase-ponderado" class="nav-link" data-scroll-target="#ingresos-x-clase-ponderado"><span class="header-section-number">4.2.2</span> Ingresos x Clase ponderado</a></li>
+  <li><a href="#detalle-ingresos-de-capitalists-50" id="toc-detalle-ingresos-de-capitalists-50" class="nav-link" data-scroll-target="#detalle-ingresos-de-capitalists-50"><span class="header-section-number">4.2.3</span> Detalle ingresos de Capitalists (&gt;= 50)</a></li>
+  <li><a href="#detalle-ingresos-de-small-employers-50" id="toc-detalle-ingresos-de-small-employers-50" class="nav-link" data-scroll-target="#detalle-ingresos-de-small-employers-50"><span class="header-section-number">4.2.4</span> Detalle ingresos de Small Employers (&lt; 50)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -159,26 +203,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Esquema de clases Fondecyt</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Descriptivos Clases - Chile</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Autor/a</div>
-    <div class="quarto-title-meta-contents">
-             <p>Pablo Pérez-Ahumada, Daniela Olivares- Collío </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Fecha de publicación</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">10 de octubre de 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -188,14 +220,132 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="img/conclat_LIn_banner_1.png" class="img-fluid" style="width:100.0%"></p>
-<section id="presentación" class="level1 unnumbered">
-<h1 class="unnumbered">Presentación</h1>
-<p>Este libro corresponde al repositorio de procesamiento y análisis de la base de datos de la <a href="https://www.conclat.org/encuesta/">Encuesta CONCLAT</a> aplicada en Chile, para realizar la construcción de clases de Erik Olin Wright.</p>
-<p>La Encuesta Conclat se aplica en el marco del Proyecto CONCLAT, que busca estudiar cómo se percibe el conflicto laboral y político en Argentina y Chile. Particularmente, analiza cómo las personas de distintas clases y con distinto estatus sindical (por ejemplo, afiliados/as y no afiliados/as a sindicatos) perciben el conflicto dentro y fuera del lugar de trabajo.</p>
-<p><a href="https://www.conclat.org/">CONCLAT</a> es el Proyecto FONDECYT Regular (No 1230056) “Clases sociales, movimientos sindicales y conflicto en tiempos de crisis: un estudio comparativo de Argentina y Chile”. Patrocinado por la <a href="https://uchile.cl/">Universidad de Chile</a> y el Centro de Estudios de Conflicto y Cohesión Social (<a href="https://coes.cl/">COES</a>). Tiene como propósito contribuir a la investigación internacional sobre clases, trabajo y conflicto produciendo datos cuantitativos originales y un instrumento de investigación comparable a nivel internacional.</p>
+<p>Tablas descriptivas para las variables de clases con Data Conclat Chile actualizada para el 08/10/2025.</p>
+<section id="preparación" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="preparación"><span class="header-section-number">4.1</span> Preparación</h2>
+<section id="cargar-datos" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="cargar-datos"><span class="header-section-number">4.1.1</span> Cargar datos</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/data/datos-clases.rds"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># sjlabelled::get_label(data)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="descriptivos" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="descriptivos"><span class="header-section-number">4.2</span> Descriptivos</h2>
+<section id="ingresos-x-clase-sin-ponderar" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="ingresos-x-clase-sin-ponderar"><span class="header-section-number">4.2.1</span> Ingresos x Clase sin ponderar</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>prom_por_clase <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass2_reduced3) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_income =</span> <span class="fu">mean</span>(income_rec, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n           =</span> <span class="fu">n</span>(),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_missing   =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(income_rec)),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>prom_por_clase </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+   wrightclass2_reduced3              mean_income     n n_missing
+   &lt;fct&gt;                                    &lt;dbl&gt; &lt;int&gt;     &lt;int&gt;
+ 1 1. Capitalists                         829706.    36         2
+ 2 2. Small employers                    1071300.   348        21
+ 3 3. Petty bourgeoisie                   856934.   196        14
+ 4 4. Expert managers                    1716000.    92         7
+ 5 5. Experts                            1119121.   245         9
+ 6 6. Skilled &amp; Unskilled Supervisors    1042803.   278         8
+ 7 7. Formal workers                      670736.  1150        13
+ 8 8. Informal workers                    535551.   340        17
+ 9 9. Informal self-employed              600233.   355        11
+10 &lt;NA&gt;                                   758333.     8         2</code></pre>
+</div>
+</div>
+</section>
+<section id="ingresos-x-clase-ponderado" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="ingresos-x-clase-ponderado"><span class="header-section-number">4.2.2</span> Ingresos x Clase ponderado</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> rake_wb2)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>prom_por_clase_w <span class="ot">&lt;-</span> data_svy <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass2_reduced3) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_income_w =</span> <span class="fu">survey_mean</span>(income_rec, <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">vartype =</span> <span class="cn">NULL</span>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_w           =</span> <span class="fu">survey_total</span>(<span class="sc">!</span><span class="fu">is.na</span>(income_rec), <span class="at">na.rm =</span> <span class="cn">TRUE</span>, <span class="at">vartype =</span> <span class="cn">NULL</span>),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">missing_w     =</span> <span class="fu">survey_total</span>(<span class="fu">is.na</span>(income_rec), <span class="at">vartype =</span> <span class="cn">NULL</span>),</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>prom_por_clase_w</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+   wrightclass2_reduced3              mean_income_w     n_w    missing_w
+   &lt;fct&gt;                                      &lt;dbl&gt;   &lt;dbl&gt;        &lt;dbl&gt;
+ 1 1. Capitalists                           630890. 2.37e10  3114136001.
+ 2 2. Small employers                      1114234. 2.25e11   772731718.
+ 3 3. Petty bourgeoisie                     777198. 1.67e11 13722681366.
+ 4 4. Expert managers                      2224745. 1.30e11       14148.
+ 5 5. Experts                              1254671. 3.48e11       16929.
+ 6 6. Skilled &amp; Unskilled Supervisors      1053047. 2.64e11  1352291292.
+ 7 7. Formal workers                        743466. 1.04e12       32950.
+ 8 8. Informal workers                      510597. 3.26e11  5882709261.
+ 9 9. Informal self-employed                600425. 2.54e11 16468165185.
+10 &lt;NA&gt;                                     630627. 1.02e 4  4112863459.</code></pre>
+</div>
+</div>
+</section>
+<section id="detalle-ingresos-de-capitalists-50" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="detalle-ingresos-de-capitalists-50"><span class="header-section-number">4.2.3</span> Detalle ingresos de Capitalists (&gt;= 50)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass2_reduced3) <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, wrightclass2_reduced3, income_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 36 × 3
+   id      wrightclass2_reduced3 income_rec
+   &lt;chr&gt;   &lt;fct&gt;                      &lt;dbl&gt;
+ 1 var_2   1. Capitalists               NA 
+ 2 var_16  1. Capitalists           900000.
+ 3 var_49  1. Capitalists           600000 
+ 4 var_54  1. Capitalists          1100000.
+ 5 var_169 1. Capitalists               NA 
+ 6 var_310 1. Capitalists           500000 
+ 7 var_463 1. Capitalists           500000 
+ 8 var_465 1. Capitalists          1300000 
+ 9 var_499 1. Capitalists           800000 
+10 var_536 1. Capitalists           800000 
+# ℹ 26 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="detalle-ingresos-de-small-employers-50" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="detalle-ingresos-de-small-employers-50"><span class="header-section-number">4.2.4</span> Detalle ingresos de Small Employers (&lt; 50)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass2_reduced3) <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, wrightclass2_reduced3, income_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 348 × 3
+   id     wrightclass2_reduced3 income_rec
+   &lt;chr&gt;  &lt;fct&gt;                      &lt;dbl&gt;
+ 1 var_4  2. Small employers        600000
+ 2 var_6  2. Small employers        800000
+ 3 var_7  2. Small employers       1500000
+ 4 var_8  2. Small employers       2500000
+ 5 var_13 2. Small employers        750000
+ 6 var_33 2. Small employers        500000
+ 7 var_45 2. Small employers        600000
+ 8 var_72 2. Small employers       1000000
+ 9 var_80 2. Small employers       4000000
+10 var_83 2. Small employers       1500000
+# ℹ 338 more rows</code></pre>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -601,11 +751,11 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./03-descriptivos-rodolfo.html" class="pagination-link" aria-label="Descriptivos Rodolfo">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Descriptivos Rodolfo</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-proce-data-conclat.html" class="pagination-link" aria-label="Procesamiento Data Conclat Chile">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Chile</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

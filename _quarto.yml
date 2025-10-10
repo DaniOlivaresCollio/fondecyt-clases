@@ -10,8 +10,8 @@ book:
     - index.qmd
     - 01-proce-data-conclat.qmd
     - 02-proce-data-conclat.qmd
-    # - 03-descriptivos.qmd
-    # - 04-proce-data-conclat-respaldo.qmd
+    - 03-descriptivos-rodolfo.qmd
+    - 04-descriptivos-clases.qmd
     # - references.qmd
 
 bibliography: references.bib
@@ -23,5 +23,5 @@ format:
   pdf:
     documentclass: scrreprt
 
-editor: visual
+editor: source
 

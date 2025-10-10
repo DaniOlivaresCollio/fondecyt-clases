@@ -186,9 +186,9 @@ frq(data$workplace_size)
 data <- data %>%
   mutate(
     owners = case_when(
-      as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) == 1 | (is.na(company_size) & as.numeric(workplace_size) == 1)) ~ 1,
-      as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) == 2 | (is.na(company_size) & as.numeric(workplace_size) == 2)) ~ 2,
-      as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) >= 3 | (is.na(company_size) & as.numeric(workplace_size) >= 3)) ~ 3,
+      as.numeric(relation_mop) %in% c(1:2) & (as.numeric(company_size) == 1 | (is.na(company_size) & as.numeric(workplace_size) == 1)) ~ 1,
+      as.numeric(relation_mop) %in% c(1:2) & (as.numeric(company_size) == 2 | (is.na(company_size) & as.numeric(workplace_size) == 2)) ~ 2,
+      as.numeric(relation_mop) %in% c(1:2) & (as.numeric(company_size) >= 3 | (is.na(company_size) & as.numeric(workplace_size) >= 3)) ~ 3,
       TRUE ~ NA_real_
     ),
     owners = factor(
@@ -216,9 +216,9 @@ frq(data$owners)
 data <- data %>%
   mutate(
     owners2 = case_when(
-      as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) == 1 | (is.na(company_size) & as.numeric(workplace_size) == 1)) ~ 1,
-      as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) %in% 2:3 | (is.na(company_size) & as.numeric(workplace_size) %in% 2:3)) ~ 2,
-      as.numeric(relation_mop) %in% 1:2 & (as.numeric(company_size) >= 4 | (is.na(company_size) & as.numeric(workplace_size) >= 4)) ~ 3,
+      as.numeric(relation_mop) %in% c(1:2) & (as.numeric(company_size) == 1 | (is.na(company_size) & as.numeric(workplace_size) == 1)) ~ 1,
+      as.numeric(relation_mop) %in% c(1:2) & (as.numeric(company_size) %in% c(2:3) | (is.na(company_size) & as.numeric(workplace_size) %in% c(2:3))) ~ 2,
+      as.numeric(relation_mop) %in% c(1:2) & (as.numeric(company_size) >= 4 | (is.na(company_size) & as.numeric(workplace_size) >= 4)) ~ 3,
       TRUE ~ NA_real_
     ),
     owners2 = factor(
@@ -1401,36 +1401,6 @@ descr(data$income)
 descr(data$income_rec)
 ```
  
-### tabla ingresos clase
-
-```{r}
-prom_por_clase <- data %>%
-  group_by(wrightclass2_reduced3) %>%
-  summarise(
-    mean_income = mean(income_rec, na.rm = TRUE),
-    n           = n(),
-    n_missing   = sum(is.na(income_rec)),
-    .groups = "drop"
-  )
-
-prom_por_clase 
-
-
-# 2) Ponderada (srvyr)
-data_svy <- as_survey_design(data, weights = rake_wb2)
-
-prom_por_clase_w <- data_svy %>%
-  group_by(wrightclass2_reduced3) %>%
-  summarise(
-    mean_income_w = survey_mean(income_rec, na.rm = TRUE, vartype = NULL),
-    n_w           = survey_total(!is.na(income_rec), na.rm = TRUE, vartype = NULL),
-    missing_w     = survey_total(is.na(income_rec), vartype = NULL),
-    .groups = "drop"
-  )
-
-prom_por_clase_w
-```
-
 ## Guardar datos
 
 ```{r}
