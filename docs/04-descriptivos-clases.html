@@ -193,7 +193,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ingresos-x-clase-sin-ponderar" id="toc-ingresos-x-clase-sin-ponderar" class="nav-link" data-scroll-target="#ingresos-x-clase-sin-ponderar"><span class="header-section-number">4.2.1</span> Ingresos x Clase sin ponderar</a></li>
   <li><a href="#ingresos-x-clase-ponderado" id="toc-ingresos-x-clase-ponderado" class="nav-link" data-scroll-target="#ingresos-x-clase-ponderado"><span class="header-section-number">4.2.2</span> Ingresos x Clase ponderado</a></li>
   <li><a href="#detalle-ingresos-de-capitalists-50" id="toc-detalle-ingresos-de-capitalists-50" class="nav-link" data-scroll-target="#detalle-ingresos-de-capitalists-50"><span class="header-section-number">4.2.3</span> Detalle ingresos de Capitalists (&gt;= 50)</a></li>
-  <li><a href="#detalle-ingresos-de-small-employers-50" id="toc-detalle-ingresos-de-small-employers-50" class="nav-link" data-scroll-target="#detalle-ingresos-de-small-employers-50"><span class="header-section-number">4.2.4</span> Detalle ingresos de Small Employers (&lt; 50)</a></li>
+  <li><a href="#frecuencia-ingresos-de-capitalists-50" id="toc-frecuencia-ingresos-de-capitalists-50" class="nav-link" data-scroll-target="#frecuencia-ingresos-de-capitalists-50"><span class="header-section-number">4.2.4</span> Frecuencia ingresos de Capitalists (&gt;= 50)</a></li>
+  <li><a href="#detalle-ingresos-de-small-employers-50" id="toc-detalle-ingresos-de-small-employers-50" class="nav-link" data-scroll-target="#detalle-ingresos-de-small-employers-50"><span class="header-section-number">4.2.5</span> Detalle ingresos de Small Employers (&lt; 50)</a></li>
+  <li><a href="#frecuencia-ingresos-de-small-employers-50" id="toc-frecuencia-ingresos-de-small-employers-50" class="nav-link" data-scroll-target="#frecuencia-ingresos-de-small-employers-50"><span class="header-section-number">4.2.6</span> Frecuencia ingresos de Small Employers (&lt; 50)</a></li>
+  <li><a href="#a09-x-clase-sin-ponderar" id="toc-a09-x-clase-sin-ponderar" class="nav-link" data-scroll-target="#a09-x-clase-sin-ponderar"><span class="header-section-number">4.2.7</span> a09 x Clase sin ponderar</a></li>
+  <li><a href="#a10-x-clase-sin-ponderar" id="toc-a10-x-clase-sin-ponderar" class="nav-link" data-scroll-target="#a10-x-clase-sin-ponderar"><span class="header-section-number">4.2.8</span> a10 x Clase sin ponderar</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -301,46 +305,573 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass2_reduced3) <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, wrightclass2_reduced3, income_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, wrightclass2_reduced3, income_rec) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 36 × 3
-   id      wrightclass2_reduced3 income_rec
-   &lt;chr&gt;   &lt;fct&gt;                      &lt;dbl&gt;
- 1 var_2   1. Capitalists               NA 
- 2 var_16  1. Capitalists           900000.
- 3 var_49  1. Capitalists           600000 
- 4 var_54  1. Capitalists          1100000.
- 5 var_169 1. Capitalists               NA 
- 6 var_310 1. Capitalists           500000 
- 7 var_463 1. Capitalists           500000 
- 8 var_465 1. Capitalists          1300000 
- 9 var_499 1. Capitalists           800000 
-10 var_536 1. Capitalists           800000 
-# ℹ 26 more rows</code></pre>
+   id       wrightclass2_reduced3 income_rec
+   &lt;chr&gt;    &lt;fct&gt;                      &lt;dbl&gt;
+ 1 var_2    1. Capitalists               NA 
+ 2 var_16   1. Capitalists           900000.
+ 3 var_49   1. Capitalists           600000 
+ 4 var_54   1. Capitalists          1100000.
+ 5 var_169  1. Capitalists               NA 
+ 6 var_310  1. Capitalists           500000 
+ 7 var_463  1. Capitalists           500000 
+ 8 var_465  1. Capitalists          1300000 
+ 9 var_499  1. Capitalists           800000 
+10 var_536  1. Capitalists           800000 
+11 var_537  1. Capitalists           600000 
+12 var_596  1. Capitalists           600000 
+13 var_599  1. Capitalists           800000 
+14 var_602  1. Capitalists           600000 
+15 var_660  1. Capitalists           600000 
+16 var_770  1. Capitalists           800000 
+17 var_849  1. Capitalists          1200000 
+18 var_994  1. Capitalists           700000 
+19 var_1318 1. Capitalists           480000 
+20 var_1361 1. Capitalists          1200000 
+21 var_1362 1. Capitalists           590000 
+22 var_1500 1. Capitalists           850000 
+23 var_1537 1. Capitalists           850000 
+24 var_1546 1. Capitalists           890000 
+25 var_1686 1. Capitalists           650000 
+26 var_1692 1. Capitalists          1000000 
+27 var_1914 1. Capitalists          1000000 
+28 var_1929 1. Capitalists           500000 
+29 var_2130 1. Capitalists           850000 
+30 var_2187 1. Capitalists           500000 
+31 var_2255 1. Capitalists           350000 
+32 var_2271 1. Capitalists           650000 
+33 var_2277 1. Capitalists           750000 
+34 var_2737 1. Capitalists           200000 
+35 var_2854 1. Capitalists          1500000 
+36 var_2990 1. Capitalists          3000000 </code></pre>
 </div>
 </div>
 </section>
-<section id="detalle-ingresos-de-small-employers-50" class="level3" data-number="4.2.4">
-<h3 data-number="4.2.4" class="anchored" data-anchor-id="detalle-ingresos-de-small-employers-50"><span class="header-section-number">4.2.4</span> Detalle ingresos de Small Employers (&lt; 50)</h3>
+<section id="frecuencia-ingresos-de-capitalists-50" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="frecuencia-ingresos-de-capitalists-50"><span class="header-section-number">4.2.4</span> Frecuencia ingresos de Capitalists (&gt;= 50)</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass2_reduced3) <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, wrightclass2_reduced3, income_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass2_reduced3) <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(income_rec) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> <span class="dv">100</span> <span class="sc">*</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 3
+   income_rec     n   pct
+        &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
+ 1    200000      1  2.78
+ 2    350000      1  2.78
+ 3    480000      1  2.78
+ 4    500000      4 11.1 
+ 5    590000      1  2.78
+ 6    600000      5 13.9 
+ 7    650000      2  5.56
+ 8    700000      1  2.78
+ 9    750000      1  2.78
+10    800000      4 11.1 
+11    850000      3  8.33
+12    890000      1  2.78
+13    900000.     1  2.78
+14   1000000      2  5.56
+15   1100000.     1  2.78
+16   1200000      2  5.56
+17   1300000      1  2.78
+18   1500000      1  2.78
+19   3000000      1  2.78
+20        NA      2  5.56</code></pre>
+</div>
+</div>
+</section>
+<section id="detalle-ingresos-de-small-employers-50" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="detalle-ingresos-de-small-employers-50"><span class="header-section-number">4.2.5</span> Detalle ingresos de Small Employers (&lt; 50)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass2_reduced3) <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, wrightclass2_reduced3, income_rec) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 348 × 3
-   id     wrightclass2_reduced3 income_rec
-   &lt;chr&gt;  &lt;fct&gt;                      &lt;dbl&gt;
- 1 var_4  2. Small employers        600000
- 2 var_6  2. Small employers        800000
- 3 var_7  2. Small employers       1500000
- 4 var_8  2. Small employers       2500000
- 5 var_13 2. Small employers        750000
- 6 var_33 2. Small employers        500000
- 7 var_45 2. Small employers        600000
- 8 var_72 2. Small employers       1000000
- 9 var_80 2. Small employers       4000000
-10 var_83 2. Small employers       1500000
-# ℹ 338 more rows</code></pre>
+    id       wrightclass2_reduced3 income_rec
+    &lt;chr&gt;    &lt;fct&gt;                      &lt;dbl&gt;
+  1 var_4    2. Small employers       600000 
+  2 var_6    2. Small employers       800000 
+  3 var_7    2. Small employers      1500000 
+  4 var_8    2. Small employers      2500000 
+  5 var_13   2. Small employers       750000 
+  6 var_33   2. Small employers       500000 
+  7 var_45   2. Small employers       600000 
+  8 var_72   2. Small employers      1000000 
+  9 var_80   2. Small employers      4000000 
+ 10 var_83   2. Small employers      1500000 
+ 11 var_85   2. Small employers       400000 
+ 12 var_90   2. Small employers      1000000 
+ 13 var_92   2. Small employers       470000 
+ 14 var_94   2. Small employers           NA 
+ 15 var_99   2. Small employers       700000.
+ 16 var_130  2. Small employers       600000 
+ 17 var_160  2. Small employers       550000 
+ 18 var_162  2. Small employers       500000 
+ 19 var_165  2. Small employers       700000.
+ 20 var_168  2. Small employers       500000 
+ 21 var_178  2. Small employers       350000 
+ 22 var_180  2. Small employers      1500000 
+ 23 var_185  2. Small employers      1800000 
+ 24 var_188  2. Small employers           NA 
+ 25 var_199  2. Small employers       850000 
+ 26 var_203  2. Small employers       600000 
+ 27 var_210  2. Small employers      3000000 
+ 28 var_217  2. Small employers       400000 
+ 29 var_246  2. Small employers      1000000 
+ 30 var_254  2. Small employers      1200000 
+ 31 var_265  2. Small employers      2000000 
+ 32 var_266  2. Small employers      2500000 
+ 33 var_277  2. Small employers      2500000 
+ 34 var_286  2. Small employers      1100000.
+ 35 var_289  2. Small employers       500000 
+ 36 var_290  2. Small employers       500000 
+ 37 var_293  2. Small employers       500000 
+ 38 var_299  2. Small employers       620000 
+ 39 var_301  2. Small employers      1500000 
+ 40 var_303  2. Small employers       560000 
+ 41 var_305  2. Small employers      1000000 
+ 42 var_312  2. Small employers       250000 
+ 43 var_315  2. Small employers       200000 
+ 44 var_321  2. Small employers       850000 
+ 45 var_331  2. Small employers       540000 
+ 46 var_335  2. Small employers       650000 
+ 47 var_339  2. Small employers       750000 
+ 48 var_346  2. Small employers       800000 
+ 49 var_347  2. Small employers       550000 
+ 50 var_350  2. Small employers       850000 
+ 51 var_351  2. Small employers      1500000 
+ 52 var_357  2. Small employers       900000 
+ 53 var_361  2. Small employers       900000 
+ 54 var_380  2. Small employers       450000 
+ 55 var_385  2. Small employers      2500000 
+ 56 var_388  2. Small employers      1200000 
+ 57 var_391  2. Small employers       600000 
+ 58 var_392  2. Small employers      1500000 
+ 59 var_396  2. Small employers      3500000 
+ 60 var_406  2. Small employers       860000 
+ 61 var_408  2. Small employers      1000000 
+ 62 var_410  2. Small employers       900000 
+ 63 var_411  2. Small employers      1300000 
+ 64 var_413  2. Small employers       550000 
+ 65 var_416  2. Small employers      1200000 
+ 66 var_420  2. Small employers      1550000 
+ 67 var_429  2. Small employers       450000 
+ 68 var_430  2. Small employers      2000000 
+ 69 var_438  2. Small employers       300000 
+ 70 var_452  2. Small employers       250000 
+ 71 var_455  2. Small employers      2000000 
+ 72 var_456  2. Small employers       600000 
+ 73 var_459  2. Small employers       550000 
+ 74 var_462  2. Small employers       850000 
+ 75 var_468  2. Small employers       400000 
+ 76 var_474  2. Small employers       650000 
+ 77 var_478  2. Small employers       450000 
+ 78 var_483  2. Small employers       850000 
+ 79 var_486  2. Small employers       950000 
+ 80 var_493  2. Small employers       300000 
+ 81 var_497  2. Small employers       550000 
+ 82 var_502  2. Small employers      2000000 
+ 83 var_507  2. Small employers       900000 
+ 84 var_508  2. Small employers      2100000.
+ 85 var_519  2. Small employers      7000000 
+ 86 var_520  2. Small employers      3000000 
+ 87 var_530  2. Small employers       800000 
+ 88 var_533  2. Small employers       300000 
+ 89 var_534  2. Small employers       600000 
+ 90 var_593  2. Small employers       600000 
+ 91 var_609  2. Small employers      1000000 
+ 92 var_627  2. Small employers      2000000 
+ 93 var_632  2. Small employers       700000 
+ 94 var_653  2. Small employers      1800000 
+ 95 var_656  2. Small employers       650000 
+ 96 var_657  2. Small employers      1200000 
+ 97 var_659  2. Small employers       350000 
+ 98 var_663  2. Small employers       480000 
+ 99 var_671  2. Small employers       250000 
+100 var_673  2. Small employers      2500000 
+101 var_682  2. Small employers       100000 
+102 var_689  2. Small employers      1000000 
+103 var_696  2. Small employers      5000000 
+104 var_723  2. Small employers       350000 
+105 var_727  2. Small employers       450000 
+106 var_736  2. Small employers       600000 
+107 var_744  2. Small employers       690000 
+108 var_746  2. Small employers       600000 
+109 var_753  2. Small employers      2500000 
+110 var_755  2. Small employers      1750000 
+111 var_760  2. Small employers       600000 
+112 var_765  2. Small employers      8000000 
+113 var_777  2. Small employers       560000 
+114 var_786  2. Small employers       200000 
+115 var_790  2. Small employers       550000 
+116 var_791  2. Small employers       650000 
+117 var_793  2. Small employers      2000000 
+118 var_796  2. Small employers      1900000.
+119 var_808  2. Small employers       500000 
+120 var_810  2. Small employers       600000 
+121 var_811  2. Small employers       300000 
+122 var_812  2. Small employers       800000 
+123 var_825  2. Small employers      1300000 
+124 var_831  2. Small employers      1000000 
+125 var_832  2. Small employers       800000 
+126 var_839  2. Small employers       750000 
+127 var_850  2. Small employers       800000 
+128 var_851  2. Small employers       700000 
+129 var_853  2. Small employers      2500000 
+130 var_856  2. Small employers      1500000 
+131 var_875  2. Small employers       600000 
+132 var_877  2. Small employers       400000 
+133 var_880  2. Small employers       500000 
+134 var_881  2. Small employers       500000 
+135 var_917  2. Small employers           NA 
+136 var_920  2. Small employers      1200000 
+137 var_947  2. Small employers       700000 
+138 var_955  2. Small employers      2500000 
+139 var_976  2. Small employers      3500000 
+140 var_979  2. Small employers       825000 
+141 var_984  2. Small employers           NA 
+142 var_988  2. Small employers      1500000 
+143 var_1001 2. Small employers           NA 
+144 var_1004 2. Small employers      1600000 
+145 var_1030 2. Small employers       600000 
+146 var_1036 2. Small employers           NA 
+147 var_1047 2. Small employers           NA 
+148 var_1052 2. Small employers       450000 
+149 var_1059 2. Small employers           NA 
+150 var_1065 2. Small employers      1300000 
+151 var_1077 2. Small employers      1500000 
+152 var_1107 2. Small employers      1300000.
+153 var_1126 2. Small employers       400000 
+154 var_1133 2. Small employers      1500000 
+155 var_1156 2. Small employers       150000 
+156 var_1177 2. Small employers      1000000 
+157 var_1190 2. Small employers      2500000 
+158 var_1191 2. Small employers      1500000 
+159 var_1220 2. Small employers      1500000 
+160 var_1234 2. Small employers      3000001 
+161 var_1242 2. Small employers      1300000.
+162 var_1246 2. Small employers      1500000 
+163 var_1264 2. Small employers       700000 
+164 var_1265 2. Small employers       800000 
+165 var_1285 2. Small employers       800000 
+166 var_1301 2. Small employers      1500000 
+167 var_1304 2. Small employers      1200000 
+168 var_1323 2. Small employers      1200000 
+169 var_1330 2. Small employers       450000 
+170 var_1333 2. Small employers       870000 
+171 var_1342 2. Small employers       300000 
+172 var_1344 2. Small employers       650000 
+173 var_1346 2. Small employers       600000 
+174 var_1353 2. Small employers       180000 
+175 var_1359 2. Small employers       250000 
+176 var_1372 2. Small employers       900000.
+177 var_1379 2. Small employers       900000 
+178 var_1392 2. Small employers      2000000 
+179 var_1423 2. Small employers      1100000.
+180 var_1429 2. Small employers           NA 
+181 var_1442 2. Small employers       600000 
+182 var_1446 2. Small employers       500000 
+183 var_1452 2. Small employers       300000 
+184 var_1455 2. Small employers      1200000 
+185 var_1482 2. Small employers      1500000 
+186 var_1490 2. Small employers       950000 
+187 var_1491 2. Small employers       500000 
+188 var_1492 2. Small employers       900000 
+189 var_1497 2. Small employers      1000000 
+190 var_1501 2. Small employers      1500000 
+191 var_1506 2. Small employers      1500000 
+192 var_1507 2. Small employers       780000 
+193 var_1511 2. Small employers      1100000.
+194 var_1514 2. Small employers           NA 
+195 var_1524 2. Small employers       850000 
+196 var_1526 2. Small employers      1450000 
+197 var_1527 2. Small employers      2000000 
+198 var_1528 2. Small employers       300000.
+199 var_1540 2. Small employers       700000 
+200 var_1552 2. Small employers           NA 
+201 var_1561 2. Small employers       900000.
+202 var_1568 2. Small employers       850000 
+203 var_1569 2. Small employers       450000 
+204 var_1573 2. Small employers      3000000 
+205 var_1599 2. Small employers      1500000 
+206 var_1603 2. Small employers       600000 
+207 var_1620 2. Small employers      2000000 
+208 var_1635 2. Small employers      1000000 
+209 var_1636 2. Small employers       450000 
+210 var_1653 2. Small employers       700000 
+211 var_1656 2. Small employers       500000 
+212 var_1657 2. Small employers       500000 
+213 var_1660 2. Small employers      1900000.
+214 var_1661 2. Small employers       600000 
+215 var_1670 2. Small employers       350000 
+216 var_1683 2. Small employers       900000.
+217 var_1694 2. Small employers       600000 
+218 var_1698 2. Small employers       600000 
+219 var_1709 2. Small employers       900000 
+220 var_1710 2. Small employers      1000000 
+221 var_1713 2. Small employers       400000 
+222 var_1719 2. Small employers       400000 
+223 var_1721 2. Small employers       900000 
+224 var_1736 2. Small employers           NA 
+225 var_1751 2. Small employers      1800000 
+226 var_1768 2. Small employers       700000 
+227 var_1783 2. Small employers      2500000 
+228 var_1786 2. Small employers       600000 
+229 var_1796 2. Small employers      2500000 
+230 var_1802 2. Small employers      1800000 
+231 var_1804 2. Small employers       450000 
+232 var_1808 2. Small employers       500000 
+233 var_1809 2. Small employers       400000 
+234 var_1829 2. Small employers       800000 
+235 var_1850 2. Small employers       800000 
+236 var_1886 2. Small employers       700000 
+237 var_1900 2. Small employers      2000000 
+238 var_1915 2. Small employers       850000 
+239 var_1934 2. Small employers      1500000.
+240 var_1949 2. Small employers      1100000 
+241 var_1953 2. Small employers      1500000 
+242 var_1981 2. Small employers      1000000 
+243 var_1983 2. Small employers       700000 
+244 var_1996 2. Small employers       480000 
+245 var_1997 2. Small employers       500000 
+246 var_2011 2. Small employers       550000 
+247 var_2017 2. Small employers           NA 
+248 var_2030 2. Small employers       900000.
+249 var_2045 2. Small employers      1300000.
+250 var_2054 2. Small employers           NA 
+251 var_2058 2. Small employers      1500000 
+252 var_2079 2. Small employers      2300000 
+253 var_2099 2. Small employers       500000 
+254 var_2115 2. Small employers       200000 
+255 var_2133 2. Small employers       650000 
+256 var_2136 2. Small employers      3000000 
+257 var_2145 2. Small employers       600000 
+258 var_2149 2. Small employers       950000 
+259 var_2155 2. Small employers       500000 
+260 var_2179 2. Small employers       200000 
+261 var_2191 2. Small employers      2000000 
+262 var_2200 2. Small employers       600000 
+263 var_2209 2. Small employers       300000.
+264 var_2212 2. Small employers       400000 
+265 var_2239 2. Small employers      3000000 
+266 var_2240 2. Small employers      1500000 
+267 var_2243 2. Small employers      2100000.
+268 var_2254 2. Small employers       800000 
+269 var_2256 2. Small employers       600000 
+270 var_2261 2. Small employers       450000 
+271 var_2302 2. Small employers       600000 
+272 var_2304 2. Small employers       450000 
+273 var_2305 2. Small employers       850000 
+274 var_2307 2. Small employers       600000 
+275 var_2310 2. Small employers       550000 
+276 var_2325 2. Small employers       750000 
+277 var_2326 2. Small employers           NA 
+278 var_2333 2. Small employers       900000.
+279 var_2337 2. Small employers       500000 
+280 var_2345 2. Small employers      1900000 
+281 var_2357 2. Small employers      1000000 
+282 var_2358 2. Small employers      1000000 
+283 var_2361 2. Small employers       800000 
+284 var_2369 2. Small employers           NA 
+285 var_2373 2. Small employers       800000 
+286 var_2398 2. Small employers      1500000 
+287 var_2403 2. Small employers      1400000 
+288 var_2406 2. Small employers      1500000 
+289 var_2408 2. Small employers       850000 
+290 var_2411 2. Small employers       850000 
+291 var_2430 2. Small employers       700000 
+292 var_2460 2. Small employers      2000000 
+293 var_2464 2. Small employers       500000 
+294 var_2465 2. Small employers       850000 
+295 var_2473 2. Small employers      3200000 
+296 var_2487 2. Small employers      5050000 
+297 var_2488 2. Small employers      1000000 
+298 var_2496 2. Small employers      2000000 
+299 var_2499 2. Small employers       800000 
+300 var_2515 2. Small employers      1000000 
+301 var_2519 2. Small employers       400000 
+302 var_2532 2. Small employers      3000000 
+303 var_2534 2. Small employers      2000000 
+304 var_2536 2. Small employers      1500000 
+305 var_2537 2. Small employers      1500000 
+306 var_2541 2. Small employers      2000000 
+307 var_2556 2. Small employers       500000 
+308 var_2596 2. Small employers       300000 
+309 var_2597 2. Small employers       400000 
+310 var_2605 2. Small employers       200000 
+311 var_2625 2. Small employers           NA 
+312 var_2629 2. Small employers           NA 
+313 var_2645 2. Small employers       480000 
+314 var_2653 2. Small employers       800000 
+315 var_2657 2. Small employers      1600000 
+316 var_2671 2. Small employers       500000 
+317 var_2686 2. Small employers       400000 
+318 var_2692 2. Small employers           NA 
+319 var_2693 2. Small employers           NA 
+320 var_2695 2. Small employers       850000 
+321 var_2700 2. Small employers           NA 
+322 var_2710 2. Small employers       450000 
+323 var_2731 2. Small employers       800000 
+324 var_2732 2. Small employers       300000.
+325 var_2734 2. Small employers       400000 
+326 var_2747 2. Small employers       500000 
+327 var_2761 2. Small employers       800000 
+328 var_2764 2. Small employers       600000 
+329 var_2791 2. Small employers       450000 
+330 var_2793 2. Small employers       800000 
+331 var_2806 2. Small employers       850000 
+332 var_2823 2. Small employers       700000 
+333 var_2827 2. Small employers       590000 
+334 var_2852 2. Small employers       200000 
+335 var_2874 2. Small employers       850000 
+336 var_2881 2. Small employers      1200000 
+337 var_2900 2. Small employers       600000 
+338 var_2901 2. Small employers       500000 
+339 var_2902 2. Small employers       600000 
+340 var_2904 2. Small employers       500000 
+341 var_2928 2. Small employers      1000000 
+342 var_2931 2. Small employers      2000000 
+343 var_2934 2. Small employers       580000 
+344 var_2941 2. Small employers       500000.
+345 var_2944 2. Small employers       700000.
+346 var_2965 2. Small employers       650000 
+347 var_2987 2. Small employers       300000.
+348 var_3042 2. Small employers       700000.</code></pre>
+</div>
+</div>
+</section>
+<section id="frecuencia-ingresos-de-small-employers-50" class="level3" data-number="4.2.6">
+<h3 data-number="4.2.6" class="anchored" data-anchor-id="frecuencia-ingresos-de-small-employers-50"><span class="header-section-number">4.2.6</span> Frecuencia ingresos de Small Employers (&lt; 50)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass2_reduced3) <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(income_rec) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> <span class="dv">100</span> <span class="sc">*</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 65 × 3
+   income_rec     n   pct
+        &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
+ 1    100000      1 0.287
+ 2    150000      1 0.287
+ 3    180000      1 0.287
+ 4    200000      6 1.72 
+ 5    250000      4 1.15 
+ 6    300000      7 2.01 
+ 7    300000.     4 1.15 
+ 8    350000      4 1.15 
+ 9    400000     13 3.74 
+10    450000     13 3.74 
+11    470000      1 0.287
+12    480000      3 0.862
+13    500000     24 6.90 
+14    500000.     1 0.287
+15    540000      1 0.287
+16    550000      8 2.30 
+17    560000      2 0.575
+18    580000      1 0.287
+19    590000      1 0.287
+20    600000     29 8.33 
+21    620000      1 0.287
+22    650000      7 2.01 
+23    690000      1 0.287
+24    700000     11 3.16 
+25    700000.     4 1.15 
+26    750000      4 1.15 
+27    780000      1 0.287
+28    800000     18 5.17 
+29    825000      1 0.287
+30    850000     15 4.31 
+31    860000      1 0.287
+32    870000      1 0.287
+33    900000      8 2.30 
+34    900000.     5 1.44 
+35    950000      3 0.862
+36   1000000     18 5.17 
+37   1100000      1 0.287
+38   1100000.     3 0.862
+39   1200000      9 2.59 
+40   1300000      3 0.862
+41   1300000.     3 0.862
+42   1400000      1 0.287
+43   1450000      1 0.287
+44   1500000     25 7.18 
+45   1500000.     1 0.287
+46   1550000      1 0.287
+47   1600000      2 0.575
+48   1750000      1 0.287
+49   1800000      4 1.15 
+50   1900000      1 0.287
+51   1900000.     2 0.575
+52   2000000     16 4.60 
+53   2100000.     2 0.575
+54   2300000      1 0.287
+55   2500000     11 3.16 
+56   3000000      6 1.72 
+57   3000001      1 0.287
+58   3200000      1 0.287
+59   3500000      2 0.575
+60   4000000      1 0.287
+61   5000000      1 0.287
+62   5050000      1 0.287
+63   7000000      1 0.287
+64   8000000      1 0.287
+65        NA     21 6.03 </code></pre>
+</div>
+</div>
+</section>
+<section id="a09-x-clase-sin-ponderar" class="level3" data-number="4.2.7">
+<h3 data-number="4.2.7" class="anchored" data-anchor-id="a09-x-clase-sin-ponderar"><span class="header-section-number">4.2.7</span> a09 x Clase sin ponderar</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>prom_por_clase <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass2_reduced3) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_partners =</span> <span class="fu">mean</span>(a09, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n             =</span> <span class="fu">n</span>(),</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_missing     =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(a09)),</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>prom_por_clase </span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+   wrightclass2_reduced3              mean_partners     n n_missing
+   &lt;fct&gt;                                      &lt;dbl&gt; &lt;int&gt;     &lt;int&gt;
+ 1 1. Capitalists                             9.31     36         0
+ 2 2. Small employers                         2.39    348         1
+ 3 3. Petty bourgeoisie                       0.806   196         0
+ 4 4. Expert managers                         1.5      92        90
+ 5 5. Experts                               NaN       245       245
+ 6 6. Skilled &amp; Unskilled Supervisors         1       278       277
+ 7 7. Formal workers                          0.5    1150      1148
+ 8 8. Informal workers                        0.5     340       338
+ 9 9. Informal self-employed                  0.572   355         0
+10 &lt;NA&gt;                                       5.88      8         0</code></pre>
+</div>
+</div>
+</section>
+<section id="a10-x-clase-sin-ponderar" class="level3" data-number="4.2.8">
+<h3 data-number="4.2.8" class="anchored" data-anchor-id="a10-x-clase-sin-ponderar"><span class="header-section-number">4.2.8</span> a10 x Clase sin ponderar</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>wrightclass2_reduced3, data<span class="sc">$</span>a10)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                    
+                                       1   2   3   4   5
+  1. Capitalists                      11   6   4   5  10
+  2. Small employers                 111  95  42  20  79
+  3. Petty bourgeoisie               103  59  12  13   9
+  4. Expert managers                   0   0   0   0   0
+  5. Experts                           0   0   0   0   0
+  6. Skilled &amp; Unskilled Supervisors   0   0   0   0   1
+  7. Formal workers                    0   0   0   0   1
+  8. Informal workers                  0   0   0   0   0
+  9. Informal self-employed           28  31   4   3 289</code></pre>
 </div>
 </div>
 

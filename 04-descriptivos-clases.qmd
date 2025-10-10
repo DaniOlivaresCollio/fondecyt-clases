@@ -100,7 +100,17 @@ prom_por_clase_w
 ```{r}
 data %>% 
   filter(as.numeric(wrightclass2_reduced3) == 1) %>% 
-  select(id, wrightclass2_reduced3, income_rec)
+  select(id, wrightclass2_reduced3, income_rec) %>% 
+  print(n = Inf)
+```
+
+### Frecuencia ingresos de Capitalists (>= 50)
+
+```{r}
+data %>% 
+  filter(as.numeric(wrightclass2_reduced3) == 1) %>% 
+  count(income_rec) %>% 
+  mutate(pct = 100 * n / sum(n))
 ```
 
 ### Detalle ingresos de Small Employers (< 50)
@@ -108,5 +118,38 @@ data %>%
 ```{r}
 data %>% 
   filter(as.numeric(wrightclass2_reduced3) == 2) %>% 
-  select(id, wrightclass2_reduced3, income_rec)
+  select(id, wrightclass2_reduced3, income_rec) %>% 
+  print(n = Inf)
 ```
+
+### Frecuencia ingresos de Small Employers (< 50)
+
+```{r}
+data %>% 
+  filter(as.numeric(wrightclass2_reduced3) == 2) %>% 
+  count(income_rec) %>% 
+  mutate(pct = 100 * n / sum(n)) %>% 
+  print(n = Inf)
+```
+
+### a09 x Clase sin ponderar 
+
+```{r}
+prom_por_clase <- data %>%
+  group_by(wrightclass2_reduced3) %>%
+  summarise(
+    mean_partners = mean(a09, na.rm = TRUE),
+    n             = n(),
+    n_missing     = sum(is.na(a09)),
+    .groups = "drop"
+  )
+
+prom_por_clase 
+```
+
+### a10 x Clase sin ponderar 
+
+```{r}
+table(data$wrightclass2_reduced3, data$a10)
+```
+
