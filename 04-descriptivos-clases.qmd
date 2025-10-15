@@ -228,3 +228,9 @@ table(data$wrightclass1_reduced3, data$a10)
 table(data$wrightclass2_reduced3, data$a10)
 ```
 
+
+### a10 x Clase (11) sin ponderar 
+
+```{r}
+table(data$wrightclass1_reduced4, data$a10)
+```
