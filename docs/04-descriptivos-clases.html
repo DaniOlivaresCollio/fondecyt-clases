@@ -206,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#a10-x-clase-09-sin-ponderar" id="toc-a10-x-clase-09-sin-ponderar" class="nav-link" data-scroll-target="#a10-x-clase-09-sin-ponderar"><span class="header-section-number">4.2.14</span> a10 x Clase (09) sin ponderar</a></li>
   <li><a href="#a10-x-clase-10-sin-ponderar" id="toc-a10-x-clase-10-sin-ponderar" class="nav-link" data-scroll-target="#a10-x-clase-10-sin-ponderar"><span class="header-section-number">4.2.15</span> a10 x Clase (10) sin ponderar</a></li>
   <li><a href="#a10-x-clase-11-sin-ponderar" id="toc-a10-x-clase-11-sin-ponderar" class="nav-link" data-scroll-target="#a10-x-clase-11-sin-ponderar"><span class="header-section-number">4.2.16</span> a10 x Clase (11) sin ponderar</a></li>
-  <li><a href="#a10-x-employers-11-sin-ponderar" id="toc-a10-x-employers-11-sin-ponderar" class="nav-link" data-scroll-target="#a10-x-employers-11-sin-ponderar"><span class="header-section-number">4.2.17</span> a10 x Employers (11) sin ponderar</a></li>
+  <li><a href="#ingresos-x-employers-09-con-inicio-act-como-empresa-sin-ponderar" id="toc-ingresos-x-employers-09-con-inicio-act-como-empresa-sin-ponderar" class="nav-link" data-scroll-target="#ingresos-x-employers-09-con-inicio-act-como-empresa-sin-ponderar"><span class="header-section-number">4.2.17</span> Ingresos x Employers (09) con Inicio Act como empresa sin ponderar</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1498,8 +1498,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="a10-x-employers-11-sin-ponderar" class="level3" data-number="4.2.17">
-<h3 data-number="4.2.17" class="anchored" data-anchor-id="a10-x-employers-11-sin-ponderar"><span class="header-section-number">4.2.17</span> a10 x Employers (11) sin ponderar</h3>
+<section id="ingresos-x-employers-09-con-inicio-act-como-empresa-sin-ponderar" class="level3" data-number="4.2.17">
+<h3 data-number="4.2.17" class="anchored" data-anchor-id="ingresos-x-employers-09-con-inicio-act-como-empresa-sin-ponderar"><span class="header-section-number">4.2.17</span> Ingresos x Employers (09) con Inicio Act como empresa sin ponderar</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass1_reduced3) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> inicio_activ2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, wrightclass1_reduced3, income_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 40 × 3
+   id      wrightclass1_reduced3 income_rec
+   &lt;chr&gt;   &lt;fct&gt;                      &lt;dbl&gt;
+ 1 var_16  1. Employers             900000.
+ 2 var_54  1. Employers            1100000.
+ 3 var_85  1. Employers             400000 
+ 4 var_94  1. Employers                 NA 
+ 5 var_130 1. Employers             600000 
+ 6 var_169 1. Employers                 NA 
+ 7 var_203 1. Employers             600000 
+ 8 var_289 1. Employers             500000 
+ 9 var_396 1. Employers            3500000 
+10 var_420 1. Employers            1550000 
+# ℹ 30 more rows</code></pre>
+</div>
+</div>
 
 
 </section>
