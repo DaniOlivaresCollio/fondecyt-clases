@@ -1,6 +1,0 @@
-"0",""
-"0",""
-"0","# (Opcional) Exportar a CSV"
-"0","# write.csv(tbl_relation, ""output/relation_mop_conteos.csv"", row.names = FALSE)"
-"0","# write.csv(tbl_ciuo,     ""output/ciuo08_ine_conteos.csv"",  row.names = FALSE)"
-"0",""

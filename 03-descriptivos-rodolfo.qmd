@@ -1,6 +1,6 @@
 # Descriptivos Rodolfo
 
-Descriptivos ocupación son y sin pondedrador para Rodolfo.
+Descriptivos ocupación con y sin pondedrador para Rodolfo.
 
 ## Preparación
 
@@ -24,26 +24,27 @@ p_load(
   
   # manipulacion 
   forcats,           # manipulación de factores
+  janitor,           # limpia etiquetas
   labelled,          # trabajar con variables etiquetadas
   purrr,             # programación funcional para listas y data frames
   sjlabelled,        # manejar etiquetas 
   stringr,           # manipular texto
   sjmisc,            # limpieza y descripción de datos
   
-  # visualización
+  # visualizacion
   ggplot2,           # visualización basado en gramática de gráficos
   ggrepel,           # etiquetas en gráficos sin superposición
   gridExtra,         # combinar gráficos en uno solo
   scales,            # controla cómo se ven los ejes en gráficos
   sjPlot,            # visualizar resultados estadísticos
   
-  # análisis
+  # analisis
   psych,             # análisis general, psicométrico
   survey,            # diseño survey encuestas complejas
   srvyr,             # diseño survey con tidy
   rlang,             # motor interno de tidyverse, para usar expresiones 
   tidyverse,
-  statar,            # conectar con el lenguaje stata
+  statar             # conectar con el lenguaje stata
 
   # # conexion web
   # curl,              # conexiones http de bajo nivel: para solucionar el problema de la api del ine
@@ -54,7 +55,7 @@ p_load(
 ### Cargar datos
 
 ```{r datos,message=FALSE,warning=FALSE}
-data <- readRDS("input/data/data_lbl.rds")
+data <- readRDS("input/data/data-conclat.rds")
 ```
 
 ## Crear variables
@@ -203,7 +204,7 @@ fmt_table(tbl_ciuo,     title = "ciuo08_ine: n sin ponderar y n ponderado (IC95%
 ```
 
 ```{r}
-install.packages("openxlsx")
+# install.packages("openxlsx")
 library(openxlsx)
 wb <- createWorkbook()
 

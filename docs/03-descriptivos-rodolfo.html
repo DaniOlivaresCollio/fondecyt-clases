@@ -223,13 +223,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Descriptivos ocupación son y sin pondedrador para Rodolfo.</p>
+<p>Descriptivos ocupación con y sin pondedrador para Rodolfo.</p>
 <section id="preparación" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="preparación"><span class="header-section-number">3.1</span> Preparación</h2>
 <section id="cargar-datos" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="cargar-datos"><span class="header-section-number">3.1.1</span> Cargar datos</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"input/data/data_lbl.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"input/data/data-conclat.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -828,133 +828,104 @@ Incertidumbre (ponderado)
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(tbl_ciuo,     "output/ciuo08_ine_conteos.csv",  row.names = FALSE)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"openxlsx"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Installing package into 'C:/Users/danie/AppData/Local/R/win-library/4.5'
-(as 'lib' is unspecified)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: unable to access index for repository http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.5:
-  cannot open URL 'http://www.stats.ox.ac.uk/pub/RWin/bin/windows/contrib/4.5/PACKAGES'</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>package 'openxlsx' successfully unpacked and MD5 sums checked</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: cannot remove prior installation of package 'openxlsx'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in file.copy(savedcopy, lib, recursive = TRUE): problem copying
-C:\Users\danie\AppData\Local\R\win-library\4.5\00LOCK\openxlsx\libs\x64\openxlsx.dll
-to
-C:\Users\danie\AppData\Local\R\win-library\4.5\openxlsx\libs\x64\openxlsx.dll:
-Permission denied</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: restored 'openxlsx'</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-The downloaded binary packages are in
-    C:\Users\danie\AppData\Local\Temp\Rtmp8i7j8e\downloaded_packages</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("openxlsx")</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'openxlsx' was built under R version 4.5.1</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>wb <span class="ot">&lt;-</span> <span class="fu">createWorkbook</span>()</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># helper para escribir una tabla "cruda" (no la formateada a texto),</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># con estilos: enteros en n/n_w y decimales en SE/IC</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>write_sheet_counts <span class="ot">&lt;-</span> <span class="cf">function</span>(wb, sheet_name, df) {</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addWorksheet</span>(wb, sheet_name)</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Asegurar orden y tipos</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  df_out <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(level, n, n_w, n_w_se, n_w_low, n_w_upp)</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeData</span>(wb, sheet_name, df_out)</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Estilos</span></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  style_header <span class="ot">&lt;-</span> <span class="fu">createStyle</span>(<span class="at">textDecoration =</span> <span class="st">"bold"</span>)</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addStyle</span>(wb, <span class="at">sheet =</span> sheet_name, <span class="at">style =</span> style_header, <span class="at">rows =</span> <span class="dv">1</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(df_out), <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Formato sin miles para enteros (0 decimales)</span></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>  style_int <span class="ot">&lt;-</span> <span class="fu">createStyle</span>(<span class="at">numFmt =</span> <span class="st">"0"</span>)</span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Formato con 2 decimales para SE e IC</span></span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  style_num2 <span class="ot">&lt;-</span> <span class="fu">createStyle</span>(<span class="at">numFmt =</span> <span class="st">"0.00"</span>)</span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  n_rows <span class="ot">&lt;-</span> <span class="fu">nrow</span>(df_out) <span class="sc">+</span> <span class="dv">1</span>  <span class="co"># +1 por encabezado</span></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># columnas</span></span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>  col_level  <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">names</span>(df_out) <span class="sc">==</span> <span class="st">"level"</span>)</span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>  col_n      <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">names</span>(df_out) <span class="sc">==</span> <span class="st">"n"</span>)</span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>  col_nw     <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">names</span>(df_out) <span class="sc">==</span> <span class="st">"n_w"</span>)</span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>  col_se     <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">names</span>(df_out) <span class="sc">==</span> <span class="st">"n_w_se"</span>)</span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>  col_low    <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">names</span>(df_out) <span class="sc">==</span> <span class="st">"n_w_low"</span>)</span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>  col_upp    <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">names</span>(df_out) <span class="sc">==</span> <span class="st">"n_w_upp"</span>)</span>
-<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplicar estilos numéricos (solo a columnas numéricas, filas de datos)</span></span>
-<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(col_n))  <span class="fu">addStyle</span>(wb, sheet_name, style_int,  <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span>n_rows, <span class="at">cols =</span> col_n,  <span class="at">gridExpand =</span> <span class="cn">TRUE</span>, <span class="at">stack =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(col_nw)) <span class="fu">addStyle</span>(wb, sheet_name, style_int,  <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span>n_rows, <span class="at">cols =</span> col_nw, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>, <span class="at">stack =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(col_se)) <span class="fu">addStyle</span>(wb, sheet_name, style_num2, <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span>n_rows, <span class="at">cols =</span> col_se, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>, <span class="at">stack =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(col_low))<span class="fu">addStyle</span>(wb, sheet_name, style_num2, <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span>n_rows, <span class="at">cols =</span> col_low,<span class="at">gridExpand =</span> <span class="cn">TRUE</span>, <span class="at">stack =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(col_upp))<span class="fu">addStyle</span>(wb, sheet_name, style_num2, <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span>n_rows, <span class="at">cols =</span> col_upp,<span class="at">gridExpand =</span> <span class="cn">TRUE</span>, <span class="at">stack =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setColWidths</span>(wb, <span class="at">sheet =</span> sheet_name, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(df_out), <span class="at">widths =</span> <span class="st">"auto"</span>)</span>
-<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a><span class="fu">write_sheet_counts</span>(wb, <span class="st">"relation_mop"</span>, tbl_relation)</span>
-<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a><span class="fu">write_sheet_counts</span>(wb, <span class="st">"ciuo08_ine"</span>,  tbl_ciuo)</span>
-<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a><span class="fu">saveWorkbook</span>(wb, <span class="st">"output/tablas_conteos.xlsx"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>wb <span class="ot">&lt;-</span> <span class="fu">createWorkbook</span>()</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># helper para escribir una tabla "cruda" (no la formateada a texto),</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># con estilos: enteros en n/n_w y decimales en SE/IC</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>write_sheet_counts <span class="ot">&lt;-</span> <span class="cf">function</span>(wb, sheet_name, df) {</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addWorksheet</span>(wb, sheet_name)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Asegurar orden y tipos</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  df_out <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(level, n, n_w, n_w_se, n_w_low, n_w_upp)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">writeData</span>(wb, sheet_name, df_out)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Estilos</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  style_header <span class="ot">&lt;-</span> <span class="fu">createStyle</span>(<span class="at">textDecoration =</span> <span class="st">"bold"</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addStyle</span>(wb, <span class="at">sheet =</span> sheet_name, <span class="at">style =</span> style_header, <span class="at">rows =</span> <span class="dv">1</span>, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(df_out), <span class="at">gridExpand =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Formato sin miles para enteros (0 decimales)</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  style_int <span class="ot">&lt;-</span> <span class="fu">createStyle</span>(<span class="at">numFmt =</span> <span class="st">"0"</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Formato con 2 decimales para SE e IC</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  style_num2 <span class="ot">&lt;-</span> <span class="fu">createStyle</span>(<span class="at">numFmt =</span> <span class="st">"0.00"</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  n_rows <span class="ot">&lt;-</span> <span class="fu">nrow</span>(df_out) <span class="sc">+</span> <span class="dv">1</span>  <span class="co"># +1 por encabezado</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># columnas</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  col_level  <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">names</span>(df_out) <span class="sc">==</span> <span class="st">"level"</span>)</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  col_n      <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">names</span>(df_out) <span class="sc">==</span> <span class="st">"n"</span>)</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  col_nw     <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">names</span>(df_out) <span class="sc">==</span> <span class="st">"n_w"</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>  col_se     <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">names</span>(df_out) <span class="sc">==</span> <span class="st">"n_w_se"</span>)</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>  col_low    <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">names</span>(df_out) <span class="sc">==</span> <span class="st">"n_w_low"</span>)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>  col_upp    <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">names</span>(df_out) <span class="sc">==</span> <span class="st">"n_w_upp"</span>)</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplicar estilos numéricos (solo a columnas numéricas, filas de datos)</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(col_n))  <span class="fu">addStyle</span>(wb, sheet_name, style_int,  <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span>n_rows, <span class="at">cols =</span> col_n,  <span class="at">gridExpand =</span> <span class="cn">TRUE</span>, <span class="at">stack =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(col_nw)) <span class="fu">addStyle</span>(wb, sheet_name, style_int,  <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span>n_rows, <span class="at">cols =</span> col_nw, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>, <span class="at">stack =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(col_se)) <span class="fu">addStyle</span>(wb, sheet_name, style_num2, <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span>n_rows, <span class="at">cols =</span> col_se, <span class="at">gridExpand =</span> <span class="cn">TRUE</span>, <span class="at">stack =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(col_low))<span class="fu">addStyle</span>(wb, sheet_name, style_num2, <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span>n_rows, <span class="at">cols =</span> col_low,<span class="at">gridExpand =</span> <span class="cn">TRUE</span>, <span class="at">stack =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(col_upp))<span class="fu">addStyle</span>(wb, sheet_name, style_num2, <span class="at">rows =</span> <span class="dv">2</span><span class="sc">:</span>n_rows, <span class="at">cols =</span> col_upp,<span class="at">gridExpand =</span> <span class="cn">TRUE</span>, <span class="at">stack =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setColWidths</span>(wb, <span class="at">sheet =</span> sheet_name, <span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(df_out), <span class="at">widths =</span> <span class="st">"auto"</span>)</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a><span class="fu">write_sheet_counts</span>(wb, <span class="st">"relation_mop"</span>, tbl_relation)</span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a><span class="fu">write_sheet_counts</span>(wb, <span class="st">"ciuo08_ine"</span>,  tbl_ciuo)</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="fu">saveWorkbook</span>(wb, <span class="st">"output/tablas_conteos.xlsx"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># =========================================================</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 9) Chequeos de coherencia (recomendado)</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#    Suma ponderada por categorías ≈ suma de pesos (sin NA en la variable)</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># =========================================================</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>check_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(tbl, var_name) {</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  suma_tabla <span class="ot">&lt;-</span> tbl <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Categoría <span class="sc">!=</span> <span class="st">"Total"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">n_w =</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">"."</span>, <span class="fu">gsub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">."</span>, <span class="st">""</span>, <span class="st">`</span><span class="at">n ponderado</span><span class="st">`</span>)))) <span class="sc">%&gt;%</span> <span class="co"># por si llega formateado</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">suma =</span> <span class="fu">sum</span>(n_w, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(suma)</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  suma_pesos <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(.data[[var_name]])) <span class="sc">%&gt;%</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">suma =</span> <span class="fu">sum</span>(rake_wb2, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(suma)</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">variable   =</span> var_name,</span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">suma_tabla =</span> suma_tabla,</span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">suma_pesos =</span> suma_pesos,</span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">diferencia =</span> suma_tabla <span class="sc">-</span> suma_pesos</span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Si prefieres chequear con las tablas "crudas" (sin formatear), usa directamente:</span></span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>check_relation <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable   =</span> <span class="st">"relation_mop"</span>,</span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">suma_tabla =</span> <span class="fu">sum</span>(tbl_relation<span class="sc">$</span>n_w[tbl_relation<span class="sc">$</span>level <span class="sc">!=</span> <span class="st">"Total"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">suma_pesos =</span> <span class="fu">sum</span>(data<span class="sc">$</span>rake_wb2[<span class="sc">!</span><span class="fu">is.na</span>(data<span class="sc">$</span>relation_mop)], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">diferencia =</span> <span class="fu">sum</span>(tbl_relation<span class="sc">$</span>n_w[tbl_relation<span class="sc">$</span>level <span class="sc">!=</span> <span class="st">"Total"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">-</span></span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>               <span class="fu">sum</span>(data<span class="sc">$</span>rake_wb2[<span class="sc">!</span><span class="fu">is.na</span>(data<span class="sc">$</span>relation_mop)], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>check_ciuo <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable   =</span> <span class="st">"ciuo08_ine"</span>,</span>
-<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">suma_tabla =</span> <span class="fu">sum</span>(tbl_ciuo<span class="sc">$</span>n_w[tbl_ciuo<span class="sc">$</span>level <span class="sc">!=</span> <span class="st">"Total"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">suma_pesos =</span> <span class="fu">sum</span>(data<span class="sc">$</span>rake_wb2[<span class="sc">!</span><span class="fu">is.na</span>(data<span class="sc">$</span>ciuo08_ine)], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">diferencia =</span> <span class="fu">sum</span>(tbl_ciuo<span class="sc">$</span>n_w[tbl_ciuo<span class="sc">$</span>level <span class="sc">!=</span> <span class="st">"Total"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">-</span></span>
-<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>               <span class="fu">sum</span>(data<span class="sc">$</span>rake_wb2[<span class="sc">!</span><span class="fu">is.na</span>(data<span class="sc">$</span>ciuo08_ine)], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(check_relation)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># =========================================================</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 9) Chequeos de coherencia (recomendado)</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#    Suma ponderada por categorías ≈ suma de pesos (sin NA en la variable)</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># =========================================================</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>check_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(tbl, var_name) {</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  suma_tabla <span class="ot">&lt;-</span> tbl <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Categoría <span class="sc">!=</span> <span class="st">"Total"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">n_w =</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">"."</span>, <span class="fu">gsub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">."</span>, <span class="st">""</span>, <span class="st">`</span><span class="at">n ponderado</span><span class="st">`</span>)))) <span class="sc">%&gt;%</span> <span class="co"># por si llega formateado</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">suma =</span> <span class="fu">sum</span>(n_w, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(suma)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  suma_pesos <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(.data[[var_name]])) <span class="sc">%&gt;%</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">suma =</span> <span class="fu">sum</span>(rake_wb2, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(suma)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">variable   =</span> var_name,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">suma_tabla =</span> suma_tabla,</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">suma_pesos =</span> suma_pesos,</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">diferencia =</span> suma_tabla <span class="sc">-</span> suma_pesos</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Si prefieres chequear con las tablas "crudas" (sin formatear), usa directamente:</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>check_relation <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable   =</span> <span class="st">"relation_mop"</span>,</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">suma_tabla =</span> <span class="fu">sum</span>(tbl_relation<span class="sc">$</span>n_w[tbl_relation<span class="sc">$</span>level <span class="sc">!=</span> <span class="st">"Total"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">suma_pesos =</span> <span class="fu">sum</span>(data<span class="sc">$</span>rake_wb2[<span class="sc">!</span><span class="fu">is.na</span>(data<span class="sc">$</span>relation_mop)], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">diferencia =</span> <span class="fu">sum</span>(tbl_relation<span class="sc">$</span>n_w[tbl_relation<span class="sc">$</span>level <span class="sc">!=</span> <span class="st">"Total"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">-</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>               <span class="fu">sum</span>(data<span class="sc">$</span>rake_wb2[<span class="sc">!</span><span class="fu">is.na</span>(data<span class="sc">$</span>relation_mop)], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>check_ciuo <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable   =</span> <span class="st">"ciuo08_ine"</span>,</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">suma_tabla =</span> <span class="fu">sum</span>(tbl_ciuo<span class="sc">$</span>n_w[tbl_ciuo<span class="sc">$</span>level <span class="sc">!=</span> <span class="st">"Total"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">suma_pesos =</span> <span class="fu">sum</span>(data<span class="sc">$</span>rake_wb2[<span class="sc">!</span><span class="fu">is.na</span>(data<span class="sc">$</span>ciuo08_ine)], <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">diferencia =</span> <span class="fu">sum</span>(tbl_ciuo<span class="sc">$</span>n_w[tbl_ciuo<span class="sc">$</span>level <span class="sc">!=</span> <span class="st">"Total"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">-</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>               <span class="fu">sum</span>(data<span class="sc">$</span>rake_wb2[<span class="sc">!</span><span class="fu">is.na</span>(data<span class="sc">$</span>ciuo08_ine)], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(check_relation)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 4
   variable     suma_tabla suma_pesos diferencia
   &lt;chr&gt;             &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
 1 relation_mop    2.82e12    2.82e12          0</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(check_ciuo)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(check_ciuo)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 4
   variable   suma_tabla suma_pesos diferencia
