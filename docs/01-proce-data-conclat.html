@@ -205,8 +205,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#managerial_location_typology" id="toc-managerial_location_typology" class="nav-link" data-scroll-target="#managerial_location_typology"><span class="header-section-number">1.2.12</span> managerial_location_typology</a></li>
   <li><a href="#organization_assets" id="toc-organization_assets" class="nav-link" data-scroll-target="#organization_assets"><span class="header-section-number">1.2.13</span> organization_assets</a></li>
   <li><a href="#a06_boleta" id="toc-a06_boleta" class="nav-link" data-scroll-target="#a06_boleta"><span class="header-section-number">1.2.14</span> a06_boleta</a></li>
-  <li><a href="#inicio_actividades" id="toc-inicio_actividades" class="nav-link" data-scroll-target="#inicio_actividades"><span class="header-section-number">1.2.15</span> inicio_actividades</a></li>
-  <li><a href="#a18_contrato" id="toc-a18_contrato" class="nav-link" data-scroll-target="#a18_contrato"><span class="header-section-number">1.2.16</span> a18_contrato</a></li>
+  <li><a href="#inicio_activ" id="toc-inicio_activ" class="nav-link" data-scroll-target="#inicio_activ"><span class="header-section-number">1.2.15</span> inicio_activ</a></li>
+  <li><a href="#inicio_activ2" id="toc-inicio_activ2" class="nav-link" data-scroll-target="#inicio_activ2"><span class="header-section-number">1.2.16</span> inicio_activ2</a></li>
+  <li><a href="#a18_contrato" id="toc-a18_contrato" class="nav-link" data-scroll-target="#a18_contrato"><span class="header-section-number">1.2.17</span> a18_contrato</a></li>
   </ul></li>
   <li><a href="#classes" id="toc-classes" class="nav-link" data-scroll-target="#classes"><span class="header-section-number">1.3</span> Classes</a>
   <ul class="collapse">
@@ -1195,8 +1196,8 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="inicio_actividades" class="level3" data-number="1.2.15">
-<h3 data-number="1.2.15" class="anchored" data-anchor-id="inicio_actividades"><span class="header-section-number">1.2.15</span> inicio_actividades</h3>
+<section id="inicio_activ" class="level3" data-number="1.2.15">
+<h3 data-number="1.2.15" class="anchored" data-anchor-id="inicio_activ"><span class="header-section-number">1.2.15</span> inicio_activ</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a10)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1212,40 +1213,77 @@ Value |    N | Raw % | Valid % | Cum. %
     5 |  393 | 12.89 |   41.63 | 100.00
  &lt;NA&gt; | 2104 | 69.03 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>a10, data<span class="sc">$</span>relation_mop)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">inicio_activ =</span> <span class="fu">case_when</span>(</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>      a10 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>      a10 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">0</span></span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">%&gt;%</span> </span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">inicio_activ =</span> <span class="st">"Incio de actividades (1 = yes)"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">inicio_activ =</span> <span class="fu">c</span>(</span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Yes"</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"No"</span> <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>inicio_activ)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   
-    1. Employers 2. Self-Employed 3. Salaried
-  1          143              111           0
-  2           63              129           0
-  3           40               23           0
-  4           19               23           0
-  5           79              312           2</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>a10, data<span class="sc">$</span>owners)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   
-    1. Solo Self-Employed 2. Small employers 3. Employers
-  1                   131                 79           43
-  2                    90                 87           14
-  3                    16                 33           13
-  4                    16                 12           13
-  5                   298                 65           24</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>a10, data<span class="sc">$</span>owners2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   
-    1. Solo Self-Employed 2. Small employers 3. Capitalists
-  1                   131                111             11
-  2                    90                 95              6
-  3                    16                 42              4
-  4                    16                 20              5
-  5                   298                 79             10</code></pre>
+<pre><code>Incio de actividades (1 = yes) (x) &lt;numeric&gt; 
+# total N=3048 valid N=944 mean=0.58 sd=0.49
+
+Value | Label |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------
+    0 |    No |  393 | 12.89 |   41.63 |  41.63
+    1 |   Yes |  551 | 18.08 |   58.37 | 100.00
+ &lt;NA&gt; |  &lt;NA&gt; | 2104 | 69.03 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="a18_contrato" class="level3" data-number="1.2.16">
-<h3 data-number="1.2.16" class="anchored" data-anchor-id="a18_contrato"><span class="header-section-number">1.2.16</span> a18_contrato</h3>
+<section id="inicio_activ2" class="level3" data-number="1.2.16">
+<h3 data-number="1.2.16" class="anchored" data-anchor-id="inicio_activ2"><span class="header-section-number">1.2.16</span> inicio_activ2</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a10)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Iniciación de actividades (x) &lt;numeric&gt; 
+# total N=3048 valid N=944 mean=3.14 sd=1.72
+
+Value |    N | Raw % | Valid % | Cum. %
+---------------------------------------
+    1 |  254 |  8.33 |   26.91 |  26.91
+    2 |  192 |  6.30 |   20.34 |  47.25
+    3 |   63 |  2.07 |    6.67 |  53.92
+    4 |   42 |  1.38 |    4.45 |  58.37
+    5 |  393 | 12.89 |   41.63 | 100.00
+ &lt;NA&gt; | 2104 | 69.03 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">inicio_activ2 =</span> <span class="fu">case_when</span>(</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>      a10 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>      a10 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">0</span></span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">%&gt;%</span> </span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">inicio_activ2 =</span> <span class="st">"Incio de actividades 2 (1 = yes)"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">inicio_activ2 =</span> <span class="fu">c</span>(</span>
+<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Yes"</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
+<span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"No"</span> <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb66-12"><a href="#cb66-12" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb66-13"><a href="#cb66-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-14"><a href="#cb66-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>inicio_activ2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Incio de actividades 2 (1 = yes) (x) &lt;numeric&gt; 
+# total N=3048 valid N=944 mean=0.31 sd=0.46
+
+Value | Label |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------
+    0 |    No |  647 | 21.23 |   68.54 |  68.54
+    1 |   Yes |  297 |  9.74 |   31.46 | 100.00
+ &lt;NA&gt; |  &lt;NA&gt; | 2104 | 69.03 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="a18_contrato" class="level3" data-number="1.2.17">
+<h3 data-number="1.2.17" class="anchored" data-anchor-id="a18_contrato"><span class="header-section-number">1.2.17</span> a18_contrato</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a18)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1743,7 +1781,7 @@ Value                      |    N | Raw % | Valid % | Cum. %
 <span id="cb90-28"><a href="#cb90-28" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb90-29"><a href="#cb90-29" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb90-30"><a href="#cb90-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb90-31"><a href="#cb90-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass1_reduced =</span> <span class="st">"Wright Class Typology  Reduced (5)"</span>)</span>
+<span id="cb90-31"><a href="#cb90-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass1_reduced =</span> <span class="st">"Wright Class Typology Reduced (5)"</span>)</span>
 <span id="cb90-32"><a href="#cb90-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb90-33"><a href="#cb90-33" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass1_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1828,11 +1866,11 @@ Value                     |    N | Raw % | Valid % | Cum. %
 <span id="cb94-27"><a href="#cb94-27" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb94-28"><a href="#cb94-28" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb94-29"><a href="#cb94-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb94-30"><a href="#cb94-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass2_reduced =</span> <span class="st">"Wright Class Typology Reduced + Informal (6)"</span>)</span>
+<span id="cb94-30"><a href="#cb94-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass2_reduced =</span> <span class="st">"Wright Class Typology Reduced (6)"</span>)</span>
 <span id="cb94-31"><a href="#cb94-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb94-32"><a href="#cb94-32" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass2_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Wright Class Typology Reduced + Informal (6) (x) &lt;categorical&gt; 
+<pre><code>Wright Class Typology Reduced (6) (x) &lt;categorical&gt; 
 # total N=3048 valid N=3040 mean=3.42 sd=2.58
 
 Value                     |    N | Raw % | Valid % | Cum. %
@@ -1911,7 +1949,7 @@ Value                     |    N | Raw % | Valid % | Cum. %
 <span id="cb98-25"><a href="#cb98-25" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb98-26"><a href="#cb98-26" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb98-27"><a href="#cb98-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb98-28"><a href="#cb98-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass1_reduced2 =</span> <span class="st">"Wright Class Typology  Reduced (7)"</span>)</span>
+<span id="cb98-28"><a href="#cb98-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass1_reduced2 =</span> <span class="st">"Wright Class Typology Reduced (7)"</span>)</span>
 <span id="cb98-29"><a href="#cb98-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb98-30"><a href="#cb98-30" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass1_reduced2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1992,7 +2030,7 @@ Value                     |    N | Raw % | Valid % | Cum. %
 <span id="cb102-25"><a href="#cb102-25" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb102-26"><a href="#cb102-26" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb102-27"><a href="#cb102-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb102-28"><a href="#cb102-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass2_reduced2 =</span> <span class="st">"Wright Class Typology  Reduced (8)"</span>)</span>
+<span id="cb102-28"><a href="#cb102-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass2_reduced2 =</span> <span class="st">"Wright Class Typology Reduced (8)"</span>)</span>
 <span id="cb102-29"><a href="#cb102-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb102-30"><a href="#cb102-30" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass2_reduced2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2079,11 +2117,11 @@ Value                     |    N | Raw % | Valid % | Cum. %
 <span id="cb106-31"><a href="#cb106-31" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb106-32"><a href="#cb106-32" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb106-33"><a href="#cb106-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb106-34"><a href="#cb106-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass1_reduced3 =</span> <span class="st">"Wright Class Typology Reduced + Informal (9)"</span>)</span>
+<span id="cb106-34"><a href="#cb106-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass1_reduced3 =</span> <span class="st">"Wright Class Typology Reduced (9)"</span>)</span>
 <span id="cb106-35"><a href="#cb106-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb106-36"><a href="#cb106-36" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass1_reduced3)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Wright Class Typology Reduced + Informal (9) (x) &lt;categorical&gt; 
+<pre><code>Wright Class Typology Reduced (9) (x) &lt;categorical&gt; 
 # total N=3048 valid N=3040 mean=6.08 sd=2.23
 
 Value                              |    N | Raw % | Valid % | Cum. %
@@ -2168,11 +2206,11 @@ Value                              |    N | Raw % | Valid % | Cum. %
 <span id="cb110-31"><a href="#cb110-31" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb110-32"><a href="#cb110-32" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb110-33"><a href="#cb110-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb110-34"><a href="#cb110-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass2_reduced3 =</span> <span class="st">"Wright Class Typology Reduced + Informal (10)"</span>)</span>
+<span id="cb110-34"><a href="#cb110-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass2_reduced3 =</span> <span class="st">"Wright Class Typology Reduced (10)"</span>)</span>
 <span id="cb110-35"><a href="#cb110-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb110-36"><a href="#cb110-36" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass2_reduced3)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Wright Class Typology Reduced + Informal (10) (x) &lt;categorical&gt; 
+<pre><code>Wright Class Typology Reduced (10) (x) &lt;categorical&gt; 
 # total N=3048 valid N=3040 mean=6.10 sd=2.19
 
 Value                              |    N | Raw % | Valid % | Cum. %
@@ -2227,9 +2265,9 @@ Value                              |    N | Raw % | Valid % | Cum. %
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass1_reduced4 =</span> <span class="fu">case_when</span>(</span>
-<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,                                                                           <span class="co"># 1. Employers</span></span>
-<span id="cb114-5"><a href="#cb114-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,                                                                           <span class="co"># 2. Small employers   </span></span>
-<span id="cb114-6"><a href="#cb114-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> a06_boleta <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span> <span class="sc">&amp;</span> a10 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>),                                                         <span class="co"># 3. Petty bourgeoisie  </span></span>
+<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,                                                                            <span class="co"># 1. Employers</span></span>
+<span id="cb114-5"><a href="#cb114-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,                                                                            <span class="co"># 2. Small employers   </span></span>
+<span id="cb114-6"><a href="#cb114-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> a06_boleta <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> a10 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">~</span> <span class="dv">3</span>,                                        <span class="co"># 3. Petty bourgeoisie  </span></span>
 <span id="cb114-7"><a href="#cb114-7" aria-hidden="true" tabindex="-1"></a>      </span>
 <span id="cb114-8"><a href="#cb114-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">4</span>,                                     <span class="co"># 4. Expert managers   </span></span>
 <span id="cb114-9"><a href="#cb114-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">5</span>,                                     <span class="co"># 5. Experts  </span></span>
@@ -2239,7 +2277,7 @@ Value                              |    N | Raw % | Valid % | Cum. %
 <span id="cb114-13"><a href="#cb114-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb114-14"><a href="#cb114-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> a18 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">7</span>,                  <span class="co"># 7. Formal workers</span></span>
 <span id="cb114-15"><a href="#cb114-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> a18 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">8</span>, <span class="co"># 8. Informal workers</span></span>
-<span id="cb114-16"><a href="#cb114-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> a06_boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">9</span> <span class="sc">&amp;</span> a10 <span class="sc">==</span> <span class="dv">5</span>,                                                         <span class="co"># 9. Informal self-employed</span></span>
+<span id="cb114-16"><a href="#cb114-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> a06_boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> a10 <span class="sc">==</span> <span class="dv">5</span> <span class="sc">~</span> <span class="dv">9</span>,                                               <span class="co"># 9. Informal self-employed</span></span>
 <span id="cb114-17"><a href="#cb114-17" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb114-18"><a href="#cb114-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass1_reduced4 =</span> <span class="fu">factor</span>(</span>
 <span id="cb114-19"><a href="#cb114-19" aria-hidden="true" tabindex="-1"></a>      wrightclass1_reduced4,</span>
@@ -2257,24 +2295,24 @@ Value                              |    N | Raw % | Valid % | Cum. %
 <span id="cb114-31"><a href="#cb114-31" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb114-32"><a href="#cb114-32" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb114-33"><a href="#cb114-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb114-34"><a href="#cb114-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass1_reduced4 =</span> <span class="st">"Wright Class Typology Reduced + Informal (11)"</span>)</span>
+<span id="cb114-34"><a href="#cb114-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass1_reduced4 =</span> <span class="st">"Wright Class Typology Reduced (11)"</span>)</span>
 <span id="cb114-35"><a href="#cb114-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb114-36"><a href="#cb114-36" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass1_reduced4)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Wright Class Typology Reduced + Informal (11) (x) &lt;categorical&gt; 
-# total N=3048 valid N=2965 mean=5.12 sd=2.59
+<pre><code>Wright Class Typology Reduced (11) (x) &lt;categorical&gt; 
+# total N=3048 valid N=2965 mean=6.02 sd=2.21
 
 Value                              |    N | Raw % | Valid % | Cum. %
 --------------------------------------------------------------------
-1. Employers                       |  584 | 19.16 |   19.70 |  19.70
-2. Small employers                 |  276 |  9.06 |    9.31 |  29.01
-3. Petty bourgeoisie               |    0 |  0.00 |    0.00 |  29.01
-4. Expert managers                 |   92 |  3.02 |    3.10 |  32.11
-5. Experts                         |  245 |  8.04 |    8.26 |  40.37
-6. Skilled &amp; Unskilled Supervisors |  278 |  9.12 |    9.38 |  49.75
-7. Formal workers                  | 1150 | 37.73 |   38.79 |  88.53
-8. Informal workers                |  340 | 11.15 |   11.47 | 100.00
-9. Informal self-employed          |    0 |  0.00 |    0.00 | 100.00
+1. Employers                       |  108 |  3.54 |    3.64 |   3.64
+2. Small employers                 |  276 |  9.06 |    9.31 |  12.95
+3. Petty bourgeoisie               |  187 |  6.14 |    6.31 |  19.26
+4. Expert managers                 |   92 |  3.02 |    3.10 |  22.36
+5. Experts                         |  245 |  8.04 |    8.26 |  30.62
+6. Skilled &amp; Unskilled Supervisors |  278 |  9.12 |    9.38 |  40.00
+7. Formal workers                  | 1150 | 37.73 |   38.79 |  78.79
+8. Informal workers                |  340 | 11.15 |   11.47 |  90.25
+9. Informal self-employed          |  289 |  9.48 |    9.75 | 100.00
 &lt;NA&gt;                               |   83 |  2.72 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
@@ -2294,17 +2332,19 @@ Value                              |    N | Raw % | Valid % | Cum. %
 <span id="cb116-15"><a href="#cb116-15" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="sc">%&gt;%</span></span>
 <span id="cb116-16"><a href="#cb116-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 8 × 4
-  wrightclass1_reduced4                freq n_unweighted freq_pct
-  &lt;fct&gt;                               &lt;dbl&gt;        &lt;int&gt;    &lt;dbl&gt;
-1 1. Employers                       0.154           584    15.4 
-2 2. Small employers                 0.0686          276     6.86
-3 4. Expert managers                 0.0460           92     4.60
-4 5. Experts                         0.123           245    12.3 
-5 6. Skilled &amp; Unskilled Supervisors 0.0942          278     9.42
-6 7. Formal workers                  0.368          1150    36.8 
-7 8. Informal workers                0.118           340    11.8 
-8 &lt;NA&gt;                               0.0282           83     2.82</code></pre>
+<pre><code># A tibble: 10 × 4
+   wrightclass1_reduced4                freq n_unweighted freq_pct
+   &lt;fct&gt;                               &lt;dbl&gt;        &lt;int&gt;    &lt;dbl&gt;
+ 1 1. Employers                       0.0208          108     2.08
+ 2 2. Small employers                 0.0686          276     6.86
+ 3 3. Petty bourgeoisie               0.0628          187     6.28
+ 4 4. Expert managers                 0.0460           92     4.60
+ 5 5. Experts                         0.123           245    12.3 
+ 6 6. Skilled &amp; Unskilled Supervisors 0.0942          278     9.42
+ 7 7. Formal workers                  0.368          1150    36.8 
+ 8 8. Informal workers                0.118           340    11.8 
+ 9 9. Informal self-employed          0.0705          289     7.05
+10 &lt;NA&gt;                               0.0282           83     2.82</code></pre>
 </div>
 </div>
 </section>
