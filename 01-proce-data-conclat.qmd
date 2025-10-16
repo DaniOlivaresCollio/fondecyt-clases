@@ -567,12 +567,120 @@ data <- data %>%
   ))
 
 frq(data$a18_contrato)
-
 ```
 
 ## Classes
 
 ![](img/wright_classes.jpeg)
+
+### Esquema de clases de Erik Olin Wright
+
+<style>
+/* ===== Wright class scheme — fluid, centered, TOC-safe ===== */
+.wright-box{
+  /* el ancho total del esquema se adapta al contenedor */
+  --maxw: clamp(520px, 92vw, 860px);
+  width: min(100%, var(--maxw));
+  margin: 8px auto 18px auto;  /* centrado */
+}
+
+.wright-grid{
+  display: grid;
+  /* 5 columnas: izquierda, OWNER, 3 centrales, derecha
+     porcentajes + minmax para que quepa siempre */
+  grid-template-columns:
+    minmax(60px, 8%)         /* Nº empleados */
+    minmax(140px, 22%)       /* OWNER */
+    repeat(3, minmax(120px, 1fr)) /* Expert/Skilled/Nonskilled */
+    minmax(90px, 12%);       /* Autoridad */
+  /* filas: top, headers, 3 datos, bottom */
+  grid-template-rows:
+    56px 86px repeat(3, 90px) 56px;
+
+  border: 2px solid #000;
+  background: #fff;
+  font-family: "Noto Serif", serif;
+  font-size: .95rem;
+}
+.wcell{
+  border: 1px solid #000;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:6px;
+}
+
+/* cabeceras */
+.w-top    { grid-column: 3 / span 3; font-weight:800; background:#f3f3f3; }
+.w-bot    { grid-column: 3 / span 3; font-weight:800; background:#f3f3f3; }
+.w-head   { font-weight:800; background:#fbfbfb; }
+.w-ownerH { font-weight:800; background:#fbfbfb; }
+
+/* etiquetas verticales dentro del marco */
+.w-leftH, .w-rightH{
+  font-weight:800; background:#fbfbfb;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  letter-spacing:.4px;
+}
+
+/* columnas de datos */
+.w-left   { }
+.w-right  { font-weight:700; }
+.w-owner  { font-weight:700; }
+
+/* Ajustes responsivos extra chicos */
+@media (max-width: 640px){
+  .wright-grid{ font-size: .9rem; }
+  .w-leftH, .w-rightH{ letter-spacing: 0; }
+}
+</style>
+
+<div class="wright-box">
+<div class="wright-grid">
+<!-- fila 1: cabecera superior -->
+<div class="wcell w-leftH"></div>
+<div class="wcell"></div>
+<div class="wcell w-top">RELATION TO THE MEANS OF PRODUCTION</div>
+<div class="wcell"></div>
+
+<!-- fila 2: encabezados -->
+<div class="wcell w-leftH">NUMBER OF EMPLOYEES</div>
+<div class="wcell w-ownerH">OWNER</div>
+<div class="wcell w-head">Expert</div>
+<div class="wcell w-head">Skilled</div>
+<div class="wcell w-head">Nonskilled</div>
+<div class="wcell w-rightH">RELATION TO AUTHORITY</div>
+
+<!-- fila 3 -->
+<div class="wcell w-left">10+</div>
+<div class="wcell w-owner">Capitalists</div>
+<div class="wcell">Expert managers</div>
+<div class="wcell">Skilled managers</div>
+<div class="wcell">Non-skilled managers</div>
+<div class="wcell w-right">Manager</div>
+
+<!-- fila 4 -->
+<div class="wcell w-left">2–9</div>
+<div class="wcell w-owner">Small employers</div>
+<div class="wcell">Expert supervisors</div>
+<div class="wcell">Skilled supervisors</div>
+<div class="wcell">Non-skilled supervisors</div>
+<div class="wcell w-right">Supervisor</div>
+
+<!-- fila 5 -->
+<div class="wcell w-left">0–1</div>
+<div class="wcell w-owner">Petty bourgeoisie</div>
+<div class="wcell">Experts</div>
+<div class="wcell">Skilled workers</div>
+<div class="wcell">Non-skilled workers</div>
+<div class="wcell w-right">No authority</div>
+
+<!-- fila 6: pie -->
+<div class="wcell"></div>
+<div class="wcell"></div>
+<div class="wcell w-bot">RELATION TO SCARCE SKILLS</div>
+<div class="wcell"></div>
+<div class="wcell"></div>
+</div>
+</div>
 
 ### wrightclass1_original
 
@@ -1068,7 +1176,7 @@ data <- data %>%
 
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 == 1 ~ 7,                  # 7. Formal workers
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 %in% c(2, 3, 4, -999) ~ 8, # 8. Informal workers
-      as.integer(owners) == 1 & a06_boleta == 0 ~ 9,                                                          # 9. Informal self-employed
+      as.integer(owners) == 1 & a06_boleta == 0 ~ 9                                                           # 9. Informal self-employed
     ),
     wrightclass1_reduced3 = factor(
       wrightclass1_reduced3,
@@ -1126,7 +1234,7 @@ data <- data %>%
 
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 == 1 ~ 7,                  # 7. Formal workers
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 %in% c(2, 3, 4, -999) ~ 8, # 8. Informal workers
-      as.integer(owners2) == 1 & a06_boleta == 0 ~ 9,                                                         # 9. Informal self-employed
+      as.integer(owners2) == 1 & a06_boleta == 0 ~ 9                                                          # 9. Informal self-employed
     ),
     wrightclass2_reduced3 = factor(
       wrightclass2_reduced3,
@@ -1184,7 +1292,8 @@ data <- data %>%
 
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 == 1 ~ 7,                  # 7. Formal workers
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 %in% c(2, 3, 4, -999) ~ 8, # 8. Informal workers
-      as.integer(owners) == 1 & a06_boleta == 0 & a10 == 5 ~ 9,                                               # 9. Informal self-employed
+      as.integer(owners) == 1 & a06_boleta == 0 & a10 %in% c(1:5) ~ 9,                                        # 9. Informal self-employed
+      as.integer(owners) == 1 & a06_boleta == 1 & a10 %in% c(1:5) ~ 9                                         # 9. Informal self-employed
     ),
     wrightclass1_reduced4 = factor(
       wrightclass1_reduced4,
@@ -1227,7 +1336,60 @@ wright_freq %>%
 ### wrightclass2_reduced4
 
 ```{r}
+data <- data %>%
+  mutate(
+    wrightclass2_reduced4 = case_when(
+      as.integer(owners2) == 3 ~ 1,                                                                           # 1. Employers
+      as.integer(owners2) == 2 ~ 2,                                                                           # 2. Small employers   
+      as.integer(owners2) == 1 & a06_boleta == 1 & a10 %in% c(1:4) ~ 3,                                       # 3. Petty bourgeoisie  
+      
+      as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                                     # 4. Expert managers   
+      as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                                     # 5. Experts  
+      
+      as.integer(organization_assets) %in% c(1, 2) & as.integer(skills) %in% c(2, 3) ~ 6,                     # 6. Skilled y Unskilled Supervisors
+      as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,                                     # 6. Skilled y Unskilled Supervisors
 
+      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 == 1 ~ 7,                  # 7. Formal workers
+      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18 %in% c(2, 3, 4, -999) ~ 8, # 8. Informal workers
+      as.integer(owners2) == 1 & a06_boleta == 0 & a10 %in% c(1:5) ~ 9,                                       # 9. Informal self-employed
+      as.integer(owners2) == 1 & a06_boleta == 1 & a10 %in% c(1:5) ~ 9                                        # 9. Informal self-employed
+    ),
+    wrightclass2_reduced4 = factor(
+      wrightclass2_reduced4,
+      levels = 1:9,
+      labels = c(
+        "1. Employers",
+        "2. Small employers",
+        "3. Petty bourgeoisie",
+        "4. Expert managers",
+        "5. Experts",
+        "6. Skilled & Unskilled Supervisors",
+        "7. Formal workers",
+        "8. Informal workers",
+        "9. Informal self-employed"
+      )
+    )
+  ) %>%
+  set_variable_labels(wrightclass2_reduced4 = "Wright Class Typology Reduced (11)")
+
+frq(data$wrightclass2_reduced4)
+
+# base survey
+data_svy <- as_survey_design(data, weights = rake_wb2)
+
+# Tabla de frecuencias ponderadas
+wright_freq <- data_svy %>%
+  group_by(wrightclass2_reduced4) %>%
+  summarise(
+    freq = survey_mean(vartype = NULL, na.rm = TRUE),
+    n_unweighted = unweighted(n())
+  ) %>%
+  mutate(
+    freq_pct = freq * 100
+  )
+
+wright_freq %>%
+  print(n = Inf)
 ```
 
 ## Dependent variables
