@@ -206,7 +206,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#a10-x-clase-09-sin-ponderar" id="toc-a10-x-clase-09-sin-ponderar" class="nav-link" data-scroll-target="#a10-x-clase-09-sin-ponderar"><span class="header-section-number">4.2.14</span> a10 x Clase (09) sin ponderar</a></li>
   <li><a href="#a10-x-clase-10-sin-ponderar" id="toc-a10-x-clase-10-sin-ponderar" class="nav-link" data-scroll-target="#a10-x-clase-10-sin-ponderar"><span class="header-section-number">4.2.15</span> a10 x Clase (10) sin ponderar</a></li>
   <li><a href="#a10-x-clase-11-sin-ponderar" id="toc-a10-x-clase-11-sin-ponderar" class="nav-link" data-scroll-target="#a10-x-clase-11-sin-ponderar"><span class="header-section-number">4.2.16</span> a10 x Clase (11) sin ponderar</a></li>
-  <li><a href="#ingresos-x-employers-09-con-inicio-act-como-empresa-sin-ponderar" id="toc-ingresos-x-employers-09-con-inicio-act-como-empresa-sin-ponderar" class="nav-link" data-scroll-target="#ingresos-x-employers-09-con-inicio-act-como-empresa-sin-ponderar"><span class="header-section-number">4.2.17</span> Ingresos x Employers (09) con Inicio Act como empresa sin ponderar</a></li>
+  <li><a href="#ingresos-x-employers-11-con-inicio-act-como-empresa-sin-ponderar" id="toc-ingresos-x-employers-11-con-inicio-act-como-empresa-sin-ponderar" class="nav-link" data-scroll-target="#ingresos-x-employers-11-con-inicio-act-como-empresa-sin-ponderar"><span class="header-section-number">4.2.17</span> Ingresos x Employers (11) con Inicio Act como empresa sin ponderar</a></li>
+  <li><a href="#ingresos-x-capitalists-12-con-inicio-act-como-empresa-sin-ponderar" id="toc-ingresos-x-capitalists-12-con-inicio-act-como-empresa-sin-ponderar" class="nav-link" data-scroll-target="#ingresos-x-capitalists-12-con-inicio-act-como-empresa-sin-ponderar"><span class="header-section-number">4.2.18</span> Ingresos x Capitalists (12) con Inicio Act como empresa sin ponderar</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1498,15 +1499,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="ingresos-x-employers-09-con-inicio-act-como-empresa-sin-ponderar" class="level3" data-number="4.2.17">
-<h3 data-number="4.2.17" class="anchored" data-anchor-id="ingresos-x-employers-09-con-inicio-act-como-empresa-sin-ponderar"><span class="header-section-number">4.2.17</span> Ingresos x Employers (09) con Inicio Act como empresa sin ponderar</h3>
+<section id="ingresos-x-employers-11-con-inicio-act-como-empresa-sin-ponderar" class="level3" data-number="4.2.17">
+<h3 data-number="4.2.17" class="anchored" data-anchor-id="ingresos-x-employers-11-con-inicio-act-como-empresa-sin-ponderar"><span class="header-section-number">4.2.17</span> Ingresos x Employers (11) con Inicio Act como empresa sin ponderar</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass1_reduced3) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> inicio_activ2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, wrightclass1_reduced3, income_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass1_reduced4) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> inicio_activ2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, wrightclass1_reduced4, income_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 40 × 3
-   id      wrightclass1_reduced3 income_rec
+   id      wrightclass1_reduced4 income_rec
    &lt;chr&gt;   &lt;fct&gt;                      &lt;dbl&gt;
  1 var_16  1. Employers             900000.
  2 var_54  1. Employers            1100000.
@@ -1519,6 +1520,76 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  9 var_396 1. Employers            3500000 
 10 var_420 1. Employers            1550000 
 # ℹ 30 more rows</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass1_reduced4) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> inicio_activ2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(income_rec) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> <span class="dv">100</span> <span class="sc">*</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 25 × 3
+   income_rec     n   pct
+        &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
+ 1     200000     1   2.5
+ 2     400000     1   2.5
+ 3     450000     1   2.5
+ 4     500000     2   5  
+ 5     590000     1   2.5
+ 6     600000     4  10  
+ 7     650000     2   5  
+ 8     700000     2   5  
+ 9     850000     2   5  
+10     890000     1   2.5
+# ℹ 15 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="ingresos-x-capitalists-12-con-inicio-act-como-empresa-sin-ponderar" class="level3" data-number="4.2.18">
+<h3 data-number="4.2.18" class="anchored" data-anchor-id="ingresos-x-capitalists-12-con-inicio-act-como-empresa-sin-ponderar"><span class="header-section-number">4.2.18</span> Ingresos x Capitalists (12) con Inicio Act como empresa sin ponderar</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass2_reduced4) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> inicio_activ2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id, wrightclass2_reduced4, income_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 3
+   id       wrightclass2_reduced4 income_rec
+   &lt;chr&gt;    &lt;fct&gt;                      &lt;dbl&gt;
+ 1 var_16   1. Capitalists           900000.
+ 2 var_54   1. Capitalists          1100000.
+ 3 var_169  1. Capitalists               NA 
+ 4 var_465  1. Capitalists          1300000 
+ 5 var_849  1. Capitalists          1200000 
+ 6 var_994  1. Capitalists           700000 
+ 7 var_1362 1. Capitalists           590000 
+ 8 var_1537 1. Capitalists           850000 
+ 9 var_1546 1. Capitalists           890000 
+10 var_1686 1. Capitalists           650000 
+11 var_1692 1. Capitalists          1000000 
+12 var_1914 1. Capitalists          1000000 
+13 var_2130 1. Capitalists           850000 
+14 var_2854 1. Capitalists          1500000 
+15 var_2990 1. Capitalists          3000000 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">as.numeric</span>(wrightclass2_reduced4) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> inicio_activ2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(income_rec) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> <span class="dv">100</span> <span class="sc">*</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 13 × 3
+   income_rec     n   pct
+        &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;
+ 1    590000      1  6.67
+ 2    650000      1  6.67
+ 3    700000      1  6.67
+ 4    850000      2 13.3 
+ 5    890000      1  6.67
+ 6    900000.     1  6.67
+ 7   1000000      2 13.3 
+ 8   1100000.     1  6.67
+ 9   1200000      1  6.67
+10   1300000      1  6.67
+11   1500000      1  6.67
+12   3000000      1  6.67
+13        NA      1  6.67</code></pre>
 </div>
 </div>
 
