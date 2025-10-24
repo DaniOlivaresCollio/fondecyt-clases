@@ -527,25 +527,25 @@ data <- data %>%
 frq(data$inicio_activ)
 ```
 
-### inicio_activ2
+### inicio_empresa
 
 ```{r}
 frq(data$a10)
 
 data <- data %>% 
   mutate(
-    inicio_activ2 = case_when(
+    inicio_empresa = case_when(
       a10 %in% c(2:4) ~ 1,
       a10 %in% c(1, 5, -888, -999) ~ 0
     )
   )%>% 
-  set_variable_labels(inicio_activ2 = "Incio de actividades 2 (1 = yes)") %>% 
-  set_value_labels(inicio_activ2 = c(
+  set_variable_labels(inicio_empresa = "Incio de actividades 2 (1 = yes)") %>% 
+  set_value_labels(inicio_empresa = c(
     "Yes" = 1,
     "No" = 0
   ))
 
-frq(data$inicio_activ2)
+frq(data$inicio_empresa)
 ```
 
 ### a18_contrato
@@ -567,6 +567,79 @@ data <- data %>%
   ))
 
 frq(data$a18_contrato)
+```
+
+### income
+
+```{r}
+frq(data$a33)
+descr(data$a33)
+
+data <- data %>%
+  mutate(
+    income = case_when(
+      a33 %in% c(-888, -999) ~ NA_real_,
+      TRUE ~ as.numeric(a33)
+    )
+  ) %>% 
+  set_variable_labels(income = "Income")
+
+descr(data$income)
+```
+
+### income_br
+
+```{r}
+frq(data$a34)
+
+data <- data %>%
+  mutate(
+    income_br = case_when(
+      a34 %in% c(-888, -999) ~ NA_real_,
+      TRUE ~ as.numeric(a34)
+    )
+  ) %>% 
+  set_variable_labels(income_br = "Income brackets")
+
+frq(data$income_br)
+```
+
+### income_rec
+
+```{r}
+# armar variable auxiliar
+data <- data %>% 
+  mutate(
+    income_br_aux = case_when(
+      income_br == 1 ~ 200000,
+      income_br == 2 ~ (( 200001 +  400000) / 2),
+      income_br == 3 ~ (( 400001 +  600000) / 2), 
+      income_br == 4 ~ (( 600001 +  800000) / 2),
+      income_br == 5 ~ (( 800001 + 1000000) / 2),
+      income_br == 6 ~ ((1000001 + 1200000) / 2),
+      income_br == 7 ~ ((1200001 + 1400000) / 2),
+      income_br == 8 ~ ((1400001 + 1600000) / 2),
+      income_br == 9 ~ ((1600001 + 1800000) / 2),
+      income_br == 10 ~ ((1800001 + 2000000) / 2),
+      income_br == 11 ~ ((2000001 + 2200000) / 2),
+      income_br == 12 ~ ((2200001 + 2400000) / 2), 
+      income_br == 13 ~ ((2400001 + 2600000) / 2),
+      income_br == 14 ~ ((2600001 + 2800000) / 2),
+      income_br == 15 ~ ((2800001 + 3000000) / 2),
+      income_br == 16 ~ 3000001
+    )
+  )
+
+# armar income_rec
+data <- data %>% 
+  mutate(
+    income_rec = if_else(!is.na(income),income, income_br_aux)
+  ) %>% 
+  set_variable_labels(income_rec = "Income recoded") %>% 
+  select(-income_br_aux)
+  
+descr(data$income)
+descr(data$income_rec)
 ```
 
 ## Classes
@@ -1106,57 +1179,7 @@ wright_freq %>%
 ```
 
 
-### wrightclass2_reduced2
-
-```{r}
-data <- data %>%
-  mutate(
-    wrightclass2_reduced2 = case_when(
-      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18_contrato == 1 ~ 1,  # 1. Formal workers
-      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18_contrato == 0 ~ 2,  # 2. Informal workers
-      as.integer(owners) == 1 & a06_boleta == 0 ~ 3,                                                   # 3. Informal self-employed
-      as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 4,                              # 4. Experts
-      as.integer(organization_assets) == 2 & as.integer(skills) %in% c(1, 2, 3) ~ 5,                   # 5. Supervisors
-      as.integer(organization_assets) == 1 & as.integer(skills) %in% c(1, 2, 3) ~ 6,                   # 6. Managers
-      as.integer(owners2) == 1 & a06_boleta == 1 ~ 7,                                                  # 7. Petty bourgeoisie
-      as.integer(owners2) %in% c(2, 3) ~ 8                                                             # 8. Employers
-    ),
-    wrightclass2_reduced2 = factor(
-      wrightclass2_reduced2,
-      levels = 1:8,
-      labels = c(
-        "1. Formal workers",
-        "2. Informal workers",
-        "3. Informal self-employed",
-        "4. Experts",       
-        "5. Supervisors",
-        "6. Managers",
-        "7. Petty bourgeoisie",
-        "8. Capitalists"
-      )
-    )
-  ) %>%
-  set_variable_labels(wrightclass2_reduced2 = "Wright Class Typology Reduced (8)")
-
-frq(data$wrightclass2_reduced2)
-
-# base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
-
-# Tabla de frecuencias ponderadas
-wright_freq <- data_svy %>%
-  group_by(wrightclass2_reduced2) %>%
-  summarise(
-    freq = survey_mean(vartype = NULL, na.rm = TRUE),
-    n_unweighted = unweighted(n())
-  ) %>%
-  mutate(
-    freq_pct = freq * 100
-  )
-
-wright_freq %>%
-  print(n = Inf)
-```
+### wrightclass2_reduced2 (08 es igual al anterior)
 
 ### wrightclass1_reduced3
 
@@ -1392,23 +1415,72 @@ wright_freq %>%
   print(n = Inf)
 ```
 
-## Dependent variables
+### wrightclass1_reduced5
 
-### c01_01
+Se dejarán como Employers aquellos con iniciación de actividades como empresa y con ingresos >= 1000000. Employers ref
 
 ```{r}
-frq(data$c01_01)
-
 data <- data %>%
   mutate(
-    c01_01 = case_when(
-      c01_01 %in% c(-888, -999) ~ NA_real_,
-      TRUE ~ as.numeric(c01_01)
-    )
-  ) %>% 
-  set_variable_labels(c01_01 = "Importance of unions: in achieving better wages (c01_01)")
+    wrightclass1_reduced5 = case_when(
+      as.integer(owners) == 3 & inicio_empresa == 1 & !is.na(income_rec) & income_rec >= 1000000 ~ 1,         # 1. Employers
+      
+      as.integer(owners) == 3 & inicio_empresa == 1 & (income_rec < 1000000 | is.na(income_rec)) ~ 2,         # 2. Small employers
+      as.integer(owners) == 3 & (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                            # 2. Small employers
+      as.integer(owners) == 2 ~ 2,                                                                            # 2. Small employers   
+      
+      as.integer(owners) == 1 & a06_boleta == 1 & inicio_activ %in% c(1) ~ 3,                                 # 3. Petty bourgeoisie  
+      
+      as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                                     # 4. Expert managers   
+      
+      as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                                     # 5. Experts  
+      
+      as.integer(organization_assets) %in% c(1, 2) & as.integer(skills) %in% c(2, 3) ~ 6,                     # 6. Skilled y Unskilled Supervisors
+      as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,                                     # 6. Skilled y Unskilled Supervisors
 
-frq(data$c01_01)
+      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18_contrato == 1 ~ 7,         # 7. Formal workers
+      
+      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & a18_contrato == 0 ~ 8,         # 8. Informal workers
+      
+      as.integer(owners) == 1 & a06_boleta == 0 ~ 9,                                                          # 9. Informal self-employed
+      as.integer(owners) == 1 & a06_boleta == 1 & inicio_activ == 0 ~ 9                                       # 9. Informal self-employed
+    ),
+    wrightclass1_reduced5 = factor(
+      wrightclass1_reduced5,
+      levels = 1:9,
+      labels = c(
+        "1. Employers",
+        "2. Small employers",
+        "3. Petty bourgeoisie",
+        "4. Expert managers",
+        "5. Experts",
+        "6. Skilled & Unskilled Supervisors",
+        "7. Formal workers",
+        "8. Informal workers",
+        "9. Informal self-employed"
+      )
+    )
+  ) %>%
+  set_variable_labels(wrightclass1_reduced5 = "Wright Class Typology Reduced (13)")
+
+frq(data$wrightclass1_reduced5)
+
+# base survey
+data_svy <- as_survey_design(data, weights = rake_wb2)
+
+# Tabla de frecuencias ponderadas
+wright_freq <- data_svy %>%
+  group_by(wrightclass1_reduced5) %>%
+  summarise(
+    freq = survey_mean(vartype = NULL, na.rm = TRUE),
+    n_unweighted = unweighted(n())
+  ) %>%
+  mutate(
+    freq_pct = freq * 100
+  )
+
+wright_freq %>%
+  print(n = Inf)
 ```
 
 ### c01_02
@@ -1699,79 +1771,6 @@ data <- data %>%
 frq(data$pol_id)
 ```
 
-### income
-
-```{r}
-frq(data$a33)
-descr(data$a33)
-
-data <- data %>%
-  mutate(
-    income = case_when(
-      a33 %in% c(-888, -999) ~ NA_real_,
-      TRUE ~ as.numeric(a33)
-    )
-  ) %>% 
-  set_variable_labels(income = "Income")
-
-descr(data$income)
-```
-
-### income_br
-
-```{r}
-frq(data$a34)
-
-data <- data %>%
-  mutate(
-    income_br = case_when(
-      a34 %in% c(-888, -999) ~ NA_real_,
-      TRUE ~ as.numeric(a34)
-    )
-  ) %>% 
-  set_variable_labels(income_br = "Income brackets")
-
-frq(data$income_br)
-```
-
-### income_rec
-
-```{r}
-# armar variable auxiliar
-data <- data %>% 
-  mutate(
-    income_br_aux = case_when(
-      income_br == 1 ~ 200000,
-      income_br == 2 ~ (( 200001 +  400000) / 2),
-      income_br == 3 ~ (( 400001 +  600000) / 2), 
-      income_br == 4 ~ (( 600001 +  800000) / 2),
-      income_br == 5 ~ (( 800001 + 1000000) / 2),
-      income_br == 6 ~ ((1000001 + 1200000) / 2),
-      income_br == 7 ~ ((1200001 + 1400000) / 2),
-      income_br == 8 ~ ((1400001 + 1600000) / 2),
-      income_br == 9 ~ ((1600001 + 1800000) / 2),
-      income_br == 10 ~ ((1800001 + 2000000) / 2),
-      income_br == 11 ~ ((2000001 + 2200000) / 2),
-      income_br == 12 ~ ((2200001 + 2400000) / 2), 
-      income_br == 13 ~ ((2400001 + 2600000) / 2),
-      income_br == 14 ~ ((2600001 + 2800000) / 2),
-      income_br == 15 ~ ((2800001 + 3000000) / 2),
-      income_br == 16 ~ 3000001
-    )
-  )
-
-# armar income_rec
-data <- data %>% 
-  mutate(
-    income_rec = if_else(!is.na(income),income, income_br_aux)
-  ) %>% 
-  set_variable_labels(income_rec = "Income recoded") %>% 
-  select(-income_br_aux)
-  
-descr(data$income)
-descr(data$income_rec)
-```
- 
 ## Guardar datos
 
 ```{r}

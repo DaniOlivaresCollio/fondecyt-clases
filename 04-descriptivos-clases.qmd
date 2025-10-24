@@ -239,12 +239,12 @@ table(data$wrightclass1_reduced4, data$a10)
 
 ```{r}
 data %>% 
-  filter(as.numeric(wrightclass1_reduced4) == 1 & inicio_activ2 == 1) %>% 
+  filter(as.numeric(wrightclass1_reduced4) == 1 & inicio_empresa == 1 & income_rec >= 1000000) %>% 
   select(id, wrightclass1_reduced4, income_rec)
 
 
 data %>% 
-  filter(as.numeric(wrightclass1_reduced4) == 1 & inicio_activ2 == 1) %>% 
+  filter(as.numeric(wrightclass1_reduced4) == 1 & inicio_empresa == 1 & income_rec >= 1000000) %>% 
   count(income_rec) %>% 
   mutate(pct = 100 * n / sum(n))
 ```
@@ -254,11 +254,11 @@ data %>%
 
 ```{r}
 data %>% 
-  filter(as.numeric(wrightclass2_reduced4) == 1 & inicio_activ2 == 1) %>% 
+  filter(as.numeric(wrightclass2_reduced4) == 1 & inicio_empresa == 1) %>% 
   select(id, wrightclass2_reduced4, income_rec)
 
 data %>% 
-  filter(as.numeric(wrightclass2_reduced4) == 1 & inicio_activ2 == 1) %>% 
+  filter(as.numeric(wrightclass2_reduced4) == 1 & inicio_empresa == 1) %>% 
   count(income_rec) %>% 
   mutate(pct = 100 * n / sum(n))
 ```
