@@ -239,7 +239,7 @@ table(data$wrightclass1_reduced4, data$a10)
 
 ```{r}
 data %>% 
-  filter(as.numeric(wrightclass1_reduced4) == 1 & inicio_empresa == 1 & income_rec >= 1000000) %>% 
+  filter(as.numeric(wrightclass1_reduced4) == 1 & inicio_empresa == 1) %>% 
   select(id, wrightclass1_reduced4, income_rec)
 
 
@@ -262,8 +262,6 @@ data %>%
   count(income_rec) %>% 
   mutate(pct = 100 * n / sum(n))
 ```
-
-## Nuevos
 
 ### a10 x Clase (13) sin ponderar 
 
@@ -303,7 +301,6 @@ prom_por_clase_w <- data_svy %>%
 prom_por_clase_w
 ```
 
-
 ### Ingresos Employers (13) - Detalle
 
 ```{r}
@@ -336,6 +333,82 @@ data %>%
 ```{r}
 data %>% 
   filter(as.numeric(wrightclass1_reduced5) == 2) %>% 
+  count(income_rec) %>% 
+  mutate(pct = 100 * n / sum(n))
+```
+
+## Nuevos
+
+### a10 x Clase (15) sin ponderar 
+
+```{r}
+table(data$wrightclass1_reduced6, data$a10)
+```
+
+### Ingresos x Clase (15) sin ponderar
+
+```{r}
+prom_por_clase <- data %>%
+  group_by(wrightclass1_reduced6) %>%
+  summarise(
+    mean_income = mean(income_rec, na.rm = TRUE),
+    n           = n(),
+    n_missing   = sum(is.na(income_rec)),
+    .groups = "drop"
+  )
+
+prom_por_clase 
+```
+
+### Ingresos x Clase (15) ponderado
+
+```{r}
+data_svy <- as_survey_design(data, weights = rake_wb2)
+
+prom_por_clase_w <- data_svy %>%
+  group_by(wrightclass1_reduced6) %>%
+  summarise(
+    mean_income_w = survey_mean(income_rec, na.rm = TRUE, vartype = NULL),
+    n_w           = survey_total(!is.na(income_rec), na.rm = TRUE, vartype = NULL),
+    missing_w     = survey_total(is.na(income_rec), vartype = NULL),
+    .groups = "drop"
+  )
+
+prom_por_clase_w
+```
+
+### Ingresos Employers (15) - Detalle
+
+```{r}
+data %>% 
+  filter(as.numeric(wrightclass1_reduced6) == 1) %>% 
+  select(id, wrightclass1_reduced6, income_rec) %>% 
+  print(n = Inf)
+```
+
+### Ingresos Employers (15) - Frecuencia
+
+```{r}
+data %>% 
+  filter(as.numeric(wrightclass1_reduced6) == 1) %>% 
+  count(income_rec) %>% 
+  mutate(pct = 100 * n / sum(n))
+```
+
+### Ingresos Small Employers (15) - Detalle
+
+```{r}
+data %>% 
+  filter(as.numeric(wrightclass1_reduced6) == 2) %>% 
+  select(id, wrightclass1_reduced6, income_rec) %>% 
+  print(n = Inf)
+```
+
+### Ingresos Small Employers (15) - Frecuencia
+
+```{r}
+data %>% 
+  filter(as.numeric(wrightclass1_reduced6) == 2) %>% 
   count(income_rec) %>% 
   mutate(pct = 100 * n / sum(n))
 ```
