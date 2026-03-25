@@ -461,6 +461,7 @@ data <- data %>%
 
 frq(data$managerial_location_typology)
 ```
+
 ### organization_assets
 
 ```{r}
@@ -1959,8 +1960,6 @@ wright_freq <- data_svy %>%
 wright_freq %>%
   print(n = Inf)
 ```
-
-###
 
 ## Guardar datos
 
