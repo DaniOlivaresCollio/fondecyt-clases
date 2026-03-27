@@ -10,6 +10,7 @@ book:
     - index.qmd
     - 01-proce-data-conclat-cl.qmd
     - 02-esquemas-clases-cl.qmd
+    - 03-proce-data-clases-cl.qmd
     # - 03-proce-data-conclat-ar.qmd
     # - 04-esquemas-clases-ar.qmd
     # - 05-descriptivos-rodolfo.qmd
