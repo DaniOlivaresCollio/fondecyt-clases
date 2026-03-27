@@ -8,10 +8,12 @@ book:
   date: today
   chapters:
     - index.qmd
-    - 01-proce-data-conclat-chile.qmd
-    - 02-proce-data-conclat.qmd
-    - 03-descriptivos-rodolfo.qmd
-    - 04-descriptivos-clases.qmd
+    - 01-proce-data-conclat-cl.qmd
+    - 02-esquemas-clases-cl.qmd
+    # - 03-proce-data-conclat-ar.qmd
+    # - 04-esquemas-clases-ar.qmd
+    # - 05-descriptivos-rodolfo.qmd
+    # - 06-descriptivos-clases.qmd
     # - references.qmd
 
 bibliography: references.bib

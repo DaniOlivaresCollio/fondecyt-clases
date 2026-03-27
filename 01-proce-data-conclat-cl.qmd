@@ -1,0 +1,962 @@
+# Procesamiento Data Conclat Chile
+
+Capítulo para el procesamiento de la Data Conclat Chile, actualizada para el 26/03/2026.
+
+## Preparación
+
+```{r librerias, echo=FALSE, warning=FALSE, message=FALSE}
+rm(list=ls())
+options(scipen = 999)
+
+# install.packages("pacman")
+library(pacman)
+p_load(
+  # generacion docs 
+  flextable,         # tablas personalizadas para word
+  kableExtra,        # mejorar tablas
+  knitr,             # generar reportes reproducibles
+  officer,           # crear/modifcar documentos word o ppt
+  tinytex,           # instalación mínima de LaTeX para generar PDF
+  
+  # importacion datos 
+  haven,             # impotar/exportar datos spss, stata, sas con etiquetas
+  readr,             # lectura rápida de csv
+  readxl,            # leer excel 
+  
+  # manipulacion 
+  forcats,           # manipulación de factores
+  janitor,           # limpia etiquetas
+  labelled,          # trabajar con variables etiquetadas
+  purrr,             # programación funcional para listas y data frames
+  sjlabelled,        # manejar etiquetas 
+  stringr,           # manipular texto
+  sjmisc,            # limpieza y descripción de datos
+  
+  # visualizacion
+  ggplot2,           # visualización basado en gramática de gráficos
+  ggrepel,           # etiquetas en gráficos sin superposición
+  gridExtra,         # combinar gráficos en uno solo
+  scales,            # controla cómo se ven los ejes en gráficos
+  sjPlot,            # visualizar resultados estadísticos
+  
+  # analisis
+  psych,             # análisis general, psicométrico
+  survey,            # diseño survey encuestas complejas
+  srvyr,             # diseño survey con tidy
+  rlang,             # motor interno de tidyverse, para usar expresiones 
+  tidyverse,
+  statar             # conectar con el lenguaje stata
+
+  # # conexion web
+  # curl,              # conexiones http de bajo nivel: para solucionar el problema de la api del ine
+  # httr               # cliente http para API
+  )
+```
+
+### Cargar datos
+
+```{r datos, message=FALSE, warning=FALSE}
+data <- readRDS("input/data/data-conclat-chile-ES.rds")
+```
+
+## Procesamiento
+
+### relation_mop
+
+```{r}
+# Situación empleo
+frq(data$a07)
+
+data <- data %>%
+  mutate(
+    relation_mop = factor(
+      case_when(
+        as_numeric(a07) == 1 ~ 1,
+        as_numeric(a07) == 2 ~ 2,
+        as_numeric(a07) %in% 3:9 ~ 3,
+        .default = NA_real_
+      ),
+      levels = 1:3,
+      labels = c(
+        "Employers",
+        "Self-Employed",
+        "Salaried"
+      )
+    )
+  ) %>%
+  set_variable_labels(
+    a07 = "Employment situation",
+    relation_mop = "Relation with Means of Production")
+
+frq(data$a07)
+frq(data$relation_mop)
+```
+
+### company_size
+
+```{r}
+frq(data$a26)
+
+data <- data %>%
+  mutate(
+    company_size = factor(
+      case_when(
+        a26 %in% c(1) ~ 1,
+        a26 %in% c(2, 3) ~ 2,
+        a26 %in% c(4, 5) ~ 3,
+        a26 %in% c(6, 7) ~ 4,
+        a26 %in% c(8, 9) ~ 5,
+        .default = NA_real_
+      ),
+      levels = 1:5, 
+      labels = c(
+        "Solo",
+        "2-9",
+        "10-49",
+        "50-199",
+        "200 or more"),
+      ordered = TRUE
+    )
+  ) %>%
+  set_variable_labels(company_size = "Company Size")
+
+frq(data$company_size)
+```
+
+### workplace_size
+
+```{r}
+frq(data$a27)
+
+data <- data %>%
+  mutate(
+    workplace_size = factor(
+      case_when(
+        a27 %in% c(1) ~ 1,
+        a27 %in% c(2, 3) ~ 2,
+        a27 %in% c(4, 5) ~ 3,
+        a27 %in% c(6, 7) ~ 4,
+        a27 %in% c(8, 9) ~ 5,
+        .default = NA_real_
+      ),
+      levels = 1:5, 
+      labels = c(
+        "Solo",
+        "2-9",
+        "10-49",
+        "50-199",
+        "200 or more"),
+      ordered = TRUE
+    )
+  ) %>%
+  set_variable_labels(workplace_size = "Workplace Size")
+
+frq(data$workplace_size)
+```
+
+### owners
+
+-   1 == employers o self employed sin empleados
+-   2 == employers o self employed con 2-9 empleados
+-   3 == employers o self employed com \>= 10 empleados
+
+```{r}
+data <- data %>%
+  mutate(
+    is_owner = as.numeric(relation_mop) %in% 1:2,
+    owners = factor(
+      case_when(
+        is_owner & (as.numeric(company_size) == 1 | (is.na(company_size) & as.numeric(workplace_size) == 1)) ~ 1,
+        is_owner & (as.numeric(company_size) == 2 | (is.na(company_size) & as.numeric(workplace_size) == 2)) ~ 2,
+        is_owner & (as.numeric(company_size) >= 3 | (is.na(company_size) & as.numeric(workplace_size) >= 3)) ~ 3,
+        .default = NA_real_
+      ),
+      levels = 1:3,
+      labels = c(
+        "Solo Self-Employed",
+        "Small employers",
+        "Employers"
+      ), 
+      ordered = TRUE
+    )
+  ) %>%
+  select(-is_owner) %>% 
+  set_variable_labels(owners = "Owners")
+
+frq(data$owners)
+```
+
+### owners2
+
+-   1 == employers o self employed sin empleados
+-   2 == employers o self employed con 2-49 empleados
+-   3 == employers o self employed com \>= 50 empleados
+
+```{r}
+data <- data %>%
+  mutate(
+    is_owner = as.numeric(relation_mop) %in% 1:2,
+    owners2 = factor(
+      case_when(
+        is_owner & (as.numeric(company_size) == 1 | (is.na(company_size) & as.numeric(workplace_size) == 1)) ~ 1,
+        is_owner & (as.numeric(company_size) %in% c(2:3) | (is.na(company_size) & as.numeric(workplace_size) %in% c(2:3))) ~ 2,
+        is_owner & (as.numeric(company_size) >= 4 | (is.na(company_size) & as.numeric(workplace_size) >= 4)) ~ 3,
+        .default = NA_real_
+      ),
+      levels = 1:3,
+      labels = c(
+        "Solo Self-Employed",
+        "Small employers",
+        "Capitalists"
+      ), 
+      ordered = TRUE
+    )
+  ) %>%
+  select(-is_owner) %>% 
+  set_variable_labels(owners2 = "Owners 2 (with Capitalists)")
+
+frq(data$owners2)
+```
+
+### educ
+
+```{r}
+frq(data$e05)
+
+data <- data %>%
+  mutate(
+    educ = ifelse(e05 %in% c(-999, -888), NA, e05)
+  ) %>%
+  set_variable_labels(educ = "Educational level")
+
+frq(data$educ)
+```
+
+### ciuo08_ine
+
+```{r}
+frq(data$ciuo08_ine)
+
+data <- data %>% 
+  set_variable_labels(ciuo08_ine = "ISCO 08")
+
+frq(data$ciuo08_ine)
+```
+
+### skills
+
+-   Experts -\> ciuo08_2d == 11 a 34 con universitaria completa o más (educ \>= 9) ---\> experts
+
+-   Skilled -\> ciuo08_2d == 11 a 34 con universitaria incompleta o menos (educ \< 9), y
+
+-   Skilled -\> ciuo08_2d == 35,36,41:44,53, y
+
+-   Skilled -\> ciuo08_2d == 51,54,61,62,71:75,81 con media completa o más (educ \>= 5).
+
+-   Unskilled -\> ciuo08_2d == 51,54,61,62,71:75,81 con media incompleta o menos, y
+
+-   Unskilled -\> ciuo08_2d == 52,63,82,83,90+
+
+-   61 62 71:75 --\> skilled
+
+-   51,54,81 --\> unskilled
+
+```{r}
+data <- data %>% 
+  mutate(
+    skills = case_when(
+      # Experts
+      ciuo08_ine <= 34 & educ >= 9 ~ 1,
+      ciuo08_ine <= 34 & is.na(educ)~ 1,  
+      
+      # Skilled
+      ciuo08_ine <= 34 & educ < 9 ~ 2,
+      ciuo08_ine %in% c(35, 36, 41:44, 53) ~ 2,
+      ciuo08_ine %in% c(51, 54, 61, 62, 71:75, 81) & educ >= 5 ~ 2,
+      ciuo08_ine %in% c(61, 62, 71:75) & is.na(educ) ~ 2,
+      
+      #Unskilled
+      ciuo08_ine %in% c(51, 54, 61, 62, 71:75, 81) & educ <= 4 ~ 3,
+      ciuo08_ine %in% c(52, 63, 82, 83, 91:99) ~ 3,
+      ciuo08_ine %in% c(51, 54, 81) & is.na(educ) ~ 3,
+      .default = NA_real_
+    ),
+    skills = factor(
+      skills, 
+      levels = 1:3,
+      labels = c(
+        "Experts",
+        "Skilled",
+        "Unskilled"
+      ), 
+      ordered = TRUE
+    )
+  ) %>%
+  set_variable_labels(skills = "Skills")
+
+frq(data$skills)
+```
+
+### formal_position_auth
+
+```{r}
+frq(data$a15)
+
+data <- data %>%
+  mutate(
+    formal_position_auth = factor(
+      if_else(
+        as.numeric(relation_mop) %in% c(1, 2), NA_real_, as.numeric(a15)
+      ),
+      levels = 1:4,
+      labels = c(
+        "Senior manager or executive",
+        "Middle manager (e.g., sector, office or branch head)",
+        "Supervisor or foreperson",
+        "Regular employee or worker (no supervisory role)"
+      ), 
+      ordered = TRUE
+    )
+  ) %>%
+  set_variable_labels(formal_position_auth = "Formal position of authority (a15)")
+
+frq(data$formal_position_auth)
+```
+
+### supervision
+
+```{r}
+frq(data$a16)
+
+data <- data %>%
+  mutate(
+    supervision = case_when(
+      a16 == 1 ~ 1,
+      a16 %in% c(2, -888, -999) ~ 0,
+      .default = NA_real_
+    )
+  ) %>%
+  set_variable_labels(supervision = "Supervises other workers (1 = yes)") %>% 
+  set_value_labels(supervision = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$supervision)
+```
+
+### decisionmaking_typology
+
+```{r}
+frq(data$a17_01)
+frq(data$a17_02)
+frq(data$a17_03)
+frq(data$a17_04)
+frq(data$a17_05)
+frq(data$a17_06)
+
+data <- data %>%
+  mutate(
+    # Variable intermedia invertida (no necesita guardarse necesariamente)
+    across(a17_01:a17_06, 
+      ~ case_when(
+          .x == 1                 ~ 3,
+          .x == 2                 ~ 2,
+          .x == 3                 ~ 1,
+          .x %in% c(-888, -999)   ~ 1,
+          .default = NA_real_
+        ),
+      .names = "{.col}_inv"
+    ),
+    decisionmaking_typology = if_else(
+      is.na(a17_01), NA_real_,
+      rowSums(across(a17_01_inv:a17_06_inv), na.rm = TRUE)
+    ),
+    decisionmaking_typology_mean = if_else(
+      is.na(a17_01), NA_real_,
+      rowMeans(across(a17_01_inv:a17_06_inv), na.rm = TRUE)
+    )
+  ) %>%
+  select(-ends_with("_inv")) %>% 
+  set_variable_labels(
+    decisionmaking_typology = "Decision-making typology (sum, inverted)",
+    decisionmaking_typology_mean = "Decision-making typology (mean, inverted)"
+  )
+
+frq(data$decisionmaking_typology)
+frq(data$decisionmaking_typology_mean)
+
+# Crear variable con 3 categorías
+data <- data %>%
+  mutate(
+    decisionmaking_typology_cat = factor(
+      cut(
+        decisionmaking_typology_mean, 
+        breaks = c(0, 1, 2, 3),
+        labels = c("1", "2", "3"),
+        include_lowest = TRUE
+      ),
+      ordered = TRUE
+    )
+    ) %>% 
+  set_variable_labels(
+    decisionmaking_typology_cat = "Decision-making typology (recoded 3 categories)"
+  )
+
+frq(data$decisionmaking_typology_cat)
+```
+
+### managerial_location_typology
+
+```{r}
+data <- data %>%
+  mutate(
+    .dec = as.integer(decisionmaking_typology_cat),
+    .auth = as.integer(formal_position_auth), 
+    
+    managerial_location_typology = factor(
+      case_when(
+        .dec == 3 & supervision == 1 & .auth %in% 1:3 ~ 1,
+        .dec == 3 & supervision == 1 & .auth == 4     ~ 2,
+        .dec == 3 & supervision == 0 & .auth %in% 1:3 ~ 3,
+        .dec == 3 & supervision == 0 & .auth == 4     ~ 4,
+        .dec == 2 & supervision == 1 & .auth %in% 1:3 ~ 5,
+        .dec == 2 & supervision == 1 & .auth == 4     ~ 6,
+        .dec == 2 & supervision == 0 & .auth %in% 1:3 ~ 7,
+        .dec == 2 & supervision == 0 & .auth == 4     ~ 8,
+        .dec == 1 & supervision == 1 & .auth %in% 1:3 ~ 9,
+        .dec == 1 & supervision == 1 & .auth == 4     ~ 10,
+        .dec == 1 & supervision == 0 & .auth %in% 1:3 ~ 11,
+        .dec == 1 & supervision == 0 & .auth == 4     ~ 12, 
+        .default = NA_real_
+      ), 
+      levels = 1:12,
+      labels = c(
+        "1. Manager on all criteria",
+        "2. Manager not in formal hierarchy",
+        "3. Non-supervisory manager",
+        "4. Non-supervisory decision-maker not in formal hierarchy",
+        "5. Advisor-manager on all criteria",
+        "6. Advisor not in hierarchy",
+        "7. Non-supervisory advisor",
+        "8. Non-supervisory advisor not in formal hierarchy",
+        "9. Sanctioning / task supervisor in hierarchy",
+        "10. Sanctioning / task supervisor not in hierarchy",
+        "11. Not subordinates but in hierarchy",
+        "12. Non-supervisor / non manager on all criteria"
+      )
+    )
+  ) %>% 
+  select(-starts_with(".")) %>% 
+  set_variable_labels(managerial_location_typology = "Managerial Location Typology")
+
+frq(data$managerial_location_typology)
+```
+
+### organization_assets
+
+```{r}
+data <- data %>%
+  mutate(
+    organization_assets = factor(
+      case_when(
+        as.integer(managerial_location_typology) %in% c(1, 2, 3, 5)   ~ 1,
+        as.integer(managerial_location_typology) %in% c(6, 7, 9, 10)  ~ 2,
+        as.integer(managerial_location_typology) %in% c(4, 8, 11, 12) ~ 3,
+        .default = NA_real_
+      ),
+      levels = 1:3,
+      labels = c(
+        "Manager",
+        "Supervisor",
+        "Non-managerial worker"
+      ), 
+      ordered = TRUE
+    )
+  ) %>%
+  set_variable_labels(organization_assets = "Organizational Assets")
+
+frq(data$organization_assets)
+```
+
+### boleta
+
+```{r}
+frq(data$a06)
+
+data <- data %>% 
+  mutate(
+    boleta = case_when(
+      a06 %in% c(1, 2) ~ 1,
+      a06 %in% c(3, -888, -999) ~ 0,
+      .default = NA_real_
+    )) %>% 
+  set_variable_labels(boleta = "Issues receipts/invoices (1 = yes)") %>% 
+  set_value_labels(boleta = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$boleta)
+```
+
+### inicio_activ
+
+```{r}
+frq(data$a10)
+
+data <- data %>% 
+  mutate(
+    inicio_activ = case_when(
+      a10 %in% c(1:4) ~ 1,
+      a10 %in% c(5, -888, -999) ~ 0,
+      .default = NA_real_
+    )
+  ) %>% 
+  set_variable_labels(inicio_activ = "Business registration (1 = yes)") %>% 
+  set_value_labels(inicio_activ = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$inicio_activ)
+```
+
+### inicio_empresa
+
+```{r}
+frq(data$a10)
+
+data <- data %>% 
+  mutate(
+    inicio_empresa = case_when(
+      a10 %in% c(2:4) ~ 1,
+      a10 %in% c(1, 5, -888, -999) ~ 0,
+      .default = NA_real_
+    )
+  )%>% 
+  set_variable_labels(inicio_empresa = "Business registration 2 (1 = yes)") %>% 
+  set_value_labels(inicio_empresa = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$inicio_empresa)
+```
+
+### contrato
+
+```{r}
+frq(data$a18)
+
+data <- data %>% 
+  mutate(
+    contrato = case_when(
+      a18 == 1 ~ 1, 
+      a18 %in% c(2, 3, 4, -999) ~ 0,
+      .default = NA_real_
+    )
+  ) %>% 
+  set_variable_labels(contrato = "Has a signed written employment contract (1 = yes)") %>% 
+  set_value_labels(contrato = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$contrato)
+```
+
+### income
+
+```{r}
+frq(data$a33)
+descr(data$a33)
+
+data <- data %>%
+  mutate(
+    income = if_else(
+      a33 %in% c(-888, -999), NA_real_, as.numeric(a33)
+    )
+  ) %>% 
+  set_variable_labels(income = "Income")
+
+descr(data$income)
+```
+
+### income_br
+
+```{r}
+frq(data$a34)
+
+labs <- get_labels(data$a34, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]  # excluye los missing
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    income_br = if_else(
+      a34 %in% c(-888, -999), NA_real_, as.numeric(a34)
+    )
+  ) %>% 
+  set_variable_labels(income_br = "Income brackets") %>%
+  set_value_labels(income_br = labs_num)
+
+frq(data$income_br)
+```
+
+### income_rec
+
+```{r}
+# armar variable auxiliar
+data <- data %>% 
+  mutate(
+    income_br_aux = case_when(
+      income_br == 1 ~ 200000,
+      income_br == 2 ~ (( 200001 +  400000) / 2),
+      income_br == 3 ~ (( 400001 +  600000) / 2), 
+      income_br == 4 ~ (( 600001 +  800000) / 2),
+      income_br == 5 ~ (( 800001 + 1000000) / 2),
+      income_br == 6 ~ ((1000001 + 1200000) / 2),
+      income_br == 7 ~ ((1200001 + 1400000) / 2),
+      income_br == 8 ~ ((1400001 + 1600000) / 2),
+      income_br == 9 ~ ((1600001 + 1800000) / 2),
+      income_br == 10 ~ ((1800001 + 2000000) / 2),
+      income_br == 11 ~ ((2000001 + 2200000) / 2),
+      income_br == 12 ~ ((2200001 + 2400000) / 2), 
+      income_br == 13 ~ ((2400001 + 2600000) / 2),
+      income_br == 14 ~ ((2600001 + 2800000) / 2),
+      income_br == 15 ~ ((2800001 + 3000000) / 2),
+      income_br == 16 ~ 3000001, 
+      .default = NA_real_
+    ),
+    income_rec = if_else(!is.na(income), income, income_br_aux)
+  ) %>% 
+  select(-income_br_aux) %>% 
+  set_variable_labels(income_rec = "Income recoded")
+  
+descr(data$income)
+descr(data$income_rec)
+```
+
+### c01_02_rec
+
+```{r}
+frq(data$c01_02)
+
+labs <- get_labels(data$c01_02, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c01_02_rec = if_else(
+      c01_02 %in% c(-888, -999), NA_real_, as.numeric(c01_02)
+    )
+  ) %>% 
+  set_variable_labels(c01_02_rec = "Importance of unions: in reducing inequality") %>%
+  set_value_labels(c01_02_rec = labs_num)
+
+frq(data$c01_02_rec)
+```
+
+### c01_03_rec
+
+```{r}
+frq(data$c01_03)
+
+labs <- get_labels(data$c01_03, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c01_03_rec = if_else(
+      c01_03 %in% c(-888, -999), NA_real_, as.numeric(c01_03)
+    )
+  ) %>% 
+  set_variable_labels(c01_03_rec = "Importance of unions: in protecting women workers' rights") %>%
+  set_value_labels(c01_03_rec = labs_num)
+
+frq(data$c01_03_rec)
+```
+
+### c01_04_rec
+
+```{r}
+frq(data$c01_04)
+
+labs <- get_labels(data$c01_04, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c01_04_rec = if_else(
+      c01_04 %in% c(-888, -999), NA_real_, as.numeric(c01_04) 
+    )
+  ) %>% 
+  set_variable_labels(c01_04_rec = "Importance of unions: in protecting informal workers' rights") %>%
+  set_value_labels(c01_04_rec = labs_num)
+
+frq(data$c01_04_rec)
+```
+
+### c01_05_rec
+
+```{r}
+frq(data$c01_05)
+
+labs <- get_labels(data$c01_05, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c01_05_rec = if_else(
+      c01_05 %in% c(-888, -999), NA_real_, as.numeric(c01_05)
+    )
+  ) %>% 
+  set_variable_labels(c01_05_rec = "Importance of unions: in helping work-family balance") %>%
+  set_value_labels(c01_05_rec = labs_num)
+
+frq(data$c01_05_rec)
+```
+
+### c01_06_rec
+
+```{r}
+frq(data$c01_06)
+
+labs <- get_labels(data$c01_06, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c01_06_rec = if_else(c01_06 %in% c(-888, -999), NA_real_, as.numeric(c01_06)
+    )
+  ) %>% 
+  set_variable_labels(c01_06_rec = "Importance of unions: in helping the economy grow") %>%
+  set_value_labels(c01_06_rec = labs_num)
+
+frq(data$c01_06_rec)
+```
+
+### c07_03_dummy
+
+```{r}
+frq(data$c07_03)
+
+data <- data %>%
+  mutate(
+    c07_03_dummy = case_when(
+      c07_03 %in% c(4, 5) ~ 1,
+      c07_03 %in% c(1, 2, 3, -888, -999) ~ 0, 
+      .default = NA_real_
+    ))%>% 
+  set_variable_labels(c07_03_dummy = "Level of agreement: Implement laws to give unions more bargaining power (1 = agree)") %>% 
+  set_value_labels(c07_03_dummy = c(
+    "Agree" = 1,
+    "Disagree" = 0
+  ))
+
+frq(data$c07_03_dummy)
+```
+
+### b29_dummy
+
+```{r}
+frq(data$b29)
+
+data <- data %>%
+  mutate(
+    b29_dummy = case_when(
+      b29 %in% c(3, 4, 5) ~ 1,
+      b29 %in% c(1, 2, -888, -999) ~ 0, 
+      .default = NA_real_
+    ))%>% 
+  set_variable_labels(b29_dummy = "Possibility of joining a union (1 = yes)") %>% 
+  set_value_labels(b29_dummy = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$b29_dummy)
+```
+
+### b29_dummy2
+
+```{r}
+data <- data %>%
+  mutate(
+    b29_dummy2 = case_when(
+      b29 %in% c(4, 5) ~ 1,
+      b29 %in% c(1, 2, 3, -888, -999) ~ 0, 
+      .default = TRUE
+    ))%>% 
+  set_variable_labels(b29_dummy2 = "Possibility of joining a union (1 = yes) (2)") %>% 
+  set_value_labels(b29_dummy2 = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$b29_dummy2)
+```
+
+## Controls
+
+### female
+
+```{r}
+frq(data$e01)
+
+data <- data %>%
+  mutate(
+    female = case_when(
+      e01 == 1 ~ 0,
+      e01 == 2 ~ 1
+    )
+  ) %>% 
+  set_variable_labels(female = "Gender (1 = female)") %>% 
+  set_value_labels(female = c(
+    "Female" = 1, 
+    "Male" = 0
+  ))
+
+frq(data$female)
+```
+
+### age
+
+```{r}
+descr(data$e02)
+
+data <- data %>%
+  mutate(
+    age = if_else(
+      e02 %in% c(-888, -999), NA_real_, as.numeric(e02)
+    )
+  ) %>% 
+  set_variable_labels(age = "Age")
+
+descr(data$age)
+```
+
+### sector
+
+```{r}
+frq(data$a07)
+
+data <- data %>%
+  mutate(
+    sector=case_when(
+      as.numeric(a07) %in% c(1, 2, 5, 6, 7, 9) ~ 1,
+      as.numeric(a07) %in% c(3, 4, 8) ~ 0,
+      .default = NA_real_
+    ))%>% 
+  set_variable_labels(sector = "Sector (1 = private)") %>% 
+  set_value_labels(sector = c(
+    "Private" = 1,
+    "Public" = 0
+  ))
+
+frq(data$sector)
+```
+
+### rama
+
+```{r,warning=FALSE,message=FALSE}
+frq(data$a25_rec)
+
+data <- data %>% 
+  mutate(
+    rama = a25_rec
+  ) %>% 
+  set_variable_labels(rama = "Economic Activity")
+
+frq(data$rama)
+```
+
+### unions
+
+```{r}
+frq(data$b19)
+
+# Sindicatos en empresas
+data <- data %>%
+  mutate(
+    unions = case_when(
+      as.numeric(relation_mop) %in% c(1, 2) ~ NA_real_,
+      as.numeric(relation_mop) == 3 & b19 == 1 ~ 1,
+      as.numeric(relation_mop) == 3 & b19 %in% c(2, -888, -999) ~ 0,
+      .default = NA_real_
+    )
+  ) %>% 
+  set_variable_labels(unions = "Unions in company (1 = yes)") %>%
+  set_value_labels(unions = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$unions)
+```
+
+### union_member
+
+```{r,warning=FALSE,message=FALSE}
+frq(data$b21)
+
+# Afiliación sindical
+data <- data %>%
+  mutate(
+    union_member = case_when(
+      as.numeric(relation_mop) %in% c(1, 2) ~ 0,
+      as.numeric(relation_mop) == 3 & b21 %in% c(1, 2) ~ 1,
+      as.numeric(relation_mop) == 3 & b21 %in% c(3, -888, -999) ~ 0,
+      unions == 0 ~ 0,
+      .default = NA_real_
+    )
+  ) %>%
+  set_variable_labels(union_member = "Union membership (1 = yes)") %>%
+  set_value_labels(union_member = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$union_member)
+```
+
+### pol_id
+
+```{r}
+frq(data$c08)
+
+data <- data %>%
+  mutate(
+    pol_id = factor(
+      case_when(
+        c08 %in% c(0, 1, 2, 3) ~ 1,
+        c08 %in% c(4, 5, 6) ~ 2,
+        c08 %in% c(7, 8, 9, 10) ~ 3,
+        c08 %in% c(11, 12, -888, -999) ~ 4,
+        .default = NA_real_
+      ),
+      levels = 1:4, 
+      labels = c(
+        "Left", 
+        "Center", 
+        "Right", 
+        "Not identified"
+        ) 
+      )
+    ) %>%
+  set_variable_labels(pol_id = "Political identification") 
+
+frq(data$pol_id)
+```
+
+## Guardar datos
+
+```{r}
+saveRDS(data, file="output/data/datos-clases-cl.rds")
+```

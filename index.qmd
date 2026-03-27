@@ -2,8 +2,20 @@
 
 # Presentación {.unnumbered}
 
-Este libro corresponde al repositorio de procesamiento y análisis de la base de datos de la [Encuesta CONCLAT](https://www.conclat.org/encuesta/) aplicada en Chile, para realizar la construcción de clases de Erik Olin Wright.
+Este libro corresponde al repositorio de procesamiento y análisis de la base de datos de la **Encuesta CONCLAT** aplicada en Chile, para realizar la construcción de clases de Erik Olin Wright.
 
-La Encuesta Conclat se aplica en el marco del Proyecto CONCLAT, que busca estudiar cómo se percibe el conflicto laboral y político en Argentina y Chile. Particularmente, analiza cómo las personas de distintas clases y con distinto estatus sindical (por ejemplo, afiliados/as y no afiliados/as a sindicatos) perciben el conflicto dentro y fuera del lugar de trabajo.
+En el [primer capítulo](01-proce-data-conclat-cl.html) se preparan los datos de Chile, y en el [segundo capítulo](02-esquemas-clases-cl.html) se arman diferentes esquemas de clases con los datos de Chile.
 
-[CONCLAT](https://www.conclat.org/) es el Proyecto FONDECYT Regular (No 1230056) “Clases sociales, movimientos sindicales y conflicto en tiempos de crisis: un estudio comparativo de Argentina y Chile”. Patrocinado por la [Universidad de Chile](https://uchile.cl/) y el Centro de Estudios de Conflicto y Cohesión Social ([COES](https://coes.cl/)). Tiene como propósito contribuir a la investigación internacional sobre clases, trabajo y conflicto produciendo datos cuantitativos originales y un instrumento de investigación comparable a nivel internacional.
+La Encuesta Conclat se aplica en el marco del Proyecto [CONCLAT](https://www.conclat.com/), que busca estudiar cómo se percibe el conflicto laboral y político en Argentina y Chile. Particularmente, analiza cómo las personas de distintas clases y con distinto estatus sindical perciben el conflicto dentro y fuera del lugar de trabajo. Tiene como propósito contribuir a la investigación internacional sobre clases, trabajo y conflicto produciendo datos cuantitativos originales y un instrumento de investigación comparable a nivel internacional.
+
+[CONCLAT](https://www.conclat.com/) es el Proyecto FONDECYT Regular (No 1230056) “Clases sociales, movimientos sindicales y conflicto en tiempos de crisis: un estudio comparativo de Argentina y Chile”. Patrocinado por la [Universidad de Chile](https://uchile.cl/) y financiado por la Agencia Nacional de Investigación y Desarrollo ([ANID](https://anid.cl/)). 
+
+---
+
+::: {style="display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 2rem; flex-wrap: wrap;"}
+[![](img/logo_conclat_corto_blanco_fondo_rojo.png){height="80px"}](https://www.conclat.com/)
+
+[![](img/logo_uchile.jpg){height="80px"}](https://uchile.cl/)
+
+[![](img/logo_anid.png){height="80px"}](https://anid.cl/)
+:::
