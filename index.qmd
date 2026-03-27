@@ -4,7 +4,7 @@
 
 Este libro corresponde al repositorio de procesamiento y análisis de la base de datos de la **Encuesta CONCLAT** aplicada en Chile, para realizar la construcción de clases de Erik Olin Wright.
 
-En el [primer capítulo](01-proce-data-conclat-cl.html) se preparan los datos de Chile, y en el [segundo capítulo](02-esquemas-clases-cl.html) se arman diferentes esquemas de clases con los datos de Chile.
+En el [primer capítulo](01-proce-data-conclat-cl.html) se preparan los datos de Chile generando las variables necesarias para armar los esquemas de clases, en el [segundo capítulo](02-esquemas-clases-cl.html) se arman diferentes esquemas de clases con los datos de Chile, y en el [tercer capítulo](03-proce-data-clases-cl.html) se realiza la recodificación de algunas variables de interés.
 
 La Encuesta Conclat se aplica en el marco del Proyecto [CONCLAT](https://www.conclat.com/), que busca estudiar cómo se percibe el conflicto laboral y político en Argentina y Chile. Particularmente, analiza cómo las personas de distintas clases y con distinto estatus sindical perciben el conflicto dentro y fuera del lugar de trabajo. Tiene como propósito contribuir a la investigación internacional sobre clases, trabajo y conflicto produciendo datos cuantitativos originales y un instrumento de investigación comparable a nivel internacional.
 

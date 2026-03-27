@@ -683,5 +683,5 @@ frq(data$left_id)
 ## Guardar datos
 
 ```{r}
-saveRDS(data, file="output/data/datos-clases-cl.rds")
+saveRDS(data, file="output/data/data-clases-cl.rds")
 ```
