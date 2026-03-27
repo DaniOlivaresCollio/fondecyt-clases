@@ -61,108 +61,214 @@ data <- readRDS("output/data/data-clases-cl.rds")
 
 ## Procesamiento
 
-### c01_02_rec
+### c02_rec
 
 ```{r}
-frq(data$c01_02)
+frq(data$c02)
 
-labs <- get_labels(data$c01_02, values = "n")
+labs <- get_labels(data$c02, values = "n")
 labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
 labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
 
 data <- data %>%
   mutate(
-    c01_02_rec = if_else(
-      c01_02 %in% c(-888, -999), NA_real_, as.numeric(c01_02)
+    c02_rec = if_else(
+      c02 %in% c(-888, -999), NA_real_, as.numeric(c02)
     )
   ) %>% 
-  set_variable_labels(c01_02_rec = "Importance of unions: in reducing inequality") %>%
-  set_value_labels(c01_02_rec = labs_num)
+  set_variable_labels(c02_rec = "Preferred role of trade unions") %>%
+  set_value_labels(c02_rec = labs_num)
 
-frq(data$c01_02_rec)
+frq(data$c02_rec)
 ```
 
-### c01_03_rec
+### c03_01_rec
 
 ```{r}
-frq(data$c01_03)
+frq(data$c03_01)
 
-labs <- get_labels(data$c01_03, values = "n")
+labs <- get_labels(data$c03_01, values = "n")
 labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
 labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
 
 data <- data %>%
   mutate(
-    c01_03_rec = if_else(
-      c01_03 %in% c(-888, -999), NA_real_, as.numeric(c01_03)
+    c03_01_rec = if_else(
+      c03_01 %in% c(-888, -999), NA_real_, as.numeric(c03_01)
     )
   ) %>% 
-  set_variable_labels(c01_03_rec = "Importance of unions: in protecting women workers' rights") %>%
-  set_value_labels(c01_03_rec = labs_num)
+  set_variable_labels(c03_01_rec = "Level of agreement with: Companies have the right to replace striking workers") %>%
+  set_value_labels(c03_01_rec = labs_num)
 
-frq(data$c01_03_rec)
+frq(data$c03_01_rec)
 ```
 
-### c01_04_rec
+### c03_02_rec
 
 ```{r}
-frq(data$c01_04)
+frq(data$c03_02)
 
-labs <- get_labels(data$c01_04, values = "n")
+labs <- get_labels(data$c03_02, values = "n")
 labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
 labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
 
 data <- data %>%
   mutate(
-    c01_04_rec = if_else(
-      c01_04 %in% c(-888, -999), NA_real_, as.numeric(c01_04) 
+    c03_02_rec = if_else(
+      c03_02 %in% c(-888, -999), NA_real_, as.numeric(c03_02)
     )
   ) %>% 
-  set_variable_labels(c01_04_rec = "Importance of unions: in protecting informal workers' rights") %>%
-  set_value_labels(c01_04_rec = labs_num)
+  set_variable_labels(c03_02_rec = "Level of agreement with: Workers should not strike if it affects profits") %>%
+  set_value_labels(c03_02_rec = labs_num)
 
-frq(data$c01_04_rec)
+frq(data$c03_02_rec)
 ```
 
-### c01_05_rec
+### c05_01_rec
 
 ```{r}
-frq(data$c01_05)
+frq(data$c05_01)
 
-labs <- get_labels(data$c01_05, values = "n")
+labs <- get_labels(data$c05_01, values = "n")
 labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
 labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
 
 data <- data %>%
   mutate(
-    c01_05_rec = if_else(
-      c01_05 %in% c(-888, -999), NA_real_, as.numeric(c01_05)
+    c05_01_rec = if_else(
+      c05_01 %in% c(-888, -999), NA_real_, as.numeric(c05_01)
     )
   ) %>% 
-  set_variable_labels(c01_05_rec = "Importance of unions: in helping work-family balance") %>%
-  set_value_labels(c01_05_rec = labs_num)
+  set_variable_labels(c05_01_rec = "Level of agreement with: Large business owners have too much power in Chile") %>%
+  set_value_labels(c05_01_rec = labs_num)
 
-frq(data$c01_05_rec)
+frq(data$c05_01_rec)
 ```
 
-### c01_06_rec
+### c05_02_rec
 
 ```{r}
-frq(data$c01_06)
+frq(data$c05_02)
 
-labs <- get_labels(data$c01_06, values = "n")
+labs <- get_labels(data$c05_02, values = "n")
 labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
 labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
 
 data <- data %>%
   mutate(
-    c01_06_rec = if_else(c01_06 %in% c(-888, -999), NA_real_, as.numeric(c01_06)
+    c05_02_rec = if_else(
+      c05_02 %in% c(-888, -999), NA_real_, as.numeric(c05_02)
     )
   ) %>% 
-  set_variable_labels(c01_06_rec = "Importance of unions: in helping the economy grow") %>%
-  set_value_labels(c01_06_rec = labs_num)
+  set_variable_labels(c05_02_rec = "Level of agreement with: A main reason for high inequality in Chile is that business owners pay workers too little") %>%
+  set_value_labels(c05_02_rec = labs_num)
 
-frq(data$c01_06_rec)
+frq(data$c05_02_rec)
+```
+
+### c05_03_rec
+
+```{r}
+frq(data$c05_03)
+
+labs <- get_labels(data$c05_03, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c05_03_rec = if_else(
+      c05_03 %in% c(-888, -999), NA_real_, as.numeric(c05_03)
+    )
+  ) %>% 
+  set_variable_labels(c05_03_rec = "Level of agreement with: High living standards of business owners result from paying workers too little") %>%
+  set_value_labels(c05_03_rec = labs_num)
+
+frq(data$c05_03_rec)
+```
+
+### c05_04_rec
+
+```{r}
+frq(data$c05_04)
+
+labs <- get_labels(data$c05_04, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c05_04_rec = if_else(
+      c05_04 %in% c(-888, -999), NA_real_, as.numeric(c05_04)
+    )
+  ) %>% 
+  set_variable_labels(c05_04_rec = "Level of agreement with: Workers would live better if business owners had less power") %>%
+  set_value_labels(c05_04_rec = labs_num)
+
+frq(data$c05_04_rec)
+```
+
+### c05_05_rec
+
+```{r}
+frq(data$c05_05)
+
+labs <- get_labels(data$c05_05, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c05_05_rec = if_else(
+      c05_05 %in% c(-888, -999), NA_real_, as.numeric(c05_05)
+    )
+  ) %>% 
+  set_variable_labels(c05_05_rec = "Level of agreement with: In Chile there are precarious and unstable jobs because this benefits business owners") %>%
+  set_value_labels(c05_05_rec = labs_num)
+
+frq(data$c05_05_rec)
+```
+
+### c07_01_rec
+
+```{r}
+frq(data$c07_01)
+
+labs <- get_labels(data$c07_01, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c07_01_rec = if_else(
+      c07_01 %in% c(-888, -999), NA_real_, as.numeric(c07_01)
+    )
+  ) %>% 
+  set_variable_labels(c07_01_rec = "Level of agreement with: Increasing taxes on the wealthiest to finance social programs") %>%
+  set_value_labels(c07_01_rec = labs_num)
+
+frq(data$c07_01_rec)
+```
+
+### c07_03_rec
+
+```{r}
+frq(data$c07_03)
+
+labs <- get_labels(data$c07_03, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c07_03_rec = if_else(
+      c07_03 %in% c(-888, -999), NA_real_, as.numeric(c07_03)
+    )
+  ) %>% 
+  set_variable_labels(c07_03_rec = "Level of agreement with: Implementing laws to give unions greater bargaining power") %>%
+  set_value_labels(c07_03_rec = labs_num)
+
+frq(data$c07_03_rec)
 ```
 
 ### c07_03_dummy
@@ -186,44 +292,260 @@ data <- data %>%
 frq(data$c07_03_dummy)
 ```
 
-### b29_dummy
+### c07_04_rec
 
 ```{r}
-frq(data$b29)
+frq(data$c07_04)
+
+labs <- get_labels(data$c07_04, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
 
 data <- data %>%
   mutate(
-    b29_dummy = case_when(
-      b29 %in% c(3, 4, 5) ~ 1,
-      b29 %in% c(1, 2, -888, -999) ~ 0, 
-      .default = NA_real_
-    ))%>% 
-  set_variable_labels(b29_dummy = "Possibility of joining a union (1 = yes)") %>% 
-  set_value_labels(b29_dummy = c(
-    "Yes" = 1,
-    "No" = 0
-  ))
+    c07_04_rec = if_else(
+      c07_04 %in% c(-888, -999), NA_real_, as.numeric(c07_04)
+    )
+  ) %>% 
+  set_variable_labels(c07_04_rec = "Level of agreement with: Redistributing wealth from those with more resources to those with fewer") %>%
+  set_value_labels(c07_04_rec = labs_num)
 
-frq(data$b29_dummy)
+frq(data$c07_04_rec)
 ```
 
-### b29_dummy2
+### c13_01_rec
 
 ```{r}
+frq(data$c13_01)
+
+labs <- get_labels(data$c13_01, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
 data <- data %>%
   mutate(
-    b29_dummy2 = case_when(
-      b29 %in% c(4, 5) ~ 1,
-      b29 %in% c(1, 2, 3, -888, -999) ~ 0, 
-      .default = TRUE
-    ))%>% 
-  set_variable_labels(b29_dummy2 = "Possibility of joining a union (1 = yes) (2)") %>% 
-  set_value_labels(b29_dummy2 = c(
+    c13_01_rec = if_else(
+      c13_01 %in% c(-888, -999), NA_real_, as.numeric(c13_01)
+    )
+  ) %>% 
+  set_variable_labels(c13_01_rec = "Required level of change: Pension system") %>%
+  set_value_labels(c13_01_rec = labs_num)
+
+frq(data$c13_01_rec)
+```
+
+### c13_02_rec
+
+```{r}
+frq(data$c13_02)
+
+labs <- get_labels(data$c13_02, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c13_02_rec = if_else(
+      c13_02 %in% c(-888, -999), NA_real_, as.numeric(c13_02)
+    )
+  ) %>% 
+  set_variable_labels(c13_02_rec = "Required level of change: Workers’ bargaining power vis-à-vis employers") %>%
+  set_value_labels(c13_02_rec = labs_num)
+
+frq(data$c13_02_rec)
+```
+
+### c13_03_rec
+
+```{r}
+frq(data$c13_03)
+
+labs <- get_labels(data$c13_03, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c13_03_rec = if_else(
+      c13_03 %in% c(-888, -999), NA_real_, as.numeric(c13_03)
+    )
+  ) %>% 
+  set_variable_labels(c13_03_rec = "Required level of change: Economic model") %>%
+  set_value_labels(c13_03_rec = labs_num)
+
+frq(data$c13_03_rec)
+```
+
+### c13_04_rec
+
+```{r}
+frq(data$c13_04)
+
+labs <- get_labels(data$c13_04, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c13_04_rec = if_else(
+      c13_04 %in% c(-888, -999), NA_real_, as.numeric(c13_04)
+    )
+  ) %>% 
+  set_variable_labels(c13_04_rec = "Required level of change: Income distribution") %>%
+  set_value_labels(c13_04_rec = labs_num)
+
+frq(data$c13_04_rec)
+```
+
+### c14_01_rec
+
+```{r}
+frq(data$c14_01)
+
+labs <- get_labels(data$c14_01, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c14_01_rec = if_else(
+      c14_01 %in% c(-888, -999), NA_real_, as.numeric(c14_01)
+    )
+  ) %>% 
+  set_variable_labels(c14_01_rec = "Level of agreement with: Capitalism allows everyone to have opportunities to succeed") %>%
+  set_value_labels(c14_01_rec = labs_num)
+
+frq(data$c14_01_rec)
+```
+
+### c14_02_rec
+
+```{r}
+frq(data$c14_02)
+
+labs <- get_labels(data$c14_02, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c14_02_rec = if_else(
+      c14_02 %in% c(-888, -999), NA_real_, as.numeric(c14_02)
+    )
+  ) %>% 
+  set_variable_labels(c14_02_rec = "Level of agreement with: Capitalism produces social injustices") %>%
+  set_value_labels(c14_02_rec = labs_num)
+
+frq(data$c14_02_rec)
+```
+
+### c14_03_rec
+
+```{r}
+frq(data$c14_03)
+
+labs <- get_labels(data$c14_03, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c14_03_rec = if_else(
+      c14_03 %in% c(-888, -999), NA_real_, as.numeric(c14_03)
+    )
+  ) %>% 
+  set_variable_labels(c14_03_rec = "Level of agreement with: Under capitalism, only the rich benefit") %>%
+  set_value_labels(c14_03_rec = labs_num)
+
+frq(data$c14_03_rec)
+```
+
+### c14_04_rec
+
+```{r}
+frq(data$c14_04)
+
+labs <- get_labels(data$c14_04, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c14_04_rec = if_else(
+      c14_04 %in% c(-888, -999), NA_real_, as.numeric(c14_04)
+    )
+  ) %>% 
+  set_variable_labels(c14_04_rec = "Level of agreement with: Capitalism is harmful to workers") %>%
+  set_value_labels(c14_04_rec = labs_num)
+
+frq(data$c14_04_rec)
+```
+
+### workingclass_id
+
+```{r}
+frq(data$d01)
+
+data <- data %>% 
+  mutate(
+    workingclass_id = case_when(
+      d01 %in% c(1, 2, 3) ~ 1, 
+      d01 %in% c(4, 5, 6, -888, -999) ~ 0, 
+      .default = NA_real_
+    )
+  ) %>% 
+  set_variable_labels(workingclass_id = "Identification with the working class (1 = yes)") %>% 
+  set_value_labels(workingclass_id = c(
     "Yes" = 1,
     "No" = 0
   ))
 
-frq(data$b29_dummy2)
+frq(data$workingclass_id)
+```
+
+### workingclass_people_id
+
+```{r}
+frq(data$d02_01)
+
+data <- data %>% 
+  mutate(
+    workingclass_people_id = case_when(
+      workingclass_id == 0 ~ 0,
+      workingclass_id == 1 & d02_01 %in% c(-777, -888, -999) ~ 0,
+      workingclass_id == 1 & d02_01 == 1 ~ 1, 
+      workingclass_id == 1 & d02_01 == 2 ~ 2,
+      workingclass_id == 1 & d02_01 == 3 ~ 3,
+      workingclass_id == 1 & d02_01 == 4 ~ 4,
+      workingclass_id == 1 & d02_01 == 5 ~ 5,
+      .default = NA_real_
+    )
+  ) %>% 
+  set_variable_labels(workingclass_people_id = "I identified with people from working class")
+    
+frq(data$workingclass_people_id)
+```
+
+### workingclass_id2
+
+```{r}
+frq(data$d03)
+
+data <- data %>% 
+  mutate(
+    workingclass_id2 = case_when(
+      d03 %in% c(4, 5, 6) ~ 1, 
+      d03 %in% c(1, 2, 3, 7, -888, -999) ~ 0, 
+      .default = NA_real_
+    )
+  ) %>% 
+  set_variable_labels(workingclass_id2 = "Identification with the working class (1 = yes) (2)") %>% 
+  set_value_labels(workingclass_id2 = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$workingclass_id2)
 ```
 
 ## Controls
@@ -276,7 +598,7 @@ data <- data %>%
       as.numeric(a07) %in% c(1, 2, 5, 6, 7, 9) ~ 1,
       as.numeric(a07) %in% c(3, 4, 8) ~ 0,
       .default = NA_real_
-    ))%>% 
+    )) %>% 
   set_variable_labels(sector = "Sector (1 = private)") %>% 
   set_value_labels(sector = c(
     "Private" = 1,
@@ -298,55 +620,6 @@ data <- data %>%
   set_variable_labels(rama = "Economic Activity")
 
 frq(data$rama)
-```
-
-### unions
-
-```{r}
-frq(data$b19)
-
-# Sindicatos en empresas
-data <- data %>%
-  mutate(
-    unions = case_when(
-      as.numeric(relation_mop) %in% c(1, 2) ~ NA_real_,
-      as.numeric(relation_mop) == 3 & b19 == 1 ~ 1,
-      as.numeric(relation_mop) == 3 & b19 %in% c(2, -888, -999) ~ 0,
-      .default = NA_real_
-    )
-  ) %>% 
-  set_variable_labels(unions = "Unions in company (1 = yes)") %>%
-  set_value_labels(unions = c(
-    "Yes" = 1,
-    "No" = 0
-  ))
-
-frq(data$unions)
-```
-
-### union_member
-
-```{r,warning=FALSE,message=FALSE}
-frq(data$b21)
-
-# Afiliación sindical
-data <- data %>%
-  mutate(
-    union_member = case_when(
-      as.numeric(relation_mop) %in% c(1, 2) ~ 0,
-      as.numeric(relation_mop) == 3 & b21 %in% c(1, 2) ~ 1,
-      as.numeric(relation_mop) == 3 & b21 %in% c(3, -888, -999) ~ 0,
-      unions == 0 ~ 0,
-      .default = NA_real_
-    )
-  ) %>%
-  set_variable_labels(union_member = "Union membership (1 = yes)") %>%
-  set_value_labels(union_member = c(
-    "Yes" = 1,
-    "No" = 0
-  ))
-
-frq(data$union_member)
 ```
 
 ### pol_id
@@ -376,6 +649,35 @@ data <- data %>%
   set_variable_labels(pol_id = "Political identification") 
 
 frq(data$pol_id)
+```
+
+### left_id
+
+```{r}
+frq(data$c08)
+
+data <- data %>%
+  mutate(
+    left_id = factor(
+      case_when(
+        c08 %in% c(0, 1, 2, 3) ~ 1,
+        c08 %in% c(4, 5, 6) ~ 2,
+        c08 %in% c(7, 8, 9, 10) ~ 3,
+        c08 %in% c(11, 12, -888, -999) ~ 4,
+        .default = NA_real_
+      ),
+      levels = 1:4, 
+      labels = c(
+        "Left", 
+        "Center", 
+        "Right", 
+        "Not identified"
+        ) 
+      )
+    ) %>%
+  set_variable_labels(left_id = "Left identification") 
+
+frq(data$left_id)
 ```
 
 ## Guardar datos

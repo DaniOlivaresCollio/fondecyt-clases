@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#wrightclass_v13_emp_reduced" id="toc-wrightclass_v13_emp_reduced" class="nav-link" data-scroll-target="#wrightclass_v13_emp_reduced"><span class="header-section-number">2.2.14</span> wrightclass_v13_emp_reduced</a></li>
   <li><a href="#wrightclass_v14_cap_reduced" id="toc-wrightclass_v14_cap_reduced" class="nav-link" data-scroll-target="#wrightclass_v14_cap_reduced"><span class="header-section-number">2.2.15</span> wrightclass_v14_cap_reduced</a></li>
   <li><a href="#wrightclass_v15_emp_reduced" id="toc-wrightclass_v15_emp_reduced" class="nav-link" data-scroll-target="#wrightclass_v15_emp_reduced"><span class="header-section-number">2.2.16</span> wrightclass_v15_emp_reduced</a></li>
-  <li><a href="#wrightclass_v16_emp_reduced" id="toc-wrightclass_v16_emp_reduced" class="nav-link" data-scroll-target="#wrightclass_v16_emp_reduced"><span class="header-section-number">2.2.17</span> wrightclass_v16_emp_reduced</a></li>
+  <li><a href="#wrightclass_v16_cap_reduced" id="toc-wrightclass_v16_cap_reduced" class="nav-link" data-scroll-target="#wrightclass_v16_cap_reduced"><span class="header-section-number">2.2.17</span> wrightclass_v16_cap_reduced</a></li>
   <li><a href="#wrightclass_v17_emp_reduced-comp-cl-ar" id="toc-wrightclass_v17_emp_reduced-comp-cl-ar" class="nav-link" data-scroll-target="#wrightclass_v17_emp_reduced-comp-cl-ar"><span class="header-section-number">2.2.18</span> wrightclass_v17_emp_reduced (comp cl-ar)</a></li>
   <li><a href="#wrightclass_v18_cap_reduced-comp-cl-ar" id="toc-wrightclass_v18_cap_reduced-comp-cl-ar" class="nav-link" data-scroll-target="#wrightclass_v18_cap_reduced-comp-cl-ar"><span class="header-section-number">2.2.19</span> wrightclass_v18_cap_reduced (comp cl-ar)</a></li>
   <li><a href="#wrightclass_v19_reduced-comp-cl-ar" id="toc-wrightclass_v19_reduced-comp-cl-ar" class="nav-link" data-scroll-target="#wrightclass_v19_reduced-comp-cl-ar"><span class="header-section-number">2.2.20</span> wrightclass_v19_reduced (comp cl-ar)</a></li>
@@ -467,19 +467,19 @@ Value                      |   N | Raw % | Valid % | Cum. %
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,  <span class="co"># 2. Small employers</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>      </span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,   <span class="co"># 3. Petty bourgeoisie</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">4</span>,   <span class="co"># 4. Informal self-employed</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">5</span>,  <span class="co"># 5. Expert managers</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">6</span>,  <span class="co"># 6. Expert supervisors</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">7</span>,  <span class="co"># 7. Experts</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">8</span>,  <span class="co"># 8. Skilled managers</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">9</span>,  <span class="co"># 9. skilled supervisors</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">10</span>, <span class="co"># 10. Nonskilled managers</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">11</span>, <span class="co"># 11. Nonskilled supervisors</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">12</span>, <span class="co"># 12. Formal workers</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">13</span>  <span class="co"># 13. Informal workers</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">4</span>,  <span class="co"># 4. Expert managers</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">5</span>,  <span class="co"># 5. Expert supervisors</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">6</span>,  <span class="co"># 6. Experts</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">7</span>,  <span class="co"># 7. Skilled managers</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">8</span>,  <span class="co"># 8. skilled supervisors</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">9</span>,  <span class="co"># 9. Nonskilled managers</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">10</span>, <span class="co"># 10. Nonskilled supervisors</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">11</span>, <span class="co"># 11. Formal workers</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">12</span>, <span class="co"># 12. Informal workers</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">13</span>                                                   <span class="co"># 13. Informal self-employed</span></span>
 <span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v3_emp_informal =</span> <span class="fu">factor</span>(</span>
 <span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>      wrightclass_v3_emp_informal,</span>
@@ -488,16 +488,16 @@ Value                      |   N | Raw % | Valid % | Cum. %
 <span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Employers"</span>,</span>
 <span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Small employers"</span>,</span>
 <span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Petty bourgeoisie"</span>,</span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Informal self-employed"</span>,</span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"5. Expert managers"</span>,</span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"6. Expert supervisors"</span>,</span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"7. Experts"</span>,</span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"8. Skilled managers"</span>,</span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"9. Skilled supervisors"</span>,</span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">"10. Nonskilled managers"</span>,</span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>        <span class="st">"11. Nonskilled supervisors"</span>,</span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>        <span class="st">"12. Formal workers"</span>,</span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>        <span class="st">"13. Informal workers"</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Expert managers"</span>,</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"5. Expert supervisors"</span>,</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"6. Experts"</span>,</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"7. Skilled managers"</span>,</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"8. Skilled supervisors"</span>,</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"9. Nonskilled managers"</span>,</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">"10. Nonskilled supervisors"</span>,</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>        <span class="st">"11. Formal workers"</span>,</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>        <span class="st">"12. Informal workers"</span>,</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>        <span class="st">"13. Informal self-employed"</span></span>
 <span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
@@ -506,23 +506,23 @@ Value                      |   N | Raw % | Valid % | Cum. %
 <span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v3_emp_informal)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology + Informal (v3) (x) &lt;categorical&gt; 
-# total N=3048 valid N=3039 mean=8.38 sd=4.22
+# total N=3048 valid N=3039 mean=8.74 sd=3.90
 
 Value                      |    N | Raw % | Valid % | Cum. %
 ------------------------------------------------------------
 1. Employers               |  107 |  3.51 |    3.52 |   3.52
 2. Small employers         |  276 |  9.06 |    9.08 |  12.60
 3. Petty bourgeoisie       |  196 |  6.43 |    6.45 |  19.05
-4. Informal self-employed  |  355 | 11.65 |   11.68 |  30.73
-5. Expert managers         |   95 |  3.12 |    3.13 |  33.86
-6. Expert supervisors      |   39 |  1.28 |    1.28 |  35.14
-7. Experts                 |  239 |  7.84 |    7.86 |  43.01
-8. Skilled managers        |   94 |  3.08 |    3.09 |  46.10
-9. Skilled supervisors     |   78 |  2.56 |    2.57 |  48.67
-10. Nonskilled managers    |   25 |  0.82 |    0.82 |  49.49
-11. Nonskilled supervisors |   39 |  1.28 |    1.28 |  50.77
-12. Formal workers         | 1156 | 37.93 |   38.04 |  88.81
-13. Informal workers       |  340 | 11.15 |   11.19 | 100.00
+4. Expert managers         |   95 |  3.12 |    3.13 |  22.18
+5. Expert supervisors      |   39 |  1.28 |    1.28 |  23.46
+6. Experts                 |  239 |  7.84 |    7.86 |  31.33
+7. Skilled managers        |   94 |  3.08 |    3.09 |  34.42
+8. Skilled supervisors     |   78 |  2.56 |    2.57 |  36.99
+9. Nonskilled managers     |   25 |  0.82 |    0.82 |  37.81
+10. Nonskilled supervisors |   39 |  1.28 |    1.28 |  39.09
+11. Formal workers         | 1156 | 37.93 |   38.04 |  77.13
+12. Informal workers       |  340 | 11.15 |   11.19 |  88.32
+13. Informal self-employed |  355 | 11.65 |   11.68 | 100.00
 &lt;NA&gt;                       |    9 |  0.30 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
@@ -548,16 +548,16 @@ Value                      |    N | Raw % | Valid % | Cum. %
  1 1. Employers                0.0208           107    2.08 
  2 2. Small employers          0.0686           276    6.86 
  3 3. Petty bourgeoisie        0.0640           196    6.40 
- 4 4. Informal self-employed   0.0960           355    9.60 
- 5 5. Expert managers          0.0475            95    4.75 
- 6 6. Expert supervisors       0.00831           39    0.831
- 7 7. Experts                  0.117            239   11.7  
- 8 8. Skilled managers         0.0339            94    3.39 
- 9 9. Skilled supervisors      0.0210            78    2.10 
-10 10. Nonskilled managers     0.0109            25    1.09 
-11 11. Nonskilled supervisors  0.0186            39    1.86 
-12 12. Formal workers          0.374           1156   37.4  
-13 13. Informal workers        0.118            340   11.8  
+ 4 4. Expert managers          0.0475            95    4.75 
+ 5 5. Expert supervisors       0.00831           39    0.831
+ 6 6. Experts                  0.117            239   11.7  
+ 7 7. Skilled managers         0.0339            94    3.39 
+ 8 8. Skilled supervisors      0.0210            78    2.10 
+ 9 9. Nonskilled managers      0.0109            25    1.09 
+10 10. Nonskilled supervisors  0.0186            39    1.86 
+11 11. Formal workers          0.374           1156   37.4  
+12 12. Informal workers        0.118            340   11.8  
+13 13. Informal self-employed  0.0960           355    9.60 
 14 &lt;NA&gt;                        0.00146            9    0.146</code></pre>
 </div>
 </div>
@@ -572,19 +572,19 @@ Value                      |    N | Raw % | Valid % | Cum. %
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,  <span class="co"># 2. Small employers</span></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>      </span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,   <span class="co"># 3. Petty bourgeoisie</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">4</span>,   <span class="co"># 4. Informal self-employed</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">5</span>,  <span class="co"># 5. Expert managers</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">6</span>,  <span class="co"># 6. Expert supervisors</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">7</span>,  <span class="co"># 7. Experts</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">8</span>,  <span class="co"># 8. Skilled managers</span></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">9</span>,  <span class="co"># 9. skilled supervisors</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">10</span>, <span class="co"># 10. Nonskilled managers</span></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">11</span>, <span class="co"># 11. Nonskilled supervisors</span></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">12</span>, <span class="co"># 12. Formal workers</span></span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">13</span>  <span class="co"># 13. Informal workers</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">4</span>,  <span class="co"># 4. Expert managers</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">5</span>,  <span class="co"># 5. Expert supervisors</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">6</span>,  <span class="co"># 6. Experts</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">7</span>,  <span class="co"># 7. Skilled managers</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">8</span>,  <span class="co"># 8. skilled supervisors</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">9</span>,  <span class="co"># 9. Nonskilled managers</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">10</span>, <span class="co"># 10. Nonskilled supervisors</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">11</span>,  <span class="co"># 11. Formal workers</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">12</span>,  <span class="co"># 12. Informal workers</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">13</span>                                                   <span class="co"># 13. Informal self-employed</span></span>
 <span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v4_cap_informal =</span> <span class="fu">factor</span>(</span>
 <span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>      wrightclass_v4_cap_informal,</span>
@@ -593,16 +593,16 @@ Value                      |    N | Raw % | Valid % | Cum. %
 <span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Capitalists"</span>,</span>
 <span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Small employers"</span>,</span>
 <span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Petty bourgeoisie"</span>,</span>
-<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Informal self-employed"</span>,</span>
-<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"5. Expert managers"</span>,</span>
-<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"6. Expert supervisors"</span>,</span>
-<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"7. Experts"</span>,</span>
-<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"8. Skilled managers"</span>,</span>
-<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"9. Skilled supervisors"</span>,</span>
-<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">"10. Nonskilled managers"</span>,</span>
-<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>        <span class="st">"11. Nonskilled supervisors"</span>,</span>
-<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>        <span class="st">"12. Formal workers"</span>,</span>
-<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>        <span class="st">"13. Informal workers"</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Expert managers"</span>,</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"5. Expert supervisors"</span>,</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"6. Experts"</span>,</span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"7. Skilled managers"</span>,</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"8. Skilled supervisors"</span>,</span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"9. Nonskilled managers"</span>,</span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">"10. Nonskilled supervisors"</span>,</span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>        <span class="st">"11. Formal workers"</span>,</span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>        <span class="st">"12. Informal workers"</span>,</span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>        <span class="st">"13. Informal self-employed"</span></span>
 <span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
@@ -611,23 +611,23 @@ Value                      |    N | Raw % | Valid % | Cum. %
 <span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v4_cap_informal)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology + Informal (4) (x) &lt;categorical&gt; 
-# total N=3048 valid N=3039 mean=8.41 sd=4.18
+# total N=3048 valid N=3039 mean=8.76 sd=3.86
 
 Value                      |    N | Raw % | Valid % | Cum. %
 ------------------------------------------------------------
 1. Capitalists             |   36 |  1.18 |    1.18 |   1.18
 2. Small employers         |  347 | 11.38 |   11.42 |  12.60
 3. Petty bourgeoisie       |  196 |  6.43 |    6.45 |  19.05
-4. Informal self-employed  |  355 | 11.65 |   11.68 |  30.73
-5. Expert managers         |   95 |  3.12 |    3.13 |  33.86
-6. Expert supervisors      |   39 |  1.28 |    1.28 |  35.14
-7. Experts                 |  239 |  7.84 |    7.86 |  43.01
-8. Skilled managers        |   94 |  3.08 |    3.09 |  46.10
-9. Skilled supervisors     |   78 |  2.56 |    2.57 |  48.67
-10. Nonskilled managers    |   25 |  0.82 |    0.82 |  49.49
-11. Nonskilled supervisors |   39 |  1.28 |    1.28 |  50.77
-12. Formal workers         | 1156 | 37.93 |   38.04 |  88.81
-13. Informal workers       |  340 | 11.15 |   11.19 | 100.00
+4. Expert managers         |   95 |  3.12 |    3.13 |  22.18
+5. Expert supervisors      |   39 |  1.28 |    1.28 |  23.46
+6. Experts                 |  239 |  7.84 |    7.86 |  31.33
+7. Skilled managers        |   94 |  3.08 |    3.09 |  34.42
+8. Skilled supervisors     |   78 |  2.56 |    2.57 |  36.99
+9. Nonskilled managers     |   25 |  0.82 |    0.82 |  37.81
+10. Nonskilled supervisors |   39 |  1.28 |    1.28 |  39.09
+11. Formal workers         | 1156 | 37.93 |   38.04 |  77.13
+12. Informal workers       |  340 | 11.15 |   11.19 |  88.32
+13. Informal self-employed |  355 | 11.65 |   11.68 | 100.00
 &lt;NA&gt;                       |    9 |  0.30 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
@@ -653,16 +653,16 @@ Value                      |    N | Raw % | Valid % | Cum. %
  1 1. Capitalists              0.00950           36    0.950
  2 2. Small employers          0.0799           347    7.99 
  3 3. Petty bourgeoisie        0.0640           196    6.40 
- 4 4. Informal self-employed   0.0960           355    9.60 
- 5 5. Expert managers          0.0475            95    4.75 
- 6 6. Expert supervisors       0.00831           39    0.831
- 7 7. Experts                  0.117            239   11.7  
- 8 8. Skilled managers         0.0339            94    3.39 
- 9 9. Skilled supervisors      0.0210            78    2.10 
-10 10. Nonskilled managers     0.0109            25    1.09 
-11 11. Nonskilled supervisors  0.0186            39    1.86 
-12 12. Formal workers          0.374           1156   37.4  
-13 13. Informal workers        0.118            340   11.8  
+ 4 4. Expert managers          0.0475            95    4.75 
+ 5 5. Expert supervisors       0.00831           39    0.831
+ 6 6. Experts                  0.117            239   11.7  
+ 7 7. Skilled managers         0.0339            94    3.39 
+ 8 8. Skilled supervisors      0.0210            78    2.10 
+ 9 9. Nonskilled managers      0.0109            25    1.09 
+10 10. Nonskilled supervisors  0.0186            39    1.86 
+11 11. Formal workers          0.374           1156   37.4  
+12 12. Informal workers        0.118            340   11.8  
+13 13. Informal self-employed  0.0960           355    9.60 
 14 &lt;NA&gt;                        0.00146            9    0.146</code></pre>
 </div>
 </div>
@@ -674,29 +674,29 @@ Value                      |    N | Raw % | Valid % | Cum. %
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v5_emp_reduced =</span> <span class="fu">case_when</span>(</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>,  <span class="co"># 1. Formal workers</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">2</span>,  <span class="co"># 2. Informal workers</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">3</span>,                                                   <span class="co"># 3. Informal self-employed</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">4</span>,                          <span class="co"># 4. Experts</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,                                                                 <span class="co"># 1. Employers</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,                                                                 <span class="co"># 2. Small employers</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,                                                   <span class="co"># 3. Petty bourgeoisie</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">4</span>,               <span class="co"># 4. Managers</span></span>
 <span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">5</span>,               <span class="co"># 5. Supervisors</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">6</span>,               <span class="co"># 6. Managers</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">7</span>,                                                   <span class="co"># 7. Petty bourgeoisie</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">8</span>,                                                                 <span class="co"># 8. Small employers</span></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">9</span>                                                                  <span class="co"># 9. Employers</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">6</span>,                          <span class="co"># 6. Experts</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">7</span>,  <span class="co"># 7. Formal workers</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">8</span>,  <span class="co"># 8. Informal workers</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">9</span>                                                    <span class="co"># 9. Informal self-employed</span></span>
 <span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v5_emp_reduced =</span> <span class="fu">factor</span>(</span>
 <span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>      wrightclass_v5_emp_reduced,</span>
 <span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
 <span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Formal workers"</span>,</span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Informal workers"</span>,</span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Informal self-employed"</span>,</span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Experts"</span>,       </span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Employers"</span>,</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Small employers"</span>,</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Petty bourgeoisie"</span>,</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Managers"</span>,       </span>
 <span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"5. Supervisors"</span>,</span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"6. Managers"</span>,</span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"7. Petty bourgeoisie"</span>,</span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"8. Small employers"</span>,</span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"9. Employers"</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"6. Experts"</span>,</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"7. Formal workers"</span>,</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"8. Informal workers"</span>,</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"9. Informal self-employed"</span></span>
 <span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
@@ -705,19 +705,19 @@ Value                      |    N | Raw % | Valid % | Cum. %
 <span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v5_emp_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology Reduced (v5) (x) &lt;categorical&gt; 
-# total N=3048 valid N=3039 mean=3.44 sd=2.63
+# total N=3048 valid N=3039 mean=6.03 sd=2.26
 
 Value                     |    N | Raw % | Valid % | Cum. %
 -----------------------------------------------------------
-1. Formal workers         | 1156 | 37.93 |   38.04 |  38.04
-2. Informal workers       |  340 | 11.15 |   11.19 |  49.23
-3. Informal self-employed |  355 | 11.65 |   11.68 |  60.91
-4. Experts                |  239 |  7.84 |    7.86 |  68.77
-5. Supervisors            |  156 |  5.12 |    5.13 |  73.91
-6. Managers               |  214 |  7.02 |    7.04 |  80.95
-7. Petty bourgeoisie      |  196 |  6.43 |    6.45 |  87.40
-8. Small employers        |  276 |  9.06 |    9.08 |  96.48
-9. Employers              |  107 |  3.51 |    3.52 | 100.00
+1. Employers              |  107 |  3.51 |    3.52 |   3.52
+2. Small employers        |  276 |  9.06 |    9.08 |  12.60
+3. Petty bourgeoisie      |  196 |  6.43 |    6.45 |  19.05
+4. Managers               |  214 |  7.02 |    7.04 |  26.09
+5. Supervisors            |  156 |  5.12 |    5.13 |  31.23
+6. Experts                |  239 |  7.84 |    7.86 |  39.09
+7. Formal workers         | 1156 | 37.93 |   38.04 |  77.13
+8. Informal workers       |  340 | 11.15 |   11.19 |  88.32
+9. Informal self-employed |  355 | 11.65 |   11.68 | 100.00
 &lt;NA&gt;                      |    9 |  0.30 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
@@ -740,15 +740,15 @@ Value                     |    N | Raw % | Valid % | Cum. %
 <pre><code># A tibble: 10 × 4
    wrightclass_v5_emp_reduced    freq n_unweighted freq_pct
    &lt;fct&gt;                        &lt;dbl&gt;        &lt;int&gt;    &lt;dbl&gt;
- 1 1. Formal workers          0.374           1156   37.4  
- 2 2. Informal workers        0.118            340   11.8  
- 3 3. Informal self-employed  0.0960           355    9.60 
- 4 4. Experts                 0.117            239   11.7  
+ 1 1. Employers               0.0208           107    2.08 
+ 2 2. Small employers         0.0686           276    6.86 
+ 3 3. Petty bourgeoisie       0.0640           196    6.40 
+ 4 4. Managers                0.0923           214    9.23 
  5 5. Supervisors             0.0479           156    4.79 
- 6 6. Managers                0.0923           214    9.23 
- 7 7. Petty bourgeoisie       0.0640           196    6.40 
- 8 8. Small employers         0.0686           276    6.86 
- 9 9. Employers               0.0208           107    2.08 
+ 6 6. Experts                 0.117            239   11.7  
+ 7 7. Formal workers          0.374           1156   37.4  
+ 8 8. Informal workers        0.118            340   11.8  
+ 9 9. Informal self-employed  0.0960           355    9.60 
 10 &lt;NA&gt;                       0.00146            9    0.146</code></pre>
 </div>
 </div>
@@ -759,29 +759,29 @@ Value                     |    N | Raw % | Valid % | Cum. %
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v6_cap_reduced =</span> <span class="fu">case_when</span>(</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>,      <span class="co"># 1. Formal workers</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">2</span>,      <span class="co"># 2. Informal workers</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">3</span>,                                                      <span class="co"># 3. Informal self-employed</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">4</span>,                              <span class="co"># 4. Experts      </span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,                                                                    <span class="co"># 1. Capitalists</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,                                                                    <span class="co"># 2. Small employers</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,                                                      <span class="co"># 3. Petty bourgeoisie</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">4</span>,                   <span class="co"># 4. Managers</span></span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">5</span>,                   <span class="co"># 5. Supervisors</span></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">6</span>,                   <span class="co"># 6. Managers</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">7</span>,                                                      <span class="co"># 7. Petty bourgeoisie</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">8</span>,                                                                    <span class="co"># 8. Small employers</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">9</span>                                                                     <span class="co"># 9. Capitalists</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">6</span>,                              <span class="co"># 6. Experts</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">7</span>,      <span class="co"># 7. Formal workers</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">8</span>,      <span class="co"># 8. Informal workers</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">9</span>                                                       <span class="co"># 9. Informal self-employed</span></span>
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v6_cap_reduced =</span> <span class="fu">factor</span>(</span>
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>      wrightclass_v6_cap_reduced,</span>
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
 <span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Formal workers"</span>,</span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Informal workers"</span>,</span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Informal self-employed"</span>,</span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Experts"</span>,</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Capitalists"</span>,</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Small employers"</span>,</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Petty bourgeoisie"</span>,</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Managers"</span>,       </span>
 <span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"5. Supervisors"</span>,</span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"6. Managers"</span>,</span>
-<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"7. Petty bourgeoisie"</span>,</span>
-<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"8. Small employers"</span>,</span>
-<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"9. Capitalists"</span></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"6. Experts"</span>,</span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"7. Formal workers"</span>,</span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"8. Informal workers"</span>,</span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"9. Informal self-employed"</span></span>
 <span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
@@ -790,19 +790,19 @@ Value                     |    N | Raw % | Valid % | Cum. %
 <span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v6_cap_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology Reduced (v6) (x) &lt;categorical&gt; 
-# total N=3048 valid N=3039 mean=3.42 sd=2.59
+# total N=3048 valid N=3039 mean=6.05 sd=2.22
 
 Value                     |    N | Raw % | Valid % | Cum. %
 -----------------------------------------------------------
-1. Formal workers         | 1156 | 37.93 |   38.04 |  38.04
-2. Informal workers       |  340 | 11.15 |   11.19 |  49.23
-3. Informal self-employed |  355 | 11.65 |   11.68 |  60.91
-4. Experts                |  239 |  7.84 |    7.86 |  68.77
-5. Supervisors            |  156 |  5.12 |    5.13 |  73.91
-6. Managers               |  214 |  7.02 |    7.04 |  80.95
-7. Petty bourgeoisie      |  196 |  6.43 |    6.45 |  87.40
-8. Small employers        |  347 | 11.38 |   11.42 |  98.82
-9. Capitalists            |   36 |  1.18 |    1.18 | 100.00
+1. Capitalists            |   36 |  1.18 |    1.18 |   1.18
+2. Small employers        |  347 | 11.38 |   11.42 |  12.60
+3. Petty bourgeoisie      |  196 |  6.43 |    6.45 |  19.05
+4. Managers               |  214 |  7.02 |    7.04 |  26.09
+5. Supervisors            |  156 |  5.12 |    5.13 |  31.23
+6. Experts                |  239 |  7.84 |    7.86 |  39.09
+7. Formal workers         | 1156 | 37.93 |   38.04 |  77.13
+8. Informal workers       |  340 | 11.15 |   11.19 |  88.32
+9. Informal self-employed |  355 | 11.65 |   11.68 | 100.00
 &lt;NA&gt;                      |    9 |  0.30 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
@@ -825,15 +825,15 @@ Value                     |    N | Raw % | Valid % | Cum. %
 <pre><code># A tibble: 10 × 4
    wrightclass_v6_cap_reduced    freq n_unweighted freq_pct
    &lt;fct&gt;                        &lt;dbl&gt;        &lt;int&gt;    &lt;dbl&gt;
- 1 1. Formal workers          0.374           1156   37.4  
- 2 2. Informal workers        0.118            340   11.8  
- 3 3. Informal self-employed  0.0960           355    9.60 
- 4 4. Experts                 0.117            239   11.7  
+ 1 1. Capitalists             0.00950           36    0.950
+ 2 2. Small employers         0.0799           347    7.99 
+ 3 3. Petty bourgeoisie       0.0640           196    6.40 
+ 4 4. Managers                0.0923           214    9.23 
  5 5. Supervisors             0.0479           156    4.79 
- 6 6. Managers                0.0923           214    9.23 
- 7 7. Petty bourgeoisie       0.0640           196    6.40 
- 8 8. Small employers         0.0799           347    7.99 
- 9 9. Capitalists             0.00950           36    0.950
+ 6 6. Experts                 0.117            239   11.7  
+ 7 7. Formal workers          0.374           1156   37.4  
+ 8 8. Informal workers        0.118            340   11.8  
+ 9 9. Informal self-employed  0.0960           355    9.60 
 10 &lt;NA&gt;                       0.00146            9    0.146</code></pre>
 </div>
 </div>
@@ -844,27 +844,27 @@ Value                     |    N | Raw % | Valid % | Cum. %
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v7_reduced =</span> <span class="fu">case_when</span>(</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>,  <span class="co"># 1. Formal workers</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">2</span>,  <span class="co"># 2. Informal workers</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">3</span>,                                                   <span class="co"># 3. Informal self-employed</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">4</span>,                          <span class="co"># 4. Experts</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">5</span>,               <span class="co"># 5. Supervisors</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">6</span>,               <span class="co"># 6. Managers</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">7</span>,                                                   <span class="co"># 7. Petty bourgeoisie</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">8</span>                                                          <span class="co"># 8. Employers</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">1</span>,                                                         <span class="co"># 1. Employers</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">2</span>,                                                   <span class="co"># 2. Petty bourgeoisie</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">3</span>,               <span class="co"># 3. Managers</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">4</span>,               <span class="co"># 4. Supervisors</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">5</span>,                          <span class="co"># 5. Experts</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">6</span>,  <span class="co"># 6. Formal workers</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">7</span>,  <span class="co"># 7. Informal workers</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">8</span>                                                    <span class="co"># 8. Informal self-employed</span></span>
 <span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v7_reduced =</span> <span class="fu">factor</span>(</span>
 <span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>      wrightclass_v7_reduced,</span>
 <span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>,</span>
 <span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Formal workers"</span>,</span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Informal workers"</span>,</span>
-<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Informal self-employed"</span>,</span>
-<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Experts"</span>,       </span>
-<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"5. Supervisors"</span>,</span>
-<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"6. Managers"</span>,</span>
-<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"7. Petty bourgeoisie"</span>,</span>
-<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"8. Employers"</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Employers"</span>,</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Petty bourgeoisie"</span>,</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Managers"</span>,</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Supervisors"</span>,       </span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"5. Experts"</span>,</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"6. Formal workers"</span>,</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"7. Informal workers"</span>,</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"8. Informal self-employed"</span></span>
 <span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
@@ -873,18 +873,18 @@ Value                     |    N | Raw % | Valid % | Cum. %
 <span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v7_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology Reduced (v7) (x) &lt;categorical&gt; 
-# total N=3048 valid N=3039 mean=3.41 sd=2.56
+# total N=3048 valid N=3039 mean=5.06 sd=2.19
 
 Value                     |    N | Raw % | Valid % | Cum. %
 -----------------------------------------------------------
-1. Formal workers         | 1156 | 37.93 |   38.04 |  38.04
-2. Informal workers       |  340 | 11.15 |   11.19 |  49.23
-3. Informal self-employed |  355 | 11.65 |   11.68 |  60.91
-4. Experts                |  239 |  7.84 |    7.86 |  68.77
-5. Supervisors            |  156 |  5.12 |    5.13 |  73.91
-6. Managers               |  214 |  7.02 |    7.04 |  80.95
-7. Petty bourgeoisie      |  196 |  6.43 |    6.45 |  87.40
-8. Employers              |  383 | 12.57 |   12.60 | 100.00
+1. Employers              |  383 | 12.57 |   12.60 |  12.60
+2. Petty bourgeoisie      |  196 |  6.43 |    6.45 |  19.05
+3. Managers               |  214 |  7.02 |    7.04 |  26.09
+4. Supervisors            |  156 |  5.12 |    5.13 |  31.23
+5. Experts                |  239 |  7.84 |    7.86 |  39.09
+6. Formal workers         | 1156 | 37.93 |   38.04 |  77.13
+7. Informal workers       |  340 | 11.15 |   11.19 |  88.32
+8. Informal self-employed |  355 | 11.65 |   11.68 | 100.00
 &lt;NA&gt;                      |    9 |  0.30 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
@@ -907,14 +907,14 @@ Value                     |    N | Raw % | Valid % | Cum. %
 <pre><code># A tibble: 9 × 4
   wrightclass_v7_reduced       freq n_unweighted freq_pct
   &lt;fct&gt;                       &lt;dbl&gt;        &lt;int&gt;    &lt;dbl&gt;
-1 1. Formal workers         0.374           1156   37.4  
-2 2. Informal workers       0.118            340   11.8  
-3 3. Informal self-employed 0.0960           355    9.60 
-4 4. Experts                0.117            239   11.7  
-5 5. Supervisors            0.0479           156    4.79 
-6 6. Managers               0.0923           214    9.23 
-7 7. Petty bourgeoisie      0.0640           196    6.40 
-8 8. Employers              0.0894           383    8.94 
+1 1. Employers              0.0894           383    8.94 
+2 2. Petty bourgeoisie      0.0640           196    6.40 
+3 3. Managers               0.0923           214    9.23 
+4 4. Supervisors            0.0479           156    4.79 
+5 5. Experts                0.117            239   11.7  
+6 6. Formal workers         0.374           1156   37.4  
+7 7. Informal workers       0.118            340   11.8  
+8 8. Informal self-employed 0.0960           355    9.60 
 9 &lt;NA&gt;                      0.00146            9    0.146</code></pre>
 </div>
 </div>
@@ -1278,7 +1278,7 @@ Value                               |    N | Raw % | Valid % | Cum. %
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v12_cap_reduced =</span> <span class="fu">case_when</span>(</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,                                                                    <span class="co"># 1. Employers</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,                                                                    <span class="co"># 1. Capitalists</span></span>
 <span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,                                                                    <span class="co"># 2. Small employers   </span></span>
 <span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> inicio_activ <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,                                  <span class="co"># 3. Petty bourgeoisie  </span></span>
 <span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>      </span>
@@ -1465,7 +1465,7 @@ Value                              |    N | Raw % | Valid % | Cum. %
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v14_cap_reduced =</span> <span class="fu">case_when</span>(</span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> inicio_empresa <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(income_rec) <span class="sc">&amp;</span> income_rec <span class="sc">&gt;=</span> <span class="dv">1000000</span> <span class="sc">~</span> <span class="dv">1</span>,        <span class="co"># 1. Employers</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> inicio_empresa <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(income_rec) <span class="sc">&amp;</span> income_rec <span class="sc">&gt;=</span> <span class="dv">1000000</span> <span class="sc">~</span> <span class="dv">1</span>,        <span class="co"># 1. Capitalists</span></span>
 <span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>      </span>
 <span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> inicio_empresa <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> (income_rec <span class="sc">&lt;</span> <span class="dv">1000000</span> <span class="sc">|</span> <span class="fu">is.na</span>(income_rec)) <span class="sc">~</span> <span class="dv">2</span>,        <span class="co"># 2. Small employers</span></span>
 <span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> (inicio_empresa <span class="sc">==</span> <span class="dv">0</span> <span class="sc">|</span> <span class="fu">is.na</span>(inicio_empresa)) <span class="sc">~</span> <span class="dv">2</span>,                           <span class="co"># 2. Small employers</span></span>
@@ -1489,7 +1489,7 @@ Value                              |    N | Raw % | Valid % | Cum. %
 <span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a>      wrightclass_v14_cap_reduced,</span>
 <span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
 <span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
-<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Employers"</span>,</span>
+<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Capitalists"</span>,</span>
 <span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Small employers"</span>,</span>
 <span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Petty bourgeoisie"</span>,</span>
 <span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Expert managers"</span>,</span>
@@ -1510,7 +1510,7 @@ Value                              |    N | Raw % | Valid % | Cum. %
 
 Value                               |    N | Raw % | Valid % | Cum. %
 ---------------------------------------------------------------------
-1. Employers                        |    7 |  0.23 |    0.23 |   0.23
+1. Capitalists                      |    7 |  0.23 |    0.23 |   0.23
 2. Small employers                  |  376 | 12.34 |   12.37 |  12.60
 3. Petty bourgeoisie                |  187 |  6.14 |    6.15 |  18.76
 4. Expert managers                  |   95 |  3.12 |    3.13 |  21.88
@@ -1541,7 +1541,7 @@ Value                               |    N | Raw % | Valid % | Cum. %
 <pre><code># A tibble: 10 × 4
    wrightclass_v14_cap_reduced            freq n_unweighted freq_pct
    &lt;fct&gt;                                 &lt;dbl&gt;        &lt;int&gt;    &lt;dbl&gt;
- 1 1. Employers                        0.00273            7    0.273
+ 1 1. Capitalists                      0.00273            7    0.273
  2 2. Small employers                  0.0867           376    8.67 
  3 3. Petty bourgeoisie                0.0628           187    6.28 
  4 4. Expert managers                  0.0475            95    4.75 
@@ -1649,13 +1649,13 @@ Value                               |    N | Raw % | Valid % | Cum. %
 </div>
 </div>
 </section>
-<section id="wrightclass_v16_emp_reduced" class="level3" data-number="2.2.17">
-<h3 data-number="2.2.17" class="anchored" data-anchor-id="wrightclass_v16_emp_reduced"><span class="header-section-number">2.2.17</span> wrightclass_v16_emp_reduced</h3>
+<section id="wrightclass_v16_cap_reduced" class="level3" data-number="2.2.17">
+<h3 data-number="2.2.17" class="anchored" data-anchor-id="wrightclass_v16_cap_reduced"><span class="header-section-number">2.2.17</span> wrightclass_v16_cap_reduced</h3>
 <p>Se dejarán como Capitalists aquellos con iniciación de actividades como empresa.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v16_emp_reduced =</span> <span class="fu">case_when</span>(</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v16_cap_reduced =</span> <span class="fu">case_when</span>(</span>
 <span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> inicio_empresa <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>,                                             <span class="co"># 1. Capitalists</span></span>
 <span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>      </span>
 <span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> (inicio_empresa <span class="sc">==</span> <span class="dv">0</span> <span class="sc">|</span> <span class="fu">is.na</span>(inicio_empresa)) <span class="sc">~</span> <span class="dv">2</span>,                   <span class="co"># 2. Small employers</span></span>
@@ -1675,8 +1675,8 @@ Value                               |    N | Raw % | Valid % | Cum. %
 <span id="cb64-20"><a href="#cb64-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">9</span>,                                                     <span class="co"># 9. Informal self-employed</span></span>
 <span id="cb64-21"><a href="#cb64-21" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> boleta <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> inicio_activ <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">9</span>                                  <span class="co"># 9. Informal self-employed</span></span>
 <span id="cb64-22"><a href="#cb64-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb64-23"><a href="#cb64-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v16_emp_reduced =</span> <span class="fu">factor</span>(</span>
-<span id="cb64-24"><a href="#cb64-24" aria-hidden="true" tabindex="-1"></a>      wrightclass_v16_emp_reduced,</span>
+<span id="cb64-23"><a href="#cb64-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v16_cap_reduced =</span> <span class="fu">factor</span>(</span>
+<span id="cb64-24"><a href="#cb64-24" aria-hidden="true" tabindex="-1"></a>      wrightclass_v16_cap_reduced,</span>
 <span id="cb64-25"><a href="#cb64-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
 <span id="cb64-26"><a href="#cb64-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
 <span id="cb64-27"><a href="#cb64-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Capitalists"</span>,</span>
@@ -1691,9 +1691,9 @@ Value                               |    N | Raw % | Valid % | Cum. %
 <span id="cb64-36"><a href="#cb64-36" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb64-37"><a href="#cb64-37" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb64-38"><a href="#cb64-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb64-39"><a href="#cb64-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v16_emp_reduced =</span> <span class="st">"Wright Class Typology Reduced (v16)"</span>)</span>
+<span id="cb64-39"><a href="#cb64-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v16_cap_reduced =</span> <span class="st">"Wright Class Typology Reduced (v16)"</span>)</span>
 <span id="cb64-40"><a href="#cb64-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-41"><a href="#cb64-41" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v16_emp_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb64-41"><a href="#cb64-41" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v16_cap_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology Reduced (v16) (x) &lt;categorical&gt; 
 # total N=3048 valid N=3039 mean=6.13 sd=2.17
@@ -1716,7 +1716,7 @@ Value                               |    N | Raw % | Valid % | Cum. %
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla de frecuencias ponderadas</span></span>
 <span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="ot">&lt;-</span> data_svy <span class="sc">%&gt;%</span></span>
-<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass_v16_emp_reduced) <span class="sc">%&gt;%</span></span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass_v16_cap_reduced) <span class="sc">%&gt;%</span></span>
 <span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">freq =</span> <span class="fu">survey_mean</span>(<span class="at">vartype =</span> <span class="cn">NULL</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_unweighted =</span> <span class="fu">unweighted</span>(<span class="fu">n</span>())</span>
@@ -1729,7 +1729,7 @@ Value                               |    N | Raw % | Valid % | Cum. %
 <span id="cb66-16"><a href="#cb66-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 4
-   wrightclass_v16_emp_reduced            freq n_unweighted freq_pct
+   wrightclass_v16_cap_reduced            freq n_unweighted freq_pct
    &lt;fct&gt;                                 &lt;dbl&gt;        &lt;int&gt;    &lt;dbl&gt;
  1 1. Capitalists                      0.00280           15    0.280
  2 2. Small employers                  0.0866           368    8.66 

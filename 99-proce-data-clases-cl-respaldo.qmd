@@ -1,0 +1,385 @@
+# Procesamiento Data Clases Chile
+
+Capítulo para procesar la Data Conclat Chile con los esquemas de clases ya generados. Datos actualizados para el 26/03/2026.
+
+## Preparación
+
+```{r librerias, echo=FALSE, warning=FALSE, message=FALSE}
+rm(list=ls())
+options(scipen = 999)
+
+# install.packages("pacman")
+library(pacman)
+p_load(
+  # generacion docs 
+  flextable,         # tablas personalizadas para word
+  kableExtra,        # mejorar tablas
+  knitr,             # generar reportes reproducibles
+  officer,           # crear/modifcar documentos word o ppt
+  tinytex,           # instalación mínima de LaTeX para generar PDF
+  
+  # importacion datos 
+  haven,             # impotar/exportar datos spss, stata, sas con etiquetas
+  readr,             # lectura rápida de csv
+  readxl,            # leer excel 
+  
+  # manipulacion 
+  forcats,           # manipulación de factores
+  janitor,           # limpia etiquetas
+  labelled,          # trabajar con variables etiquetadas
+  purrr,             # programación funcional para listas y data frames
+  sjlabelled,        # manejar etiquetas 
+  stringr,           # manipular texto
+  sjmisc,            # limpieza y descripción de datos
+  
+  # visualizacion
+  ggplot2,           # visualización basado en gramática de gráficos
+  ggrepel,           # etiquetas en gráficos sin superposición
+  gridExtra,         # combinar gráficos en uno solo
+  scales,            # controla cómo se ven los ejes en gráficos
+  sjPlot,            # visualizar resultados estadísticos
+  
+  # analisis
+  psych,             # análisis general, psicométrico
+  survey,            # diseño survey encuestas complejas
+  srvyr,             # diseño survey con tidy
+  rlang,             # motor interno de tidyverse, para usar expresiones 
+  tidyverse,
+  statar             # conectar con el lenguaje stata
+
+  # # conexion web
+  # curl,              # conexiones http de bajo nivel: para solucionar el problema de la api del ine
+  # httr               # cliente http para API
+  )
+```
+
+### Cargar datos
+
+```{r datos, message=FALSE, warning=FALSE}
+data <- readRDS("output/data/data-clases-cl.rds")
+```
+
+## Procesamiento
+
+### c01_02_rec
+
+```{r}
+frq(data$c01_02)
+
+labs <- get_labels(data$c01_02, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c01_02_rec = if_else(
+      c01_02 %in% c(-888, -999), NA_real_, as.numeric(c01_02)
+    )
+  ) %>% 
+  set_variable_labels(c01_02_rec = "Importance of unions: in reducing inequality") %>%
+  set_value_labels(c01_02_rec = labs_num)
+
+frq(data$c01_02_rec)
+```
+
+### c01_03_rec
+
+```{r}
+frq(data$c01_03)
+
+labs <- get_labels(data$c01_03, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c01_03_rec = if_else(
+      c01_03 %in% c(-888, -999), NA_real_, as.numeric(c01_03)
+    )
+  ) %>% 
+  set_variable_labels(c01_03_rec = "Importance of unions: in protecting women workers' rights") %>%
+  set_value_labels(c01_03_rec = labs_num)
+
+frq(data$c01_03_rec)
+```
+
+### c01_04_rec
+
+```{r}
+frq(data$c01_04)
+
+labs <- get_labels(data$c01_04, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c01_04_rec = if_else(
+      c01_04 %in% c(-888, -999), NA_real_, as.numeric(c01_04) 
+    )
+  ) %>% 
+  set_variable_labels(c01_04_rec = "Importance of unions: in protecting informal workers' rights") %>%
+  set_value_labels(c01_04_rec = labs_num)
+
+frq(data$c01_04_rec)
+```
+
+### c01_05_rec
+
+```{r}
+frq(data$c01_05)
+
+labs <- get_labels(data$c01_05, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c01_05_rec = if_else(
+      c01_05 %in% c(-888, -999), NA_real_, as.numeric(c01_05)
+    )
+  ) %>% 
+  set_variable_labels(c01_05_rec = "Importance of unions: in helping work-family balance") %>%
+  set_value_labels(c01_05_rec = labs_num)
+
+frq(data$c01_05_rec)
+```
+
+### c01_06_rec
+
+```{r}
+frq(data$c01_06)
+
+labs <- get_labels(data$c01_06, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>%
+  mutate(
+    c01_06_rec = if_else(c01_06 %in% c(-888, -999), NA_real_, as.numeric(c01_06)
+    )
+  ) %>% 
+  set_variable_labels(c01_06_rec = "Importance of unions: in helping the economy grow") %>%
+  set_value_labels(c01_06_rec = labs_num)
+
+frq(data$c01_06_rec)
+```
+
+### c07_03_dummy
+
+```{r}
+frq(data$c07_03)
+
+data <- data %>%
+  mutate(
+    c07_03_dummy = case_when(
+      c07_03 %in% c(4, 5) ~ 1,
+      c07_03 %in% c(1, 2, 3, -888, -999) ~ 0, 
+      .default = NA_real_
+    ))%>% 
+  set_variable_labels(c07_03_dummy = "Level of agreement: Implement laws to give unions more bargaining power (1 = agree)") %>% 
+  set_value_labels(c07_03_dummy = c(
+    "Agree" = 1,
+    "Disagree" = 0
+  ))
+
+frq(data$c07_03_dummy)
+```
+
+### b29_dummy
+
+```{r}
+frq(data$b29)
+
+data <- data %>%
+  mutate(
+    b29_dummy = case_when(
+      b29 %in% c(3, 4, 5) ~ 1,
+      b29 %in% c(1, 2, -888, -999) ~ 0, 
+      .default = NA_real_
+    ))%>% 
+  set_variable_labels(b29_dummy = "Possibility of joining a union (1 = yes)") %>% 
+  set_value_labels(b29_dummy = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$b29_dummy)
+```
+
+### b29_dummy2
+
+```{r}
+data <- data %>%
+  mutate(
+    b29_dummy2 = case_when(
+      b29 %in% c(4, 5) ~ 1,
+      b29 %in% c(1, 2, 3, -888, -999) ~ 0, 
+      .default = TRUE
+    ))%>% 
+  set_variable_labels(b29_dummy2 = "Possibility of joining a union (1 = yes) (2)") %>% 
+  set_value_labels(b29_dummy2 = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$b29_dummy2)
+```
+
+## Controls
+
+### female
+
+```{r}
+frq(data$e01)
+
+data <- data %>%
+  mutate(
+    female = case_when(
+      e01 == 1 ~ 0,
+      e01 == 2 ~ 1
+    )
+  ) %>% 
+  set_variable_labels(female = "Gender (1 = female)") %>% 
+  set_value_labels(female = c(
+    "Female" = 1, 
+    "Male" = 0
+  ))
+
+frq(data$female)
+```
+
+### age
+
+```{r}
+descr(data$e02)
+
+data <- data %>%
+  mutate(
+    age = if_else(
+      e02 %in% c(-888, -999), NA_real_, as.numeric(e02)
+    )
+  ) %>% 
+  set_variable_labels(age = "Age")
+
+descr(data$age)
+```
+
+### sector
+
+```{r}
+frq(data$a07)
+
+data <- data %>%
+  mutate(
+    sector=case_when(
+      as.numeric(a07) %in% c(1, 2, 5, 6, 7, 9) ~ 1,
+      as.numeric(a07) %in% c(3, 4, 8) ~ 0,
+      .default = NA_real_
+    ))%>% 
+  set_variable_labels(sector = "Sector (1 = private)") %>% 
+  set_value_labels(sector = c(
+    "Private" = 1,
+    "Public" = 0
+  ))
+
+frq(data$sector)
+```
+
+### rama
+
+```{r,warning=FALSE,message=FALSE}
+frq(data$a25_rec)
+
+data <- data %>% 
+  mutate(
+    rama = a25_rec
+  ) %>% 
+  set_variable_labels(rama = "Economic Activity")
+
+frq(data$rama)
+```
+
+### unions
+
+```{r}
+frq(data$b19)
+
+# Sindicatos en empresas
+data <- data %>%
+  mutate(
+    unions = case_when(
+      as.numeric(relation_mop) %in% c(1, 2) ~ NA_real_,
+      as.numeric(relation_mop) == 3 & b19 == 1 ~ 1,
+      as.numeric(relation_mop) == 3 & b19 %in% c(2, -888, -999) ~ 0,
+      .default = NA_real_
+    )
+  ) %>% 
+  set_variable_labels(unions = "Unions in company (1 = yes)") %>%
+  set_value_labels(unions = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$unions)
+```
+
+### union_member
+
+```{r,warning=FALSE,message=FALSE}
+frq(data$b21)
+
+# Afiliación sindical
+data <- data %>%
+  mutate(
+    union_member = case_when(
+      as.numeric(relation_mop) %in% c(1, 2) ~ 0,
+      as.numeric(relation_mop) == 3 & b21 %in% c(1, 2) ~ 1,
+      as.numeric(relation_mop) == 3 & b21 %in% c(3, -888, -999) ~ 0,
+      unions == 0 ~ 0,
+      .default = NA_real_
+    )
+  ) %>%
+  set_variable_labels(union_member = "Union membership (1 = yes)") %>%
+  set_value_labels(union_member = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$union_member)
+```
+
+### pol_id
+
+```{r}
+frq(data$c08)
+
+data <- data %>%
+  mutate(
+    pol_id = factor(
+      case_when(
+        c08 %in% c(0, 1, 2, 3) ~ 1,
+        c08 %in% c(4, 5, 6) ~ 2,
+        c08 %in% c(7, 8, 9, 10) ~ 3,
+        c08 %in% c(11, 12, -888, -999) ~ 4,
+        .default = NA_real_
+      ),
+      levels = 1:4, 
+      labels = c(
+        "Left", 
+        "Center", 
+        "Right", 
+        "Not identified"
+        ) 
+      )
+    ) %>%
+  set_variable_labels(pol_id = "Political identification") 
+
+frq(data$pol_id)
+```
+
+## Guardar datos
+
+```{r}
+saveRDS(data, file="output/data/datos-clases-cl.rds")
+```
