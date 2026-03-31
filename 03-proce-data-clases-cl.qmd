@@ -534,15 +534,19 @@ frq(data$d03)
 data <- data %>% 
   mutate(
     workingclass_id2 = case_when(
-      d03 %in% c(4, 5, 6) ~ 1, 
-      d03 %in% c(1, 2, 3, 7, -888, -999) ~ 0, 
+      d03 == 4 ~ 1,
+      d03 == 5 ~ 2,
+      d03 == 6 ~ 3,
+      d03 %in% c(1, 2, 3, 7, -888, -999) ~ 4, 
       .default = NA_real_
     )
   ) %>% 
   set_variable_labels(workingclass_id2 = "Identification with the working class (1 = yes) (2)") %>% 
   set_value_labels(workingclass_id2 = c(
-    "Yes" = 1,
-    "No" = 0
+    "Clase trabajadora" = 1,
+    "Clase obrera" = 2,
+    "El pueblo" = 3,
+    "Otro" = 4
   ))
 
 frq(data$workingclass_id2)
@@ -616,7 +620,22 @@ frq(data$a25_rec)
 data <- data %>% 
   mutate(
     rama = a25_rec
-  ) %>% 
+  ) 
+
+data <- data %>% 
+  mutate(
+    rama = factor(
+      case_when(
+        rama==1~"A",
+        rama==2|rama==3~"BC",
+        rama==4|rama==5|rama==6~"DEF",
+        rama==7|rama==8~"GI",
+        rama==9~"H",
+        rama==10|rama==11|rama==12|rama==13|rama==14~"JKLMN",
+        rama==15~"O",
+        rama==16|rama==17~"PQ",
+        rama==18|rama==19|rama==20~"RSU",
+        rama==21~"T"))) %>% 
   set_variable_labels(rama = "Economic Activity")
 
 frq(data$rama)

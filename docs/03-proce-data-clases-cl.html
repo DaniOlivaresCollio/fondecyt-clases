@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Procesamiento Data Clases Chile – Esquema de clases Fondecyt</title>
+<title>3&nbsp; Procesamiento Data Clases Chile – Marxismo de clases Fondecyt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -134,7 +134,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <a href="./index.html" class="sidebar-logo-link">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Esquema de clases Fondecyt</a> 
+      <a href="./">Marxismo de clases Fondecyt</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -1405,27 +1405,33 @@ Value |                 Label |    N | Raw % | Valid % | Cum. %
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">workingclass_id2 =</span> <span class="fu">case_when</span>(</span>
-<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a>      d03 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>) <span class="sc">~</span> <span class="dv">1</span>, </span>
-<span id="cb94-5"><a href="#cb94-5" aria-hidden="true" tabindex="-1"></a>      d03 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">0</span>, </span>
-<span id="cb94-6"><a href="#cb94-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="cn">NA_real_</span></span>
-<span id="cb94-7"><a href="#cb94-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb94-8"><a href="#cb94-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb94-9"><a href="#cb94-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">workingclass_id2 =</span> <span class="st">"Identification with the working class (1 = yes) (2)"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb94-10"><a href="#cb94-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">workingclass_id2 =</span> <span class="fu">c</span>(</span>
-<span id="cb94-11"><a href="#cb94-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Yes"</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
-<span id="cb94-12"><a href="#cb94-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"No"</span> <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb94-13"><a href="#cb94-13" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb94-14"><a href="#cb94-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb94-15"><a href="#cb94-15" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>workingclass_id2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a>      d03 <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb94-5"><a href="#cb94-5" aria-hidden="true" tabindex="-1"></a>      d03 <span class="sc">==</span> <span class="dv">5</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb94-6"><a href="#cb94-6" aria-hidden="true" tabindex="-1"></a>      d03 <span class="sc">==</span> <span class="dv">6</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb94-7"><a href="#cb94-7" aria-hidden="true" tabindex="-1"></a>      d03 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">4</span>, </span>
+<span id="cb94-8"><a href="#cb94-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="cn">NA_real_</span></span>
+<span id="cb94-9"><a href="#cb94-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb94-10"><a href="#cb94-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb94-11"><a href="#cb94-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">workingclass_id2 =</span> <span class="st">"Identification with the working class (1 = yes) (2)"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb94-12"><a href="#cb94-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">workingclass_id2 =</span> <span class="fu">c</span>(</span>
+<span id="cb94-13"><a href="#cb94-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Clase trabajadora"</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
+<span id="cb94-14"><a href="#cb94-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Clase obrera"</span> <span class="ot">=</span> <span class="dv">2</span>,</span>
+<span id="cb94-15"><a href="#cb94-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"El pueblo"</span> <span class="ot">=</span> <span class="dv">3</span>,</span>
+<span id="cb94-16"><a href="#cb94-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Otro"</span> <span class="ot">=</span> <span class="dv">4</span></span>
+<span id="cb94-17"><a href="#cb94-17" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb94-18"><a href="#cb94-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb94-19"><a href="#cb94-19" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>workingclass_id2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Identification with the working class (1 = yes) (2) (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=0.67 sd=0.47
+# total N=3048 valid N=3048 mean=2.33 sd=1.32
 
-Value | Label |    N | Raw % | Valid % | Cum. %
------------------------------------------------
-    0 |    No | 1002 | 32.87 |   32.87 |  32.87
-    1 |   Yes | 2046 | 67.13 |   67.13 | 100.00
- &lt;NA&gt; |  &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |             Label |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------
+    1 | Clase trabajadora | 1326 | 43.50 |   43.50 |  43.50
+    2 |      Clase obrera |  404 | 13.25 |   13.25 |  56.76
+    3 |         El pueblo |  316 | 10.37 |   10.37 |  67.13
+    4 |              Otro | 1002 | 32.87 |   32.87 | 100.00
+ &lt;NA&gt; |              &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -1671,97 +1677,42 @@ O. Administración pública y defensa (ej., trabajo en el Estado y municipalidad
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb110-3"><a href="#cb110-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">rama =</span> a25_rec</span>
-<span id="cb110-4"><a href="#cb110-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb110-5"><a href="#cb110-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">rama =</span> <span class="st">"Economic Activity"</span>)</span>
-<span id="cb110-6"><a href="#cb110-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb110-7"><a href="#cb110-7" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>rama)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb110-4"><a href="#cb110-4" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb110-5"><a href="#cb110-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-6"><a href="#cb110-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb110-7"><a href="#cb110-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb110-8"><a href="#cb110-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">rama =</span> <span class="fu">factor</span>(</span>
+<span id="cb110-9"><a href="#cb110-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">case_when</span>(</span>
+<span id="cb110-10"><a href="#cb110-10" aria-hidden="true" tabindex="-1"></a>        rama<span class="sc">==</span><span class="dv">1</span><span class="sc">~</span><span class="st">"A"</span>,</span>
+<span id="cb110-11"><a href="#cb110-11" aria-hidden="true" tabindex="-1"></a>        rama<span class="sc">==</span><span class="dv">2</span><span class="sc">|</span>rama<span class="sc">==</span><span class="dv">3</span><span class="sc">~</span><span class="st">"BC"</span>,</span>
+<span id="cb110-12"><a href="#cb110-12" aria-hidden="true" tabindex="-1"></a>        rama<span class="sc">==</span><span class="dv">4</span><span class="sc">|</span>rama<span class="sc">==</span><span class="dv">5</span><span class="sc">|</span>rama<span class="sc">==</span><span class="dv">6</span><span class="sc">~</span><span class="st">"DEF"</span>,</span>
+<span id="cb110-13"><a href="#cb110-13" aria-hidden="true" tabindex="-1"></a>        rama<span class="sc">==</span><span class="dv">7</span><span class="sc">|</span>rama<span class="sc">==</span><span class="dv">8</span><span class="sc">~</span><span class="st">"GI"</span>,</span>
+<span id="cb110-14"><a href="#cb110-14" aria-hidden="true" tabindex="-1"></a>        rama<span class="sc">==</span><span class="dv">9</span><span class="sc">~</span><span class="st">"H"</span>,</span>
+<span id="cb110-15"><a href="#cb110-15" aria-hidden="true" tabindex="-1"></a>        rama<span class="sc">==</span><span class="dv">10</span><span class="sc">|</span>rama<span class="sc">==</span><span class="dv">11</span><span class="sc">|</span>rama<span class="sc">==</span><span class="dv">12</span><span class="sc">|</span>rama<span class="sc">==</span><span class="dv">13</span><span class="sc">|</span>rama<span class="sc">==</span><span class="dv">14</span><span class="sc">~</span><span class="st">"JKLMN"</span>,</span>
+<span id="cb110-16"><a href="#cb110-16" aria-hidden="true" tabindex="-1"></a>        rama<span class="sc">==</span><span class="dv">15</span><span class="sc">~</span><span class="st">"O"</span>,</span>
+<span id="cb110-17"><a href="#cb110-17" aria-hidden="true" tabindex="-1"></a>        rama<span class="sc">==</span><span class="dv">16</span><span class="sc">|</span>rama<span class="sc">==</span><span class="dv">17</span><span class="sc">~</span><span class="st">"PQ"</span>,</span>
+<span id="cb110-18"><a href="#cb110-18" aria-hidden="true" tabindex="-1"></a>        rama<span class="sc">==</span><span class="dv">18</span><span class="sc">|</span>rama<span class="sc">==</span><span class="dv">19</span><span class="sc">|</span>rama<span class="sc">==</span><span class="dv">20</span><span class="sc">~</span><span class="st">"RSU"</span>,</span>
+<span id="cb110-19"><a href="#cb110-19" aria-hidden="true" tabindex="-1"></a>        rama<span class="sc">==</span><span class="dv">21</span><span class="sc">~</span><span class="st">"T"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb110-20"><a href="#cb110-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">rama =</span> <span class="st">"Economic Activity"</span>)</span>
+<span id="cb110-21"><a href="#cb110-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-22"><a href="#cb110-22" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>rama)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Economic Activity (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=10.01 sd=28.83
+<pre><code>Economic Activity (x) &lt;categorical&gt; 
+# total N=3048 valid N=3045 mean=5.48 sd=2.61
 
-Value
------
- -999
- -888
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-   10
-   11
-   12
-   13
-   14
-   15
-   16
-   17
-   18
-   19
-   20
-   21
-   22
- &lt;NA&gt;
-
-                                                                                                                                           Label
-------------------------------------------------------------------------------------------------------------------------------------------------
-                                                                                                                           No responde (no leer)
-                                                                                                                               No sabe (no leer)
-                                                                                                 A. Agricultura, ganadería, silvicultura y pesca
-                                                                                                              B. Explotación de minas y canteras
-   C. Industrias manufactureras (elaboración y fabricación de productos de cualquier tipo, por ej., alimentos, textiles, madera, químicos, etc.)
-                                                                                  D. Suministro de electricidad, gas, vapor y aire acondicionado
-                                                   E. Suministro de agua, evacuación de aguas residuales, gestión de desechos y descontaminación
-                                                                                                                                 F. Construcción
-                                                     G. Comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas
-                                                                                                                  H. Transporte y almacenamiento
-                                                                                             I. Actividades de alojamiento y servicio de comidas
-                             J. Información y comunicaciones (ej., edición de libros, producción de películas, telecomunicaciones e informática)
-                                                                         K. Actividades financieras y de seguros (ej., bancos y seguros de vida)
-                                                                                                                    L. Actividades inmobiliarias
-                          M. Actividades profesionales, científicas y técnicas (ej., oficinas de abogados, publicidad, investigación científica)
-           N. Servicios administrativos y de apoyo (ej., arriendo de vehículos y maquinaria, servicios de seguridad privada, call centers, etc.)
-O. Administración pública y defensa (ej., trabajo en el Estado y municipalidades, orden público o en seguridad social de afiliación obligatoria)
-                                                                                                                                    P. Enseñanza
-                                                                                           Q. Atención de la salud humana y de asistencia social
-              R. Actividades artísticas, de entretenimiento y recreativas (ej., trabajo en librerías, centros deportivos o parques de diversión)
-                                        S. Otras actividades de servicios (ej., lavado de ropa, peluquería o trabajo en organizaciones sociales)
-                                           T. Actividades no diferenciadas de los hogares como productores de bienes y servicios para uso propio
-                                                                                                  U. Organizaciones y órganos extraterriroriales
-                                                                                                                          Otra. Especifique cuál
-                                                                                                                                            &lt;NA&gt;
-
-  N | Raw % | Valid % | Cum. %
-------------------------------
-  0 |  0.00 |    0.00 |   0.00
-  3 |  0.10 |    0.10 |   0.10
-193 |  6.33 |    6.33 |   6.43
- 97 |  3.18 |    3.18 |   9.61
-191 |  6.27 |    6.27 |  15.88
- 43 |  1.41 |    1.41 |  17.29
- 20 |  0.66 |    0.66 |  17.95
-187 |  6.14 |    6.14 |  24.08
-466 | 15.29 |   15.29 |  39.37
-186 |  6.10 |    6.10 |  45.47
-174 |  5.71 |    5.71 |  51.18
- 46 |  1.51 |    1.51 |  52.69
- 40 |  1.31 |    1.31 |  54.00
- 28 |  0.92 |    0.92 |  54.92
-108 |  3.54 |    3.54 |  58.46
-119 |  3.90 |    3.90 |  62.37
-130 |  4.27 |    4.27 |  66.63
-191 |  6.27 |    6.27 |  72.90
-272 |  8.92 |    8.92 |  81.82
- 63 |  2.07 |    2.07 |  83.89
-412 | 13.52 |   13.52 |  97.41
- 49 |  1.61 |    1.61 |  99.02
- 30 |  0.98 |    0.98 | 100.00
-  0 |  0.00 |    0.00 | 100.00
-  0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+A     | 193 |  6.33 |    6.34 |   6.34
+BC    | 288 |  9.45 |    9.46 |  15.80
+DEF   | 250 |  8.20 |    8.21 |  24.01
+GI    | 652 | 21.39 |   21.41 |  45.42
+H     | 174 |  5.71 |    5.71 |  51.13
+JKLMN | 341 | 11.19 |   11.20 |  62.33
+O     | 130 |  4.27 |    4.27 |  66.60
+PQ    | 463 | 15.19 |   15.21 |  81.81
+RSU   | 524 | 17.19 |   17.21 |  99.01
+T     |  30 |  0.98 |    0.99 | 100.00
+&lt;NA&gt;  |   3 |  0.10 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>

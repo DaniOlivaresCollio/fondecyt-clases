@@ -2,7 +2,7 @@
 
 # Presentación {.unnumbered}
 
-Este libro corresponde al repositorio de procesamiento y análisis de la base de datos de la **Encuesta CONCLAT** aplicada en Chile, para realizar la construcción de clases de Erik Olin Wright.
+Este libro corresponde al repositorio de procesamiento y análisis de la base de datos de la **Encuesta CONCLAT** aplicada en Chile, para realizar la construcción de clases de Erik Olin Wright. Para capìtulo sobre clases en Chile. 
 
 En el [primer capítulo](01-proce-data-conclat-cl.html) se preparan los datos de Chile generando las variables necesarias para armar los esquemas de clases, en el [segundo capítulo](02-esquemas-clases-cl.html) se arman diferentes esquemas de clases con los datos de Chile, y en el [tercer capítulo](03-proce-data-clases-cl.html) se realiza la recodificación de algunas variables de interés.
 
