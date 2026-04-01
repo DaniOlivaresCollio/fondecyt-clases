@@ -1,6 +1,6 @@
-# Procesamiento Data Clases Chile
+# Marxismo de Clases Chile
 
-Capítulo para procesar la Data Conclat Chile con los esquemas de clases ya generados. Datos actualizados para el 26/03/2026.
+Capítulo para armar datos para Capítulo de Libro de Marxismo de Clases. Por tanto, se procesa la Data Conclat Chile con los esquemas de clases ya generados, creando variables nuevas. Datos actualizados para el 26/03/2026.
 
 ## Preparación
 
@@ -530,6 +530,7 @@ frq(data$workingclass_people_id)
 
 ```{r}
 frq(data$d03)
+frq(data$d03_esp)
 
 data <- data %>% 
   mutate(
@@ -619,23 +620,20 @@ frq(data$a25_rec)
 
 data <- data %>% 
   mutate(
-    rama = a25_rec
-  ) 
-
-data <- data %>% 
-  mutate(
     rama = factor(
       case_when(
-        rama==1~"A",
-        rama==2|rama==3~"BC",
-        rama==4|rama==5|rama==6~"DEF",
-        rama==7|rama==8~"GI",
-        rama==9~"H",
-        rama==10|rama==11|rama==12|rama==13|rama==14~"JKLMN",
-        rama==15~"O",
-        rama==16|rama==17~"PQ",
-        rama==18|rama==19|rama==20~"RSU",
-        rama==21~"T"))) %>% 
+        a25_rec == 1               ~ "A",
+        a25_rec %in% c(2, 3)       ~ "BC",
+        a25_rec %in% c(4, 5, 6)    ~ "DEF",
+        a25_rec %in% c(7, 8)       ~ "GI",
+        a25_rec == 9               ~ "H",
+        a25_rec %in% c(10:14)      ~ "JKLMN",
+        a25_rec == 15              ~ "O",
+        a25_rec %in% c(16, 17)     ~ "PQ",
+        a25_rec %in% c(18, 19, 20) ~ "RSU",
+        a25_rec == 21              ~ "T"
+    ))
+  ) %>% 
   set_variable_labels(rama = "Economic Activity")
 
 frq(data$rama)
@@ -693,5 +691,5 @@ frq(data$left_id)
 ## Guardar datos
 
 ```{r}
-saveRDS(data, file="output/data/data-clases-cl.rds")
+saveRDS(data, file="output/data/data-marxismo-clases-cl.rds")
 ```

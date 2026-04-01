@@ -1,0 +1,249 @@
+# Gráficos de Clases Chile
+
+Capítulo para armar gráficos de los esquemas de Clases. Datos actualizados para el 26/03/2026.
+
+## Preparación
+
+```{r librerias, echo=FALSE, warning=FALSE, message=FALSE}
+rm(list=ls())
+options(scipen = 999)
+
+# install.packages("pacman")
+library(pacman)
+p_load(
+  # generacion docs 
+  flextable,         # tablas personalizadas para word
+  kableExtra,        # mejorar tablas
+  knitr,             # generar reportes reproducibles
+  officer,           # crear/modifcar documentos word o ppt
+  tinytex,           # instalación mínima de LaTeX para generar PDF
+  
+  # importacion datos 
+  haven,             # impotar/exportar datos spss, stata, sas con etiquetas
+  readr,             # lectura rápida de csv
+  readxl,            # leer excel 
+  
+  # manipulacion 
+  forcats,           # manipulación de factores
+  janitor,           # limpia etiquetas
+  labelled,          # trabajar con variables etiquetadas
+  purrr,             # programación funcional para listas y data frames
+  sjlabelled,        # manejar etiquetas 
+  stringr,           # manipular texto
+  sjmisc,            # limpieza y descripción de datos
+  
+  # visualizacion
+  ggplot2,           # visualización basado en gramática de gráficos
+  ggrepel,           # etiquetas en gráficos sin superposición
+  gridExtra,         # combinar gráficos en uno solo
+  scales,            # controla cómo se ven los ejes en gráficos
+  sjPlot,            # visualizar resultados estadísticos
+  
+  # analisis
+  psych,             # análisis general, psicométrico
+  survey,            # diseño survey encuestas complejas
+  srvyr,             # diseño survey con tidy
+  rlang,             # motor interno de tidyverse, para usar expresiones 
+  tidyverse,
+  statar             # conectar con el lenguaje stata
+
+  # # conexion web
+  # curl,              # conexiones http de bajo nivel: para solucionar el problema de la api del ine
+  # httr               # cliente http para API
+  )
+```
+
+### Cargar datos
+
+```{r datos, message=FALSE, warning=FALSE}
+data <- readRDS("output/data/data-marxismo-clases-cl.rds")
+
+# base survey
+data_svy <- as_survey_design(data, weights = rake_wb2)
+```
+
+## Gráficos
+
+### wrightclass_v1 x sexo
+
+```{r}
+frq(data$wrightclass_v1_original)
+
+data <- data %>% 
+  mutate(
+    sexo = factor(
+      case_when(
+        e01 == 1 ~ "Hombre",
+        e01 == 2 ~ "Mujer"
+      )
+    )
+  ) %>% 
+  set_variable_labels(sexo = "Sexo")
+
+# base survey
+data_svy <- as_survey_design(data, weights = rake_wb2)
+```
+
+```{r}
+#| fig-width: 8
+#| fig-height: 8
+
+# Calcular porcentajes ponderados por sexo
+class_pct_sex <- data_svy %>%
+  filter(!is.na(wrightclass_v1_original), !is.na(sexo)) %>%
+  group_by(sexo, wrightclass_v1_original) %>%
+  summarise(pct = survey_mean(na.rm = TRUE) * 100, .groups = "drop")
+
+# Calcular N válido (sin NA en ninguna de las dos variables)
+n_valido <- data %>%
+  filter(!is.na(wrightclass_v1_original), !is.na(sexo)) %>%
+  nrow()
+
+# Gráfico horizontal agrupado
+grafico <- ggplot(class_pct_sex, aes(x = fct_rev(wrightclass_v1_original), y = pct, fill = sexo)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.65) +
+  geom_text(
+    aes(label = paste0(round(pct, 1), "%")),
+    position = position_dodge(width = 0.7),
+    hjust = -0.15,
+    size = 3.0,
+    color = "gray20"
+  ) +
+  scale_fill_manual(values = c("Hombre" = "#ca0000", "Mujer" = "#ff5651")) +
+  scale_y_continuous(
+    limits = c(0, max(class_pct_sex$pct) * 1.18),
+    labels = scales::label_percent(scale = 1)
+  ) +
+  coord_flip() +
+  labs(
+    title = "Distribución por clase social dentro de cada sexo",
+    subtitle = "Porcentajes ponderados",
+    x = "Clase social",
+    y = "Porcentaje",
+    fill = "Sexo",
+    caption = paste0("Fuente: Elaboración propia con datos de la Encuesta Conclat Chile 2024. Datos ponderados. N = ", n_valido)
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(face = "bold", color = "#6f0000"),
+    plot.subtitle = element_text(color = "grey40"),
+    plot.caption = element_text(size = 8, color = "gray40", hjust = 0.5),
+    legend.position = "right",
+    axis.title.y = element_text(margin = margin(r = 10))
+  )
+
+grafico
+
+ggsave("output/graph-clases/wrightclass_v1_sexo.png", plot = grafico, width = 8, height = 8, dpi = 300)
+```
+
+### wrightclass_v15_emp_reduced
+
+```{r}
+#| fig-width: 8
+#| fig-height: 8
+
+# Calcular porcentajes ponderados
+class_pct <- data_svy %>%
+  filter(!is.na(wrightclass_v15_emp_reduced)) %>%
+  group_by(wrightclass_v15_emp_reduced) %>%
+  summarise(pct = survey_mean(na.rm = TRUE) * 100, .groups = "drop")
+
+# Calcular N válido
+n_valido <- data %>%
+  filter(!is.na(wrightclass_v15_emp_reduced)) %>%
+  nrow()
+
+# Gráfico horizontal
+grafico <- ggplot(class_pct, aes(x = fct_rev(wrightclass_v15_emp_reduced), y = pct)) +
+  geom_col(fill = "#ca0000", width = 0.65) +
+  geom_text(
+    aes(label = paste0(round(pct, 1), "%")),
+    hjust = -0.15,
+    size = 3.0,
+    color = "gray20"
+  ) +
+  scale_y_continuous(
+    limits = c(0, max(class_pct$pct) * 1.18),
+    labels = scales::label_percent(scale = 1)
+  ) +
+  coord_flip() +
+  labs(
+    title = "Distribución por clase social",
+    subtitle = "Porcentajes ponderados",
+    x = "Clase social",
+    y = "Porcentaje",
+    caption = paste0("Fuente: Elaboración propia con datos de la Encuesta Conclat Chile 2024. Datos ponderados. N = ", n_valido)
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(face = "bold", color = "#6f0000"),
+    plot.subtitle = element_text(color = "grey40"),
+    plot.caption = element_text(size = 8, color = "gray40", hjust = 0.5),
+    axis.title.y = element_text(margin = margin(r = 10))
+  )
+grafico
+
+ggsave("output/graph-clases/wrightclass_v15.png", plot = grafico, width = 8, height = 8, dpi = 300)
+```
+
+### wrightclass_v15_emp_reduced x sexo
+
+```{r}
+#| fig-width: 8
+#| fig-height: 8
+
+# Calcular porcentajes ponderados por sexo
+class_pct_sex <- data_svy %>%
+  filter(!is.na(wrightclass_v15_emp_reduced), !is.na(sexo)) %>%
+  group_by(sexo, wrightclass_v15_emp_reduced) %>%
+  summarise(pct = survey_mean(na.rm = TRUE) * 100, .groups = "drop")
+
+# Calcular N válido (sin NA en ninguna de las dos variables)
+n_valido <- data %>%
+  filter(!is.na(wrightclass_v15_emp_reduced), !is.na(sexo)) %>%
+  nrow()
+
+# Gráfico horizontal agrupado
+grafico <- ggplot(class_pct_sex, aes(x = fct_rev(wrightclass_v15_emp_reduced), y = pct, fill = sexo)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.65) +
+  geom_text(
+    aes(label = paste0(round(pct, 1), "%")),
+    position = position_dodge(width = 0.7),
+    hjust = -0.15,
+    size = 3.0,
+    color = "gray20"
+  ) +
+  scale_fill_manual(values = c("Hombre" = "#ca0000", "Mujer" = "#ff5651")) +
+  scale_y_continuous(
+    limits = c(0, max(class_pct_sex$pct) * 1.18),
+    labels = scales::label_percent(scale = 1)
+  ) +
+  coord_flip() +
+  labs(
+    title = "Distribución por clase social dentro de cada sexo",
+    subtitle = "Porcentajes ponderados",
+    x = "Clase social",
+    y = "Porcentaje",
+    fill = "Sexo",
+    caption = paste0("Fuente: Elaboración propia con datos de la Encuesta Conclat Chile 2024. Datos ponderados. N = ", n_valido)
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(face = "bold"),
+    plot.subtitle = element_text(color = "grey40"),
+    plot.caption = element_text(size = 8, color = "gray40", hjust = 0.5),
+    legend.position = "right",
+    axis.title.y = element_text(margin = margin(r = 10))
+  )
+
+grafico
+
+ggsave("output/graph-clases/wrightclass_v15_sexo.png", plot = grafico, width = 8, height = 8, dpi = 300)
+```

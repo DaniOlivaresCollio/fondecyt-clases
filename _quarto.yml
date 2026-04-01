@@ -3,14 +3,15 @@ project:
   output-dir: docs
 
 book:
-  title: "Marxismo de clases Fondecyt"
+  title: "Esquemas de clases Fondecyt"
   author: "Pablo Pérez-Ahumada, Daniela Olivares- Collío"
   date: today
   chapters:
     - index.qmd
     - 01-proce-data-conclat-cl.qmd
     - 02-esquemas-clases-cl.qmd
-    - 03-proce-data-clases-cl.qmd
+    - 03-proc-marxism-clases-cl.qmd
+    - 04-graph-clases-cl.qmd
     # - 03-proce-data-conclat-ar.qmd
     # - 04-esquemas-clases-ar.qmd
     # - 05-descriptivos-rodolfo.qmd
