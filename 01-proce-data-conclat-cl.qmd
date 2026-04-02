@@ -265,34 +265,61 @@ frq(data$ciuo08_ine)
 data <- data %>% 
   mutate(
     skills = case_when(
-      # Experts
       ciuo08_ine <= 34 & educ >= 9 ~ 1,
       ciuo08_ine <= 34 & is.na(educ)~ 1,  
-      
-      # Skilled
+
       ciuo08_ine <= 34 & educ < 9 ~ 2,
       ciuo08_ine %in% c(35, 36, 41:44, 53) ~ 2,
       ciuo08_ine %in% c(51, 54, 61, 62, 71:75, 81) & educ >= 5 ~ 2,
       ciuo08_ine %in% c(61, 62, 71:75) & is.na(educ) ~ 2,
-      
-      #Unskilled
+
       ciuo08_ine %in% c(51, 54, 61, 62, 71:75, 81) & educ <= 4 ~ 3,
       ciuo08_ine %in% c(52, 63, 82, 83, 91:99) ~ 3,
-      ciuo08_ine %in% c(51, 54, 81) & is.na(educ) ~ 3,
-      .default = NA_real_
+      ciuo08_ine %in% c(51, 54, 81) & is.na(educ) ~ 3     
     ),
     skills = factor(
       skills, 
       levels = 1:3,
       labels = c(
-        "Experts",
-        "Skilled",
-        "Unskilled"
-      ), 
-      ordered = TRUE
+        "1. Experts",
+        "2. Skilled",
+        "3. Unskilled"
+      )
     )
   ) %>%
   set_variable_labels(skills = "Skills")
+
+# data <- data %>% 
+#   mutate(
+#     skills = case_when(
+#       # Experts
+#       ciuo08_ine <= 34 & educ >= 9 ~ 1,
+#       ciuo08_ine <= 34 & is.na(educ)~ 1,  
+#       
+#       # Skilled
+#       ciuo08_ine <= 34 & educ < 9 ~ 2,
+#       ciuo08_ine %in% c(35, 36, 41:44, 53) ~ 2,
+#       ciuo08_ine %in% c(51, 54, 61, 62, 71:75, 81) & educ >= 5 ~ 2,
+#       ciuo08_ine %in% c(61, 62, 71:75) & is.na(educ) ~ 2,
+#       
+#       #Unskilled
+#       ciuo08_ine %in% c(51, 54, 61, 62, 71:75, 81) & educ <= 4 ~ 3,
+#       ciuo08_ine %in% c(52, 63, 82, 83, 91:99) ~ 3,
+#       ciuo08_ine %in% c(51, 54, 81) & is.na(educ) ~ 3,
+#       .default = NA_real_
+#     ),
+#     skills = factor(
+#       skills, 
+#       levels = 1:3,
+#       labels = c(
+#         "Experts",
+#         "Skilled",
+#         "Unskilled"
+#       ), 
+#       ordered = TRUE
+#     )
+#   ) %>%
+#   set_variable_labels(skills = "Skills")
 
 frq(data$skills)
 ```

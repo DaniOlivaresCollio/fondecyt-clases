@@ -762,46 +762,73 @@ Value |   N | Raw % | Valid % | Cum. %
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">skills =</span> <span class="fu">case_when</span>(</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Experts</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> educ <span class="sc">&gt;=</span> <span class="dv">9</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> <span class="fu">is.na</span>(educ)<span class="sc">~</span> <span class="dv">1</span>,  </span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Skilled</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> educ <span class="sc">&lt;</span> <span class="dv">9</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">35</span>, <span class="dv">36</span>, <span class="dv">41</span><span class="sc">:</span><span class="dv">44</span>, <span class="dv">53</span>) <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>, <span class="dv">54</span>, <span class="dv">61</span>, <span class="dv">62</span>, <span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>, <span class="dv">81</span>) <span class="sc">&amp;</span> educ <span class="sc">&gt;=</span> <span class="dv">5</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">61</span>, <span class="dv">62</span>, <span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>) <span class="sc">&amp;</span> <span class="fu">is.na</span>(educ) <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>      <span class="co">#Unskilled</span></span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>, <span class="dv">54</span>, <span class="dv">61</span>, <span class="dv">62</span>, <span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>, <span class="dv">81</span>) <span class="sc">&amp;</span> educ <span class="sc">&lt;=</span> <span class="dv">4</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">52</span>, <span class="dv">63</span>, <span class="dv">82</span>, <span class="dv">83</span>, <span class="dv">91</span><span class="sc">:</span><span class="dv">99</span>) <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>, <span class="dv">54</span>, <span class="dv">81</span>) <span class="sc">&amp;</span> <span class="fu">is.na</span>(educ) <span class="sc">~</span> <span class="dv">3</span>,</span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="cn">NA_real_</span></span>
-<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">skills =</span> <span class="fu">factor</span>(</span>
-<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>      skills, </span>
-<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
-<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
-<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Experts"</span>,</span>
-<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Skilled"</span>,</span>
-<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Unskilled"</span></span>
-<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>      ), </span>
-<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">ordered =</span> <span class="cn">TRUE</span></span>
-<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">skills =</span> <span class="st">"Skills"</span>)</span>
-<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>skills)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> educ <span class="sc">&gt;=</span> <span class="dv">9</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> <span class="fu">is.na</span>(educ)<span class="sc">~</span> <span class="dv">1</span>,  </span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">&lt;=</span> <span class="dv">34</span> <span class="sc">&amp;</span> educ <span class="sc">&lt;</span> <span class="dv">9</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">35</span>, <span class="dv">36</span>, <span class="dv">41</span><span class="sc">:</span><span class="dv">44</span>, <span class="dv">53</span>) <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>, <span class="dv">54</span>, <span class="dv">61</span>, <span class="dv">62</span>, <span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>, <span class="dv">81</span>) <span class="sc">&amp;</span> educ <span class="sc">&gt;=</span> <span class="dv">5</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">61</span>, <span class="dv">62</span>, <span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>) <span class="sc">&amp;</span> <span class="fu">is.na</span>(educ) <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>, <span class="dv">54</span>, <span class="dv">61</span>, <span class="dv">62</span>, <span class="dv">71</span><span class="sc">:</span><span class="dv">75</span>, <span class="dv">81</span>) <span class="sc">&amp;</span> educ <span class="sc">&lt;=</span> <span class="dv">4</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">52</span>, <span class="dv">63</span>, <span class="dv">82</span>, <span class="dv">83</span>, <span class="dv">91</span><span class="sc">:</span><span class="dv">99</span>) <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>      ciuo08_ine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">51</span>, <span class="dv">54</span>, <span class="dv">81</span>) <span class="sc">&amp;</span> <span class="fu">is.na</span>(educ) <span class="sc">~</span> <span class="dv">3</span>     </span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">skills =</span> <span class="fu">factor</span>(</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>      skills, </span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Experts"</span>,</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Skilled"</span>,</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Unskilled"</span></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">skills =</span> <span class="st">"Skills"</span>)</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;% </span></span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a><span class="co">#     skills = case_when(</span></span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a><span class="co">#       # Experts</span></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a><span class="co">#       ciuo08_ine &lt;= 34 &amp; educ &gt;= 9 ~ 1,</span></span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a><span class="co">#       ciuo08_ine &lt;= 34 &amp; is.na(educ)~ 1,  </span></span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a><span class="co">#       # Skilled</span></span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a><span class="co">#       ciuo08_ine &lt;= 34 &amp; educ &lt; 9 ~ 2,</span></span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a><span class="co">#       ciuo08_ine %in% c(35, 36, 41:44, 53) ~ 2,</span></span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a><span class="co">#       ciuo08_ine %in% c(51, 54, 61, 62, 71:75, 81) &amp; educ &gt;= 5 ~ 2,</span></span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a><span class="co">#       ciuo08_ine %in% c(61, 62, 71:75) &amp; is.na(educ) ~ 2,</span></span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a><span class="co">#       #Unskilled</span></span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a><span class="co">#       ciuo08_ine %in% c(51, 54, 61, 62, 71:75, 81) &amp; educ &lt;= 4 ~ 3,</span></span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a><span class="co">#       ciuo08_ine %in% c(52, 63, 82, 83, 91:99) ~ 3,</span></span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a><span class="co">#       ciuo08_ine %in% c(51, 54, 81) &amp; is.na(educ) ~ 3,</span></span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a><span class="co">#       .default = NA_real_</span></span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a><span class="co">#     ),</span></span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a><span class="co">#     skills = factor(</span></span>
+<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a><span class="co">#       skills, </span></span>
+<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a><span class="co">#       levels = 1:3,</span></span>
+<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a><span class="co">#       labels = c(</span></span>
+<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a><span class="co">#         "Experts",</span></span>
+<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a><span class="co">#         "Skilled",</span></span>
+<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a><span class="co">#         "Unskilled"</span></span>
+<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a><span class="co">#       ), </span></span>
+<span id="cb28-55"><a href="#cb28-55" aria-hidden="true" tabindex="-1"></a><span class="co">#       ordered = TRUE</span></span>
+<span id="cb28-56"><a href="#cb28-56" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
+<span id="cb28-57"><a href="#cb28-57" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb28-58"><a href="#cb28-58" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(skills = "Skills")</span></span>
+<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>skills)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Skills (x) &lt;ordinal&gt; 
+<pre><code>Skills (x) &lt;categorical&gt; 
 # total N=3048 valid N=3048 mean=2.31 sd=0.72
 
-Value     |    N | Raw % | Valid % | Cum. %
--------------------------------------------
-Experts   |  455 | 14.93 |   14.93 |  14.93
-Skilled   | 1200 | 39.37 |   39.37 |  54.30
-Unskilled | 1393 | 45.70 |   45.70 | 100.00
-&lt;NA&gt;      |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value        |    N | Raw % | Valid % | Cum. %
+----------------------------------------------
+1. Experts   |  455 | 14.93 |   14.93 |  14.93
+2. Skilled   | 1200 | 39.37 |   39.37 |  54.30
+3. Unskilled | 1393 | 45.70 |   45.70 | 100.00
+&lt;NA&gt;         |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
