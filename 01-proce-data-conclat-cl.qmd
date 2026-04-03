@@ -56,7 +56,7 @@ p_load(
 ### Cargar datos
 
 ```{r datos, message=FALSE, warning=FALSE}
-data <- readRDS("input/data/data-conclat-chile-ES.rds")
+data <- readRDS("input/data/data-conclat-chile-EN.rds")
 ```
 
 ## Procesamiento
@@ -84,11 +84,8 @@ data <- data %>%
       )
     )
   ) %>%
-  set_variable_labels(
-    a07 = "Employment situation",
-    relation_mop = "Relation with Means of Production")
+  set_variable_labels(relation_mop = "Relation with Means of Production")
 
-frq(data$a07)
 frq(data$relation_mop)
 ```
 
@@ -223,11 +220,16 @@ frq(data$owners2)
 ```{r}
 frq(data$e05)
 
+labs <- get_labels(data$e05, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
 data <- data %>%
   mutate(
-    educ = ifelse(e05 %in% c(-999, -888), NA, e05)
+    educ = ifelse(e05 %in% c(-999, -888), NA_real_, e05)
   ) %>%
-  set_variable_labels(educ = "Educational level")
+  set_variable_labels(educ = "Educational level") %>%
+  set_value_labels(educ = labs_num)
 
 frq(data$educ)
 ```
@@ -236,16 +238,11 @@ frq(data$educ)
 
 ```{r}
 frq(data$ciuo08_ine)
-
-data <- data %>% 
-  set_variable_labels(ciuo08_ine = "ISCO 08")
-
-frq(data$ciuo08_ine)
 ```
 
 ### skills
 
--   Experts -\> ciuo08_2d == 11 a 34 con universitaria completa o más (educ \>= 9) ---\> experts
+-   Experts -\> ciuo08_2d == 11 a 31 con universitaria completa o más (educ \>= 9) ---\> experts
 
 -   Skilled -\> ciuo08_2d == 11 a 34 con universitaria incompleta o menos (educ \< 9), y
 
@@ -265,61 +262,36 @@ frq(data$ciuo08_ine)
 data <- data %>% 
   mutate(
     skills = case_when(
-      ciuo08_ine <= 34 & educ >= 9 ~ 1,
-      ciuo08_ine <= 34 & is.na(educ)~ 1,  
+      # Experts
+      ciuo08_ine %in% c(11:26) & educ >= 9                         ~ 1,
+      ciuo08_ine < 11 & educ >= 9                                  ~ 1,
 
-      ciuo08_ine <= 34 & educ < 9 ~ 2,
-      ciuo08_ine %in% c(35, 36, 41:44, 53) ~ 2,
-      ciuo08_ine %in% c(51, 54, 61, 62, 71:75, 81) & educ >= 5 ~ 2,
-      ciuo08_ine %in% c(61, 62, 71:75) & is.na(educ) ~ 2,
+      # Skilled
+      ciuo08_ine < 11 & (educ <= 8 | is.na(educ))                  ~ 2,
+      ciuo08_ine %in% c(11:26) & (educ <= 8 | is.na(educ))         ~ 2,
+      ciuo08_ine %in% c(31:36, 41:44, 53)                          ~ 2,
+      ciuo08_ine %in% c(61, 62, 71:75) & (educ >= 5 | is.na(educ)) ~ 2,
+      ciuo08_ine %in% c(51, 54, 81) & educ >= 5                    ~ 2,
 
-      ciuo08_ine %in% c(51, 54, 61, 62, 71:75, 81) & educ <= 4 ~ 3,
-      ciuo08_ine %in% c(52, 63, 82, 83, 91:99) ~ 3,
-      ciuo08_ine %in% c(51, 54, 81) & is.na(educ) ~ 3     
+      # Unskilled
+      ciuo08_ine %in% c(61, 62, 71:75) & educ <= 4                 ~ 3,
+      ciuo08_ine %in% c(51, 54, 81) & (educ <= 4 | is.na(educ))    ~ 3,
+      ciuo08_ine %in% c(52, 63, 82, 83, 91:99)                     ~ 3,
+
+      .default = NA_real_
     ),
     skills = factor(
       skills, 
       levels = 1:3,
       labels = c(
-        "1. Experts",
-        "2. Skilled",
-        "3. Unskilled"
-      )
+        "Experts",
+        "Skilled",
+        "Unskilled"
+      ),
+      ordered = TRUE
     )
   ) %>%
   set_variable_labels(skills = "Skills")
-
-# data <- data %>% 
-#   mutate(
-#     skills = case_when(
-#       # Experts
-#       ciuo08_ine <= 34 & educ >= 9 ~ 1,
-#       ciuo08_ine <= 34 & is.na(educ)~ 1,  
-#       
-#       # Skilled
-#       ciuo08_ine <= 34 & educ < 9 ~ 2,
-#       ciuo08_ine %in% c(35, 36, 41:44, 53) ~ 2,
-#       ciuo08_ine %in% c(51, 54, 61, 62, 71:75, 81) & educ >= 5 ~ 2,
-#       ciuo08_ine %in% c(61, 62, 71:75) & is.na(educ) ~ 2,
-#       
-#       #Unskilled
-#       ciuo08_ine %in% c(51, 54, 61, 62, 71:75, 81) & educ <= 4 ~ 3,
-#       ciuo08_ine %in% c(52, 63, 82, 83, 91:99) ~ 3,
-#       ciuo08_ine %in% c(51, 54, 81) & is.na(educ) ~ 3,
-#       .default = NA_real_
-#     ),
-#     skills = factor(
-#       skills, 
-#       levels = 1:3,
-#       labels = c(
-#         "Experts",
-#         "Skilled",
-#         "Unskilled"
-#       ), 
-#       ordered = TRUE
-#     )
-#   ) %>%
-#   set_variable_labels(skills = "Skills")
 
 frq(data$skills)
 ```
@@ -329,23 +301,20 @@ frq(data$skills)
 ```{r}
 frq(data$a15)
 
+labs <- get_labels(data$a15, values = "n")
+labs_clean <- labs[!names(labs) %in% "-999"]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
 data <- data %>%
   mutate(
     formal_position_auth = factor(
-      if_else(
-        as.numeric(relation_mop) %in% c(1, 2), NA_real_, as.numeric(a15)
-      ),
-      levels = 1:4,
-      labels = c(
-        "Senior manager or executive",
-        "Middle manager (e.g., sector, office or branch head)",
-        "Supervisor or foreperson",
-        "Regular employee or worker (no supervisory role)"
-      ), 
+      if_else(a15 %in% c(-999, -888), NA_real_, as.numeric(a15)),
+      levels = as.numeric(names(labs_clean)),
+      labels = names(labs_num),
       ordered = TRUE
     )
   ) %>%
-  set_variable_labels(formal_position_auth = "Formal position of authority (a15)")
+  set_variable_labels(formal_position_auth = "Formal position of authority")
 
 frq(data$formal_position_auth)
 ```
@@ -471,7 +440,8 @@ data <- data %>%
         "10. Sanctioning / task supervisor not in hierarchy",
         "11. Not subordinates but in hierarchy",
         "12. Non-supervisor / non manager on all criteria"
-      )
+      ),
+      ordered = TRUE
     )
   ) %>% 
   select(-starts_with(".")) %>% 
@@ -562,7 +532,7 @@ data <- data %>%
       .default = NA_real_
     )
   )%>% 
-  set_variable_labels(inicio_empresa = "Business registration 2 (1 = yes)") %>% 
+  set_variable_labels(inicio_empresa = "Business registration as a company (1 = yes)") %>% 
   set_value_labels(inicio_empresa = c(
     "Yes" = 1,
     "No" = 0

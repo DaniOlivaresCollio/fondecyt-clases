@@ -481,78 +481,6 @@ data <- data %>%
 frq(data$c14_04_rec)
 ```
 
-### workingclass_id
-
-```{r}
-frq(data$d01)
-
-data <- data %>% 
-  mutate(
-    workingclass_id = case_when(
-      d01 %in% c(1, 2, 3) ~ 1, 
-      d01 %in% c(4, 5, 6, -888, -999) ~ 0, 
-      .default = NA_real_
-    )
-  ) %>% 
-  set_variable_labels(workingclass_id = "Identification with the working class (1 = yes)") %>% 
-  set_value_labels(workingclass_id = c(
-    "Yes" = 1,
-    "No" = 0
-  ))
-
-frq(data$workingclass_id)
-```
-
-### workingclass_people_id
-
-```{r}
-frq(data$d02_01)
-
-data <- data %>% 
-  mutate(
-    workingclass_people_id = case_when(
-      workingclass_id == 0 ~ 0,
-      workingclass_id == 1 & d02_01 %in% c(-777, -888, -999) ~ 0,
-      workingclass_id == 1 & d02_01 == 1 ~ 1, 
-      workingclass_id == 1 & d02_01 == 2 ~ 2,
-      workingclass_id == 1 & d02_01 == 3 ~ 3,
-      workingclass_id == 1 & d02_01 == 4 ~ 4,
-      workingclass_id == 1 & d02_01 == 5 ~ 5,
-      .default = NA_real_
-    )
-  ) %>% 
-  set_variable_labels(workingclass_people_id = "I identified with people from working class")
-    
-frq(data$workingclass_people_id)
-```
-
-### workingclass_id2
-
-```{r}
-frq(data$d03)
-frq(data$d03_esp)
-
-data <- data %>% 
-  mutate(
-    workingclass_id2 = case_when(
-      d03 == 4 ~ 1,
-      d03 == 5 ~ 2,
-      d03 == 6 ~ 3,
-      d03 %in% c(1, 2, 3, 7, -888, -999) ~ 4, 
-      .default = NA_real_
-    )
-  ) %>% 
-  set_variable_labels(workingclass_id2 = "Identification with the working class (1 = yes) (2)") %>% 
-  set_value_labels(workingclass_id2 = c(
-    "Clase trabajadora" = 1,
-    "Clase obrera" = 2,
-    "El pueblo" = 3,
-    "Otro" = 4
-  ))
-
-frq(data$workingclass_id2)
-```
-
 ## Controls
 
 ### female
@@ -686,6 +614,108 @@ data <- data %>%
   ))
 
 frq(data$left_id)
+```
+
+### workingclass_id
+
+```{r}
+frq(data$d01)
+
+data <- data %>% 
+  mutate(
+    workingclass_id = case_when(
+      d01 %in% c(1, 2, 3) ~ 1, 
+      d01 %in% c(4, 5, 6, -888, -999) ~ 0, 
+      .default = NA_real_
+    )
+  ) %>% 
+  set_variable_labels(workingclass_id = "Identification with the working class (1 = yes)") %>% 
+  set_value_labels(workingclass_id = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$workingclass_id)
+```
+
+### workingclass_people_id
+
+```{r}
+frq(data$d02_01)
+
+labs <- get_labels(data$d02_01, values = "n")
+labs_clean <- labs[!names(labs) %in% c("-777", "-888", "-999")]
+labs_num <- setNames(as.numeric(names(labs_clean)), labs_clean)
+
+data <- data %>% 
+  mutate(
+    workingclass_people_id = case_when(
+      workingclass_id == 0 ~ 0,
+      workingclass_id == 1 & d02_01 %in% c(-777, -888, -999) ~ 0,
+      workingclass_id == 1 & d02_01 == 1 ~ 1, 
+      workingclass_id == 1 & d02_01 == 2 ~ 2,
+      workingclass_id == 1 & d02_01 == 3 ~ 3,
+      workingclass_id == 1 & d02_01 == 4 ~ 4,
+      workingclass_id == 1 & d02_01 == 5 ~ 5,
+      .default = NA_real_
+    )
+  ) %>% 
+  set_variable_labels(workingclass_people_id = "I identified with people from working class") %>% 
+  set_value_labels(workingclass_people_id = labs_num)
+    
+frq(data$workingclass_people_id)
+```
+
+
+### workingclass_id2
+
+```{r}
+frq(data$d03)
+frq(data$d03_esp)
+
+data <- data %>% 
+  mutate(
+    workingclass_id2 = case_when(
+      d03 == 4 ~ 1,
+      d03 == 5 ~ 2,
+      d03 == 6 ~ 3,
+      d03 %in% c(1, 2, 3, 7, -888, -999) ~ 4, 
+      .default = NA_real_
+    )
+  ) %>% 
+  set_variable_labels(workingclass_id2 = "Identification with the working class (1 = yes) (2)") %>% 
+  set_value_labels(workingclass_id2 = c(
+    "Clase trabajadora" = 1,
+    "Clase obrera" = 2,
+    "El pueblo" = 3,
+    "Otro" = 4
+  ))
+
+frq(data$workingclass_id2)
+```
+
+### union_org_member
+
+```{r}
+frq(data$b21)
+frq(data$b25)
+
+data <- data %>%
+  mutate(
+    union_org_member = case_when(
+      as.numeric(relation_mop) == 3 & b21 %in% c(1, 2) ~ 1,
+      as.numeric(relation_mop) == 3 & b21 %in% c(3, -888, -999, NA) ~ 0,
+      as.numeric(relation_mop) %in% c(1, 2) & b25 == 1 ~ 1,
+      as.numeric(relation_mop) %in% c(1, 2) & b25 %in% c(2, 3, 4, -888, -999, NA) ~ 0,
+    )) %>%
+  set_variable_labels(union_org_member = "Union or organization membership (1 = yes)") %>% 
+  set_value_labels(union_org_member = c(
+    "Yes" = 1,
+    "No" = 0
+  )
+  )
+
+frq(data$union_org_member)
 ```
 
 ## Guardar datos
