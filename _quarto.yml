@@ -4,7 +4,7 @@ project:
 
 book:
   title: "Esquemas de clases Fondecyt"
-  author: "Pablo Pérez-Ahumada, Daniela Olivares- Collío"
+  author: "Pablo Pérez-Ahumada, Daniela Olivares-Collío"
   date: today
   chapters:
     - index.qmd
