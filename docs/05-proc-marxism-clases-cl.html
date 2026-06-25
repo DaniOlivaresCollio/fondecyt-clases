@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Marxismo de Clases Chile – Esquemas de clases Fondecyt</title>
+<title>5&nbsp; Marxismo de Clases Chile – Esquemas de clases Fondecyt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./04-graph-clases-cl.html" rel="next">
-<link href="./02-esquemas-clases-cl.html" rel="prev">
+<link href="./04-esquemas-clases-ar.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -118,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-proc-marxism-clases-cl.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Marxismo de Clases Chile</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-proc-marxism-clases-cl.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Marxismo de Clases Chile</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -165,14 +164,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-proc-marxism-clases-cl.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Marxismo de Clases Chile</span></span></a>
+  <a href="./03-proce-data-conclat-ar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Argentina</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-graph-clases-cl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Gráficos de Clases Chile</span></span></a>
+  <a href="./04-esquemas-clases-ar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Esquemas Clases Chile</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-proc-marxism-clases-cl.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Marxismo de Clases Chile</span></span></a>
   </div>
 </li>
     </ul>
@@ -185,47 +190,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#preparación" id="toc-preparación" class="nav-link active" data-scroll-target="#preparación"><span class="header-section-number">3.1</span> Preparación</a>
+  <li><a href="#preparación" id="toc-preparación" class="nav-link active" data-scroll-target="#preparación"><span class="header-section-number">5.1</span> Preparación</a>
   <ul class="collapse">
-  <li><a href="#cargar-datos" id="toc-cargar-datos" class="nav-link" data-scroll-target="#cargar-datos"><span class="header-section-number">3.1.1</span> Cargar datos</a></li>
+  <li><a href="#cargar-datos" id="toc-cargar-datos" class="nav-link" data-scroll-target="#cargar-datos"><span class="header-section-number">5.1.1</span> Cargar datos</a></li>
   </ul></li>
-  <li><a href="#procesamiento" id="toc-procesamiento" class="nav-link" data-scroll-target="#procesamiento"><span class="header-section-number">3.2</span> Procesamiento</a>
+  <li><a href="#procesamiento" id="toc-procesamiento" class="nav-link" data-scroll-target="#procesamiento"><span class="header-section-number">5.2</span> Procesamiento</a>
   <ul class="collapse">
-  <li><a href="#c02_rec" id="toc-c02_rec" class="nav-link" data-scroll-target="#c02_rec"><span class="header-section-number">3.2.1</span> c02_rec</a></li>
-  <li><a href="#c03_01_rec" id="toc-c03_01_rec" class="nav-link" data-scroll-target="#c03_01_rec"><span class="header-section-number">3.2.2</span> c03_01_rec</a></li>
-  <li><a href="#c03_02_rec" id="toc-c03_02_rec" class="nav-link" data-scroll-target="#c03_02_rec"><span class="header-section-number">3.2.3</span> c03_02_rec</a></li>
-  <li><a href="#c05_01_rec" id="toc-c05_01_rec" class="nav-link" data-scroll-target="#c05_01_rec"><span class="header-section-number">3.2.4</span> c05_01_rec</a></li>
-  <li><a href="#c05_02_rec" id="toc-c05_02_rec" class="nav-link" data-scroll-target="#c05_02_rec"><span class="header-section-number">3.2.5</span> c05_02_rec</a></li>
-  <li><a href="#c05_03_rec" id="toc-c05_03_rec" class="nav-link" data-scroll-target="#c05_03_rec"><span class="header-section-number">3.2.6</span> c05_03_rec</a></li>
-  <li><a href="#c05_04_rec" id="toc-c05_04_rec" class="nav-link" data-scroll-target="#c05_04_rec"><span class="header-section-number">3.2.7</span> c05_04_rec</a></li>
-  <li><a href="#c05_05_rec" id="toc-c05_05_rec" class="nav-link" data-scroll-target="#c05_05_rec"><span class="header-section-number">3.2.8</span> c05_05_rec</a></li>
-  <li><a href="#c07_01_rec" id="toc-c07_01_rec" class="nav-link" data-scroll-target="#c07_01_rec"><span class="header-section-number">3.2.9</span> c07_01_rec</a></li>
-  <li><a href="#c07_03_rec" id="toc-c07_03_rec" class="nav-link" data-scroll-target="#c07_03_rec"><span class="header-section-number">3.2.10</span> c07_03_rec</a></li>
-  <li><a href="#c07_03_dummy" id="toc-c07_03_dummy" class="nav-link" data-scroll-target="#c07_03_dummy"><span class="header-section-number">3.2.11</span> c07_03_dummy</a></li>
-  <li><a href="#c07_04_rec" id="toc-c07_04_rec" class="nav-link" data-scroll-target="#c07_04_rec"><span class="header-section-number">3.2.12</span> c07_04_rec</a></li>
-  <li><a href="#c13_01_rec" id="toc-c13_01_rec" class="nav-link" data-scroll-target="#c13_01_rec"><span class="header-section-number">3.2.13</span> c13_01_rec</a></li>
-  <li><a href="#c13_02_rec" id="toc-c13_02_rec" class="nav-link" data-scroll-target="#c13_02_rec"><span class="header-section-number">3.2.14</span> c13_02_rec</a></li>
-  <li><a href="#c13_03_rec" id="toc-c13_03_rec" class="nav-link" data-scroll-target="#c13_03_rec"><span class="header-section-number">3.2.15</span> c13_03_rec</a></li>
-  <li><a href="#c13_04_rec" id="toc-c13_04_rec" class="nav-link" data-scroll-target="#c13_04_rec"><span class="header-section-number">3.2.16</span> c13_04_rec</a></li>
-  <li><a href="#c14_01_rec" id="toc-c14_01_rec" class="nav-link" data-scroll-target="#c14_01_rec"><span class="header-section-number">3.2.17</span> c14_01_rec</a></li>
-  <li><a href="#c14_02_rec" id="toc-c14_02_rec" class="nav-link" data-scroll-target="#c14_02_rec"><span class="header-section-number">3.2.18</span> c14_02_rec</a></li>
-  <li><a href="#c14_03_rec" id="toc-c14_03_rec" class="nav-link" data-scroll-target="#c14_03_rec"><span class="header-section-number">3.2.19</span> c14_03_rec</a></li>
-  <li><a href="#c14_04_rec" id="toc-c14_04_rec" class="nav-link" data-scroll-target="#c14_04_rec"><span class="header-section-number">3.2.20</span> c14_04_rec</a></li>
+  <li><a href="#c02_rec" id="toc-c02_rec" class="nav-link" data-scroll-target="#c02_rec"><span class="header-section-number">5.2.1</span> c02_rec</a></li>
+  <li><a href="#c03_01_rec" id="toc-c03_01_rec" class="nav-link" data-scroll-target="#c03_01_rec"><span class="header-section-number">5.2.2</span> c03_01_rec</a></li>
+  <li><a href="#c03_02_rec" id="toc-c03_02_rec" class="nav-link" data-scroll-target="#c03_02_rec"><span class="header-section-number">5.2.3</span> c03_02_rec</a></li>
+  <li><a href="#c05_01_rec" id="toc-c05_01_rec" class="nav-link" data-scroll-target="#c05_01_rec"><span class="header-section-number">5.2.4</span> c05_01_rec</a></li>
+  <li><a href="#c05_02_rec" id="toc-c05_02_rec" class="nav-link" data-scroll-target="#c05_02_rec"><span class="header-section-number">5.2.5</span> c05_02_rec</a></li>
+  <li><a href="#c05_03_rec" id="toc-c05_03_rec" class="nav-link" data-scroll-target="#c05_03_rec"><span class="header-section-number">5.2.6</span> c05_03_rec</a></li>
+  <li><a href="#c05_04_rec" id="toc-c05_04_rec" class="nav-link" data-scroll-target="#c05_04_rec"><span class="header-section-number">5.2.7</span> c05_04_rec</a></li>
+  <li><a href="#c05_05_rec" id="toc-c05_05_rec" class="nav-link" data-scroll-target="#c05_05_rec"><span class="header-section-number">5.2.8</span> c05_05_rec</a></li>
+  <li><a href="#c07_01_rec" id="toc-c07_01_rec" class="nav-link" data-scroll-target="#c07_01_rec"><span class="header-section-number">5.2.9</span> c07_01_rec</a></li>
+  <li><a href="#c07_03_rec" id="toc-c07_03_rec" class="nav-link" data-scroll-target="#c07_03_rec"><span class="header-section-number">5.2.10</span> c07_03_rec</a></li>
+  <li><a href="#c07_03_dummy" id="toc-c07_03_dummy" class="nav-link" data-scroll-target="#c07_03_dummy"><span class="header-section-number">5.2.11</span> c07_03_dummy</a></li>
+  <li><a href="#c07_04_rec" id="toc-c07_04_rec" class="nav-link" data-scroll-target="#c07_04_rec"><span class="header-section-number">5.2.12</span> c07_04_rec</a></li>
+  <li><a href="#c13_01_rec" id="toc-c13_01_rec" class="nav-link" data-scroll-target="#c13_01_rec"><span class="header-section-number">5.2.13</span> c13_01_rec</a></li>
+  <li><a href="#c13_02_rec" id="toc-c13_02_rec" class="nav-link" data-scroll-target="#c13_02_rec"><span class="header-section-number">5.2.14</span> c13_02_rec</a></li>
+  <li><a href="#c13_03_rec" id="toc-c13_03_rec" class="nav-link" data-scroll-target="#c13_03_rec"><span class="header-section-number">5.2.15</span> c13_03_rec</a></li>
+  <li><a href="#c13_04_rec" id="toc-c13_04_rec" class="nav-link" data-scroll-target="#c13_04_rec"><span class="header-section-number">5.2.16</span> c13_04_rec</a></li>
+  <li><a href="#c14_01_rec" id="toc-c14_01_rec" class="nav-link" data-scroll-target="#c14_01_rec"><span class="header-section-number">5.2.17</span> c14_01_rec</a></li>
+  <li><a href="#c14_02_rec" id="toc-c14_02_rec" class="nav-link" data-scroll-target="#c14_02_rec"><span class="header-section-number">5.2.18</span> c14_02_rec</a></li>
+  <li><a href="#c14_03_rec" id="toc-c14_03_rec" class="nav-link" data-scroll-target="#c14_03_rec"><span class="header-section-number">5.2.19</span> c14_03_rec</a></li>
+  <li><a href="#c14_04_rec" id="toc-c14_04_rec" class="nav-link" data-scroll-target="#c14_04_rec"><span class="header-section-number">5.2.20</span> c14_04_rec</a></li>
   </ul></li>
-  <li><a href="#controls" id="toc-controls" class="nav-link" data-scroll-target="#controls"><span class="header-section-number">3.3</span> Controls</a>
+  <li><a href="#controls" id="toc-controls" class="nav-link" data-scroll-target="#controls"><span class="header-section-number">5.3</span> Controls</a>
   <ul class="collapse">
-  <li><a href="#female" id="toc-female" class="nav-link" data-scroll-target="#female"><span class="header-section-number">3.3.1</span> female</a></li>
-  <li><a href="#age" id="toc-age" class="nav-link" data-scroll-target="#age"><span class="header-section-number">3.3.2</span> age</a></li>
-  <li><a href="#sector" id="toc-sector" class="nav-link" data-scroll-target="#sector"><span class="header-section-number">3.3.3</span> sector</a></li>
-  <li><a href="#rama" id="toc-rama" class="nav-link" data-scroll-target="#rama"><span class="header-section-number">3.3.4</span> rama</a></li>
-  <li><a href="#pol_id" id="toc-pol_id" class="nav-link" data-scroll-target="#pol_id"><span class="header-section-number">3.3.5</span> pol_id</a></li>
-  <li><a href="#left_id" id="toc-left_id" class="nav-link" data-scroll-target="#left_id"><span class="header-section-number">3.3.6</span> left_id</a></li>
-  <li><a href="#workingclass_id" id="toc-workingclass_id" class="nav-link" data-scroll-target="#workingclass_id"><span class="header-section-number">3.3.7</span> workingclass_id</a></li>
-  <li><a href="#workingclass_people_id" id="toc-workingclass_people_id" class="nav-link" data-scroll-target="#workingclass_people_id"><span class="header-section-number">3.3.8</span> workingclass_people_id</a></li>
-  <li><a href="#workingclass_id2" id="toc-workingclass_id2" class="nav-link" data-scroll-target="#workingclass_id2"><span class="header-section-number">3.3.9</span> workingclass_id2</a></li>
-  <li><a href="#union_org_member" id="toc-union_org_member" class="nav-link" data-scroll-target="#union_org_member"><span class="header-section-number">3.3.10</span> union_org_member</a></li>
+  <li><a href="#female" id="toc-female" class="nav-link" data-scroll-target="#female"><span class="header-section-number">5.3.1</span> female</a></li>
+  <li><a href="#age" id="toc-age" class="nav-link" data-scroll-target="#age"><span class="header-section-number">5.3.2</span> age</a></li>
+  <li><a href="#sector" id="toc-sector" class="nav-link" data-scroll-target="#sector"><span class="header-section-number">5.3.3</span> sector</a></li>
+  <li><a href="#rama" id="toc-rama" class="nav-link" data-scroll-target="#rama"><span class="header-section-number">5.3.4</span> rama</a></li>
+  <li><a href="#pol_id" id="toc-pol_id" class="nav-link" data-scroll-target="#pol_id"><span class="header-section-number">5.3.5</span> pol_id</a></li>
+  <li><a href="#left_id" id="toc-left_id" class="nav-link" data-scroll-target="#left_id"><span class="header-section-number">5.3.6</span> left_id</a></li>
+  <li><a href="#workingclass_id" id="toc-workingclass_id" class="nav-link" data-scroll-target="#workingclass_id"><span class="header-section-number">5.3.7</span> workingclass_id</a></li>
+  <li><a href="#workingclass_people_id" id="toc-workingclass_people_id" class="nav-link" data-scroll-target="#workingclass_people_id"><span class="header-section-number">5.3.8</span> workingclass_people_id</a></li>
+  <li><a href="#workingclass_id2" id="toc-workingclass_id2" class="nav-link" data-scroll-target="#workingclass_id2"><span class="header-section-number">5.3.9</span> workingclass_id2</a></li>
+  <li><a href="#union_org_member" id="toc-union_org_member" class="nav-link" data-scroll-target="#union_org_member"><span class="header-section-number">5.3.10</span> union_org_member</a></li>
   </ul></li>
-  <li><a href="#guardar-datos" id="toc-guardar-datos" class="nav-link" data-scroll-target="#guardar-datos"><span class="header-section-number">3.4</span> Guardar datos</a></li>
+  <li><a href="#guardar-datos" id="toc-guardar-datos" class="nav-link" data-scroll-target="#guardar-datos"><span class="header-section-number">5.4</span> Guardar datos</a></li>
   </ul>
 </nav>
     </div>
@@ -234,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Marxismo de Clases Chile</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Marxismo de Clases Chile</span></h1>
 </div>
 
 
@@ -252,19 +257,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Capítulo para armar datos para Capítulo de Libro de Marxismo de Clases. Por tanto, se procesa la Data Conclat Chile con los esquemas de clases ya generados, creando variables nuevas. Datos actualizados para el 26/03/2026.</p>
-<section id="preparación" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="preparación"><span class="header-section-number">3.1</span> Preparación</h2>
-<section id="cargar-datos" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="cargar-datos"><span class="header-section-number">3.1.1</span> Cargar datos</h3>
+<section id="preparación" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="preparación"><span class="header-section-number">5.1</span> Preparación</h2>
+<section id="cargar-datos" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="cargar-datos"><span class="header-section-number">5.1.1</span> Cargar datos</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/data/data-clases-cl.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/data/data-conclat-cl-en-clases.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
-<section id="procesamiento" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="procesamiento"><span class="header-section-number">3.2</span> Procesamiento</h2>
-<section id="c02_rec" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="c02_rec"><span class="header-section-number">3.2.1</span> c02_rec</h3>
+<section id="procesamiento" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="procesamiento"><span class="header-section-number">5.2</span> Procesamiento</h2>
+<section id="c02_rec" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="c02_rec"><span class="header-section-number">5.2.1</span> c02_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c02)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
@@ -273,8 +278,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   not have the desired effect.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Preferred role of trade unions (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-72.47 sd=257.56
+<pre><code>Preferencia en rol de sindicatos (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-68.84 sd=250.39
 
 Value
 -----
@@ -293,38 +298,38 @@ Value
    10
  &lt;NA&gt;
 
-                                                                                    Label
------------------------------------------------------------------------------------------
-                                                                  No answer (do not read)
-                                                                 Don’t know (do not read)
-                           0 I prefer unions that prioritize collaboration with companies
-                                                                                        1
-                                                                                        2
-                                                                                        3
-                                                                                        4
-                                                                                        5
-                                                                                        6
-                                                                                        7
-                                                                                        8
-                                                                                        9
-10 I prefer unions that are not afraid to confront companies when defending their members
-                                                                                     &lt;NA&gt;
+                                                                                                         Label
+--------------------------------------------------------------------------------------------------------------
+                                                                                         No responde (no leer)
+                                                                                             No sabe (no leer)
+                                        0 Prefiero sindicatos que privilegien la colaboración con las empresas
+                                                                                                             1
+                                                                                                             2
+                                                                                                             3
+                                                                                                             4
+                                                                                                             5
+                                                                                                             6
+                                                                                                             7
+                                                                                                             8
+                                                                                                             9
+10 Prefiero sindicatos que no tengan miedo a enfrentarse a las empresas al momento de defender a sus afiliados
+                                                                                                          &lt;NA&gt;
 
   N | Raw % | Valid % | Cum. %
 ------------------------------
- 62 |  2.03 |    2.03 |   2.03
-198 |  6.50 |    6.50 |   8.53
-124 |  4.07 |    4.07 |  12.60
- 67 |  2.20 |    2.20 |  14.80
-172 |  5.64 |    5.64 |  20.44
-226 |  7.41 |    7.41 |  27.85
-318 | 10.43 |   10.43 |  38.29
-484 | 15.88 |   15.88 |  54.17
-229 |  7.51 |    7.51 |  61.68
-202 |  6.63 |    6.63 |  68.31
-125 |  4.10 |    4.10 |  72.41
- 99 |  3.25 |    3.25 |  75.66
-742 | 24.34 |   24.34 | 100.00
+  0 |  0.00 |    0.00 |   0.00
+145 |  8.54 |    8.54 |   8.54
+ 26 |  1.53 |    1.53 |  10.07
+ 89 |  5.24 |    5.24 |  15.31
+ 29 |  1.71 |    1.71 |  17.02
+ 36 |  2.12 |    2.12 |  19.14
+ 45 |  2.65 |    2.65 |  21.79
+194 | 11.43 |   11.43 |  33.22
+ 71 |  4.18 |    4.18 |  37.40
+ 83 |  4.89 |    4.89 |  42.29
+131 |  7.71 |    7.71 |  50.00
+ 86 |  5.06 |    5.06 |  55.06
+763 | 44.94 |   44.94 | 100.00
   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c02, <span class="at">values =</span> <span class="st">"n"</span>)</span>
@@ -348,7 +353,7 @@ Value
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Preferred role of trade unions (x) &lt;numeric&gt; 
-# total N=3048 valid N=2788 mean=6.05 sd=3.06
+# total N=1698 valid N=1553 mean=7.64 sd=2.98
 
 Value
 -----
@@ -365,56 +370,56 @@ Value
    10
  &lt;NA&gt;
 
-                                                                                    Label
------------------------------------------------------------------------------------------
-                           0 I prefer unions that prioritize collaboration with companies
-                                                                                        1
-                                                                                        2
-                                                                                        3
-                                                                                        4
-                                                                                        5
-                                                                                        6
-                                                                                        7
-                                                                                        8
-                                                                                        9
-10 I prefer unions that are not afraid to confront companies when defending their members
-                                                                                     &lt;NA&gt;
+                                                                                                         Label
+--------------------------------------------------------------------------------------------------------------
+                                        0 Prefiero sindicatos que privilegien la colaboración con las empresas
+                                                                                                             1
+                                                                                                             2
+                                                                                                             3
+                                                                                                             4
+                                                                                                             5
+                                                                                                             6
+                                                                                                             7
+                                                                                                             8
+                                                                                                             9
+10 Prefiero sindicatos que no tengan miedo a enfrentarse a las empresas al momento de defender a sus afiliados
+                                                                                                          &lt;NA&gt;
 
   N | Raw % | Valid % | Cum. %
 ------------------------------
-124 |  4.07 |    4.45 |   4.45
- 67 |  2.20 |    2.40 |   6.85
-172 |  5.64 |    6.17 |  13.02
-226 |  7.41 |    8.11 |  21.13
-318 | 10.43 |   11.41 |  32.53
-484 | 15.88 |   17.36 |  49.89
-229 |  7.51 |    8.21 |  58.11
-202 |  6.63 |    7.25 |  65.35
-125 |  4.10 |    4.48 |  69.84
- 99 |  3.25 |    3.55 |  73.39
-742 | 24.34 |   26.61 | 100.00
-260 |  8.53 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+ 26 |  1.53 |    1.67 |   1.67
+ 89 |  5.24 |    5.73 |   7.41
+ 29 |  1.71 |    1.87 |   9.27
+ 36 |  2.12 |    2.32 |  11.59
+ 45 |  2.65 |    2.90 |  14.49
+194 | 11.43 |   12.49 |  26.98
+ 71 |  4.18 |    4.57 |  31.55
+ 83 |  4.89 |    5.34 |  36.90
+131 |  7.71 |    8.44 |  45.33
+ 86 |  5.06 |    5.54 |  50.87
+763 | 44.94 |   49.13 | 100.00
+145 |  8.54 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c03_01_rec" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="c03_01_rec"><span class="header-section-number">3.2.2</span> c03_01_rec</h3>
+<section id="c03_01_rec" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="c03_01_rec"><span class="header-section-number">5.2.2</span> c03_01_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c03_01)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: Companies have the right to replace striking workers (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-58.60 sd=230.28
+<pre><code>Nivel de acuerdo con: Empresa tiene derecho a reemplazar trabajadores/as en huelga (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-40.34 sd=189.78
 
-Value |                      Label |   N | Raw % | Valid % | Cum. %
--------------------------------------------------------------------
- -999 |    No answer (do not read) |  57 |  1.87 |    1.87 |   1.87
- -888 |   Don’t know (do not read) | 146 |  4.79 |    4.79 |   6.66
-    1 |          Strongly disagree | 504 | 16.54 |   16.54 |  23.20
-    2 |                   Disagree | 688 | 22.57 |   22.57 |  45.77
-    3 | Neither agree nor disagree | 715 | 23.46 |   23.46 |  69.23
-    4 |                      Agree | 740 | 24.28 |   24.28 |  93.50
-    5 |             Strongly agree | 198 |  6.50 |    6.50 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) |  81 |  4.77 |    4.77 |   4.77
+    1 |              Muy en desacuerdo | 535 | 31.51 |   31.51 |  36.28
+    2 |                  En desacuerdo | 634 | 37.34 |   37.34 |  73.62
+    3 | Ni de acuerdo ni en desacuerdo | 200 | 11.78 |   11.78 |  85.39
+    4 |                     De acuerdo | 212 | 12.49 |   12.49 |  97.88
+    5 |                 Muy de acuerdo |  36 |  2.12 |    2.12 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c03_01, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -432,37 +437,37 @@ Value |                      Label |   N | Raw % | Valid % | Cum. %
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c03_01_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: Companies have the right to replace striking workers (x) &lt;numeric&gt; 
-# total N=3048 valid N=2845 mean=2.80 sd=1.20
+# total N=1698 valid N=1617 mean=2.12 sd=1.08
 
-Value |                      Label |   N | Raw % | Valid % | Cum. %
--------------------------------------------------------------------
-    1 |          Strongly disagree | 504 | 16.54 |   17.72 |  17.72
-    2 |                   Disagree | 688 | 22.57 |   24.18 |  41.90
-    3 | Neither agree nor disagree | 715 | 23.46 |   25.13 |  67.03
-    4 |                      Agree | 740 | 24.28 |   26.01 |  93.04
-    5 |             Strongly agree | 198 |  6.50 |    6.96 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; | 203 |  6.66 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo | 535 | 31.51 |   33.09 |  33.09
+    2 |                  En desacuerdo | 634 | 37.34 |   39.21 |  72.29
+    3 | Ni de acuerdo ni en desacuerdo | 200 | 11.78 |   12.37 |  84.66
+    4 |                     De acuerdo | 212 | 12.49 |   13.11 |  97.77
+    5 |                 Muy de acuerdo |  36 |  2.12 |    2.23 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |  81 |  4.77 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c03_02_rec" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="c03_02_rec"><span class="header-section-number">3.2.3</span> c03_02_rec</h3>
+<section id="c03_02_rec" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="c03_02_rec"><span class="header-section-number">5.2.3</span> c03_02_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c03_02)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: Workers should not strike if it affects profits (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-50.59 sd=215.80
+<pre><code>Nivel de acuerdo con: Trabajadores/as no deberían irse a huelga si afecta las ganancias (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-46.01 sd=201.59
 
-Value |                      Label |   N | Raw % | Valid % | Cum. %
--------------------------------------------------------------------
- -999 |    No answer (do not read) |  52 |  1.71 |    1.71 |   1.71
- -888 |   Don’t know (do not read) | 124 |  4.07 |    4.07 |   5.77
-    1 |          Strongly disagree | 447 | 14.67 |   14.67 |  20.44
-    2 |                   Disagree | 811 | 26.61 |   26.61 |  47.05
-    3 | Neither agree nor disagree | 811 | 26.61 |   26.61 |  73.65
-    4 |                      Agree | 660 | 21.65 |   21.65 |  95.31
-    5 |             Strongly agree | 143 |  4.69 |    4.69 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) |  92 |  5.42 |    5.42 |   5.42
+    1 |              Muy en desacuerdo | 441 | 25.97 |   25.97 |  31.39
+    2 |                  En desacuerdo | 672 | 39.58 |   39.58 |  70.97
+    3 | Ni de acuerdo ni en desacuerdo | 234 | 13.78 |   13.78 |  84.75
+    4 |                     De acuerdo | 214 | 12.60 |   12.60 |  97.35
+    5 |                 Muy de acuerdo |  45 |  2.65 |    2.65 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c03_02, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -480,37 +485,37 @@ Value |                      Label |   N | Raw % | Valid % | Cum. %
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c03_02_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: Workers should not strike if it affects profits (x) &lt;numeric&gt; 
-# total N=3048 valid N=2872 mean=2.74 sd=1.12
+# total N=1698 valid N=1606 mean=2.22 sd=1.08
 
-Value |                      Label |   N | Raw % | Valid % | Cum. %
--------------------------------------------------------------------
-    1 |          Strongly disagree | 447 | 14.67 |   15.56 |  15.56
-    2 |                   Disagree | 811 | 26.61 |   28.24 |  43.80
-    3 | Neither agree nor disagree | 811 | 26.61 |   28.24 |  72.04
-    4 |                      Agree | 660 | 21.65 |   22.98 |  95.02
-    5 |             Strongly agree | 143 |  4.69 |    4.98 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; | 176 |  5.77 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo | 441 | 25.97 |   27.46 |  27.46
+    2 |                  En desacuerdo | 672 | 39.58 |   41.84 |  69.30
+    3 | Ni de acuerdo ni en desacuerdo | 234 | 13.78 |   14.57 |  83.87
+    4 |                     De acuerdo | 214 | 12.60 |   13.33 |  97.20
+    5 |                 Muy de acuerdo |  45 |  2.65 |    2.80 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |  92 |  5.42 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c05_01_rec" class="level3" data-number="3.2.4">
-<h3 data-number="3.2.4" class="anchored" data-anchor-id="c05_01_rec"><span class="header-section-number">3.2.4</span> c05_01_rec</h3>
+<section id="c05_01_rec" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="c05_01_rec"><span class="header-section-number">5.2.4</span> c05_01_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c05_01)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: Large business owners have too much power in Chile (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-34.36 sd=182.77
+<pre><code>Nivel de acuerdo con: Los grandes empresarios tienen demasiado poder en Chile (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-27.91 sd=166.08
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
- -999 |    No answer (do not read) |   21 |  0.69 |    0.69 |   0.69
- -888 |   Don’t know (do not read) |  107 |  3.51 |    3.51 |   4.20
-    1 |          Strongly disagree |   89 |  2.92 |    2.92 |   7.12
-    2 |                   Disagree |  172 |  5.64 |    5.64 |  12.76
-    3 | Neither agree nor disagree |  586 | 19.23 |   19.23 |  31.99
-    4 |                      Agree | 1289 | 42.29 |   42.29 |  74.28
-    5 |             Strongly agree |  784 | 25.72 |   25.72 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) |  61 |  3.59 |    3.59 |   3.59
+    1 |              Muy en desacuerdo |  30 |  1.77 |    1.77 |   5.36
+    2 |                  En desacuerdo |  85 |  5.01 |    5.01 |  10.37
+    3 | Ni de acuerdo ni en desacuerdo | 150 |  8.83 |    8.83 |  19.20
+    4 |                     De acuerdo | 730 | 42.99 |   42.99 |  62.19
+    5 |                 Muy de acuerdo | 642 | 37.81 |   37.81 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c05_01, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -528,37 +533,37 @@ Value |                      Label |    N | Raw % | Valid % | Cum. %
 <span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c05_01_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: Large business owners have too much power in Chile (x) &lt;numeric&gt; 
-# total N=3048 valid N=2920 mean=3.86 sd=0.98
+# total N=1698 valid N=1637 mean=4.14 sd=0.91
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-    1 |          Strongly disagree |   89 |  2.92 |    3.05 |   3.05
-    2 |                   Disagree |  172 |  5.64 |    5.89 |   8.94
-    3 | Neither agree nor disagree |  586 | 19.23 |   20.07 |  29.01
-    4 |                      Agree | 1289 | 42.29 |   44.14 |  73.15
-    5 |             Strongly agree |  784 | 25.72 |   26.85 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |  128 |  4.20 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo |  30 |  1.77 |    1.83 |   1.83
+    2 |                  En desacuerdo |  85 |  5.01 |    5.19 |   7.03
+    3 | Ni de acuerdo ni en desacuerdo | 150 |  8.83 |    9.16 |  16.19
+    4 |                     De acuerdo | 730 | 42.99 |   44.59 |  60.78
+    5 |                 Muy de acuerdo | 642 | 37.81 |   39.22 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |  61 |  3.59 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c05_02_rec" class="level3" data-number="3.2.5">
-<h3 data-number="3.2.5" class="anchored" data-anchor-id="c05_02_rec"><span class="header-section-number">3.2.5</span> c05_02_rec</h3>
+<section id="c05_02_rec" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="c05_02_rec"><span class="header-section-number">5.2.5</span> c05_02_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c05_02)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: A main reason for high inequality in Chile is that business owners pay workers too little (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-25.19 sd=159.51
+<pre><code>Nivel de acuerdo con: Una principal razón de alta desigualdad en Chile es dueños de empresas pagan poco a sus trabajadores/as (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-32.89 sd=177.37
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
- -999 |    No answer (do not read) |   14 |  0.46 |    0.46 |   0.46
- -888 |   Don’t know (do not read) |   83 |  2.72 |    2.72 |   3.18
-    1 |          Strongly disagree |   78 |  2.56 |    2.56 |   5.74
-    2 |                   Disagree |  246 |  8.07 |    8.07 |  13.81
-    3 | Neither agree nor disagree |  753 | 24.70 |   24.70 |  38.52
-    4 |                      Agree | 1292 | 42.39 |   42.39 |  80.91
-    5 |             Strongly agree |  582 | 19.09 |   19.09 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) |  70 |  4.12 |    4.12 |   4.12
+    1 |              Muy en desacuerdo |  44 |  2.59 |    2.59 |   6.71
+    2 |                  En desacuerdo | 168 |  9.89 |    9.89 |  16.61
+    3 | Ni de acuerdo ni en desacuerdo | 209 | 12.31 |   12.31 |  28.92
+    4 |                     De acuerdo | 730 | 42.99 |   42.99 |  71.91
+    5 |                 Muy de acuerdo | 477 | 28.09 |   28.09 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c05_02, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -576,37 +581,37 @@ Value |                      Label |    N | Raw % | Valid % | Cum. %
 <span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c05_02_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: A main reason for high inequality in Chile is that business owners pay workers too little (x) &lt;numeric&gt; 
-# total N=3048 valid N=2951 mean=3.70 sd=0.97
+# total N=1698 valid N=1628 mean=3.88 sd=1.03
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-    1 |          Strongly disagree |   78 |  2.56 |    2.64 |   2.64
-    2 |                   Disagree |  246 |  8.07 |    8.34 |  10.98
-    3 | Neither agree nor disagree |  753 | 24.70 |   25.52 |  36.50
-    4 |                      Agree | 1292 | 42.39 |   43.78 |  80.28
-    5 |             Strongly agree |  582 | 19.09 |   19.72 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |   97 |  3.18 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo |  44 |  2.59 |    2.70 |   2.70
+    2 |                  En desacuerdo | 168 |  9.89 |   10.32 |  13.02
+    3 | Ni de acuerdo ni en desacuerdo | 209 | 12.31 |   12.84 |  25.86
+    4 |                     De acuerdo | 730 | 42.99 |   44.84 |  70.70
+    5 |                 Muy de acuerdo | 477 | 28.09 |   29.30 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |  70 |  4.12 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c05_03_rec" class="level3" data-number="3.2.6">
-<h3 data-number="3.2.6" class="anchored" data-anchor-id="c05_03_rec"><span class="header-section-number">3.2.6</span> c05_03_rec</h3>
+<section id="c05_03_rec" class="level3" data-number="5.2.6">
+<h3 data-number="5.2.6" class="anchored" data-anchor-id="c05_03_rec"><span class="header-section-number">5.2.6</span> c05_03_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c05_03)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: High living standards of business owners result from paying workers too little (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-30.00 sd=171.83
+<pre><code>Nivel de acuerdo con: Alto nivel de vida de dueños de empresas es resultado de lo poco que pagan a sus trabajadores/as (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-35.18 sd=182.10
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
- -999 |    No answer (do not read) |   17 |  0.56 |    0.56 |   0.56
- -888 |   Don’t know (do not read) |   96 |  3.15 |    3.15 |   3.71
-    1 |          Strongly disagree |   51 |  1.67 |    1.67 |   5.38
-    2 |                   Disagree |  259 |  8.50 |    8.50 |  13.88
-    3 | Neither agree nor disagree |  818 | 26.84 |   26.84 |  40.72
-    4 |                      Agree | 1252 | 41.08 |   41.08 |  81.79
-    5 |             Strongly agree |  555 | 18.21 |   18.21 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) |  74 |  4.36 |    4.36 |   4.36
+    1 |              Muy en desacuerdo |  63 |  3.71 |    3.71 |   8.07
+    2 |                  En desacuerdo | 256 | 15.08 |   15.08 |  23.14
+    3 | Ni de acuerdo ni en desacuerdo | 247 | 14.55 |   14.55 |  37.69
+    4 |                     De acuerdo | 635 | 37.40 |   37.40 |  75.09
+    5 |                 Muy de acuerdo | 423 | 24.91 |   24.91 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c05_03, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -624,37 +629,37 @@ Value |                      Label |    N | Raw % | Valid % | Cum. %
 <span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c05_03_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: High living standards of business owners result from paying workers too little (x) &lt;numeric&gt; 
-# total N=3048 valid N=2935 mean=3.68 sd=0.94
+# total N=1698 valid N=1624 mean=3.68 sd=1.14
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-    1 |          Strongly disagree |   51 |  1.67 |    1.74 |   1.74
-    2 |                   Disagree |  259 |  8.50 |    8.82 |  10.56
-    3 | Neither agree nor disagree |  818 | 26.84 |   27.87 |  38.43
-    4 |                      Agree | 1252 | 41.08 |   42.66 |  81.09
-    5 |             Strongly agree |  555 | 18.21 |   18.91 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |  113 |  3.71 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo |  63 |  3.71 |    3.88 |   3.88
+    2 |                  En desacuerdo | 256 | 15.08 |   15.76 |  19.64
+    3 | Ni de acuerdo ni en desacuerdo | 247 | 14.55 |   15.21 |  34.85
+    4 |                     De acuerdo | 635 | 37.40 |   39.10 |  73.95
+    5 |                 Muy de acuerdo | 423 | 24.91 |   26.05 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |  74 |  4.36 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c05_04_rec" class="level3" data-number="3.2.7">
-<h3 data-number="3.2.7" class="anchored" data-anchor-id="c05_04_rec"><span class="header-section-number">3.2.7</span> c05_04_rec</h3>
+<section id="c05_04_rec" class="level3" data-number="5.2.7">
+<h3 data-number="5.2.7" class="anchored" data-anchor-id="c05_04_rec"><span class="header-section-number">5.2.7</span> c05_04_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c05_04)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: Workers would live better if business owners had less power (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-41.21 sd=196.54
+<pre><code>Nivel de acuerdo con: Trabajadores vivirían en mejores condiciones si empresarios tuvieran menos poder (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-45.18 sd=202.94
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
- -999 |    No answer (do not read) |   18 |  0.59 |    0.59 |   0.59
- -888 |   Don’t know (do not read) |  133 |  4.36 |    4.36 |   4.95
-    1 |          Strongly disagree |   54 |  1.77 |    1.77 |   6.73
-    2 |                   Disagree |  308 | 10.10 |   10.10 |  16.83
-    3 | Neither agree nor disagree |  850 | 27.89 |   27.89 |  44.72
-    4 |                      Agree | 1177 | 38.62 |   38.62 |  83.33
-    5 |             Strongly agree |  508 | 16.67 |   16.67 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) |  93 |  5.48 |    5.48 |   5.48
+    1 |              Muy en desacuerdo |  47 |  2.77 |    2.77 |   8.24
+    2 |                  En desacuerdo | 233 | 13.72 |   13.72 |  21.97
+    3 | Ni de acuerdo ni en desacuerdo | 293 | 17.26 |   17.26 |  39.22
+    4 |                     De acuerdo | 680 | 40.05 |   40.05 |  79.27
+    5 |                 Muy de acuerdo | 352 | 20.73 |   20.73 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c05_04, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -672,37 +677,37 @@ Value |                      Label |    N | Raw % | Valid % | Cum. %
 <span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c05_04_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: Workers would live better if business owners had less power (x) &lt;numeric&gt; 
-# total N=3048 valid N=2897 mean=3.61 sd=0.96
+# total N=1698 valid N=1605 mean=3.66 sd=1.06
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-    1 |          Strongly disagree |   54 |  1.77 |    1.86 |   1.86
-    2 |                   Disagree |  308 | 10.10 |   10.63 |  12.50
-    3 | Neither agree nor disagree |  850 | 27.89 |   29.34 |  41.84
-    4 |                      Agree | 1177 | 38.62 |   40.63 |  82.46
-    5 |             Strongly agree |  508 | 16.67 |   17.54 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |  151 |  4.95 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo |  47 |  2.77 |    2.93 |   2.93
+    2 |                  En desacuerdo | 233 | 13.72 |   14.52 |  17.45
+    3 | Ni de acuerdo ni en desacuerdo | 293 | 17.26 |   18.26 |  35.70
+    4 |                     De acuerdo | 680 | 40.05 |   42.37 |  78.07
+    5 |                 Muy de acuerdo | 352 | 20.73 |   21.93 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |  93 |  5.48 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c05_05_rec" class="level3" data-number="3.2.8">
-<h3 data-number="3.2.8" class="anchored" data-anchor-id="c05_05_rec"><span class="header-section-number">3.2.8</span> c05_05_rec</h3>
+<section id="c05_05_rec" class="level3" data-number="5.2.8">
+<h3 data-number="5.2.8" class="anchored" data-anchor-id="c05_05_rec"><span class="header-section-number">5.2.8</span> c05_05_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c05_05)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: In Chile there are precarious and unstable jobs because this benefits business owners (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-34.27 sd=181.46
+<pre><code>Nivel de acuerdo con: En Chile hay trabajos precarios e inestables porque eso beneficia a los dueños de las empresas (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-35.55 sd=183.30
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
- -999 |    No answer (do not read) |   14 |  0.46 |    0.46 |   0.46
- -888 |   Don’t know (do not read) |  114 |  3.74 |    3.74 |   4.20
-    1 |          Strongly disagree |   48 |  1.57 |    1.57 |   5.77
-    2 |                   Disagree |  252 |  8.27 |    8.27 |  14.04
-    3 | Neither agree nor disagree |  829 | 27.20 |   27.20 |  41.24
-    4 |                      Agree | 1236 | 40.55 |   40.55 |  81.79
-    5 |             Strongly agree |  555 | 18.21 |   18.21 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) |  75 |  4.42 |    4.42 |   4.42
+    1 |              Muy en desacuerdo |  43 |  2.53 |    2.53 |   6.95
+    2 |                  En desacuerdo | 189 | 11.13 |   11.13 |  18.08
+    3 | Ni de acuerdo ni en desacuerdo | 207 | 12.19 |   12.19 |  30.27
+    4 |                     De acuerdo | 732 | 43.11 |   43.11 |  73.38
+    5 |                 Muy de acuerdo | 452 | 26.62 |   26.62 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c05_05, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -720,37 +725,37 @@ Value |                      Label |    N | Raw % | Valid % | Cum. %
 <span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c05_05_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: In Chile there are precarious and unstable jobs because this benefits business owners (x) &lt;numeric&gt; 
-# total N=3048 valid N=2920 mean=3.68 sd=0.93
+# total N=1698 valid N=1623 mean=3.84 sd=1.04
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-    1 |          Strongly disagree |   48 |  1.57 |    1.64 |   1.64
-    2 |                   Disagree |  252 |  8.27 |    8.63 |  10.27
-    3 | Neither agree nor disagree |  829 | 27.20 |   28.39 |  38.66
-    4 |                      Agree | 1236 | 40.55 |   42.33 |  80.99
-    5 |             Strongly agree |  555 | 18.21 |   19.01 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |  128 |  4.20 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo |  43 |  2.53 |    2.65 |   2.65
+    2 |                  En desacuerdo | 189 | 11.13 |   11.65 |  14.29
+    3 | Ni de acuerdo ni en desacuerdo | 207 | 12.19 |   12.75 |  27.05
+    4 |                     De acuerdo | 732 | 43.11 |   45.10 |  72.15
+    5 |                 Muy de acuerdo | 452 | 26.62 |   27.85 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |  75 |  4.42 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c07_01_rec" class="level3" data-number="3.2.9">
-<h3 data-number="3.2.9" class="anchored" data-anchor-id="c07_01_rec"><span class="header-section-number">3.2.9</span> c07_01_rec</h3>
+<section id="c07_01_rec" class="level3" data-number="5.2.9">
+<h3 data-number="5.2.9" class="anchored" data-anchor-id="c07_01_rec"><span class="header-section-number">5.2.9</span> c07_01_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c07_01)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: Increasing taxes on the wealthiest to finance social programs (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-27.29 sd=164.60
+<pre><code>Nivel de acuerdo con: Aumentar los impuestos a los más ricos para financiar programas sociales (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-17.96 sd=136.90
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
- -999 |    No answer (do not read) |   17 |  0.56 |    0.56 |   0.56
- -888 |   Don’t know (do not read) |   86 |  2.82 |    2.82 |   3.38
-    1 |          Strongly disagree |  194 |  6.36 |    6.36 |   9.74
-    2 |                   Disagree |  436 | 14.30 |   14.30 |  24.05
-    3 | Neither agree nor disagree |  726 | 23.82 |   23.82 |  47.87
-    4 |                      Agree | 1028 | 33.73 |   33.73 |  81.59
-    5 |             Strongly agree |  561 | 18.41 |   18.41 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) |  41 |  2.41 |    2.41 |   2.41
+    1 |              Muy en desacuerdo | 102 |  6.01 |    6.01 |   8.42
+    2 |                  En desacuerdo | 315 | 18.55 |   18.55 |  26.97
+    3 | Ni de acuerdo ni en desacuerdo | 187 | 11.01 |   11.01 |  37.99
+    4 |                     De acuerdo | 640 | 37.69 |   37.69 |  75.68
+    5 |                 Muy de acuerdo | 413 | 24.32 |   24.32 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c07_01, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -768,37 +773,37 @@ Value |                      Label |    N | Raw % | Valid % | Cum. %
 <span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c07_01_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: Increasing taxes on the wealthiest to finance social programs (x) &lt;numeric&gt; 
-# total N=3048 valid N=2945 mean=3.45 sd=1.15
+# total N=1698 valid N=1657 mean=3.57 sd=1.22
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-    1 |          Strongly disagree |  194 |  6.36 |    6.59 |   6.59
-    2 |                   Disagree |  436 | 14.30 |   14.80 |  21.39
-    3 | Neither agree nor disagree |  726 | 23.82 |   24.65 |  46.04
-    4 |                      Agree | 1028 | 33.73 |   34.91 |  80.95
-    5 |             Strongly agree |  561 | 18.41 |   19.05 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |  103 |  3.38 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo | 102 |  6.01 |    6.16 |   6.16
+    2 |                  En desacuerdo | 315 | 18.55 |   19.01 |  25.17
+    3 | Ni de acuerdo ni en desacuerdo | 187 | 11.01 |   11.29 |  36.45
+    4 |                     De acuerdo | 640 | 37.69 |   38.62 |  75.08
+    5 |                 Muy de acuerdo | 413 | 24.32 |   24.92 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |  41 |  2.41 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c07_03_rec" class="level3" data-number="3.2.10">
-<h3 data-number="3.2.10" class="anchored" data-anchor-id="c07_03_rec"><span class="header-section-number">3.2.10</span> c07_03_rec</h3>
+<section id="c07_03_rec" class="level3" data-number="5.2.10">
+<h3 data-number="5.2.10" class="anchored" data-anchor-id="c07_03_rec"><span class="header-section-number">5.2.10</span> c07_03_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c07_03)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: Implementing laws to give unions greater bargaining power (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-47.57 sd=208.89
+<pre><code>Nivel de acuerdo con: Implementar leyes para que los sindicatos tengan más poder de negociación (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-58.90 sd=226.65
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
- -999 |    No answer (do not read) |   20 |  0.66 |    0.66 |   0.66
- -888 |   Don’t know (do not read) |  152 |  4.99 |    4.99 |   5.64
-    1 |          Strongly disagree |  133 |  4.36 |    4.36 |  10.01
-    2 |                   Disagree |  333 | 10.93 |   10.93 |  20.93
-    3 | Neither agree nor disagree |  870 | 28.54 |   28.54 |  49.48
-    4 |                      Agree | 1147 | 37.63 |   37.63 |  87.11
-    5 |             Strongly agree |  393 | 12.89 |   12.89 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) | 118 |  6.95 |    6.95 |   6.95
+    1 |              Muy en desacuerdo | 188 | 11.07 |   11.07 |  18.02
+    2 |                  En desacuerdo | 405 | 23.85 |   23.85 |  41.87
+    3 | Ni de acuerdo ni en desacuerdo | 327 | 19.26 |   19.26 |  61.13
+    4 |                     De acuerdo | 513 | 30.21 |   30.21 |  91.34
+    5 |                 Muy de acuerdo | 147 |  8.66 |    8.66 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c07_03, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -816,37 +821,37 @@ Value |                      Label |    N | Raw % | Valid % | Cum. %
 <span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c07_03_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: Implementing laws to give unions greater bargaining power (x) &lt;numeric&gt; 
-# total N=3048 valid N=2876 mean=3.46 sd=1.02
+# total N=1698 valid N=1580 mean=3.02 sd=1.20
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-    1 |          Strongly disagree |  133 |  4.36 |    4.62 |   4.62
-    2 |                   Disagree |  333 | 10.93 |   11.58 |  16.20
-    3 | Neither agree nor disagree |  870 | 28.54 |   30.25 |  46.45
-    4 |                      Agree | 1147 | 37.63 |   39.88 |  86.34
-    5 |             Strongly agree |  393 | 12.89 |   13.66 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |  172 |  5.64 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo | 188 | 11.07 |   11.90 |  11.90
+    2 |                  En desacuerdo | 405 | 23.85 |   25.63 |  37.53
+    3 | Ni de acuerdo ni en desacuerdo | 327 | 19.26 |   20.70 |  58.23
+    4 |                     De acuerdo | 513 | 30.21 |   32.47 |  90.70
+    5 |                 Muy de acuerdo | 147 |  8.66 |    9.30 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; | 118 |  6.95 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c07_03_dummy" class="level3" data-number="3.2.11">
-<h3 data-number="3.2.11" class="anchored" data-anchor-id="c07_03_dummy"><span class="header-section-number">3.2.11</span> c07_03_dummy</h3>
+<section id="c07_03_dummy" class="level3" data-number="5.2.11">
+<h3 data-number="5.2.11" class="anchored" data-anchor-id="c07_03_dummy"><span class="header-section-number">5.2.11</span> c07_03_dummy</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c07_03)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: Implementing laws to give unions greater bargaining power (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-47.57 sd=208.89
+<pre><code>Nivel de acuerdo con: Implementar leyes para que los sindicatos tengan más poder de negociación (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-58.90 sd=226.65
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
- -999 |    No answer (do not read) |   20 |  0.66 |    0.66 |   0.66
- -888 |   Don’t know (do not read) |  152 |  4.99 |    4.99 |   5.64
-    1 |          Strongly disagree |  133 |  4.36 |    4.36 |  10.01
-    2 |                   Disagree |  333 | 10.93 |   10.93 |  20.93
-    3 | Neither agree nor disagree |  870 | 28.54 |   28.54 |  49.48
-    4 |                      Agree | 1147 | 37.63 |   37.63 |  87.11
-    5 |             Strongly agree |  393 | 12.89 |   12.89 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) | 118 |  6.95 |    6.95 |   6.95
+    1 |              Muy en desacuerdo | 188 | 11.07 |   11.07 |  18.02
+    2 |                  En desacuerdo | 405 | 23.85 |   23.85 |  41.87
+    3 | Ni de acuerdo ni en desacuerdo | 327 | 19.26 |   19.26 |  61.13
+    4 |                     De acuerdo | 513 | 30.21 |   30.21 |  91.34
+    5 |                 Muy de acuerdo | 147 |  8.66 |    8.66 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -864,34 +869,34 @@ Value |                      Label |    N | Raw % | Valid % | Cum. %
 <span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c07_03_dummy)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement: Implement laws to give unions more bargaining power (1 = agree) (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=0.51 sd=0.50
+# total N=1698 valid N=1698 mean=0.39 sd=0.49
 
 Value |    Label |    N | Raw % | Valid % | Cum. %
 --------------------------------------------------
-    0 | Disagree | 1508 | 49.48 |   49.48 |  49.48
-    1 |    Agree | 1540 | 50.52 |   50.52 | 100.00
+    0 | Disagree | 1038 | 61.13 |   61.13 |  61.13
+    1 |    Agree |  660 | 38.87 |   38.87 | 100.00
  &lt;NA&gt; |     &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c07_04_rec" class="level3" data-number="3.2.12">
-<h3 data-number="3.2.12" class="anchored" data-anchor-id="c07_04_rec"><span class="header-section-number">3.2.12</span> c07_04_rec</h3>
+<section id="c07_04_rec" class="level3" data-number="5.2.12">
+<h3 data-number="5.2.12" class="anchored" data-anchor-id="c07_04_rec"><span class="header-section-number">5.2.12</span> c07_04_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c07_04)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: Redistributing wealth from those with more resources to those with fewer (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-21.35 sd=148.55
+<pre><code>Nivel de acuerdo con: Redistribuir las riquezas desde quienes tienen más recursos hacia quienes tienen menos recursos (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-20.51 sd=144.80
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
- -999 |    No answer (do not read) |   15 |  0.49 |    0.49 |   0.49
- -888 |   Don’t know (do not read) |   68 |  2.23 |    2.23 |   2.72
-    1 |          Strongly disagree |  120 |  3.94 |    3.94 |   6.66
-    2 |                   Disagree |  424 | 13.91 |   13.91 |  20.57
-    3 | Neither agree nor disagree |  834 | 27.36 |   27.36 |  47.93
-    4 |                      Agree | 1109 | 36.38 |   36.38 |  84.32
-    5 |             Strongly agree |  478 | 15.68 |   15.68 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) |  46 |  2.71 |    2.71 |   2.71
+    1 |              Muy en desacuerdo |  80 |  4.71 |    4.71 |   7.42
+    2 |                  En desacuerdo | 271 | 15.96 |   15.96 |  23.38
+    3 | Ni de acuerdo ni en desacuerdo | 216 | 12.72 |   12.72 |  36.10
+    4 |                     De acuerdo | 679 | 39.99 |   39.99 |  76.09
+    5 |                 Muy de acuerdo | 406 | 23.91 |   23.91 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c07_04, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -909,35 +914,35 @@ Value |                      Label |    N | Raw % | Valid % | Cum. %
 <span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c07_04_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: Redistributing wealth from those with more resources to those with fewer (x) &lt;numeric&gt; 
-# total N=3048 valid N=2965 mean=3.47 sd=1.05
+# total N=1698 valid N=1652 mean=3.64 sd=1.16
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-    1 |          Strongly disagree |  120 |  3.94 |    4.05 |   4.05
-    2 |                   Disagree |  424 | 13.91 |   14.30 |  18.35
-    3 | Neither agree nor disagree |  834 | 27.36 |   28.13 |  46.48
-    4 |                      Agree | 1109 | 36.38 |   37.40 |  83.88
-    5 |             Strongly agree |  478 | 15.68 |   16.12 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |   83 |  2.72 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo |  80 |  4.71 |    4.84 |   4.84
+    2 |                  En desacuerdo | 271 | 15.96 |   16.40 |  21.25
+    3 | Ni de acuerdo ni en desacuerdo | 216 | 12.72 |   13.08 |  34.32
+    4 |                     De acuerdo | 679 | 39.99 |   41.10 |  75.42
+    5 |                 Muy de acuerdo | 406 | 23.91 |   24.58 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |  46 |  2.71 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c13_01_rec" class="level3" data-number="3.2.13">
-<h3 data-number="3.2.13" class="anchored" data-anchor-id="c13_01_rec"><span class="header-section-number">3.2.13</span> c13_01_rec</h3>
+<section id="c13_01_rec" class="level3" data-number="5.2.13">
+<h3 data-number="5.2.13" class="anchored" data-anchor-id="c13_01_rec"><span class="header-section-number">5.2.13</span> c13_01_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c13_01)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Required level of change: Pension system (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-76.39 sd=257.54
+<pre><code>Nivel de cambio necesario: El sistema de pensiones (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-69.38 sd=240.66
 
-Value |                    Label |    N | Raw % | Valid % | Cum. %
-------------------------------------------------------------------
- -999 |  No answer (do not read) |   86 |  2.82 |    2.82 |   2.82
- -888 | Don’t know (do not read) |  170 |  5.58 |    5.58 |   8.40
-    1 |         Profound changes | 1855 | 60.86 |   60.86 |  69.26
-    2 |         Moderate changes |  638 | 20.93 |   20.93 |  90.19
-    3 |    No changes are needed |  299 |  9.81 |    9.81 | 100.00
- &lt;NA&gt; |                     &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                   Label |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------
+ -999 |   No responde (no leer) |    0 |  0.00 |    0.00 |   0.00
+ -888 |       No sabe (no leer) |  135 |  7.95 |    7.95 |   7.95
+    1 |       Cambios profundos | 1112 | 65.49 |   65.49 |  73.44
+    2 |       Cambios moderados |  391 | 23.03 |   23.03 |  96.47
+    3 | No se necesitan cambios |   60 |  3.53 |    3.53 | 100.00
+ &lt;NA&gt; |                    &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c13_01, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -955,33 +960,33 @@ Value |                    Label |    N | Raw % | Valid % | Cum. %
 <span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c13_01_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Required level of change: Pension system (x) &lt;numeric&gt; 
-# total N=3048 valid N=2792 mean=1.44 sd=0.68
+# total N=1698 valid N=1563 mean=1.33 sd=0.54
 
-Value |                 Label |    N | Raw % | Valid % | Cum. %
----------------------------------------------------------------
-    1 |      Profound changes | 1855 | 60.86 |   66.44 |  66.44
-    2 |      Moderate changes |  638 | 20.93 |   22.85 |  89.29
-    3 | No changes are needed |  299 |  9.81 |   10.71 | 100.00
- &lt;NA&gt; |                  &lt;NA&gt; |  256 |  8.40 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                   Label |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------
+    1 |       Cambios profundos | 1112 | 65.49 |   71.15 |  71.15
+    2 |       Cambios moderados |  391 | 23.03 |   25.02 |  96.16
+    3 | No se necesitan cambios |   60 |  3.53 |    3.84 | 100.00
+ &lt;NA&gt; |                    &lt;NA&gt; |  135 |  7.95 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c13_02_rec" class="level3" data-number="3.2.14">
-<h3 data-number="3.2.14" class="anchored" data-anchor-id="c13_02_rec"><span class="header-section-number">3.2.14</span> c13_02_rec</h3>
+<section id="c13_02_rec" class="level3" data-number="5.2.14">
+<h3 data-number="5.2.14" class="anchored" data-anchor-id="c13_02_rec"><span class="header-section-number">5.2.14</span> c13_02_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c13_02)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Required level of change: Workers’ bargaining power vis-à-vis employers (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-55.79 sd=221.48
+<pre><code>Nivel de cambio necesario: La capacidad de negociación de trabajadores/as frente a empleadores (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-66.09 sd=235.74
 
-Value |                    Label |    N | Raw % | Valid % | Cum. %
-------------------------------------------------------------------
- -999 |  No answer (do not read) |   36 |  1.18 |    1.18 |   1.18
- -888 | Don’t know (do not read) |  156 |  5.12 |    5.12 |   6.30
-    1 |         Profound changes | 1575 | 51.67 |   51.67 |  57.97
-    2 |         Moderate changes |  971 | 31.86 |   31.86 |  89.83
-    3 |    No changes are needed |  310 | 10.17 |   10.17 | 100.00
- &lt;NA&gt; |                     &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                   Label |   N | Raw % | Valid % | Cum. %
+----------------------------------------------------------------
+ -999 |   No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |       No sabe (no leer) | 129 |  7.60 |    7.60 |   7.60
+    1 |       Cambios profundos | 890 | 52.41 |   52.41 |  60.01
+    2 |       Cambios moderados | 588 | 34.63 |   34.63 |  94.64
+    3 | No se necesitan cambios |  91 |  5.36 |    5.36 | 100.00
+ &lt;NA&gt; |                    &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c13_02, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -999,33 +1004,33 @@ Value |                    Label |    N | Raw % | Valid % | Cum. %
 <span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c13_02_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Required level of change: Workers’ bargaining power vis-à-vis employers (x) &lt;numeric&gt; 
-# total N=3048 valid N=2856 mean=1.56 sd=0.68
+# total N=1698 valid N=1569 mean=1.49 sd=0.61
 
-Value |                 Label |    N | Raw % | Valid % | Cum. %
----------------------------------------------------------------
-    1 |      Profound changes | 1575 | 51.67 |   55.15 |  55.15
-    2 |      Moderate changes |  971 | 31.86 |   34.00 |  89.15
-    3 | No changes are needed |  310 | 10.17 |   10.85 | 100.00
- &lt;NA&gt; |                  &lt;NA&gt; |  192 |  6.30 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                   Label |   N | Raw % | Valid % | Cum. %
+----------------------------------------------------------------
+    1 |       Cambios profundos | 890 | 52.41 |   56.72 |  56.72
+    2 |       Cambios moderados | 588 | 34.63 |   37.48 |  94.20
+    3 | No se necesitan cambios |  91 |  5.36 |    5.80 | 100.00
+ &lt;NA&gt; |                    &lt;NA&gt; | 129 |  7.60 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c13_03_rec" class="level3" data-number="3.2.15">
-<h3 data-number="3.2.15" class="anchored" data-anchor-id="c13_03_rec"><span class="header-section-number">3.2.15</span> c13_03_rec</h3>
+<section id="c13_03_rec" class="level3" data-number="5.2.15">
+<h3 data-number="5.2.15" class="anchored" data-anchor-id="c13_03_rec"><span class="header-section-number">5.2.15</span> c13_03_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c13_03)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Required level of change: Economic model (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-64.27 sd=235.19
+<pre><code>Nivel de cambio necesario: El modelo económico (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-42.66 sd=192.91
 
-Value |                    Label |    N | Raw % | Valid % | Cum. %
-------------------------------------------------------------------
- -999 |  No answer (do not read) |   29 |  0.95 |    0.95 |   0.95
- -888 | Don’t know (do not read) |  193 |  6.33 |    6.33 |   7.28
-    1 |         Profound changes | 1564 | 51.31 |   51.31 |  58.60
-    2 |         Moderate changes |  894 | 29.33 |   29.33 |  87.93
-    3 |    No changes are needed |  368 | 12.07 |   12.07 | 100.00
- &lt;NA&gt; |                     &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                   Label |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------
+ -999 |   No responde (no leer) |    0 |  0.00 |    0.00 |   0.00
+ -888 |       No sabe (no leer) |   84 |  4.95 |    4.95 |   4.95
+    1 |       Cambios profundos | 1150 | 67.73 |   67.73 |  72.67
+    2 |       Cambios moderados |  385 | 22.67 |   22.67 |  95.35
+    3 | No se necesitan cambios |   79 |  4.65 |    4.65 | 100.00
+ &lt;NA&gt; |                    &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c13_03, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -1043,33 +1048,33 @@ Value |                    Label |    N | Raw % | Valid % | Cum. %
 <span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c13_03_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Required level of change: Economic model (x) &lt;numeric&gt; 
-# total N=3048 valid N=2826 mean=1.58 sd=0.71
+# total N=1698 valid N=1614 mean=1.34 sd=0.57
 
-Value |                 Label |    N | Raw % | Valid % | Cum. %
----------------------------------------------------------------
-    1 |      Profound changes | 1564 | 51.31 |   55.34 |  55.34
-    2 |      Moderate changes |  894 | 29.33 |   31.63 |  86.98
-    3 | No changes are needed |  368 | 12.07 |   13.02 | 100.00
- &lt;NA&gt; |                  &lt;NA&gt; |  222 |  7.28 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                   Label |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------
+    1 |       Cambios profundos | 1150 | 67.73 |   71.25 |  71.25
+    2 |       Cambios moderados |  385 | 22.67 |   23.85 |  95.11
+    3 | No se necesitan cambios |   79 |  4.65 |    4.89 | 100.00
+ &lt;NA&gt; |                    &lt;NA&gt; |   84 |  4.95 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c13_04_rec" class="level3" data-number="3.2.16">
-<h3 data-number="3.2.16" class="anchored" data-anchor-id="c13_04_rec"><span class="header-section-number">3.2.16</span> c13_04_rec</h3>
+<section id="c13_04_rec" class="level3" data-number="5.2.16">
+<h3 data-number="5.2.16" class="anchored" data-anchor-id="c13_04_rec"><span class="header-section-number">5.2.16</span> c13_04_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c13_04)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Required level of change: Income distribution (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-40.65 sd=190.98
+<pre><code>Nivel de cambio necesario: La manera en como se distribuyen los ingresos (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-49.96 sd=207.47
 
-Value |                    Label |    N | Raw % | Valid % | Cum. %
-------------------------------------------------------------------
- -999 |  No answer (do not read) |   20 |  0.66 |    0.66 |   0.66
- -888 | Don’t know (do not read) |  122 |  4.00 |    4.00 |   4.66
-    1 |         Profound changes | 1707 | 56.00 |   56.00 |  60.66
-    2 |         Moderate changes |  897 | 29.43 |   29.43 |  90.09
-    3 |    No changes are needed |  302 |  9.91 |    9.91 | 100.00
- &lt;NA&gt; |                     &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                   Label |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------
+ -999 |   No responde (no leer) |    0 |  0.00 |    0.00 |   0.00
+ -888 |       No sabe (no leer) |   98 |  5.77 |    5.77 |   5.77
+    1 |       Cambios profundos | 1087 | 64.02 |   64.02 |  69.79
+    2 |       Cambios moderados |  429 | 25.27 |   25.27 |  95.05
+    3 | No se necesitan cambios |   84 |  4.95 |    4.95 | 100.00
+ &lt;NA&gt; |                    &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c13_04, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -1087,35 +1092,35 @@ Value |                    Label |    N | Raw % | Valid % | Cum. %
 <span id="cb66-14"><a href="#cb66-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c13_04_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Required level of change: Income distribution (x) &lt;numeric&gt; 
-# total N=3048 valid N=2906 mean=1.52 sd=0.68
+# total N=1698 valid N=1600 mean=1.37 sd=0.58
 
-Value |                 Label |    N | Raw % | Valid % | Cum. %
----------------------------------------------------------------
-    1 |      Profound changes | 1707 | 56.00 |   58.74 |  58.74
-    2 |      Moderate changes |  897 | 29.43 |   30.87 |  89.61
-    3 | No changes are needed |  302 |  9.91 |   10.39 | 100.00
- &lt;NA&gt; |                  &lt;NA&gt; |  142 |  4.66 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                   Label |    N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------
+    1 |       Cambios profundos | 1087 | 64.02 |   67.94 |  67.94
+    2 |       Cambios moderados |  429 | 25.27 |   26.81 |  94.75
+    3 | No se necesitan cambios |   84 |  4.95 |    5.25 | 100.00
+ &lt;NA&gt; |                    &lt;NA&gt; |   98 |  5.77 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c14_01_rec" class="level3" data-number="3.2.17">
-<h3 data-number="3.2.17" class="anchored" data-anchor-id="c14_01_rec"><span class="header-section-number">3.2.17</span> c14_01_rec</h3>
+<section id="c14_01_rec" class="level3" data-number="5.2.17">
+<h3 data-number="5.2.17" class="anchored" data-anchor-id="c14_01_rec"><span class="header-section-number">5.2.17</span> c14_01_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c14_01)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: Capitalism allows everyone to have opportunities to succeed (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-62.96 sd=234.94
+<pre><code>Nivel de acuerdo con: El capitalismo permite que todos tengamos oportunidades para ser exitosos (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-68.65 sd=241.84
 
-Value |                      Label |   N | Raw % | Valid % | Cum. %
--------------------------------------------------------------------
- -999 |    No answer (do not read) |  21 |  0.69 |    0.69 |   0.69
- -888 |   Don’t know (do not read) | 202 |  6.63 |    6.63 |   7.32
-    1 |          Strongly disagree | 371 | 12.17 |   12.17 |  19.49
-    2 |                   Disagree | 521 | 17.09 |   17.09 |  36.58
-    3 | Neither agree nor disagree | 923 | 30.28 |   30.28 |  66.86
-    4 |                      Agree | 784 | 25.72 |   25.72 |  92.59
-    5 |             Strongly agree | 226 |  7.41 |    7.41 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) | 136 |  8.01 |    8.01 |   8.01
+    1 |              Muy en desacuerdo | 287 | 16.90 |   16.90 |  24.91
+    2 |                  En desacuerdo | 471 | 27.74 |   27.74 |  52.65
+    3 | Ni de acuerdo ni en desacuerdo | 338 | 19.91 |   19.91 |  72.56
+    4 |                     De acuerdo | 378 | 22.26 |   22.26 |  94.82
+    5 |                 Muy de acuerdo |  88 |  5.18 |    5.18 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c14_01, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -1133,37 +1138,37 @@ Value |                      Label |   N | Raw % | Valid % | Cum. %
 <span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c14_01_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: Capitalism allows everyone to have opportunities to succeed (x) &lt;numeric&gt; 
-# total N=3048 valid N=2825 mean=2.99 sd=1.14
+# total N=1698 valid N=1562 mean=2.69 sd=1.19
 
-Value |                      Label |   N | Raw % | Valid % | Cum. %
--------------------------------------------------------------------
-    1 |          Strongly disagree | 371 | 12.17 |   13.13 |  13.13
-    2 |                   Disagree | 521 | 17.09 |   18.44 |  31.58
-    3 | Neither agree nor disagree | 923 | 30.28 |   32.67 |  64.25
-    4 |                      Agree | 784 | 25.72 |   27.75 |  92.00
-    5 |             Strongly agree | 226 |  7.41 |    8.00 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; | 223 |  7.32 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo | 287 | 16.90 |   18.37 |  18.37
+    2 |                  En desacuerdo | 471 | 27.74 |   30.15 |  48.53
+    3 | Ni de acuerdo ni en desacuerdo | 338 | 19.91 |   21.64 |  70.17
+    4 |                     De acuerdo | 378 | 22.26 |   24.20 |  94.37
+    5 |                 Muy de acuerdo |  88 |  5.18 |    5.63 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; | 136 |  8.01 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c14_02_rec" class="level3" data-number="3.2.18">
-<h3 data-number="3.2.18" class="anchored" data-anchor-id="c14_02_rec"><span class="header-section-number">3.2.18</span> c14_02_rec</h3>
+<section id="c14_02_rec" class="level3" data-number="5.2.18">
+<h3 data-number="5.2.18" class="anchored" data-anchor-id="c14_02_rec"><span class="header-section-number">5.2.18</span> c14_02_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c14_02)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: Capitalism produces social injustices (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-69.31 sd=245.90
+<pre><code>Nivel de acuerdo con: El capitalismo produce injusticias sociales (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-67.73 sd=242.11
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
- -999 |    No answer (do not read) |   27 |  0.89 |    0.89 |   0.89
- -888 |   Don’t know (do not read) |  218 |  7.15 |    7.15 |   8.04
-    1 |          Strongly disagree |  115 |  3.77 |    3.77 |  11.81
-    2 |                   Disagree |  425 | 13.94 |   13.94 |  25.75
-    3 | Neither agree nor disagree | 1024 | 33.60 |   33.60 |  59.35
-    4 |                      Agree |  918 | 30.12 |   30.12 |  89.47
-    5 |             Strongly agree |  321 | 10.53 |   10.53 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) | 136 |  8.01 |    8.01 |   8.01
+    1 |              Muy en desacuerdo |  50 |  2.94 |    2.94 |  10.95
+    2 |                  En desacuerdo | 207 | 12.19 |   12.19 |  23.14
+    3 | Ni de acuerdo ni en desacuerdo | 256 | 15.08 |   15.08 |  38.22
+    4 |                     De acuerdo | 712 | 41.93 |   41.93 |  80.15
+    5 |                 Muy de acuerdo | 337 | 19.85 |   19.85 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c14_02, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -1181,37 +1186,37 @@ Value |                      Label |    N | Raw % | Valid % | Cum. %
 <span id="cb74-14"><a href="#cb74-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c14_02_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: Capitalism produces social injustices (x) &lt;numeric&gt; 
-# total N=3048 valid N=2803 mean=3.32 sd=1.00
+# total N=1698 valid N=1562 mean=3.69 sd=1.05
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-    1 |          Strongly disagree |  115 |  3.77 |    4.10 |   4.10
-    2 |                   Disagree |  425 | 13.94 |   15.16 |  19.27
-    3 | Neither agree nor disagree | 1024 | 33.60 |   36.53 |  55.80
-    4 |                      Agree |  918 | 30.12 |   32.75 |  88.55
-    5 |             Strongly agree |  321 | 10.53 |   11.45 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |  245 |  8.04 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo |  50 |  2.94 |    3.20 |   3.20
+    2 |                  En desacuerdo | 207 | 12.19 |   13.25 |  16.45
+    3 | Ni de acuerdo ni en desacuerdo | 256 | 15.08 |   16.39 |  32.84
+    4 |                     De acuerdo | 712 | 41.93 |   45.58 |  78.43
+    5 |                 Muy de acuerdo | 337 | 19.85 |   21.57 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; | 136 |  8.01 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c14_03_rec" class="level3" data-number="3.2.19">
-<h3 data-number="3.2.19" class="anchored" data-anchor-id="c14_03_rec"><span class="header-section-number">3.2.19</span> c14_03_rec</h3>
+<section id="c14_03_rec" class="level3" data-number="5.2.19">
+<h3 data-number="5.2.19" class="anchored" data-anchor-id="c14_03_rec"><span class="header-section-number">5.2.19</span> c14_03_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c14_03)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: Under capitalism, only the rich benefit (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-63.09 sd=235.90
+<pre><code>Nivel de acuerdo con: En el capitalismo, los únicos beneficiados son los ricos (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-55.29 sd=221.35
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
- -999 |    No answer (do not read) |   24 |  0.79 |    0.79 |   0.79
- -888 |   Don’t know (do not read) |  200 |  6.56 |    6.56 |   7.35
-    1 |          Strongly disagree |  129 |  4.23 |    4.23 |  11.58
-    2 |                   Disagree |  469 | 15.39 |   15.39 |  26.97
-    3 | Neither agree nor disagree | 1013 | 33.23 |   33.23 |  60.20
-    4 |                      Agree |  893 | 29.30 |   29.30 |  89.50
-    5 |             Strongly agree |  320 | 10.50 |   10.50 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) | 112 |  6.60 |    6.60 |   6.60
+    1 |              Muy en desacuerdo |  67 |  3.95 |    3.95 |  10.54
+    2 |                  En desacuerdo | 289 | 17.02 |   17.02 |  27.56
+    3 | Ni de acuerdo ni en desacuerdo | 283 | 16.67 |   16.67 |  44.23
+    4 |                     De acuerdo | 658 | 38.75 |   38.75 |  82.98
+    5 |                 Muy de acuerdo | 289 | 17.02 |   17.02 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c14_03, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -1229,37 +1234,37 @@ Value |                      Label |    N | Raw % | Valid % | Cum. %
 <span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c14_03_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: Under capitalism, only the rich benefit (x) &lt;numeric&gt; 
-# total N=3048 valid N=2824 mean=3.29 sd=1.02
+# total N=1698 valid N=1586 mean=3.51 sd=1.11
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-    1 |          Strongly disagree |  129 |  4.23 |    4.57 |   4.57
-    2 |                   Disagree |  469 | 15.39 |   16.61 |  21.18
-    3 | Neither agree nor disagree | 1013 | 33.23 |   35.87 |  57.05
-    4 |                      Agree |  893 | 29.30 |   31.62 |  88.67
-    5 |             Strongly agree |  320 | 10.50 |   11.33 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |  224 |  7.35 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo |  67 |  3.95 |    4.22 |   4.22
+    2 |                  En desacuerdo | 289 | 17.02 |   18.22 |  22.45
+    3 | Ni de acuerdo ni en desacuerdo | 283 | 16.67 |   17.84 |  40.29
+    4 |                     De acuerdo | 658 | 38.75 |   41.49 |  81.78
+    5 |                 Muy de acuerdo | 289 | 17.02 |   18.22 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; | 112 |  6.60 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="c14_04_rec" class="level3" data-number="3.2.20">
-<h3 data-number="3.2.20" class="anchored" data-anchor-id="c14_04_rec"><span class="header-section-number">3.2.20</span> c14_04_rec</h3>
+<section id="c14_04_rec" class="level3" data-number="5.2.20">
+<h3 data-number="5.2.20" class="anchored" data-anchor-id="c14_04_rec"><span class="header-section-number">5.2.20</span> c14_04_rec</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c14_04)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: Capitalism is harmful to workers (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-71.33 sd=248.43
+<pre><code>Nivel de acuerdo con: El capitalismo es perjudicial para los trabajadores/as (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-67.04 sd=240.37
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
- -999 |    No answer (do not read) |   23 |  0.75 |    0.75 |   0.75
- -888 |   Don’t know (do not read) |  229 |  7.51 |    7.51 |   8.27
-    1 |          Strongly disagree |  142 |  4.66 |    4.66 |  12.93
-    2 |                   Disagree |  521 | 17.09 |   17.09 |  30.02
-    3 | Neither agree nor disagree | 1088 | 35.70 |   35.70 |  65.72
-    4 |                      Agree |  773 | 25.36 |   25.36 |  91.08
-    5 |             Strongly agree |  272 |  8.92 |    8.92 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+ -999 |          No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |              No sabe (no leer) | 134 |  7.89 |    7.89 |   7.89
+    1 |              Muy en desacuerdo |  77 |  4.53 |    4.53 |  12.43
+    2 |                  En desacuerdo | 362 | 21.32 |   21.32 |  33.75
+    3 | Ni de acuerdo ni en desacuerdo | 364 | 21.44 |   21.44 |  55.18
+    4 |                     De acuerdo | 539 | 31.74 |   31.74 |  86.93
+    5 |                 Muy de acuerdo | 222 | 13.07 |   13.07 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>c14_04, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -1277,35 +1282,35 @@ Value |                      Label |    N | Raw % | Valid % | Cum. %
 <span id="cb82-14"><a href="#cb82-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c14_04_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of agreement with: Capitalism is harmful to workers (x) &lt;numeric&gt; 
-# total N=3048 valid N=2796 mean=3.18 sd=1.01
+# total N=1698 valid N=1564 mean=3.30 sd=1.12
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-    1 |          Strongly disagree |  142 |  4.66 |    5.08 |   5.08
-    2 |                   Disagree |  521 | 17.09 |   18.63 |  23.71
-    3 | Neither agree nor disagree | 1088 | 35.70 |   38.91 |  62.63
-    4 |                      Agree |  773 | 25.36 |   27.65 |  90.27
-    5 |             Strongly agree |  272 |  8.92 |    9.73 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |  252 |  8.27 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    1 |              Muy en desacuerdo |  77 |  4.53 |    4.92 |   4.92
+    2 |                  En desacuerdo | 362 | 21.32 |   23.15 |  28.07
+    3 | Ni de acuerdo ni en desacuerdo | 364 | 21.44 |   23.27 |  51.34
+    4 |                     De acuerdo | 539 | 31.74 |   34.46 |  85.81
+    5 |                 Muy de acuerdo | 222 | 13.07 |   14.19 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; | 134 |  7.89 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="controls" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="controls"><span class="header-section-number">3.3</span> Controls</h2>
-<section id="female" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="female"><span class="header-section-number">3.3.1</span> female</h3>
+<section id="controls" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="controls"><span class="header-section-number">5.3</span> Controls</h2>
+<section id="female" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="female"><span class="header-section-number">5.3.1</span> female</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>e01)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Respondent’s sex (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=1.52 sd=0.50
+<pre><code>Sexo del/a encuestado/a (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=1.50 sd=0.50
 
-Value |  Label |    N | Raw % | Valid % | Cum. %
-------------------------------------------------
-    1 |   Male | 1465 | 48.06 |   48.06 |  48.06
-    2 | Female | 1583 | 51.94 |   51.94 | 100.00
- &lt;NA&gt; |   &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+    1 | 857 | 50.47 |   50.47 |  50.47
+    2 | 841 | 49.53 |   49.53 | 100.00
+ &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1323,28 +1328,28 @@ Value |  Label |    N | Raw % | Valid % | Cum. %
 <span id="cb86-14"><a href="#cb86-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>female)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Gender (1 = female) (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=0.52 sd=0.50
+# total N=1698 valid N=1698 mean=0.50 sd=0.50
 
-Value |  Label |    N | Raw % | Valid % | Cum. %
-------------------------------------------------
-    0 |   Male | 1465 | 48.06 |   48.06 |  48.06
-    1 | Female | 1583 | 51.94 |   51.94 | 100.00
- &lt;NA&gt; |   &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |  Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------
+    0 |   Male | 857 | 50.47 |   50.47 |  50.47
+    1 | Female | 841 | 49.53 |   49.53 | 100.00
+ &lt;NA&gt; |   &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="age" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="age"><span class="header-section-number">3.3.2</span> age</h3>
+<section id="age" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="age"><span class="header-section-number">5.3.2</span> age</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(data<span class="sc">$</span>e02)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 ## Basic descriptive statistics
 
- var    type            label    n NA.prc mean    sd   se md trimmed
-  dd numeric Respondent’s age 3048      0 39.6 20.92 0.38 39   39.29
-         range iqr   skew
- 969 (-888-81)  19 -28.52</code></pre>
+ var    type                   label    n NA.prc  mean    sd   se md trimmed
+  dd numeric Edad del/a encuestado/a 1698      0 41.29 13.28 0.32 40   40.69
+      range iqr skew
+ 66 (18-84)  21 0.37</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1359,44 +1364,40 @@ Value |  Label |    N | Raw % | Valid % | Cum. %
 <pre><code>
 ## Basic descriptive statistics
 
- var    type label    n NA.prc mean    sd   se md trimmed      range iqr skew
-  dd numeric   Age 3047   0.03 39.9 12.46 0.23 39   39.29 63 (18-81)  19 0.42</code></pre>
+ var    type label    n NA.prc  mean    sd   se md trimmed      range iqr skew
+  dd numeric   Age 1698      0 41.29 13.28 0.32 40   40.69 66 (18-84)  21 0.37</code></pre>
 </div>
 </div>
 </section>
-<section id="sector" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="sector"><span class="header-section-number">3.3.3</span> sector</h3>
+<section id="sector" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="sector"><span class="header-section-number">5.3.3</span> sector</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a07)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Employment relationship (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=3.79 sd=1.67
+<pre><code>Relación de empleo (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=3.13 sd=1.22
 
-Value |                                                              Label
---------------------------------------------------------------------------
-    1 |                                                           Employer
-    2 |                                               Self-employed worker
-    3 | Public sector employee or worker (Central or Municipal Government)
-    4 |                           Employee or worker of public enterprises
-    5 |                                  Private sector employee or worker
-    6 |                                            Live-in domestic worker
-    7 |                                           Live-out domestic worker
-    8 |                                   Armed Forces and Law Enforcement
-    9 |                                               Unpaid family worker
- &lt;NA&gt; |                                                               &lt;NA&gt;
+Value |                                              Label |   N | Raw %
+------------------------------------------------------------------------
+    1 |                           Patrón(a) o empleador(a) |  99 |  5.83
+    2 |                    Trabajador(a) por cuenta propia | 531 | 31.27
+    3 |         Empleado(a) u obrero(a) del sector público | 331 | 19.49
+    4 |         Empleado(a) u obrero(a) del sector privado | 627 | 36.93
+    5 |                Servicio doméstico fijo o por horas |  57 |  3.36
+    6 |                              FF.AA. y de seguridad |  11 |  0.65
+    7 | Para el negocio, empresa, actividad de un familiar |  42 |  2.47
+ &lt;NA&gt; |                                               &lt;NA&gt; |   0 |  0.00
 
-Value |    N | Raw % | Valid % | Cum. %
----------------------------------------
-    1 |  344 | 11.29 |   11.29 |  11.29
-    2 |  598 | 19.62 |   19.62 |  30.91
-    3 |  251 |  8.23 |    8.23 |  39.14
-    4 |  337 | 11.06 |   11.06 |  50.20
-    5 | 1371 | 44.98 |   44.98 |  95.18
-    6 |   21 |  0.69 |    0.69 |  95.87
-    7 |  101 |  3.31 |    3.31 |  99.18
-    8 |   13 |  0.43 |    0.43 |  99.61
-    9 |   12 |  0.39 |    0.39 | 100.00
- &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value | Valid % | Cum. %
+------------------------
+    1 |    5.83 |   5.83
+    2 |   31.27 |  37.10
+    3 |   19.49 |  56.60
+    4 |   36.93 |  93.52
+    5 |    3.36 |  96.88
+    6 |    0.65 |  97.53
+    7 |    2.47 | 100.00
+ &lt;NA&gt; |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1414,23 +1415,23 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb94-14"><a href="#cb94-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>sector)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Sector (1 = private) (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=0.80 sd=0.40
+# total N=1698 valid N=1698 mean=0.44 sd=0.50
 
-Value |   Label |    N | Raw % | Valid % | Cum. %
--------------------------------------------------
-    0 |  Public |  601 | 19.72 |   19.72 |  19.72
-    1 | Private | 2447 | 80.28 |   80.28 | 100.00
- &lt;NA&gt; |    &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   Label |   N | Raw % | Valid % | Cum. %
+------------------------------------------------
+    0 |  Public | 958 | 56.42 |   56.42 |  56.42
+    1 | Private | 740 | 43.58 |   43.58 | 100.00
+ &lt;NA&gt; |    &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="rama" class="level3" data-number="3.3.4">
-<h3 data-number="3.3.4" class="anchored" data-anchor-id="rama"><span class="header-section-number">3.3.4</span> rama</h3>
+<section id="rama" class="level3" data-number="5.3.4">
+<h3 data-number="5.3.4" class="anchored" data-anchor-id="rama"><span class="header-section-number">5.3.4</span> rama</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a25_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Economic activity sector – Recovering recoded “Other” (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=10.01 sd=28.83
+<pre><code>Rama de actividad económica - Recuperando Otra Rec (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=11.29 sd=5.75
 
 Value
 -----
@@ -1460,60 +1461,60 @@ Value
    22
  &lt;NA&gt;
 
-                                                                                                                               Label
-------------------------------------------------------------------------------------------------------------------------------------
-                                                                                                             No answer (do not read)
-                                                                                                            Don’t know (do not read)
-                                                                                    A. Agriculture, livestock, forestry, and fishing
-                                                                                                             B. Mining and quarrying
-       C. Manufacturing industries (processing and production of all kinds of products, e.g., food, textiles, wood, chemicals, etc.)
-                                                                             D. Electricity, gas, steam, and air conditioning supply
-                                                             E. Water supply; sewerage, waste management, and remediation activities
-                                                                                                                     F. Construction
-                                                             G. Wholesale and retail trade; repair of motor vehicles and motorcycles
-                                                                                                       H. Transportation and storage
-                                                                                        I. Accommodation and food service activities
-           J. Information and communication (e.g., book publishing, film production, telecommunications, and information technology)
-                                                              K. Financial and insurance activities (e.g., banks and life insurance)
-                                                                                                           L. Real estate activities
-                           M. Professional, scientific, and technical activities (e.g., law firms, advertising, scientific research)
-N. Administrative and support service activities (e.g., vehicle and machinery rental, private security services, call centers, etc.)
-      O. Public administration and defense (e.g., work in the State and municipalities, public order, or compulsory social security)
-                                                                                                                        P. Education
-                                                                                          Q. Human health and social work activities
-                    R. Arts, entertainment, and recreation activities (e.g., work in bookstores, sports centers, or amusement parks)
-                                 S. Other service activities (e.g., laundry services, hairdressing, or work in social organizations)
-                                         T. Undifferentiated activities of households as producers of goods and services for own use
-                                                                          U. Activities of extraterritorial organizations and bodies
-                                                                                                               Other. Please specify
-                                                                                                                                &lt;NA&gt;
+                                                                                                                                           Label
+------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                                           No responde (no leer)
+                                                                                                                               No sabe (no leer)
+                                                                                                 A. Agricultura, ganadería, silvicultura y pesca
+                                                                                                              B. Explotación de minas y canteras
+   C. Industrias manufactureras (elaboración y fabricación de productos de cualquier tipo, por ej., alimentos, textiles, madera, químicos, etc.)
+                                                                                  D. Suministro de electricidad, gas, vapor y aire acondicionado
+                                                   E. Suministro de agua, evacuación de aguas residuales, gestión de desechos y descontaminación
+                                                                                                                                 F. Construcción
+                                                     G. Comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas
+                                                                                                                  H. Transporte y almacenamiento
+                                                                                             I. Actividades de alojamiento y servicio de comidas
+                             J. Información y comunicaciones (ej., edición de libros, producción de películas, telecomunicaciones e informática)
+                                                                         K. Actividades financieras y de seguros (ej., bancos y seguros de vida)
+                                                                                                                    L. Actividades inmobiliarias
+                          M. Actividades profesionales, científicas y técnicas (ej., oficinas de abogados, publicidad, investigación científica)
+           N. Servicios administrativos y de apoyo (ej., arriendo de vehículos y maquinaria, servicios de seguridad privada, call centers, etc.)
+O. Administración pública y defensa (ej., trabajo en el Estado y municipalidades, orden público o en seguridad social de afiliación obligatoria)
+                                                                                                                                    P. Enseñanza
+                                                                                           Q. Atención de la salud humana y de asistencia social
+              R. Actividades artísticas, de entretenimiento y recreativas (ej., trabajo en librerías, centros deportivos o parques de diversión)
+                                        S. Otras actividades de servicios (ej., lavado de ropa, peluquería o trabajo en organizaciones sociales)
+                                           T. Actividades no diferenciadas de los hogares como productores de bienes y servicios para uso propio
+                                                                                                  U. Organizaciones y órganos extraterriroriales
+                                                                                                                          Otra. Especifique cuál
+                                                                                                                                            &lt;NA&gt;
 
   N | Raw % | Valid % | Cum. %
 ------------------------------
   0 |  0.00 |    0.00 |   0.00
-  3 |  0.10 |    0.10 |   0.10
-193 |  6.33 |    6.33 |   6.43
- 97 |  3.18 |    3.18 |   9.61
-191 |  6.27 |    6.27 |  15.88
- 43 |  1.41 |    1.41 |  17.29
- 20 |  0.66 |    0.66 |  17.95
-187 |  6.14 |    6.14 |  24.08
-466 | 15.29 |   15.29 |  39.37
-186 |  6.10 |    6.10 |  45.47
-174 |  5.71 |    5.71 |  51.18
- 46 |  1.51 |    1.51 |  52.69
- 40 |  1.31 |    1.31 |  54.00
- 28 |  0.92 |    0.92 |  54.92
-108 |  3.54 |    3.54 |  58.46
-119 |  3.90 |    3.90 |  62.37
-130 |  4.27 |    4.27 |  66.63
-191 |  6.27 |    6.27 |  72.90
-272 |  8.92 |    8.92 |  81.82
- 63 |  2.07 |    2.07 |  83.89
-412 | 13.52 |   13.52 |  97.41
- 49 |  1.61 |    1.61 |  99.02
- 30 |  0.98 |    0.98 | 100.00
-  0 |  0.00 |    0.00 | 100.00
+  0 |  0.00 |    0.00 |   0.00
+ 48 |  2.83 |    2.83 |   2.83
+ 13 |  0.77 |    0.77 |   3.59
+171 | 10.07 |   10.07 |  13.66
+ 28 |  1.65 |    1.65 |  15.31
+ 16 |  0.94 |    0.94 |  16.25
+ 78 |  4.59 |    4.59 |  20.85
+302 | 17.79 |   17.79 |  38.63
+ 61 |  3.59 |    3.59 |  42.23
+ 53 |  3.12 |    3.12 |  45.35
+ 53 |  3.12 |    3.12 |  48.47
+ 34 |  2.00 |    2.00 |  50.47
+ 12 |  0.71 |    0.71 |  51.18
+ 63 |  3.71 |    3.71 |  54.89
+ 52 |  3.06 |    3.06 |  57.95
+132 |  7.77 |    7.77 |  65.72
+171 | 10.07 |   10.07 |  75.80
+139 |  8.19 |    8.19 |  83.98
+ 52 |  3.06 |    3.06 |  87.04
+165 |  9.72 |    9.72 |  96.76
+ 49 |  2.89 |    2.89 |  99.65
+  5 |  0.29 |    0.29 |  99.94
+  1 |  0.06 |    0.06 | 100.00
   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
@@ -1537,50 +1538,50 @@ N. Administrative and support service activities (e.g., vehicle and machinery re
 <span id="cb98-19"><a href="#cb98-19" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>rama)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Economic Activity (x) &lt;categorical&gt; 
-# total N=3048 valid N=3045 mean=5.48 sd=2.61
+# total N=1698 valid N=1697 mean=5.68 sd=2.48
 
 Value |   N | Raw % | Valid % | Cum. %
 --------------------------------------
-A     | 193 |  6.33 |    6.34 |   6.34
-BC    | 288 |  9.45 |    9.46 |  15.80
-DEF   | 250 |  8.20 |    8.21 |  24.01
-GI    | 652 | 21.39 |   21.41 |  45.42
-H     | 174 |  5.71 |    5.71 |  51.13
-JKLMN | 341 | 11.19 |   11.20 |  62.33
-O     | 130 |  4.27 |    4.27 |  66.60
-PQ    | 463 | 15.19 |   15.21 |  81.81
-RSU   | 524 | 17.19 |   17.21 |  99.01
-T     |  30 |  0.98 |    0.99 | 100.00
-&lt;NA&gt;  |   3 |  0.10 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+A     |  48 |  2.83 |    2.83 |   2.83
+BC    | 184 | 10.84 |   10.84 |  13.67
+DEF   | 122 |  7.18 |    7.19 |  20.86
+GI    | 363 | 21.38 |   21.39 |  42.25
+H     |  53 |  3.12 |    3.12 |  45.37
+JKLMN | 214 | 12.60 |   12.61 |  57.98
+O     | 132 |  7.77 |    7.78 |  65.76
+PQ    | 310 | 18.26 |   18.27 |  84.03
+RSU   | 266 | 15.67 |   15.67 |  99.71
+T     |   5 |  0.29 |    0.29 | 100.00
+&lt;NA&gt;  |   1 |  0.06 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="pol_id" class="level3" data-number="3.3.5">
-<h3 data-number="3.3.5" class="anchored" data-anchor-id="pol_id"><span class="header-section-number">3.3.5</span> pol_id</h3>
+<section id="pol_id" class="level3" data-number="5.3.5">
+<h3 data-number="5.3.5" class="anchored" data-anchor-id="pol_id"><span class="header-section-number">5.3.5</span> pol_id</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c08)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Left–Right ideological positioning (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-29.80 sd=184.16
+<pre><code>Posicionamiento Izquierda-Derecha (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-22.26 sd=156.99
 
-Value |                        Label |   N | Raw % | Valid % | Cum. %
----------------------------------------------------------------------
- -999 |      No answer (do not read) |  65 |  2.13 |    2.13 |   2.13
- -888 |     Don’t know (do not read) |  52 |  1.71 |    1.71 |   3.84
-    0 |                       0 Left | 110 |  3.61 |    3.61 |   7.45
-    1 |                            1 |  35 |  1.15 |    1.15 |   8.60
-    2 |                            2 |  83 |  2.72 |    2.72 |  11.32
-    3 |                            3 | 155 |  5.09 |    5.09 |  16.40
-    4 |                            4 | 212 |  6.96 |    6.96 |  23.36
-    5 |                     5 Center | 830 | 27.23 |   27.23 |  50.59
-    6 |                            6 | 216 |  7.09 |    7.09 |  57.68
-    7 |                            7 | 233 |  7.64 |    7.64 |  65.32
-    8 |                            8 | 130 |  4.27 |    4.27 |  69.59
-    9 |                            9 |  54 |  1.77 |    1.77 |  71.36
-   10 |                     10 Right | 114 |  3.74 |    3.74 |  75.10
-   11 | 11 Independent (do not read) |  90 |  2.95 |    2.95 |  78.05
-   12 |        12 None (do not read) | 669 | 21.95 |   21.95 | 100.00
- &lt;NA&gt; |                         &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                      Label |   N | Raw % | Valid % | Cum. %
+-------------------------------------------------------------------
+ -999 |      No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |          No sabe (no leer) |  54 |  3.18 |    3.18 |   3.18
+    0 |                0 Izquierda |  98 |  5.77 |    5.77 |   8.95
+    1 |                          1 |  34 |  2.00 |    2.00 |  10.95
+    2 |                          2 |  85 |  5.01 |    5.01 |  15.96
+    3 |                          3 | 136 |  8.01 |    8.01 |  23.97
+    4 |                          4 | 149 |  8.78 |    8.78 |  32.74
+    5 |                   5 Centro | 492 | 28.98 |   28.98 |  61.72
+    6 |                          6 |  68 |  4.00 |    4.00 |  65.72
+    7 |                          7 |  70 |  4.12 |    4.12 |  69.85
+    8 |                          8 |  70 |  4.12 |    4.12 |  73.97
+    9 |                          9 |  13 |  0.77 |    0.77 |  74.73
+   10 |                 10 Derecha |  59 |  3.47 |    3.47 |  78.21
+   11 | 11 Independiente (no leer) | 110 |  6.48 |    6.48 |  84.69
+   12 |       12 Ninguno (no leer) | 260 | 15.31 |   15.31 | 100.00
+ &lt;NA&gt; |                       &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1606,44 +1607,44 @@ Value |                        Label |   N | Raw % | Valid % | Cum. %
 <span id="cb102-22"><a href="#cb102-22" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>pol_id)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Political identification (x) &lt;categorical&gt; 
-# total N=3048 valid N=3048 mean=2.62 sd=1.03
+# total N=1698 valid N=1698 mean=2.42 sd=1.08
 
-Value          |    N | Raw % | Valid % | Cum. %
-------------------------------------------------
-Left           |  383 | 12.57 |   12.57 |  12.57
-Center         | 1258 | 41.27 |   41.27 |  53.84
-Right          |  531 | 17.42 |   17.42 |  71.26
-Not identified |  876 | 28.74 |   28.74 | 100.00
-&lt;NA&gt;           |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value          |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------
+Left           | 353 | 20.79 |   20.79 |  20.79
+Center         | 709 | 41.76 |   41.76 |  62.54
+Right          | 212 | 12.49 |   12.49 |  75.03
+Not identified | 424 | 24.97 |   24.97 | 100.00
+&lt;NA&gt;           |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="left_id" class="level3" data-number="3.3.6">
-<h3 data-number="3.3.6" class="anchored" data-anchor-id="left_id"><span class="header-section-number">3.3.6</span> left_id</h3>
+<section id="left_id" class="level3" data-number="5.3.6">
+<h3 data-number="5.3.6" class="anchored" data-anchor-id="left_id"><span class="header-section-number">5.3.6</span> left_id</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>c08)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Left–Right ideological positioning (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-29.80 sd=184.16
+<pre><code>Posicionamiento Izquierda-Derecha (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-22.26 sd=156.99
 
-Value |                        Label |   N | Raw % | Valid % | Cum. %
----------------------------------------------------------------------
- -999 |      No answer (do not read) |  65 |  2.13 |    2.13 |   2.13
- -888 |     Don’t know (do not read) |  52 |  1.71 |    1.71 |   3.84
-    0 |                       0 Left | 110 |  3.61 |    3.61 |   7.45
-    1 |                            1 |  35 |  1.15 |    1.15 |   8.60
-    2 |                            2 |  83 |  2.72 |    2.72 |  11.32
-    3 |                            3 | 155 |  5.09 |    5.09 |  16.40
-    4 |                            4 | 212 |  6.96 |    6.96 |  23.36
-    5 |                     5 Center | 830 | 27.23 |   27.23 |  50.59
-    6 |                            6 | 216 |  7.09 |    7.09 |  57.68
-    7 |                            7 | 233 |  7.64 |    7.64 |  65.32
-    8 |                            8 | 130 |  4.27 |    4.27 |  69.59
-    9 |                            9 |  54 |  1.77 |    1.77 |  71.36
-   10 |                     10 Right | 114 |  3.74 |    3.74 |  75.10
-   11 | 11 Independent (do not read) |  90 |  2.95 |    2.95 |  78.05
-   12 |        12 None (do not read) | 669 | 21.95 |   21.95 | 100.00
- &lt;NA&gt; |                         &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                      Label |   N | Raw % | Valid % | Cum. %
+-------------------------------------------------------------------
+ -999 |      No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |          No sabe (no leer) |  54 |  3.18 |    3.18 |   3.18
+    0 |                0 Izquierda |  98 |  5.77 |    5.77 |   8.95
+    1 |                          1 |  34 |  2.00 |    2.00 |  10.95
+    2 |                          2 |  85 |  5.01 |    5.01 |  15.96
+    3 |                          3 | 136 |  8.01 |    8.01 |  23.97
+    4 |                          4 | 149 |  8.78 |    8.78 |  32.74
+    5 |                   5 Centro | 492 | 28.98 |   28.98 |  61.72
+    6 |                          6 |  68 |  4.00 |    4.00 |  65.72
+    7 |                          7 |  70 |  4.12 |    4.12 |  69.85
+    8 |                          8 |  70 |  4.12 |    4.12 |  73.97
+    9 |                          9 |  13 |  0.77 |    0.77 |  74.73
+   10 |                 10 Derecha |  59 |  3.47 |    3.47 |  78.21
+   11 | 11 Independiente (no leer) | 110 |  6.48 |    6.48 |  84.69
+   12 |       12 Ninguno (no leer) | 260 | 15.31 |   15.31 | 100.00
+ &lt;NA&gt; |                       &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1660,35 +1661,35 @@ Value |                        Label |   N | Raw % | Valid % | Cum. %
 <span id="cb106-13"><a href="#cb106-13" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>left_id)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Left identification (1 = yes (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=0.13 sd=0.33
+# total N=1698 valid N=1698 mean=0.21 sd=0.41
 
 Value | Label |    N | Raw % | Valid % | Cum. %
 -----------------------------------------------
-    0 |    No | 2665 | 87.43 |   87.43 |  87.43
-    1 |   Yes |  383 | 12.57 |   12.57 | 100.00
+    0 |    No | 1345 | 79.21 |   79.21 |  79.21
+    1 |   Yes |  353 | 20.79 |   20.79 | 100.00
  &lt;NA&gt; |  &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="workingclass_id" class="level3" data-number="3.3.7">
-<h3 data-number="3.3.7" class="anchored" data-anchor-id="workingclass_id"><span class="header-section-number">3.3.7</span> workingclass_id</h3>
+<section id="workingclass_id" class="level3" data-number="5.3.7">
+<h3 data-number="5.3.7" class="anchored" data-anchor-id="workingclass_id"><span class="header-section-number">5.3.7</span> workingclass_id</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>d01)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Social class identification (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-53.03 sd=219.20
+<pre><code>Pertenencia a clase social (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-13.41 sd=119.31
 
-Value |                    Label |   N | Raw % | Valid % | Cum. %
------------------------------------------------------------------
- -999 |  No answer (do not read) |  32 |  1.05 |    1.05 |   1.05
- -888 | Don’t know (do not read) | 156 |  5.12 |    5.12 |   6.17
-    1 |              Lower class | 299 |  9.81 |    9.81 |  15.98
-    2 |            Working class | 813 | 26.67 |   26.67 |  42.65
-    3 |       Lower-middle class | 459 | 15.06 |   15.06 |  57.71
-    4 |             Middle class | 953 | 31.27 |   31.27 |  88.98
-    5 |       Upper-middle class | 275 |  9.02 |    9.02 |  98.00
-    6 |              Upper class |  61 |  2.00 |    2.00 | 100.00
- &lt;NA&gt; |                     &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                 Label |   N | Raw % | Valid % | Cum. %
+--------------------------------------------------------------
+ -999 | No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |     No sabe (no leer) |  31 |  1.83 |    1.83 |   1.83
+    1 |            Clase baja | 255 | 15.02 |   15.02 |  16.84
+    2 |          Clase obrera | 411 | 24.20 |   24.20 |  41.05
+    3 |      Clase media baja | 407 | 23.97 |   23.97 |  65.02
+    4 |           Clase media | 513 | 30.21 |   30.21 |  95.23
+    5 |      Clase media alta |  77 |  4.53 |    4.53 |  99.76
+    6 |            Clase alta |   4 |  0.24 |    0.24 | 100.00
+ &lt;NA&gt; |                  &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1707,47 +1708,35 @@ Value |                    Label |   N | Raw % | Valid % | Cum. %
 <span id="cb110-15"><a href="#cb110-15" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>workingclass_id)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Identification with the working class (1 = yes) (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=0.52 sd=0.50
+# total N=1698 valid N=1698 mean=0.63 sd=0.48
 
 Value | Label |    N | Raw % | Valid % | Cum. %
 -----------------------------------------------
-    0 |    No | 1477 | 48.46 |   48.46 |  48.46
-    1 |   Yes | 1571 | 51.54 |   51.54 | 100.00
+    0 |    No |  625 | 36.81 |   36.81 |  36.81
+    1 |   Yes | 1073 | 63.19 |   63.19 | 100.00
  &lt;NA&gt; |  &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="workingclass_people_id" class="level3" data-number="3.3.8">
-<h3 data-number="3.3.8" class="anchored" data-anchor-id="workingclass_people_id"><span class="header-section-number">3.3.8</span> workingclass_people_id</h3>
+<section id="workingclass_people_id" class="level3" data-number="5.3.8">
+<h3 data-number="5.3.8" class="anchored" data-anchor-id="workingclass_people_id"><span class="header-section-number">5.3.8</span> workingclass_people_id</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>d02_01)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of agreement with: I identify with people from the selected social class (x) &lt;numeric&gt; 
-# total N=3048 valid N=2860 mean=-6.77 sd=94.43
+<pre><code>Nivel de acuerdo con: Me siento identificado con la gente de la [clase social escogida] (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-20.02 sd=139.65
 
-Value |                                           Label |    N | Raw %
-----------------------------------------------------------------------
- -999 |                         No answer (do not read) |    4 |  0.13
- -888 |                        Don’t know (do not read) |    9 |  0.30
- -777 | Not applicable (does not identify with a class) |   24 |  0.79
-    1 |                               Strongly disagree |   29 |  0.95
-    2 |                                        Disagree |   84 |  2.76
-    3 |                      Neither agree nor disagree |  370 | 12.14
-    4 |                                           Agree | 1737 | 56.99
-    5 |                                  Strongly agree |  603 | 19.78
- &lt;NA&gt; |                                            &lt;NA&gt; |  188 |  6.17
-
-Value | Valid % | Cum. %
-------------------------
- -999 |    0.14 |   0.14
- -888 |    0.31 |   0.45
- -777 |    0.84 |   1.29
-    1 |    1.01 |   2.31
-    2 |    2.94 |   5.24
-    3 |   12.94 |  18.18
-    4 |   60.73 |  78.92
-    5 |   21.08 | 100.00
- &lt;NA&gt; |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                                  Label |    N | Raw % | Valid % | Cum. %
+--------------------------------------------------------------------------------
+ -999 |                  No responde (no leer) |    4 |  0.24 |    0.24 |   0.24
+ -888 |                      No sabe (no leer) |   14 |  0.82 |    0.82 |   1.06
+ -777 | No aplica (no se identifica con clase) |   31 |  1.83 |    1.83 |   2.89
+    1 |               Totalmente en desacuerdo |   18 |  1.06 |    1.06 |   3.95
+    2 |                          En desacuerdo |   77 |  4.53 |    4.53 |   8.48
+    3 |         Ni de acuerdo ni en desacuerdo |  161 |  9.48 |    9.48 |  17.96
+    4 |                             De acuerdo | 1093 | 64.37 |   64.37 |  82.33
+    5 |                  Totalmente de acuerdo |  300 | 17.67 |   17.67 | 100.00
+ &lt;NA&gt; |                                   &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>d02_01, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-777"</span>, <span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -1772,57 +1761,58 @@ Value | Valid % | Cum. %
 <span id="cb114-21"><a href="#cb114-21" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>workingclass_people_id)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>I identified with people from working class (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=2.04 sd=2.07
+# total N=1698 valid N=1698 mean=2.49 sd=2.02
 
-Value |                      Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-    0 |                          0 | 1487 | 48.79 |   48.79 |  48.79
-    1 |          Strongly disagree |   24 |  0.79 |    0.79 |  49.57
-    2 |                   Disagree |   63 |  2.07 |    2.07 |  51.64
-    3 | Neither agree nor disagree |  171 |  5.61 |    5.61 |  57.25
-    4 |                      Agree |  950 | 31.17 |   31.17 |  88.42
-    5 |             Strongly agree |  353 | 11.58 |   11.58 | 100.00
- &lt;NA&gt; |                       &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                          Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------
+    0 |                              0 | 638 | 37.57 |   37.57 |  37.57
+    1 |       Totalmente en desacuerdo |  16 |  0.94 |    0.94 |  38.52
+    2 |                  En desacuerdo |  44 |  2.59 |    2.59 |  41.11
+    3 | Ni de acuerdo ni en desacuerdo | 100 |  5.89 |    5.89 |  47.00
+    4 |                     De acuerdo | 684 | 40.28 |   40.28 |  87.28
+    5 |          Totalmente de acuerdo | 216 | 12.72 |   12.72 | 100.00
+ &lt;NA&gt; |                           &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="workingclass_id2" class="level3" data-number="3.3.9">
-<h3 data-number="3.3.9" class="anchored" data-anchor-id="workingclass_id2"><span class="header-section-number">3.3.9</span> workingclass_id2</h3>
+<section id="workingclass_id2" class="level3" data-number="5.3.9">
+<h3 data-number="5.3.9" class="anchored" data-anchor-id="workingclass_id2"><span class="header-section-number">5.3.9</span> workingclass_id2</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>d03)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Work-related social class identification (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-22.50 sd=154.76
+<pre><code>Pertenencia a clase social referente al trabajo (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-11.49 sd=115.58
 
-Value |                    Label |    N | Raw % | Valid % | Cum. %
-------------------------------------------------------------------
- -999 |  No answer (do not read) |   28 |  0.92 |    0.92 |   0.92
- -888 | Don’t know (do not read) |   59 |  1.94 |    1.94 |   2.85
-    1 |           Business class |   24 |  0.79 |    0.79 |   3.64
-    2 |            Entrepreneurs |  162 |  5.31 |    5.31 |   8.96
-    3 |             Middle class |  719 | 23.59 |   23.59 |  32.55
-    4 |            Working class | 1326 | 43.50 |   43.50 |  76.05
-    5 |      Labor/working class |  404 | 13.25 |   13.25 |  89.30
-    6 |               The people |  316 | 10.37 |   10.37 |  99.67
-    7 |        Other. Which one? |   10 |  0.33 |    0.33 | 100.00
- &lt;NA&gt; |                     &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                 Label |   N | Raw % | Valid % | Cum. %
+--------------------------------------------------------------
+ -999 | No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |     No sabe (no leer) |  29 |  1.71 |    1.71 |   1.71
+    1 |     Clase empresarial |  15 |  0.88 |    0.88 |   2.59
+    2 |     Los emprendedores | 265 | 15.61 |   15.61 |  18.20
+    3 |           Clase media | 336 | 19.79 |   19.79 |  37.99
+    4 |     Clase trabajadora | 721 | 42.46 |   42.46 |  80.45
+    5 |          Clase obrera | 204 | 12.01 |   12.01 |  92.46
+    6 |             El pueblo | 118 |  6.95 |    6.95 |  99.41
+    7 |   Otra (indique cuál) |  10 |  0.59 |    0.59 | 100.00
+ &lt;NA&gt; |                  &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>d03_esp)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Work-related social class identification – Other (x) &lt;character&gt; 
-# total N=3048 valid N=10 mean=4.10 sd=2.42
+<pre><code>Pertenencia a clase social referente al trabajo - Otro (x) &lt;character&gt; 
+# total N=1698 valid N=10 mean=4.60 sd=2.88
 
-Value             |    N | Raw % | Valid % | Cum. %
----------------------------------------------------
-baja              |    2 |  0.07 |      20 |     20
-clase artistica   |    1 |  0.03 |      10 |     30
-clase media baja  |    1 |  0.03 |      10 |     40
-gente de bien     |    2 |  0.07 |      20 |     60
-gente loca        |    1 |  0.03 |      10 |     70
-luchadora         |    1 |  0.03 |      10 |     80
-personas normales |    1 |  0.03 |      10 |     90
-todas             |    1 |  0.03 |      10 |    100
-&lt;NA&gt;              | 3038 | 99.67 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value                        |    N | Raw % | Valid % | Cum. %
+--------------------------------------------------------------
+Baja                         |    2 |  0.12 |      20 |     20
+Changarin                    |    1 |  0.06 |      10 |     30
+Clase profesional            |    1 |  0.06 |      10 |     40
+Estudiantado                 |    1 |  0.06 |      10 |     50
+Media alta7                  |    1 |  0.06 |      10 |     60
+Otra                         |    1 |  0.06 |      10 |     70
+Profesional clase media      |    1 |  0.06 |      10 |     80
+Profesionales independientes |    1 |  0.06 |      10 |     90
+Todas                        |    1 |  0.06 |      10 |    100
+&lt;NA&gt;                         | 1688 | 99.41 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1845,59 +1835,59 @@ todas             |    1 |  0.03 |      10 |    100
 <span id="cb120-19"><a href="#cb120-19" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>workingclass_id2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Identification with the working class (1 = yes) (2) (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=2.33 sd=1.32
+# total N=1698 valid N=1698 mean=2.42 sd=1.37
 
-Value |             Label |    N | Raw % | Valid % | Cum. %
------------------------------------------------------------
-    1 | Clase trabajadora | 1326 | 43.50 |   43.50 |  43.50
-    2 |      Clase obrera |  404 | 13.25 |   13.25 |  56.76
-    3 |         El pueblo |  316 | 10.37 |   10.37 |  67.13
-    4 |              Otro | 1002 | 32.87 |   32.87 | 100.00
- &lt;NA&gt; |              &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |             Label |   N | Raw % | Valid % | Cum. %
+----------------------------------------------------------
+    1 | Clase trabajadora | 721 | 42.46 |   42.46 |  42.46
+    2 |      Clase obrera | 204 | 12.01 |   12.01 |  54.48
+    3 |         El pueblo | 118 |  6.95 |    6.95 |  61.43
+    4 |              Otro | 655 | 38.57 |   38.57 | 100.00
+ &lt;NA&gt; |              &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="union_org_member" class="level3" data-number="3.3.10">
-<h3 data-number="3.3.10" class="anchored" data-anchor-id="union_org_member"><span class="header-section-number">3.3.10</span> union_org_member</h3>
+<section id="union_org_member" class="level3" data-number="5.3.10">
+<h3 data-number="5.3.10" class="anchored" data-anchor-id="union_org_member"><span class="header-section-number">5.3.10</span> union_org_member</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>b21)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Union membership (x) &lt;numeric&gt; 
-# total N=3048 valid N=480 mean=-22.86 sd=147.50
+<pre><code>Afiliación sindical (x) &lt;numeric&gt; 
+# total N=1698 valid N=647 mean=-15.95 sd=127.55
 
-Value |                        Label |    N | Raw % | Valid % | Cum. %
-----------------------------------------------------------------------
- -999 |      No answer (do not read) |    2 |  0.07 |    0.42 |   0.42
- -888 |     Don’t know (do not read) |   11 |  0.36 |    2.29 |   2.71
-    1 |   Yes, I am an active member |  270 |  8.86 |   56.25 |  58.96
-    2 | Yes, I am an inactive member |   69 |  2.26 |   14.37 |  73.33
-    3 |                           No |  128 |  4.20 |   26.67 | 100.00
- &lt;NA&gt; |                         &lt;NA&gt; | 2568 | 84.25 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                    Label |    N | Raw % | Valid % | Cum. %
+------------------------------------------------------------------
+ -999 |    No responde (no leer) |    2 |  0.12 |    0.31 |   0.31
+ -888 |        No sabe (no leer) |   11 |  0.65 |    1.70 |   2.01
+    1 |   Sí, soy miembro activo |  141 |  8.30 |   21.79 |  23.80
+    2 | Sí, soy miembro inactivo |  173 | 10.19 |   26.74 |  50.54
+    3 |                       No |  320 | 18.85 |   49.46 | 100.00
+ &lt;NA&gt; |                     &lt;NA&gt; | 1051 | 61.90 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>b25)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Membership in organizations of self-employed workers (x) &lt;numeric&gt; 
-# total N=3048 valid N=942 mean=-53.87 sd=225.46
+<pre><code>Afiliación a organizaciones de independientes (x) &lt;numeric&gt; 
+# total N=1698 valid N=630 mean=-13.01 sd=126.36
 
-Value |                                             Label |    N | Raw %
-------------------------------------------------------------------------
- -999 |                           No answer (do not read) |   23 |  0.75
- -888 |                          Don’t know (do not read) |   35 |  1.15
-    1 | Independent workers’ union or other type of union |   46 |  1.51
-    2 |                          Professional association |   18 |  0.59
-    3 |                     Trade or business association |   51 |  1.67
-    4 |                                                No |  769 | 25.23
- &lt;NA&gt; |                                              &lt;NA&gt; | 2106 | 69.09
+Value |                                                      Label |    N
+-------------------------------------------------------------------------
+ -999 |                                      No responde (no leer) |    7
+ -888 |                                          No sabe (no leer) |    4
+    1 | Agrupamiento de trabajadores independientes o de otro tipo |   14
+    2 |                                        Colegio profesional |   40
+    3 |                                         Asociación gremial |    7
+    4 |                                                         No |  558
+ &lt;NA&gt; |                                                       &lt;NA&gt; | 1068
 
-Value | Valid % | Cum. %
-------------------------
- -999 |    2.44 |   2.44
- -888 |    3.72 |   6.16
-    1 |    4.88 |  11.04
-    2 |    1.91 |  12.95
-    3 |    5.41 |  18.37
-    4 |   81.63 | 100.00
- &lt;NA&gt; |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value | Raw % | Valid % | Cum. %
+--------------------------------
+ -999 |  0.41 |    1.11 |   1.11
+ -888 |  0.24 |    0.63 |   1.75
+    1 |  0.82 |    2.22 |   3.97
+    2 |  2.36 |    6.35 |  10.32
+    3 |  0.41 |    1.11 |  11.43
+    4 | 32.86 |   88.57 | 100.00
+ &lt;NA&gt; | 62.90 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1917,19 +1907,19 @@ Value | Valid % | Cum. %
 <span id="cb126-16"><a href="#cb126-16" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>union_org_member)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Union or organization membership (1 = yes) (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=0.13 sd=0.33
+# total N=1698 valid N=1698 mean=0.19 sd=0.39
 
 Value | Label |    N | Raw % | Valid % | Cum. %
 -----------------------------------------------
-    0 |    No | 2663 | 87.37 |   87.37 |  87.37
-    1 |   Yes |  385 | 12.63 |   12.63 | 100.00
+    0 |    No | 1370 | 80.68 |   80.68 |  80.68
+    1 |   Yes |  328 | 19.32 |   19.32 | 100.00
  &lt;NA&gt; |  &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="guardar-datos" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="guardar-datos"><span class="header-section-number">3.4</span> Guardar datos</h2>
+<section id="guardar-datos" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="guardar-datos"><span class="header-section-number">5.4</span> Guardar datos</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="at">file=</span><span class="st">"output/data/data-marxismo-clases-cl.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -2340,14 +2330,11 @@ Value | Label |    N | Raw % | Valid % | Cum. %
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./02-esquemas-clases-cl.html" class="pagination-link" aria-label="Esquemas Clases Chile">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Esquemas Clases Chile</span></span>
+      <a href="./04-esquemas-clases-ar.html" class="pagination-link" aria-label="Esquemas Clases Chile">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Esquemas Clases Chile</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./04-graph-clases-cl.html" class="pagination-link" aria-label="Gráficos de Clases Chile">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Gráficos de Clases Chile</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

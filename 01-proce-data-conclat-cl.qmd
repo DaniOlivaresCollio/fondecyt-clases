@@ -1,6 +1,6 @@
 # Procesamiento Data Conclat Chile
 
-Capítulo para el procesamiento de la Data Conclat Chile para generar los esquemas de clases. Datos actualizados para el 26/03/2026.
+Capítulo para el procesamiento de la Data Conclat Chile para generar los esquemas de clases. Datos actualizados para el 25/06/2026.
 
 ## Preparación
 
@@ -56,7 +56,7 @@ p_load(
 ### Cargar datos
 
 ```{r datos, message=FALSE, warning=FALSE}
-data <- readRDS("input/data/data-conclat-chile-EN.rds")
+data <- readRDS("input/data/data-conclat-cl-EN.rds")
 ```
 
 ## Procesamiento
@@ -638,5 +638,5 @@ descr(data$income_rec)
 ## Guardar datos
 
 ```{r}
-saveRDS(data, file="output/data/datos-clases-cl.rds")
+saveRDS(data, file="output/data/data-conclat-cl-en-clases.rds")
 ```

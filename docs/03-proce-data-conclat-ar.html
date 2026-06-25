@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Procesamiento Data Conclat Chile – Esquemas de clases Fondecyt</title>
+<title>3&nbsp; Procesamiento Data Conclat Argentina – Esquemas de clases Fondecyt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-esquemas-clases-cl.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./04-esquemas-clases-ar.html" rel="next">
+<link href="./02-esquemas-clases-cl.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-proce-data-conclat-cl.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Chile</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-proce-data-conclat-ar.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Argentina</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-proce-data-conclat-cl.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01-proce-data-conclat-cl.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Chile</span></span></a>
   </div>
 </li>
@@ -165,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-proce-data-conclat-ar.html" class="sidebar-item-text sidebar-link">
+  <a href="./03-proce-data-conclat-ar.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Argentina</span></span></a>
   </div>
 </li>
@@ -191,34 +191,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#preparación" id="toc-preparación" class="nav-link active" data-scroll-target="#preparación"><span class="header-section-number">1.1</span> Preparación</a>
+  <li><a href="#preparación" id="toc-preparación" class="nav-link active" data-scroll-target="#preparación"><span class="header-section-number">3.1</span> Preparación</a>
   <ul class="collapse">
-  <li><a href="#cargar-datos" id="toc-cargar-datos" class="nav-link" data-scroll-target="#cargar-datos"><span class="header-section-number">1.1.1</span> Cargar datos</a></li>
+  <li><a href="#cargar-datos" id="toc-cargar-datos" class="nav-link" data-scroll-target="#cargar-datos"><span class="header-section-number">3.1.1</span> Cargar datos</a></li>
   </ul></li>
-  <li><a href="#procesamiento" id="toc-procesamiento" class="nav-link" data-scroll-target="#procesamiento"><span class="header-section-number">1.2</span> Procesamiento</a>
+  <li><a href="#procesamiento" id="toc-procesamiento" class="nav-link" data-scroll-target="#procesamiento"><span class="header-section-number">3.2</span> Procesamiento</a>
   <ul class="collapse">
-  <li><a href="#relation_mop" id="toc-relation_mop" class="nav-link" data-scroll-target="#relation_mop"><span class="header-section-number">1.2.1</span> relation_mop</a></li>
-  <li><a href="#company_size" id="toc-company_size" class="nav-link" data-scroll-target="#company_size"><span class="header-section-number">1.2.2</span> company_size</a></li>
-  <li><a href="#workplace_size" id="toc-workplace_size" class="nav-link" data-scroll-target="#workplace_size"><span class="header-section-number">1.2.3</span> workplace_size</a></li>
-  <li><a href="#owners" id="toc-owners" class="nav-link" data-scroll-target="#owners"><span class="header-section-number">1.2.4</span> owners</a></li>
-  <li><a href="#owners2" id="toc-owners2" class="nav-link" data-scroll-target="#owners2"><span class="header-section-number">1.2.5</span> owners2</a></li>
-  <li><a href="#educ" id="toc-educ" class="nav-link" data-scroll-target="#educ"><span class="header-section-number">1.2.6</span> educ</a></li>
-  <li><a href="#ciuo08_ine" id="toc-ciuo08_ine" class="nav-link" data-scroll-target="#ciuo08_ine"><span class="header-section-number">1.2.7</span> ciuo08_ine</a></li>
-  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills"><span class="header-section-number">1.2.8</span> skills</a></li>
-  <li><a href="#formal_position_auth" id="toc-formal_position_auth" class="nav-link" data-scroll-target="#formal_position_auth"><span class="header-section-number">1.2.9</span> formal_position_auth</a></li>
-  <li><a href="#supervision" id="toc-supervision" class="nav-link" data-scroll-target="#supervision"><span class="header-section-number">1.2.10</span> supervision</a></li>
-  <li><a href="#decisionmaking_typology" id="toc-decisionmaking_typology" class="nav-link" data-scroll-target="#decisionmaking_typology"><span class="header-section-number">1.2.11</span> decisionmaking_typology</a></li>
-  <li><a href="#managerial_location_typology" id="toc-managerial_location_typology" class="nav-link" data-scroll-target="#managerial_location_typology"><span class="header-section-number">1.2.12</span> managerial_location_typology</a></li>
-  <li><a href="#organization_assets" id="toc-organization_assets" class="nav-link" data-scroll-target="#organization_assets"><span class="header-section-number">1.2.13</span> organization_assets</a></li>
-  <li><a href="#boleta" id="toc-boleta" class="nav-link" data-scroll-target="#boleta"><span class="header-section-number">1.2.14</span> boleta</a></li>
-  <li><a href="#inicio_activ" id="toc-inicio_activ" class="nav-link" data-scroll-target="#inicio_activ"><span class="header-section-number">1.2.15</span> inicio_activ</a></li>
-  <li><a href="#inicio_empresa" id="toc-inicio_empresa" class="nav-link" data-scroll-target="#inicio_empresa"><span class="header-section-number">1.2.16</span> inicio_empresa</a></li>
-  <li><a href="#contrato" id="toc-contrato" class="nav-link" data-scroll-target="#contrato"><span class="header-section-number">1.2.17</span> contrato</a></li>
-  <li><a href="#income" id="toc-income" class="nav-link" data-scroll-target="#income"><span class="header-section-number">1.2.18</span> income</a></li>
-  <li><a href="#income_br" id="toc-income_br" class="nav-link" data-scroll-target="#income_br"><span class="header-section-number">1.2.19</span> income_br</a></li>
-  <li><a href="#income_rec" id="toc-income_rec" class="nav-link" data-scroll-target="#income_rec"><span class="header-section-number">1.2.20</span> income_rec</a></li>
+  <li><a href="#relation_mop" id="toc-relation_mop" class="nav-link" data-scroll-target="#relation_mop"><span class="header-section-number">3.2.1</span> relation_mop</a></li>
+  <li><a href="#company_size" id="toc-company_size" class="nav-link" data-scroll-target="#company_size"><span class="header-section-number">3.2.2</span> company_size</a></li>
+  <li><a href="#workplace_size" id="toc-workplace_size" class="nav-link" data-scroll-target="#workplace_size"><span class="header-section-number">3.2.3</span> workplace_size</a></li>
+  <li><a href="#owners" id="toc-owners" class="nav-link" data-scroll-target="#owners"><span class="header-section-number">3.2.4</span> owners</a></li>
+  <li><a href="#owners2" id="toc-owners2" class="nav-link" data-scroll-target="#owners2"><span class="header-section-number">3.2.5</span> owners2</a></li>
+  <li><a href="#educ" id="toc-educ" class="nav-link" data-scroll-target="#educ"><span class="header-section-number">3.2.6</span> educ</a></li>
+  <li><a href="#ciuo08_ine" id="toc-ciuo08_ine" class="nav-link" data-scroll-target="#ciuo08_ine"><span class="header-section-number">3.2.7</span> ciuo08_ine</a></li>
+  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills"><span class="header-section-number">3.2.8</span> skills</a></li>
+  <li><a href="#formal_position_auth" id="toc-formal_position_auth" class="nav-link" data-scroll-target="#formal_position_auth"><span class="header-section-number">3.2.9</span> formal_position_auth</a></li>
+  <li><a href="#supervision" id="toc-supervision" class="nav-link" data-scroll-target="#supervision"><span class="header-section-number">3.2.10</span> supervision</a></li>
+  <li><a href="#decisionmaking_typology" id="toc-decisionmaking_typology" class="nav-link" data-scroll-target="#decisionmaking_typology"><span class="header-section-number">3.2.11</span> decisionmaking_typology</a></li>
+  <li><a href="#managerial_location_typology" id="toc-managerial_location_typology" class="nav-link" data-scroll-target="#managerial_location_typology"><span class="header-section-number">3.2.12</span> managerial_location_typology</a></li>
+  <li><a href="#organization_assets" id="toc-organization_assets" class="nav-link" data-scroll-target="#organization_assets"><span class="header-section-number">3.2.13</span> organization_assets</a></li>
+  <li><a href="#boleta" id="toc-boleta" class="nav-link" data-scroll-target="#boleta"><span class="header-section-number">3.2.14</span> boleta</a></li>
+  <li><a href="#inicio_activ" id="toc-inicio_activ" class="nav-link" data-scroll-target="#inicio_activ"><span class="header-section-number">3.2.15</span> inicio_activ</a></li>
+  <li><a href="#inicio_empresa" id="toc-inicio_empresa" class="nav-link" data-scroll-target="#inicio_empresa"><span class="header-section-number">3.2.16</span> inicio_empresa</a></li>
+  <li><a href="#contrato" id="toc-contrato" class="nav-link" data-scroll-target="#contrato"><span class="header-section-number">3.2.17</span> contrato</a></li>
+  <li><a href="#income" id="toc-income" class="nav-link" data-scroll-target="#income"><span class="header-section-number">3.2.18</span> income</a></li>
+  <li><a href="#income_br" id="toc-income_br" class="nav-link" data-scroll-target="#income_br"><span class="header-section-number">3.2.19</span> income_br</a></li>
+  <li><a href="#income_rec" id="toc-income_rec" class="nav-link" data-scroll-target="#income_rec"><span class="header-section-number">3.2.20</span> income_rec</a></li>
   </ul></li>
-  <li><a href="#guardar-datos" id="toc-guardar-datos" class="nav-link" data-scroll-target="#guardar-datos"><span class="header-section-number">1.3</span> Guardar datos</a></li>
+  <li><a href="#guardar-datos" id="toc-guardar-datos" class="nav-link" data-scroll-target="#guardar-datos"><span class="header-section-number">3.3</span> Guardar datos</a></li>
   </ul>
 </nav>
     </div>
@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Chile</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Procesamiento Data Conclat Argentina</span></h1>
 </div>
 
 
@@ -244,52 +244,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Capítulo para el procesamiento de la Data Conclat Chile para generar los esquemas de clases. Datos actualizados para el 25/06/2026.</p>
-<section id="preparación" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="preparación"><span class="header-section-number">1.1</span> Preparación</h2>
-<section id="cargar-datos" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="cargar-datos"><span class="header-section-number">1.1.1</span> Cargar datos</h3>
+<p>Capítulo para el procesamiento de la Data Conclat Argentina para generar los esquemas de clases. Datos actualizados para el 25/06/2026.</p>
+<section id="preparación" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="preparación"><span class="header-section-number">3.1</span> Preparación</h2>
+<section id="cargar-datos" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="cargar-datos"><span class="header-section-number">3.1.1</span> Cargar datos</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"input/data/data-conclat-cl-EN.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"input/data/data-conclat-ar-ES.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
-<section id="procesamiento" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="procesamiento"><span class="header-section-number">1.2</span> Procesamiento</h2>
-<section id="relation_mop" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="relation_mop"><span class="header-section-number">1.2.1</span> relation_mop</h3>
+<section id="procesamiento" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="procesamiento"><span class="header-section-number">3.2</span> Procesamiento</h2>
+<section id="relation_mop" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="relation_mop"><span class="header-section-number">3.2.1</span> relation_mop</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Situación empleo</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a07)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Employment relationship (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=3.79 sd=1.67
+<pre><code>Relación de empleo (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=3.13 sd=1.22
 
-Value |                                                              Label
---------------------------------------------------------------------------
-    1 |                                                           Employer
-    2 |                                               Self-employed worker
-    3 | Public sector employee or worker (Central or Municipal Government)
-    4 |                           Employee or worker of public enterprises
-    5 |                                  Private sector employee or worker
-    6 |                                            Live-in domestic worker
-    7 |                                           Live-out domestic worker
-    8 |                                   Armed Forces and Law Enforcement
-    9 |                                               Unpaid family worker
- &lt;NA&gt; |                                                               &lt;NA&gt;
+Value |                                              Label |   N | Raw %
+------------------------------------------------------------------------
+    1 |                           Patrón(a) o empleador(a) |  99 |  5.83
+    2 |                    Trabajador(a) por cuenta propia | 531 | 31.27
+    3 |         Empleado(a) u obrero(a) del sector público | 331 | 19.49
+    4 |         Empleado(a) u obrero(a) del sector privado | 627 | 36.93
+    5 |                Servicio doméstico fijo o por horas |  57 |  3.36
+    6 |                              FF.AA. y de seguridad |  11 |  0.65
+    7 | Para el negocio, empresa, actividad de un familiar |  42 |  2.47
+ &lt;NA&gt; |                                               &lt;NA&gt; |   0 |  0.00
 
-Value |    N | Raw % | Valid % | Cum. %
----------------------------------------
-    1 |  344 | 11.29 |   11.29 |  11.29
-    2 |  598 | 19.62 |   19.62 |  30.91
-    3 |  251 |  8.23 |    8.23 |  39.14
-    4 |  337 | 11.06 |   11.06 |  50.20
-    5 | 1371 | 44.98 |   44.98 |  95.18
-    6 |   21 |  0.69 |    0.69 |  95.87
-    7 |  101 |  3.31 |    3.31 |  99.18
-    8 |   13 |  0.43 |    0.43 |  99.61
-    9 |   12 |  0.39 |    0.39 | 100.00
- &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value | Valid % | Cum. %
+------------------------
+    1 |    5.83 |   5.83
+    2 |   31.27 |  37.10
+    3 |   19.49 |  56.60
+    4 |   36.93 |  93.52
+    5 |    3.36 |  96.88
+    6 |    0.65 |  97.53
+    7 |    2.47 | 100.00
+ &lt;NA&gt; |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -297,7 +293,7 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">case_when</span>(</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">as_numeric</span>(a07) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">as_numeric</span>(a07) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">as_numeric</span>(a07) <span class="sc">%in%</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">9</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">as_numeric</span>(a07) <span class="sc">%in%</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">7</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">.default =</span> <span class="cn">NA_real_</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>      ),</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
@@ -313,39 +309,39 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>relation_mop)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Relation with Means of Production (x) &lt;categorical&gt; 
-# total N=3048 valid N=3048 mean=2.58 sd=0.69
+# total N=1698 valid N=1698 mean=2.57 sd=0.60
 
 Value         |    N | Raw % | Valid % | Cum. %
 -----------------------------------------------
-Employers     |  344 | 11.29 |   11.29 |  11.29
-Self-Employed |  598 | 19.62 |   19.62 |  30.91
-Salaried      | 2106 | 69.09 |   69.09 | 100.00
+Employers     |   99 |  5.83 |    5.83 |   5.83
+Self-Employed |  531 | 31.27 |   31.27 |  37.10
+Salaried      | 1068 | 62.90 |   62.90 | 100.00
 &lt;NA&gt;          |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="company_size" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="company_size"><span class="header-section-number">1.2.2</span> company_size</h3>
+<section id="company_size" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="company_size"><span class="header-section-number">3.2.2</span> company_size</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a26)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Company size in Chile (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-73.62 sd=251.41
+<pre><code>Tamaño de la empresa en Chile (x) &lt;numeric&gt; 
+# total N=1698 valid N=1645 mean=-80.91 sd=261.33
 
-Value |                    Label |   N | Raw % | Valid % | Cum. %
------------------------------------------------------------------
- -999 |  No answer (do not read) |   8 |  0.26 |    0.26 |   0.26
- -888 | Don’t know (do not read) | 255 |  8.37 |    8.37 |   8.63
-    1 |              Works alone | 783 | 25.69 |   25.69 |  34.32
-    2 |            2 to 4 people | 486 | 15.94 |   15.94 |  50.26
-    3 |            5 to 9 people | 277 |  9.09 |    9.09 |  59.35
-    4 |          10 to 19 people | 316 | 10.37 |   10.37 |  69.72
-    5 |          20 to 49 people | 291 |  9.55 |    9.55 |  79.27
-    6 |          50 to 99 people | 183 |  6.00 |    6.00 |  85.27
-    7 |        100 to 199 people | 150 |  4.92 |    4.92 |  90.19
-    8 |        200 to 499 people | 113 |  3.71 |    3.71 |  93.90
-    9 |       500 or more people | 186 |  6.10 |    6.10 | 100.00
- &lt;NA&gt; |                     &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                 Label |   N | Raw % | Valid % | Cum. %
+--------------------------------------------------------------
+ -999 | No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |     No sabe (no leer) | 156 |  9.19 |    9.48 |   9.48
+    1 |          Trabaja solo | 533 | 31.39 |   32.40 |  41.88
+    2 |        2 a 4 personas | 270 | 15.90 |   16.41 |  58.30
+    3 |        5 a 9 personas | 117 |  6.89 |    7.11 |  65.41
+    4 |      10 a 19 personas |  95 |  5.59 |    5.78 |  71.19
+    5 |      20 a 49 personas | 105 |  6.18 |    6.38 |  77.57
+    6 |      50 a 99 personas |  57 |  3.36 |    3.47 |  81.03
+    7 |    100 a 199 personas |   0 |  0.00 |    0.00 |  81.03
+    8 |    200 a 499 personas |  52 |  3.06 |    3.16 |  84.19
+    9 |    500 o más personas | 260 | 15.31 |   15.81 | 100.00
+ &lt;NA&gt; |                  &lt;NA&gt; |  53 |  3.12 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -373,41 +369,41 @@ Value |                    Label |   N | Raw % | Valid % | Cum. %
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>company_size)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Company Size (x) &lt;ordinal&gt; 
-# total N=3048 valid N=2785 mean=2.50 sd=1.30
+# total N=1698 valid N=1489 mean=2.48 sd=1.52
 
 Value       |   N | Raw % | Valid % | Cum. %
 --------------------------------------------
-Solo        | 783 | 25.69 |   28.11 |  28.11
-2-9         | 763 | 25.03 |   27.40 |  55.51
-10-49       | 607 | 19.91 |   21.80 |  77.31
-50-199      | 333 | 10.93 |   11.96 |  89.26
-200 or more | 299 |  9.81 |   10.74 | 100.00
-&lt;NA&gt;        | 263 |  8.63 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Solo        | 533 | 31.39 |   35.80 |  35.80
+2-9         | 387 | 22.79 |   25.99 |  61.79
+10-49       | 200 | 11.78 |   13.43 |  75.22
+50-199      |  57 |  3.36 |    3.83 |  79.05
+200 or more | 312 | 18.37 |   20.95 | 100.00
+&lt;NA&gt;        | 209 | 12.31 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="workplace_size" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="workplace_size"><span class="header-section-number">1.2.3</span> workplace_size</h3>
+<section id="workplace_size" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="workplace_size"><span class="header-section-number">3.2.3</span> workplace_size</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a27)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Workplace size (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-15.76 sd=129.92
+<pre><code>Tamaño del local de la empresa (x) &lt;numeric&gt; 
+# total N=1698 valid N=1628 mean=-16.57 sd=131.10
 
-Value |                    Label |   N | Raw % | Valid % | Cum. %
------------------------------------------------------------------
- -999 |  No answer (do not read) |   8 |  0.26 |    0.26 |   0.26
- -888 | Don’t know (do not read) |  56 |  1.84 |    1.84 |   2.10
-    1 |              Works alone | 851 | 27.92 |   27.92 |  30.02
-    2 |            2 to 4 people | 590 | 19.36 |   19.36 |  49.38
-    3 |            5 to 9 people | 353 | 11.58 |   11.58 |  60.96
-    4 |          10 to 19 people | 358 | 11.75 |   11.75 |  72.70
-    5 |          20 to 49 people | 341 | 11.19 |   11.19 |  83.89
-    6 |          50 to 99 people | 198 |  6.50 |    6.50 |  90.39
-    7 |        100 to 199 people | 154 |  5.05 |    5.05 |  95.44
-    8 |        200 to 499 people |  71 |  2.33 |    2.33 |  97.77
-    9 |       500 or more people |  68 |  2.23 |    2.23 | 100.00
- &lt;NA&gt; |                     &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                 Label |   N | Raw % | Valid % | Cum. %
+--------------------------------------------------------------
+ -999 | No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |     No sabe (no leer) |  36 |  2.12 |    2.21 |   2.21
+    1 |          Trabaja solo | 546 | 32.16 |   33.54 |  35.75
+    2 |        2 a 4 personas | 320 | 18.85 |   19.66 |  55.41
+    3 |        5 a 9 personas | 160 |  9.42 |    9.83 |  65.23
+    4 |      10 a 19 personas | 151 |  8.89 |    9.28 |  74.51
+    5 |      20 a 49 personas | 173 | 10.19 |   10.63 |  85.14
+    6 |      50 a 99 personas |  87 |  5.12 |    5.34 |  90.48
+    7 |    100 a 199 personas |   0 |  0.00 |    0.00 |  90.48
+    8 |    200 a 499 personas |  62 |  3.65 |    3.81 |  94.29
+    9 |    500 o más personas |  93 |  5.48 |    5.71 | 100.00
+ &lt;NA&gt; |                  &lt;NA&gt; |  70 |  4.12 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -435,21 +431,21 @@ Value |                    Label |   N | Raw % | Valid % | Cum. %
 <span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>workplace_size)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Workplace Size (x) &lt;ordinal&gt; 
-# total N=3048 valid N=2984 mean=2.32 sd=1.14
+# total N=1698 valid N=1592 mean=2.26 sd=1.25
 
 Value       |   N | Raw % | Valid % | Cum. %
 --------------------------------------------
-Solo        | 851 | 27.92 |   28.52 |  28.52
-2-9         | 943 | 30.94 |   31.60 |  60.12
-10-49       | 699 | 22.93 |   23.42 |  83.55
-50-199      | 352 | 11.55 |   11.80 |  95.34
-200 or more | 139 |  4.56 |    4.66 | 100.00
-&lt;NA&gt;        |  64 |  2.10 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Solo        | 546 | 32.16 |   34.30 |  34.30
+2-9         | 480 | 28.27 |   30.15 |  64.45
+10-49       | 324 | 19.08 |   20.35 |  84.80
+50-199      |  87 |  5.12 |    5.46 |  90.26
+200 or more | 155 |  9.13 |    9.74 | 100.00
+&lt;NA&gt;        | 106 |  6.24 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="owners" class="level3" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored" data-anchor-id="owners"><span class="header-section-number">1.2.4</span> owners</h3>
+<section id="owners" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="owners"><span class="header-section-number">3.2.4</span> owners</h3>
 <ul>
 <li>1 == employers o self employed sin empleados</li>
 <li>2 == employers o self employed con 2-9 empleados</li>
@@ -481,19 +477,19 @@ Solo        | 851 | 27.92 |   28.52 |  28.52
 <span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>owners)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Owners (x) &lt;ordinal&gt; 
-# total N=3048 valid N=934 mean=1.52 sd=0.69
+# total N=1698 valid N=623 mean=1.30 sd=0.56
 
 Value              |    N | Raw % | Valid % | Cum. %
 ----------------------------------------------------
-Solo Self-Employed |  551 | 18.08 |   58.99 |  58.99
-Small employers    |  276 |  9.06 |   29.55 |  88.54
-Employers          |  107 |  3.51 |   11.46 | 100.00
-&lt;NA&gt;               | 2114 | 69.36 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Solo Self-Employed |  471 | 27.74 |   75.60 |  75.60
+Small employers    |  119 |  7.01 |   19.10 |  94.70
+Employers          |   33 |  1.94 |    5.30 | 100.00
+&lt;NA&gt;               | 1075 | 63.31 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="owners2" class="level3" data-number="1.2.5">
-<h3 data-number="1.2.5" class="anchored" data-anchor-id="owners2"><span class="header-section-number">1.2.5</span> owners2</h3>
+<section id="owners2" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="owners2"><span class="header-section-number">3.2.5</span> owners2</h3>
 <ul>
 <li>1 == employers o self employed sin empleados</li>
 <li>2 == employers o self employed con 2-49 empleados</li>
@@ -525,40 +521,39 @@ Employers          |  107 |  3.51 |   11.46 | 100.00
 <span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>owners2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Owners 2 (with Capitalists) (x) &lt;ordinal&gt; 
-# total N=3048 valid N=934 mean=1.45 sd=0.57
+# total N=1698 valid N=623 mean=1.26 sd=0.47
 
 Value              |    N | Raw % | Valid % | Cum. %
 ----------------------------------------------------
-Solo Self-Employed |  551 | 18.08 |   58.99 |  58.99
-Small employers    |  347 | 11.38 |   37.15 |  96.15
-Capitalists        |   36 |  1.18 |    3.85 | 100.00
-&lt;NA&gt;               | 2114 | 69.36 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Solo Self-Employed |  471 | 27.74 |   75.60 |  75.60
+Small employers    |  142 |  8.36 |   22.79 |  98.39
+Capitalists        |   10 |  0.59 |    1.61 | 100.00
+&lt;NA&gt;               | 1075 | 63.31 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="educ" class="level3" data-number="1.2.6">
-<h3 data-number="1.2.6" class="anchored" data-anchor-id="educ"><span class="header-section-number">1.2.6</span> educ</h3>
+<section id="educ" class="level3" data-number="3.2.6">
+<h3 data-number="3.2.6" class="anchored" data-anchor-id="educ"><span class="header-section-number">3.2.6</span> educ</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>e05)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Highest educational level attained (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-2.37 sd=88.97
+<pre><code>Nivel educativo alcanzado (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=4.67 sd=37.62
 
-Value |                                        Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------------------------
- -999 |                      No answer (do not read) |   13 |  0.43 |    0.43 |   0.43
- -888 |                     Don’t know (do not read) |   14 |  0.46 |    0.46 |   0.89
-    1 |                          No formal education |   28 |  0.92 |    0.92 |   1.80
-    2 |                 Incomplete primary education |   95 |  3.12 |    3.12 |   4.92
-    3 |                   Complete primary education |  215 |  7.05 |    7.05 |  11.98
-    4 |               Incomplete secondary education |  201 |  6.59 |    6.59 |  18.57
-    5 |                 Complete secondary education | 1062 | 34.84 |   34.84 |  53.41
-    6 |        Incomplete higher technical education |  178 |  5.84 |    5.84 |  59.25
-    7 |          Complete higher technical education |  440 | 14.44 |   14.44 |  73.69
-    8 |              Incomplete university education |  205 |  6.73 |    6.73 |  80.41
-    9 |                Complete university education |  531 | 17.42 |   17.42 |  97.83
-   10 | Postgraduate studies (master’s or doctorate) |   66 |  2.17 |    2.17 | 100.00
- &lt;NA&gt; |                                         &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+ -888 |   3 |  0.18 |    0.18 |   0.18
+    1 |   9 |  0.53 |    0.53 |   0.71
+    2 |  19 |  1.12 |    1.12 |   1.83
+    3 |  89 |  5.24 |    5.24 |   7.07
+    4 | 240 | 14.13 |   14.13 |  21.20
+    5 | 485 | 28.56 |   28.56 |  49.76
+    6 |  80 |  4.71 |    4.71 |  54.48
+    7 | 180 | 10.60 |   10.60 |  65.08
+    8 | 246 | 14.49 |   14.49 |  79.56
+    9 | 280 | 16.49 |   16.49 |  96.05
+   10 |  67 |  3.95 |    3.95 | 100.00
+ &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>e05, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
@@ -574,80 +569,77 @@ Value |                                        Label |    N | Raw % | Valid % | 
 <span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>educ)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Educational level (x) &lt;numeric&gt; 
-# total N=3048 valid N=3021 mean=6.03 sd=2.08
-
-Value |                                        Label |    N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------------------------
-    1 |                          No formal education |   28 |  0.92 |    0.93 |   0.93
-    2 |                 Incomplete primary education |   95 |  3.12 |    3.14 |   4.07
-    3 |                   Complete primary education |  215 |  7.05 |    7.12 |  11.19
-    4 |               Incomplete secondary education |  201 |  6.59 |    6.65 |  17.84
-    5 |                 Complete secondary education | 1062 | 34.84 |   35.15 |  53.00
-    6 |        Incomplete higher technical education |  178 |  5.84 |    5.89 |  58.89
-    7 |          Complete higher technical education |  440 | 14.44 |   14.56 |  73.45
-    8 |              Incomplete university education |  205 |  6.73 |    6.79 |  80.24
-    9 |                Complete university education |  531 | 17.42 |   17.58 |  97.82
-   10 | Postgraduate studies (master’s or doctorate) |   66 |  2.17 |    2.18 | 100.00
- &lt;NA&gt; |                                         &lt;NA&gt; |   27 |  0.89 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-</div>
-</section>
-<section id="ciuo08_ine" class="level3" data-number="1.2.7">
-<h3 data-number="1.2.7" class="anchored" data-anchor-id="ciuo08_ine"><span class="header-section-number">1.2.7</span> ciuo08_ine</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>ciuo08_ine)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Respondent’s ISCO-08CL (INE - 2 digits) (x) &lt;character&gt; 
-# total N=3048 valid N=3048 mean=44.65 sd=105.01
+# total N=1698 valid N=1695 mean=6.25 sd=2.09
 
 Value |   N | Raw % | Valid % | Cum. %
 --------------------------------------
- -999 |  29 |  0.95 |    0.95 |   0.95
-    0 |  16 |  0.52 |    0.52 |   1.48
-   12 |  13 |  0.43 |    0.43 |   1.90
-   13 |  29 |  0.95 |    0.95 |   2.85
-   14 |  26 |  0.85 |    0.85 |   3.71
-   21 |  57 |  1.87 |    1.87 |   5.58
-   22 | 142 |  4.66 |    4.66 |  10.24
-   23 | 124 |  4.07 |    4.07 |  14.30
-   24 |  38 |  1.25 |    1.25 |  15.55
-   25 |  13 |  0.43 |    0.43 |  15.98
-   26 |  98 |  3.22 |    3.22 |  19.19
-   31 |  39 |  1.28 |    1.28 |  20.47
-   32 |  79 |  2.59 |    2.59 |  23.06
-   33 |  76 |  2.49 |    2.49 |  25.56
-   34 |  32 |  1.05 |    1.05 |  26.61
-   35 |   7 |  0.23 |    0.23 |  26.84
-   36 |  31 |  1.02 |    1.02 |  27.85
-   41 |  93 |  3.05 |    3.05 |  30.91
-   42 |  36 |  1.18 |    1.18 |  32.09
-   43 |  45 |  1.48 |    1.48 |  33.56
-   44 |   1 |  0.03 |    0.03 |  33.60
-   51 | 223 |  7.32 |    7.32 |  40.91
-   52 | 553 | 18.14 |   18.14 |  59.06
-   53 |  66 |  2.17 |    2.17 |  61.22
-   54 | 143 |  4.69 |    4.69 |  65.91
-   61 |  48 |  1.57 |    1.57 |  67.49
-   62 |  13 |  0.43 |    0.43 |  67.91
-   71 |  82 |  2.69 |    2.69 |  70.60
-   72 |  99 |  3.25 |    3.25 |  73.85
-   73 |  24 |  0.79 |    0.79 |  74.64
-   74 |  20 |  0.66 |    0.66 |  75.30
-   75 |  75 |  2.46 |    2.46 |  77.76
-   81 |  36 |  1.18 |    1.18 |  78.94
-   83 | 198 |  6.50 |    6.50 |  85.43
-   91 | 187 |  6.14 |    6.14 |  91.57
-   92 |  64 |  2.10 |    2.10 |  93.67
-   93 | 129 |  4.23 |    4.23 |  97.90
-   94 |  29 |  0.95 |    0.95 |  98.85
-   95 |  13 |  0.43 |    0.43 |  99.28
-   96 |  22 |  0.72 |    0.72 | 100.00
+    1 |   9 |  0.53 |    0.53 |   0.53
+    2 |  19 |  1.12 |    1.12 |   1.65
+    3 |  89 |  5.24 |    5.25 |   6.90
+    4 | 240 | 14.13 |   14.16 |  21.06
+    5 | 485 | 28.56 |   28.61 |  49.68
+    6 |  80 |  4.71 |    4.72 |  54.40
+    7 | 180 | 10.60 |   10.62 |  65.01
+    8 | 246 | 14.49 |   14.51 |  79.53
+    9 | 280 | 16.49 |   16.52 |  96.05
+   10 |  67 |  3.95 |    3.95 | 100.00
+ &lt;NA&gt; |   3 |  0.18 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="ciuo08_ine" class="level3" data-number="3.2.7">
+<h3 data-number="3.2.7" class="anchored" data-anchor-id="ciuo08_ine"><span class="header-section-number">3.2.7</span> ciuo08_ine</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>ciuo08_ine)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>CIUO08CL del/a entrevistado/a (INE) (x) &lt;character&gt; 
+# total N=1698 valid N=1698 mean=49.18 sd=21.83
+
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+    0 |   6 |  0.35 |    0.35 |   0.35
+   11 |   1 |  0.06 |    0.06 |   0.41
+   12 |   5 |  0.29 |    0.29 |   0.71
+   13 |  16 |  0.94 |    0.94 |   1.65
+   14 |   6 |  0.35 |    0.35 |   2.00
+   21 |  16 |  0.94 |    0.94 |   2.94
+   22 |  47 |  2.77 |    2.77 |   5.71
+   23 | 154 |  9.07 |    9.07 |  14.78
+   24 |  49 |  2.89 |    2.89 |  17.67
+   25 |  24 |  1.41 |    1.41 |  19.08
+   26 |  73 |  4.30 |    4.30 |  23.38
+   31 |  13 |  0.77 |    0.77 |  24.15
+   32 |  18 |  1.06 |    1.06 |  25.21
+   33 |  87 |  5.12 |    5.12 |  30.33
+   34 |  41 |  2.41 |    2.41 |  32.74
+   35 |   9 |  0.53 |    0.53 |  33.27
+   41 | 118 |  6.95 |    6.95 |  40.22
+   42 |  33 |  1.94 |    1.94 |  42.17
+   43 |  38 |  2.24 |    2.24 |  44.41
+   51 | 148 |  8.72 |    8.72 |  53.12
+   52 | 320 | 18.85 |   18.85 |  71.97
+   53 |  18 |  1.06 |    1.06 |  73.03
+   54 |  35 |  2.06 |    2.06 |  75.09
+   61 |  35 |  2.06 |    2.06 |  77.15
+   71 |  28 |  1.65 |    1.65 |  78.80
+   72 |  20 |  1.18 |    1.18 |  79.98
+   73 |  21 |  1.24 |    1.24 |  81.21
+   74 |  14 |  0.82 |    0.82 |  82.04
+   75 |  83 |  4.89 |    4.89 |  86.93
+   81 |  18 |  1.06 |    1.06 |  87.99
+   83 |  54 |  3.18 |    3.18 |  91.17
+   91 |  76 |  4.48 |    4.48 |  95.64
+   92 |  21 |  1.24 |    1.24 |  96.88
+   93 |  32 |  1.88 |    1.88 |  98.76
+   94 |   7 |  0.41 |    0.41 |  99.18
+   95 |   9 |  0.53 |    0.53 |  99.71
+   96 |   5 |  0.29 |    0.29 | 100.00
  &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="skills" class="level3" data-number="1.2.8">
-<h3 data-number="1.2.8" class="anchored" data-anchor-id="skills"><span class="header-section-number">1.2.8</span> skills</h3>
+<section id="skills" class="level3" data-number="3.2.8">
+<h3 data-number="3.2.8" class="anchored" data-anchor-id="skills"><span class="header-section-number">3.2.8</span> skills</h3>
 <ul>
 <li><p>Experts -&gt; ciuo08_2d == 11 a 31 con universitaria completa o más (educ &gt;= 9) —&gt; experts</p></li>
 <li><p>Skilled -&gt; ciuo08_2d == 11 a 34 con universitaria incompleta o menos (educ &lt; 9), y</p></li>
@@ -696,42 +688,40 @@ Value |   N | Raw % | Valid % | Cum. %
 <span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>skills)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Skills (x) &lt;ordinal&gt; 
-# total N=3048 valid N=3048 mean=2.31 sd=0.70
+# total N=1698 valid N=1698 mean=2.26 sd=0.67
 
-Value     |    N | Raw % | Valid % | Cum. %
--------------------------------------------
-Experts   |  412 | 13.52 |   13.52 |  13.52
-Skilled   | 1266 | 41.54 |   41.54 |  55.05
-Unskilled | 1370 | 44.95 |   44.95 | 100.00
-&lt;NA&gt;      |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value     |   N | Raw % | Valid % | Cum. %
+------------------------------------------
+Experts   | 214 | 12.60 |   12.60 |  12.60
+Skilled   | 833 | 49.06 |   49.06 |  61.66
+Unskilled | 651 | 38.34 |   38.34 | 100.00
+&lt;NA&gt;      |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="formal_position_auth" class="level3" data-number="1.2.9">
-<h3 data-number="1.2.9" class="anchored" data-anchor-id="formal_position_auth"><span class="header-section-number">1.2.9</span> formal_position_auth</h3>
+<section id="formal_position_auth" class="level3" data-number="3.2.9">
+<h3 data-number="3.2.9" class="anchored" data-anchor-id="formal_position_auth"><span class="header-section-number">3.2.9</span> formal_position_auth</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a15)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Formal authority position (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=3.28 sd=21.86
+<pre><code>Posición de autoridad formal (x) &lt;numeric&gt; 
+# total N=1698 valid N=1145 mean=3.78 sd=0.62
 
-Value |                                                           Label |    N
+Value |                                                            Label |   N
 ------------------------------------------------------------------------------
- -999 |                                                            -999 |    1
-    1 |                   A senior executive or top management position |   41
-    2 | Middle-level manager (e.g., department, office, or branch head) |  102
-    3 |                                        Supervisor or foreperson |  188
-    4 |              Regular employee or worker (no supervisory duties) | 1774
- &lt;NA&gt; |                                                            &lt;NA&gt; |  942
+    1 |                Una posición directiva o de gerente de alto nivel |  22
+    2 | Gerente de nivel medio (tipo jefe de sector, oficina o sucursal) |  55
+    3 |                                             Supervisor o capataz |  79
+    4 |            Empleado u obrero regular (sin cargos de supervisión) | 989
+ &lt;NA&gt; |                                                             &lt;NA&gt; | 553
 
 Value | Raw % | Valid % | Cum. %
 --------------------------------
- -999 |  0.03 |    0.05 |   0.05
-    1 |  1.35 |    1.95 |   1.99
-    2 |  3.35 |    4.84 |   6.84
-    3 |  6.17 |    8.93 |  15.76
-    4 | 58.20 |   84.24 | 100.00
- &lt;NA&gt; | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+    1 |  1.30 |    1.92 |   1.92
+    2 |  3.24 |    4.80 |   6.72
+    3 |  4.65 |    6.90 |  13.62
+    4 | 58.24 |   86.38 | 100.00
+ &lt;NA&gt; | 32.57 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>a15, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="st">"-999"</span>]</span>
@@ -751,41 +741,41 @@ Value | Raw % | Valid % | Cum. %
 <span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>formal_position_auth)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Formal position of authority (x) &lt;ordinal&gt; 
-# total N=3048 valid N=2105 mean=3.76 sd=0.63
+# total N=1698 valid N=1145 mean=3.78 sd=0.62
 
-Value                                                           |    N | Raw %
+Value                                                            |   N | Raw %
 ------------------------------------------------------------------------------
-A senior executive or top management position                   |   41 |  1.35
-Middle-level manager (e.g., department, office, or branch head) |  102 |  3.35
-Supervisor or foreperson                                        |  188 |  6.17
-Regular employee or worker (no supervisory duties)              | 1774 | 58.20
-&lt;NA&gt;                                                            |  943 | 30.94
+Una posición directiva o de gerente de alto nivel                |  22 |  1.30
+Gerente de nivel medio (tipo jefe de sector, oficina o sucursal) |  55 |  3.24
+Supervisor o capataz                                             |  79 |  4.65
+Empleado u obrero regular (sin cargos de supervisión)            | 989 | 58.24
+&lt;NA&gt;                                                             | 553 | 32.57
 
-Value                                                           | Valid % | Cum. %
-----------------------------------------------------------------------------------
-A senior executive or top management position                   |    1.95 |   1.95
-Middle-level manager (e.g., department, office, or branch head) |    4.85 |   6.79
-Supervisor or foreperson                                        |    8.93 |  15.72
-Regular employee or worker (no supervisory duties)              |   84.28 | 100.00
-&lt;NA&gt;                                                            |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value                                                            | Valid % | Cum. %
+-----------------------------------------------------------------------------------
+Una posición directiva o de gerente de alto nivel                |    1.92 |   1.92
+Gerente de nivel medio (tipo jefe de sector, oficina o sucursal) |    4.80 |   6.72
+Supervisor o capataz                                             |    6.90 |  13.62
+Empleado u obrero regular (sin cargos de supervisión)            |   86.38 | 100.00
+&lt;NA&gt;                                                             |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="supervision" class="level3" data-number="1.2.10">
-<h3 data-number="1.2.10" class="anchored" data-anchor-id="supervision"><span class="header-section-number">1.2.10</span> supervision</h3>
+<section id="supervision" class="level3" data-number="3.2.10">
+<h3 data-number="3.2.10" class="anchored" data-anchor-id="supervision"><span class="header-section-number">3.2.10</span> supervision</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a16)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Supervises workers (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=-12.55 sd=114.47
+<pre><code>Supervisa a trabajadores/as (x) &lt;numeric&gt; 
+# total N=1698 valid N=1068 mean=-4.01 sd=71.84
 
-Value |                    Label |    N | Raw % | Valid % | Cum. %
-------------------------------------------------------------------
- -999 |  No answer (do not read) |    9 |  0.30 |    0.43 |   0.43
- -888 | Don’t know (do not read) |   24 |  0.79 |    1.14 |   1.57
-    1 | Yes. To how many people? |  280 |  9.19 |   13.30 |  14.86
-    2 |                       No | 1793 | 58.83 |   85.14 | 100.00
- &lt;NA&gt; |                     &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                    Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------
+ -999 |    No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |        No sabe (no leer) |   7 |  0.41 |    0.66 |   0.66
+    1 | Sí. ¿A cuántas personas? | 194 | 11.43 |   18.16 |  18.82
+    2 |                       No | 867 | 51.06 |   81.18 | 100.00
+ &lt;NA&gt; |                     &lt;NA&gt; | 630 | 37.10 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -804,156 +794,156 @@ Value |                    Label |    N | Raw % | Valid % | Cum. %
 <span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>supervision)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Supervises other workers (1 = yes) (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=0.13 sd=0.34
+# total N=1698 valid N=1068 mean=0.18 sd=0.39
 
-Value | Label |    N | Raw % | Valid % | Cum. %
------------------------------------------------
-    0 |    No | 1826 | 59.91 |   86.70 |  86.70
-    1 |   Yes |  280 |  9.19 |   13.30 | 100.00
- &lt;NA&gt; |  &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value | Label |   N | Raw % | Valid % | Cum. %
+----------------------------------------------
+    0 |    No | 874 | 51.47 |   81.84 |  81.84
+    1 |   Yes | 194 | 11.43 |   18.16 | 100.00
+ &lt;NA&gt; |  &lt;NA&gt; | 630 | 37.10 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="decisionmaking_typology" class="level3" data-number="1.2.11">
-<h3 data-number="1.2.11" class="anchored" data-anchor-id="decisionmaking_typology"><span class="header-section-number">1.2.11</span> decisionmaking_typology</h3>
+<section id="decisionmaking_typology" class="level3" data-number="3.2.11">
+<h3 data-number="3.2.11" class="anchored" data-anchor-id="decisionmaking_typology"><span class="header-section-number">3.2.11</span> decisionmaking_typology</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_01)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of influence to: Sanction an employee (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=-19.62 sd=142.20
+<pre><code>Nivel de influencia para: Sancionar a un/a empleado/a (x) &lt;numeric&gt; 
+# total N=1698 valid N=1026 mean=-14.68 sd=123.20
 
-Value |                                                                Label
-----------------------------------------------------------------------------
- -999 |                                              No answer (do not read)
- -888 |                                             Don’t know (do not read)
-    1 |                   A lot of influence (you usually make the decision)
-    2 | Some influence (you can recommend it, but it does not depend on you)
-    3 |                                                         No influence
- &lt;NA&gt; |                                                                 &lt;NA&gt;
+Value |                                                                 Label
+-----------------------------------------------------------------------------
+ -999 |                                                 No responde (no leer)
+ -888 |                                                     No sabe (no leer)
+    1 |                  Mucha influencia (generalmente Ud. toma la decisión)
+    2 | Algo de influencia (puede recomendar hacerlo, pero no depende de Ud.)
+    3 |                                                    Nada de influencia
+ &lt;NA&gt; |                                                                  &lt;NA&gt;
 
-Value |    N | Raw % | Valid % | Cum. %
----------------------------------------
- -999 |   15 |  0.49 |    0.71 |   0.71
- -888 |   36 |  1.18 |    1.71 |   2.42
-    1 |  101 |  3.31 |    4.80 |   7.22
-    2 |  338 | 11.09 |   16.05 |  23.27
-    3 | 1616 | 53.02 |   76.73 | 100.00
- &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+ -999 |   0 |  0.00 |    0.00 |   0.00
+ -888 |  20 |  1.18 |    1.95 |   1.95
+    1 |  67 |  3.95 |    6.53 |   8.48
+    2 | 183 | 10.78 |   17.84 |  26.32
+    3 | 756 | 44.52 |   73.68 | 100.00
+ &lt;NA&gt; | 672 | 39.58 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_02)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of influence to: Define salary increases for an employee (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=-17.20 sd=134.31
+<pre><code>Nivel de influencia para: Definir aumento de sueldo para un/a empleado/a (x) &lt;numeric&gt; 
+# total N=1698 valid N=1026 mean=-15.33 sd=126.21
 
-Value |                                                                Label
-----------------------------------------------------------------------------
- -999 |                                              No answer (do not read)
- -888 |                                             Don’t know (do not read)
-    1 |                   A lot of influence (you usually make the decision)
-    2 | Some influence (you can recommend it, but it does not depend on you)
-    3 |                                                         No influence
- &lt;NA&gt; |                                                                 &lt;NA&gt;
+Value |                                                                 Label
+-----------------------------------------------------------------------------
+ -999 |                                                 No responde (no leer)
+ -888 |                                                     No sabe (no leer)
+    1 |                  Mucha influencia (generalmente Ud. toma la decisión)
+    2 | Algo de influencia (puede recomendar hacerlo, pero no depende de Ud.)
+    3 |                                                    Nada de influencia
+ &lt;NA&gt; |                                                                  &lt;NA&gt;
 
-Value |    N | Raw % | Valid % | Cum. %
----------------------------------------
- -999 |   11 |  0.36 |    0.52 |   0.52
- -888 |   35 |  1.15 |    1.66 |   2.18
-    1 |   55 |  1.80 |    2.61 |   4.80
-    2 |  223 |  7.32 |   10.59 |  15.38
-    3 | 1782 | 58.46 |   84.62 | 100.00
- &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+ -999 |   0 |  0.00 |    0.00 |   0.00
+ -888 |  21 |  1.24 |    2.05 |   2.05
+    1 |  16 |  0.94 |    1.56 |   3.61
+    2 |  63 |  3.71 |    6.14 |   9.75
+    3 | 926 | 54.53 |   90.25 | 100.00
+ &lt;NA&gt; | 672 | 39.58 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_03)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of influence to: Hire or dismiss workers (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=-12.63 sd=118.97
+<pre><code>Nivel de influencia para: Contratar o despedir trabajadores/as (x) &lt;numeric&gt; 
+# total N=1698 valid N=1026 mean=-14.53 sd=123.22
 
-Value |                                                                Label
-----------------------------------------------------------------------------
- -999 |                                              No answer (do not read)
- -888 |                                             Don’t know (do not read)
-    1 |                   A lot of influence (you usually make the decision)
-    2 | Some influence (you can recommend it, but it does not depend on you)
-    3 |                                                         No influence
- &lt;NA&gt; |                                                                 &lt;NA&gt;
+Value |                                                                 Label
+-----------------------------------------------------------------------------
+ -999 |                                                 No responde (no leer)
+ -888 |                                                     No sabe (no leer)
+    1 |                  Mucha influencia (generalmente Ud. toma la decisión)
+    2 | Algo de influencia (puede recomendar hacerlo, pero no depende de Ud.)
+    3 |                                                    Nada de influencia
+ &lt;NA&gt; |                                                                  &lt;NA&gt;
 
-Value |    N | Raw % | Valid % | Cum. %
----------------------------------------
- -999 |   12 |  0.39 |    0.57 |   0.57
- -888 |   23 |  0.75 |    1.09 |   1.66
-    1 |   71 |  2.33 |    3.37 |   5.03
-    2 |  249 |  8.17 |   11.82 |  16.86
-    3 | 1751 | 57.45 |   83.14 | 100.00
- &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+ -999 |   0 |  0.00 |    0.00 |   0.00
+ -888 |  20 |  1.18 |    1.95 |   1.95
+    1 |  30 |  1.77 |    2.92 |   4.87
+    2 | 108 |  6.36 |   10.53 |  15.40
+    3 | 868 | 51.12 |   84.60 | 100.00
+ &lt;NA&gt; | 672 | 39.58 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_04)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of influence to: Change company goods or services (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=-13.04 sd=120.49
+<pre><code>Nivel de influencia para: Cambiar bienes o servicios de la empresa (x) &lt;numeric&gt; 
+# total N=1698 valid N=1026 mean=-17.18 sd=131.93
 
-Value |                                                                Label
-----------------------------------------------------------------------------
- -999 |                                              No answer (do not read)
- -888 |                                             Don’t know (do not read)
-    1 |                   A lot of influence (you usually make the decision)
-    2 | Some influence (you can recommend it, but it does not depend on you)
-    3 |                                                         No influence
- &lt;NA&gt; |                                                                 &lt;NA&gt;
+Value |                                                                 Label
+-----------------------------------------------------------------------------
+ -999 |                                                 No responde (no leer)
+ -888 |                                                     No sabe (no leer)
+    1 |                  Mucha influencia (generalmente Ud. toma la decisión)
+    2 | Algo de influencia (puede recomendar hacerlo, pero no depende de Ud.)
+    3 |                                                    Nada de influencia
+ &lt;NA&gt; |                                                                  &lt;NA&gt;
 
-Value |    N | Raw % | Valid % | Cum. %
----------------------------------------
- -999 |   12 |  0.39 |    0.57 |   0.57
- -888 |   24 |  0.79 |    1.14 |   1.71
-    1 |   56 |  1.84 |    2.66 |   4.37
-    2 |  259 |  8.50 |   12.30 |  16.67
-    3 | 1755 | 57.58 |   83.33 | 100.00
- &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+ -999 |   0 |  0.00 |    0.00 |   0.00
+ -888 |  23 |  1.35 |    2.24 |   2.24
+    1 |  30 |  1.77 |    2.92 |   5.17
+    2 | 152 |  8.95 |   14.81 |  19.98
+    3 | 821 | 48.35 |   80.02 | 100.00
+ &lt;NA&gt; | 672 | 39.58 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_05)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of influence to: Propose changes in work organization (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=-10.43 sd=109.24
+<pre><code>Nivel de influencia para: Proponer cambios en forma de organizar el trabajo (x) &lt;numeric&gt; 
+# total N=1698 valid N=1026 mean=-8.91 sd=99.64
 
-Value |                                                                Label
-----------------------------------------------------------------------------
- -999 |                                              No answer (do not read)
- -888 |                                             Don’t know (do not read)
-    1 |                   A lot of influence (you usually make the decision)
-    2 | Some influence (you can recommend it, but it does not depend on you)
-    3 |                                                         No influence
- &lt;NA&gt; |                                                                 &lt;NA&gt;
+Value |                                                                 Label
+-----------------------------------------------------------------------------
+ -999 |                                                 No responde (no leer)
+ -888 |                                                     No sabe (no leer)
+    1 |                  Mucha influencia (generalmente Ud. toma la decisión)
+    2 | Algo de influencia (puede recomendar hacerlo, pero no depende de Ud.)
+    3 |                                                    Nada de influencia
+ &lt;NA&gt; |                                                                  &lt;NA&gt;
 
-Value |    N | Raw % | Valid % | Cum. %
----------------------------------------
- -999 |    8 |  0.26 |    0.38 |   0.38
- -888 |   22 |  0.72 |    1.04 |   1.42
-    1 |  120 |  3.94 |    5.70 |   7.12
-    2 |  418 | 13.71 |   19.85 |  26.97
-    3 | 1538 | 50.46 |   73.03 | 100.00
- &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+ -999 |   0 |  0.00 |    0.00 |   0.00
+ -888 |  13 |  0.77 |    1.27 |   1.27
+    1 | 123 |  7.24 |   11.99 |  13.26
+    2 | 389 | 22.91 |   37.91 |  51.17
+    3 | 501 | 29.51 |   48.83 | 100.00
+ &lt;NA&gt; | 672 | 39.58 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_06)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Level of influence to: Influence how the budget is spent (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=-20.85 sd=144.82
+<pre><code>Nivel de influencia para: Incidir en cómo se gasta el presupuesto (x) &lt;numeric&gt; 
+# total N=1698 valid N=1026 mean=-15.40 sd=126.20
 
-Value |                                                                Label
-----------------------------------------------------------------------------
- -999 |                                              No answer (do not read)
- -888 |                                             Don’t know (do not read)
-    1 |                   A lot of influence (you usually make the decision)
-    2 | Some influence (you can recommend it, but it does not depend on you)
-    3 |                                                         No influence
- &lt;NA&gt; |                                                                 &lt;NA&gt;
+Value |                                                                 Label
+-----------------------------------------------------------------------------
+ -999 |                                                 No responde (no leer)
+ -888 |                                                     No sabe (no leer)
+    1 |                  Mucha influencia (generalmente Ud. toma la decisión)
+    2 | Algo de influencia (puede recomendar hacerlo, pero no depende de Ud.)
+    3 |                                                    Nada de influencia
+ &lt;NA&gt; |                                                                  &lt;NA&gt;
 
-Value |    N | Raw % | Valid % | Cum. %
----------------------------------------
- -999 |    8 |  0.26 |    0.38 |   0.38
- -888 |   47 |  1.54 |    2.23 |   2.61
-    1 |   63 |  2.07 |    2.99 |   5.60
-    2 |  211 |  6.92 |   10.02 |  15.62
-    3 | 1777 | 58.30 |   84.38 | 100.00
- &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+ -999 |   0 |  0.00 |    0.00 |   0.00
+ -888 |  21 |  1.24 |    2.05 |   2.05
+    1 |  34 |  2.00 |    3.31 |   5.36
+    2 |  95 |  5.59 |    9.26 |  14.62
+    3 | 876 | 51.59 |   85.38 | 100.00
+ &lt;NA&gt; | 672 | 39.58 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -986,46 +976,46 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>decisionmaking_typology)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Decision-making typology (sum, inverted) (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=7.25 sd=2.38
+# total N=1698 valid N=1026 mean=7.55 sd=2.14
 
-Value |    N | Raw % | Valid % | Cum. %
----------------------------------------
-    6 | 1364 | 44.75 |   64.77 |  64.77
-    7 |  228 |  7.48 |   10.83 |  75.59
-    8 |  139 |  4.56 |    6.60 |  82.19
-    9 |   79 |  2.59 |    3.75 |  85.94
-   10 |   67 |  2.20 |    3.18 |  89.13
-   11 |   61 |  2.00 |    2.90 |  92.02
-   12 |   78 |  2.56 |    3.70 |  95.73
-   13 |   27 |  0.89 |    1.28 |  97.01
-   14 |   11 |  0.36 |    0.52 |  97.53
-   15 |   10 |  0.33 |    0.47 |  98.01
-   16 |   10 |  0.33 |    0.47 |  98.48
-   17 |    5 |  0.16 |    0.24 |  98.72
-   18 |   27 |  0.89 |    1.28 | 100.00
- &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+    6 | 448 | 26.38 |   43.66 |  43.66
+    7 | 216 | 12.72 |   21.05 |  64.72
+    8 | 134 |  7.89 |   13.06 |  77.78
+    9 |  76 |  4.48 |    7.41 |  85.19
+   10 |  61 |  3.59 |    5.95 |  91.13
+   11 |  25 |  1.47 |    2.44 |  93.57
+   12 |  22 |  1.30 |    2.14 |  95.71
+   13 |  14 |  0.82 |    1.36 |  97.08
+   14 |  13 |  0.77 |    1.27 |  98.34
+   15 |   6 |  0.35 |    0.58 |  98.93
+   16 |   4 |  0.24 |    0.39 |  99.32
+   17 |   3 |  0.18 |    0.29 |  99.61
+   18 |   4 |  0.24 |    0.39 | 100.00
+ &lt;NA&gt; | 672 | 39.58 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>decisionmaking_typology_mean)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Decision-making typology (mean, inverted) (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=1.21 sd=0.40
+# total N=1698 valid N=1026 mean=1.26 sd=0.36
 
-Value |    N | Raw % | Valid % | Cum. %
----------------------------------------
- 1.00 | 1364 | 44.75 |   64.77 |  64.77
- 1.17 |  228 |  7.48 |   10.83 |  75.59
- 1.33 |  139 |  4.56 |    6.60 |  82.19
- 1.50 |   79 |  2.59 |    3.75 |  85.94
- 1.67 |   67 |  2.20 |    3.18 |  89.13
- 1.83 |   61 |  2.00 |    2.90 |  92.02
- 2.00 |   78 |  2.56 |    3.70 |  95.73
- 2.17 |   27 |  0.89 |    1.28 |  97.01
- 2.33 |   11 |  0.36 |    0.52 |  97.53
- 2.50 |   10 |  0.33 |    0.47 |  98.01
- 2.67 |   10 |  0.33 |    0.47 |  98.48
- 2.83 |    5 |  0.16 |    0.24 |  98.72
- 3.00 |   27 |  0.89 |    1.28 | 100.00
- &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+ 1.00 | 448 | 26.38 |   43.66 |  43.66
+ 1.17 | 216 | 12.72 |   21.05 |  64.72
+ 1.33 | 134 |  7.89 |   13.06 |  77.78
+ 1.50 |  76 |  4.48 |    7.41 |  85.19
+ 1.67 |  61 |  3.59 |    5.95 |  91.13
+ 1.83 |  25 |  1.47 |    2.44 |  93.57
+ 2.00 |  22 |  1.30 |    2.14 |  95.71
+ 2.17 |  14 |  0.82 |    1.36 |  97.08
+ 2.33 |  13 |  0.77 |    1.27 |  98.34
+ 2.50 |   6 |  0.35 |    0.58 |  98.93
+ 2.67 |   4 |  0.24 |    0.39 |  99.32
+ 2.83 |   3 |  0.18 |    0.29 |  99.61
+ 3.00 |   4 |  0.24 |    0.39 | 100.00
+ &lt;NA&gt; | 672 | 39.58 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear variable con 3 categorías</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
@@ -1047,19 +1037,19 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>decisionmaking_typology_cat)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Decision-making typology (recoded 3 categories) (x) &lt;ordinal&gt; 
-# total N=3048 valid N=2106 mean=1.40 sd=0.57
+# total N=1698 valid N=1026 mean=1.61 sd=0.57
 
-Value |    N | Raw % | Valid % | Cum. %
----------------------------------------
-    1 | 1364 | 44.75 |   64.77 |  64.77
-    2 |  652 | 21.39 |   30.96 |  95.73
-    3 |   90 |  2.95 |    4.27 | 100.00
- &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |   N | Raw % | Valid % | Cum. %
+--------------------------------------
+    1 | 448 | 26.38 |   43.66 |  43.66
+    2 | 534 | 31.45 |   52.05 |  95.71
+    3 |  44 |  2.59 |    4.29 | 100.00
+ &lt;NA&gt; | 672 | 39.58 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="managerial_location_typology" class="level3" data-number="1.2.12">
-<h3 data-number="1.2.12" class="anchored" data-anchor-id="managerial_location_typology"><span class="header-section-number">1.2.12</span> managerial_location_typology</h3>
+<section id="managerial_location_typology" class="level3" data-number="3.2.12">
+<h3 data-number="3.2.12" class="anchored" data-anchor-id="managerial_location_typology"><span class="header-section-number">3.2.12</span> managerial_location_typology</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1106,44 +1096,44 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb52-43"><a href="#cb52-43" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>managerial_location_typology)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Managerial Location Typology (x) &lt;ordinal&gt; 
-# total N=3048 valid N=2105 mean=10.00 sd=2.94
+# total N=1698 valid N=1024 mean=9.08 sd=2.89
 
-Value                                                     |    N | Raw %
-------------------------------------------------------------------------
-1. Manager on all criteria                                |   60 |  1.97
-2. Manager not in formal hierarchy                        |    9 |  0.30
-3. Non-supervisory manager                                |   13 |  0.43
-4. Non-supervisory decision-maker not in formal hierarchy |    8 |  0.26
-5. Advisor-manager on all criteria                        |  132 |  4.33
-6. Advisor not in hierarchy                               |   62 |  2.03
-7. Non-supervisory advisor                                |   77 |  2.53
-8. Non-supervisory advisor not in formal hierarchy        |  381 | 12.50
-9. Sanctioning / task supervisor in hierarchy             |    7 |  0.23
-10. Sanctioning / task supervisor not in hierarchy        |   10 |  0.33
-11. Not subordinates but in hierarchy                     |   42 |  1.38
-12. Non-supervisor / non manager on all criteria          | 1304 | 42.78
-&lt;NA&gt;                                                      |  943 | 30.94
+Value                                                     |   N | Raw %
+-----------------------------------------------------------------------
+1. Manager on all criteria                                |  29 |  1.71
+2. Manager not in formal hierarchy                        |   5 |  0.29
+3. Non-supervisory manager                                |   1 |  0.06
+4. Non-supervisory decision-maker not in formal hierarchy |   9 |  0.53
+5. Advisor-manager on all criteria                        |  91 |  5.36
+6. Advisor not in hierarchy                               |  46 |  2.71
+7. Non-supervisory advisor                                |  11 |  0.65
+8. Non-supervisory advisor not in formal hierarchy        | 384 | 22.61
+9. Sanctioning / task supervisor in hierarchy             |   5 |  0.29
+10. Sanctioning / task supervisor not in hierarchy        |   6 |  0.35
+11. Not subordinates but in hierarchy                     |   5 |  0.29
+12. Non-supervisor / non manager on all criteria          | 432 | 25.44
+&lt;NA&gt;                                                      | 674 | 39.69
 
 Value                                                     | Valid % | Cum. %
 ----------------------------------------------------------------------------
-1. Manager on all criteria                                |    2.85 |   2.85
-2. Manager not in formal hierarchy                        |    0.43 |   3.28
-3. Non-supervisory manager                                |    0.62 |   3.90
-4. Non-supervisory decision-maker not in formal hierarchy |    0.38 |   4.28
-5. Advisor-manager on all criteria                        |    6.27 |  10.55
-6. Advisor not in hierarchy                               |    2.95 |  13.49
-7. Non-supervisory advisor                                |    3.66 |  17.15
-8. Non-supervisory advisor not in formal hierarchy        |   18.10 |  35.25
-9. Sanctioning / task supervisor in hierarchy             |    0.33 |  35.58
-10. Sanctioning / task supervisor not in hierarchy        |    0.48 |  36.06
-11. Not subordinates but in hierarchy                     |    2.00 |  38.05
-12. Non-supervisor / non manager on all criteria          |   61.95 | 100.00
+1. Manager on all criteria                                |    2.83 |   2.83
+2. Manager not in formal hierarchy                        |    0.49 |   3.32
+3. Non-supervisory manager                                |    0.10 |   3.42
+4. Non-supervisory decision-maker not in formal hierarchy |    0.88 |   4.30
+5. Advisor-manager on all criteria                        |    8.89 |  13.18
+6. Advisor not in hierarchy                               |    4.49 |  17.68
+7. Non-supervisory advisor                                |    1.07 |  18.75
+8. Non-supervisory advisor not in formal hierarchy        |   37.50 |  56.25
+9. Sanctioning / task supervisor in hierarchy             |    0.49 |  56.74
+10. Sanctioning / task supervisor not in hierarchy        |    0.59 |  57.32
+11. Not subordinates but in hierarchy                     |    0.49 |  57.81
+12. Non-supervisor / non manager on all criteria          |   42.19 | 100.00
 &lt;NA&gt;                                                      |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="organization_assets" class="level3" data-number="1.2.13">
-<h3 data-number="1.2.13" class="anchored" data-anchor-id="organization_assets"><span class="header-section-number">1.2.13</span> organization_assets</h3>
+<section id="organization_assets" class="level3" data-number="3.2.13">
+<h3 data-number="3.2.13" class="anchored" data-anchor-id="organization_assets"><span class="header-section-number">3.2.13</span> organization_assets</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1168,621 +1158,443 @@ Value                                                     | Valid % | Cum. %
 <span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>organization_assets)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Organizational Assets (x) &lt;ordinal&gt; 
-# total N=3048 valid N=2105 mean=2.72 sd=0.64
+# total N=1698 valid N=1024 mean=2.69 sd=0.68
 
-Value                 |    N | Raw % | Valid % | Cum. %
--------------------------------------------------------
-Manager               |  214 |  7.02 |   10.17 |  10.17
-Supervisor            |  156 |  5.12 |    7.41 |  17.58
-Non-managerial worker | 1735 | 56.92 |   82.42 | 100.00
-&lt;NA&gt;                  |  943 | 30.94 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value                 |   N | Raw % | Valid % | Cum. %
+------------------------------------------------------
+Manager               | 126 |  7.42 |   12.30 |  12.30
+Supervisor            |  68 |  4.00 |    6.64 |  18.95
+Non-managerial worker | 830 | 48.88 |   81.05 | 100.00
+&lt;NA&gt;                  | 674 | 39.69 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="boleta" class="level3" data-number="1.2.14">
-<h3 data-number="1.2.14" class="anchored" data-anchor-id="boleta"><span class="header-section-number">1.2.14</span> boleta</h3>
+<section id="boleta" class="level3" data-number="3.2.14">
+<h3 data-number="3.2.14" class="anchored" data-anchor-id="boleta"><span class="header-section-number">3.2.14</span> boleta</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a06)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Receipt or invoice issuance (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=-11.58 sd=113.10
-
-Value |                                            Label |    N | Raw %
------------------------------------------------------------------------
- -999 |                          No answer (do not read) |   11 |  0.36
- -888 |                         Don’t know (do not read) |   36 |  1.18
-    1 |  Yes, issues fee receipts (boleta de honorarios) |  478 | 15.68
-    2 | Yes, issues purchase and sale receipts (invoice) |  398 | 13.06
-    3 |                                               No | 2125 | 69.72
- &lt;NA&gt; |                                             &lt;NA&gt; |    0 |  0.00
-
-Value | Valid % | Cum. %
-------------------------
- -999 |    0.36 |   0.36
- -888 |    1.18 |   1.54
-    1 |   15.68 |  17.22
-    2 |   13.06 |  30.28
-    3 |   69.72 | 100.00
- &lt;NA&gt; |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">boleta =</span> <span class="fu">case_when</span>(</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>      a06 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>      a06 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">0</span>,</span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="cn">NA_real_</span></span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">%&gt;%</span> </span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">boleta =</span> <span class="st">"Issues receipts/invoices (1 = yes)"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">boleta =</span> <span class="fu">c</span>(</span>
-<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Yes"</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
-<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"No"</span> <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>boleta)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Issues receipts/invoices (1 = yes) (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=0.29 sd=0.45
-
-Value | Label |    N | Raw % | Valid % | Cum. %
------------------------------------------------
-    0 |    No | 2172 | 71.26 |   71.26 |  71.26
-    1 |   Yes |  876 | 28.74 |   28.74 | 100.00
- &lt;NA&gt; |  &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$a20_02_ar)</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;% </span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     boleta = case_when(</span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       a20_02_ar %in% c(1) ~ 1,</span></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       a20_02_ar %in% c(2, -888, -999) ~ 0,</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       .default = NA_real_</span></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a><span class="co">#     )) %&gt;% </span></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(boleta = "Issues receipts/invoices (1 = yes)") %&gt;% </span></span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_value_labels(boleta = c(</span></span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Yes" = 1,</span></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     "No" = 0</span></span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   ))</span></span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$boleta)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="inicio_activ" class="level3" data-number="1.2.15">
-<h3 data-number="1.2.15" class="anchored" data-anchor-id="inicio_activ"><span class="header-section-number">1.2.15</span> inicio_activ</h3>
+<section id="inicio_activ" class="level3" data-number="3.2.15">
+<h3 data-number="3.2.15" class="anchored" data-anchor-id="inicio_activ"><span class="header-section-number">3.2.15</span> inicio_activ</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a10)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The table contains very wide columns that don't fit into the available
-  display-width of the console. Splitting tables into multiple parts did
-  not have the desired effect.</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Business registration (x) &lt;numeric&gt; 
-# total N=3048 valid N=942 mean=3.13 sd=1.72
-
-Value
------
-    1
-    2
-    3
-    4
-    5
- &lt;NA&gt;
-
-                                                                                        Label
----------------------------------------------------------------------------------------------
-                                                 Yes, as a self-employed worker (fee receipt)
-                                             Yes, as a company registered as a natural person
-Yes, as an Individual Limited Liability Company (EIRL) or a Limited Liability Company (Ltda.)
-                                                              Yes, as another type of company
-                                                                                           No
-                                                                                         &lt;NA&gt;
-
-   N | Raw % | Valid % | Cum. %
--------------------------------
- 254 |  8.33 |   26.96 |  26.96
- 192 |  6.30 |   20.38 |  47.35
-  63 |  2.07 |    6.69 |  54.03
-  42 |  1.38 |    4.46 |  58.49
- 391 | 12.83 |   41.51 | 100.00
-2106 | 69.09 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">inicio_activ =</span> <span class="fu">case_when</span>(</span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>      a10 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>      a10 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">0</span>,</span>
-<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="cn">NA_real_</span></span>
-<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">inicio_activ =</span> <span class="st">"Business registration (1 = yes)"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">inicio_activ =</span> <span class="fu">c</span>(</span>
-<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Yes"</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
-<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"No"</span> <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>inicio_activ)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Business registration (1 = yes) (x) &lt;numeric&gt; 
-# total N=3048 valid N=942 mean=0.58 sd=0.49
-
-Value | Label |    N | Raw % | Valid % | Cum. %
------------------------------------------------
-    0 |    No |  391 | 12.83 |   41.51 |  41.51
-    1 |   Yes |  551 | 18.08 |   58.49 | 100.00
- &lt;NA&gt; |  &lt;NA&gt; | 2106 | 69.09 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$a10)</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;% </span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     inicio_activ = case_when(</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       a10 %in% c(1:4) ~ 1,</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       a10 %in% c(5, -888, -999) ~ 0,</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       .default = NA_real_</span></span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;% </span></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(inicio_activ = "Business registration (1 = yes)") %&gt;% </span></span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_value_labels(inicio_activ = c(</span></span>
+<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Yes" = 1,</span></span>
+<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a><span class="co">#     "No" = 0</span></span>
+<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a><span class="co">#   ))</span></span>
+<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$inicio_activ)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="inicio_empresa" class="level3" data-number="1.2.16">
-<h3 data-number="1.2.16" class="anchored" data-anchor-id="inicio_empresa"><span class="header-section-number">1.2.16</span> inicio_empresa</h3>
+<section id="inicio_empresa" class="level3" data-number="3.2.16">
+<h3 data-number="3.2.16" class="anchored" data-anchor-id="inicio_empresa"><span class="header-section-number">3.2.16</span> inicio_empresa</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a10)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The table contains very wide columns that don't fit into the available
-  display-width of the console. Splitting tables into multiple parts did
-  not have the desired effect.</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Business registration (x) &lt;numeric&gt; 
-# total N=3048 valid N=942 mean=3.13 sd=1.72
-
-Value
------
-    1
-    2
-    3
-    4
-    5
- &lt;NA&gt;
-
-                                                                                        Label
----------------------------------------------------------------------------------------------
-                                                 Yes, as a self-employed worker (fee receipt)
-                                             Yes, as a company registered as a natural person
-Yes, as an Individual Limited Liability Company (EIRL) or a Limited Liability Company (Ltda.)
-                                                              Yes, as another type of company
-                                                                                           No
-                                                                                         &lt;NA&gt;
-
-   N | Raw % | Valid % | Cum. %
--------------------------------
- 254 |  8.33 |   26.96 |  26.96
- 192 |  6.30 |   20.38 |  47.35
-  63 |  2.07 |    6.69 |  54.03
-  42 |  1.38 |    4.46 |  58.49
- 391 | 12.83 |   41.51 | 100.00
-2106 | 69.09 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">inicio_empresa =</span> <span class="fu">case_when</span>(</span>
-<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>      a10 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">~</span> <span class="dv">1</span>,</span>
-<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>      a10 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">0</span>,</span>
-<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="cn">NA_real_</span></span>
-<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">%&gt;%</span> </span>
-<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">inicio_empresa =</span> <span class="st">"Business registration as a company (1 = yes)"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">inicio_empresa =</span> <span class="fu">c</span>(</span>
-<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Yes"</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
-<span id="cb68-12"><a href="#cb68-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"No"</span> <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb68-13"><a href="#cb68-13" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb68-14"><a href="#cb68-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-15"><a href="#cb68-15" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>inicio_empresa)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Business registration as a company (1 = yes) (x) &lt;numeric&gt; 
-# total N=3048 valid N=942 mean=0.32 sd=0.46
-
-Value | Label |    N | Raw % | Valid % | Cum. %
------------------------------------------------
-    0 |    No |  645 | 21.16 |   68.47 |  68.47
-    1 |   Yes |  297 |  9.74 |   31.53 | 100.00
- &lt;NA&gt; |  &lt;NA&gt; | 2106 | 69.09 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$a10)</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;% </span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="co">#     inicio_empresa = case_when(</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       a10 %in% c(2:4) ~ 1,</span></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       a10 %in% c(1, 5, -888, -999) ~ 0,</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       .default = NA_real_</span></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   )%&gt;% </span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(inicio_empresa = "Business registration as a company (1 = yes)") %&gt;% </span></span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_value_labels(inicio_empresa = c(</span></span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     "Yes" = 1,</span></span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a><span class="co">#     "No" = 0</span></span>
+<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a><span class="co">#   ))</span></span>
+<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$inicio_empresa)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="contrato" class="level3" data-number="1.2.17">
-<h3 data-number="1.2.17" class="anchored" data-anchor-id="contrato"><span class="header-section-number">1.2.17</span> contrato</h3>
+<section id="contrato" class="level3" data-number="3.2.17">
+<h3 data-number="3.2.17" class="anchored" data-anchor-id="contrato"><span class="header-section-number">3.2.17</span> contrato</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a18)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a18_ar)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Written employment contract (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=-14.33 sd=124.27
+<pre><code>Condición de aportes jubilatorios en la ocupación principal (x) &lt;numeric&gt; 
+# total N=1698 valid N=1090 mean=-9.77 sd=100.23
 
-Value |                                                       Label |    N
---------------------------------------------------------------------------
- -999 |                                     No answer (do not read) |   33
-    1 |                                                 Yes, signed | 1691
-    2 |                                     Yes, but has not signed |   76
-    3 |                                           Does not have one |  272
-    4 | Does not know or does not remember if a contract was signed |   34
- &lt;NA&gt; |                                                        &lt;NA&gt; |  942
-
-Value | Raw % | Valid % | Cum. %
---------------------------------
- -999 |  1.08 |    1.57 |   1.57
-    1 | 55.48 |   80.29 |  81.86
-    2 |  2.49 |    3.61 |  85.47
-    3 |  8.92 |   12.92 |  98.39
-    4 |  1.12 |    1.61 | 100.00
- &lt;NA&gt; | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                                Label |   N | Raw % | Valid % | Cum. %
+-----------------------------------------------------------------------------
+ -999 |                No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |                    No sabe (no leer) |  14 |  0.82 |    1.28 |   1.28
+    1 |  Le hacen descuentos para jubilación | 678 | 39.93 |   62.20 |  63.49
+    2 | Usted paga el monotributo o autónomo |  94 |  5.54 |    8.62 |  72.11
+    3 |          No tiene aporte jubilatorio | 304 | 17.90 |   27.89 | 100.00
+ &lt;NA&gt; |                                 &lt;NA&gt; | 608 | 35.81 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">contrato =</span> <span class="fu">case_when</span>(</span>
-<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>      a18 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>, </span>
-<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>      a18 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">0</span>,</span>
-<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="cn">NA_real_</span></span>
-<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">contrato =</span> <span class="st">"Has a signed written employment contract (1 = yes)"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">contrato =</span> <span class="fu">c</span>(</span>
-<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Yes"</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
-<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"No"</span> <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb72-13"><a href="#cb72-13" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb72-14"><a href="#cb72-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-15"><a href="#cb72-15" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>contrato)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">contrato =</span> <span class="fu">case_when</span>(</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>      a18_ar <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>, </span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>      a18_ar <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>) <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="cn">NA_real_</span></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">contrato =</span> <span class="st">"Has a signed written employment contract (1 = yes)"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">contrato =</span> <span class="fu">c</span>(</span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Yes"</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"No"</span> <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>contrato)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Has a signed written employment contract (1 = yes) (x) &lt;numeric&gt; 
-# total N=3048 valid N=2106 mean=0.80 sd=0.40
+# total N=1698 valid N=1090 mean=0.62 sd=0.49
 
-Value | Label |    N | Raw % | Valid % | Cum. %
------------------------------------------------
-    0 |    No |  415 | 13.62 |   19.71 |  19.71
-    1 |   Yes | 1691 | 55.48 |   80.29 | 100.00
- &lt;NA&gt; |  &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value | Label |   N | Raw % | Valid % | Cum. %
+----------------------------------------------
+    0 |    No | 412 | 24.26 |   37.80 |  37.80
+    1 |   Yes | 678 | 39.93 |   62.20 | 100.00
+ &lt;NA&gt; |  &lt;NA&gt; | 608 | 35.81 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="income" class="level3" data-number="1.2.18">
-<h3 data-number="1.2.18" class="anchored" data-anchor-id="income"><span class="header-section-number">1.2.18</span> income</h3>
+<section id="income" class="level3" data-number="3.2.18">
+<h3 data-number="3.2.18" class="anchored" data-anchor-id="income"><span class="header-section-number">3.2.18</span> income</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a33)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a33)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Monthly labor income (x) &lt;numeric&gt; 
-# total N=3048 valid N=3048 mean=727586.67 sd=656962.08
+<pre><code>Ingresos mensuales por trabajo (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=741539.82 sd=935262.77
 
    Value |   N | Raw % | Valid % | Cum. %
 -----------------------------------------
-    -999 | 272 |  8.92 |    8.92 |   8.92
-  100000 |  13 |  0.43 |    0.43 |   9.35
-  110000 |   1 |  0.03 |    0.03 |   9.38
-  120000 |   6 |  0.20 |    0.20 |   9.58
-  150000 |  12 |  0.39 |    0.39 |   9.97
-  160000 |   1 |  0.03 |    0.03 |  10.01
-  180000 |   3 |  0.10 |    0.10 |  10.10
-  200000 |  48 |  1.57 |    1.57 |  11.68
-  220000 |   3 |  0.10 |    0.10 |  11.78
-  240000 |   3 |  0.10 |    0.10 |  11.88
-  250000 |  42 |  1.38 |    1.38 |  13.25
-  260000 |   3 |  0.10 |    0.10 |  13.35
-  270000 |   1 |  0.03 |    0.03 |  13.39
-  280000 |   3 |  0.10 |    0.10 |  13.48
-  290000 |   1 |  0.03 |    0.03 |  13.52
-  300000 | 118 |  3.87 |    3.87 |  17.39
-  310000 |   3 |  0.10 |    0.10 |  17.49
-  320000 |   7 |  0.23 |    0.23 |  17.72
-  330000 |   1 |  0.03 |    0.03 |  17.75
-  340000 |   1 |  0.03 |    0.03 |  17.78
-  345000 |   1 |  0.03 |    0.03 |  17.81
-  350000 |  62 |  2.03 |    2.03 |  19.85
-  355000 |   1 |  0.03 |    0.03 |  19.88
-  360000 |   4 |  0.13 |    0.13 |  20.01
-  370000 |   1 |  0.03 |    0.03 |  20.05
-  380000 |  12 |  0.39 |    0.39 |  20.44
-  400000 | 112 |  3.67 |    3.67 |  24.11
-  410000 |   1 |  0.03 |    0.03 |  24.15
-  415000 |   1 |  0.03 |    0.03 |  24.18
-  420000 |   3 |  0.10 |    0.10 |  24.28
-  430000 |   3 |  0.10 |    0.10 |  24.38
-  440000 |   3 |  0.10 |    0.10 |  24.48
-  445000 |   1 |  0.03 |    0.03 |  24.51
-  450000 |  86 |  2.82 |    2.82 |  27.33
-  460000 |   2 |  0.07 |    0.07 |  27.40
-  470000 |   4 |  0.13 |    0.13 |  27.53
-  480000 |  37 |  1.21 |    1.21 |  28.74
-  490000 |   4 |  0.13 |    0.13 |  28.87
-  500000 | 284 |  9.32 |    9.32 |  38.19
-  504000 |   1 |  0.03 |    0.03 |  38.22
-  505000 |   1 |  0.03 |    0.03 |  38.25
-  510000 |   6 |  0.20 |    0.20 |  38.45
-  510500 |   1 |  0.03 |    0.03 |  38.48
-  512000 |   1 |  0.03 |    0.03 |  38.52
-  515000 |   2 |  0.07 |    0.07 |  38.58
-  520000 |  18 |  0.59 |    0.59 |  39.17
-  530000 |   7 |  0.23 |    0.23 |  39.40
-  540000 |   9 |  0.30 |    0.30 |  39.70
-  550000 | 100 |  3.28 |    3.28 |  42.98
-  560000 |  18 |  0.59 |    0.59 |  43.57
-  565000 |   1 |  0.03 |    0.03 |  43.60
-  568888 |   1 |  0.03 |    0.03 |  43.64
-  570000 |   5 |  0.16 |    0.16 |  43.80
-  580000 |  26 |  0.85 |    0.85 |  44.65
-  587000 |   1 |  0.03 |    0.03 |  44.69
-  590000 |   8 |  0.26 |    0.26 |  44.95
-  595000 |   1 |  0.03 |    0.03 |  44.98
-  600000 | 235 |  7.71 |    7.71 |  52.69
-  605000 |   1 |  0.03 |    0.03 |  52.72
-  608000 |   1 |  0.03 |    0.03 |  52.76
-  610000 |   3 |  0.10 |    0.10 |  52.85
-  620000 |  11 |  0.36 |    0.36 |  53.22
-  630000 |   6 |  0.20 |    0.20 |  53.41
-  640000 |   6 |  0.20 |    0.20 |  53.61
-  650000 | 129 |  4.23 |    4.23 |  57.84
-  660000 |   2 |  0.07 |    0.07 |  57.91
-  670000 |   5 |  0.16 |    0.16 |  58.07
-  680000 |  18 |  0.59 |    0.59 |  58.66
-  690000 |   8 |  0.26 |    0.26 |  58.92
-  700000 | 132 |  4.33 |    4.33 |  63.25
-  710000 |   1 |  0.03 |    0.03 |  63.29
-  720000 |   7 |  0.23 |    0.23 |  63.52
-  730000 |   2 |  0.07 |    0.07 |  63.58
-  740000 |   2 |  0.07 |    0.07 |  63.65
-  750000 |  72 |  2.36 |    2.36 |  66.01
-  760000 |   1 |  0.03 |    0.03 |  66.04
-  770000 |   2 |  0.07 |    0.07 |  66.11
-  780000 |  14 |  0.46 |    0.46 |  66.57
-  790000 |   1 |  0.03 |    0.03 |  66.60
-  800000 | 151 |  4.95 |    4.95 |  71.56
-  820000 |   1 |  0.03 |    0.03 |  71.59
-  825000 |   2 |  0.07 |    0.07 |  71.65
-  830000 |   1 |  0.03 |    0.03 |  71.69
-  836000 |   1 |  0.03 |    0.03 |  71.72
-  840000 |   1 |  0.03 |    0.03 |  71.75
-  850000 |  82 |  2.69 |    2.69 |  74.44
-  860000 |   6 |  0.20 |    0.20 |  74.64
-  870000 |   4 |  0.13 |    0.13 |  74.77
-  880000 |   1 |  0.03 |    0.03 |  74.80
-  885000 |   1 |  0.03 |    0.03 |  74.84
-  890000 |   5 |  0.16 |    0.16 |  75.00
-  895000 |   1 |  0.03 |    0.03 |  75.03
-  898000 |   1 |  0.03 |    0.03 |  75.07
-  900000 |  87 |  2.85 |    2.85 |  77.92
-  910000 |   1 |  0.03 |    0.03 |  77.95
-  920000 |   6 |  0.20 |    0.20 |  78.15
-  940000 |   1 |  0.03 |    0.03 |  78.18
-  950000 |  53 |  1.74 |    1.74 |  79.92
-  954000 |   1 |  0.03 |    0.03 |  79.95
-  955000 |   1 |  0.03 |    0.03 |  79.99
-  960000 |   4 |  0.13 |    0.13 |  80.12
-  970000 |   5 |  0.16 |    0.16 |  80.28
-  980000 |   6 |  0.20 |    0.20 |  80.48
-  990000 |   3 |  0.10 |    0.10 |  80.58
- 1000000 | 114 |  3.74 |    3.74 |  84.32
- 1000500 |   1 |  0.03 |    0.03 |  84.35
- 1005000 |   1 |  0.03 |    0.03 |  84.38
- 1040000 |   1 |  0.03 |    0.03 |  84.42
- 1042000 |   1 |  0.03 |    0.03 |  84.45
- 1050000 |   8 |  0.26 |    0.26 |  84.71
- 1085000 |   1 |  0.03 |    0.03 |  84.74
- 1100000 |  32 |  1.05 |    1.05 |  85.79
- 1150000 |   5 |  0.16 |    0.16 |  85.96
- 1200000 |  95 |  3.12 |    3.12 |  89.07
- 1250000 |   5 |  0.16 |    0.16 |  89.24
- 1300000 |  32 |  1.05 |    1.05 |  90.29
- 1350000 |   6 |  0.20 |    0.20 |  90.49
- 1360000 |   1 |  0.03 |    0.03 |  90.52
- 1400000 |  24 |  0.79 |    0.79 |  91.31
- 1450000 |   1 |  0.03 |    0.03 |  91.34
- 1500000 |  79 |  2.59 |    2.59 |  93.93
- 1550000 |   3 |  0.10 |    0.10 |  94.03
- 1600000 |  15 |  0.49 |    0.49 |  94.52
- 1650000 |   1 |  0.03 |    0.03 |  94.55
- 1700000 |   5 |  0.16 |    0.16 |  94.72
- 1750000 |   3 |  0.10 |    0.10 |  94.82
- 1760000 |   1 |  0.03 |    0.03 |  94.85
- 1800000 |  28 |  0.92 |    0.92 |  95.77
- 1850000 |   1 |  0.03 |    0.03 |  95.80
- 1900000 |   4 |  0.13 |    0.13 |  95.93
- 2000000 |  43 |  1.41 |    1.41 |  97.34
- 2100000 |   1 |  0.03 |    0.03 |  97.38
- 2200000 |   2 |  0.07 |    0.07 |  97.44
- 2300000 |   5 |  0.16 |    0.16 |  97.60
- 2350000 |   1 |  0.03 |    0.03 |  97.64
- 2400000 |   4 |  0.13 |    0.13 |  97.77
- 2500000 |  28 |  0.92 |    0.92 |  98.69
- 2600000 |   2 |  0.07 |    0.07 |  98.75
- 2700000 |   3 |  0.10 |    0.10 |  98.85
- 2800000 |   1 |  0.03 |    0.03 |  98.88
- 2900000 |   1 |  0.03 |    0.03 |  98.92
- 3000000 |  11 |  0.36 |    0.36 |  99.28
- 3200000 |   2 |  0.07 |    0.07 |  99.34
- 3500000 |   7 |  0.23 |    0.23 |  99.57
- 3900000 |   1 |  0.03 |    0.03 |  99.61
- 4000000 |   1 |  0.03 |    0.03 |  99.64
- 4500000 |   1 |  0.03 |    0.03 |  99.67
- 5000000 |   2 |  0.07 |    0.07 |  99.74
- 5050000 |   1 |  0.03 |    0.03 |  99.77
- 6500000 |   2 |  0.07 |    0.07 |  99.84
- 7000000 |   2 |  0.07 |    0.07 |  99.90
- 8000000 |   1 |  0.03 |    0.03 |  99.93
- 8600000 |   1 |  0.03 |    0.03 |  99.97
-14000000 |   1 |  0.03 |    0.03 | 100.00
+    -999 | 412 | 24.26 |   24.26 |  24.26
+    -888 |   1 |  0.06 |    0.06 |  24.32
+       0 |   5 |  0.29 |    0.29 |  24.62
+       1 |   2 |  0.12 |    0.12 |  24.73
+       2 |   1 |  0.06 |    0.06 |  24.79
+       3 |   1 |  0.06 |    0.06 |  24.85
+      78 |   1 |  0.06 |    0.06 |  24.91
+      80 |   1 |  0.06 |    0.06 |  24.97
+     200 |   4 |  0.24 |    0.24 |  25.21
+     250 |   1 |  0.06 |    0.06 |  25.27
+     300 |   3 |  0.18 |    0.18 |  25.44
+     340 |   1 |  0.06 |    0.06 |  25.50
+     400 |   2 |  0.12 |    0.12 |  25.62
+     450 |   1 |  0.06 |    0.06 |  25.68
+     500 |   3 |  0.18 |    0.18 |  25.85
+     600 |   1 |  0.06 |    0.06 |  25.91
+     650 |   1 |  0.06 |    0.06 |  25.97
+     673 |   1 |  0.06 |    0.06 |  26.03
+     700 |   1 |  0.06 |    0.06 |  26.09
+     800 |   2 |  0.12 |    0.12 |  26.21
+     920 |   1 |  0.06 |    0.06 |  26.27
+     950 |   2 |  0.12 |    0.12 |  26.38
+    1300 |   1 |  0.06 |    0.06 |  26.44
+    6000 |   1 |  0.06 |    0.06 |  26.50
+    7500 |   1 |  0.06 |    0.06 |  26.56
+   10000 |   1 |  0.06 |    0.06 |  26.62
+   20000 |   1 |  0.06 |    0.06 |  26.68
+   25000 |   1 |  0.06 |    0.06 |  26.74
+   30000 |   1 |  0.06 |    0.06 |  26.80
+   36000 |   1 |  0.06 |    0.06 |  26.86
+   40000 |   2 |  0.12 |    0.12 |  26.97
+   50000 |   3 |  0.18 |    0.18 |  27.15
+   55000 |   1 |  0.06 |    0.06 |  27.21
+   60000 |   1 |  0.06 |    0.06 |  27.27
+   70000 |   1 |  0.06 |    0.06 |  27.33
+   78000 |   3 |  0.18 |    0.18 |  27.50
+   80000 |   3 |  0.18 |    0.18 |  27.68
+   87000 |   1 |  0.06 |    0.06 |  27.74
+  100000 |  23 |  1.35 |    1.35 |  29.09
+  110000 |   1 |  0.06 |    0.06 |  29.15
+  120000 |   5 |  0.29 |    0.29 |  29.45
+  140000 |   1 |  0.06 |    0.06 |  29.51
+  148000 |   1 |  0.06 |    0.06 |  29.56
+  150000 |  12 |  0.71 |    0.71 |  30.27
+  160000 |   3 |  0.18 |    0.18 |  30.45
+  180000 |   2 |  0.12 |    0.12 |  30.57
+  200000 |  40 |  2.36 |    2.36 |  32.92
+  220000 |   1 |  0.06 |    0.06 |  32.98
+  225000 |   1 |  0.06 |    0.06 |  33.04
+  240000 |   2 |  0.12 |    0.12 |  33.16
+  249999 |   1 |  0.06 |    0.06 |  33.22
+  250000 |  19 |  1.12 |    1.12 |  34.33
+  280000 |   1 |  0.06 |    0.06 |  34.39
+  299998 |   1 |  0.06 |    0.06 |  34.45
+  300000 |  52 |  3.06 |    3.06 |  37.51
+  310000 |   1 |  0.06 |    0.06 |  37.57
+  320000 |   3 |  0.18 |    0.18 |  37.75
+  350000 |  16 |  0.94 |    0.94 |  38.69
+  360000 |   2 |  0.12 |    0.12 |  38.81
+  370000 |   1 |  0.06 |    0.06 |  38.87
+  380000 |   6 |  0.35 |    0.35 |  39.22
+  385000 |   2 |  0.12 |    0.12 |  39.34
+  390000 |   4 |  0.24 |    0.24 |  39.58
+  399998 |   1 |  0.06 |    0.06 |  39.63
+  399999 |   1 |  0.06 |    0.06 |  39.69
+  400000 |  77 |  4.53 |    4.53 |  44.23
+  400001 |   3 |  0.18 |    0.18 |  44.41
+  420000 |   3 |  0.18 |    0.18 |  44.58
+  450000 |  21 |  1.24 |    1.24 |  45.82
+  470000 |   2 |  0.12 |    0.12 |  45.94
+  480000 |   2 |  0.12 |    0.12 |  46.05
+  490000 |   1 |  0.06 |    0.06 |  46.11
+  500000 |  69 |  4.06 |    4.06 |  50.18
+  509988 |   1 |  0.06 |    0.06 |  50.24
+  520000 |   1 |  0.06 |    0.06 |  50.29
+  530000 |   2 |  0.12 |    0.12 |  50.41
+  540000 |   1 |  0.06 |    0.06 |  50.47
+  550000 |  16 |  0.94 |    0.94 |  51.41
+  560000 |   3 |  0.18 |    0.18 |  51.59
+  580000 |   1 |  0.06 |    0.06 |  51.65
+  600000 |  70 |  4.12 |    4.12 |  55.77
+  600001 |   2 |  0.12 |    0.12 |  55.89
+  620000 |   2 |  0.12 |    0.12 |  56.01
+  640000 |   1 |  0.06 |    0.06 |  56.07
+  650000 |  10 |  0.59 |    0.59 |  56.65
+  660000 |   1 |  0.06 |    0.06 |  56.71
+  670000 |   1 |  0.06 |    0.06 |  56.77
+  680000 |   2 |  0.12 |    0.12 |  56.89
+  700000 |  46 |  2.71 |    2.71 |  59.60
+  720000 |   1 |  0.06 |    0.06 |  59.66
+  723000 |   1 |  0.06 |    0.06 |  59.72
+  730000 |   2 |  0.12 |    0.12 |  59.84
+  750000 |  18 |  1.06 |    1.06 |  60.90
+  780000 |   1 |  0.06 |    0.06 |  60.95
+  785000 |   2 |  0.12 |    0.12 |  61.07
+  790000 |   2 |  0.12 |    0.12 |  61.19
+  799999 |   1 |  0.06 |    0.06 |  61.25
+  800000 |  96 |  5.65 |    5.65 |  66.90
+  800001 |   2 |  0.12 |    0.12 |  67.02
+  811000 |   1 |  0.06 |    0.06 |  67.08
+  840000 |   1 |  0.06 |    0.06 |  67.14
+  850000 |   9 |  0.53 |    0.53 |  67.67
+  860000 |   1 |  0.06 |    0.06 |  67.73
+  875000 |   1 |  0.06 |    0.06 |  67.79
+  900000 |  51 |  3.00 |    3.00 |  70.79
+  920000 |   2 |  0.12 |    0.12 |  70.91
+  930000 |   1 |  0.06 |    0.06 |  70.97
+  940000 |   1 |  0.06 |    0.06 |  71.02
+  950000 |   4 |  0.24 |    0.24 |  71.26
+  956000 |   1 |  0.06 |    0.06 |  71.32
+  958000 |   1 |  0.06 |    0.06 |  71.38
+  960000 |   1 |  0.06 |    0.06 |  71.44
+  980000 |   2 |  0.12 |    0.12 |  71.55
+ 1000000 |  91 |  5.36 |    5.36 |  76.91
+ 1000001 |   5 |  0.29 |    0.29 |  77.21
+ 1000050 |   1 |  0.06 |    0.06 |  77.27
+ 1030000 |   1 |  0.06 |    0.06 |  77.33
+ 1050000 |   1 |  0.06 |    0.06 |  77.39
+ 1070000 |   1 |  0.06 |    0.06 |  77.44
+ 1099997 |   1 |  0.06 |    0.06 |  77.50
+ 1100000 |  19 |  1.12 |    1.12 |  78.62
+ 1137000 |   1 |  0.06 |    0.06 |  78.68
+ 1150000 |   2 |  0.12 |    0.12 |  78.80
+ 1180000 |   1 |  0.06 |    0.06 |  78.86
+ 1200000 |  63 |  3.71 |    3.71 |  82.57
+ 1250000 |   2 |  0.12 |    0.12 |  82.69
+ 1300000 |  25 |  1.47 |    1.47 |  84.16
+ 1300001 |   1 |  0.06 |    0.06 |  84.22
+ 1350000 |   1 |  0.06 |    0.06 |  84.28
+ 1400000 |  12 |  0.71 |    0.71 |  84.98
+ 1400001 |   1 |  0.06 |    0.06 |  85.04
+ 1450000 |   1 |  0.06 |    0.06 |  85.10
+ 1500000 |  58 |  3.42 |    3.42 |  88.52
+ 1600000 |   7 |  0.41 |    0.41 |  88.93
+ 1700000 |  15 |  0.88 |    0.88 |  89.81
+ 1750000 |   3 |  0.18 |    0.18 |  89.99
+ 1790000 |   1 |  0.06 |    0.06 |  90.05
+ 1800000 |  22 |  1.30 |    1.30 |  91.34
+ 1900000 |   6 |  0.35 |    0.35 |  91.70
+ 2000000 |  51 |  3.00 |    3.00 |  94.70
+ 2100000 |   2 |  0.12 |    0.12 |  94.82
+ 2150000 |   1 |  0.06 |    0.06 |  94.88
+ 2180000 |   1 |  0.06 |    0.06 |  94.94
+ 2200000 |   3 |  0.18 |    0.18 |  95.11
+ 2300000 |   1 |  0.06 |    0.06 |  95.17
+ 2400000 |   3 |  0.18 |    0.18 |  95.35
+ 2500000 |  20 |  1.18 |    1.18 |  96.53
+ 2600000 |   1 |  0.06 |    0.06 |  96.58
+ 2700000 |   2 |  0.12 |    0.12 |  96.70
+ 2800000 |   5 |  0.29 |    0.29 |  97.00
+ 2900000 |   1 |  0.06 |    0.06 |  97.06
+ 3000000 |  17 |  1.00 |    1.00 |  98.06
+ 3200000 |   1 |  0.06 |    0.06 |  98.12
+ 3500000 |   6 |  0.35 |    0.35 |  98.47
+ 3600000 |   1 |  0.06 |    0.06 |  98.53
+ 3700000 |   1 |  0.06 |    0.06 |  98.59
+ 4000000 |   8 |  0.47 |    0.47 |  99.06
+ 4000001 |   2 |  0.12 |    0.12 |  99.18
+ 4500000 |   1 |  0.06 |    0.06 |  99.23
+ 5000000 |   4 |  0.24 |    0.24 |  99.47
+ 5500000 |   1 |  0.06 |    0.06 |  99.53
+ 6000000 |   1 |  0.06 |    0.06 |  99.59
+ 7000000 |   2 |  0.12 |    0.12 |  99.71
+ 8000000 |   2 |  0.12 |    0.12 |  99.82
+ 9000000 |   1 |  0.06 |    0.06 |  99.88
+10000000 |   2 |  0.12 |    0.12 | 100.00
     &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(data<span class="sc">$</span>a33)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(data<span class="sc">$</span>a33)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 ## Basic descriptive statistics
 
- var    type                label    n NA.prc     mean       sd       se     md
-  dd numeric Monthly labor income 3048      0 727586.7 656962.1 11899.61 600000
-  trimmed                    range    iqr skew
- 647973.7 14000999 (-999-14000000) 441250 5.89</code></pre>
+ var    type                          label    n NA.prc     mean       sd
+  dd numeric Ingresos mensuales por trabajo 1698      0 741539.8 935262.8
+       se     md  trimmed                    range    iqr skew
+ 22696.81 500000 580348.1 10000999 (-999-10000000) 999800 3.57</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">income =</span> <span class="fu">if_else</span>(</span>
-<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>      a33 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>), <span class="cn">NA_real_</span>, <span class="fu">as.numeric</span>(a33)</span>
-<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">income =</span> <span class="st">"Income"</span>)</span>
-<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(data<span class="sc">$</span>income)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">income =</span> <span class="fu">if_else</span>(</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>      a33 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>), <span class="cn">NA_real_</span>, <span class="fu">as.numeric</span>(a33)</span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">income =</span> <span class="st">"Income"</span>)</span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(data<span class="sc">$</span>income)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 ## Basic descriptive statistics
 
  var    type  label    n NA.prc     mean       sd       se     md  trimmed
-  dd numeric Income 2776   8.92 798975.5 645580.3 12252.95 650000 698321.7
-                      range    iqr skew
- 13900000 (100000-14000000) 400000 6.62</code></pre>
+  dd numeric Income 1285  24.32 980192.3 960064.5 26782.36 800000 830957.3
+                 range    iqr skew
+ 10000000 (0-10000000) 800000 3.75</code></pre>
 </div>
 </div>
 </section>
-<section id="income_br" class="level3" data-number="1.2.19">
-<h3 data-number="1.2.19" class="anchored" data-anchor-id="income_br"><span class="header-section-number">1.2.19</span> income_br</h3>
+<section id="income_br" class="level3" data-number="3.2.19">
+<h3 data-number="3.2.19" class="anchored" data-anchor-id="income_br"><span class="header-section-number">3.2.19</span> income_br</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a34)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a34)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Monthly labor income brackets (x) &lt;numeric&gt; 
-# total N=3048 valid N=272 mean=-369.44 sd=477.76
+<pre><code>Rangos de ingresos mensuales por trabajo (x) &lt;numeric&gt; 
+# total N=1698 valid N=1698 mean=-50.29 sd=214.06
 
-Value |                                               Label |    N | Raw %
---------------------------------------------------------------------------
- -999 |                             No answer (do not read) |   81 |  2.66
- -888 |                            Don’t know (do not read) |   23 |  0.75
-    1 |            Less than $200,000 in monthly net income |    9 |  0.30
-    2 |     From $200,001 to $400,000 in monthly net income |   27 |  0.89
-    3 |     From $400,001 to $600,000 in monthly net income |   24 |  0.79
-    4 |     From $600,001 to $800,000 in monthly net income |   26 |  0.85
-    5 |   From $800,001 to $1,000,000 in monthly net income |   24 |  0.79
-    6 | From $1,000,001 to $1,200,000 in monthly net income |   14 |  0.46
-    7 | From $1,200,001 to $1,400,000 in monthly net income |   14 |  0.46
-    8 | From $1,400,001 to $1,600,000 in monthly net income |    7 |  0.23
-    9 | From $1,600,001 to $1,800,000 in monthly net income |    3 |  0.10
-   10 | From $1,800,001 to $2,000,000 in monthly net income |   10 |  0.33
-   11 | From $2,000,001 to $2,200,000 in monthly net income |    5 |  0.16
-   12 | From $2,200,001 to $2,400,000 in monthly net income |    1 |  0.03
-   13 | From $2,400,001 to $2,600,000 in monthly net income |    0 |  0.00
-   14 | From $2,600,001 to $2,800,000 in monthly net income |    0 |  0.00
-   15 | From $2,800,001 to $3,000,000 in monthly net income |    0 |  0.00
-   16 |          More than $3,000,001 in monthly net income |    4 |  0.13
- &lt;NA&gt; |                                                &lt;NA&gt; | 2776 | 91.08
-
-Value | Valid % | Cum. %
-------------------------
- -999 |   29.78 |  29.78
- -888 |    8.46 |  38.24
-    1 |    3.31 |  41.54
-    2 |    9.93 |  51.47
-    3 |    8.82 |  60.29
-    4 |    9.56 |  69.85
-    5 |    8.82 |  78.68
-    6 |    5.15 |  83.82
-    7 |    5.15 |  88.97
-    8 |    2.57 |  91.54
-    9 |    1.10 |  92.65
-   10 |    3.68 |  96.32
-   11 |    1.84 |  98.16
-   12 |    0.37 |  98.53
-   13 |    0.00 |  98.53
-   14 |    0.00 |  98.53
-   15 |    0.00 |  98.53
-   16 |    1.47 | 100.00
- &lt;NA&gt; |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                                       Label |   N | Raw % | Valid % | Cum. %
+------------------------------------------------------------------------------------
+ -999 |                       No responde (no leer) |   0 |  0.00 |    0.00 |   0.00
+ -888 |                           No sabe (no leer) | 104 |  6.12 |    6.12 |   6.12
+    1 |           Menos de $400.000 mensuales netos | 332 | 19.55 |   19.55 |  25.68
+    2 |      De $400.001 a $600.000 mensuales netos | 253 | 14.90 |   14.90 |  40.58
+    3 |      De $600.001 a $800.000 mensuales netos | 209 | 12.31 |   12.31 |  52.89
+    4 |                    De $800.001 a $1,000.000 | 249 | 14.66 |   14.66 |  67.55
+    5 |  De $1.000.001 a $1.200.000 mensuales netos | 139 |  8.19 |    8.19 |  75.74
+    6 | De $1.200.001 a $1.4000.000 mensuales netos |  87 |  5.12 |    5.12 |  80.86
+    7 |  De $1.400.001 a $1.600.000 mensuales netos |  79 |  4.65 |    4.65 |  85.51
+    8 |  De $1.600.001 a $1.800.000 mensuales netos |  47 |  2.77 |    2.77 |  88.28
+    9 |  De $1.800.001 a $2.000.000 mensuales netos |  53 |  3.12 |    3.12 |  91.40
+   10 |  De $2.000.001 a $2.200.000 mensuales netos |  34 |  2.00 |    2.00 |  93.40
+   11 |  De $2.200.001 a $2.400.000 mensuales netos |  13 |  0.77 |    0.77 |  94.17
+   12 |  De $2.400.001 a $2.600.000 mensuales netos |  22 |  1.30 |    1.30 |  95.47
+   13 |  De $2.600.001 a $2.800.000 mensuales netos |   8 |  0.47 |    0.47 |  95.94
+   14 |  De $2.800.001 a $3.000.000 mensuales netos |  18 |  1.06 |    1.06 |  97.00
+   15 |                  De $3.000.001 a $4.000.000 |  51 |  3.00 |    3.00 | 100.00
+   16 |         Mas de $4.000.001 a mensuales netos |   0 |  0.00 |    0.00 | 100.00
+ &lt;NA&gt; |                                        &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>a34, <span class="at">values =</span> <span class="st">"n"</span>)</span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]  <span class="co"># excluye los missing</span></span>
-<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>labs_num <span class="ot">&lt;-</span> <span class="fu">setNames</span>(<span class="fu">as.numeric</span>(<span class="fu">names</span>(labs_clean)), labs_clean)</span>
-<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">income_br =</span> <span class="fu">if_else</span>(</span>
-<span id="cb82-8"><a href="#cb82-8" aria-hidden="true" tabindex="-1"></a>      a34 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>), <span class="cn">NA_real_</span>, <span class="fu">as.numeric</span>(a34)</span>
-<span id="cb82-9"><a href="#cb82-9" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb82-10"><a href="#cb82-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb82-11"><a href="#cb82-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">income_br =</span> <span class="st">"Income brackets"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb82-12"><a href="#cb82-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">income_br =</span> labs_num)</span>
-<span id="cb82-13"><a href="#cb82-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-14"><a href="#cb82-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>income_br)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>a34, <span class="at">values =</span> <span class="st">"n"</span>)</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]  <span class="co"># excluye los missing</span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>labs_num <span class="ot">&lt;-</span> <span class="fu">setNames</span>(<span class="fu">as.numeric</span>(<span class="fu">names</span>(labs_clean)), labs_clean)</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">income_br =</span> <span class="fu">if_else</span>(</span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>      a34 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">888</span>, <span class="sc">-</span><span class="dv">999</span>), <span class="cn">NA_real_</span>, <span class="fu">as.numeric</span>(a34)</span>
+<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">income_br =</span> <span class="st">"Income brackets"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb71-12"><a href="#cb71-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">income_br =</span> labs_num)</span>
+<span id="cb71-13"><a href="#cb71-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-14"><a href="#cb71-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>income_br)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Income brackets (x) &lt;numeric&gt; 
-# total N=3048 valid N=168 mean=5.09 sd=3.14
+# total N=1698 valid N=1594 mean=4.36 sd=3.47
 
-Value |                                               Label |    N | Raw %
---------------------------------------------------------------------------
-    1 |            Less than $200,000 in monthly net income |    9 |  0.30
-    2 |     From $200,001 to $400,000 in monthly net income |   27 |  0.89
-    3 |     From $400,001 to $600,000 in monthly net income |   24 |  0.79
-    4 |     From $600,001 to $800,000 in monthly net income |   26 |  0.85
-    5 |   From $800,001 to $1,000,000 in monthly net income |   24 |  0.79
-    6 | From $1,000,001 to $1,200,000 in monthly net income |   14 |  0.46
-    7 | From $1,200,001 to $1,400,000 in monthly net income |   14 |  0.46
-    8 | From $1,400,001 to $1,600,000 in monthly net income |    7 |  0.23
-    9 | From $1,600,001 to $1,800,000 in monthly net income |    3 |  0.10
-   10 | From $1,800,001 to $2,000,000 in monthly net income |   10 |  0.33
-   11 | From $2,000,001 to $2,200,000 in monthly net income |    5 |  0.16
-   12 | From $2,200,001 to $2,400,000 in monthly net income |    1 |  0.03
-   13 | From $2,400,001 to $2,600,000 in monthly net income |    0 |  0.00
-   14 | From $2,600,001 to $2,800,000 in monthly net income |    0 |  0.00
-   15 | From $2,800,001 to $3,000,000 in monthly net income |    0 |  0.00
-   16 |          More than $3,000,001 in monthly net income |    4 |  0.13
- &lt;NA&gt; |                                                &lt;NA&gt; | 2880 | 94.49
-
-Value | Valid % | Cum. %
-------------------------
-    1 |    5.36 |   5.36
-    2 |   16.07 |  21.43
-    3 |   14.29 |  35.71
-    4 |   15.48 |  51.19
-    5 |   14.29 |  65.48
-    6 |    8.33 |  73.81
-    7 |    8.33 |  82.14
-    8 |    4.17 |  86.31
-    9 |    1.79 |  88.10
-   10 |    5.95 |  94.05
-   11 |    2.98 |  97.02
-   12 |    0.60 |  97.62
-   13 |    0.00 |  97.62
-   14 |    0.00 |  97.62
-   15 |    0.00 |  97.62
-   16 |    2.38 | 100.00
- &lt;NA&gt; |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+Value |                                       Label |   N | Raw % | Valid % | Cum. %
+------------------------------------------------------------------------------------
+    1 |           Menos de $400.000 mensuales netos | 332 | 19.55 |   20.83 |  20.83
+    2 |      De $400.001 a $600.000 mensuales netos | 253 | 14.90 |   15.87 |  36.70
+    3 |      De $600.001 a $800.000 mensuales netos | 209 | 12.31 |   13.11 |  49.81
+    4 |                    De $800.001 a $1,000.000 | 249 | 14.66 |   15.62 |  65.43
+    5 |  De $1.000.001 a $1.200.000 mensuales netos | 139 |  8.19 |    8.72 |  74.15
+    6 | De $1.200.001 a $1.4000.000 mensuales netos |  87 |  5.12 |    5.46 |  79.61
+    7 |  De $1.400.001 a $1.600.000 mensuales netos |  79 |  4.65 |    4.96 |  84.57
+    8 |  De $1.600.001 a $1.800.000 mensuales netos |  47 |  2.77 |    2.95 |  87.52
+    9 |  De $1.800.001 a $2.000.000 mensuales netos |  53 |  3.12 |    3.32 |  90.84
+   10 |  De $2.000.001 a $2.200.000 mensuales netos |  34 |  2.00 |    2.13 |  92.97
+   11 |  De $2.200.001 a $2.400.000 mensuales netos |  13 |  0.77 |    0.82 |  93.79
+   12 |  De $2.400.001 a $2.600.000 mensuales netos |  22 |  1.30 |    1.38 |  95.17
+   13 |  De $2.600.001 a $2.800.000 mensuales netos |   8 |  0.47 |    0.50 |  95.67
+   14 |  De $2.800.001 a $3.000.000 mensuales netos |  18 |  1.06 |    1.13 |  96.80
+   15 |                  De $3.000.001 a $4.000.000 |  51 |  3.00 |    3.20 | 100.00
+   16 |         Mas de $4.000.001 a mensuales netos |   0 |  0.00 |    0.00 | 100.00
+ &lt;NA&gt; |                                        &lt;NA&gt; | 104 |  6.12 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="income_rec" class="level3" data-number="1.2.20">
-<h3 data-number="1.2.20" class="anchored" data-anchor-id="income_rec"><span class="header-section-number">1.2.20</span> income_rec</h3>
+<section id="income_rec" class="level3" data-number="3.2.20">
+<h3 data-number="3.2.20" class="anchored" data-anchor-id="income_rec"><span class="header-section-number">3.2.20</span> income_rec</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># armar variable auxiliar</span></span>
-<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
-<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">income_br_aux =</span> <span class="fu">case_when</span>(</span>
-<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">200000</span>,</span>
-<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> (( <span class="dv">200001</span> <span class="sc">+</span>  <span class="dv">400000</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> (( <span class="dv">400001</span> <span class="sc">+</span>  <span class="dv">600000</span>) <span class="sc">/</span> <span class="dv">2</span>), </span>
-<span id="cb84-8"><a href="#cb84-8" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">4</span> <span class="sc">~</span> (( <span class="dv">600001</span> <span class="sc">+</span>  <span class="dv">800000</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb84-9"><a href="#cb84-9" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">5</span> <span class="sc">~</span> (( <span class="dv">800001</span> <span class="sc">+</span> <span class="dv">1000000</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb84-10"><a href="#cb84-10" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">6</span> <span class="sc">~</span> ((<span class="dv">1000001</span> <span class="sc">+</span> <span class="dv">1200000</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb84-11"><a href="#cb84-11" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">7</span> <span class="sc">~</span> ((<span class="dv">1200001</span> <span class="sc">+</span> <span class="dv">1400000</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb84-12"><a href="#cb84-12" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">8</span> <span class="sc">~</span> ((<span class="dv">1400001</span> <span class="sc">+</span> <span class="dv">1600000</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb84-13"><a href="#cb84-13" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">9</span> <span class="sc">~</span> ((<span class="dv">1600001</span> <span class="sc">+</span> <span class="dv">1800000</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb84-14"><a href="#cb84-14" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">10</span> <span class="sc">~</span> ((<span class="dv">1800001</span> <span class="sc">+</span> <span class="dv">2000000</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb84-15"><a href="#cb84-15" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">11</span> <span class="sc">~</span> ((<span class="dv">2000001</span> <span class="sc">+</span> <span class="dv">2200000</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb84-16"><a href="#cb84-16" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">12</span> <span class="sc">~</span> ((<span class="dv">2200001</span> <span class="sc">+</span> <span class="dv">2400000</span>) <span class="sc">/</span> <span class="dv">2</span>), </span>
-<span id="cb84-17"><a href="#cb84-17" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">13</span> <span class="sc">~</span> ((<span class="dv">2400001</span> <span class="sc">+</span> <span class="dv">2600000</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb84-18"><a href="#cb84-18" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">14</span> <span class="sc">~</span> ((<span class="dv">2600001</span> <span class="sc">+</span> <span class="dv">2800000</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb84-19"><a href="#cb84-19" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">15</span> <span class="sc">~</span> ((<span class="dv">2800001</span> <span class="sc">+</span> <span class="dv">3000000</span>) <span class="sc">/</span> <span class="dv">2</span>),</span>
-<span id="cb84-20"><a href="#cb84-20" aria-hidden="true" tabindex="-1"></a>      income_br <span class="sc">==</span> <span class="dv">16</span> <span class="sc">~</span> <span class="dv">3000001</span>, </span>
-<span id="cb84-21"><a href="#cb84-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">.default =</span> <span class="cn">NA_real_</span></span>
-<span id="cb84-22"><a href="#cb84-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb84-23"><a href="#cb84-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">income_rec =</span> <span class="fu">if_else</span>(<span class="sc">!</span><span class="fu">is.na</span>(income), income, income_br_aux)</span>
-<span id="cb84-24"><a href="#cb84-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb84-25"><a href="#cb84-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>income_br_aux) <span class="sc">%&gt;%</span> </span>
-<span id="cb84-26"><a href="#cb84-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">income_rec =</span> <span class="st">"Income recoded"</span>)</span>
-<span id="cb84-27"><a href="#cb84-27" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb84-28"><a href="#cb84-28" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(data<span class="sc">$</span>income)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-## Basic descriptive statistics
-
- var    type  label    n NA.prc     mean       sd       se     md  trimmed
-  dd numeric Income 2776   8.92 798975.5 645580.3 12252.95 650000 698321.7
-                      range    iqr skew
- 13900000 (100000-14000000) 400000 6.62</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(data<span class="sc">$</span>income_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-## Basic descriptive statistics
-
- var    type          label    n NA.prc     mean       sd       se     md
-  dd numeric Income recoded 2944   3.41 805929.3 644345.2 11875.44 650000
-  trimmed                      range      iqr skew
- 705265.7 13900000 (100000-14000000) 400000.5 6.34</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # armar variable auxiliar</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;% </span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     income_br_aux = case_when(</span></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 1 ~ 200000,</span></span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 2 ~ (( 200001 +  400000) / 2),</span></span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 3 ~ (( 400001 +  600000) / 2), </span></span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 4 ~ (( 600001 +  800000) / 2),</span></span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 5 ~ (( 800001 + 1000000) / 2),</span></span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 6 ~ ((1000001 + 1200000) / 2),</span></span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 7 ~ ((1200001 + 1400000) / 2),</span></span>
+<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 8 ~ ((1400001 + 1600000) / 2),</span></span>
+<span id="cb73-13"><a href="#cb73-13" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 9 ~ ((1600001 + 1800000) / 2),</span></span>
+<span id="cb73-14"><a href="#cb73-14" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 10 ~ ((1800001 + 2000000) / 2),</span></span>
+<span id="cb73-15"><a href="#cb73-15" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 11 ~ ((2000001 + 2200000) / 2),</span></span>
+<span id="cb73-16"><a href="#cb73-16" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 12 ~ ((2200001 + 2400000) / 2), </span></span>
+<span id="cb73-17"><a href="#cb73-17" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 13 ~ ((2400001 + 2600000) / 2),</span></span>
+<span id="cb73-18"><a href="#cb73-18" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 14 ~ ((2600001 + 2800000) / 2),</span></span>
+<span id="cb73-19"><a href="#cb73-19" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 15 ~ ((2800001 + 3000000) / 2),</span></span>
+<span id="cb73-20"><a href="#cb73-20" aria-hidden="true" tabindex="-1"></a><span class="co">#       income_br == 16 ~ 3000001, </span></span>
+<span id="cb73-21"><a href="#cb73-21" aria-hidden="true" tabindex="-1"></a><span class="co">#       .default = NA_real_</span></span>
+<span id="cb73-22"><a href="#cb73-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     ),</span></span>
+<span id="cb73-23"><a href="#cb73-23" aria-hidden="true" tabindex="-1"></a><span class="co">#     income_rec = if_else(!is.na(income), income, income_br_aux)</span></span>
+<span id="cb73-24"><a href="#cb73-24" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;% </span></span>
+<span id="cb73-25"><a href="#cb73-25" aria-hidden="true" tabindex="-1"></a><span class="co">#   select(-income_br_aux) %&gt;% </span></span>
+<span id="cb73-26"><a href="#cb73-26" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(income_rec = "Income recoded")</span></span>
+<span id="cb73-27"><a href="#cb73-27" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb73-28"><a href="#cb73-28" aria-hidden="true" tabindex="-1"></a><span class="co"># descr(data$income)</span></span>
+<span id="cb73-29"><a href="#cb73-29" aria-hidden="true" tabindex="-1"></a><span class="co"># descr(data$income_rec)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
-<section id="guardar-datos" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="guardar-datos"><span class="header-section-number">1.3</span> Guardar datos</h2>
+<section id="guardar-datos" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="guardar-datos"><span class="header-section-number">3.3</span> Guardar datos</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="at">file=</span><span class="st">"output/data/data-conclat-cl-en-clases.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="at">file=</span><span class="st">"output/data/data-conclat-ar-es-clases.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
@@ -2191,13 +2003,13 @@ Value | Valid % | Cum. %
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Presentación">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Presentación</span>
+      <a href="./02-esquemas-clases-cl.html" class="pagination-link" aria-label="Esquemas Clases Chile">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Esquemas Clases Chile</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-esquemas-clases-cl.html" class="pagination-link" aria-label="Esquemas Clases Chile">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Esquemas Clases Chile</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./04-esquemas-clases-ar.html" class="pagination-link" aria-label="Esquemas Clases Chile">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Esquemas Clases Chile</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

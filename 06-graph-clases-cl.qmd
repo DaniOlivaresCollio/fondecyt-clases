@@ -59,7 +59,7 @@ p_load(
 data <- readRDS("output/data/data-marxismo-clases-cl.rds")
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 ```
 
 ## Gráficos
@@ -81,7 +81,7 @@ data <- data %>%
   set_variable_labels(sexo = "Sexo")
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 ```
 
 ```{r}

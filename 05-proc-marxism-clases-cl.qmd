@@ -56,7 +56,7 @@ p_load(
 ### Cargar datos
 
 ```{r datos, message=FALSE, warning=FALSE}
-data <- readRDS("output/data/data-clases-cl.rds")
+data <- readRDS("output/data/data-conclat-cl-en-clases.rds")
 ```
 
 ## Procesamiento
