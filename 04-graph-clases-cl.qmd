@@ -247,3 +247,57 @@ grafico
 
 ggsave("output/graph-clases/wrightclass_v15_sexo.png", plot = grafico, width = 8, height = 8, dpi = 300)
 ```
+
+```{r}
+#| fig-width: 10
+#| fig-height: 8
+
+# Calcular porcentajes ponderados por sexo
+class_pct_sex <- data_svy %>%
+  filter(!is.na(wrightclass_v15_emp_reduced), !is.na(sexo)) %>%
+  group_by(sexo, wrightclass_v15_emp_reduced) %>%
+  summarise(pct = survey_mean(na.rm = TRUE) * 100, .groups = "drop")
+
+# Calcular N válido
+n_valido <- data %>%
+  filter(!is.na(wrightclass_v15_emp_reduced), !is.na(sexo)) %>%
+  nrow()
+
+# Gráfico vertical agrupado
+grafico <- ggplot(class_pct_sex, aes(x = wrightclass_v15_emp_reduced, y = pct, fill = sexo)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.65) +
+  geom_text(
+    aes(label = paste0(round(pct, 1), "%")),
+    position = position_dodge(width = 0.7),
+    vjust = -0.4,
+    size = 3.0,
+    color = "gray20"
+  ) +
+  scale_fill_manual(values = c("Hombre" = "#ca0000", "Mujer" = "#ff5651")) +
+  scale_y_continuous(
+    limits = c(0, max(class_pct_sex$pct) * 1.18),
+    labels = scales::label_percent(scale = 1)
+  ) +
+  labs(
+    title = "Distribución por clase social dentro de cada sexo",
+    subtitle = "Porcentajes ponderados",
+    x = "Clase social",
+    y = "Porcentaje",
+    fill = "Sexo",
+    caption = paste0("Fuente: Elaboración propia con datos de la Encuesta Conclat Chile 2024. Datos ponderados. N = ", n_valido)
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(face = "bold"),
+    plot.subtitle = element_text(color = "grey40"),
+    plot.caption = element_text(size = 8, color = "gray40", hjust = 0.5),
+    legend.position = "right"
+  )
+
+grafico
+ggsave("output/graph-clases/wrightclass_v15_sexo_vert.png", plot = grafico, width = 10, height = 8, dpi = 300)
+```
+

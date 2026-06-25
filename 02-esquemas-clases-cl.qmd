@@ -113,7 +113,7 @@ data <- data %>%
 frq(data$wrightclass_v1_original)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -178,7 +178,7 @@ data <- data %>%
 frq(data$wrightclass_v2_capitalists)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -244,7 +244,7 @@ data <- data %>%
 frq(data$wrightclass_v3_emp_informal)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -310,7 +310,7 @@ data <- data %>%
 frq(data$wrightclass_v4_cap_informal)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -365,7 +365,7 @@ data <- data %>%
 frq(data$wrightclass_v5_emp_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -419,7 +419,7 @@ data <- data %>%
 frq(data$wrightclass_v6_cap_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -471,7 +471,7 @@ data <- data %>%
 frq(data$wrightclass_v7_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -529,7 +529,7 @@ data <- data %>%
 frq(data$wrightclass_v8_emp_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -587,7 +587,7 @@ data <- data %>%
 frq(data$wrightclass_v9_cap_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -643,7 +643,7 @@ data <- data %>%
 frq(data$wrightclass_v10_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -702,7 +702,7 @@ data <- data %>%
 frq(data$wrightclass_v11_emp_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -761,7 +761,7 @@ data <- data %>%
 frq(data$wrightclass_v12_cap_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -827,7 +827,7 @@ data <- data %>%
 frq(data$wrightclass_v13_emp_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -893,7 +893,7 @@ data <- data %>%
 frq(data$wrightclass_v14_cap_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -959,7 +959,7 @@ data <- data %>%
 frq(data$wrightclass_v15_emp_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -1024,7 +1024,7 @@ data <- data %>%
 frq(data$wrightclass_v16_cap_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -1086,7 +1086,7 @@ data <- data %>%
 frq(data$wrightclass_v17_emp_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -1148,7 +1148,7 @@ data <- data %>%
 frq(data$wrightclass_v18_cap_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
@@ -1209,7 +1209,7 @@ data <- data %>%
 frq(data$wrightclass_v19_reduced)
 
 # base survey
-data_svy <- as_survey_design(data, weights = rake_wb2)
+data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
