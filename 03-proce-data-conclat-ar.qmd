@@ -478,23 +478,22 @@ frq(data$organization_assets)
 
 ### boleta
 
+Considerar que acá se ocupa educación y no boleta para medir formalidad.
+
 ```{r}
-# frq(data$a20_02_ar)
-# 
-# data <- data %>% 
-#   mutate(
-#     boleta = case_when(
-#       a20_02_ar %in% c(1) ~ 1,
-#       a20_02_ar %in% c(2, -888, -999) ~ 0,
-#       .default = NA_real_
-#     )) %>% 
-#   set_variable_labels(boleta = "Issues receipts/invoices (1 = yes)") %>% 
-#   set_value_labels(boleta = c(
-#     "Yes" = 1,
-#     "No" = 0
-#   ))
-# 
-# frq(data$boleta)
+frq(data$educ)
+
+data <- data %>% 
+  mutate(
+    boleta = if_else(educ >= 9, 1, 0)
+  ) %>% 
+  set_variable_labels(boleta = "Issues receipts/invoices (1 = yes)") %>%
+  set_value_labels(boleta = c(
+    "Yes" = 1,
+    "No" = 0
+  ))
+
+frq(data$boleta)
 ```
 
 ### inicio_activ
