@@ -26,6 +26,8 @@ format:
   html:
     theme: cosmo
     lang: es
+    code-fold: true
+    code-summary: "Ver código"
   pdf:
     documentclass: scrreprt
 

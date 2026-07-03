@@ -614,10 +614,12 @@ draw_wright(wright_layout("v7"), counts_v7,
 
 ### wrightclass_v8_emp_reduced
 
+**Se pondrá v15 solamente para que tenga el mismo código que en Chile**.
+
 ```{r}
 data <- data %>%
   mutate(
-    wrightclass_v8_emp_reduced = case_when(
+    wrightclass_v15_emp_reduced = case_when(
       as.integer(owners) == 3 ~ 1,                                                                   # 1. Employers
       as.integer(owners) == 2 ~ 2,                                                                   # 2. Small employers
       as.integer(owners) == 1 & formal_educ == 1 ~ 3,                                                     # 3. Petty bourgeoisie
@@ -632,8 +634,8 @@ data <- data %>%
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,    # 8. Informal workers
       as.integer(owners) == 1 & formal_educ == 0 ~ 9                                                      # 9. Informal self-employed
     ),
-    wrightclass_v8_emp_reduced = factor(
-      wrightclass_v8_emp_reduced,
+    wrightclass_v15_emp_reduced = factor(
+      wrightclass_v15_emp_reduced,
       levels = 1:9,
       labels = c(
         "1. Employers",
@@ -648,16 +650,16 @@ data <- data %>%
       )
     )
   ) %>%
-  set_variable_labels(wrightclass_v8_emp_reduced = "Wright Class Typology Reduced (v8)")
+  set_variable_labels(wrightclass_v15_emp_reduced = "Wright Class Typology Reduced (v15)")
 
-frq(data$wrightclass_v8_emp_reduced)
+frq(data$wrightclass_v15_emp_reduced)
 
 # base survey
 data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
-  group_by(wrightclass_v8_emp_reduced) %>%
+  group_by(wrightclass_v15_emp_reduced) %>%
   summarise(
     freq = survey_mean(vartype = NULL, na.rm = TRUE),
     n_unweighted = unweighted(n())
@@ -676,24 +678,26 @@ wright_freq %>%
 - **Se unen todos los Supervisors y Mangers no expertos**.
 
 ```{r}
-#| label: fig-wright-v8
+#| label: fig-wright-v15
 #| fig-width: 10
 #| fig-height: 7
 #| echo: false
 
-counts_v8 <- get_counts(data, wrightclass_v8_emp_reduced)
+counts_v15 <- get_counts(data, wrightclass_v15_emp_reduced)
 
-draw_wright(wright_layout("v8"), counts_v8,
-            title = "v8 · Employers reduced",
-            row_labels_left = wright_rowlabels("v8"))
+draw_wright(wright_layout("v15"), counts_v15,
+            title = "v15 · Employers reduced",
+            row_labels_left = wright_rowlabels("v15"))
 ```
 
 ### wrightclass_v9_cap_reduced
 
+**Se pondrá v16 solamente para que tenga el mismo código que en Chile**.
+
 ```{r}
 data <- data %>%
   mutate(
-    wrightclass_v9_cap_reduced = case_when(
+    wrightclass_v16_cap_reduced = case_when(
       as.integer(owners2) == 3 ~ 1,                                                                   # 1. Capitalists
       as.integer(owners2) == 2 ~ 2,                                                                   # 2. Small employers
       as.integer(owners2) == 1 & formal_educ == 1 ~ 3,                                                     # 3. Petty bourgeoisie
@@ -708,8 +712,8 @@ data <- data %>%
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,     # 8. Informal workers
       as.integer(owners2) == 1 & formal_educ == 0 ~ 9                                                      # 9. Informal self-employed
     ),
-    wrightclass_v9_cap_reduced = factor(
-      wrightclass_v9_cap_reduced,
+    wrightclass_v16_cap_reduced = factor(
+      wrightclass_v16_cap_reduced,
       levels = 1:9,
       labels = c(
         "1. Capitalists",
@@ -724,16 +728,16 @@ data <- data %>%
       )
     )
   ) %>%
-  set_variable_labels(wrightclass_v9_cap_reduced = "Wright Class Typology Reduced (v9)")
+  set_variable_labels(wrightclass_v16_cap_reduced = "Wright Class Typology Reduced (v16)")
 
-frq(data$wrightclass_v9_cap_reduced)
+frq(data$wrightclass_v16_cap_reduced)
 
 # base survey
 data_svy <- as_survey_design(data, weights = pondera)
 
 # Tabla de frecuencias ponderadas
 wright_freq <- data_svy %>%
-  group_by(wrightclass_v9_cap_reduced) %>%
+  group_by(wrightclass_v16_cap_reduced) %>%
   summarise(
     freq = survey_mean(vartype = NULL, na.rm = TRUE),
     n_unweighted = unweighted(n())
@@ -752,16 +756,16 @@ wright_freq %>%
 - **Se unen todos los Supervisors y Mangers no expertos**.
 
 ```{r}
-#| label: fig-wright-v9
+#| label: fig-wright-v16
 #| fig-width: 10
 #| fig-height: 7
 #| echo: false
 
-counts_v9 <- get_counts(data, wrightclass_v9_cap_reduced)
+counts_v16 <- get_counts(data, wrightclass_v16_cap_reduced)
 
-draw_wright(wright_layout("v9"), counts_v9,
-            title = "v9 · Capitalists reduced",
-            row_labels_left = wright_rowlabels("v9"))
+draw_wright(wright_layout("v16"), counts_v16,
+            title = "v16 · Capitalists reduced",
+            row_labels_left = wright_rowlabels("v16"))
 ```
 
 ### wrightclass_v10_reduced
@@ -1084,68 +1088,127 @@ draw_wright(wright_layout("v10"), counts_v10,
 #   print(n = Inf)
 ```
 
-
-### wrightclass_v15_emp_reduced
+<!-- ### wrightclass_v15_emp_reduced -->
 
 ```{r}
-data <- data %>%
-  mutate(
-    wrightclass_v15_emp_reduced = case_when(
-      as.integer(owners) == 3 & formal_educ == 1 ~ 1,                                             # 1. Employers
+# # Versión Chile
+# data <- data %>%
+#   mutate(
+#     wrightclass_v15_emp_reduced = case_when(
+#       as.integer(owners) == 3 & inicio_empresa == 1 ~ 1,                                             # 1. Employers
+#       
+#       as.integer(owners) == 3 & (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                   # 2. Small employers
+#       as.integer(owners) == 2 ~ 2,                                                                   # 2. Small employers   
+#       
+#       as.integer(owners) == 1 & boleta == 1 & inicio_activ == 1 ~ 3,                                 # 3. Petty bourgeoisie  
+#       
+#       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                            # 4. Expert managers  
+#       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                            # 5. Experts  
+#       
+#       as.integer(organization_assets) %in% c(1, 2) & as.integer(skills) %in% c(2, 3) ~ 6,            # 6. Skilled y Nonskilled Supervisors
+#       as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,                            # 6. Skilled y Nonskilled Supervisors
+# 
+#       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,    # 7. Formal workers
+#       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,    # 8. Informal workers
+#       
+#       as.integer(owners) == 1 & boleta == 0 ~ 9,                                                     # 9. Informal self-employed
+#       as.integer(owners) == 1 & boleta == 1 & inicio_activ == 0 ~ 9                                  # 9. Informal self-employed
+#     ),
+#     wrightclass_v15_emp_reduced = factor(
+#       wrightclass_v15_emp_reduced,
+#       levels = 1:9,
+#       labels = c(
+#         "1. Employers",
+#         "2. Small employers",
+#         "3. Petty bourgeoisie",
+#         "4. Expert managers",
+#         "5. Experts",
+#         "6. Skilled & Nonskilled Supervisors",
+#         "7. Formal workers",
+#         "8. Informal workers",
+#         "9. Informal self-employed"
+#       )
+#     )
+#   ) %>%
+#   set_variable_labels(wrightclass_v15_emp_reduced = "Wright Class Typology Reduced (v15)")
+# 
+# frq(data$wrightclass_v15_emp_reduced)
+# 
+# # base survey
+# data_svy <- as_survey_design(data, weights = pondera)
+# 
+# # Tabla de frecuencias ponderadas
+# wright_freq <- data_svy %>%
+#   group_by(wrightclass_v15_emp_reduced) %>%
+#   summarise(
+#     freq = survey_mean(vartype = NULL, na.rm = TRUE),
+#     n_unweighted = unweighted(n())
+#   ) %>%
+#   mutate(
+#     freq_pct = freq * 100
+#   )
+# 
+# wright_freq %>%
+#   print(n = Inf)
 
-      as.integer(owners) == 3 & (formal_educ == 0 | is.na(formal_educ)) ~ 2,                   # 2. Small employers
-      as.integer(owners) == 2 ~ 2,                                                                   # 2. Small employers
-
-      as.integer(owners) == 1 & formal_educ == 1 ~ 3,                                 # 3. Petty bourgeoisie
-
-      as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                            # 4. Expert managers
-      as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                            # 5. Experts
-
-      as.integer(organization_assets) %in% c(1, 2) & as.integer(skills) %in% c(2, 3) ~ 6,            # 6. Skilled y Nonskilled Supervisors
-      as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,                            # 6. Skilled y Nonskilled Supervisors
-
-      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,    # 7. Formal workers
-      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,    # 8. Informal workers
-
-      as.integer(owners) == 1 & formal_educ == 0 ~ 9                                                     # 9. Informal self-employed
-                                        # 9. Informal self-employed
-    ),
-    wrightclass_v15_emp_reduced = factor(
-      wrightclass_v15_emp_reduced,
-      levels = 1:9,
-      labels = c(
-        "1. Employers",
-        "2. Small employers",
-        "3. Petty bourgeoisie",
-        "4. Expert managers",
-        "5. Experts",
-        "6. Skilled & Nonskilled Supervisors",
-        "7. Formal workers",
-        "8. Informal workers",
-        "9. Informal self-employed"
-      )
-    )
-  ) %>%
-  set_variable_labels(wrightclass_v15_emp_reduced = "Wright Class Typology Reduced (v15)")
-
-frq(data$wrightclass_v15_emp_reduced)
-
-# base survey
-data_svy <- as_survey_design(data, weights = pondera)
-
-# Tabla de frecuencias ponderadas
-wright_freq <- data_svy %>%
-  group_by(wrightclass_v15_emp_reduced) %>%
-  summarise(
-    freq = survey_mean(vartype = NULL, na.rm = TRUE),
-    n_unweighted = unweighted(n())
-  ) %>%
-  mutate(
-    freq_pct = freq * 100
-  )
-
-wright_freq %>%
-  print(n = Inf)
+# # Versión Agentina
+# data <- data %>%
+#   mutate(
+#     wrightclass_v15_emp_reduced = case_when(
+#       as.integer(owners) == 3 & formal_educ == 1 ~ 1,                                                # 1. Employers
+# 
+#       as.integer(owners) == 3 & (formal_educ == 0 | is.na(formal_educ)) ~ 2,                         # 2. Small employers
+#       as.integer(owners) == 2 ~ 2,                                                                   # 2. Small employers
+# 
+#       as.integer(owners) == 1 & formal_educ == 1 ~ 3,                                                # 3. Petty bourgeoisie
+# 
+#       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                            # 4. Expert managers
+#       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                            # 5. Experts
+# 
+#       as.integer(organization_assets) %in% c(1, 2) & as.integer(skills) %in% c(2, 3) ~ 6,            # 6. Skilled y Nonskilled Supervisors
+#       as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,                            # 6. Skilled y Nonskilled Supervisors
+# 
+#       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,    # 7. Formal workers
+#       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,    # 8. Informal workers
+# 
+#       as.integer(owners) == 1 & formal_educ == 0 ~ 9                                                 # 9. Informal self-employed
+#     ),
+#     wrightclass_v15_emp_reduced = factor(
+#       wrightclass_v15_emp_reduced,
+#       levels = 1:9,
+#       labels = c(
+#         "1. Employers",
+#         "2. Small employers",
+#         "3. Petty bourgeoisie",
+#         "4. Expert managers",
+#         "5. Experts",
+#         "6. Skilled & Nonskilled Supervisors",
+#         "7. Formal workers",
+#         "8. Informal workers",
+#         "9. Informal self-employed"
+#       )
+#     )
+#   ) %>%
+#   set_variable_labels(wrightclass_v15_emp_reduced = "Wright Class Typology Reduced (v15)")
+# 
+# frq(data$wrightclass_v15_emp_reduced)
+# 
+# # base survey
+# data_svy <- as_survey_design(data, weights = pondera)
+# 
+# # Tabla de frecuencias ponderadas
+# wright_freq <- data_svy %>%
+#   group_by(wrightclass_v15_emp_reduced) %>%
+#   summarise(
+#     freq = survey_mean(vartype = NULL, na.rm = TRUE),
+#     n_unweighted = unweighted(n())
+#   ) %>%
+#   mutate(
+#     freq_pct = freq * 100
+#   )
+# 
+# wright_freq %>%
+#   print(n = Inf)
 ```
 
 - Esquema reducido con Employers: 10 o más trabajadores, **más inicio act. como empresa**.
@@ -1154,16 +1217,16 @@ wright_freq %>%
 - Se unen todos los Supervisors y Mangers no expertos.
 
 ```{r}
-#| label: fig-wright-v15
-#| fig-width: 10
-#| fig-height: 7
-#| echo: false
+# #| label: fig-wright-v15 
+# #| fig-width: 10 
+# #| fig-height: 7 
+# #| echo: false 
 
-counts_v15 <- get_counts(data, wrightclass_v15_emp_reduced)
-
-draw_wright(wright_layout("v15"), counts_v15,
-            title = "v15 · Employers reduced",
-            row_labels_left = wright_rowlabels("v15"))
+# counts_v15 <- get_counts(data, wrightclass_v15_emp_reduced)
+# 
+# draw_wright(wright_layout("v15"), counts_v15,
+#             title = "v15 · Employers reduced",
+#             row_labels_left = wright_rowlabels("v15"))
 ```
 
 <!-- ### wrightclass_v16_cap_reduced -->

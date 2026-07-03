@@ -250,7 +250,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="cargar-datos" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="cargar-datos"><span class="header-section-number">1.1.1</span> Cargar datos</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"input/data/data-conclat-cl-EN.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 </section>
@@ -259,8 +262,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="relation_mop" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="relation_mop"><span class="header-section-number">1.2.1</span> relation_mop</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Situación empleo</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a07)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Employment relationship (x) &lt;numeric&gt; 
 # total N=3048 valid N=3048 mean=3.79 sd=1.67
@@ -291,6 +297,8 @@ Value |    N | Raw % | Valid % | Cum. %
     9 |   12 |  0.39 |    0.39 | 100.00
  &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">relation_mop =</span> <span class="fu">factor</span>(</span>
@@ -311,6 +319,7 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">relation_mop =</span> <span class="st">"Relation with Means of Production"</span>)</span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>relation_mop)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Relation with Means of Production (x) &lt;categorical&gt; 
 # total N=3048 valid N=3048 mean=2.58 sd=0.69
@@ -327,7 +336,10 @@ Salaried      | 2106 | 69.09 |   69.09 | 100.00
 <section id="company_size" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="company_size"><span class="header-section-number">1.2.2</span> company_size</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a26)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Company size in Chile (x) &lt;numeric&gt; 
 # total N=3048 valid N=3048 mean=-73.62 sd=251.41
@@ -347,6 +359,8 @@ Value |                    Label |   N | Raw % | Valid % | Cum. %
     9 |       500 or more people | 186 |  6.10 |    6.10 | 100.00
  &lt;NA&gt; |                     &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">company_size =</span> <span class="fu">factor</span>(</span>
@@ -371,6 +385,7 @@ Value |                    Label |   N | Raw % | Valid % | Cum. %
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">company_size =</span> <span class="st">"Company Size"</span>)</span>
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>company_size)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Company Size (x) &lt;ordinal&gt; 
 # total N=3048 valid N=2785 mean=2.50 sd=1.30
@@ -389,7 +404,10 @@ Solo        | 783 | 25.69 |   28.11 |  28.11
 <section id="workplace_size" class="level3" data-number="1.2.3">
 <h3 data-number="1.2.3" class="anchored" data-anchor-id="workplace_size"><span class="header-section-number">1.2.3</span> workplace_size</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a27)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Workplace size (x) &lt;numeric&gt; 
 # total N=3048 valid N=3048 mean=-15.76 sd=129.92
@@ -409,6 +427,8 @@ Value |                    Label |   N | Raw % | Valid % | Cum. %
     9 |       500 or more people |  68 |  2.23 |    2.23 | 100.00
  &lt;NA&gt; |                     &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">workplace_size =</span> <span class="fu">factor</span>(</span>
@@ -433,6 +453,7 @@ Value |                    Label |   N | Raw % | Valid % | Cum. %
 <span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">workplace_size =</span> <span class="st">"Workplace Size"</span>)</span>
 <span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>workplace_size)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Workplace Size (x) &lt;ordinal&gt; 
 # total N=3048 valid N=2984 mean=2.32 sd=1.14
@@ -456,6 +477,8 @@ Solo        | 851 | 27.92 |   28.52 |  28.52
 <li>3 == employers o self employed com &gt;= 10 empleados</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">is_owner =</span> <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,</span>
@@ -479,6 +502,7 @@ Solo        | 851 | 27.92 |   28.52 |  28.52
 <span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">owners =</span> <span class="st">"Owners"</span>)</span>
 <span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>owners)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Owners (x) &lt;ordinal&gt; 
 # total N=3048 valid N=934 mean=1.52 sd=0.69
@@ -500,6 +524,8 @@ Employers          |  107 |  3.51 |   11.46 | 100.00
 <li>3 == employers o self employed com &gt;= 50 empleados</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">is_owner =</span> <span class="fu">as.numeric</span>(relation_mop) <span class="sc">%in%</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,</span>
@@ -523,6 +549,7 @@ Employers          |  107 |  3.51 |   11.46 | 100.00
 <span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">owners2 =</span> <span class="st">"Owners 2 (with Capitalists)"</span>)</span>
 <span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>owners2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Owners 2 (with Capitalists) (x) &lt;ordinal&gt; 
 # total N=3048 valid N=934 mean=1.45 sd=0.57
@@ -539,7 +566,10 @@ Capitalists        |   36 |  1.18 |    3.85 | 100.00
 <section id="educ" class="level3" data-number="1.2.6">
 <h3 data-number="1.2.6" class="anchored" data-anchor-id="educ"><span class="header-section-number">1.2.6</span> educ</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>e05)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Highest educational level attained (x) &lt;numeric&gt; 
 # total N=3048 valid N=3048 mean=-2.37 sd=88.97
@@ -560,6 +590,8 @@ Value |                                        Label |    N | Raw % | Valid % | 
    10 | Postgraduate studies (master’s or doctorate) |   66 |  2.17 |    2.17 | 100.00
  &lt;NA&gt; |                                         &lt;NA&gt; |    0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>e05, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>labs_num <span class="ot">&lt;-</span> <span class="fu">setNames</span>(<span class="fu">as.numeric</span>(<span class="fu">names</span>(labs_clean)), labs_clean)</span>
@@ -572,6 +604,7 @@ Value |                                        Label |    N | Raw % | Valid % | 
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">educ =</span> labs_num)</span>
 <span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>educ)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Educational level (x) &lt;numeric&gt; 
 # total N=3048 valid N=3021 mean=6.03 sd=2.08
@@ -595,7 +628,10 @@ Value |                                        Label |    N | Raw % | Valid % | 
 <section id="ciuo08_ine" class="level3" data-number="1.2.7">
 <h3 data-number="1.2.7" class="anchored" data-anchor-id="ciuo08_ine"><span class="header-section-number">1.2.7</span> ciuo08_ine</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>ciuo08_ine)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Respondent’s ISCO-08CL (INE - 2 digits) (x) &lt;character&gt; 
 # total N=3048 valid N=3048 mean=44.65 sd=105.01
@@ -659,6 +695,8 @@ Value |   N | Raw % | Valid % | Cum. %
 <li><p>51,54,81 –&gt; unskilled</p></li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">skills =</span> <span class="fu">case_when</span>(</span>
@@ -694,6 +732,7 @@ Value |   N | Raw % | Valid % | Cum. %
 <span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">skills =</span> <span class="st">"Skills"</span>)</span>
 <span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>skills)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Skills (x) &lt;ordinal&gt; 
 # total N=3048 valid N=3048 mean=2.31 sd=0.70
@@ -710,7 +749,10 @@ Unskilled | 1370 | 44.95 |   44.95 | 100.00
 <section id="formal_position_auth" class="level3" data-number="1.2.9">
 <h3 data-number="1.2.9" class="anchored" data-anchor-id="formal_position_auth"><span class="header-section-number">1.2.9</span> formal_position_auth</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a15)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Formal authority position (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=3.28 sd=21.86
@@ -733,6 +775,8 @@ Value | Raw % | Valid % | Cum. %
     4 | 58.20 |   84.24 | 100.00
  &lt;NA&gt; | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>a15, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="st">"-999"</span>]</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>labs_num <span class="ot">&lt;-</span> <span class="fu">setNames</span>(<span class="fu">as.numeric</span>(<span class="fu">names</span>(labs_clean)), labs_clean)</span>
@@ -749,6 +793,7 @@ Value | Raw % | Valid % | Cum. %
 <span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">formal_position_auth =</span> <span class="st">"Formal position of authority"</span>)</span>
 <span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>formal_position_auth)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Formal position of authority (x) &lt;ordinal&gt; 
 # total N=3048 valid N=2105 mean=3.76 sd=0.63
@@ -774,7 +819,10 @@ Regular employee or worker (no supervisory duties)              |   84.28 | 100.
 <section id="supervision" class="level3" data-number="1.2.10">
 <h3 data-number="1.2.10" class="anchored" data-anchor-id="supervision"><span class="header-section-number">1.2.10</span> supervision</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a16)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Supervises workers (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=-12.55 sd=114.47
@@ -787,6 +835,8 @@ Value |                    Label |    N | Raw % | Valid % | Cum. %
     2 |                       No | 1793 | 58.83 |   85.14 | 100.00
  &lt;NA&gt; |                     &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">supervision =</span> <span class="fu">case_when</span>(</span>
@@ -802,6 +852,7 @@ Value |                    Label |    N | Raw % | Valid % | Cum. %
 <span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>  ))</span>
 <span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>supervision)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Supervises other workers (1 = yes) (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=0.13 sd=0.34
@@ -817,7 +868,10 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 <section id="decisionmaking_typology" class="level3" data-number="1.2.11">
 <h3 data-number="1.2.11" class="anchored" data-anchor-id="decisionmaking_typology"><span class="header-section-number">1.2.11</span> decisionmaking_typology</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_01)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of influence to: Sanction an employee (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=-19.62 sd=142.20
@@ -840,7 +894,10 @@ Value |    N | Raw % | Valid % | Cum. %
     3 | 1616 | 53.02 |   76.73 | 100.00
  &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_02)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of influence to: Define salary increases for an employee (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=-17.20 sd=134.31
@@ -863,7 +920,10 @@ Value |    N | Raw % | Valid % | Cum. %
     3 | 1782 | 58.46 |   84.62 | 100.00
  &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_03)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of influence to: Hire or dismiss workers (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=-12.63 sd=118.97
@@ -886,7 +946,10 @@ Value |    N | Raw % | Valid % | Cum. %
     3 | 1751 | 57.45 |   83.14 | 100.00
  &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_04)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of influence to: Change company goods or services (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=-13.04 sd=120.49
@@ -909,7 +972,10 @@ Value |    N | Raw % | Valid % | Cum. %
     3 | 1755 | 57.58 |   83.33 | 100.00
  &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_05)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of influence to: Propose changes in work organization (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=-10.43 sd=109.24
@@ -932,7 +998,10 @@ Value |    N | Raw % | Valid % | Cum. %
     3 | 1538 | 50.46 |   73.03 | 100.00
  &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a17_06)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Level of influence to: Influence how the budget is spent (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=-20.85 sd=144.82
@@ -955,6 +1024,8 @@ Value |    N | Raw % | Valid % | Cum. %
     3 | 1777 | 58.30 |   84.38 | 100.00
  &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Variable intermedia invertida (no necesita guardarse necesariamente)</span></span>
@@ -984,6 +1055,7 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>decisionmaking_typology)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Decision-making typology (sum, inverted) (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=7.25 sd=2.38
@@ -1005,7 +1077,10 @@ Value |    N | Raw % | Valid % | Cum. %
    18 |   27 |  0.89 |    1.28 | 100.00
  &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>decisionmaking_typology_mean)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Decision-making typology (mean, inverted) (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=1.21 sd=0.40
@@ -1027,6 +1102,8 @@ Value |    N | Raw % | Valid % | Cum. %
  3.00 |   27 |  0.89 |    1.28 | 100.00
  &lt;NA&gt; |  942 | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear variable con 3 categorías</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1045,6 +1122,7 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>decisionmaking_typology_cat)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Decision-making typology (recoded 3 categories) (x) &lt;ordinal&gt; 
 # total N=3048 valid N=2106 mean=1.40 sd=0.57
@@ -1061,6 +1139,8 @@ Value |    N | Raw % | Valid % | Cum. %
 <section id="managerial_location_typology" class="level3" data-number="1.2.12">
 <h3 data-number="1.2.12" class="anchored" data-anchor-id="managerial_location_typology"><span class="header-section-number">1.2.12</span> managerial_location_typology</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">.dec =</span> <span class="fu">as.integer</span>(decisionmaking_typology_cat),</span>
@@ -1104,6 +1184,7 @@ Value |    N | Raw % | Valid % | Cum. %
 <span id="cb52-41"><a href="#cb52-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">managerial_location_typology =</span> <span class="st">"Managerial Location Typology"</span>)</span>
 <span id="cb52-42"><a href="#cb52-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-43"><a href="#cb52-43" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>managerial_location_typology)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Managerial Location Typology (x) &lt;ordinal&gt; 
 # total N=3048 valid N=2105 mean=10.00 sd=2.94
@@ -1145,6 +1226,8 @@ Value                                                     | Valid % | Cum. %
 <section id="organization_assets" class="level3" data-number="1.2.13">
 <h3 data-number="1.2.13" class="anchored" data-anchor-id="organization_assets"><span class="header-section-number">1.2.13</span> organization_assets</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">organization_assets =</span> <span class="fu">factor</span>(</span>
@@ -1166,6 +1249,7 @@ Value                                                     | Valid % | Cum. %
 <span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">organization_assets =</span> <span class="st">"Organizational Assets"</span>)</span>
 <span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>organization_assets)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Organizational Assets (x) &lt;ordinal&gt; 
 # total N=3048 valid N=2105 mean=2.72 sd=0.64
@@ -1182,7 +1266,10 @@ Non-managerial worker | 1735 | 56.92 |   82.42 | 100.00
 <section id="boleta" class="level3" data-number="1.2.14">
 <h3 data-number="1.2.14" class="anchored" data-anchor-id="boleta"><span class="header-section-number">1.2.14</span> boleta</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a06)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Receipt or invoice issuance (x) &lt;numeric&gt; 
 # total N=3048 valid N=3048 mean=-11.58 sd=113.10
@@ -1205,6 +1292,8 @@ Value | Valid % | Cum. %
     3 |   69.72 | 100.00
  &lt;NA&gt; |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">boleta =</span> <span class="fu">case_when</span>(</span>
@@ -1219,6 +1308,7 @@ Value | Valid % | Cum. %
 <span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>  ))</span>
 <span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>boleta)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Issues receipts/invoices (1 = yes) (x) &lt;numeric&gt; 
 # total N=3048 valid N=3048 mean=0.29 sd=0.45
@@ -1234,7 +1324,10 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 <section id="inicio_activ" class="level3" data-number="1.2.15">
 <h3 data-number="1.2.15" class="anchored" data-anchor-id="inicio_activ"><span class="header-section-number">1.2.15</span> inicio_activ</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a10)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The table contains very wide columns that don't fit into the available
   display-width of the console. Splitting tables into multiple parts did
@@ -1271,6 +1364,8 @@ Yes, as an Individual Limited Liability Company (EIRL) or a Limited Liability Co
  391 | 12.83 |   41.51 | 100.00
 2106 | 69.09 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">inicio_activ =</span> <span class="fu">case_when</span>(</span>
@@ -1286,6 +1381,7 @@ Yes, as an Individual Limited Liability Company (EIRL) or a Limited Liability Co
 <span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a>  ))</span>
 <span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>inicio_activ)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Business registration (1 = yes) (x) &lt;numeric&gt; 
 # total N=3048 valid N=942 mean=0.58 sd=0.49
@@ -1301,7 +1397,10 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 <section id="inicio_empresa" class="level3" data-number="1.2.16">
 <h3 data-number="1.2.16" class="anchored" data-anchor-id="inicio_empresa"><span class="header-section-number">1.2.16</span> inicio_empresa</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a10)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The table contains very wide columns that don't fit into the available
   display-width of the console. Splitting tables into multiple parts did
@@ -1338,6 +1437,8 @@ Yes, as an Individual Limited Liability Company (EIRL) or a Limited Liability Co
  391 | 12.83 |   41.51 | 100.00
 2106 | 69.09 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">inicio_empresa =</span> <span class="fu">case_when</span>(</span>
@@ -1353,6 +1454,7 @@ Yes, as an Individual Limited Liability Company (EIRL) or a Limited Liability Co
 <span id="cb68-13"><a href="#cb68-13" aria-hidden="true" tabindex="-1"></a>  ))</span>
 <span id="cb68-14"><a href="#cb68-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb68-15"><a href="#cb68-15" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>inicio_empresa)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Business registration as a company (1 = yes) (x) &lt;numeric&gt; 
 # total N=3048 valid N=942 mean=0.32 sd=0.46
@@ -1368,7 +1470,10 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 <section id="contrato" class="level3" data-number="1.2.17">
 <h3 data-number="1.2.17" class="anchored" data-anchor-id="contrato"><span class="header-section-number">1.2.17</span> contrato</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a18)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Written employment contract (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=-14.33 sd=124.27
@@ -1391,6 +1496,8 @@ Value | Raw % | Valid % | Cum. %
     4 |  1.12 |    1.61 | 100.00
  &lt;NA&gt; | 30.91 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">contrato =</span> <span class="fu">case_when</span>(</span>
@@ -1406,6 +1513,7 @@ Value | Raw % | Valid % | Cum. %
 <span id="cb72-13"><a href="#cb72-13" aria-hidden="true" tabindex="-1"></a>  ))</span>
 <span id="cb72-14"><a href="#cb72-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb72-15"><a href="#cb72-15" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>contrato)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Has a signed written employment contract (1 = yes) (x) &lt;numeric&gt; 
 # total N=3048 valid N=2106 mean=0.80 sd=0.40
@@ -1421,7 +1529,10 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 <section id="income" class="level3" data-number="1.2.18">
 <h3 data-number="1.2.18" class="anchored" data-anchor-id="income"><span class="header-section-number">1.2.18</span> income</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a33)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Monthly labor income (x) &lt;numeric&gt; 
 # total N=3048 valid N=3048 mean=727586.67 sd=656962.08
@@ -1584,7 +1695,10 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 14000000 |   1 |  0.03 |    0.03 | 100.00
     &lt;NA&gt; |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(data<span class="sc">$</span>a33)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 ## Basic descriptive statistics
@@ -1594,6 +1708,8 @@ Value | Label |    N | Raw % | Valid % | Cum. %
   trimmed                    range    iqr skew
  647973.7 14000999 (-999-14000000) 441250 5.89</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">income =</span> <span class="fu">if_else</span>(</span>
@@ -1603,6 +1719,7 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 <span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">income =</span> <span class="st">"Income"</span>)</span>
 <span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(data<span class="sc">$</span>income)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 ## Basic descriptive statistics
@@ -1617,7 +1734,10 @@ Value | Label |    N | Raw % | Valid % | Cum. %
 <section id="income_br" class="level3" data-number="1.2.19">
 <h3 data-number="1.2.19" class="anchored" data-anchor-id="income_br"><span class="header-section-number">1.2.19</span> income_br</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>a34)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Monthly labor income brackets (x) &lt;numeric&gt; 
 # total N=3048 valid N=272 mean=-369.44 sd=477.76
@@ -1666,6 +1786,8 @@ Value | Valid % | Cum. %
    16 |    1.47 | 100.00
  &lt;NA&gt; |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>labs <span class="ot">&lt;-</span> <span class="fu">get_labels</span>(data<span class="sc">$</span>a34, <span class="at">values =</span> <span class="st">"n"</span>)</span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>labs_clean <span class="ot">&lt;-</span> labs[<span class="sc">!</span><span class="fu">names</span>(labs) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"-888"</span>, <span class="st">"-999"</span>)]  <span class="co"># excluye los missing</span></span>
 <span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>labs_num <span class="ot">&lt;-</span> <span class="fu">setNames</span>(<span class="fu">as.numeric</span>(<span class="fu">names</span>(labs_clean)), labs_clean)</span>
@@ -1680,6 +1802,7 @@ Value | Valid % | Cum. %
 <span id="cb82-12"><a href="#cb82-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">income_br =</span> labs_num)</span>
 <span id="cb82-13"><a href="#cb82-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb82-14"><a href="#cb82-14" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>income_br)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Income brackets (x) &lt;numeric&gt; 
 # total N=3048 valid N=168 mean=5.09 sd=3.14
@@ -1729,6 +1852,8 @@ Value | Valid % | Cum. %
 <section id="income_rec" class="level3" data-number="1.2.20">
 <h3 data-number="1.2.20" class="anchored" data-anchor-id="income_rec"><span class="header-section-number">1.2.20</span> income_rec</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># armar variable auxiliar</span></span>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1757,6 +1882,7 @@ Value | Valid % | Cum. %
 <span id="cb84-26"><a href="#cb84-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">income_rec =</span> <span class="st">"Income recoded"</span>)</span>
 <span id="cb84-27"><a href="#cb84-27" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb84-28"><a href="#cb84-28" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(data<span class="sc">$</span>income)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 ## Basic descriptive statistics
@@ -1766,7 +1892,10 @@ Value | Valid % | Cum. %
                       range    iqr skew
  13900000 (100000-14000000) 400000 6.62</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">descr</span>(data<span class="sc">$</span>income_rec)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 ## Basic descriptive statistics
@@ -1782,7 +1911,10 @@ Value | Valid % | Cum. %
 <section id="guardar-datos" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="guardar-datos"><span class="header-section-number">1.3</span> Guardar datos</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="at">file=</span><span class="st">"output/data/data-conclat-cl-en-clases.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 
 

@@ -209,7 +209,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#wrightclass_v8_emp_reduced" id="toc-wrightclass_v8_emp_reduced" class="nav-link" data-scroll-target="#wrightclass_v8_emp_reduced"><span class="header-section-number">4.2.9</span> wrightclass_v8_emp_reduced</a></li>
   <li><a href="#wrightclass_v9_cap_reduced" id="toc-wrightclass_v9_cap_reduced" class="nav-link" data-scroll-target="#wrightclass_v9_cap_reduced"><span class="header-section-number">4.2.10</span> wrightclass_v9_cap_reduced</a></li>
   <li><a href="#wrightclass_v10_reduced" id="toc-wrightclass_v10_reduced" class="nav-link" data-scroll-target="#wrightclass_v10_reduced"><span class="header-section-number">4.2.11</span> wrightclass_v10_reduced</a></li>
-  <li><a href="#wrightclass_v15_emp_reduced" id="toc-wrightclass_v15_emp_reduced" class="nav-link" data-scroll-target="#wrightclass_v15_emp_reduced"><span class="header-section-number">4.2.12</span> wrightclass_v15_emp_reduced</a></li>
   </ul></li>
   <li><a href="#guardar-datos" id="toc-guardar-datos" class="nav-link" data-scroll-target="#guardar-datos"><span class="header-section-number">4.3</span> Guardar datos</a></li>
   </ul>
@@ -243,15 +242,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="cargar-datos" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="cargar-datos"><span class="header-section-number">4.1.1</span> Cargar datos</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"output/data/data-conclat-ar-es-clases.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="setups" class="level3" data-number="4.1.2">
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="setups"><span class="header-section-number">4.1.2</span> Setups</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"wright_system.R"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"wright_layouts_defs.R"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"wright_get_counts.R"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 </section>
@@ -264,6 +269,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="wrightclass_v1_original" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="wrightclass_v1_original"><span class="header-section-number">4.2.2</span> wrightclass_v1_original</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v1_original =</span> <span class="fu">case_when</span>(</span>
@@ -305,6 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v1_original =</span> <span class="st">"Wright Class Typology (v1 original)"</span>)</span>
 <span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v1_original)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology (v1 original) (x) &lt;categorical&gt; 
 # total N=1698 valid N=1647 mean=6.71 sd=3.61
@@ -325,6 +333,8 @@ Value                      |   N | Raw % | Valid % | Cum. %
 12. Nonskilled workers     | 293 | 17.26 |   17.79 | 100.00
 &lt;NA&gt;                       |  51 |  3.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> pondera)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -338,6 +348,7 @@ Value                      |   N | Raw % | Valid % | Cum. %
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">freq_pct =</span> freq <span class="sc">*</span> <span class="dv">100</span></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: There was 1 warning in `dplyr::summarise()`.
 ℹ In argument: `freq = survey_mean(vartype = NULL, na.rm = TRUE)`.
@@ -346,8 +357,11 @@ Caused by warning:
 ! na.rm argument has no effect on survey_mean when calculating grouped proportions. 
 This warning is displayed once per session.</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="sc">%&gt;%</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 13 × 4
    wrightclass_v1_original       freq n_unweighted freq_pct
@@ -388,6 +402,8 @@ Figura&nbsp;4.1
 <section id="wrightclass_v2_capitalists" class="level3" data-number="4.2.3">
 <h3 data-number="4.2.3" class="anchored" data-anchor-id="wrightclass_v2_capitalists"><span class="header-section-number">4.2.3</span> wrightclass_v2_capitalists</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v2_capitalists =</span> <span class="fu">case_when</span>(</span>
@@ -429,6 +445,7 @@ Figura&nbsp;4.1
 <span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v2_capitalists =</span> <span class="st">"Wright Class Typology (v2 capitalists)"</span>)</span>
 <span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v2_capitalists)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology (v2 capitalists) (x) &lt;categorical&gt; 
 # total N=1698 valid N=1647 mean=6.73 sd=3.59
@@ -449,6 +466,8 @@ Value                      |   N | Raw % | Valid % | Cum. %
 12. Nonskilled workers     | 293 | 17.26 |   17.79 | 100.00
 &lt;NA&gt;                       |  51 |  3.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> pondera)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -465,6 +484,7 @@ Value                      |   N | Raw % | Valid % | Cum. %
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="sc">%&gt;%</span></span>
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 13 × 4
    wrightclass_v2_capitalists    freq n_unweighted freq_pct
@@ -505,6 +525,8 @@ Figura&nbsp;4.2
 <section id="wrightclass_v3_emp_informal" class="level3" data-number="4.2.4">
 <h3 data-number="4.2.4" class="anchored" data-anchor-id="wrightclass_v3_emp_informal"><span class="header-section-number">4.2.4</span> wrightclass_v3_emp_informal</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v3_emp_informal =</span> <span class="fu">case_when</span>(</span>
@@ -549,6 +571,7 @@ Figura&nbsp;4.2
 <span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v3_emp_informal =</span> <span class="st">"Wright Class Typology + Informal (v3)"</span>)</span>
 <span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v3_emp_informal)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology + Informal (v3) (x) &lt;categorical&gt; 
 # total N=1698 valid N=1646 mean=9.61 sd=3.78
@@ -570,6 +593,8 @@ Value                      |   N | Raw % | Valid % | Cum. %
 13. Informal self-employed | 388 | 22.85 |   23.57 | 100.00
 &lt;NA&gt;                       |  52 |  3.06 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> pondera)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -586,6 +611,7 @@ Value                      |   N | Raw % | Valid % | Cum. %
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="sc">%&gt;%</span></span>
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 14 × 4
    wrightclass_v3_emp_informal    freq n_unweighted freq_pct
@@ -629,6 +655,8 @@ Figura&nbsp;4.3
 <section id="wrightclass_v4_cap_informal" class="level3" data-number="4.2.5">
 <h3 data-number="4.2.5" class="anchored" data-anchor-id="wrightclass_v4_cap_informal"><span class="header-section-number">4.2.5</span> wrightclass_v4_cap_informal</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v4_cap_informal =</span> <span class="fu">case_when</span>(</span>
@@ -673,6 +701,7 @@ Figura&nbsp;4.3
 <span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v4_cap_informal =</span> <span class="st">"Wright Class Typology + Informal (4)"</span>)</span>
 <span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v4_cap_informal)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology + Informal (4) (x) &lt;categorical&gt; 
 # total N=1698 valid N=1646 mean=9.62 sd=3.75
@@ -694,6 +723,8 @@ Value                      |   N | Raw % | Valid % | Cum. %
 13. Informal self-employed | 388 | 22.85 |   23.57 | 100.00
 &lt;NA&gt;                       |  52 |  3.06 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> pondera)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -710,6 +741,7 @@ Value                      |   N | Raw % | Valid % | Cum. %
 <span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="sc">%&gt;%</span></span>
 <span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 14 × 4
    wrightclass_v4_cap_informal    freq n_unweighted freq_pct
@@ -753,6 +785,8 @@ Figura&nbsp;4.4
 <section id="wrightclass_v5_emp_reduced-comp.-cl-ar" class="level3" data-number="4.2.6">
 <h3 data-number="4.2.6" class="anchored" data-anchor-id="wrightclass_v5_emp_reduced-comp.-cl-ar"><span class="header-section-number">4.2.6</span> wrightclass_v5_emp_reduced (comp. cl-ar)</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modelo para comprar con datos de Argentina</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -786,6 +820,7 @@ Figura&nbsp;4.4
 <span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v5_emp_reduced =</span> <span class="st">"Wright Class Typology Reduced (v5)"</span>)</span>
 <span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v5_emp_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology Reduced (v5) (x) &lt;categorical&gt; 
 # total N=1698 valid N=1646 mean=6.61 sd=2.28
@@ -803,6 +838,8 @@ Value                     |   N | Raw % | Valid % | Cum. %
 9. Informal self-employed | 388 | 22.85 |   23.57 | 100.00
 &lt;NA&gt;                      |  52 |  3.06 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> pondera)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -819,6 +856,7 @@ Value                     |   N | Raw % | Valid % | Cum. %
 <span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="sc">%&gt;%</span></span>
 <span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 4
    wrightclass_v5_emp_reduced   freq n_unweighted freq_pct
@@ -860,6 +898,8 @@ Figura&nbsp;4.5
 <section id="wrightclass_v6_cap_reduced-comp.-cl-ar" class="level3" data-number="4.2.7">
 <h3 data-number="4.2.7" class="anchored" data-anchor-id="wrightclass_v6_cap_reduced-comp.-cl-ar"><span class="header-section-number">4.2.7</span> wrightclass_v6_cap_reduced (comp. cl-ar)</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v6_cap_reduced =</span> <span class="fu">case_when</span>(</span>
@@ -892,6 +932,7 @@ Figura&nbsp;4.5
 <span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v6_cap_reduced =</span> <span class="st">"Wright Class Typology Reduced (v6)"</span>)</span>
 <span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v6_cap_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology Reduced (v6) (x) &lt;categorical&gt; 
 # total N=1698 valid N=1646 mean=6.62 sd=2.25
@@ -909,6 +950,8 @@ Value                     |   N | Raw % | Valid % | Cum. %
 9. Informal self-employed | 388 | 22.85 |   23.57 | 100.00
 &lt;NA&gt;                      |  52 |  3.06 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> pondera)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -925,6 +968,7 @@ Value                     |   N | Raw % | Valid % | Cum. %
 <span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="sc">%&gt;%</span></span>
 <span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 4
    wrightclass_v6_cap_reduced    freq n_unweighted freq_pct
@@ -966,6 +1010,8 @@ Figura&nbsp;4.6
 <section id="wrightclass_v7_reduced-comp.-cl-ar" class="level3" data-number="4.2.8">
 <h3 data-number="4.2.8" class="anchored" data-anchor-id="wrightclass_v7_reduced-comp.-cl-ar"><span class="header-section-number">4.2.8</span> wrightclass_v7_reduced (comp. cl-ar)</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v7_reduced =</span> <span class="fu">case_when</span>(</span>
@@ -996,6 +1042,7 @@ Figura&nbsp;4.6
 <span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v7_reduced =</span> <span class="st">"Wright Class Typology Reduced (v7)"</span>)</span>
 <span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v7_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology Reduced (v7) (x) &lt;categorical&gt; 
 # total N=1698 valid N=1646 mean=5.63 sd=2.24
@@ -1012,6 +1059,8 @@ Value                     |   N | Raw % | Valid % | Cum. %
 8. Informal self-employed | 388 | 22.85 |   23.57 | 100.00
 &lt;NA&gt;                      |  52 |  3.06 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> pondera)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1028,6 +1077,7 @@ Value                     |   N | Raw % | Valid % | Cum. %
 <span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="sc">%&gt;%</span></span>
 <span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 9 × 4
   wrightclass_v7_reduced      freq n_unweighted freq_pct
@@ -1067,10 +1117,13 @@ Figura&nbsp;4.7
 </section>
 <section id="wrightclass_v8_emp_reduced" class="level3" data-number="4.2.9">
 <h3 data-number="4.2.9" class="anchored" data-anchor-id="wrightclass_v8_emp_reduced"><span class="header-section-number">4.2.9</span> wrightclass_v8_emp_reduced</h3>
+<p><strong>Se pondrá v15 solamente para que tenga el mismo código que en Chile</strong>.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v8_emp_reduced =</span> <span class="fu">case_when</span>(</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v15_emp_reduced =</span> <span class="fu">case_when</span>(</span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,                                                                   <span class="co"># 1. Employers</span></span>
 <span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,                                                                   <span class="co"># 2. Small employers</span></span>
 <span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> formal_educ <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,                                                     <span class="co"># 3. Petty bourgeoisie</span></span>
@@ -1085,8 +1138,8 @@ Figura&nbsp;4.7
 <span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">8</span>,    <span class="co"># 8. Informal workers</span></span>
 <span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> formal_educ <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">9</span>                                                      <span class="co"># 9. Informal self-employed</span></span>
 <span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v8_emp_reduced =</span> <span class="fu">factor</span>(</span>
-<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>      wrightclass_v8_emp_reduced,</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v15_emp_reduced =</span> <span class="fu">factor</span>(</span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>      wrightclass_v15_emp_reduced,</span>
 <span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
 <span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
 <span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Employers"</span>,</span>
@@ -1101,11 +1154,12 @@ Figura&nbsp;4.7
 <span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb33-33"><a href="#cb33-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v8_emp_reduced =</span> <span class="st">"Wright Class Typology Reduced (v8)"</span>)</span>
+<span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v15_emp_reduced =</span> <span class="st">"Wright Class Typology Reduced (v15)"</span>)</span>
 <span id="cb33-35"><a href="#cb33-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v8_emp_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v15_emp_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Wright Class Typology Reduced (v8) (x) &lt;categorical&gt; 
+<pre><code>Wright Class Typology Reduced (v15) (x) &lt;categorical&gt; 
 # total N=1698 valid N=1646 mean=6.70 sd=2.21
 
 Value                               |   N | Raw % | Valid % | Cum. %
@@ -1121,12 +1175,14 @@ Value                               |   N | Raw % | Valid % | Cum. %
 9. Informal self-employed           | 388 | 22.85 |   23.57 | 100.00
 &lt;NA&gt;                                |  52 |  3.06 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> pondera)</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla de frecuencias ponderadas</span></span>
 <span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="ot">&lt;-</span> data_svy <span class="sc">%&gt;%</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass_v8_emp_reduced) <span class="sc">%&gt;%</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass_v15_emp_reduced) <span class="sc">%&gt;%</span></span>
 <span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">freq =</span> <span class="fu">survey_mean</span>(<span class="at">vartype =</span> <span class="cn">NULL</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_unweighted =</span> <span class="fu">unweighted</span>(<span class="fu">n</span>())</span>
@@ -1137,9 +1193,10 @@ Value                               |   N | Raw % | Valid % | Cum. %
 <span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="sc">%&gt;%</span></span>
 <span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 4
-   wrightclass_v8_emp_reduced            freq n_unweighted freq_pct
+   wrightclass_v15_emp_reduced           freq n_unweighted freq_pct
    &lt;fct&gt;                                &lt;dbl&gt;        &lt;int&gt;    &lt;dbl&gt;
  1 1. Employers                        0.0203           33     2.03
  2 2. Small employers                  0.0714          119     7.14
@@ -1161,12 +1218,12 @@ Value                               |   N | Raw % | Valid % | Cum. %
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-wright-v8" class="quarto-float quarto-figure quarto-figure-center anchored" width="960">
+<div id="fig-wright-v15" class="quarto-float quarto-figure quarto-figure-center anchored" width="960">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-wright-v8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-esquemas-clases-ar_files/figure-html/fig-wright-v8-1.png" id="fig-wright-v8" class="img-fluid figure-img" width="960">
+<div aria-describedby="fig-wright-v15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04-esquemas-clases-ar_files/figure-html/fig-wright-v15-1.png" id="fig-wright-v15" class="img-fluid figure-img" width="960">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-wright-v8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-wright-v15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4.8
 </figcaption>
 </figure>
@@ -1176,10 +1233,13 @@ Figura&nbsp;4.8
 </section>
 <section id="wrightclass_v9_cap_reduced" class="level3" data-number="4.2.10">
 <h3 data-number="4.2.10" class="anchored" data-anchor-id="wrightclass_v9_cap_reduced"><span class="header-section-number">4.2.10</span> wrightclass_v9_cap_reduced</h3>
+<p><strong>Se pondrá v16 solamente para que tenga el mismo código que en Chile</strong>.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v9_cap_reduced =</span> <span class="fu">case_when</span>(</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v16_cap_reduced =</span> <span class="fu">case_when</span>(</span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">~</span> <span class="dv">1</span>,                                                                   <span class="co"># 1. Capitalists</span></span>
 <span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,                                                                   <span class="co"># 2. Small employers</span></span>
 <span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> formal_educ <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,                                                     <span class="co"># 3. Petty bourgeoisie</span></span>
@@ -1194,8 +1254,8 @@ Figura&nbsp;4.8
 <span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">8</span>,     <span class="co"># 8. Informal workers</span></span>
 <span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners2) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> formal_educ <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">9</span>                                                      <span class="co"># 9. Informal self-employed</span></span>
 <span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v9_cap_reduced =</span> <span class="fu">factor</span>(</span>
-<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>      wrightclass_v9_cap_reduced,</span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v16_cap_reduced =</span> <span class="fu">factor</span>(</span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>      wrightclass_v16_cap_reduced,</span>
 <span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
 <span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
 <span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Capitalists"</span>,</span>
@@ -1210,11 +1270,12 @@ Figura&nbsp;4.8
 <span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a>      )</span>
 <span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb37-33"><a href="#cb37-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb37-34"><a href="#cb37-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v9_cap_reduced =</span> <span class="st">"Wright Class Typology Reduced (v9)"</span>)</span>
+<span id="cb37-34"><a href="#cb37-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v16_cap_reduced =</span> <span class="st">"Wright Class Typology Reduced (v16)"</span>)</span>
 <span id="cb37-35"><a href="#cb37-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-36"><a href="#cb37-36" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v9_cap_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb37-36"><a href="#cb37-36" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v16_cap_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Wright Class Typology Reduced (v9) (x) &lt;categorical&gt; 
+<pre><code>Wright Class Typology Reduced (v16) (x) &lt;categorical&gt; 
 # total N=1698 valid N=1646 mean=6.71 sd=2.18
 
 Value                               |   N | Raw % | Valid % | Cum. %
@@ -1230,12 +1291,14 @@ Value                               |   N | Raw % | Valid % | Cum. %
 9. Informal self-employed           | 388 | 22.85 |   23.57 | 100.00
 &lt;NA&gt;                                |  52 |  3.06 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> pondera)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla de frecuencias ponderadas</span></span>
 <span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="ot">&lt;-</span> data_svy <span class="sc">%&gt;%</span></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass_v9_cap_reduced) <span class="sc">%&gt;%</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass_v16_cap_reduced) <span class="sc">%&gt;%</span></span>
 <span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">freq =</span> <span class="fu">survey_mean</span>(<span class="at">vartype =</span> <span class="cn">NULL</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_unweighted =</span> <span class="fu">unweighted</span>(<span class="fu">n</span>())</span>
@@ -1246,9 +1309,10 @@ Value                               |   N | Raw % | Valid % | Cum. %
 <span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="sc">%&gt;%</span></span>
 <span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 4
-   wrightclass_v9_cap_reduced             freq n_unweighted freq_pct
+   wrightclass_v16_cap_reduced            freq n_unweighted freq_pct
    &lt;fct&gt;                                 &lt;dbl&gt;        &lt;int&gt;    &lt;dbl&gt;
  1 1. Capitalists                      0.00621           10    0.621
  2 2. Small employers                  0.0854           142    8.54 
@@ -1270,12 +1334,12 @@ Value                               |   N | Raw % | Valid % | Cum. %
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-wright-v9" class="quarto-float quarto-figure quarto-figure-center anchored" width="960">
+<div id="fig-wright-v16" class="quarto-float quarto-figure quarto-figure-center anchored" width="960">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-wright-v9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-esquemas-clases-ar_files/figure-html/fig-wright-v9-1.png" id="fig-wright-v9" class="img-fluid figure-img" width="960">
+<div aria-describedby="fig-wright-v16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04-esquemas-clases-ar_files/figure-html/fig-wright-v16-1.png" id="fig-wright-v16" class="img-fluid figure-img" width="960">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-wright-v9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-wright-v16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4.9
 </figcaption>
 </figure>
@@ -1286,6 +1350,8 @@ Figura&nbsp;4.9
 <section id="wrightclass_v10_reduced" class="level3" data-number="4.2.11">
 <h3 data-number="4.2.11" class="anchored" data-anchor-id="wrightclass_v10_reduced"><span class="header-section-number">4.2.11</span> wrightclass_v10_reduced</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v10_reduced =</span> <span class="fu">case_when</span>(</span>
@@ -1320,6 +1386,7 @@ Figura&nbsp;4.9
 <span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v10_reduced =</span> <span class="st">"Wright Class Typology Reduced (v10)"</span>)</span>
 <span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v10_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Wright Class Typology Reduced (v10) (x) &lt;categorical&gt; 
 # total N=1698 valid N=1646 mean=5.72 sd=2.17
@@ -1336,6 +1403,8 @@ Value                               |   N | Raw % | Valid % | Cum. %
 8. Informal self-employed           | 388 | 22.85 |   23.57 | 100.00
 &lt;NA&gt;                                |  52 |  3.06 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> pondera)</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1352,6 +1421,7 @@ Value                               |   N | Raw % | Valid % | Cum. %
 <span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="sc">%&gt;%</span></span>
 <span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 9 × 4
   wrightclass_v10_reduced               freq n_unweighted freq_pct
@@ -1389,6 +1459,8 @@ Figura&nbsp;4.10
 </div>
 <!-- ### wrightclass_v11_emp_reduced -->
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v11_emp_reduced = case_when(</span></span>
@@ -1443,9 +1515,12 @@ Figura&nbsp;4.10
 <span id="cb45-52"><a href="#cb45-52" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb45-53"><a href="#cb45-53" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
 <span id="cb45-54"><a href="#cb45-54" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <!-- ### wrightclass_v12_cap_reduced -->
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v12_cap_reduced = case_when(</span></span>
@@ -1500,9 +1575,12 @@ Figura&nbsp;4.10
 <span id="cb46-52"><a href="#cb46-52" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb46-53"><a href="#cb46-53" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
 <span id="cb46-54"><a href="#cb46-54" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <!-- ### wrightclass_v13_emp_reduced -->
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v13_emp_reduced = case_when(</span></span>
@@ -1562,9 +1640,12 @@ Figura&nbsp;4.10
 <span id="cb47-57"><a href="#cb47-57" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb47-58"><a href="#cb47-58" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
 <span id="cb47-59"><a href="#cb47-59" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <!-- ### wrightclass_v14_cap_reduced -->
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v14_cap_reduced = case_when(</span></span>
@@ -1624,100 +1705,131 @@ Figura&nbsp;4.10
 <span id="cb48-57"><a href="#cb48-57" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb48-58"><a href="#cb48-58" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
 <span id="cb48-59"><a href="#cb48-59" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
-</section>
-<section id="wrightclass_v15_emp_reduced" class="level3" data-number="4.2.12">
-<h3 data-number="4.2.12" class="anchored" data-anchor-id="wrightclass_v15_emp_reduced"><span class="header-section-number">4.2.12</span> wrightclass_v15_emp_reduced</h3>
+<!-- ### wrightclass_v15_emp_reduced -->
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v15_emp_reduced =</span> <span class="fu">case_when</span>(</span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> formal_educ <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>,                                             <span class="co"># 1. Employers</span></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> (formal_educ <span class="sc">==</span> <span class="dv">0</span> <span class="sc">|</span> <span class="fu">is.na</span>(formal_educ)) <span class="sc">~</span> <span class="dv">2</span>,                   <span class="co"># 2. Small employers</span></span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="dv">2</span>,                                                                   <span class="co"># 2. Small employers</span></span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> formal_educ <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>,                                 <span class="co"># 3. Petty bourgeoisie</span></span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">4</span>,                            <span class="co"># 4. Expert managers</span></span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">5</span>,                            <span class="co"># 5. Experts</span></span>
-<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">~</span> <span class="dv">6</span>,            <span class="co"># 6. Skilled y Nonskilled Supervisors</span></span>
-<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">6</span>,                            <span class="co"># 6. Skilled y Nonskilled Supervisors</span></span>
-<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">7</span>,    <span class="co"># 7. Formal workers</span></span>
-<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(organization_assets) <span class="sc">==</span> <span class="dv">3</span> <span class="sc">&amp;</span> <span class="fu">as.integer</span>(skills) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">&amp;</span> contrato <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">8</span>,    <span class="co"># 8. Informal workers</span></span>
-<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.integer</span>(owners) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> formal_educ <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">9</span>                                                     <span class="co"># 9. Informal self-employed</span></span>
-<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a>                                        <span class="co"># 9. Informal self-employed</span></span>
-<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">wrightclass_v15_emp_reduced =</span> <span class="fu">factor</span>(</span>
-<span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a>      wrightclass_v15_emp_reduced,</span>
-<span id="cb49-25"><a href="#cb49-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>,</span>
-<span id="cb49-26"><a href="#cb49-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
-<span id="cb49-27"><a href="#cb49-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"1. Employers"</span>,</span>
-<span id="cb49-28"><a href="#cb49-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2. Small employers"</span>,</span>
-<span id="cb49-29"><a href="#cb49-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"3. Petty bourgeoisie"</span>,</span>
-<span id="cb49-30"><a href="#cb49-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"4. Expert managers"</span>,</span>
-<span id="cb49-31"><a href="#cb49-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"5. Experts"</span>,</span>
-<span id="cb49-32"><a href="#cb49-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"6. Skilled &amp; Nonskilled Supervisors"</span>,</span>
-<span id="cb49-33"><a href="#cb49-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"7. Formal workers"</span>,</span>
-<span id="cb49-34"><a href="#cb49-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"8. Informal workers"</span>,</span>
-<span id="cb49-35"><a href="#cb49-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">"9. Informal self-employed"</span></span>
-<span id="cb49-36"><a href="#cb49-36" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb49-37"><a href="#cb49-37" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb49-38"><a href="#cb49-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb49-39"><a href="#cb49-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">wrightclass_v15_emp_reduced =</span> <span class="st">"Wright Class Typology Reduced (v15)"</span>)</span>
-<span id="cb49-40"><a href="#cb49-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-41"><a href="#cb49-41" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>wrightclass_v15_emp_reduced)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Wright Class Typology Reduced (v15) (x) &lt;categorical&gt; 
-# total N=1698 valid N=1646 mean=6.71 sd=2.18
-
-Value                               |   N | Raw % | Valid % | Cum. %
---------------------------------------------------------------------
-1. Employers                        |   9 |  0.53 |    0.55 |   0.55
-2. Small employers                  | 143 |  8.42 |    8.69 |   9.23
-3. Petty bourgeoisie                |  82 |  4.83 |    4.98 |  14.22
-4. Expert managers                  |  40 |  2.36 |    2.43 |  16.65
-5. Experts                          |  94 |  5.54 |    5.71 |  22.36
-6. Skilled &amp; Nonskilled Supervisors | 154 |  9.07 |    9.36 |  31.71
-7. Formal workers                   | 431 | 25.38 |   26.18 |  57.90
-8. Informal workers                 | 305 | 17.96 |   18.53 |  76.43
-9. Informal self-employed           | 388 | 22.85 |   23.57 | 100.00
-&lt;NA&gt;                                |  52 |  3.06 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># base survey</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>data_svy <span class="ot">&lt;-</span> <span class="fu">as_survey_design</span>(data, <span class="at">weights =</span> pondera)</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla de frecuencias ponderadas</span></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="ot">&lt;-</span> data_svy <span class="sc">%&gt;%</span></span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(wrightclass_v15_emp_reduced) <span class="sc">%&gt;%</span></span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">freq =</span> <span class="fu">survey_mean</span>(<span class="at">vartype =</span> <span class="cn">NULL</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_unweighted =</span> <span class="fu">unweighted</span>(<span class="fu">n</span>())</span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">freq_pct =</span> freq <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>wright_freq <span class="sc">%&gt;%</span></span>
-<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 4
-   wrightclass_v15_emp_reduced            freq n_unweighted freq_pct
-   &lt;fct&gt;                                 &lt;dbl&gt;        &lt;int&gt;    &lt;dbl&gt;
- 1 1. Employers                        0.00564            9    0.564
- 2 2. Small employers                  0.0860           143    8.60 
- 3 3. Petty bourgeoisie                0.0473            82    4.73 
- 4 4. Expert managers                  0.0238            40    2.38 
- 5 5. Experts                          0.0538            94    5.38 
- 6 6. Skilled &amp; Nonskilled Supervisors 0.0927           154    9.27 
- 7 7. Formal workers                   0.254            431   25.4  
- 8 8. Informal workers                 0.174            305   17.4  
- 9 9. Informal self-employed           0.232            388   23.2  
-10 &lt;NA&gt;                                0.0299            52    2.99 </code></pre>
-</div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # Versión Chile</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v15_emp_reduced = case_when(</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 3 &amp; inicio_empresa == 1 ~ 1,                                             # 1. Employers</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 3 &amp; (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                   # 2. Small employers</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 2 ~ 2,                                                                   # 2. Small employers   </span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 1 &amp; boleta == 1 &amp; inicio_activ == 1 ~ 3,                                 # 3. Petty bourgeoisie  </span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 1 &amp; as.integer(skills) == 1 ~ 4,                            # 4. Expert managers  </span></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) == 1 ~ 5,                            # 5. Experts  </span></span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) %in% c(1, 2) &amp; as.integer(skills) %in% c(2, 3) ~ 6,            # 6. Skilled y Nonskilled Supervisors</span></span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 2 &amp; as.integer(skills) == 1 ~ 6,                            # 6. Skilled y Nonskilled Supervisors</span></span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 1 ~ 7,    # 7. Formal workers</span></span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 0 ~ 8,    # 8. Informal workers</span></span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 1 &amp; boleta == 0 ~ 9,                                                     # 9. Informal self-employed</span></span>
+<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 1 &amp; boleta == 1 &amp; inicio_activ == 0 ~ 9                                  # 9. Informal self-employed</span></span>
+<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a><span class="co">#     ),</span></span>
+<span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v15_emp_reduced = factor(</span></span>
+<span id="cb49-25"><a href="#cb49-25" aria-hidden="true" tabindex="-1"></a><span class="co">#       wrightclass_v15_emp_reduced,</span></span>
+<span id="cb49-26"><a href="#cb49-26" aria-hidden="true" tabindex="-1"></a><span class="co">#       levels = 1:9,</span></span>
+<span id="cb49-27"><a href="#cb49-27" aria-hidden="true" tabindex="-1"></a><span class="co">#       labels = c(</span></span>
+<span id="cb49-28"><a href="#cb49-28" aria-hidden="true" tabindex="-1"></a><span class="co">#         "1. Employers",</span></span>
+<span id="cb49-29"><a href="#cb49-29" aria-hidden="true" tabindex="-1"></a><span class="co">#         "2. Small employers",</span></span>
+<span id="cb49-30"><a href="#cb49-30" aria-hidden="true" tabindex="-1"></a><span class="co">#         "3. Petty bourgeoisie",</span></span>
+<span id="cb49-31"><a href="#cb49-31" aria-hidden="true" tabindex="-1"></a><span class="co">#         "4. Expert managers",</span></span>
+<span id="cb49-32"><a href="#cb49-32" aria-hidden="true" tabindex="-1"></a><span class="co">#         "5. Experts",</span></span>
+<span id="cb49-33"><a href="#cb49-33" aria-hidden="true" tabindex="-1"></a><span class="co">#         "6. Skilled &amp; Nonskilled Supervisors",</span></span>
+<span id="cb49-34"><a href="#cb49-34" aria-hidden="true" tabindex="-1"></a><span class="co">#         "7. Formal workers",</span></span>
+<span id="cb49-35"><a href="#cb49-35" aria-hidden="true" tabindex="-1"></a><span class="co">#         "8. Informal workers",</span></span>
+<span id="cb49-36"><a href="#cb49-36" aria-hidden="true" tabindex="-1"></a><span class="co">#         "9. Informal self-employed"</span></span>
+<span id="cb49-37"><a href="#cb49-37" aria-hidden="true" tabindex="-1"></a><span class="co">#       )</span></span>
+<span id="cb49-38"><a href="#cb49-38" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
+<span id="cb49-39"><a href="#cb49-39" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb49-40"><a href="#cb49-40" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(wrightclass_v15_emp_reduced = "Wright Class Typology Reduced (v15)")</span></span>
+<span id="cb49-41"><a href="#cb49-41" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-42"><a href="#cb49-42" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$wrightclass_v15_emp_reduced)</span></span>
+<span id="cb49-43"><a href="#cb49-43" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-44"><a href="#cb49-44" aria-hidden="true" tabindex="-1"></a><span class="co"># # base survey</span></span>
+<span id="cb49-45"><a href="#cb49-45" aria-hidden="true" tabindex="-1"></a><span class="co"># data_svy &lt;- as_survey_design(data, weights = pondera)</span></span>
+<span id="cb49-46"><a href="#cb49-46" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-47"><a href="#cb49-47" aria-hidden="true" tabindex="-1"></a><span class="co"># # Tabla de frecuencias ponderadas</span></span>
+<span id="cb49-48"><a href="#cb49-48" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq &lt;- data_svy %&gt;%</span></span>
+<span id="cb49-49"><a href="#cb49-49" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(wrightclass_v15_emp_reduced) %&gt;%</span></span>
+<span id="cb49-50"><a href="#cb49-50" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarise(</span></span>
+<span id="cb49-51"><a href="#cb49-51" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq = survey_mean(vartype = NULL, na.rm = TRUE),</span></span>
+<span id="cb49-52"><a href="#cb49-52" aria-hidden="true" tabindex="-1"></a><span class="co">#     n_unweighted = unweighted(n())</span></span>
+<span id="cb49-53"><a href="#cb49-53" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb49-54"><a href="#cb49-54" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb49-55"><a href="#cb49-55" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq_pct = freq * 100</span></span>
+<span id="cb49-56"><a href="#cb49-56" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
+<span id="cb49-57"><a href="#cb49-57" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-58"><a href="#cb49-58" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
+<span id="cb49-59"><a href="#cb49-59" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span>
+<span id="cb49-60"><a href="#cb49-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-61"><a href="#cb49-61" aria-hidden="true" tabindex="-1"></a><span class="co"># # Versión Agentina</span></span>
+<span id="cb49-62"><a href="#cb49-62" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
+<span id="cb49-63"><a href="#cb49-63" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb49-64"><a href="#cb49-64" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v15_emp_reduced = case_when(</span></span>
+<span id="cb49-65"><a href="#cb49-65" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 3 &amp; formal_educ == 1 ~ 1,                                                # 1. Employers</span></span>
+<span id="cb49-66"><a href="#cb49-66" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-67"><a href="#cb49-67" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 3 &amp; (formal_educ == 0 | is.na(formal_educ)) ~ 2,                         # 2. Small employers</span></span>
+<span id="cb49-68"><a href="#cb49-68" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 2 ~ 2,                                                                   # 2. Small employers</span></span>
+<span id="cb49-69"><a href="#cb49-69" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-70"><a href="#cb49-70" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 1 &amp; formal_educ == 1 ~ 3,                                                # 3. Petty bourgeoisie</span></span>
+<span id="cb49-71"><a href="#cb49-71" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-72"><a href="#cb49-72" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 1 &amp; as.integer(skills) == 1 ~ 4,                            # 4. Expert managers</span></span>
+<span id="cb49-73"><a href="#cb49-73" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) == 1 ~ 5,                            # 5. Experts</span></span>
+<span id="cb49-74"><a href="#cb49-74" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-75"><a href="#cb49-75" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) %in% c(1, 2) &amp; as.integer(skills) %in% c(2, 3) ~ 6,            # 6. Skilled y Nonskilled Supervisors</span></span>
+<span id="cb49-76"><a href="#cb49-76" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 2 &amp; as.integer(skills) == 1 ~ 6,                            # 6. Skilled y Nonskilled Supervisors</span></span>
+<span id="cb49-77"><a href="#cb49-77" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-78"><a href="#cb49-78" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 1 ~ 7,    # 7. Formal workers</span></span>
+<span id="cb49-79"><a href="#cb49-79" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 0 ~ 8,    # 8. Informal workers</span></span>
+<span id="cb49-80"><a href="#cb49-80" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-81"><a href="#cb49-81" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 1 &amp; formal_educ == 0 ~ 9                                                 # 9. Informal self-employed</span></span>
+<span id="cb49-82"><a href="#cb49-82" aria-hidden="true" tabindex="-1"></a><span class="co">#     ),</span></span>
+<span id="cb49-83"><a href="#cb49-83" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v15_emp_reduced = factor(</span></span>
+<span id="cb49-84"><a href="#cb49-84" aria-hidden="true" tabindex="-1"></a><span class="co">#       wrightclass_v15_emp_reduced,</span></span>
+<span id="cb49-85"><a href="#cb49-85" aria-hidden="true" tabindex="-1"></a><span class="co">#       levels = 1:9,</span></span>
+<span id="cb49-86"><a href="#cb49-86" aria-hidden="true" tabindex="-1"></a><span class="co">#       labels = c(</span></span>
+<span id="cb49-87"><a href="#cb49-87" aria-hidden="true" tabindex="-1"></a><span class="co">#         "1. Employers",</span></span>
+<span id="cb49-88"><a href="#cb49-88" aria-hidden="true" tabindex="-1"></a><span class="co">#         "2. Small employers",</span></span>
+<span id="cb49-89"><a href="#cb49-89" aria-hidden="true" tabindex="-1"></a><span class="co">#         "3. Petty bourgeoisie",</span></span>
+<span id="cb49-90"><a href="#cb49-90" aria-hidden="true" tabindex="-1"></a><span class="co">#         "4. Expert managers",</span></span>
+<span id="cb49-91"><a href="#cb49-91" aria-hidden="true" tabindex="-1"></a><span class="co">#         "5. Experts",</span></span>
+<span id="cb49-92"><a href="#cb49-92" aria-hidden="true" tabindex="-1"></a><span class="co">#         "6. Skilled &amp; Nonskilled Supervisors",</span></span>
+<span id="cb49-93"><a href="#cb49-93" aria-hidden="true" tabindex="-1"></a><span class="co">#         "7. Formal workers",</span></span>
+<span id="cb49-94"><a href="#cb49-94" aria-hidden="true" tabindex="-1"></a><span class="co">#         "8. Informal workers",</span></span>
+<span id="cb49-95"><a href="#cb49-95" aria-hidden="true" tabindex="-1"></a><span class="co">#         "9. Informal self-employed"</span></span>
+<span id="cb49-96"><a href="#cb49-96" aria-hidden="true" tabindex="-1"></a><span class="co">#       )</span></span>
+<span id="cb49-97"><a href="#cb49-97" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
+<span id="cb49-98"><a href="#cb49-98" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb49-99"><a href="#cb49-99" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(wrightclass_v15_emp_reduced = "Wright Class Typology Reduced (v15)")</span></span>
+<span id="cb49-100"><a href="#cb49-100" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-101"><a href="#cb49-101" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$wrightclass_v15_emp_reduced)</span></span>
+<span id="cb49-102"><a href="#cb49-102" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-103"><a href="#cb49-103" aria-hidden="true" tabindex="-1"></a><span class="co"># # base survey</span></span>
+<span id="cb49-104"><a href="#cb49-104" aria-hidden="true" tabindex="-1"></a><span class="co"># data_svy &lt;- as_survey_design(data, weights = pondera)</span></span>
+<span id="cb49-105"><a href="#cb49-105" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-106"><a href="#cb49-106" aria-hidden="true" tabindex="-1"></a><span class="co"># # Tabla de frecuencias ponderadas</span></span>
+<span id="cb49-107"><a href="#cb49-107" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq &lt;- data_svy %&gt;%</span></span>
+<span id="cb49-108"><a href="#cb49-108" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(wrightclass_v15_emp_reduced) %&gt;%</span></span>
+<span id="cb49-109"><a href="#cb49-109" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarise(</span></span>
+<span id="cb49-110"><a href="#cb49-110" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq = survey_mean(vartype = NULL, na.rm = TRUE),</span></span>
+<span id="cb49-111"><a href="#cb49-111" aria-hidden="true" tabindex="-1"></a><span class="co">#     n_unweighted = unweighted(n())</span></span>
+<span id="cb49-112"><a href="#cb49-112" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb49-113"><a href="#cb49-113" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb49-114"><a href="#cb49-114" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq_pct = freq * 100</span></span>
+<span id="cb49-115"><a href="#cb49-115" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
+<span id="cb49-116"><a href="#cb49-116" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-117"><a href="#cb49-117" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
+<span id="cb49-118"><a href="#cb49-118" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <ul>
 <li>Esquema reducido con Employers: 10 o más trabajadores, <strong>más inicio act. como empresa</strong>.</li>
@@ -1726,265 +1838,281 @@ Value                               |   N | Raw % | Valid % | Cum. %
 <li>Se unen todos los Supervisors y Mangers no expertos.</li>
 </ul>
 <div class="cell">
-<div class="cell-output-display">
-<div id="fig-wright-v15" class="quarto-float quarto-figure quarto-figure-center anchored" width="960">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-wright-v15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04-esquemas-clases-ar_files/figure-html/fig-wright-v15-1.png" id="fig-wright-v15" class="img-fluid figure-img" width="960">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-wright-v15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.11
-</figcaption>
-</figure>
-</div>
-</div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># #| label: fig-wright-v15 </span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="co"># #| fig-width: 10 </span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co"># #| fig-height: 7 </span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="co"># #| echo: false </span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="co"># counts_v15 &lt;- get_counts(data, wrightclass_v15_emp_reduced)</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="co"># draw_wright(wright_layout("v15"), counts_v15,</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a><span class="co">#             title = "v15 · Employers reduced",</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a><span class="co">#             row_labels_left = wright_rowlabels("v15"))</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <!-- ### wrightclass_v16_cap_reduced -->
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v16_cap_reduced = case_when(</span></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 3 &amp; inicio_empresa == 1 ~ 1,                                             # 1. Capitalists</span></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 3 &amp; (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                   # 2. Small employers</span></span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 2 ~ 2,                                                                   # 2. Small employers   </span></span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 1 ~ 3,                                 # 3. Petty bourgeoisie  </span></span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 1 &amp; as.integer(skills) == 1 ~ 4,                             # 4. Expert managers  </span></span>
-<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) == 1 ~ 5,                             # 5. Experts  </span></span>
-<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) %in% c(1, 2) &amp; as.integer(skills) %in% c(2, 3) ~ 6,             # 6. Skilled y Nonskilled Supervisors</span></span>
-<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 2 &amp; as.integer(skills) == 1 ~ 6,                             # 6. Skilled y Nonskilled Supervisors</span></span>
-<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 1 ~ 7,     # 7. Formal workers</span></span>
-<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 0 ~ 8,     # 8. Informal workers</span></span>
-<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 0 ~ 9,                                                     # 9. Informal self-employed</span></span>
-<span id="cb53-21"><a href="#cb53-21" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 0 ~ 9                                  # 9. Informal self-employed</span></span>
-<span id="cb53-22"><a href="#cb53-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     ),</span></span>
-<span id="cb53-23"><a href="#cb53-23" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v16_cap_reduced = factor(</span></span>
-<span id="cb53-24"><a href="#cb53-24" aria-hidden="true" tabindex="-1"></a><span class="co">#       wrightclass_v16_cap_reduced,</span></span>
-<span id="cb53-25"><a href="#cb53-25" aria-hidden="true" tabindex="-1"></a><span class="co">#       levels = 1:9,</span></span>
-<span id="cb53-26"><a href="#cb53-26" aria-hidden="true" tabindex="-1"></a><span class="co">#       labels = c(</span></span>
-<span id="cb53-27"><a href="#cb53-27" aria-hidden="true" tabindex="-1"></a><span class="co">#         "1. Capitalists",</span></span>
-<span id="cb53-28"><a href="#cb53-28" aria-hidden="true" tabindex="-1"></a><span class="co">#         "2. Small employers",</span></span>
-<span id="cb53-29"><a href="#cb53-29" aria-hidden="true" tabindex="-1"></a><span class="co">#         "3. Petty bourgeoisie",</span></span>
-<span id="cb53-30"><a href="#cb53-30" aria-hidden="true" tabindex="-1"></a><span class="co">#         "4. Expert managers",</span></span>
-<span id="cb53-31"><a href="#cb53-31" aria-hidden="true" tabindex="-1"></a><span class="co">#         "5. Experts",</span></span>
-<span id="cb53-32"><a href="#cb53-32" aria-hidden="true" tabindex="-1"></a><span class="co">#         "6. Skilled &amp; Nonskilled Supervisors",</span></span>
-<span id="cb53-33"><a href="#cb53-33" aria-hidden="true" tabindex="-1"></a><span class="co">#         "7. Formal workers",</span></span>
-<span id="cb53-34"><a href="#cb53-34" aria-hidden="true" tabindex="-1"></a><span class="co">#         "8. Informal workers",</span></span>
-<span id="cb53-35"><a href="#cb53-35" aria-hidden="true" tabindex="-1"></a><span class="co">#         "9. Informal self-employed"</span></span>
-<span id="cb53-36"><a href="#cb53-36" aria-hidden="true" tabindex="-1"></a><span class="co">#       )</span></span>
-<span id="cb53-37"><a href="#cb53-37" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
-<span id="cb53-38"><a href="#cb53-38" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
-<span id="cb53-39"><a href="#cb53-39" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(wrightclass_v16_cap_reduced = "Wright Class Typology Reduced (v16)")</span></span>
-<span id="cb53-40"><a href="#cb53-40" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb53-41"><a href="#cb53-41" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$wrightclass_v16_cap_reduced)</span></span>
-<span id="cb53-42"><a href="#cb53-42" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb53-43"><a href="#cb53-43" aria-hidden="true" tabindex="-1"></a><span class="co"># # base survey</span></span>
-<span id="cb53-44"><a href="#cb53-44" aria-hidden="true" tabindex="-1"></a><span class="co"># data_svy &lt;- as_survey_design(data, weights = pondera)</span></span>
-<span id="cb53-45"><a href="#cb53-45" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb53-46"><a href="#cb53-46" aria-hidden="true" tabindex="-1"></a><span class="co"># # Tabla de frecuencias ponderadas</span></span>
-<span id="cb53-47"><a href="#cb53-47" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq &lt;- data_svy %&gt;%</span></span>
-<span id="cb53-48"><a href="#cb53-48" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(wrightclass_v16_cap_reduced) %&gt;%</span></span>
-<span id="cb53-49"><a href="#cb53-49" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarise(</span></span>
-<span id="cb53-50"><a href="#cb53-50" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq = survey_mean(vartype = NULL, na.rm = TRUE),</span></span>
-<span id="cb53-51"><a href="#cb53-51" aria-hidden="true" tabindex="-1"></a><span class="co">#     n_unweighted = unweighted(n())</span></span>
-<span id="cb53-52"><a href="#cb53-52" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
-<span id="cb53-53"><a href="#cb53-53" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
-<span id="cb53-54"><a href="#cb53-54" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq_pct = freq * 100</span></span>
-<span id="cb53-55"><a href="#cb53-55" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
-<span id="cb53-56"><a href="#cb53-56" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb53-57"><a href="#cb53-57" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
-<span id="cb53-58"><a href="#cb53-58" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v16_cap_reduced = case_when(</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 3 &amp; inicio_empresa == 1 ~ 1,                                             # 1. Capitalists</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 3 &amp; (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                   # 2. Small employers</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 2 ~ 2,                                                                   # 2. Small employers   </span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 1 ~ 3,                                 # 3. Petty bourgeoisie  </span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 1 &amp; as.integer(skills) == 1 ~ 4,                             # 4. Expert managers  </span></span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) == 1 ~ 5,                             # 5. Experts  </span></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) %in% c(1, 2) &amp; as.integer(skills) %in% c(2, 3) ~ 6,             # 6. Skilled y Nonskilled Supervisors</span></span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 2 &amp; as.integer(skills) == 1 ~ 6,                             # 6. Skilled y Nonskilled Supervisors</span></span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 1 ~ 7,     # 7. Formal workers</span></span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 0 ~ 8,     # 8. Informal workers</span></span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 0 ~ 9,                                                     # 9. Informal self-employed</span></span>
+<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 0 ~ 9                                  # 9. Informal self-employed</span></span>
+<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     ),</span></span>
+<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v16_cap_reduced = factor(</span></span>
+<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a><span class="co">#       wrightclass_v16_cap_reduced,</span></span>
+<span id="cb51-25"><a href="#cb51-25" aria-hidden="true" tabindex="-1"></a><span class="co">#       levels = 1:9,</span></span>
+<span id="cb51-26"><a href="#cb51-26" aria-hidden="true" tabindex="-1"></a><span class="co">#       labels = c(</span></span>
+<span id="cb51-27"><a href="#cb51-27" aria-hidden="true" tabindex="-1"></a><span class="co">#         "1. Capitalists",</span></span>
+<span id="cb51-28"><a href="#cb51-28" aria-hidden="true" tabindex="-1"></a><span class="co">#         "2. Small employers",</span></span>
+<span id="cb51-29"><a href="#cb51-29" aria-hidden="true" tabindex="-1"></a><span class="co">#         "3. Petty bourgeoisie",</span></span>
+<span id="cb51-30"><a href="#cb51-30" aria-hidden="true" tabindex="-1"></a><span class="co">#         "4. Expert managers",</span></span>
+<span id="cb51-31"><a href="#cb51-31" aria-hidden="true" tabindex="-1"></a><span class="co">#         "5. Experts",</span></span>
+<span id="cb51-32"><a href="#cb51-32" aria-hidden="true" tabindex="-1"></a><span class="co">#         "6. Skilled &amp; Nonskilled Supervisors",</span></span>
+<span id="cb51-33"><a href="#cb51-33" aria-hidden="true" tabindex="-1"></a><span class="co">#         "7. Formal workers",</span></span>
+<span id="cb51-34"><a href="#cb51-34" aria-hidden="true" tabindex="-1"></a><span class="co">#         "8. Informal workers",</span></span>
+<span id="cb51-35"><a href="#cb51-35" aria-hidden="true" tabindex="-1"></a><span class="co">#         "9. Informal self-employed"</span></span>
+<span id="cb51-36"><a href="#cb51-36" aria-hidden="true" tabindex="-1"></a><span class="co">#       )</span></span>
+<span id="cb51-37"><a href="#cb51-37" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
+<span id="cb51-38"><a href="#cb51-38" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb51-39"><a href="#cb51-39" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(wrightclass_v16_cap_reduced = "Wright Class Typology Reduced (v16)")</span></span>
+<span id="cb51-40"><a href="#cb51-40" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb51-41"><a href="#cb51-41" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$wrightclass_v16_cap_reduced)</span></span>
+<span id="cb51-42"><a href="#cb51-42" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb51-43"><a href="#cb51-43" aria-hidden="true" tabindex="-1"></a><span class="co"># # base survey</span></span>
+<span id="cb51-44"><a href="#cb51-44" aria-hidden="true" tabindex="-1"></a><span class="co"># data_svy &lt;- as_survey_design(data, weights = pondera)</span></span>
+<span id="cb51-45"><a href="#cb51-45" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb51-46"><a href="#cb51-46" aria-hidden="true" tabindex="-1"></a><span class="co"># # Tabla de frecuencias ponderadas</span></span>
+<span id="cb51-47"><a href="#cb51-47" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq &lt;- data_svy %&gt;%</span></span>
+<span id="cb51-48"><a href="#cb51-48" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(wrightclass_v16_cap_reduced) %&gt;%</span></span>
+<span id="cb51-49"><a href="#cb51-49" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarise(</span></span>
+<span id="cb51-50"><a href="#cb51-50" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq = survey_mean(vartype = NULL, na.rm = TRUE),</span></span>
+<span id="cb51-51"><a href="#cb51-51" aria-hidden="true" tabindex="-1"></a><span class="co">#     n_unweighted = unweighted(n())</span></span>
+<span id="cb51-52"><a href="#cb51-52" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb51-53"><a href="#cb51-53" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb51-54"><a href="#cb51-54" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq_pct = freq * 100</span></span>
+<span id="cb51-55"><a href="#cb51-55" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
+<span id="cb51-56"><a href="#cb51-56" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb51-57"><a href="#cb51-57" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
+<span id="cb51-58"><a href="#cb51-58" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <!-- ### wrightclass_v17_emp_reduced (comp cl-ar) -->
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # Modelo para comprar con datos de Argentina </span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v17_emp_reduced = case_when(</span></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 3 &amp; inicio_empresa == 1 ~ 1,                                                  # 1. Employers</span></span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 3 &amp; (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                        # 2. Small employers</span></span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 2 ~ 2,                                                                        # 2. Small employers   </span></span>
-<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 1 ~ 3,                                      # 3. Petty bourgeoisie </span></span>
-<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 1 &amp; as.integer(skills) %in% c(1, 2, 3) ~ 4,                      # 4. Managers</span></span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 2 &amp; as.integer(skills) %in% c(1, 2, 3) ~ 5,                      # 5. Supervisors</span></span>
-<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) == 1 ~ 6,                                 # 6. Experts</span></span>
-<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 1 ~ 7,         # 7. Formal workers</span></span>
-<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 0 ~ 8,         # 8. Informal workers</span></span>
-<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 1 &amp; formal_educ == 0 ~ 9,                                                          # 9. Informal self-employed</span></span>
-<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 0 ~ 9                                       # 9. Informal self-employed</span></span>
-<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a><span class="co">#     ),</span></span>
-<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v17_emp_reduced = factor(</span></span>
-<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a><span class="co">#       wrightclass_v17_emp_reduced,</span></span>
-<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a><span class="co">#       levels = 1:9,</span></span>
-<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a><span class="co">#       labels = c(</span></span>
-<span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a><span class="co">#         "1. Employers",</span></span>
-<span id="cb54-27"><a href="#cb54-27" aria-hidden="true" tabindex="-1"></a><span class="co">#         "2. Small employers",</span></span>
-<span id="cb54-28"><a href="#cb54-28" aria-hidden="true" tabindex="-1"></a><span class="co">#         "3. Petty bourgeoisie",</span></span>
-<span id="cb54-29"><a href="#cb54-29" aria-hidden="true" tabindex="-1"></a><span class="co">#         "4. Managers",       </span></span>
-<span id="cb54-30"><a href="#cb54-30" aria-hidden="true" tabindex="-1"></a><span class="co">#         "5. Supervisors",</span></span>
-<span id="cb54-31"><a href="#cb54-31" aria-hidden="true" tabindex="-1"></a><span class="co">#         "6. Experts",</span></span>
-<span id="cb54-32"><a href="#cb54-32" aria-hidden="true" tabindex="-1"></a><span class="co">#         "7. Formal workers",</span></span>
-<span id="cb54-33"><a href="#cb54-33" aria-hidden="true" tabindex="-1"></a><span class="co">#         "8. Informal workers",</span></span>
-<span id="cb54-34"><a href="#cb54-34" aria-hidden="true" tabindex="-1"></a><span class="co">#         "9. Informal self-employed"</span></span>
-<span id="cb54-35"><a href="#cb54-35" aria-hidden="true" tabindex="-1"></a><span class="co">#       )</span></span>
-<span id="cb54-36"><a href="#cb54-36" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
-<span id="cb54-37"><a href="#cb54-37" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
-<span id="cb54-38"><a href="#cb54-38" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(wrightclass_v17_emp_reduced = "Wright Class Typology Reduced (v17)")</span></span>
-<span id="cb54-39"><a href="#cb54-39" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb54-40"><a href="#cb54-40" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$wrightclass_v17_emp_reduced)</span></span>
-<span id="cb54-41"><a href="#cb54-41" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb54-42"><a href="#cb54-42" aria-hidden="true" tabindex="-1"></a><span class="co"># # base survey</span></span>
-<span id="cb54-43"><a href="#cb54-43" aria-hidden="true" tabindex="-1"></a><span class="co"># data_svy &lt;- as_survey_design(data, weights = pondera)</span></span>
-<span id="cb54-44"><a href="#cb54-44" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb54-45"><a href="#cb54-45" aria-hidden="true" tabindex="-1"></a><span class="co"># # Tabla de frecuencias ponderadas</span></span>
-<span id="cb54-46"><a href="#cb54-46" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq &lt;- data_svy %&gt;%</span></span>
-<span id="cb54-47"><a href="#cb54-47" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(wrightclass_v17_emp_reduced) %&gt;%</span></span>
-<span id="cb54-48"><a href="#cb54-48" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarise(</span></span>
-<span id="cb54-49"><a href="#cb54-49" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq = survey_mean(vartype = NULL, na.rm = TRUE),</span></span>
-<span id="cb54-50"><a href="#cb54-50" aria-hidden="true" tabindex="-1"></a><span class="co">#     n_unweighted = unweighted(n())</span></span>
-<span id="cb54-51"><a href="#cb54-51" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
-<span id="cb54-52"><a href="#cb54-52" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
-<span id="cb54-53"><a href="#cb54-53" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq_pct = freq * 100</span></span>
-<span id="cb54-54"><a href="#cb54-54" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
-<span id="cb54-55"><a href="#cb54-55" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb54-56"><a href="#cb54-56" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
-<span id="cb54-57"><a href="#cb54-57" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # Modelo para comprar con datos de Argentina </span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v17_emp_reduced = case_when(</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 3 &amp; inicio_empresa == 1 ~ 1,                                                  # 1. Employers</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 3 &amp; (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                        # 2. Small employers</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 2 ~ 2,                                                                        # 2. Small employers   </span></span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 1 ~ 3,                                      # 3. Petty bourgeoisie </span></span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 1 &amp; as.integer(skills) %in% c(1, 2, 3) ~ 4,                      # 4. Managers</span></span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 2 &amp; as.integer(skills) %in% c(1, 2, 3) ~ 5,                      # 5. Supervisors</span></span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) == 1 ~ 6,                                 # 6. Experts</span></span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 1 ~ 7,         # 7. Formal workers</span></span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 0 ~ 8,         # 8. Informal workers</span></span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 1 &amp; formal_educ == 0 ~ 9,                                                          # 9. Informal self-employed</span></span>
+<span id="cb52-20"><a href="#cb52-20" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 0 ~ 9                                       # 9. Informal self-employed</span></span>
+<span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a><span class="co">#     ),</span></span>
+<span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v17_emp_reduced = factor(</span></span>
+<span id="cb52-23"><a href="#cb52-23" aria-hidden="true" tabindex="-1"></a><span class="co">#       wrightclass_v17_emp_reduced,</span></span>
+<span id="cb52-24"><a href="#cb52-24" aria-hidden="true" tabindex="-1"></a><span class="co">#       levels = 1:9,</span></span>
+<span id="cb52-25"><a href="#cb52-25" aria-hidden="true" tabindex="-1"></a><span class="co">#       labels = c(</span></span>
+<span id="cb52-26"><a href="#cb52-26" aria-hidden="true" tabindex="-1"></a><span class="co">#         "1. Employers",</span></span>
+<span id="cb52-27"><a href="#cb52-27" aria-hidden="true" tabindex="-1"></a><span class="co">#         "2. Small employers",</span></span>
+<span id="cb52-28"><a href="#cb52-28" aria-hidden="true" tabindex="-1"></a><span class="co">#         "3. Petty bourgeoisie",</span></span>
+<span id="cb52-29"><a href="#cb52-29" aria-hidden="true" tabindex="-1"></a><span class="co">#         "4. Managers",       </span></span>
+<span id="cb52-30"><a href="#cb52-30" aria-hidden="true" tabindex="-1"></a><span class="co">#         "5. Supervisors",</span></span>
+<span id="cb52-31"><a href="#cb52-31" aria-hidden="true" tabindex="-1"></a><span class="co">#         "6. Experts",</span></span>
+<span id="cb52-32"><a href="#cb52-32" aria-hidden="true" tabindex="-1"></a><span class="co">#         "7. Formal workers",</span></span>
+<span id="cb52-33"><a href="#cb52-33" aria-hidden="true" tabindex="-1"></a><span class="co">#         "8. Informal workers",</span></span>
+<span id="cb52-34"><a href="#cb52-34" aria-hidden="true" tabindex="-1"></a><span class="co">#         "9. Informal self-employed"</span></span>
+<span id="cb52-35"><a href="#cb52-35" aria-hidden="true" tabindex="-1"></a><span class="co">#       )</span></span>
+<span id="cb52-36"><a href="#cb52-36" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
+<span id="cb52-37"><a href="#cb52-37" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb52-38"><a href="#cb52-38" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(wrightclass_v17_emp_reduced = "Wright Class Typology Reduced (v17)")</span></span>
+<span id="cb52-39"><a href="#cb52-39" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb52-40"><a href="#cb52-40" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$wrightclass_v17_emp_reduced)</span></span>
+<span id="cb52-41"><a href="#cb52-41" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb52-42"><a href="#cb52-42" aria-hidden="true" tabindex="-1"></a><span class="co"># # base survey</span></span>
+<span id="cb52-43"><a href="#cb52-43" aria-hidden="true" tabindex="-1"></a><span class="co"># data_svy &lt;- as_survey_design(data, weights = pondera)</span></span>
+<span id="cb52-44"><a href="#cb52-44" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb52-45"><a href="#cb52-45" aria-hidden="true" tabindex="-1"></a><span class="co"># # Tabla de frecuencias ponderadas</span></span>
+<span id="cb52-46"><a href="#cb52-46" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq &lt;- data_svy %&gt;%</span></span>
+<span id="cb52-47"><a href="#cb52-47" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(wrightclass_v17_emp_reduced) %&gt;%</span></span>
+<span id="cb52-48"><a href="#cb52-48" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarise(</span></span>
+<span id="cb52-49"><a href="#cb52-49" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq = survey_mean(vartype = NULL, na.rm = TRUE),</span></span>
+<span id="cb52-50"><a href="#cb52-50" aria-hidden="true" tabindex="-1"></a><span class="co">#     n_unweighted = unweighted(n())</span></span>
+<span id="cb52-51"><a href="#cb52-51" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb52-52"><a href="#cb52-52" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb52-53"><a href="#cb52-53" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq_pct = freq * 100</span></span>
+<span id="cb52-54"><a href="#cb52-54" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
+<span id="cb52-55"><a href="#cb52-55" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb52-56"><a href="#cb52-56" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
+<span id="cb52-57"><a href="#cb52-57" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <!-- ### wrightclass_v18_cap_reduced (comp cl-ar) -->
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # Modelo para comprar con datos de Argentina </span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v18_cap_reduced = case_when(</span></span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 3 &amp; inicio_empresa == 1 ~ 1,                                                  # 1. Capitalists </span></span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 3 &amp; (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                        # 2. Small employers</span></span>
-<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 2 ~ 2,                                                                        # 2. Small employers   </span></span>
-<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 1 ~ 3,                                      # 3. Petty bourgeoisie </span></span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 1 &amp; as.integer(skills) %in% c(1, 2, 3) ~ 4,                       # 4. Managers</span></span>
-<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 2 &amp; as.integer(skills) %in% c(1, 2, 3) ~ 5,                       # 5. Supervisors</span></span>
-<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) == 1 ~ 6,                                  # 6. Experts</span></span>
-<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 1 ~ 7,          # 7. Formal workers</span></span>
-<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 0 ~ 8,          # 8. Informal workers</span></span>
-<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 0 ~ 9,                                                          # 9. Informal self-employed</span></span>
-<span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 0 ~ 9                                       # 9. Informal self-employed</span></span>
-<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a><span class="co">#     ),</span></span>
-<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v18_cap_reduced = factor(</span></span>
-<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a><span class="co">#       wrightclass_v18_cap_reduced,</span></span>
-<span id="cb55-24"><a href="#cb55-24" aria-hidden="true" tabindex="-1"></a><span class="co">#       levels = 1:9,</span></span>
-<span id="cb55-25"><a href="#cb55-25" aria-hidden="true" tabindex="-1"></a><span class="co">#       labels = c(</span></span>
-<span id="cb55-26"><a href="#cb55-26" aria-hidden="true" tabindex="-1"></a><span class="co">#         "1. Capitalists",</span></span>
-<span id="cb55-27"><a href="#cb55-27" aria-hidden="true" tabindex="-1"></a><span class="co">#         "2. Small employers",</span></span>
-<span id="cb55-28"><a href="#cb55-28" aria-hidden="true" tabindex="-1"></a><span class="co">#         "3. Petty bourgeoisie",</span></span>
-<span id="cb55-29"><a href="#cb55-29" aria-hidden="true" tabindex="-1"></a><span class="co">#         "4. Managers",       </span></span>
-<span id="cb55-30"><a href="#cb55-30" aria-hidden="true" tabindex="-1"></a><span class="co">#         "5. Supervisors",</span></span>
-<span id="cb55-31"><a href="#cb55-31" aria-hidden="true" tabindex="-1"></a><span class="co">#         "6. Experts",</span></span>
-<span id="cb55-32"><a href="#cb55-32" aria-hidden="true" tabindex="-1"></a><span class="co">#         "7. Formal workers",</span></span>
-<span id="cb55-33"><a href="#cb55-33" aria-hidden="true" tabindex="-1"></a><span class="co">#         "8. Informal workers",</span></span>
-<span id="cb55-34"><a href="#cb55-34" aria-hidden="true" tabindex="-1"></a><span class="co">#         "9. Informal self-employed"</span></span>
-<span id="cb55-35"><a href="#cb55-35" aria-hidden="true" tabindex="-1"></a><span class="co">#       )</span></span>
-<span id="cb55-36"><a href="#cb55-36" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
-<span id="cb55-37"><a href="#cb55-37" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
-<span id="cb55-38"><a href="#cb55-38" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(wrightclass_v18_cap_reduced = "Wright Class Typology Reduced (v18)")</span></span>
-<span id="cb55-39"><a href="#cb55-39" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb55-40"><a href="#cb55-40" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$wrightclass_v18_cap_reduced)</span></span>
-<span id="cb55-41"><a href="#cb55-41" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb55-42"><a href="#cb55-42" aria-hidden="true" tabindex="-1"></a><span class="co"># # base survey</span></span>
-<span id="cb55-43"><a href="#cb55-43" aria-hidden="true" tabindex="-1"></a><span class="co"># data_svy &lt;- as_survey_design(data, weights = pondera)</span></span>
-<span id="cb55-44"><a href="#cb55-44" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb55-45"><a href="#cb55-45" aria-hidden="true" tabindex="-1"></a><span class="co"># # Tabla de frecuencias ponderadas</span></span>
-<span id="cb55-46"><a href="#cb55-46" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq &lt;- data_svy %&gt;%</span></span>
-<span id="cb55-47"><a href="#cb55-47" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(wrightclass_v18_cap_reduced) %&gt;%</span></span>
-<span id="cb55-48"><a href="#cb55-48" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarise(</span></span>
-<span id="cb55-49"><a href="#cb55-49" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq = survey_mean(vartype = NULL, na.rm = TRUE),</span></span>
-<span id="cb55-50"><a href="#cb55-50" aria-hidden="true" tabindex="-1"></a><span class="co">#     n_unweighted = unweighted(n())</span></span>
-<span id="cb55-51"><a href="#cb55-51" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
-<span id="cb55-52"><a href="#cb55-52" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
-<span id="cb55-53"><a href="#cb55-53" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq_pct = freq * 100</span></span>
-<span id="cb55-54"><a href="#cb55-54" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
-<span id="cb55-55"><a href="#cb55-55" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb55-56"><a href="#cb55-56" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
-<span id="cb55-57"><a href="#cb55-57" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # Modelo para comprar con datos de Argentina </span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v18_cap_reduced = case_when(</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 3 &amp; inicio_empresa == 1 ~ 1,                                                  # 1. Capitalists </span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 3 &amp; (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                        # 2. Small employers</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 2 ~ 2,                                                                        # 2. Small employers   </span></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 1 ~ 3,                                      # 3. Petty bourgeoisie </span></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 1 &amp; as.integer(skills) %in% c(1, 2, 3) ~ 4,                       # 4. Managers</span></span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 2 &amp; as.integer(skills) %in% c(1, 2, 3) ~ 5,                       # 5. Supervisors</span></span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) == 1 ~ 6,                                  # 6. Experts</span></span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 1 ~ 7,          # 7. Formal workers</span></span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 0 ~ 8,          # 8. Informal workers</span></span>
+<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 0 ~ 9,                                                          # 9. Informal self-employed</span></span>
+<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 0 ~ 9                                       # 9. Informal self-employed</span></span>
+<span id="cb53-21"><a href="#cb53-21" aria-hidden="true" tabindex="-1"></a><span class="co">#     ),</span></span>
+<span id="cb53-22"><a href="#cb53-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v18_cap_reduced = factor(</span></span>
+<span id="cb53-23"><a href="#cb53-23" aria-hidden="true" tabindex="-1"></a><span class="co">#       wrightclass_v18_cap_reduced,</span></span>
+<span id="cb53-24"><a href="#cb53-24" aria-hidden="true" tabindex="-1"></a><span class="co">#       levels = 1:9,</span></span>
+<span id="cb53-25"><a href="#cb53-25" aria-hidden="true" tabindex="-1"></a><span class="co">#       labels = c(</span></span>
+<span id="cb53-26"><a href="#cb53-26" aria-hidden="true" tabindex="-1"></a><span class="co">#         "1. Capitalists",</span></span>
+<span id="cb53-27"><a href="#cb53-27" aria-hidden="true" tabindex="-1"></a><span class="co">#         "2. Small employers",</span></span>
+<span id="cb53-28"><a href="#cb53-28" aria-hidden="true" tabindex="-1"></a><span class="co">#         "3. Petty bourgeoisie",</span></span>
+<span id="cb53-29"><a href="#cb53-29" aria-hidden="true" tabindex="-1"></a><span class="co">#         "4. Managers",       </span></span>
+<span id="cb53-30"><a href="#cb53-30" aria-hidden="true" tabindex="-1"></a><span class="co">#         "5. Supervisors",</span></span>
+<span id="cb53-31"><a href="#cb53-31" aria-hidden="true" tabindex="-1"></a><span class="co">#         "6. Experts",</span></span>
+<span id="cb53-32"><a href="#cb53-32" aria-hidden="true" tabindex="-1"></a><span class="co">#         "7. Formal workers",</span></span>
+<span id="cb53-33"><a href="#cb53-33" aria-hidden="true" tabindex="-1"></a><span class="co">#         "8. Informal workers",</span></span>
+<span id="cb53-34"><a href="#cb53-34" aria-hidden="true" tabindex="-1"></a><span class="co">#         "9. Informal self-employed"</span></span>
+<span id="cb53-35"><a href="#cb53-35" aria-hidden="true" tabindex="-1"></a><span class="co">#       )</span></span>
+<span id="cb53-36"><a href="#cb53-36" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
+<span id="cb53-37"><a href="#cb53-37" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb53-38"><a href="#cb53-38" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(wrightclass_v18_cap_reduced = "Wright Class Typology Reduced (v18)")</span></span>
+<span id="cb53-39"><a href="#cb53-39" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb53-40"><a href="#cb53-40" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$wrightclass_v18_cap_reduced)</span></span>
+<span id="cb53-41"><a href="#cb53-41" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb53-42"><a href="#cb53-42" aria-hidden="true" tabindex="-1"></a><span class="co"># # base survey</span></span>
+<span id="cb53-43"><a href="#cb53-43" aria-hidden="true" tabindex="-1"></a><span class="co"># data_svy &lt;- as_survey_design(data, weights = pondera)</span></span>
+<span id="cb53-44"><a href="#cb53-44" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb53-45"><a href="#cb53-45" aria-hidden="true" tabindex="-1"></a><span class="co"># # Tabla de frecuencias ponderadas</span></span>
+<span id="cb53-46"><a href="#cb53-46" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq &lt;- data_svy %&gt;%</span></span>
+<span id="cb53-47"><a href="#cb53-47" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(wrightclass_v18_cap_reduced) %&gt;%</span></span>
+<span id="cb53-48"><a href="#cb53-48" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarise(</span></span>
+<span id="cb53-49"><a href="#cb53-49" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq = survey_mean(vartype = NULL, na.rm = TRUE),</span></span>
+<span id="cb53-50"><a href="#cb53-50" aria-hidden="true" tabindex="-1"></a><span class="co">#     n_unweighted = unweighted(n())</span></span>
+<span id="cb53-51"><a href="#cb53-51" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb53-52"><a href="#cb53-52" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb53-53"><a href="#cb53-53" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq_pct = freq * 100</span></span>
+<span id="cb53-54"><a href="#cb53-54" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
+<span id="cb53-55"><a href="#cb53-55" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb53-56"><a href="#cb53-56" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
+<span id="cb53-57"><a href="#cb53-57" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <!-- ### wrightclass_v19_reduced (comp cl-ar) -->
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # Modelo para comprar con datos de Argentina </span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v19_reduced = case_when(</span></span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 3 &amp; inicio_empresa == 1 ~ 1,                                                  # 1. Employers </span></span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 3 &amp; (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 1,                        # 1. Employers</span></span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 2 ~ 1,                                                                        # 1. Employers   </span></span>
-<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 1 ~ 2,                                      # 2. Petty bourgeoisie </span></span>
-<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 1 &amp; as.integer(skills) %in% c(1, 2, 3) ~ 3,                       # 3. Managers</span></span>
-<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 2 &amp; as.integer(skills) %in% c(1, 2, 3) ~ 4,                       # 4. Supervisors</span></span>
-<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) == 1 ~ 5,                                  # 5. Experts</span></span>
-<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 1 ~ 6,          # 6. Formal workers</span></span>
-<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 0 ~ 7,          # 7. Informal workers</span></span>
-<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
-<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 0 ~ 8,                                                          # 8. Informal self-employed</span></span>
-<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 0 ~ 8                                       # 8. Informal self-employed</span></span>
-<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a><span class="co">#     ),</span></span>
-<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v19_reduced = factor(</span></span>
-<span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a><span class="co">#       wrightclass_v19_reduced,</span></span>
-<span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a><span class="co">#       levels = 1:8,</span></span>
-<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a><span class="co">#       labels = c(</span></span>
-<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a><span class="co">#         "1. Employers",</span></span>
-<span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a><span class="co">#         "2. Petty bourgeoisie",</span></span>
-<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a><span class="co">#         "3. Managers",       </span></span>
-<span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a><span class="co">#         "4. Supervisors",</span></span>
-<span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a><span class="co">#         "5. Experts",</span></span>
-<span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a><span class="co">#         "6. Formal workers",</span></span>
-<span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a><span class="co">#         "7. Informal workers",</span></span>
-<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a><span class="co">#         "8. Informal self-employed"</span></span>
-<span id="cb56-34"><a href="#cb56-34" aria-hidden="true" tabindex="-1"></a><span class="co">#       )</span></span>
-<span id="cb56-35"><a href="#cb56-35" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
-<span id="cb56-36"><a href="#cb56-36" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
-<span id="cb56-37"><a href="#cb56-37" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(wrightclass_v19_reduced = "Wright Class Typology Reduced (v19)")</span></span>
-<span id="cb56-38"><a href="#cb56-38" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb56-39"><a href="#cb56-39" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$wrightclass_v19_reduced)</span></span>
-<span id="cb56-40"><a href="#cb56-40" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb56-41"><a href="#cb56-41" aria-hidden="true" tabindex="-1"></a><span class="co"># # base survey</span></span>
-<span id="cb56-42"><a href="#cb56-42" aria-hidden="true" tabindex="-1"></a><span class="co"># data_svy &lt;- as_survey_design(data, weights = pondera)</span></span>
-<span id="cb56-43"><a href="#cb56-43" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb56-44"><a href="#cb56-44" aria-hidden="true" tabindex="-1"></a><span class="co"># # Tabla de frecuencias ponderadas</span></span>
-<span id="cb56-45"><a href="#cb56-45" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq &lt;- data_svy %&gt;%</span></span>
-<span id="cb56-46"><a href="#cb56-46" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(wrightclass_v19_reduced) %&gt;%</span></span>
-<span id="cb56-47"><a href="#cb56-47" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarise(</span></span>
-<span id="cb56-48"><a href="#cb56-48" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq = survey_mean(vartype = NULL, na.rm = TRUE),</span></span>
-<span id="cb56-49"><a href="#cb56-49" aria-hidden="true" tabindex="-1"></a><span class="co">#     n_unweighted = unweighted(n())</span></span>
-<span id="cb56-50"><a href="#cb56-50" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
-<span id="cb56-51"><a href="#cb56-51" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
-<span id="cb56-52"><a href="#cb56-52" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq_pct = freq * 100</span></span>
-<span id="cb56-53"><a href="#cb56-53" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
-<span id="cb56-54"><a href="#cb56-54" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb56-55"><a href="#cb56-55" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
-<span id="cb56-56"><a href="#cb56-56" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # Modelo para comprar con datos de Argentina </span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- data %&gt;%</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v19_reduced = case_when(</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 3 &amp; inicio_empresa == 1 ~ 1,                                                  # 1. Employers </span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 3 &amp; (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 1,                        # 1. Employers</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 2 ~ 1,                                                                        # 1. Employers   </span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 1 ~ 2,                                      # 2. Petty bourgeoisie </span></span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 1 &amp; as.integer(skills) %in% c(1, 2, 3) ~ 3,                       # 3. Managers</span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 2 &amp; as.integer(skills) %in% c(1, 2, 3) ~ 4,                       # 4. Supervisors</span></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) == 1 ~ 5,                                  # 5. Experts</span></span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 1 ~ 6,          # 6. Formal workers</span></span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(organization_assets) == 3 &amp; as.integer(skills) %in% c(2, 3) &amp; contrato == 0 ~ 7,          # 7. Informal workers</span></span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a><span class="co">#       </span></span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 0 ~ 8,                                                          # 8. Informal self-employed</span></span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a><span class="co">#       as.integer(owners2) == 1 &amp; formal_educ == 1 &amp; inicio_activ == 0 ~ 8                                       # 8. Informal self-employed</span></span>
+<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a><span class="co">#     ),</span></span>
+<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     wrightclass_v19_reduced = factor(</span></span>
+<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a><span class="co">#       wrightclass_v19_reduced,</span></span>
+<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a><span class="co">#       levels = 1:8,</span></span>
+<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a><span class="co">#       labels = c(</span></span>
+<span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a><span class="co">#         "1. Employers",</span></span>
+<span id="cb54-27"><a href="#cb54-27" aria-hidden="true" tabindex="-1"></a><span class="co">#         "2. Petty bourgeoisie",</span></span>
+<span id="cb54-28"><a href="#cb54-28" aria-hidden="true" tabindex="-1"></a><span class="co">#         "3. Managers",       </span></span>
+<span id="cb54-29"><a href="#cb54-29" aria-hidden="true" tabindex="-1"></a><span class="co">#         "4. Supervisors",</span></span>
+<span id="cb54-30"><a href="#cb54-30" aria-hidden="true" tabindex="-1"></a><span class="co">#         "5. Experts",</span></span>
+<span id="cb54-31"><a href="#cb54-31" aria-hidden="true" tabindex="-1"></a><span class="co">#         "6. Formal workers",</span></span>
+<span id="cb54-32"><a href="#cb54-32" aria-hidden="true" tabindex="-1"></a><span class="co">#         "7. Informal workers",</span></span>
+<span id="cb54-33"><a href="#cb54-33" aria-hidden="true" tabindex="-1"></a><span class="co">#         "8. Informal self-employed"</span></span>
+<span id="cb54-34"><a href="#cb54-34" aria-hidden="true" tabindex="-1"></a><span class="co">#       )</span></span>
+<span id="cb54-35"><a href="#cb54-35" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
+<span id="cb54-36"><a href="#cb54-36" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb54-37"><a href="#cb54-37" aria-hidden="true" tabindex="-1"></a><span class="co">#   set_variable_labels(wrightclass_v19_reduced = "Wright Class Typology Reduced (v19)")</span></span>
+<span id="cb54-38"><a href="#cb54-38" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb54-39"><a href="#cb54-39" aria-hidden="true" tabindex="-1"></a><span class="co"># frq(data$wrightclass_v19_reduced)</span></span>
+<span id="cb54-40"><a href="#cb54-40" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb54-41"><a href="#cb54-41" aria-hidden="true" tabindex="-1"></a><span class="co"># # base survey</span></span>
+<span id="cb54-42"><a href="#cb54-42" aria-hidden="true" tabindex="-1"></a><span class="co"># data_svy &lt;- as_survey_design(data, weights = pondera)</span></span>
+<span id="cb54-43"><a href="#cb54-43" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb54-44"><a href="#cb54-44" aria-hidden="true" tabindex="-1"></a><span class="co"># # Tabla de frecuencias ponderadas</span></span>
+<span id="cb54-45"><a href="#cb54-45" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq &lt;- data_svy %&gt;%</span></span>
+<span id="cb54-46"><a href="#cb54-46" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(wrightclass_v19_reduced) %&gt;%</span></span>
+<span id="cb54-47"><a href="#cb54-47" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarise(</span></span>
+<span id="cb54-48"><a href="#cb54-48" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq = survey_mean(vartype = NULL, na.rm = TRUE),</span></span>
+<span id="cb54-49"><a href="#cb54-49" aria-hidden="true" tabindex="-1"></a><span class="co">#     n_unweighted = unweighted(n())</span></span>
+<span id="cb54-50"><a href="#cb54-50" aria-hidden="true" tabindex="-1"></a><span class="co">#   ) %&gt;%</span></span>
+<span id="cb54-51"><a href="#cb54-51" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb54-52"><a href="#cb54-52" aria-hidden="true" tabindex="-1"></a><span class="co">#     freq_pct = freq * 100</span></span>
+<span id="cb54-53"><a href="#cb54-53" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
+<span id="cb54-54"><a href="#cb54-54" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb54-55"><a href="#cb54-55" aria-hidden="true" tabindex="-1"></a><span class="co"># wright_freq %&gt;%</span></span>
+<span id="cb54-56"><a href="#cb54-56" aria-hidden="true" tabindex="-1"></a><span class="co">#   print(n = Inf)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 </section>
 <section id="guardar-datos" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="guardar-datos"><span class="header-section-number">4.3</span> Guardar datos</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="at">file=</span><span class="st">"output/data/data-conclat-cl-en-clases.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="at">file=</span><span class="st">"output/data/data-conclat-cl-en-clases.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 
 
