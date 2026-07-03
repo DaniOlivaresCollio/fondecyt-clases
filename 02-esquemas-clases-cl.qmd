@@ -8,7 +8,6 @@ Capítulo para armar los diferentes esquemas de clases con la Data Conclat Chile
 rm(list=ls())
 options(scipen = 999)
 
-# install.packages("pacman")
 library(pacman)
 p_load(
   # generacion docs 
@@ -59,6 +58,14 @@ p_load(
 data <- readRDS("output/data/data-conclat-cl-en-clases.rds")
 ```
 
+### Setups
+
+```{r , message=FALSE, warning=FALSE}
+source("wright_system.R")
+source("wright_layouts_defs.R")
+source("wright_get_counts.R")
+```
+
 ## Classes
 
 ### Esquema de clases de Erik Olin Wright
@@ -66,8 +73,6 @@ data <- readRDS("output/data/data-conclat-cl-en-clases.rds")
 ![](img/wright_classes.jpeg)
 
 ### wrightclass_v1_original
-
-**employers: employers con 10 o más trabajadores**
 
 ```{r}
 data <- data %>%
@@ -130,9 +135,22 @@ wright_freq %>%
   print(n = Inf)
 ```
 
-### wrightclass_v2_capitalists
+- Esquema original con **Employers: employers con 10 o más trabajadores**.
 
-**capitalists: employers 50 o más trabajadores**
+```{r}
+#| label: fig-wright-v1
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v1 <- get_counts(data, wrightclass_v1_original)
+
+draw_wright(wright_layout("v1"), counts_v1,
+            title = "v1 · Original (Employers)",
+            row_labels_left = wright_rowlabels("v1"))
+```
+
+### wrightclass_v2_capitalists
 
 ```{r}
 data <- data %>%
@@ -193,6 +211,21 @@ wright_freq <- data_svy %>%
 
 wright_freq %>%
   print(n = Inf)
+```
+
+- Esquema original con **capitalists: employers 50 o más trabajadores**.
+
+```{r}
+#| label: fig-wright-v2
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v2 <- get_counts(data, wrightclass_v2_capitalists)
+
+draw_wright(wright_layout("v2"), counts_v2,
+            title = "v2 · Original (Capitalists)",
+            row_labels_left = wright_rowlabels("v2"))
 ```
 
 ### wrightclass_v3_emp_informal
@@ -261,6 +294,23 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema con **Employers: 10 o más trabajadores**.
+- **Trabajadores divididos en formales e informales por contrato**.
+- **Autoempleados divididos en formales e informales por emisión de boletas**.
+
+```{r}
+#| label: fig-wright-v3
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v3 <- get_counts(data, wrightclass_v3_emp_informal)
+
+draw_wright(wright_layout("v3"), counts_v3,
+            title = "v3 · Employers + Informals",
+            row_labels_left = wright_rowlabels("v3"))
+```
+
 ### wrightclass_v4_cap_informal
 
 ```{r}
@@ -327,6 +377,23 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema con **Capitalists: 50 o más trabajadores**.
+- **Trabajadores divididos en formales e informales por contrato**.
+- **Autoempleados divididos en formales e informales por emisión de boletas**.
+
+```{r}
+#| label: fig-wright-v4
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v4 <- get_counts(data, wrightclass_v4_cap_informal)
+
+draw_wright(wright_layout("v4"), counts_v4,
+            title = "v4 · Capitalists + Informals",
+            row_labels_left = wright_rowlabels("v4"))
+```
+
 ### wrightclass_v5_emp_reduced (comp. cl-ar)
 
 ```{r}
@@ -380,6 +447,25 @@ wright_freq <- data_svy %>%
 
 wright_freq %>%
   print(n = Inf)
+```
+
+- Esquema reducido con Employers: 10 o más trabajadores.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas.
+- **Se unen todos los Managers**.
+- **Se unen todos los Supervisors**.
+
+```{r}
+#| label: fig-wright-v5
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v5 <- get_counts(data, wrightclass_v5_emp_reduced)
+
+draw_wright(wright_layout("v5"), counts_v5,
+            title = "v5 · Employers reduced",
+            row_labels_left = wright_rowlabels("v5"))
 ```
 
 ### wrightclass_v6_cap_reduced (comp. cl-ar)
@@ -436,6 +522,25 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema reducido con Capitalists: 50 o más trabajadores.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas.
+- **Se unen todos los Managers**.
+- **Se unen todos los Supervisors**.
+
+```{r}
+#| label: fig-wright-v6
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v6 <- get_counts(data, wrightclass_v6_cap_reduced)
+
+draw_wright(wright_layout("v6"), counts_v6,
+            title = "v6 · Capitalists reduced",
+            row_labels_left = wright_rowlabels("v6"))
+```
+
 ### wrightclass_v7_reduced (comp. cl-ar)
 
 ```{r}
@@ -486,6 +591,25 @@ wright_freq <- data_svy %>%
 
 wright_freq %>%
   print(n = Inf)
+```
+
+- Esquema reducido con **Employers: 2 o más trabajadores**.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas.
+- **Se unen todos los Managers**.
+- **Se unen todos los Supervisors**.
+
+```{r}
+#| label: fig-wright-v7
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v7 <- get_counts(data, wrightclass_v7_reduced)
+
+draw_wright(wright_layout("v7"), counts_v7,
+            title = "v7 · Reducido Argentina",
+            row_labels_left = wright_rowlabels("v7"))
 ```
 
 ### wrightclass_v8_emp_reduced
@@ -546,6 +670,24 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema reducido con Employers: 10 o más trabajadores.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas.
+- **Se unen todos los Supervisors y Mangers no expertos**.
+
+```{r}
+#| label: fig-wright-v8
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v8 <- get_counts(data, wrightclass_v8_emp_reduced)
+
+draw_wright(wright_layout("v8"), counts_v8,
+            title = "v8 · Employers reduced",
+            row_labels_left = wright_rowlabels("v8"))
+```
+
 ### wrightclass_v9_cap_reduced
 
 ```{r}
@@ -604,6 +746,24 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema reducido con Capitalists: 50 o más trabajadores.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas.
+- **Se unen todos los Supervisors y Mangers no expertos**.
+
+```{r}
+#| label: fig-wright-v9
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v9 <- get_counts(data, wrightclass_v9_cap_reduced)
+
+draw_wright(wright_layout("v9"), counts_v9,
+            title = "v9 · Capitalists reduced",
+            row_labels_left = wright_rowlabels("v9"))
+```
+
 ### wrightclass_v10_reduced
 
 ```{r}
@@ -658,6 +818,24 @@ wright_freq <- data_svy %>%
 
 wright_freq %>%
   print(n = Inf)
+```
+
+- Esquema reducido con **Employers: 2 o más trabajadores**.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas.
+- Se unen todos los Supervisors y Mangers no expertos.
+
+```{r}
+#| label: fig-wright-v10
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v10 <- get_counts(data, wrightclass_v10_reduced)
+
+draw_wright(wright_layout("v10"), counts_v10,
+            title = "v10 · Reduced",
+            row_labels_left = wright_rowlabels("v10"))
 ```
 
 ### wrightclass_v11_emp_reduced
@@ -719,6 +897,24 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema reducido con Employers: 10 o más trabajadores.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas **más inicio de actividades**.
+- Se unen todos los Supervisors y Mangers no expertos.
+
+```{r}
+#| label: fig-wright-v11
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v11 <- get_counts(data, wrightclass_v11_emp_reduced)
+
+draw_wright(wright_layout("v11"), counts_v11,
+            title = "v11 · Employers reduced",
+            row_labels_left = wright_rowlabels("v11"))
+```
+
 ### wrightclass_v12_cap_reduced
 
 ```{r}
@@ -778,9 +974,25 @@ wright_freq %>%
   print(n = Inf)
 ```
 
-### wrightclass_v13_emp_reduced
+- Esquema reducido con Capitalists: 50 o más trabajadores.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas **más inicio de actividades**.
+- Se unen todos los Supervisors y Mangers no expertos.
 
-Se dejarán como Employers aquellos con iniciación de actividades como empresa y con ingresos >= 1000000. Employers ref
+```{r}
+#| label: fig-wright-v12
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v12 <- get_counts(data, wrightclass_v12_cap_reduced)
+
+draw_wright(wright_layout("v12"), counts_v12,
+            title = "v12 · Capitalists reduced",
+            row_labels_left = wright_rowlabels("v12"))
+```
+
+### wrightclass_v13_emp_reduced
 
 ```{r}
 data <- data %>%
@@ -844,9 +1056,25 @@ wright_freq %>%
   print(n = Inf)
 ```
 
-### wrightclass_v14_cap_reduced
+- Esquema reducido con Employers: 10 o más trabajadores, **más inicio act. como empresa, más ingresos sobre $1.000.000**.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas más inicio de actividades.
+- Se unen todos los Supervisors y Mangers no expertos.
 
-Se dejarán como capitalists aquellos con iniciación de actividades como empresa y con ingresos >= 1000000. Employers ref
+```{r}
+#| label: fig-wright-v13
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v13 <- get_counts(data, wrightclass_v13_emp_reduced)
+
+draw_wright(wright_layout("v13"), counts_v13,
+            title = "v13 · Employers reduced",
+            row_labels_left = wright_rowlabels("v13"))
+```
+
+### wrightclass_v14_cap_reduced
 
 ```{r}
 data <- data %>%
@@ -910,10 +1138,25 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema reducido con Capitalists: 50 o más trabajadores, **más inicio act. como empresa, más ingresos sobre $1.000.000**.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas más inicio de actividades.
+- Se unen todos los Supervisors y Mangers no expertos.
+
+```{r}
+#| label: fig-wright-v14
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v14 <- get_counts(data, wrightclass_v14_cap_reduced)
+
+draw_wright(wright_layout("v14"), counts_v14,
+            title = "v14 · Capitalists reduced",
+            row_labels_left = wright_rowlabels("v14"))
+```
 
 ### wrightclass_v15_emp_reduced
-
-Se dejarán como Employers aquellos con iniciación de actividades como empresa.
 
 ```{r}
 data <- data %>%
@@ -976,9 +1219,25 @@ wright_freq %>%
   print(n = Inf)
 ```
 
-### wrightclass_v16_cap_reduced
+- Esquema reducido con Employers: 10 o más trabajadores, **más inicio act. como empresa**.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas más inicio de actividades.
+- Se unen todos los Supervisors y Mangers no expertos.
 
-Se dejarán como Capitalists aquellos con iniciación de actividades como empresa.
+```{r}
+#| label: fig-wright-v15
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v15 <- get_counts(data, wrightclass_v15_emp_reduced)
+
+draw_wright(wright_layout("v15"), counts_v15,
+            title = "v15 · Employers reduced",
+            row_labels_left = wright_rowlabels("v15"))
+```
+
+### wrightclass_v16_cap_reduced
 
 ```{r}
 data <- data %>%
@@ -1039,6 +1298,24 @@ wright_freq <- data_svy %>%
 
 wright_freq %>%
   print(n = Inf)
+```
+
+- Esquema reducido con Capitalists: 50 o más trabajadores, **más inicio act. como empresa**.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas más inicio de actividades.
+- Se unen todos los Supervisors y Mangers no expertos.
+
+```{r}
+#| label: fig-wright-v16
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v16 <- get_counts(data, wrightclass_v16_cap_reduced)
+
+draw_wright(wright_layout("v16"), counts_v16,
+            title = "v16 · Capitalists reduced",
+            row_labels_left = wright_rowlabels("v16"))
 ```
 
 ### wrightclass_v17_emp_reduced (comp cl-ar)
@@ -1103,6 +1380,25 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema reducido con Employers: 10 o más trabajadores, **más inicio act. como empresa**.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas más inicio de actividades.
+- **Se unen todos los  Mangers**.
+- **Se unen todos los Supervisors**.
+
+```{r}
+#| label: fig-wright-v17
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v17 <- get_counts(data, wrightclass_v17_emp_reduced)
+
+draw_wright(wright_layout("v17"), counts_v17,
+            title = "v17 · Employers reduced",
+            row_labels_left = wright_rowlabels("v17"))
+```
+
 ### wrightclass_v18_cap_reduced (comp cl-ar)
 
 ```{r}
@@ -1165,6 +1461,25 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema reducido con Capitalists: 50 o más trabajadores, **más inicio act. como empresa**.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas más inicio de actividades.
+- **Se unen todos los  Mangers**.
+- **Se unen todos los Supervisors**.
+
+```{r}
+#| label: fig-wright-v18
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v18 <- get_counts(data, wrightclass_v18_cap_reduced)
+
+draw_wright(wright_layout("v18"), counts_v18,
+            title = "v18 · Capitalists reduced",
+            row_labels_left = wright_rowlabels("v18"))
+```
+
 ### wrightclass_v19_reduced (comp cl-ar)
 
 ```{r}
@@ -1224,6 +1539,25 @@ wright_freq <- data_svy %>%
 
 wright_freq %>%
   print(n = Inf)
+```
+
+- Esquema reducido con **Employers: 2 o más trabajadores**.
+- Trabajadores divididos en formales e informales por contrato.
+- Autoempleados divididos en formales e informales por emisión de boletas más inicio de actividades.
+- **Se unen todos los  Mangers**.
+- **Se unen todos los Supervisors**.
+
+```{r}
+#| label: fig-wright-v19
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v19 <- get_counts(data, wrightclass_v19_reduced)
+
+draw_wright(wright_layout("v19"), counts_v19,
+            title = "v19 · Reduced Argentina",
+            row_labels_left = wright_rowlabels("v19"))
 ```
 
 ## Guardar datos

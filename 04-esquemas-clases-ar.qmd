@@ -1,6 +1,6 @@
-# Esquemas Clases Chile
+# Esquemas Clases Argentina
 
-Capítulo para armar los diferentes esquemas de clases con la Data Conclat Chile, actualizada para el 26/03/2026.
+Capítulo para armar los diferentes esquemas de clases con la Data Conclat Argentina, actualizada para el 25/06/2026.
 
 ## Preparación
 
@@ -8,7 +8,6 @@ Capítulo para armar los diferentes esquemas de clases con la Data Conclat Chile
 rm(list=ls())
 options(scipen = 999)
 
-# install.packages("pacman")
 library(pacman)
 p_load(
   # generacion docs 
@@ -59,6 +58,14 @@ p_load(
 data <- readRDS("output/data/data-conclat-ar-es-clases.rds")
 ```
 
+### Setups
+
+```{r , message=FALSE, warning=FALSE}
+source("wright_system.R")
+source("wright_layouts_defs.R")
+source("wright_get_counts.R")
+```
+
 ## Classes
 
 ### Esquema de clases de Erik Olin Wright
@@ -66,8 +73,6 @@ data <- readRDS("output/data/data-conclat-ar-es-clases.rds")
 ![](img/wright_classes.jpeg)
 
 ### wrightclass_v1_original
-
-**employers: employers con 10 o más trabajadores**
 
 ```{r}
 data <- data %>%
@@ -130,9 +135,22 @@ wright_freq %>%
   print(n = Inf)
 ```
 
-### wrightclass_v2_capitalists
+- Esquema original con **Employers: employers con 10 o más trabajadores**.
 
-**capitalists: employers 50 o más trabajadores**
+```{r}
+#| label: fig-wright-v1
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v1 <- get_counts(data, wrightclass_v1_original)
+
+draw_wright(wright_layout("v1"), counts_v1,
+            title = "v1 · Original (Employers)",
+            row_labels_left = wright_rowlabels("v1"))
+```
+
+### wrightclass_v2_capitalists
 
 ```{r}
 data <- data %>%
@@ -195,6 +213,21 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema original con **capitalists: employers 50 o más trabajadores**.
+
+```{r}
+#| label: fig-wright-v2
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v2 <- get_counts(data, wrightclass_v2_capitalists)
+
+draw_wright(wright_layout("v2"), counts_v2,
+            title = "v2 · Original (Capitalists)",
+            row_labels_left = wright_rowlabels("v2"))
+```
+
 ### wrightclass_v3_emp_informal
 
 ```{r}
@@ -204,7 +237,7 @@ data <- data %>%
       as.integer(owners) == 3 ~ 1,  # 1. Employers
       as.integer(owners) == 2 ~ 2,  # 2. Small employers
 
-      as.integer(owners) == 1 & boleta == 1 ~ 3,   # 3. Petty bourgeoisie
+      as.integer(owners) == 1 & formal_educ == 1 ~ 3,   # 3. Petty bourgeoisie
 
       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,  # 4. Expert managers
       as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 5,  # 5. Expert supervisors
@@ -217,7 +250,7 @@ data <- data %>%
 
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 11, # 11. Formal workers
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 12, # 12. Informal workers
-      as.integer(owners) == 1 & boleta == 0 ~ 13                                                   # 13. Informal self-employed
+      as.integer(owners) == 1 & formal_educ == 0 ~ 13                                                   # 13. Informal self-employed
     ),
     wrightclass_v3_emp_informal = factor(
       wrightclass_v3_emp_informal,
@@ -261,6 +294,23 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema con **Employers: 10 o más trabajadores**.
+- **Trabajadores divididos en formales e informales por tipo de aportes jubilatorios**.
+- **Autoempleados divididos en formales e informales por nivel universitario completado**.
+
+```{r}
+#| label: fig-wright-v3
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v3 <- get_counts(data, wrightclass_v3_emp_informal)
+
+draw_wright(wright_layout("v3"), counts_v3,
+            title = "v3 · Employers + Informals",
+            row_labels_left = wright_rowlabels("v3"))
+```
+
 ### wrightclass_v4_cap_informal
 
 ```{r}
@@ -270,7 +320,7 @@ data <- data %>%
       as.integer(owners2) == 3 ~ 1,  # 1. Capitalists
       as.integer(owners2) == 2 ~ 2,  # 2. Small employers
 
-      as.integer(owners2) == 1 & boleta == 1 ~ 3,   # 3. Petty bourgeoisie
+      as.integer(owners2) == 1 & formal_educ == 1 ~ 3,   # 3. Petty bourgeoisie
 
       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,  # 4. Expert managers
       as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 5,  # 5. Expert supervisors
@@ -283,7 +333,7 @@ data <- data %>%
 
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 11,  # 11. Formal workers
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 12,  # 12. Informal workers
-      as.integer(owners2) == 1 & boleta == 0 ~ 13                                                   # 13. Informal self-employed
+      as.integer(owners2) == 1 & formal_educ == 0 ~ 13                                                   # 13. Informal self-employed
     ),
     wrightclass_v4_cap_informal = factor(
       wrightclass_v4_cap_informal,
@@ -327,6 +377,23 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema con **Capitalists: 50 o más trabajadores**.
+- **Trabajadores divididos en formales e informales por tipo de aportes jubilatorios**.
+- **Autoempleados divididos en formales e informales por nivel universitario completado**.
+
+```{r}
+#| label: fig-wright-v4
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v4 <- get_counts(data, wrightclass_v4_cap_informal)
+
+draw_wright(wright_layout("v4"), counts_v4,
+            title = "v4 · Capitalists + Informals",
+            row_labels_left = wright_rowlabels("v4"))
+```
+
 ### wrightclass_v5_emp_reduced (comp. cl-ar)
 
 ```{r}
@@ -336,13 +403,13 @@ data <- data %>%
     wrightclass_v5_emp_reduced = case_when(
       as.integer(owners) == 3 ~ 1,                                                                 # 1. Employers
       as.integer(owners) == 2 ~ 2,                                                                 # 2. Small employers
-      as.integer(owners) == 1 & boleta == 1 ~ 3,                                                   # 3. Petty bourgeoisie
+      as.integer(owners) == 1 & formal_educ == 1 ~ 3,                                                   # 3. Petty bourgeoisie
       as.integer(organization_assets) == 1 & as.integer(skills) %in% c(1, 2, 3) ~ 4,               # 4. Managers
       as.integer(organization_assets) == 2 & as.integer(skills) %in% c(1, 2, 3) ~ 5,               # 5. Supervisors
       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 6,                          # 6. Experts
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,  # 7. Formal workers
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,  # 8. Informal workers
-      as.integer(owners) == 1 & boleta == 0 ~ 9                                                    # 9. Informal self-employed
+      as.integer(owners) == 1 & formal_educ == 0 ~ 9                                                    # 9. Informal self-employed
     ),
     wrightclass_v5_emp_reduced = factor(
       wrightclass_v5_emp_reduced,
@@ -382,6 +449,25 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema reducido con Employers: 10 o más trabajadores.
+- Trabajadores divididos en formales e informales por tipo de aportes jubilatorios.
+- Autoempleados divididos en formales e informales por nivel universitario completado.
+- **Se unen todos los Managers**.
+- **Se unen todos los Supervisors**.
+
+```{r}
+#| label: fig-wright-v5
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v5 <- get_counts(data, wrightclass_v5_emp_reduced)
+
+draw_wright(wright_layout("v5"), counts_v5,
+            title = "v5 · Employers reduced",
+            row_labels_left = wright_rowlabels("v5"))
+```
+
 ### wrightclass_v6_cap_reduced (comp. cl-ar)
 
 ```{r}
@@ -390,13 +476,13 @@ data <- data %>%
     wrightclass_v6_cap_reduced = case_when(
       as.integer(owners2) == 3 ~ 1,                                                                    # 1. Capitalists
       as.integer(owners2) == 2 ~ 2,                                                                    # 2. Small employers
-      as.integer(owners2) == 1 & boleta == 1 ~ 3,                                                      # 3. Petty bourgeoisie
+      as.integer(owners2) == 1 & formal_educ == 1 ~ 3,                                                      # 3. Petty bourgeoisie
       as.integer(organization_assets) == 1 & as.integer(skills) %in% c(1, 2, 3) ~ 4,                   # 4. Managers
       as.integer(organization_assets) == 2 & as.integer(skills) %in% c(1, 2, 3) ~ 5,                   # 5. Supervisors
       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 6,                              # 6. Experts
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,      # 7. Formal workers
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,      # 8. Informal workers
-      as.integer(owners2) == 1 & boleta == 0 ~ 9                                                       # 9. Informal self-employed
+      as.integer(owners2) == 1 & formal_educ == 0 ~ 9                                                       # 9. Informal self-employed
     ),
     wrightclass_v6_cap_reduced = factor(
       wrightclass_v6_cap_reduced,
@@ -436,6 +522,25 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema reducido con Capitalists: 50 o más trabajadores.
+- Trabajadores divididos en formales e informales por tipo de aportes jubilatorios.
+- Autoempleados divididos en formales e informales por nivel universitario completado.
+- **Se unen todos los Managers**.
+- **Se unen todos los Supervisors**.
+
+```{r}
+#| label: fig-wright-v6
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v6 <- get_counts(data, wrightclass_v6_cap_reduced)
+
+draw_wright(wright_layout("v6"), counts_v6,
+            title = "v6 · Capitalists reduced",
+            row_labels_left = wright_rowlabels("v6"))
+```
+
 ### wrightclass_v7_reduced (comp. cl-ar)
 
 ```{r}
@@ -443,13 +548,13 @@ data <- data %>%
   mutate(
     wrightclass_v7_reduced = case_when(
       as.integer(owners) %in% c(2, 3) ~ 1,                                                         # 1. Employers
-      as.integer(owners) == 1 & boleta == 1 ~ 2,                                                   # 2. Petty bourgeoisie
+      as.integer(owners) == 1 & formal_educ == 1 ~ 2,                                                   # 2. Petty bourgeoisie
       as.integer(organization_assets) == 1 & as.integer(skills) %in% c(1, 2, 3) ~ 3,               # 3. Managers
       as.integer(organization_assets) == 2 & as.integer(skills) %in% c(1, 2, 3) ~ 4,               # 4. Supervisors
       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                          # 5. Experts
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 6,  # 6. Formal workers
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 7,  # 7. Informal workers
-      as.integer(owners) == 1 & boleta == 0 ~ 8                                                    # 8. Informal self-employed
+      as.integer(owners) == 1 & formal_educ == 0 ~ 8                                                    # 8. Informal self-employed
     ),
     wrightclass_v7_reduced = factor(
       wrightclass_v7_reduced,
@@ -488,6 +593,25 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema reducido con **Employers: 2 o más trabajadores**.
+- Trabajadores divididos en formales e informales por tipo de aportes jubilatorios.
+- Autoempleados divididos en formales e informales por nivel universitario completado.
+- **Se unen todos los Managers**.
+- **Se unen todos los Supervisors**.
+
+```{r}
+#| label: fig-wright-v7
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v7 <- get_counts(data, wrightclass_v7_reduced)
+
+draw_wright(wright_layout("v7"), counts_v7,
+            title = "v7 · Reducido Argentina",
+            row_labels_left = wright_rowlabels("v7"))
+```
+
 ### wrightclass_v8_emp_reduced
 
 ```{r}
@@ -496,7 +620,7 @@ data <- data %>%
     wrightclass_v8_emp_reduced = case_when(
       as.integer(owners) == 3 ~ 1,                                                                   # 1. Employers
       as.integer(owners) == 2 ~ 2,                                                                   # 2. Small employers
-      as.integer(owners) == 1 & boleta == 1 ~ 3,                                                     # 3. Petty bourgeoisie
+      as.integer(owners) == 1 & formal_educ == 1 ~ 3,                                                     # 3. Petty bourgeoisie
 
       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                            # 4. Expert managers
       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                            # 5. Experts
@@ -506,7 +630,7 @@ data <- data %>%
 
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,    # 7. Formal workers
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,    # 8. Informal workers
-      as.integer(owners) == 1 & boleta == 0 ~ 9                                                      # 9. Informal self-employed
+      as.integer(owners) == 1 & formal_educ == 0 ~ 9                                                      # 9. Informal self-employed
     ),
     wrightclass_v8_emp_reduced = factor(
       wrightclass_v8_emp_reduced,
@@ -546,6 +670,24 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema reducido con Employers: 10 o más trabajadores.
+- Trabajadores divididos en formales e informales por tipo de aportes jubilatorios.
+- Autoempleados divididos en formales e informales por nivel universitario completado.
+- **Se unen todos los Supervisors y Mangers no expertos**.
+
+```{r}
+#| label: fig-wright-v8
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v8 <- get_counts(data, wrightclass_v8_emp_reduced)
+
+draw_wright(wright_layout("v8"), counts_v8,
+            title = "v8 · Employers reduced",
+            row_labels_left = wright_rowlabels("v8"))
+```
+
 ### wrightclass_v9_cap_reduced
 
 ```{r}
@@ -554,7 +696,7 @@ data <- data %>%
     wrightclass_v9_cap_reduced = case_when(
       as.integer(owners2) == 3 ~ 1,                                                                   # 1. Capitalists
       as.integer(owners2) == 2 ~ 2,                                                                   # 2. Small employers
-      as.integer(owners2) == 1 & boleta == 1 ~ 3,                                                     # 3. Petty bourgeoisie
+      as.integer(owners2) == 1 & formal_educ == 1 ~ 3,                                                     # 3. Petty bourgeoisie
 
       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                             # 4. Expert managers
       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                             # 5. Experts
@@ -564,7 +706,7 @@ data <- data %>%
 
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,     # 7. Formal workers
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,     # 8. Informal workers
-      as.integer(owners2) == 1 & boleta == 0 ~ 9                                                      # 9. Informal self-employed
+      as.integer(owners2) == 1 & formal_educ == 0 ~ 9                                                      # 9. Informal self-employed
     ),
     wrightclass_v9_cap_reduced = factor(
       wrightclass_v9_cap_reduced,
@@ -604,6 +746,24 @@ wright_freq %>%
   print(n = Inf)
 ```
 
+- Esquema reducido con Capitalists: 50 o más trabajadores.
+- Trabajadores divididos en formales e informales por tipo de aportes jubilatorios.
+- Autoempleados divididos en formales e informales por nivel universitario completado.
+- **Se unen todos los Supervisors y Mangers no expertos**.
+
+```{r}
+#| label: fig-wright-v9
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v9 <- get_counts(data, wrightclass_v9_cap_reduced)
+
+draw_wright(wright_layout("v9"), counts_v9,
+            title = "v9 · Capitalists reduced",
+            row_labels_left = wright_rowlabels("v9"))
+```
+
 ### wrightclass_v10_reduced
 
 ```{r}
@@ -611,7 +771,7 @@ data <- data %>%
   mutate(
     wrightclass_v10_reduced = case_when(
       as.integer(owners) %in% c(2, 3) ~ 1,                                                             # 1. Employers
-      as.integer(owners) == 1 & boleta == 1 ~ 2,                                                       # 2. Petty bourgeoisie
+      as.integer(owners) == 1 & formal_educ == 1 ~ 2,                                                       # 2. Petty bourgeoisie
 
       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 3,                              # 3. Expert managers
       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 4,                              # 4. Experts
@@ -621,7 +781,7 @@ data <- data %>%
 
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 6,      # 6. Formal workers
       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 7,      # 7. Informal workers
-      as.integer(owners) == 1 & boleta == 0 ~ 8                                                        # 8. Informal self-employed
+      as.integer(owners) == 1 & formal_educ == 0 ~ 8                                                        # 8. Informal self-employed
     ),
     wrightclass_v10_reduced = factor(
       wrightclass_v10_reduced,
@@ -660,26 +820,44 @@ wright_freq %>%
   print(n = Inf)
 ```
 
-### wrightclass_v11_emp_reduced
+- Esquema reducido con **Employers: 2 o más trabajadores**.
+- Trabajadores divididos en formales e informales por tipo de aportes jubilatorios.
+- Autoempleados divididos en formales e informales por nivel universitario completado.
+- Se unen todos los Supervisors y Mangers no expertos.
+
+```{r}
+#| label: fig-wright-v10
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v10 <- get_counts(data, wrightclass_v10_reduced)
+
+draw_wright(wright_layout("v10"), counts_v10,
+            title = "v10 · Reduced",
+            row_labels_left = wright_rowlabels("v10"))
+```
+
+<!-- ### wrightclass_v11_emp_reduced -->
 
 ```{r}
 # data <- data %>%
 #   mutate(
 #     wrightclass_v11_emp_reduced = case_when(
 #       as.integer(owners) == 3 ~ 1,                                                                    # 1. Employers
-#       as.integer(owners) == 2 ~ 2,                                                                    # 2. Small employers   
-#       as.integer(owners) == 1 & boleta == 1 & inicio_activ == 1 ~ 3,                                  # 3. Petty bourgeoisie  
-#       
-#       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                             # 4. Expert managers   
-#       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                             # 5. Experts  
-#       
+#       as.integer(owners) == 2 ~ 2,                                                                    # 2. Small employers
+#       as.integer(owners) == 1 & formal_educ == 1 & inicio_activ == 1 ~ 3,                             # 3. Petty bourgeoisie
+# 
+#       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                             # 4. Expert managers
+#       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                             # 5. Experts
+# 
 #       as.integer(organization_assets) %in% c(1, 2) & as.integer(skills) %in% c(2, 3) ~ 6,             # 6. Skilled y Nonskilled Supervisors
 #       as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,                             # 6. Skilled y Nonskilled Supervisors
 # 
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,     # 7. Formal workers
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,     # 8. Informal workers
-#       as.integer(owners) == 1 & boleta == 1 & inicio_activ == 0 ~ 9,                                  # 9. Informal self-employed
-#       as.integer(owners) == 1 & boleta == 0 ~ 9                                                       # 9. Informal self-employed
+#       as.integer(owners) == 1 & formal_educ == 1 & inicio_activ == 0 ~ 9,                                  # 9. Informal self-employed
+#       as.integer(owners) == 1 & formal_educ == 0 ~ 9                                                       # 9. Informal self-employed
 #     ),
 #     wrightclass_v11_emp_reduced = factor(
 #       wrightclass_v11_emp_reduced,
@@ -719,7 +897,7 @@ wright_freq %>%
 #   print(n = Inf)
 ```
 
-### wrightclass_v12_cap_reduced
+<!-- ### wrightclass_v12_cap_reduced -->
 
 ```{r}
 # data <- data %>%
@@ -727,7 +905,7 @@ wright_freq %>%
 #     wrightclass_v12_cap_reduced = case_when(
 #       as.integer(owners2) == 3 ~ 1,                                                                    # 1. Capitalists
 #       as.integer(owners2) == 2 ~ 2,                                                                    # 2. Small employers   
-#       as.integer(owners2) == 1 & boleta == 1 & inicio_activ == 1 ~ 3,                                  # 3. Petty bourgeoisie  
+#       as.integer(owners2) == 1 & formal_educ == 1 & inicio_activ == 1 ~ 3,                                  # 3. Petty bourgeoisie  
 #       
 #       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                              # 4. Expert managers   
 #       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                              # 5. Experts  
@@ -737,8 +915,8 @@ wright_freq %>%
 # 
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,      # 7. Formal workers
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,      # 8. Informal workers
-#       as.integer(owners2) == 1 & boleta == 1 & inicio_activ == 0 ~ 9,                                  # 9. Informal self-employed
-#       as.integer(owners2) == 1 & boleta == 0 ~ 9                                                       # 9. Informal self-employed
+#       as.integer(owners2) == 1 & formal_educ == 1 & inicio_activ == 0 ~ 9,                                  # 9. Informal self-employed
+#       as.integer(owners2) == 1 & formal_educ == 0 ~ 9                                                       # 9. Informal self-employed
 #     ),
 #     wrightclass_v12_cap_reduced = factor(
 #       wrightclass_v12_cap_reduced,
@@ -778,33 +956,31 @@ wright_freq %>%
 #   print(n = Inf)
 ```
 
-### wrightclass_v13_emp_reduced
-
-Se dejarán como Employers aquellos con iniciación de actividades como empresa y con ingresos >= 1000000. Employers ref
+<!-- ### wrightclass_v13_emp_reduced -->
 
 ```{r}
 # data <- data %>%
 #   mutate(
 #     wrightclass_v13_emp_reduced = case_when(
 #       as.integer(owners) == 3 & inicio_empresa == 1 & !is.na(income_rec) & income_rec >= 1000000 ~ 1,         # 1. Employers
-#       
+# 
 #       as.integer(owners) == 3 & inicio_empresa == 1 & (income_rec < 1000000 | is.na(income_rec)) ~ 2,         # 2. Small employers
 #       as.integer(owners) == 3 & (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                            # 2. Small employers
-#       as.integer(owners) == 2 ~ 2,                                                                            # 2. Small employers   
-#       
-#       as.integer(owners) == 1 & boleta == 1 & inicio_activ == 1 ~ 3,                                          # 3. Petty bourgeoisie  
-#       
-#       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                                     # 4. Expert managers   
-#       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                                     # 5. Experts  
-#       
+#       as.integer(owners) == 2 ~ 2,                                                                            # 2. Small employers
+# 
+#       as.integer(owners) == 1 & formal_educ == 1 & inicio_activ == 1 ~ 3,                                          # 3. Petty bourgeoisie
+# 
+#       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                                     # 4. Expert managers
+#       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                                     # 5. Experts
+# 
 #       as.integer(organization_assets) %in% c(1, 2) & as.integer(skills) %in% c(2, 3) ~ 6,                     # 6. Skilled y Unskilled Supervisors
 #       as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,                                     # 6. Skilled y Unskilled Supervisors
 # 
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,             # 7. Formal workers
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,             # 8. Informal workers
-#       
-#       as.integer(owners) == 1 & boleta == 0 ~ 9,                                                              # 9. Informal self-employed
-#       as.integer(owners) == 1 & boleta == 1 & inicio_activ == 0 ~ 9                                           # 9. Informal self-employed
+# 
+#       as.integer(owners) == 1 & formal_educ == 0 ~ 9,                                                              # 9. Informal self-employed
+#       as.integer(owners) == 1 & formal_educ == 1 & inicio_activ == 0 ~ 9                                           # 9. Informal self-employed
 #     ),
 #     wrightclass_v13_emp_reduced = factor(
 #       wrightclass_v13_emp_reduced,
@@ -844,9 +1020,7 @@ Se dejarán como Employers aquellos con iniciación de actividades como empresa 
 #   print(n = Inf)
 ```
 
-### wrightclass_v14_cap_reduced
-
-Se dejarán como capitalists aquellos con iniciación de actividades como empresa y con ingresos >= 1000000. Employers ref
+<!-- ### wrightclass_v14_cap_reduced -->
 
 ```{r}
 # data <- data %>%
@@ -858,7 +1032,7 @@ Se dejarán como capitalists aquellos con iniciación de actividades como empres
 #       as.integer(owners2) == 3 & (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                           # 2. Small employers
 #       as.integer(owners2) == 2 ~ 2,                                                                           # 2. Small employers   
 #       
-#       as.integer(owners2) == 1 & boleta == 1 & inicio_activ == 1 ~ 3,                                         # 3. Petty bourgeoisie  
+#       as.integer(owners2) == 1 & formal_educ == 1 & inicio_activ == 1 ~ 3,                                         # 3. Petty bourgeoisie  
 #       
 #       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                                     # 4. Expert managers   
 #       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                                     # 5. Experts  
@@ -869,8 +1043,8 @@ Se dejarán como capitalists aquellos con iniciación de actividades como empres
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,             # 7. Formal workers
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,             # 8. Informal workers
 #       
-#       as.integer(owners2) == 1 & boleta == 0 ~ 9,                                                             # 9. Informal self-employed
-#       as.integer(owners2) == 1 & boleta == 1 & inicio_activ == 0 ~ 9                                          # 9. Informal self-employed
+#       as.integer(owners2) == 1 & formal_educ == 0 ~ 9,                                                             # 9. Informal self-employed
+#       as.integer(owners2) == 1 & formal_educ == 1 & inicio_activ == 0 ~ 9                                          # 9. Informal self-employed
 #     ),
 #     wrightclass_v14_cap_reduced = factor(
 #       wrightclass_v14_cap_reduced,
@@ -913,72 +1087,86 @@ Se dejarán como capitalists aquellos con iniciación de actividades como empres
 
 ### wrightclass_v15_emp_reduced
 
-Se dejarán como Employers aquellos con iniciación de actividades como empresa.
-
 ```{r}
-# data <- data %>%
-#   mutate(
-#     wrightclass_v15_emp_reduced = case_when(
-#       as.integer(owners) == 3 & inicio_empresa == 1 ~ 1,                                             # 1. Employers
-#       
-#       as.integer(owners) == 3 & (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                   # 2. Small employers
-#       as.integer(owners) == 2 ~ 2,                                                                   # 2. Small employers   
-#       
-#       as.integer(owners) == 1 & boleta == 1 & inicio_activ == 1 ~ 3,                                 # 3. Petty bourgeoisie  
-#       
-#       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                            # 4. Expert managers  
-#       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                            # 5. Experts  
-#       
-#       as.integer(organization_assets) %in% c(1, 2) & as.integer(skills) %in% c(2, 3) ~ 6,            # 6. Skilled y Nonskilled Supervisors
-#       as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,                            # 6. Skilled y Nonskilled Supervisors
-# 
-#       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,    # 7. Formal workers
-#       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,    # 8. Informal workers
-#       
-#       as.integer(owners) == 1 & boleta == 0 ~ 9,                                                     # 9. Informal self-employed
-#       as.integer(owners) == 1 & boleta == 1 & inicio_activ == 0 ~ 9                                  # 9. Informal self-employed
-#     ),
-#     wrightclass_v15_emp_reduced = factor(
-#       wrightclass_v15_emp_reduced,
-#       levels = 1:9,
-#       labels = c(
-#         "1. Employers",
-#         "2. Small employers",
-#         "3. Petty bourgeoisie",
-#         "4. Expert managers",
-#         "5. Experts",
-#         "6. Skilled & Nonskilled Supervisors",
-#         "7. Formal workers",
-#         "8. Informal workers",
-#         "9. Informal self-employed"
-#       )
-#     )
-#   ) %>%
-#   set_variable_labels(wrightclass_v15_emp_reduced = "Wright Class Typology Reduced (v15)")
-# 
-# frq(data$wrightclass_v15_emp_reduced)
-# 
-# # base survey
-# data_svy <- as_survey_design(data, weights = pondera)
-# 
-# # Tabla de frecuencias ponderadas
-# wright_freq <- data_svy %>%
-#   group_by(wrightclass_v15_emp_reduced) %>%
-#   summarise(
-#     freq = survey_mean(vartype = NULL, na.rm = TRUE),
-#     n_unweighted = unweighted(n())
-#   ) %>%
-#   mutate(
-#     freq_pct = freq * 100
-#   )
-# 
-# wright_freq %>%
-#   print(n = Inf)
+data <- data %>%
+  mutate(
+    wrightclass_v15_emp_reduced = case_when(
+      as.integer(owners) == 3 & formal_educ == 1 ~ 1,                                             # 1. Employers
+
+      as.integer(owners) == 3 & (formal_educ == 0 | is.na(formal_educ)) ~ 2,                   # 2. Small employers
+      as.integer(owners) == 2 ~ 2,                                                                   # 2. Small employers
+
+      as.integer(owners) == 1 & formal_educ == 1 ~ 3,                                 # 3. Petty bourgeoisie
+
+      as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                            # 4. Expert managers
+      as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                            # 5. Experts
+
+      as.integer(organization_assets) %in% c(1, 2) & as.integer(skills) %in% c(2, 3) ~ 6,            # 6. Skilled y Nonskilled Supervisors
+      as.integer(organization_assets) == 2 & as.integer(skills) == 1 ~ 6,                            # 6. Skilled y Nonskilled Supervisors
+
+      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,    # 7. Formal workers
+      as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,    # 8. Informal workers
+
+      as.integer(owners) == 1 & formal_educ == 0 ~ 9                                                     # 9. Informal self-employed
+                                        # 9. Informal self-employed
+    ),
+    wrightclass_v15_emp_reduced = factor(
+      wrightclass_v15_emp_reduced,
+      levels = 1:9,
+      labels = c(
+        "1. Employers",
+        "2. Small employers",
+        "3. Petty bourgeoisie",
+        "4. Expert managers",
+        "5. Experts",
+        "6. Skilled & Nonskilled Supervisors",
+        "7. Formal workers",
+        "8. Informal workers",
+        "9. Informal self-employed"
+      )
+    )
+  ) %>%
+  set_variable_labels(wrightclass_v15_emp_reduced = "Wright Class Typology Reduced (v15)")
+
+frq(data$wrightclass_v15_emp_reduced)
+
+# base survey
+data_svy <- as_survey_design(data, weights = pondera)
+
+# Tabla de frecuencias ponderadas
+wright_freq <- data_svy %>%
+  group_by(wrightclass_v15_emp_reduced) %>%
+  summarise(
+    freq = survey_mean(vartype = NULL, na.rm = TRUE),
+    n_unweighted = unweighted(n())
+  ) %>%
+  mutate(
+    freq_pct = freq * 100
+  )
+
+wright_freq %>%
+  print(n = Inf)
 ```
 
-### wrightclass_v16_cap_reduced
+- Esquema reducido con Employers: 10 o más trabajadores, **más inicio act. como empresa**.
+- Trabajadores divididos en formales e informales por tipo de aportes jubilatorios.
+- Autoempleados divididos en formales e informales por nivel universitario completado. (No hay inicio de actividades como en Chile)
+- Se unen todos los Supervisors y Mangers no expertos.
 
-Se dejarán como Capitalists aquellos con iniciación de actividades como empresa.
+```{r}
+#| label: fig-wright-v15
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v15 <- get_counts(data, wrightclass_v15_emp_reduced)
+
+draw_wright(wright_layout("v15"), counts_v15,
+            title = "v15 · Employers reduced",
+            row_labels_left = wright_rowlabels("v15"))
+```
+
+<!-- ### wrightclass_v16_cap_reduced -->
 
 ```{r}
 # data <- data %>%
@@ -989,7 +1177,7 @@ Se dejarán como Capitalists aquellos con iniciación de actividades como empres
 #       as.integer(owners2) == 3 & (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                   # 2. Small employers
 #       as.integer(owners2) == 2 ~ 2,                                                                   # 2. Small employers   
 #       
-#       as.integer(owners2) == 1 & boleta == 1 & inicio_activ == 1 ~ 3,                                 # 3. Petty bourgeoisie  
+#       as.integer(owners2) == 1 & formal_educ == 1 & inicio_activ == 1 ~ 3,                                 # 3. Petty bourgeoisie  
 #       
 #       as.integer(organization_assets) == 1 & as.integer(skills) == 1 ~ 4,                             # 4. Expert managers  
 #       as.integer(organization_assets) == 3 & as.integer(skills) == 1 ~ 5,                             # 5. Experts  
@@ -1000,8 +1188,8 @@ Se dejarán como Capitalists aquellos con iniciación de actividades como empres
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,     # 7. Formal workers
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,     # 8. Informal workers
 #       
-#       as.integer(owners2) == 1 & boleta == 0 ~ 9,                                                     # 9. Informal self-employed
-#       as.integer(owners2) == 1 & boleta == 1 & inicio_activ == 0 ~ 9                                  # 9. Informal self-employed
+#       as.integer(owners2) == 1 & formal_educ == 0 ~ 9,                                                     # 9. Informal self-employed
+#       as.integer(owners2) == 1 & formal_educ == 1 & inicio_activ == 0 ~ 9                                  # 9. Informal self-employed
 #     ),
 #     wrightclass_v16_cap_reduced = factor(
 #       wrightclass_v16_cap_reduced,
@@ -1041,7 +1229,7 @@ Se dejarán como Capitalists aquellos con iniciación de actividades como empres
 #   print(n = Inf)
 ```
 
-### wrightclass_v17_emp_reduced (comp cl-ar)
+<!-- ### wrightclass_v17_emp_reduced (comp cl-ar) -->
 
 ```{r}
 # # Modelo para comprar con datos de Argentina 
@@ -1053,7 +1241,7 @@ Se dejarán como Capitalists aquellos con iniciación de actividades como empres
 #       as.integer(owners) == 3 & (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                        # 2. Small employers
 #       as.integer(owners) == 2 ~ 2,                                                                        # 2. Small employers   
 #       
-#       as.integer(owners) == 1 & boleta == 1 & inicio_activ == 1 ~ 3,                                      # 3. Petty bourgeoisie 
+#       as.integer(owners) == 1 & formal_educ == 1 & inicio_activ == 1 ~ 3,                                      # 3. Petty bourgeoisie 
 #       
 #       as.integer(organization_assets) == 1 & as.integer(skills) %in% c(1, 2, 3) ~ 4,                      # 4. Managers
 #       as.integer(organization_assets) == 2 & as.integer(skills) %in% c(1, 2, 3) ~ 5,                      # 5. Supervisors
@@ -1062,8 +1250,8 @@ Se dejarán como Capitalists aquellos con iniciación de actividades como empres
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,         # 7. Formal workers
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,         # 8. Informal workers
 #       
-#       as.integer(owners) == 1 & boleta == 0 ~ 9,                                                          # 9. Informal self-employed
-#       as.integer(owners) == 1 & boleta == 1 & inicio_activ == 0 ~ 9                                       # 9. Informal self-employed
+#       as.integer(owners) == 1 & formal_educ == 0 ~ 9,                                                          # 9. Informal self-employed
+#       as.integer(owners) == 1 & formal_educ == 1 & inicio_activ == 0 ~ 9                                       # 9. Informal self-employed
 #     ),
 #     wrightclass_v17_emp_reduced = factor(
 #       wrightclass_v17_emp_reduced,
@@ -1103,7 +1291,7 @@ Se dejarán como Capitalists aquellos con iniciación de actividades como empres
 #   print(n = Inf)
 ```
 
-### wrightclass_v18_cap_reduced (comp cl-ar)
+<!-- ### wrightclass_v18_cap_reduced (comp cl-ar) -->
 
 ```{r}
 # # Modelo para comprar con datos de Argentina 
@@ -1115,7 +1303,7 @@ Se dejarán como Capitalists aquellos con iniciación de actividades como empres
 #       as.integer(owners2) == 3 & (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 2,                        # 2. Small employers
 #       as.integer(owners2) == 2 ~ 2,                                                                        # 2. Small employers   
 #       
-#       as.integer(owners2) == 1 & boleta == 1 & inicio_activ == 1 ~ 3,                                      # 3. Petty bourgeoisie 
+#       as.integer(owners2) == 1 & formal_educ == 1 & inicio_activ == 1 ~ 3,                                      # 3. Petty bourgeoisie 
 #       
 #       as.integer(organization_assets) == 1 & as.integer(skills) %in% c(1, 2, 3) ~ 4,                       # 4. Managers
 #       as.integer(organization_assets) == 2 & as.integer(skills) %in% c(1, 2, 3) ~ 5,                       # 5. Supervisors
@@ -1124,8 +1312,8 @@ Se dejarán como Capitalists aquellos con iniciación de actividades como empres
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 7,          # 7. Formal workers
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 8,          # 8. Informal workers
 #       
-#       as.integer(owners2) == 1 & boleta == 0 ~ 9,                                                          # 9. Informal self-employed
-#       as.integer(owners2) == 1 & boleta == 1 & inicio_activ == 0 ~ 9                                       # 9. Informal self-employed
+#       as.integer(owners2) == 1 & formal_educ == 0 ~ 9,                                                          # 9. Informal self-employed
+#       as.integer(owners2) == 1 & formal_educ == 1 & inicio_activ == 0 ~ 9                                       # 9. Informal self-employed
 #     ),
 #     wrightclass_v18_cap_reduced = factor(
 #       wrightclass_v18_cap_reduced,
@@ -1165,7 +1353,7 @@ Se dejarán como Capitalists aquellos con iniciación de actividades como empres
 #   print(n = Inf)
 ```
 
-### wrightclass_v19_reduced (comp cl-ar)
+<!-- ### wrightclass_v19_reduced (comp cl-ar) -->
 
 ```{r}
 # # Modelo para comprar con datos de Argentina 
@@ -1177,7 +1365,7 @@ Se dejarán como Capitalists aquellos con iniciación de actividades como empres
 #       as.integer(owners2) == 3 & (inicio_empresa == 0 | is.na(inicio_empresa)) ~ 1,                        # 1. Employers
 #       as.integer(owners2) == 2 ~ 1,                                                                        # 1. Employers   
 #       
-#       as.integer(owners2) == 1 & boleta == 1 & inicio_activ == 1 ~ 2,                                      # 2. Petty bourgeoisie 
+#       as.integer(owners2) == 1 & formal_educ == 1 & inicio_activ == 1 ~ 2,                                      # 2. Petty bourgeoisie 
 #       
 #       as.integer(organization_assets) == 1 & as.integer(skills) %in% c(1, 2, 3) ~ 3,                       # 3. Managers
 #       as.integer(organization_assets) == 2 & as.integer(skills) %in% c(1, 2, 3) ~ 4,                       # 4. Supervisors
@@ -1186,8 +1374,8 @@ Se dejarán como Capitalists aquellos con iniciación de actividades como empres
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 1 ~ 6,          # 6. Formal workers
 #       as.integer(organization_assets) == 3 & as.integer(skills) %in% c(2, 3) & contrato == 0 ~ 7,          # 7. Informal workers
 #       
-#       as.integer(owners2) == 1 & boleta == 0 ~ 8,                                                          # 8. Informal self-employed
-#       as.integer(owners2) == 1 & boleta == 1 & inicio_activ == 0 ~ 8                                       # 8. Informal self-employed
+#       as.integer(owners2) == 1 & formal_educ == 0 ~ 8,                                                          # 8. Informal self-employed
+#       as.integer(owners2) == 1 & formal_educ == 1 & inicio_activ == 0 ~ 8                                       # 8. Informal self-employed
 #     ),
 #     wrightclass_v19_reduced = factor(
 #       wrightclass_v19_reduced,

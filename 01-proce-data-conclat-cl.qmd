@@ -8,7 +8,6 @@ Capítulo para el procesamiento de la Data Conclat Chile para generar los esquem
 rm(list=ls())
 options(scipen = 999)
 
-# install.packages("pacman")
 library(pacman)
 p_load(
   # generacion docs 

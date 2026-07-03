@@ -1,0 +1,78 @@
+---
+Fragmento de referencia para integrar los esquemas de Wright en el qmd.
+No es un qmd ejecutable por sí solo: son chunks para copiar dentro de
+02-esquemas-clases-cl.qmd. Requiere que los tres .R estén en la raíz del
+proyecto y que `data` ya tenga las variables wrightclass_vN creadas.
+---
+
+## Setup (una sola vez, en el chunk de librerías o uno nuevo al inicio)
+
+```{r wright-setup, message=FALSE, warning=FALSE}
+source("wright_system.R")        # motor: draw_wright(), blk()
+source("wright_layouts_defs.R")  # layouts: wright_layout(), wright_rowlabels()
+source("wright_get_counts.R")    # extracción: get_counts()
+```
+
+## Opción A — un chunk por versión (control fino de título y ubicación)
+
+Se coloca después del case_when que crea cada wrightclass_vN. Reemplaza al
+bloque `wright_freq <- data_svy %>% ...` cuando lo que se quiere es el esquema.
+El conteo es NO PONDERADO (n muestral), como corresponde a un diagrama de
+frecuencias de casos.
+
+```{r fig-wright-v9}
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+counts_v9 <- get_counts(data, wrightclass_v9_cap_reduced)
+
+# control de consistencia: casos que el case_when dejó sin clasificar (NA)
+if (attr(counts_v9, "n_unclassified") > 0)
+  message("v9: ", attr(counts_v9, "n_unclassified"), " casos sin clasificar")
+
+draw_wright(
+  wright_layout("v9"),
+  counts_v9,
+  title           = "v9 · Capitalists reduced",
+  row_labels_left = wright_rowlabels("v9")
+)
+```
+
+## Opción B — iterar sobre las 19 (una sección al final del capítulo)
+
+Genera los 19 esquemas en secuencia. Útil si se quieren todos juntos sin
+escribir 19 chunks. El vector wright_varname (definido en
+wright_layouts_defs.R) mapea cada id de versión a su nombre de variable.
+
+```{r wright-todos, results='asis'}
+#| fig-width: 10
+#| fig-height: 7
+#| echo: false
+
+for (v in paste0("v", 1:19)) {
+  varname <- wright_varname[[v]]
+
+  # get_counts necesita el símbolo de la variable; se resuelve con .data
+  counts <- get_counts(data, !!rlang::sym(varname))
+
+  cat("\n\n### Esquema", v, "\n\n")
+  print(
+    draw_wright(
+      wright_layout(v),
+      counts,
+      title           = v,
+      row_labels_left = wright_rowlabels(v)
+    )
+  )
+  cat("\n\n")
+}
+```
+
+## Nota sobre get_counts y !!sym()
+
+En la Opción A se pasa el nombre de la variable directamente
+(wrightclass_v9_cap_reduced), porque get_counts() usa ensym() internamente.
+En la Opción B, como el nombre viene de un string, se inyecta con
+!!rlang::sym(varname). Ambas formas son equivalentes; la segunda es la que
+permite iterar.

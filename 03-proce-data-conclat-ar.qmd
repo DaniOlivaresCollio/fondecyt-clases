@@ -8,7 +8,6 @@ Capítulo para el procesamiento de la Data Conclat Argentina para generar los es
 rm(list=ls())
 options(scipen = 999)
 
-# install.packages("pacman")
 library(pacman)
 p_load(
   # generacion docs 
@@ -476,7 +475,7 @@ data <- data %>%
 frq(data$organization_assets)
 ```
 
-### boleta
+### formal_educ
 
 Considerar que acá se ocupa educación y no boleta para medir formalidad.
 
@@ -485,15 +484,15 @@ frq(data$educ)
 
 data <- data %>% 
   mutate(
-    boleta = if_else(educ >= 9, 1, 0)
+    formal_educ = if_else(educ >= 9, 1, 0)
   ) %>% 
-  set_variable_labels(boleta = "Issues receipts/invoices (1 = yes)") %>%
-  set_value_labels(boleta = c(
+  set_variable_labels(formal_educ = "Completed higher education (1 = yes)") %>%
+  set_value_labels(formal_educ = c(
     "Yes" = 1,
     "No" = 0
   ))
 
-frq(data$boleta)
+frq(data$formal_educ)
 ```
 
 ### inicio_activ

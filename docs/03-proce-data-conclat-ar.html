@@ -172,7 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04-esquemas-clases-ar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Esquemas Clases Chile</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Esquemas Clases Argentina</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#decisionmaking_typology" id="toc-decisionmaking_typology" class="nav-link" data-scroll-target="#decisionmaking_typology"><span class="header-section-number">3.2.11</span> decisionmaking_typology</a></li>
   <li><a href="#managerial_location_typology" id="toc-managerial_location_typology" class="nav-link" data-scroll-target="#managerial_location_typology"><span class="header-section-number">3.2.12</span> managerial_location_typology</a></li>
   <li><a href="#organization_assets" id="toc-organization_assets" class="nav-link" data-scroll-target="#organization_assets"><span class="header-section-number">3.2.13</span> organization_assets</a></li>
-  <li><a href="#boleta" id="toc-boleta" class="nav-link" data-scroll-target="#boleta"><span class="header-section-number">3.2.14</span> boleta</a></li>
+  <li><a href="#formal_educ" id="toc-formal_educ" class="nav-link" data-scroll-target="#formal_educ"><span class="header-section-number">3.2.14</span> formal_educ</a></li>
   <li><a href="#inicio_activ" id="toc-inicio_activ" class="nav-link" data-scroll-target="#inicio_activ"><span class="header-section-number">3.2.15</span> inicio_activ</a></li>
   <li><a href="#inicio_empresa" id="toc-inicio_empresa" class="nav-link" data-scroll-target="#inicio_empresa"><span class="header-section-number">3.2.16</span> inicio_empresa</a></li>
   <li><a href="#contrato" id="toc-contrato" class="nav-link" data-scroll-target="#contrato"><span class="header-section-number">3.2.17</span> contrato</a></li>
@@ -1169,8 +1169,8 @@ Non-managerial worker | 830 | 48.88 |   81.05 | 100.00
 </div>
 </div>
 </section>
-<section id="boleta" class="level3" data-number="3.2.14">
-<h3 data-number="3.2.14" class="anchored" data-anchor-id="boleta"><span class="header-section-number">3.2.14</span> boleta</h3>
+<section id="formal_educ" class="level3" data-number="3.2.14">
+<h3 data-number="3.2.14" class="anchored" data-anchor-id="formal_educ"><span class="header-section-number">3.2.14</span> formal_educ</h3>
 <p>Considerar que acá se ocupa educación y no boleta para medir formalidad.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>educ)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1194,17 +1194,17 @@ Value |   N | Raw % | Valid % | Cum. %
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">boleta =</span> <span class="fu">if_else</span>(educ <span class="sc">&gt;=</span> <span class="dv">9</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">formal_educ =</span> <span class="fu">if_else</span>(educ <span class="sc">&gt;=</span> <span class="dv">9</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
 <span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">boleta =</span> <span class="st">"Issues receipts/invoices (1 = yes)"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">boleta =</span> <span class="fu">c</span>(</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_variable_labels</span>(<span class="at">formal_educ =</span> <span class="st">"Completed higher education (1 = yes)"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_value_labels</span>(<span class="at">formal_educ =</span> <span class="fu">c</span>(</span>
 <span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Yes"</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
 <span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"No"</span> <span class="ot">=</span> <span class="dv">0</span></span>
 <span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>  ))</span>
 <span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>boleta)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(data<span class="sc">$</span>formal_educ)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Issues receipts/invoices (1 = yes) (x) &lt;numeric&gt; 
+<pre><code>Completed higher education (1 = yes) (x) &lt;numeric&gt; 
 # total N=1698 valid N=1695 mean=0.20 sd=0.40
 
 Value | Label |    N | Raw % | Valid % | Cum. %
@@ -2033,8 +2033,8 @@ Value |                                       Label |   N | Raw % | Valid % | Cu
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./04-esquemas-clases-ar.html" class="pagination-link" aria-label="Esquemas Clases Chile">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Esquemas Clases Chile</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./04-esquemas-clases-ar.html" class="pagination-link" aria-label="Esquemas Clases Argentina">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Esquemas Clases Argentina</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
