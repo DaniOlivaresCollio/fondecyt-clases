@@ -1211,10 +1211,10 @@ draw_wright(wright_layout("v10"), counts_v10,
 #   print(n = Inf)
 ```
 
-- Esquema reducido con Employers: 10 o más trabajadores, **más inicio act. como empresa**.
-- Trabajadores divididos en formales e informales por tipo de aportes jubilatorios.
-- Autoempleados divididos en formales e informales por nivel universitario completado. (No hay inicio de actividades como en Chile)
-- Se unen todos los Supervisors y Mangers no expertos.
+<!-- - Esquema reducido con Employers: 10 o más trabajadores, **más inicio act. como empresa**. -->
+<!-- - Trabajadores divididos en formales e informales por tipo de aportes jubilatorios. -->
+<!-- - Autoempleados divididos en formales e informales por nivel universitario completado. (No hay inicio de actividades como en Chile) -->
+<!-- - Se unen todos los Supervisors y Mangers no expertos. -->
 
 ```{r}
 # #| label: fig-wright-v15 
