@@ -12,7 +12,7 @@ book:
     - 02-esquemas-clases-cl.qmd
     - 03-proce-data-conclat-ar.qmd
     - 04-esquemas-clases-ar.qmd
-    - 05-proc-marxism-clases-cl.qmd
+    # - 05-proc-marxism-clases-cl.qmd
     # - 06-graph-clases-cl.qmd
     # - 03-proce-data-conclat-ar.qmd
     # - 04-esquemas-clases-ar.qmd

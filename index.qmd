@@ -8,9 +8,9 @@ En el [primer capítulo](01-proce-data-conclat-cl.html) se preparan los datos de
 
 En el [tercero capítulo](03-proce-data-conclat-ar.html) se preparan los datos de Argentina generando las variables necesarias para armar los esquemas de clases, y en el [cuarto capítulo](04-esquemas-clases-ar.html) se arman diferentes esquemas de clases con los datos de Argentina.
 
-En el [quinto capítulo](05-proc-marxism-clases-cl.html) se realiza la recodificación de algunas variables de interés para un capítulo de libro de Marxismo de Clases con los datos de Chile.
+<!-- En el [quinto capítulo](05-proc-marxism-clases-cl.html) se realiza la recodificación de algunas variables de interés para un capítulo de libro de Marxismo de Clases con los datos de Chile. -->
 
-En el [sexto capítulo](06-graph-clases-cl.html) se presentan algunos gráficos útiles de los esquemas de clases con los datos de Chile.
+<!-- En el [sexto capítulo](06-graph-clases-cl.html) se presentan algunos gráficos útiles de los esquemas de clases con los datos de Chile. -->
 
 La Encuesta Conclat se aplica en el marco del Proyecto [CONCLAT](https://www.conclat.com/), que busca estudiar cómo se percibe el conflicto laboral y político en Argentina y Chile. Particularmente, analiza cómo las personas de distintas clases y con distinto estatus sindical perciben el conflicto dentro y fuera del lugar de trabajo. Tiene como propósito contribuir a la investigación internacional sobre clases, trabajo y conflicto produciendo datos cuantitativos originales y un instrumento de investigación comparable a nivel internacional.
 
