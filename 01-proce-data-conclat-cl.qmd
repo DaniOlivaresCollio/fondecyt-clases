@@ -543,13 +543,13 @@ frq(data$inicio_empresa)
 ### contrato
 
 ```{r}
-frq(data$a18)
+frq(data$a18_cl)
 
 data <- data %>% 
   mutate(
     contrato = case_when(
-      a18 == 1 ~ 1, 
-      a18 %in% c(2, 3, 4, -999) ~ 0,
+      a18_cl == 1 ~ 1, 
+      a18_cl %in% c(2, 3, 4, -999) ~ 0,
       .default = NA_real_
     )
   ) %>% 
