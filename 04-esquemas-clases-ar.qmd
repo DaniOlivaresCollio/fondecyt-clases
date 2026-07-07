@@ -1,6 +1,6 @@
 # Esquemas Clases Argentina
 
-Capítulo para armar los diferentes esquemas de clases con la Data Conclat Argentina.
+Capítulo para armar los diferentes esquemas de clases con la **base de datos de Argentina**.
 
 > Datos actualizados al 07/07/2026.
 

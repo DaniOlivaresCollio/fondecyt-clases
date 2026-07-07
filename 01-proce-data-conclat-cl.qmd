@@ -1,6 +1,6 @@
 # Procesamiento Data Conclat Chile
 
-Capítulo para el procesamiento de la Data Conclat Chile para generar los esquemas de clases. 
+Capítulo para el procesamiento de la **base de datos de Chile** para generar los esquemas de clases. 
 
 > Datos actualizados al 07/07/2026.
 

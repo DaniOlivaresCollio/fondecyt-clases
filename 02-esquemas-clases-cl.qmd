@@ -1,6 +1,6 @@
 # Esquemas Clases Chile
 
-Capítulo para armar los diferentes esquemas de clases con la Data Conclat Chile.
+Capítulo para armar los diferentes esquemas de clases con la **base de datos de Chile**.
 
 > Datos actualizados al 07/07/2026.
 

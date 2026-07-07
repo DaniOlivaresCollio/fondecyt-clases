@@ -14,7 +14,7 @@
     "href": "01-proce-data-conclat-cl.html",
     "title": "1  Procesamiento Data Conclat Chile",
     "section": "",
-    "text": "1.1 Preparación\nCapítulo para el procesamiento de la Data Conclat Chile para generar los esquemas de clases.",
+    "text": "1.1 Preparación\nCapítulo para el procesamiento de la base de datos de Chile para generar los esquemas de clases.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Procesamiento Data Conclat Chile</span>"
     ]
@@ -54,7 +54,7 @@
     "href": "02-esquemas-clases-cl.html",
     "title": "2  Esquemas Clases Chile",
     "section": "",
-    "text": "2.1 Preparación\nCapítulo para armar los diferentes esquemas de clases con la Data Conclat Chile.",
+    "text": "2.1 Preparación\nCapítulo para armar los diferentes esquemas de clases con la base de datos de Chile.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Esquemas Clases Chile</span>"
     ]
@@ -94,7 +94,7 @@
     "href": "03-proce-data-conclat-ar.html",
     "title": "3  Procesamiento Data Conclat Argentina",
     "section": "",
-    "text": "3.1 Preparación\nCapítulo para el procesamiento de la Data Conclat Argentina para generar los esquemas de clases.",
+    "text": "3.1 Preparación\nCapítulo para el procesamiento de la base de datos de Argentina para generar los esquemas de clases.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Procesamiento Data Conclat Argentina</span>"
     ]
@@ -134,7 +134,7 @@
     "href": "04-esquemas-clases-ar.html",
     "title": "4  Esquemas Clases Argentina",
     "section": "",
-    "text": "4.1 Preparación\nCapítulo para armar los diferentes esquemas de clases con la Data Conclat Argentina.",
+    "text": "4.1 Preparación\nCapítulo para armar los diferentes esquemas de clases con la base de datos de Argentina.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Esquemas Clases Argentina</span>"
     ]

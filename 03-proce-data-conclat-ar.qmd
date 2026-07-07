@@ -1,6 +1,6 @@
 # Procesamiento Data Conclat Argentina
 
-Capítulo para el procesamiento de la Data Conclat Argentina para generar los esquemas de clases. 
+Capítulo para el procesamiento de la **base de datos de Argentina** para generar los esquemas de clases. 
 
 > Datos actualizados al 07/07/2026.
 
