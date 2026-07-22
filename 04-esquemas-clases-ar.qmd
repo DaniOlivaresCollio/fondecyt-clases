@@ -2,7 +2,7 @@
 
 Capítulo para armar los diferentes esquemas de clases con la **base de datos de Argentina**.
 
-> Datos actualizados al 07/07/2026.
+> Datos actualizados al 22/07/2026.
 
 ## Preparación
 
