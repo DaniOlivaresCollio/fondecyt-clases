@@ -1,8 +1,12 @@
+---
+date: today
+---
+
 # Procesamiento Data Conclat Argentina
 
 Capítulo para el procesamiento de la **base de datos de Argentina** para generar los esquemas de clases. 
 
-> Datos actualizados al 30/07/2026.
+> Datos actualizados al {{< meta date >}}.
 
 ## Preparación
 

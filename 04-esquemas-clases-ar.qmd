@@ -1,8 +1,12 @@
+---
+date: today
+---
+
 # Esquemas Clases Argentina
 
 Capítulo para armar los diferentes esquemas de clases con la **base de datos de Argentina**.
 
-> Datos actualizados al 30/07/2026.
+> Datos actualizados al {{< meta date >}}.
 
 ## Preparación
 

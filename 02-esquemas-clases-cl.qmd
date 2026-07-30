@@ -1,8 +1,12 @@
+---
+date: today
+---
+
 # Esquemas Clases Chile
 
 Capítulo para armar los diferentes esquemas de clases con la **base de datos de Chile**.
 
-> Datos actualizados al 24/07/2026.
+> Datos actualizados al {{< meta date >}}.
 
 ## Preparación
 
