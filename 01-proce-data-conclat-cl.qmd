@@ -2,7 +2,7 @@
 
 Capítulo para el procesamiento de la **base de datos de Chile** para generar los esquemas de clases. 
 
-> Datos actualizados al 22/07/2026.
+> Datos actualizados al 24/07/2026.
 
 ## Preparación
 
