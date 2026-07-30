@@ -361,7 +361,7 @@ data <- data %>%
       )
     )
   ) %>%
-  set_variable_labels(wrightclass_v4_cap_informal = "Wright Class Typology + Informal (4)")
+  set_variable_labels(wrightclass_v4_cap_informal = "Wright Class Typology + Informal (v4)")
 
 frq(data$wrightclass_v4_cap_informal)
 
